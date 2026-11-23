@@ -1,0 +1,43 @@
+{
+  "titulo": "Una ola de melaza mató a 21 personas en Boston 🍯 #shorts",
+  "gancho": "Una ciudad fue arrasada por una ola… de melaza",
+  "voz": "es-MX-DaliaNeural",
+  "velocidad": "+10%",
+  "color_resaltado": "#FFE400",
+  "musica": "",
+  "volumen_musica": 0.12,
+  "escenas": [
+    {
+      "texto": "En mil novecientos diecinueve, una ola de melaza arrasó un barrio de Boston.",
+      "emoji": "🍯"
+    },
+    {
+      "texto": "Un tanque gigante con unos ocho millones de litros de melaza se reventó de repente.",
+      "emoji": "🛢️"
+    },
+    {
+      "texto": "Una ola de varios metros de altura corrió por las calles a unos cincuenta kilómetros por hora.",
+      "emoji": "🌊"
+    },
+    {
+      "texto": "Derribó edificios, arrastró vagones y atrapó a personas y caballos en el líquido pegajoso.",
+      "emoji": "🏚️"
+    },
+    {
+      "texto": "Murieron veintiuna personas, y los rescatistas tardaron días en sacar a los heridos.",
+      "emoji": "🚑"
+    },
+    {
+      "texto": "Dicen que en días de calor, el barrio olió a melaza durante décadas. Sígueme para más historias reales que parecen inventadas.",
+      "emoji": "👃"
+    }
+  ],
+  "descripcion": "Una ciudad fue arrasada por una ola… de melaza. ¿Lo sabías? Cuéntamelo en los comentarios 👇",
+  "hashtags": [
+    "#shorts",
+    "#historia",
+    "#datoscuriosos",
+    "#sabiasque",
+    "#historiauniversal"
+  ]
+}

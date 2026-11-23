@@ -1,0 +1,43 @@
+{
+  "titulo": "La Mona Lisa se hizo famosa porque la robaron 🖼️ #shorts",
+  "gancho": "La Mona Lisa no era tan famosa… hasta que la robaron",
+  "voz": "es-ES-AlvaroNeural",
+  "velocidad": "+10%",
+  "color_resaltado": "#FF4DA6",
+  "musica": "",
+  "volumen_musica": 0.12,
+  "escenas": [
+    {
+      "texto": "La Mona Lisa no siempre fue la pintura más famosa del mundo. Su fama explotó por un robo.",
+      "emoji": "🖼️"
+    },
+    {
+      "texto": "En mil novecientos once, un trabajador italiano llamado Vincenzo Peruggia la sacó del Louvre escondida bajo su ropa.",
+      "emoji": "🕵️"
+    },
+    {
+      "texto": "Pasó más de un día hasta que alguien notó que faltaba.",
+      "emoji": "⏳"
+    },
+    {
+      "texto": "La policía incluso interrogó a Pablo Picasso como sospechoso.",
+      "emoji": "🎨"
+    },
+    {
+      "texto": "Peruggia la tuvo escondida en su casa durante dos años, hasta que intentó venderla en Florencia y lo atraparon.",
+      "emoji": "🚔"
+    },
+    {
+      "texto": "El escándalo salió en periódicos de todo el mundo, y desde entonces todos quisieron verla. Sígueme para más historias reales que parecen inventadas.",
+      "emoji": "🌍"
+    }
+  ],
+  "descripcion": "La Mona Lisa no era tan famosa… hasta que la robaron. ¿Lo sabías? Cuéntamelo en los comentarios 👇",
+  "hashtags": [
+    "#shorts",
+    "#historia",
+    "#datoscuriosos",
+    "#sabiasque",
+    "#historiauniversal"
+  ]
+}
