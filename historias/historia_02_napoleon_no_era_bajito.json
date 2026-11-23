@@ -9,27 +9,33 @@
   "escenas": [
     {
       "texto": "Todos creen que Napoleón era bajito. Pero eso es un mito.",
-      "emoji": "😳"
+      "emoji": "😳",
+      "visual": "nap_intro"
     },
     {
       "texto": "Medía alrededor de un metro sesenta y nueve, una estatura normal para un francés de su época.",
-      "emoji": "📏"
+      "emoji": "📏",
+      "visual": "nap_estatura"
     },
     {
       "texto": "El error vino en parte de las pulgadas: la pulgada francesa era más larga que la inglesa, así que sus medidas parecían menores.",
-      "emoji": "📐"
+      "emoji": "📐",
+      "visual": "nap_pulgadas"
     },
     {
       "texto": "Además, los caricaturistas británicos lo dibujaban diminuto y furioso para ridiculizarlo.",
-      "emoji": "✏️"
+      "emoji": "✏️",
+      "visual": "nap_caricatura"
     },
     {
       "texto": "Y como siempre andaba rodeado de su guardia imperial, soldados muy altos, parecía más pequeño.",
-      "emoji": "💂"
+      "emoji": "💂",
+      "visual": "nap_guardia"
     },
     {
       "texto": "La propaganda enemiga ganó esa batalla durante doscientos años. Sígueme para más historias reales que parecen inventadas.",
-      "emoji": "🏆"
+      "emoji": "🏆",
+      "visual": "nap_final"
     }
   ],
   "descripcion": "Te mintieron: Napoleón no era bajito. ¿Lo sabías? Cuéntamelo en los comentarios 👇",
