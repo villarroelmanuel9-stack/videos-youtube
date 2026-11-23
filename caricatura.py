@@ -395,6 +395,8 @@ def fondo_taller() -> Image.Image:
 # OVERLAYS (sobre la cámara)
 # =========================================================================== #
 def texto_sombra(img, xy, txt, tam, color=(255, 255, 255), anchor="mm", borde=4, sombra=True, alfa=255):
+    if tam < 8:
+        return
     f = fuente(tam)
     if sombra:
         capa = Image.new("RGBA", img.size, (0, 0, 0, 0))
