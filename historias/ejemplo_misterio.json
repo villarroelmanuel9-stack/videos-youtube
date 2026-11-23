@@ -1,0 +1,19 @@
+{
+  "titulo": "Me llamó mi propio número a las 3:33 😨 #shorts",
+  "gancho": "Mi celular sonó a las 3:33… y el número era EL MÍO",
+  "voz": "es-MX-JorgeNeural",
+  "velocidad": "+12%",
+  "color_resaltado": "#FFE400",
+  "musica": "",
+  "volumen_musica": 0.12,
+  "escenas": [
+    {"texto": "Anoche mi celular sonó exactamente a las tres y treinta y tres de la madrugada.", "emoji": "📱", "colores": ["#0b090a", "#3c096c"]},
+    {"texto": "Miré la pantalla y me quedé helado. La llamada venía de mi propio número.", "emoji": "😨", "colores": ["#10002b", "#5a189a"]},
+    {"texto": "Contesté. Del otro lado solo se escuchaba una respiración… y luego mi voz diciendo: no abras la puerta.", "emoji": "👂", "colores": ["#03071e", "#6a040f"]},
+    {"texto": "Diez segundos después, alguien tocó tres veces.", "emoji": "🚪", "colores": ["#000000", "#370617"]},
+    {"texto": "No abrí. Esta mañana encontré huellas de barro que llegaban hasta mi puerta… pero ninguna se iba.", "emoji": "👣", "colores": ["#1b1b1b", "#4a4e69"]},
+    {"texto": "¿Tú habrías abierto? Escríbelo en los comentarios y sígueme para la parte dos.", "emoji": "👇", "colores": ["#240046", "#ff006e"]}
+  ],
+  "descripcion": "Historia de terror corta y original. ¿Tú habrías abierto la puerta? 👇\nSígueme para la parte 2.",
+  "hashtags": ["#shorts", "#terror", "#historiasdeterror", "#misterio", "#creepypasta"]
+}

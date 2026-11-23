@@ -1,0 +1,17 @@
+{
+  "titulo": "El hombre que sobrevivió a DOS bombas atómicas 🤯 #shorts",
+  "gancho": "Sobrevivió a Hiroshima… y 3 días después a Nagasaki",
+  "voz": "es-ES-AlvaroNeural",
+  "velocidad": "+8%",
+  "color_resaltado": "#00F5D4",
+  "escenas": [
+    {"texto": "Este hombre sobrevivió a dos bombas atómicas en solo tres días.", "emoji": "🤯", "colores": ["#03045e", "#0077b6"]},
+    {"texto": "Se llamaba Tsutomu Yamaguchi y estaba en Hiroshima por un viaje de trabajo el seis de agosto de mil novecientos cuarenta y cinco.", "emoji": "💼", "colores": ["#2b2d42", "#8d0801"]},
+    {"texto": "La explosión lo dejó con quemaduras y sordo de un oído, pero logró volver a su ciudad natal.", "emoji": "💥", "colores": ["#370617", "#d00000"]},
+    {"texto": "Su ciudad natal era… Nagasaki. Y el nueve de agosto cayó la segunda bomba.", "emoji": "😱", "colores": ["#10002b", "#e85d04"]},
+    {"texto": "Volvió a sobrevivir, y vivió hasta los noventa y tres años. Japón lo reconoció oficialmente como doble superviviente.", "emoji": "🕊️", "colores": ["#004b23", "#38b000"]},
+    {"texto": "Sígueme para más historias reales que parecen inventadas.", "emoji": "👉", "colores": ["#240046", "#7209b7"]}
+  ],
+  "descripcion": "La increíble historia real de Tsutomu Yamaguchi, el único superviviente reconocido oficialmente de Hiroshima y Nagasaki.",
+  "hashtags": ["#shorts", "#historia", "#datoscuriosos", "#historiasreales", "#sabiasque"]
+}
