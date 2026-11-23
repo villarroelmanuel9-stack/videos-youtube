@@ -1,5 +1,5 @@
 {
-  "titulo": "Cleopatra vivió más cerca de la llegada a la Luna que de las pirámides 🤯 #shorts",
+  "titulo": "Cleopatra está más cerca de ti que de las pirámides 🤯 #shorts",
   "gancho": "Cleopatra está más cerca de nosotros que de las pirámides",
   "voz": "es-MX-DaliaNeural",
   "velocidad": "+10%",
@@ -8,31 +8,39 @@
   "volumen_musica": 0.12,
   "escenas": [
     {
-      "texto": "Este dato te va a romper la cabeza.",
-      "emoji": "🤯"
+      "texto": "Este dato te va a romper la cabeza: Cleopatra vivió más cerca de la llegada a la Luna… que de la construcción de la Gran Pirámide.",
+      "visual": "cleo_intro"
     },
     {
-      "texto": "La Gran Pirámide de Guiza se construyó hace unos cuatro mil quinientos años.",
-      "emoji": "🔺"
+      "texto": "La Gran Pirámide de Guiza se construyó hace unos cuatro mil quinientos años, para el faraón Keops.",
+      "visual": "cleo_piramide"
     },
     {
-      "texto": "Cleopatra murió en el año treinta antes de Cristo, unos dos mil quinientos años después.",
-      "emoji": "👸"
+      "texto": "Es tan antigua, que mientras la construían, todavía quedaban mamuts vivos en una isla del Ártico.",
+      "visual": "cleo_mamut"
     },
     {
-      "texto": "Y el ser humano llegó a la Luna en mil novecientos sesenta y nueve, unos dos mil años después de Cleopatra.",
-      "emoji": "🚀"
+      "texto": "Cleopatra nació en el año sesenta y nueve antes de Cristo. Entre la pirámide y ella pasaron unos dos mil quinientos años.",
+      "visual": "cleo_nace"
     },
     {
-      "texto": "O sea: Cleopatra vivió más cerca de la llegada a la Luna que de la construcción de la Gran Pirámide.",
-      "emoji": "🌙"
+      "texto": "Para ella, las pirámides ya eran ruinas antiquísimas. Siglos antes, el griego Heródoto ya las había visitado como turista.",
+      "visual": "cleo_turista"
     },
     {
-      "texto": "Para ella, las pirámides ya eran ruinas antiquísimas. Sígueme para más historias reales que parecen inventadas.",
-      "emoji": "🏛️"
+      "texto": "Y desde Cleopatra hasta que Neil Armstrong pisó la Luna, en mil novecientos sesenta y nueve, pasaron unos dos mil años.",
+      "visual": "cleo_luna"
+    },
+    {
+      "texto": "O sea: en la línea del tiempo, Cleopatra está más cerca de nosotros que de las pirámides.",
+      "visual": "cleo_linea"
+    },
+    {
+      "texto": "¿Lo sabías? Te leo en los comentarios. Y sígueme para más historias reales que parecen inventadas.",
+      "visual": "cleo_final"
     }
   ],
-  "descripcion": "Cleopatra está más cerca de nosotros que de las pirámides. ¿Lo sabías? Cuéntamelo en los comentarios 👇",
+  "descripcion": "Cleopatra vivió más cerca de la llegada a la Luna que de la construcción de la Gran Pirámide. Y cuando se construía la pirámide… ¡todavía había mamuts! 🤯\n¿Lo sabías? Te leo en los comentarios 👇",
   "hashtags": [
     "#shorts",
     "#historia",

@@ -66,7 +66,8 @@ class Personaje:
     """
 
     def __init__(self, ropa="#7a4a2a", piel="#f6dcc0", pelo="#4a2c1a", sombrero=None, estilo="civil",
-                 altura=1.0, bigote=False, semilla=0):
+                 altura=1.0, bigote=False, semilla=0, peinado="normal", barba=False):
+        self.peinado, self.barba = peinado, barba
         self.ropa, self.piel, self.pelo = rgb(ropa), rgb(piel), rgb(pelo)
         self.sombrero, self.estilo, self.altura, self.bigote = sombrero, estilo, altura, bigote
         self.fase = random.Random(semilla).uniform(0, 10)
@@ -130,6 +131,24 @@ class Personaje:
                 d.line((*P(80, cuerpo_top + 30), *P(-70, -piernas + 10)), fill=(245, 245, 240), width=int(20 * K))
                 for sx in (-1, 1):
                     E(sx * 92 - 32, cuerpo_top + 2, sx * 92 + 32, cuerpo_top + 32, (200, 30, 40), 5)
+            elif self.estilo == "vestido":
+                d.chord((*P(-100, cuerpo_top - 50), *P(100, cuerpo_top + 80)), 0, 180, fill=(232, 186, 60),
+                        outline=TINTA, width=int(5 * K))
+                for rr in (40, 60):
+                    d.arc((*P(-rr - 30, cuerpo_top - rr + 10), *P(rr + 30, cuerpo_top + rr + 10)), 20, 160,
+                          fill=(40, 90, 170), width=int(7 * K))
+                d.rectangle((*P(-100, -piernas - 40), *P(100, -piernas - 22)), fill=(232, 186, 60))
+            elif self.estilo == "toga":
+                d.line((*P(-85, cuerpo_top + 20), *P(80, -piernas - 10)), fill=(180, 60, 60), width=int(26 * K))
+            elif self.estilo == "astronauta":
+                d.rounded_rectangle((*P(-55, cuerpo_top + 50), *P(55, cuerpo_top + 140)), radius=int(10 * K),
+                                    fill=(170, 175, 185), outline=TINTA, width=int(4 * K))
+                for i, c in enumerate(((220, 40, 40), (40, 160, 70), (40, 90, 200))):
+                    E(-35 + i * 35 - 9, cuerpo_top + 85, -35 + i * 35 + 9, cuerpo_top + 103, c, 3)
+                for i in range(5):
+                    d.rectangle((*P(60, cuerpo_top + 30 + i * 8), *P(95, cuerpo_top + 34 + i * 8)),
+                                fill=(200, 40, 40) if i % 2 == 0 else (245, 245, 245))
+                d.rectangle((*P(60, cuerpo_top + 30), *P(74, cuerpo_top + 46)), fill=(40, 60, 150))
             else:
                 d.line((*P(0, cuerpo_top + 20), *P(0, -piernas + 20)), fill=TINTA, width=int(4 * K))
                 for i in range(3):
@@ -143,9 +162,39 @@ class Personaje:
             # cabeza
             hc = cuerpo_top - 55
             r = 108
+            if self.peinado == "melena":
+                d.rounded_rectangle((*P(-132, hc - 118), *P(132, hc + 105)), radius=int(70 * K), fill=pelo,
+                                    outline=TINTA, width=lw)
+            if self.sombrero == "nemes":
+                for sx in (-1, 1):
+                    pts = [P(sx * (r - 20), hc - 40), P(sx * (r + 22), hc - 40), P(sx * (r + 40), hc + 175),
+                           P(sx * (r - 25), hc + 175)]
+                    d.polygon(pts, fill=(232, 186, 60), outline=TINTA, width=lw)
+                    for i in range(6):
+                        yy_ = hc - 20 + i * 34
+                        d.line((*P(sx * (r - 18), yy_), *P(sx * (r + 30), yy_)), fill=(40, 70, 160),
+                               width=int(10 * K))
             E(-r, hc - r, r, hc + r, piel, 8)
             # pelo
-            if self.sombrero not in ("piel", "copa"):
+            if self.sombrero == "nemes":
+                d.chord((*P(-r - 14, hc - r - 18), *P(r + 14, hc + r - 50)), 180, 360, fill=(232, 186, 60),
+                        outline=TINTA, width=lw)
+                for xx_ in range(-r + 10, r, 30):
+                    d.line((*P(xx_, hc - r + 5), *P(xx_ * 1.08, hc - 40)), fill=(40, 70, 160), width=int(9 * K))
+                d.rectangle((*P(-r - 6, hc - 48), *P(r + 6, hc - 34)), fill=(232, 186, 60), outline=TINTA,
+                            width=int(4 * K))
+                d.ellipse((*P(-12, hc - r - 26), *P(12, hc - r + 4)), fill=(232, 186, 60), outline=TINTA,
+                          width=int(4 * K))
+            elif self.peinado == "melena":
+                d.chord((*P(-r - 6, hc - r - 6), *P(r + 6, hc + r - 70)), 180, 360, fill=pelo, outline=TINTA,
+                        width=lw)
+                d.rectangle((*P(-r + 8, hc - 64), *P(r - 8, hc - 44)), fill=pelo)
+            if self.sombrero == "diadema":
+                d.arc((*P(-r, hc - r - 6), *P(r, hc + r - 60)), 200, 340, fill=(232, 186, 60), width=int(14 * K))
+                d.ellipse((*P(-14, hc - r - 14), *P(14, hc - r + 14)), fill=(232, 186, 60), outline=TINTA,
+                          width=int(4 * K))
+                d.ellipse((*P(-6, hc - r - 6), *P(6, hc - r + 6)), fill=(40, 90, 170))
+            if self.sombrero not in ("piel", "copa", "nemes") and self.peinado == "normal":
                 d.chord((*P(-r + 4, hc - r + 2), *P(r - 4, hc + r - 30)), 185, 355, fill=pelo,
                         outline=TINTA, width=lw)
                 if self.estilo == "napoleon":  # mechón característico
@@ -172,6 +221,9 @@ class Personaje:
                     d.arc((*P(ex - 26, by - 26), *P(ex + 26, by + 6)), 200, 340, fill=TINTA, width=int(7 * K))
                 elif expresion == "serio":
                     d.line((*P(ex - 24, by + 4), *P(ex + 24, by + 4)), fill=TINTA, width=int(8 * K))
+            if self.barba:
+                d.chord((*P(-r + 6, hc - 10), *P(r - 6, hc + r + 40)), 10, 170, fill=pelo, outline=TINTA,
+                        width=int(5 * K))
             if self.bigote:
                 d.chord((*P(-50, hc + 22), *P(0, hc + 52)), 180, 360, fill=pelo)
                 d.chord((*P(0, hc + 22), *P(50, hc + 52)), 180, 360, fill=pelo)
@@ -214,6 +266,12 @@ class Personaje:
                 d.rectangle((*P(-75, top - 10), *P(75, top + 12)), fill=(150, 30, 40))
                 d.rounded_rectangle((*P(-130, top + 10), *P(130, top + 34)), radius=int(12 * K), fill=(24, 22, 28),
                                     outline=TINTA, width=lw)
+            elif self.sombrero == "casco":
+                d.ellipse((*P(-r - 32, hc - r - 32), *P(r + 32, hc + r + 32)), outline=(235, 235, 240),
+                          width=int(16 * K))
+                d.ellipse((*P(-r - 32, hc - r - 32), *P(r + 32, hc + r + 32)), outline=TINTA, width=int(5 * K))
+                d.arc((*P(-r - 5, hc - r - 5), *P(r - 25, hc + r - 25)), 200, 250, fill=(255, 255, 255, 200),
+                      width=int(12 * K))
 
         img = suave(dib, ancho, alto)
         if s != 1.0:
@@ -635,6 +693,445 @@ class NapFinal(Escena):
 
 ESCENAS = {"nap_intro": NapIntro, "nap_estatura": NapEstatura, "nap_pulgadas": NapPulgadas,
            "nap_caricatura": NapCaricatura, "nap_guardia": NapGuardia, "nap_final": NapFinal}
+
+
+# =========================================================================== #
+# ESCENAS DE LA HISTORIA 3: CLEOPATRA Y LA LUNA
+# =========================================================================== #
+ORO, AZUL_EG = (232, 186, 60), (40, 70, 160)
+
+
+def _piramide(d, k, cx, base, ancho, alto):
+    izq, der, cima = (cx - ancho / 2, base), (cx + ancho / 2, base), (cx + ancho * 0.08, base - alto)
+    d.polygon([(izq[0] * k, izq[1] * k), (cima[0] * k, cima[1] * k), (cx * k + ancho * 0.08 * k, base * k)],
+              fill=(240, 200, 120))
+    d.polygon([(cx * k + ancho * 0.08 * k, base * k), (cima[0] * k, cima[1] * k), (der[0] * k, der[1] * k)],
+              fill=(200, 150, 80))
+    for i in range(1, 9):
+        f = i / 9
+        y = base - alto * f
+        xl = izq[0] + (cima[0] - izq[0]) * f
+        xr = der[0] + (cima[0] - der[0]) * f
+        d.line((xl * k, y * k, xr * k, y * k), fill=(170, 120, 60), width=int(3 * k))
+    d.polygon([(izq[0] * k, izq[1] * k), (cima[0] * k, cima[1] * k), (der[0] * k, der[1] * k)], outline=TINTA,
+              width=int(7 * k))
+
+
+def fondo_desierto(variante=0) -> Image.Image:
+    def dib(d, k):
+        hz = 1250
+        for y in range(0, hz, 8):
+            f = y / hz
+            d.rectangle((0, y * k, W * k, (y + 8) * k),
+                        fill=(int(80 + 170 * f), int(160 + 70 * f), int(230 - 60 * f)))
+        d.ellipse((780 * k, 180 * k, 960 * k, 360 * k), fill=(255, 230, 120), outline=(255, 200, 80),
+                  width=int(8 * k))
+        if variante == 0:
+            _piramide(d, k, 560, hz + 20, 980, 820)
+        else:
+            _piramide(d, k, 300, hz + 10, 520, 430)
+            _piramide(d, k, 720, hz + 10, 620, 520)
+            _piramide(d, k, 980, hz + 10, 300, 240)
+        for i, (y0, col) in enumerate(((hz - 20, (236, 196, 120)), (hz + 120, (226, 180, 100)),
+                                       (hz + 300, (214, 166, 86)))):
+            pts = [(0, H * k)]
+            for x in range(0, W + 60, 60):
+                pts.append((x * k, (y0 + 40 * math.sin(x / 160 + i * 2)) * k))
+            pts.append((W * k, H * k))
+            d.polygon(pts, fill=col)
+            d.line(pts[1:-1], fill=(150, 100, 50), width=int(6 * k))
+    return suave(dib, W, H)
+
+
+def fondo_egipcio(variante=0) -> Image.Image:
+    def dib(d, k):
+        piso = 1380
+        r = random.Random(variante + 20)
+        d.rectangle((0, 0, W * k, piso * k), fill=(222, 182, 120))
+        for fy, y in enumerate(range(0, piso, 80)):
+            off = (fy % 2) * 70
+            for x in range(-off, W, 140):
+                c = r.randint(-10, 10)
+                d.rectangle(((x + 3) * k, (y + 3) * k, (x + 137) * k, (y + 77) * k), fill=(222 + c, 182 + c, 120 + c),
+                            outline=(170, 130, 80), width=int(3 * k))
+        # jeroglíficos simples
+        for i in range(14):
+            x, y = 330 + (i % 7) * 62, 300 + (i // 7) * 110
+            tipo = i % 4
+            if tipo == 0:
+                d.ellipse((x * k, (y + 10) * k, (x + 44) * k, (y + 34) * k), outline=TINTA, width=int(5 * k))
+                d.ellipse(((x + 16) * k, (y + 14) * k, (x + 28) * k, (y + 28) * k), fill=TINTA)
+            elif tipo == 1:
+                d.line((x * k, (y + 40) * k, (x + 40) * k, (y + 40) * k), fill=TINTA, width=int(5 * k))
+                d.line(((x + 20) * k, y * k, (x + 20) * k, (y + 40) * k), fill=TINTA, width=int(5 * k))
+                d.ellipse(((x + 8) * k, (y - 10) * k, (x + 32) * k, (y + 12) * k), outline=TINTA, width=int(5 * k))
+            elif tipo == 2:
+                d.arc((x * k, y * k, (x + 44) * k, (y + 44) * k), 180, 360, fill=TINTA, width=int(5 * k))
+                d.line((x * k, (y + 22) * k, (x + 44) * k, (y + 22) * k), fill=TINTA, width=int(5 * k))
+            else:
+                d.polygon([(x * k, (y + 40) * k), ((x + 22) * k, y * k), ((x + 44) * k, (y + 40) * k)],
+                          outline=TINTA, width=int(5 * k))
+        # columnas
+        for cx in (130, 950):
+            d.rectangle(((cx - 70) * k, 150 * k, (cx + 70) * k, piso * k), fill=(236, 214, 170), outline=TINTA,
+                        width=int(7 * k))
+            for j in range(3):
+                d.line(((cx - 35 + j * 35) * k, 230 * k, (cx - 35 + j * 35) * k, piso * k), fill=(190, 160, 110),
+                       width=int(5 * k))
+            d.polygon([((cx - 110) * k, 150 * k), ((cx + 110) * k, 150 * k), ((cx + 70) * k, 240 * k),
+                       ((cx - 70) * k, 240 * k)], fill=(70, 150, 110), outline=TINTA)
+            for j in range(4):
+                d.rectangle(((cx - 70) * k, (260 + j * 300) * k, (cx + 70) * k, (280 + j * 300) * k),
+                            fill=ORO + (255,), outline=TINTA, width=int(3 * k))
+        d.rectangle((0, piso * k, W * k, H * k), fill=(180, 130, 80))
+        for i in range(-12, 13):
+            d.line(((540 + i * 50) * k, piso * k, (540 + i * 200) * k, H * k), fill=(150, 104, 60), width=int(5 * k))
+        d.line((0, piso * k, W * k, piso * k), fill=TINTA, width=int(8 * k))
+        d.polygon([(330 * k, 0), (750 * k, 0), (900 * k, 1900 * k), (180 * k, 1900 * k)], fill=(255, 240, 190, 45))
+    return suave(dib, W, H)
+
+
+def fondo_artico() -> Image.Image:
+    def dib(d, k):
+        for y in range(0, 1100, 8):
+            f = y / 1100
+            d.rectangle((0, y * k, W * k, (y + 8) * k), fill=(int(170 + 60 * f), int(205 + 40 * f), 250))
+        for x0, h in ((-100, 380), (250, 300), (600, 420), (880, 330)):
+            d.polygon([(x0 * k, 1100 * k), ((x0 + 220) * k, (1100 - h) * k), ((x0 + 440) * k, 1100 * k)],
+                      fill=(230, 238, 250), outline=TINTA, width=int(6 * k))
+            d.polygon([((x0 + 220) * k, (1100 - h) * k), ((x0 + 290) * k, (1100 - h * 0.6) * k),
+                       ((x0 + 440) * k, 1100 * k), ((x0 + 220) * k, 1100 * k)], fill=(190, 205, 230))
+        d.rectangle((0, 1100 * k, W * k, 1300 * k), fill=(50, 100, 170))
+        for i in range(8):
+            x = 60 + i * 130
+            d.ellipse((x * k, (1140 + (i % 2) * 60) * k, (x + 110) * k, (1170 + (i % 2) * 60) * k),
+                      fill=(240, 248, 255), outline=TINTA, width=int(4 * k))
+        pts = [(0, H * k)] + [(x * k, (1300 + 25 * math.sin(x / 120)) * k) for x in range(0, W + 40, 40)] + \
+              [(W * k, H * k)]
+        d.polygon(pts, fill=(245, 250, 255))
+        d.line(pts[1:-1], fill=TINTA, width=int(7 * k))
+    return suave(dib, W, H)
+
+
+def fondo_luna() -> Image.Image:
+    def dib(d, k):
+        d.rectangle((0, 0, W * k, H * k), fill=(10, 12, 28))
+        r = random.Random(7)
+        for _ in range(140):
+            x, y, rr = r.randint(0, W), r.randint(0, 1200), r.choice((2, 3, 4))
+            d.ellipse(((x - rr) * k, (y - rr) * k, (x + rr) * k, (y + rr) * k), fill=(255, 255, 230))
+        d.ellipse((700 * k, 220 * k, 960 * k, 480 * k), fill=(60, 120, 220), outline=TINTA, width=int(7 * k))
+        for cx, cy, rr in ((780, 300, 50), (870, 380, 60), (760, 410, 30)):
+            d.ellipse(((cx - rr) * k, (cy - rr * 0.7) * k, (cx + rr) * k, (cy + rr * 0.7) * k), fill=(70, 170, 90))
+        pts = [(0, H * k)] + [(x * k, (1250 + 30 * math.sin(x / 200)) * k) for x in range(0, W + 40, 40)] + \
+              [(W * k, H * k)]
+        d.polygon(pts, fill=(170, 170, 180))
+        d.line(pts[1:-1], fill=TINTA, width=int(7 * k))
+        for cx, cy, rr in ((150, 1450, 80), (820, 1400, 60), (500, 1750, 110), (950, 1800, 70), (230, 1820, 50)):
+            d.ellipse(((cx - rr) * k, (cy - rr * 0.4) * k, (cx + rr) * k, (cy + rr * 0.4) * k), fill=(130, 130, 145),
+                      outline=TINTA, width=int(5 * k))
+    return suave(dib, W, H)
+
+
+def fondo_papel() -> Image.Image:
+    def dib(d, k):
+        d.rectangle((0, 0, W * k, H * k), fill=(240, 226, 190))
+        for y in range(0, H, 60):
+            d.line((0, y * k, W * k, y * k), fill=(225, 205, 160), width=int(2 * k))
+        for x in range(0, W, 60):
+            d.line((x * k, 0, x * k, H * k), fill=(225, 205, 160), width=int(2 * k))
+    return suave(dib, W, H)
+
+
+def dibujar_mamut(img, x, y, s, t):
+    """Mamut lanudo caminando hacia la derecha. (x, y) = punto entre las patas, en el suelo."""
+    paso = math.sin(t * 4)
+    pel, osc, colm = (130, 80, 45), (100, 60, 32), (250, 245, 230)
+
+    def dib(d, k):
+        ox, oy = 450, 640
+
+        def P(px, py):
+            return (ox + px) * k, (oy + py) * k
+
+        def E(x0, y0, x1, y1, fill, ow=8):
+            d.ellipse((*P(x0, y0), *P(x1, y1)), fill=fill, outline=TINTA, width=int(ow * k))
+        d.ellipse((*P(-240, -16), *P(240, 22)), fill=(0, 0, 0, 50))
+        for i, lx in enumerate((-150, -70, 70, 150)):
+            off = paso * 18 * (1 if i % 2 else -1)
+            d.rounded_rectangle((*P(lx - 34 + off, -200), *P(lx + 34 + off, 0)), radius=int(20 * k),
+                                fill=osc if i in (1, 2) else pel, outline=TINTA, width=int(7 * k))
+        E(-230, -420, 210, -130, pel)
+        E(-210, -470, 40, -300, pel)
+        for i in range(10):
+            hx = -190 + i * 40
+            d.arc((*P(hx - 20, -300 + (i % 3) * 18), *P(hx + 20, -260 + (i % 3) * 18)), 0, 180, fill=osc,
+                  width=int(5 * k))
+        E(130, -520, 330, -300, pel)
+        trompa = [P(310, -380), P(360, -280), P(350, -160), P(325, -120 + 10 * math.sin(t * 2)), P(290, -150),
+                  P(300, -280), P(270, -360)]
+        d.polygon(trompa, fill=pel)
+        d.line(trompa + [trompa[0]], fill=TINTA, width=int(7 * k), joint="curve")
+        d.arc((*P(230, -330), *P(420, -170)), 30, 150, fill=TINTA, width=int(24 * k))
+        d.arc((*P(230, -330), *P(420, -170)), 30, 150, fill=colm, width=int(14 * k))
+        E(180, -480, 222, -438, (255, 255, 255), 5)
+        d.ellipse((*P(196, -468), *P(212, -452)), fill=TINTA)
+        E(90, -480, 170, -360, osc, 6)
+    m = suave(dib, 900, 700)
+    if s != 1:
+        m = m.resize((int(900 * s), int(700 * s)), Image.BILINEAR)
+    img.alpha_composite(m, (int(x - 450 * s), int(y - 640 * s - 5 * s * abs(paso))))
+
+
+def icono(img, tipo, x, y, s, t=0.0):
+    def dib(d, k):
+        cx, cy = 150, 150
+        if tipo == "piramide":
+            _piramide(d, k, cx, cy + 90, 260, 200)
+        elif tipo == "luna":
+            d.ellipse(((cx - 110) * k, (cy - 110) * k, (cx + 110) * k, (cy + 110) * k), fill=(225, 225, 210),
+                      outline=TINTA, width=int(7 * k))
+            for dx, dy, rr in ((-40, -30, 25), (35, 20, 32), (-20, 50, 16)):
+                d.ellipse(((cx + dx - rr) * k, (cy + dy - rr) * k, (cx + dx + rr) * k, (cy + dy + rr) * k),
+                          fill=(190, 190, 175), outline=TINTA, width=int(4 * k))
+    ic = suave(dib, 300, 300)
+    if s != 1:
+        ic = ic.resize((int(300 * s), int(300 * s)), Image.BILINEAR)
+    img.alpha_composite(ic, (int(x - 150 * s), int(y - 150 * s)))
+
+
+def cleopatra(semilla=1):
+    return Personaje(ropa="#f4f1e8", piel="#d9a878", pelo="#141018", sombrero="diadema", estilo="vestido",
+                     peinado="melena", semilla=semilla)
+
+
+class CleoIntro(Escena):
+    camara = (1.0, 1.1, 0.5, 0.62)
+
+    def __init__(self):
+        self.fondo = fondo_egipcio(0)
+        self.cleo = cleopatra()
+
+    def mundo(self, t, dur):
+        img = self.fondo.copy()
+        self.cleo.dibujar(img, 540, 1720, 1.35, t, expresion="sorpresa" if t < dur * 0.5 else "normal",
+                          mirar=(1 if t > dur * 0.5 else -1, -0.5))
+        return img
+
+    def encima(self, img, t, dur):
+        if t > dur * 0.3:
+            icono(img, "luna", 860, 520, 0.8 * pop((t - dur * 0.3) / 0.3), t)
+            etiqueta(img, 860, 690, "la luna", t, dur * 0.3)
+        if t > dur * 0.6:
+            icono(img, "piramide", 220, 520, 0.8 * pop((t - dur * 0.6) / 0.3), t)
+            etiqueta(img, 220, 690, "pirámide", t, dur * 0.6)
+
+
+class CleoPiramide(Escena):
+    camara = (1.12, 1.0, 0.5, 0.6)
+
+    def __init__(self):
+        self.fondo = fondo_desierto(0)
+        self.obreros = [Personaje(ropa="#e8dcc0", piel="#c98d5c", pelo="#141018", semilla=60 + i) for i in range(3)]
+        self.keops = Personaje(ropa="#f4f1e8", piel="#c98d5c", pelo="#141018", sombrero="nemes", estilo="vestido",
+                               semilla=70)
+
+    def mundo(self, t, dur):
+        img = self.fondo.copy()
+        bx = 140 + 30 * t
+        d = ImageDraw.Draw(img)
+        d.rectangle((bx - 90, 1490, bx + 90, 1640), fill=(230, 190, 110), outline=TINTA, width=6)
+        d.line((bx + 90, 1550, bx + 560, 1520), fill=(120, 80, 40), width=8)
+        for i, o in enumerate(self.obreros):
+            o.dibujar(img, bx + 230 + i * 130, 1700, 0.72, t * 1.5, expresion="serio", mirar=(1, 0))
+        self.keops.dibujar(img, 900, 1780, 1.0, t, expresion="serio", mirar=(-1, 0))
+        return img
+
+    def encima(self, img, t, dur):
+        dato_grande(img, "4.500 años", "de antigüedad", t, 0.5, y=330)
+        etiqueta(img, 880, 980, "faraón keops", t, dur * 0.5)
+        if t > dur * 0.5:
+            flecha(img, 880, 1150, 90, 120, t)
+
+
+class CleoMamut(Escena):
+    camara = (1.0, 1.08, 0.5, 0.6)
+
+    def __init__(self):
+        self.fondo = fondo_artico()
+
+    def mundo(self, t, dur):
+        img = self.fondo.copy()
+        dibujar_mamut(img, 180 + 70 * t, 1720, 1.05, t)
+        d = ImageDraw.Draw(img)
+        r = random.Random(4)
+        for _ in range(70):
+            x0, y0, v = r.uniform(0, W), r.uniform(0, H), r.uniform(60, 140)
+            x = (x0 + 20 * math.sin(t + x0)) % W
+            y = (y0 + v * t) % H
+            d.ellipse((x - 5, y - 5, x + 5, y + 5), fill=(255, 255, 255))
+        return img
+
+    def encima(self, img, t, dur):
+        dato_grande(img, "Mamuts vivos", "hace unos 4.000 años", t, 0.4, y=330)
+        etiqueta(img, 540, 620, "isla de wrangel, ártico", t, dur * 0.5)
+        if t > dur * 0.55:
+            icono(img, "piramide", 900, 820, 0.55 * pop((t - dur * 0.55) / 0.3))
+            etiqueta(img, 900, 940, "¡a la vez!", t, dur * 0.55)
+
+
+class CleoNace(Escena):
+    camara = (1.0, 1.12, 0.5, 0.6)
+
+    def __init__(self):
+        self.fondo = fondo_egipcio(1)
+        self.cleo = cleopatra(3)
+        self.sirv = Personaje(ropa="#e8dcc0", piel="#c98d5c", pelo="#141018", semilla=80)
+
+    def mundo(self, t, dur):
+        img = self.fondo.copy()
+        self.sirv.dibujar(img, 880, 1640, 0.9, t, expresion="normal", brazos="arriba", mirar=(-1, 0))
+        d = ImageDraw.Draw(img)
+        ang = math.radians(-60 + 18 * math.sin(t * 5))
+        fx, fy = 1015 + 120 * math.cos(ang), 1110 + 120 * math.sin(ang)
+        d.line((1015, 1130, fx, fy), fill=(120, 80, 40), width=8)
+        d.pieslice((fx - 90, fy - 90, fx + 90, fy + 90), 200, 340, fill=(70, 150, 110), outline=TINTA, width=5)
+        self.cleo.dibujar(img, 480, 1730, 1.3, t, expresion="normal", mirar=(0, 0))
+        return img
+
+    def encima(self, img, t, dur):
+        dato_grande(img, "69 a. C.", "nace Cleopatra", t, 0.3, y=330)
+        if t > dur * 0.5:
+            texto_sombra(img, (W / 2, 620), "2.500 años después", int(64 * pop((t - dur * 0.5) / 0.25)),
+                         color=(255, 214, 40), borde=5)
+
+
+class CleoTurista(Escena):
+    camara = (1.05, 1.15, 0.5, 0.55)
+
+    def __init__(self):
+        self.fondo = fondo_desierto(1)
+        self.hero = Personaje(ropa="#f2efe6", piel="#f0d0b0", pelo="#6a5a4a", estilo="toga", barba=True,
+                              semilla=90)
+
+    def mundo(self, t, dur):
+        img = self.fondo.copy()
+        self.hero.dibujar(img, 760, 1760, 1.15, t, expresion="sorpresa", mirar=(-1, -1), brazos="arriba")
+        d = ImageDraw.Draw(img)
+        d.rounded_rectangle((850, 1170, 960, 1230), radius=20, fill=(240, 226, 190), outline=TINTA, width=5)
+        return img
+
+    def encima(self, img, t, dur):
+        texto_sombra(img, (W / 2, 330), "Ya eran ruinas antiguas", int(60 * pop((t - 0.3) / 0.3)) if t > 0.3 else 1,
+                     color=(255, 214, 40), borde=5)
+        etiqueta(img, 760, 760, "heródoto (griego)", t, dur * 0.45)
+        if t > dur * 0.45:
+            flecha(img, 760, 940, 90, 120, t)
+        pildora(img, "¡SUSCRÍBETE Y COMENTA!", t, 0.8, 3.5)
+
+
+class CleoLuna(Escena):
+    camara = (1.0, 1.12, 0.5, 0.6)
+
+    def __init__(self):
+        self.fondo = fondo_luna()
+        self.astro = Personaje(ropa="#f0f0f0", piel="#f6dcc0", pelo="#5a3a20", sombrero="casco",
+                               estilo="astronauta", semilla=100)
+
+    def mundo(self, t, dur):
+        img = self.fondo.copy()
+        d = ImageDraw.Draw(img)
+        sube = ease(t / 1.2)
+        top = 1050 + (1 - sube) * 300
+        d.line((330, 1700, 330, top), fill=(200, 200, 210), width=10)
+        fw, fh = 260, 160
+        d.rectangle((330, top, 330 + fw, top + fh), fill=(245, 245, 245), outline=TINTA, width=5)
+        for i in range(7):
+            if i % 2 == 0:
+                y = top + i * fh / 7
+                d.rectangle((330, y, 330 + fw, y + fh / 7), fill=(200, 40, 50))
+        d.rectangle((330, top, 330 + fw * 0.42, top + fh * 4 / 7), fill=(40, 60, 150), outline=TINTA, width=3)
+        self.astro.dibujar(img, 640, 1760, 1.15, t, expresion="risa", mirar=(-1, -0.3), brazos="arriba")
+        return img
+
+    def encima(self, img, t, dur):
+        dato_grande(img, "1969", "llegada a la Luna", t, 0.3, y=330)
+        etiqueta(img, 700, 860, "neil armstrong", t, dur * 0.45)
+
+
+class CleoLinea(Escena):
+    camara = (1.0, 1.0, 0.5, 0.5)
+    A0, A1 = -2560, 1969
+
+    def __init__(self):
+        self.fondo = fondo_papel()
+        self.cleo = cleopatra(5)
+
+    def X(self, anio):
+        return 110 + (anio - self.A0) / (self.A1 - self.A0) * 860
+
+    def mundo(self, t, dur):
+        img = self.fondo.copy()
+        y = 1050
+        p = ease(t / 0.8)
+
+        def dib(d, k):
+            d.line((90 * k, y * k, (90 + 900 * p) * k, y * k), fill=TINTA, width=int(12 * k))
+            for anio, col in ((self.A0, (200, 150, 80)), (-30, ORO), (self.A1, (120, 120, 130))):
+                x = self.X(anio)
+                if x <= 90 + 900 * p:
+                    d.ellipse(((x - 22) * k, (y - 22) * k, (x + 22) * k, (y + 22) * k), fill=col + (255,)
+                              if len(col) == 3 else col, outline=TINTA, width=int(6 * k))
+            for (a, b, col, txt, yy, t0) in ((self.A0, -30, (220, 40, 50), "2.500 años", y - 330, 1.2),
+                                              (-30, self.A1, (40, 100, 220), "2.000 años", y + 190, 2.2)):
+                q = ease((t - t0) / 0.6)
+                if q <= 0:
+                    continue
+                xa, xb = self.X(a), self.X(a) + (self.X(b) - self.X(a)) * q
+                d.line((xa * k, yy * k, xb * k, yy * k), fill=col + (255,), width=int(14 * k))
+                for xx in (xa, xb):
+                    d.line((xx * k, (yy - 30) * k, xx * k, (yy + 30) * k), fill=col + (255,), width=int(10 * k))
+        img.alpha_composite(suave(dib, W, H))
+        if t > 0.3:
+            icono(img, "piramide", self.X(self.A0) + 20, y - 170, 0.7)
+        if t > 0.6:
+            self.cleo.dibujar(img, self.X(-30), y - 60, 0.42, t, expresion="risa" if t > 2.6 else "normal")
+        if t > 0.8:
+            icono(img, "luna", self.X(self.A1) - 20, y - 170, 0.55)
+        return img
+
+    def encima(self, img, t, dur):
+        y = 1050
+        for anio, txt in ((self.A0, "2560 a. C."), (-30, "30 a. C."), (self.A1, "1969")):
+            if t > 0.5:
+                x = min(max(self.X(anio), 120), 960)
+                texto_sombra(img, (x, y + 70), txt, 34, sombra=False, borde=3)
+        for txt, yy, t0, col in (("2.500 años", y - 400, 1.4, (235, 40, 50)), ("2.000 años", y + 270, 2.4,
+                                                                               (40, 110, 230))):
+            if t > t0:
+                texto_sombra(img, (W / 2, yy), txt, int(80 * pop((t - t0) / 0.3)), color=col, borde=6)
+        etiqueta(img, W / 2, 330, "la línea del tiempo", t, 0.2)
+
+
+class CleoFinal(Escena):
+    camara = (1.0, 1.1, 0.5, 0.6)
+
+    def __init__(self):
+        self.fondo = fondo_egipcio(2)
+        self.cleo = cleopatra(7)
+
+    def mundo(self, t, dur):
+        img = self.fondo.copy()
+        self.cleo.dibujar(img, 540, 1760, 1.3, t, expresion="risa", brazos="cruzados", mirar=(0, 0))
+        return img
+
+    def encima(self, img, t, dur):
+        encuesta(img, "¿Lo sabías?", "SÍ, LO\nSABÍA", "NI\nIDEA", t, 0.4)
+
+
+ESCENAS.update({"cleo_intro": CleoIntro, "cleo_piramide": CleoPiramide, "cleo_mamut": CleoMamut,
+                "cleo_nace": CleoNace, "cleo_turista": CleoTurista, "cleo_luna": CleoLuna,
+                "cleo_linea": CleoLinea, "cleo_final": CleoFinal})
 
 
 # =========================================================================== #
