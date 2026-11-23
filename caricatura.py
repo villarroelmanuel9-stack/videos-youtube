@@ -68,6 +68,7 @@ class Personaje:
     def __init__(self, ropa="#7a4a2a", piel="#f6dcc0", pelo="#4a2c1a", sombrero=None, estilo="civil",
                  altura=1.0, bigote=False, semilla=0, peinado="normal", barba=False):
         self.peinado, self.barba = peinado, barba
+        self.color_sombrero = None
         self.ropa, self.piel, self.pelo = rgb(ropa), rgb(piel), rgb(pelo)
         self.sombrero, self.estilo, self.altura, self.bigote = sombrero, estilo, altura, bigote
         self.fase = random.Random(semilla).uniform(0, 10)
@@ -138,6 +139,28 @@ class Personaje:
                     d.arc((*P(-rr - 30, cuerpo_top - rr + 10), *P(rr + 30, cuerpo_top + rr + 10)), 20, 160,
                           fill=(40, 90, 170), width=int(7 * K))
                 d.rectangle((*P(-100, -piernas - 40), *P(100, -piernas - 22)), fill=(232, 186, 60))
+            elif self.estilo == "militar":
+                d.rectangle((*P(-104, -piernas - 70), *P(104, -piernas - 46)), fill=(70, 50, 30), outline=TINTA,
+                            width=int(4 * K))
+                for sx in (-1, 1):
+                    d.rectangle((*P(sx * 60 - 24, cuerpo_top + 60), *P(sx * 60 + 24, cuerpo_top + 100)),
+                                outline=TINTA, width=int(4 * K))
+                for i in range(3):
+                    E(-7, cuerpo_top + 40 + i * 45 - 7, 7, cuerpo_top + 40 + i * 45 + 7, (200, 170, 80), 3)
+            elif self.estilo == "rayas":
+                for yy_ in range(int(cuerpo_top + 45), int(-piernas), 30):
+                    d.line((*P(-98, yy_), *P(98, yy_)), fill=(30, 40, 90), width=int(12 * K))
+            elif self.estilo == "armadura":
+                E(-75, cuerpo_top + 20, 75, cuerpo_top + 170, (185, 190, 200), 5)
+                d.arc((*P(-55, cuerpo_top + 35), *P(30, cuerpo_top + 120)), 200, 290, fill=(240, 240, 250),
+                      width=int(9 * K))
+                for sx in (-1, 1):
+                    E(sx * 95 - 34, cuerpo_top - 4, sx * 95 + 34, cuerpo_top + 40, (160, 165, 175), 5)
+            elif self.estilo == "vestido_simple":
+                d.polygon([P(-104, cuerpo_top + 140), P(104, cuerpo_top + 140), P(130, -piernas + 25),
+                           P(-130, -piernas + 25)], fill=ropa, outline=TINTA, width=lw)
+                d.rectangle((*P(-50, cuerpo_top + 100), *P(50, -piernas + 10)), fill=(240, 235, 220), outline=TINTA,
+                            width=int(4 * K))
             elif self.estilo == "toga":
                 d.line((*P(-85, cuerpo_top + 20), *P(80, -piernas - 10)), fill=(180, 60, 60), width=int(26 * K))
             elif self.estilo == "astronauta":
@@ -165,6 +188,13 @@ class Personaje:
             if self.peinado == "melena":
                 d.rounded_rectangle((*P(-132, hc - 118), *P(132, hc + 105)), radius=int(70 * K), fill=pelo,
                                     outline=TINTA, width=lw)
+            if self.sombrero == "penacho":
+                cols = [(30, 150, 90), (220, 60, 50), (40, 110, 210), (240, 190, 50)]
+                for i, ang in enumerate(range(195, 350, 14)):
+                    a_ = math.radians(ang)
+                    x2, y2 = 230 * math.cos(a_), hc - 60 + 230 * math.sin(a_)
+                    d.line((*P(0, hc - 60), *P(x2, y2)), fill=TINTA, width=int(40 * K))
+                    d.line((*P(0, hc - 60), *P(x2, y2)), fill=cols[i % 4], width=int(28 * K))
             if self.sombrero == "nemes":
                 for sx in (-1, 1):
                     pts = [P(sx * (r - 20), hc - 40), P(sx * (r + 22), hc - 40), P(sx * (r + 40), hc + 175),
@@ -266,6 +296,55 @@ class Personaje:
                 d.rectangle((*P(-75, top - 10), *P(75, top + 12)), fill=(150, 30, 40))
                 d.rounded_rectangle((*P(-130, top + 10), *P(130, top + 34)), radius=int(12 * K), fill=(24, 22, 28),
                                     outline=TINTA, width=lw)
+            elif self.sombrero == "ala_ancha":
+                c = self.color_sombrero or (150, 120, 70)
+                d.ellipse((*P(-185, top + 18), *P(185, top + 70)), fill=c, outline=TINTA, width=lw)
+                d.rounded_rectangle((*P(-95, top - 70), *P(95, top + 45)), radius=int(40 * K), fill=c, outline=TINTA,
+                                    width=lw)
+                d.rectangle((*P(-95, top + 10), *P(95, top + 30)), fill=(70, 50, 30))
+            elif self.sombrero in ("gorra", "gorra_militar"):
+                c = self.color_sombrero or ((120, 120, 70) if self.sombrero == "gorra_militar" else (60, 80, 140))
+                d.chord((*P(-r - 4, top - 30), *P(r + 4, top + 150)), 180, 360, fill=c, outline=TINTA, width=lw)
+                d.ellipse((*P(30, top + 40), *P(175, top + 78)), fill=c, outline=TINTA, width=lw)
+                if self.sombrero == "gorra_militar":
+                    d.regular_polygon((*P(0, top + 25), 18 * K), 5, fill=(240, 200, 40), outline=TINTA)
+                    for sx in (-1, 1):
+                        d.rectangle((*P(sx * (r + 4) - 22, hc - 30), *P(sx * (r + 4) + 22, hc + 40)), fill=c,
+                                    outline=TINTA, width=int(4 * K))
+            elif self.sombrero == "birrete":
+                d.chord((*P(-r + 4, top - 10), *P(r - 4, top + 120)), 180, 360, fill=(25, 25, 30), outline=TINTA,
+                        width=lw)
+                d.polygon([P(-170, top - 10), P(0, top - 60), P(170, top - 10), P(0, top + 30)], fill=(25, 25, 30),
+                          outline=TINTA, width=lw)
+                d.line((*P(0, top - 15), *P(140, top + 10), *P(140, top + 90)), fill=(232, 186, 60), width=int(7 * K))
+            elif self.sombrero == "penacho":
+                d.rectangle((*P(-r - 4, top + 20), *P(r + 4, top + 52)), fill=(232, 186, 60), outline=TINTA,
+                            width=int(5 * K))
+                for i in range(5):
+                    d.ellipse((*P(-80 + i * 40 - 9, top + 27), *P(-80 + i * 40 + 9, top + 45)), fill=(40, 160, 140))
+            elif self.sombrero == "morrion":
+                c = (170, 175, 185)
+                d.ellipse((*P(-180, top + 35), *P(180, top + 75)), fill=c, outline=TINTA, width=lw)
+                d.chord((*P(-r - 6, top - 50), *P(r + 6, top + 110)), 180, 360, fill=c, outline=TINTA, width=lw)
+                d.polygon([P(-60, top - 30), P(0, top - 95), P(60, top - 30)], fill=c, outline=TINTA)
+                d.line((*P(-60, top - 30), *P(0, top - 95), *P(60, top - 30)), fill=TINTA, width=int(6 * K))
+            elif self.sombrero == "kepi":
+                c = self.color_sombrero or (40, 55, 110)
+                d.polygon([P(-78, top - 70), P(78, top - 70), P(92, top + 45), P(-92, top + 45)], fill=c,
+                          outline=TINTA)
+                d.line((*P(-78, top - 70), *P(78, top - 70), *P(92, top + 45), *P(-92, top + 45), *P(-78, top - 70)),
+                       fill=TINTA, width=lw)
+                d.rectangle((*P(-90, top + 20), *P(90, top + 40)), fill=(200, 40, 50))
+                d.chord((*P(-60, top + 30), *P(120, top + 75)), 0, 180, fill=(20, 20, 25), outline=TINTA,
+                        width=int(5 * K))
+            elif self.sombrero == "panuelo":
+                c = self.color_sombrero or (240, 232, 210)
+                d.chord((*P(-r - 8, hc - r - 8), *P(r + 8, hc + r - 30)), 180, 360, fill=c, outline=TINTA, width=lw)
+                d.polygon([P(-r + 10, hc - 30), P(-r - 50, hc + 10), P(-r - 10, hc + 30)], fill=c, outline=TINTA)
+            elif self.sombrero == "boina":
+                c = self.color_sombrero or (130, 30, 50)
+                d.ellipse((*P(-130, top - 35), *P(115, top + 45)), fill=c, outline=TINTA, width=lw)
+                d.line((*P(0, top - 35), *P(5, top - 55)), fill=TINTA, width=int(8 * K))
             elif self.sombrero == "casco":
                 d.ellipse((*P(-r - 32, hc - r - 32), *P(r + 32, hc + r + 32)), outline=(235, 235, 240),
                           width=int(16 * K))

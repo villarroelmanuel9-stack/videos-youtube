@@ -8,28 +8,36 @@
   "volumen_musica": 0.12,
   "escenas": [
     {
-      "texto": "En mil novecientos treinta y dos, Australia le declaró la guerra… a unas aves. Y perdió."
+      "texto": "En mil novecientos treinta y dos, Australia le declaró la guerra… a unas aves. Y perdió.",
+      "visual": "h5_1"
     },
     {
-      "texto": "Unos veinte mil emús estaban arrasando los cultivos de trigo en el oeste del país, y los granjeros pidieron ayuda al ejército."
+      "texto": "Unos veinte mil emús estaban arrasando los cultivos de trigo en el oeste del país, y los granjeros pidieron ayuda al ejército.",
+      "visual": "h5_2"
     },
     {
-      "texto": "Enviaron al mayor Meredith, con soldados, dos ametralladoras y diez mil balas."
+      "texto": "Enviaron al mayor Meredith, con soldados, dos ametralladoras y diez mil balas.",
+      "visual": "h5_3"
     },
     {
-      "texto": "Pero los emús no cooperaron: corrían a cincuenta kilómetros por hora, se separaban en grupos pequeños… y aguantaban varios disparos."
+      "texto": "Pero los emús no cooperaron: corrían a cincuenta kilómetros por hora, se separaban en grupos pequeños… y aguantaban varios disparos.",
+      "visual": "h5_4"
     },
     {
-      "texto": "En una emboscada, esperaron a cientos de emús junto a un estanque… y la ametralladora se trabó."
+      "texto": "En una emboscada, esperaron a cientos de emús junto a un estanque… y la ametralladora se trabó.",
+      "visual": "h5_5"
     },
     {
-      "texto": "Tras semanas de intentos, gastaron miles de balas: casi diez por cada emú abatido. Y la operación se canceló."
+      "texto": "Tras semanas de intentos, gastaron miles de balas: casi diez por cada emú abatido. Y la operación se canceló.",
+      "visual": "h5_6"
     },
     {
-      "texto": "El propio Meredith dijo que, con soldados tan resistentes como esas aves, podría enfrentar a cualquier ejército del mundo."
+      "texto": "El propio Meredith dijo que, con soldados tan resistentes como esas aves, podría enfrentar a cualquier ejército del mundo.",
+      "visual": "h5_7"
     },
     {
-      "texto": "¿Quién crees que ganó? Déjamelo en los comentarios… y suscríbete para más historias reales que parecen inventadas."
+      "texto": "¿Quién crees que ganó? Déjamelo en los comentarios… y suscríbete para más historias reales que parecen inventadas.",
+      "visual": "h5_8"
     }
   ],
   "descripcion": "Un ejército contra unas aves… y ganaron las aves. ¿Lo sabías? Cuéntamelo en los comentarios 👇",

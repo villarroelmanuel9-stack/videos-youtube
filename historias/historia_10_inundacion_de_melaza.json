@@ -8,31 +8,40 @@
   "volumen_musica": 0.12,
   "escenas": [
     {
-      "texto": "En mil novecientos diecinueve, una ola gigante arrasó un barrio de Boston… pero no era de agua. Era de melaza."
+      "texto": "En mil novecientos diecinueve, una ola gigante arrasó un barrio de Boston… pero no era de agua. Era de melaza.",
+      "visual": "h10_1"
     },
     {
-      "texto": "En el puerto había un tanque enorme, con más de ocho millones de litros de melaza, que se usaba para fabricar alcohol."
+      "texto": "En el puerto había un tanque enorme, con más de ocho millones de litros de melaza, que se usaba para fabricar alcohol.",
+      "visual": "h10_2"
     },
     {
-      "texto": "El tanque goteaba tanto que lo pintaron de café… para que no se notaran las fugas."
+      "texto": "El tanque goteaba tanto que lo pintaron de café… para que no se notaran las fugas.",
+      "visual": "h10_3"
     },
     {
-      "texto": "El quince de enero, el tanque reventó. Una ola de unos siete metros de altura corrió por las calles a unos cincuenta kilómetros por hora."
+      "texto": "El quince de enero, el tanque reventó. Una ola de unos siete metros de altura corrió por las calles a unos cincuenta kilómetros por hora.",
+      "visual": "h10_4"
     },
     {
-      "texto": "Derribó edificios, arrastró vagones del tren, y atrapó a personas y caballos en el líquido pegajoso."
+      "texto": "Derribó edificios, arrastró vagones del tren, y atrapó a personas y caballos en el líquido pegajoso.",
+      "visual": "h10_5"
     },
     {
-      "texto": "Murieron veintiuna personas, y unas ciento cincuenta resultaron heridas. Con el frío, la melaza se espesó… y los rescatistas apenas podían moverse."
+      "texto": "Murieron veintiuna personas, y unas ciento cincuenta resultaron heridas. Con el frío, la melaza se espesó… y los rescatistas apenas podían moverse.",
+      "visual": "h10_6"
     },
     {
-      "texto": "Después de la tragedia, se crearon leyes para revisar los cálculos de este tipo de construcciones."
+      "texto": "Después de la tragedia, se crearon leyes para revisar los cálculos de este tipo de construcciones.",
+      "visual": "h10_7"
     },
     {
-      "texto": "Y dicen que, en los días de calor, el barrio olió a melaza durante décadas."
+      "texto": "Y dicen que, en los días de calor, el barrio olió a melaza durante décadas.",
+      "visual": "h10_8"
     },
     {
-      "texto": "¿Habías escuchado esta historia? Déjamelo en los comentarios… y suscríbete para más historias reales que parecen inventadas."
+      "texto": "¿Habías escuchado esta historia? Déjamelo en los comentarios… y suscríbete para más historias reales que parecen inventadas.",
+      "visual": "h10_9"
     }
   ],
   "descripcion": "Una ciudad fue arrasada por una ola… de melaza. ¿Lo sabías? Cuéntamelo en los comentarios 👇",

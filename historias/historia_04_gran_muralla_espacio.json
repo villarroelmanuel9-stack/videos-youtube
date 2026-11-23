@@ -8,28 +8,36 @@
   "volumen_musica": 0.12,
   "escenas": [
     {
-      "texto": "Seguro te dijeron que la Gran Muralla China se ve desde el espacio… Pues es mentira."
+      "texto": "Seguro te dijeron que la Gran Muralla China se ve desde el espacio… Pues es mentira.",
+      "visual": "h4_1"
     },
     {
-      "texto": "La muralla es enorme: sumando todos sus tramos, mide más de veinte mil kilómetros."
+      "texto": "La muralla es enorme: sumando todos sus tramos, mide más de veinte mil kilómetros.",
+      "visual": "h4_2"
     },
     {
-      "texto": "Pero en muchos tramos tiene solo unos seis metros de ancho… y su color se confunde con la tierra y las montañas."
+      "texto": "Pero en muchos tramos tiene solo unos seis metros de ancho… y su color se confunde con la tierra y las montañas.",
+      "visual": "h4_3"
     },
     {
-      "texto": "Desde la Estación Espacial, a unos cuatrocientos kilómetros de altura, verla a simple vista es como intentar ver una moneda a un kilómetro y medio de distancia."
+      "texto": "Desde la Estación Espacial, a unos cuatrocientos kilómetros de altura, verla a simple vista es como intentar ver una moneda a un kilómetro y medio de distancia.",
+      "visual": "h4_4"
     },
     {
-      "texto": "En dos mil tres, Yang Liwei, el primer astronauta chino, lo confirmó: desde la órbita no logró verla."
+      "texto": "En dos mil tres, Yang Liwei, el primer astronauta chino, lo confirmó: desde la órbita no logró verla.",
+      "visual": "h4_5"
     },
     {
-      "texto": "Después de eso, China anunció que corregiría sus propios libros escolares."
+      "texto": "Después de eso, China anunció que corregiría sus propios libros escolares.",
+      "visual": "h4_6"
     },
     {
-      "texto": "Lo que sí se ve desde el espacio son las luces de las ciudades de noche… y algunas grandes carreteras y aeropuertos."
+      "texto": "Lo que sí se ve desde el espacio son las luces de las ciudades de noche… y algunas grandes carreteras y aeropuertos.",
+      "visual": "h4_7"
     },
     {
-      "texto": "¿A ti también te lo enseñaron en el colegio? Déjamelo en los comentarios… y suscríbete para más historias reales que parecen inventadas."
+      "texto": "¿A ti también te lo enseñaron en el colegio? Déjamelo en los comentarios… y suscríbete para más historias reales que parecen inventadas.",
+      "visual": "h4_8"
     }
   ],
   "descripcion": "¿Se ve la Gran Muralla China desde el espacio?. ¿Lo sabías? Cuéntamelo en los comentarios 👇",

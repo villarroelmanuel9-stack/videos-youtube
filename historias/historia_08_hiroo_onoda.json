@@ -8,31 +8,40 @@
   "volumen_musica": 0.12,
   "escenas": [
     {
-      "texto": "Este soldado siguió peleando la Segunda Guerra Mundial… veintinueve años después de que terminó."
+      "texto": "Este soldado siguió peleando la Segunda Guerra Mundial… veintinueve años después de que terminó.",
+      "visual": "h8_1"
     },
     {
-      "texto": "Se llamaba Hiroo Onoda. En mil novecientos cuarenta y cuatro, Japón lo envió a la isla de Lubang, en Filipinas."
+      "texto": "Se llamaba Hiroo Onoda. En mil novecientos cuarenta y cuatro, Japón lo envió a la isla de Lubang, en Filipinas.",
+      "visual": "h8_2"
     },
     {
-      "texto": "Su orden era clara: nunca rendirse. Y la cumplió al pie de la letra."
+      "texto": "Su orden era clara: nunca rendirse. Y la cumplió al pie de la letra.",
+      "visual": "h8_3"
     },
     {
-      "texto": "Cuando la guerra terminó, le lanzaron folletos avisándole. Pero él creyó que eran propaganda enemiga… y siguió escondido en la selva."
+      "texto": "Cuando la guerra terminó, le lanzaron folletos avisándole. Pero él creyó que eran propaganda enemiga… y siguió escondido en la selva.",
+      "visual": "h8_4"
     },
     {
-      "texto": "Pasaron los años. Sus compañeros murieron o se rindieron. Él siguió solo."
+      "texto": "Pasaron los años. Sus compañeros murieron o se rindieron. Él siguió solo.",
+      "visual": "h8_5"
     },
     {
-      "texto": "En mil novecientos setenta y cuatro, un joven aventurero japonés lo encontró. Pero Onoda se negó a rendirse… sin una orden de su superior."
+      "texto": "En mil novecientos setenta y cuatro, un joven aventurero japonés lo encontró. Pero Onoda se negó a rendirse… sin una orden de su superior.",
+      "visual": "h8_6"
     },
     {
-      "texto": "Así que trajeron a su antiguo comandante, ya convertido en vendedor de libros, para darle la orden en persona."
+      "texto": "Así que trajeron a su antiguo comandante, ya convertido en vendedor de libros, para darle la orden en persona.",
+      "visual": "h8_7"
     },
     {
-      "texto": "Onoda entregó su espada. Su rifle todavía funcionaba."
+      "texto": "Onoda entregó su espada. Su rifle todavía funcionaba.",
+      "visual": "h8_8"
     },
     {
-      "texto": "¿Tú habrías aguantado tanto? Déjamelo en los comentarios… y suscríbete para más historias reales que parecen inventadas."
+      "texto": "¿Tú habrías aguantado tanto? Déjamelo en los comentarios… y suscríbete para más historias reales que parecen inventadas.",
+      "visual": "h8_9"
     }
   ],
   "descripcion": "Siguió en guerra 29 años… porque nadie le avisó que terminó. ¿Lo sabías? Cuéntamelo en los comentarios 👇",

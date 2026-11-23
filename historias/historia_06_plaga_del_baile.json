@@ -8,28 +8,36 @@
   "volumen_musica": 0.12,
   "escenas": [
     {
-      "texto": "En julio de mil quinientos dieciocho, en la ciudad de Estrasburgo, una mujer salió a la calle… y empezó a bailar."
+      "texto": "En julio de mil quinientos dieciocho, en la ciudad de Estrasburgo, una mujer salió a la calle… y empezó a bailar.",
+      "visual": "h6_1"
     },
     {
-      "texto": "No había música. No se detenía. Siguió bailando durante días."
+      "texto": "No había música. No se detenía. Siguió bailando durante días.",
+      "visual": "h6_2"
     },
     {
-      "texto": "En una semana, decenas de personas se unieron a ella. Según las crónicas, llegaron a ser cientos."
+      "texto": "En una semana, decenas de personas se unieron a ella. Según las crónicas, llegaron a ser cientos.",
+      "visual": "h6_3"
     },
     {
-      "texto": "Las autoridades creyeron que la cura era… seguir bailando. Así que contrataron músicos y construyeron un escenario."
+      "texto": "Las autoridades creyeron que la cura era… seguir bailando. Así que contrataron músicos y construyeron un escenario.",
+      "visual": "h6_4"
     },
     {
-      "texto": "Pero fue peor: más gente empezó a bailar, y algunas crónicas hablan de muertos por agotamiento."
+      "texto": "Pero fue peor: más gente empezó a bailar, y algunas crónicas hablan de muertos por agotamiento.",
+      "visual": "h6_5"
     },
     {
-      "texto": "Al final, llevaron a los bailarines a un santuario en las montañas, dedicado a San Vito, y les dieron cruces y zapatos rojos."
+      "texto": "Al final, llevaron a los bailarines a un santuario en las montañas, dedicado a San Vito, y les dieron cruces y zapatos rojos.",
+      "visual": "h6_6"
     },
     {
-      "texto": "Hoy muchos historiadores creen que fue una histeria colectiva, provocada por el hambre, las enfermedades y el miedo."
+      "texto": "Hoy muchos historiadores creen que fue una histeria colectiva, provocada por el hambre, las enfermedades y el miedo.",
+      "visual": "h6_7"
     },
     {
-      "texto": "¿Tú crees que fue una enfermedad o algo más? Déjamelo en los comentarios… y suscríbete para más historias reales que parecen inventadas."
+      "texto": "¿Tú crees que fue una enfermedad o algo más? Déjamelo en los comentarios… y suscríbete para más historias reales que parecen inventadas.",
+      "visual": "h6_8"
     }
   ],
   "descripcion": "En 1518 la gente bailó durante semanas sin poder parar. ¿Lo sabías? Cuéntamelo en los comentarios 👇",

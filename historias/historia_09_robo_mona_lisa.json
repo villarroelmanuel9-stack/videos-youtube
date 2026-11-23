@@ -8,31 +8,40 @@
   "volumen_musica": 0.12,
   "escenas": [
     {
-      "texto": "La Mona Lisa no siempre fue la pintura más famosa del mundo… Se hizo famosa por un robo."
+      "texto": "La Mona Lisa no siempre fue la pintura más famosa del mundo… Se hizo famosa por un robo.",
+      "visual": "h9_1"
     },
     {
-      "texto": "En agosto de mil novecientos once, un trabajador italiano llamado Vincenzo Peruggia se escondió dentro del Louvre."
+      "texto": "En agosto de mil novecientos once, un trabajador italiano llamado Vincenzo Peruggia se escondió dentro del Louvre.",
+      "visual": "h9_2"
     },
     {
-      "texto": "Al día siguiente, con el museo cerrado, descolgó el cuadro, lo escondió bajo su bata de trabajo… y salió caminando por la puerta."
+      "texto": "Al día siguiente, con el museo cerrado, descolgó el cuadro, lo escondió bajo su bata de trabajo… y salió caminando por la puerta.",
+      "visual": "h9_3"
     },
     {
-      "texto": "Nadie se dio cuenta hasta el otro día."
+      "texto": "Nadie se dio cuenta hasta el otro día.",
+      "visual": "h9_4"
     },
     {
-      "texto": "El robo salió en periódicos de todo el mundo. La policía incluso interrogó a Pablo Picasso como sospechoso."
+      "texto": "El robo salió en periódicos de todo el mundo. La policía incluso interrogó a Pablo Picasso como sospechoso.",
+      "visual": "h9_5"
     },
     {
-      "texto": "Y miles de personas hicieron fila en el Louvre… solo para ver el espacio vacío en la pared."
+      "texto": "Y miles de personas hicieron fila en el Louvre… solo para ver el espacio vacío en la pared.",
+      "visual": "h9_6"
     },
     {
-      "texto": "Peruggia la tuvo escondida en su casa durante dos años, hasta que intentó venderla a un comerciante de arte en Florencia, que avisó a la policía."
+      "texto": "Peruggia la tuvo escondida en su casa durante dos años, hasta que intentó venderla a un comerciante de arte en Florencia, que avisó a la policía.",
+      "visual": "h9_7"
     },
     {
-      "texto": "Cuando la Mona Lisa volvió al Louvre, ya era la pintura más famosa del planeta."
+      "texto": "Cuando la Mona Lisa volvió al Louvre, ya era la pintura más famosa del planeta.",
+      "visual": "h9_8"
     },
     {
-      "texto": "¿La has visto en persona? Déjamelo en los comentarios… y suscríbete para más historias reales que parecen inventadas."
+      "texto": "¿La has visto en persona? Déjamelo en los comentarios… y suscríbete para más historias reales que parecen inventadas.",
+      "visual": "h9_9"
     }
   ],
   "descripcion": "La Mona Lisa no era tan famosa… hasta que la robaron. ¿Lo sabías? Cuéntamelo en los comentarios 👇",
