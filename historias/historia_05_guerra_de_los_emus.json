@@ -1,5 +1,5 @@
 {
-  "titulo": "Australia le declaró la guerra a unas aves… y perdió 🐦 #shorts",
+  "titulo": "Australia le declaró la guerra a unas aves… y PERDIÓ 🐦 #shorts",
   "gancho": "Un ejército contra unas aves… y ganaron las aves",
   "voz": "es-AR-TomasNeural",
   "velocidad": "+10%",
@@ -8,28 +8,28 @@
   "volumen_musica": 0.12,
   "escenas": [
     {
-      "texto": "En mil novecientos treinta y dos, Australia mandó soldados con ametralladoras a pelear contra unas aves.",
-      "emoji": "🐦"
+      "texto": "En mil novecientos treinta y dos, Australia le declaró la guerra… a unas aves. Y perdió."
     },
     {
-      "texto": "Unos veinte mil emús estaban destruyendo los cultivos de trigo de los granjeros del oeste del país.",
-      "emoji": "🌾"
+      "texto": "Unos veinte mil emús estaban arrasando los cultivos de trigo en el oeste del país, y los granjeros pidieron ayuda al ejército."
     },
     {
-      "texto": "El ejército envió al mayor Meredith con dos ametralladoras y miles de balas.",
-      "emoji": "🎖️"
+      "texto": "Enviaron al mayor Meredith, con soldados, dos ametralladoras y diez mil balas."
     },
     {
-      "texto": "Pero los emús corrían en zigzag, se dispersaban en grupos pequeños y aguantaban varios disparos.",
-      "emoji": "💨"
+      "texto": "Pero los emús no cooperaron: corrían a cincuenta kilómetros por hora, se separaban en grupos pequeños… y aguantaban varios disparos."
     },
     {
-      "texto": "Tras semanas de intentos, la operación se canceló. La prensa la bautizó como la Guerra de los Emús.",
-      "emoji": "📰"
+      "texto": "En una emboscada, esperaron a cientos de emús junto a un estanque… y la ametralladora se trabó."
     },
     {
-      "texto": "Y hasta hoy, en internet se dice que los emús ganaron. Sígueme para más historias reales que parecen inventadas.",
-      "emoji": "🏆"
+      "texto": "Tras semanas de intentos, gastaron miles de balas: casi diez por cada emú abatido. Y la operación se canceló."
+    },
+    {
+      "texto": "El propio Meredith dijo que, con soldados tan resistentes como esas aves, podría enfrentar a cualquier ejército del mundo."
+    },
+    {
+      "texto": "¿Quién crees que ganó? Déjamelo en los comentarios… y suscríbete para más historias reales que parecen inventadas."
     }
   ],
   "descripcion": "Un ejército contra unas aves… y ganaron las aves. ¿Lo sabías? Cuéntamelo en los comentarios 👇",

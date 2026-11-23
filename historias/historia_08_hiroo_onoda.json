@@ -1,5 +1,5 @@
 {
-  "titulo": "El soldado que siguió peleando 29 años después de la guerra 🪖 #shorts",
+  "titulo": "Siguió en guerra 29 AÑOS porque nadie le avisó que terminó 🪖 #shorts",
   "gancho": "Siguió en guerra 29 años… porque nadie le avisó que terminó",
   "voz": "es-CO-GonzaloNeural",
   "velocidad": "+10%",
@@ -8,28 +8,31 @@
   "volumen_musica": 0.12,
   "escenas": [
     {
-      "texto": "Este soldado siguió peleando la Segunda Guerra Mundial durante veintinueve años después de que terminó.",
-      "emoji": "🪖"
+      "texto": "Este soldado siguió peleando la Segunda Guerra Mundial… veintinueve años después de que terminó."
     },
     {
-      "texto": "Se llamaba Hiroo Onoda, un oficial japonés enviado en mil novecientos cuarenta y cuatro a la isla de Lubang, en Filipinas.",
-      "emoji": "🏝️"
+      "texto": "Se llamaba Hiroo Onoda. En mil novecientos cuarenta y cuatro, Japón lo envió a la isla de Lubang, en Filipinas."
     },
     {
-      "texto": "Su orden era clara: nunca rendirse. Y la cumplió al pie de la letra.",
-      "emoji": "📜"
+      "texto": "Su orden era clara: nunca rendirse. Y la cumplió al pie de la letra."
     },
     {
-      "texto": "Vio folletos que anunciaban el fin de la guerra, pero pensó que eran propaganda enemiga.",
-      "emoji": "📄"
+      "texto": "Cuando la guerra terminó, le lanzaron folletos avisándole. Pero él creyó que eran propaganda enemiga… y siguió escondido en la selva."
     },
     {
-      "texto": "Recién en mil novecientos setenta y cuatro se rindió, cuando su antiguo comandante viajó hasta la isla para darle la orden en persona.",
-      "emoji": "🤝"
+      "texto": "Pasaron los años. Sus compañeros murieron o se rindieron. Él siguió solo."
     },
     {
-      "texto": "Entregó su espada, y su viejo rifle todavía funcionaba. Sígueme para más historias reales que parecen inventadas.",
-      "emoji": "⚔️"
+      "texto": "En mil novecientos setenta y cuatro, un joven aventurero japonés lo encontró. Pero Onoda se negó a rendirse… sin una orden de su superior."
+    },
+    {
+      "texto": "Así que trajeron a su antiguo comandante, ya convertido en vendedor de libros, para darle la orden en persona."
+    },
+    {
+      "texto": "Onoda entregó su espada. Su rifle todavía funcionaba."
+    },
+    {
+      "texto": "¿Tú habrías aguantado tanto? Déjamelo en los comentarios… y suscríbete para más historias reales que parecen inventadas."
     }
   ],
   "descripcion": "Siguió en guerra 29 años… porque nadie le avisó que terminó. ¿Lo sabías? Cuéntamelo en los comentarios 👇",

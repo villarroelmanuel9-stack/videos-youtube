@@ -1,5 +1,5 @@
 {
-  "titulo": "Una ola de melaza mató a 21 personas en Boston 🍯 #shorts",
+  "titulo": "Una ola de MELAZA arrasó una ciudad 🍯 #shorts",
   "gancho": "Una ciudad fue arrasada por una ola… de melaza",
   "voz": "es-MX-DaliaNeural",
   "velocidad": "+10%",
@@ -8,28 +8,31 @@
   "volumen_musica": 0.12,
   "escenas": [
     {
-      "texto": "En mil novecientos diecinueve, una ola de melaza arrasó un barrio de Boston.",
-      "emoji": "🍯"
+      "texto": "En mil novecientos diecinueve, una ola gigante arrasó un barrio de Boston… pero no era de agua. Era de melaza."
     },
     {
-      "texto": "Un tanque gigante con unos ocho millones de litros de melaza se reventó de repente.",
-      "emoji": "🛢️"
+      "texto": "En el puerto había un tanque enorme, con más de ocho millones de litros de melaza, que se usaba para fabricar alcohol."
     },
     {
-      "texto": "Una ola de varios metros de altura corrió por las calles a unos cincuenta kilómetros por hora.",
-      "emoji": "🌊"
+      "texto": "El tanque goteaba tanto que lo pintaron de café… para que no se notaran las fugas."
     },
     {
-      "texto": "Derribó edificios, arrastró vagones y atrapó a personas y caballos en el líquido pegajoso.",
-      "emoji": "🏚️"
+      "texto": "El quince de enero, el tanque reventó. Una ola de unos siete metros de altura corrió por las calles a unos cincuenta kilómetros por hora."
     },
     {
-      "texto": "Murieron veintiuna personas, y los rescatistas tardaron días en sacar a los heridos.",
-      "emoji": "🚑"
+      "texto": "Derribó edificios, arrastró vagones del tren, y atrapó a personas y caballos en el líquido pegajoso."
     },
     {
-      "texto": "Dicen que en días de calor, el barrio olió a melaza durante décadas. Sígueme para más historias reales que parecen inventadas.",
-      "emoji": "👃"
+      "texto": "Murieron veintiuna personas, y unas ciento cincuenta resultaron heridas. Con el frío, la melaza se espesó… y los rescatistas apenas podían moverse."
+    },
+    {
+      "texto": "Después de la tragedia, se crearon leyes para revisar los cálculos de este tipo de construcciones."
+    },
+    {
+      "texto": "Y dicen que, en los días de calor, el barrio olió a melaza durante décadas."
+    },
+    {
+      "texto": "¿Habías escuchado esta historia? Déjamelo en los comentarios… y suscríbete para más historias reales que parecen inventadas."
     }
   ],
   "descripcion": "Una ciudad fue arrasada por una ola… de melaza. ¿Lo sabías? Cuéntamelo en los comentarios 👇",

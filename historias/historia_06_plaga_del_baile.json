@@ -1,5 +1,5 @@
 {
-  "titulo": "La epidemia en la que la gente no podía dejar de bailar 💃 #shorts",
+  "titulo": "La epidemia en la que la gente NO podía dejar de bailar 💃 #shorts",
   "gancho": "En 1518 la gente bailó durante semanas sin poder parar",
   "voz": "es-ES-ElviraNeural",
   "velocidad": "+10%",
@@ -8,28 +8,28 @@
   "volumen_musica": 0.12,
   "escenas": [
     {
-      "texto": "En el verano de mil quinientos dieciocho, en Estrasburgo, una mujer salió a la calle y empezó a bailar.",
-      "emoji": "💃"
+      "texto": "En julio de mil quinientos dieciocho, en la ciudad de Estrasburgo, una mujer salió a la calle… y empezó a bailar."
     },
     {
-      "texto": "No paró en días. Y poco a poco, decenas de personas se unieron a ella.",
-      "emoji": "👥"
+      "texto": "No había música. No se detenía. Siguió bailando durante días."
     },
     {
-      "texto": "Según las crónicas, llegaron a ser unas cuatrocientas personas bailando sin control.",
-      "emoji": "🌀"
+      "texto": "En una semana, decenas de personas se unieron a ella. Según las crónicas, llegaron a ser cientos."
     },
     {
-      "texto": "Las autoridades creyeron que la cura era seguir bailando, así que contrataron músicos y construyeron un escenario.",
-      "emoji": "🎻"
+      "texto": "Las autoridades creyeron que la cura era… seguir bailando. Así que contrataron músicos y construyeron un escenario."
     },
     {
-      "texto": "Algunas crónicas dicen que hubo muertos por agotamiento, aunque los historiadores todavía lo discuten.",
-      "emoji": "😵"
+      "texto": "Pero fue peor: más gente empezó a bailar, y algunas crónicas hablan de muertos por agotamiento."
     },
     {
-      "texto": "Hoy se cree que pudo ser una histeria colectiva causada por el hambre y el estrés. Sígueme para más historias reales que parecen inventadas.",
-      "emoji": "🧠"
+      "texto": "Al final, llevaron a los bailarines a un santuario en las montañas, dedicado a San Vito, y les dieron cruces y zapatos rojos."
+    },
+    {
+      "texto": "Hoy muchos historiadores creen que fue una histeria colectiva, provocada por el hambre, las enfermedades y el miedo."
+    },
+    {
+      "texto": "¿Tú crees que fue una enfermedad o algo más? Déjamelo en los comentarios… y suscríbete para más historias reales que parecen inventadas."
     }
   ],
   "descripcion": "En 1518 la gente bailó durante semanas sin poder parar. ¿Lo sabías? Cuéntamelo en los comentarios 👇",

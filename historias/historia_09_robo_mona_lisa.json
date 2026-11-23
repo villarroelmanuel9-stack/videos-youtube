@@ -1,5 +1,5 @@
 {
-  "titulo": "La Mona Lisa se hizo famosa porque la robaron 🖼️ #shorts",
+  "titulo": "La Mona Lisa se hizo famosa porque la ROBARON 🖼️ #shorts",
   "gancho": "La Mona Lisa no era tan famosa… hasta que la robaron",
   "voz": "es-ES-AlvaroNeural",
   "velocidad": "+10%",
@@ -8,28 +8,31 @@
   "volumen_musica": 0.12,
   "escenas": [
     {
-      "texto": "La Mona Lisa no siempre fue la pintura más famosa del mundo. Su fama explotó por un robo.",
-      "emoji": "🖼️"
+      "texto": "La Mona Lisa no siempre fue la pintura más famosa del mundo… Se hizo famosa por un robo."
     },
     {
-      "texto": "En mil novecientos once, un trabajador italiano llamado Vincenzo Peruggia la sacó del Louvre escondida bajo su ropa.",
-      "emoji": "🕵️"
+      "texto": "En agosto de mil novecientos once, un trabajador italiano llamado Vincenzo Peruggia se escondió dentro del Louvre."
     },
     {
-      "texto": "Pasó más de un día hasta que alguien notó que faltaba.",
-      "emoji": "⏳"
+      "texto": "Al día siguiente, con el museo cerrado, descolgó el cuadro, lo escondió bajo su bata de trabajo… y salió caminando por la puerta."
     },
     {
-      "texto": "La policía incluso interrogó a Pablo Picasso como sospechoso.",
-      "emoji": "🎨"
+      "texto": "Nadie se dio cuenta hasta el otro día."
     },
     {
-      "texto": "Peruggia la tuvo escondida en su casa durante dos años, hasta que intentó venderla en Florencia y lo atraparon.",
-      "emoji": "🚔"
+      "texto": "El robo salió en periódicos de todo el mundo. La policía incluso interrogó a Pablo Picasso como sospechoso."
     },
     {
-      "texto": "El escándalo salió en periódicos de todo el mundo, y desde entonces todos quisieron verla. Sígueme para más historias reales que parecen inventadas.",
-      "emoji": "🌍"
+      "texto": "Y miles de personas hicieron fila en el Louvre… solo para ver el espacio vacío en la pared."
+    },
+    {
+      "texto": "Peruggia la tuvo escondida en su casa durante dos años, hasta que intentó venderla a un comerciante de arte en Florencia, que avisó a la policía."
+    },
+    {
+      "texto": "Cuando la Mona Lisa volvió al Louvre, ya era la pintura más famosa del planeta."
+    },
+    {
+      "texto": "¿La has visto en persona? Déjamelo en los comentarios… y suscríbete para más historias reales que parecen inventadas."
     }
   ],
   "descripcion": "La Mona Lisa no era tan famosa… hasta que la robaron. ¿Lo sabías? Cuéntamelo en los comentarios 👇",
