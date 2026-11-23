@@ -716,6 +716,74 @@ def escribir_wav(ruta, x):
         w.writeframes((np.clip(x, -1, 1) * 32767).astype(np.int16).tobytes())
 
 
+
+# =========================================================================== #
+# SINCRONIZAR CON TU PROPIO AUDIO (reconocimiento de voz con faster-whisper)
+# =========================================================================== #
+def _norm(p):
+    import unicodedata
+    p = unicodedata.normalize("NFD", p.lower())
+    return "".join(c for c in p if c.isalnum())
+
+
+def alinear_audio(ruta, escenas_cfg):
+    """Devuelve escenas con inicio/dur/palabras sincronizadas a la voz real."""
+    import difflib
+    dur_total = duracion_audio(Path(ruta))
+    guion = []  # (escena, palabra)
+    for i, s in enumerate(escenas_cfg):
+        guion += [(i, w) for w in s["texto"].split()]
+    tiempos = [None] * len(guion)
+    try:
+        from faster_whisper import WhisperModel
+        crudo = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(ruta), "-ac", "1", "-ar", "16000",
+                                "-f", "f32le", "-"], capture_output=True, check=True).stdout
+        print("   · reconociendo tu voz para sincronizar subtítulos (puede tardar un minuto)...")
+        modelo = WhisperModel("small", device="cpu", compute_type="int8")
+        segs, _ = modelo.transcribe(np.frombuffer(crudo, np.float32), language="es", word_timestamps=True)
+        oidas = [(x.word.strip(), x.start, x.end) for sg in segs for x in sg.words]
+        sm = difflib.SequenceMatcher(None, [_norm(w) for _, w in guion], [_norm(w) for w, _, _ in oidas],
+                                     autojunk=False)
+        for a, b, n in sm.get_matching_blocks():
+            for k in range(n):
+                tiempos[a + k] = (oidas[b + k][1], oidas[b + k][2])
+    except Exception as e:  # noqa: BLE001
+        print(f"   · sin reconocimiento de voz ({type(e).__name__}); reparto por longitud del texto")
+    # rellenar palabras no reconocidas interpolando entre vecinas
+    conocidos = [i for i, x in enumerate(tiempos) if x]
+    if not conocidos:
+        total_chars = sum(len(w) + 1 for _, w in guion)
+        t = 0.0
+        for i, (_, w) in enumerate(guion):
+            d = dur_total * (len(w) + 1) / total_chars
+            tiempos[i] = (t, t + d)
+            t += d
+    else:
+        bordes = [(-1, (0.0, 0.0))] + [(i, tiempos[i]) for i in conocidos] + [(len(guion), (dur_total, dur_total))]
+        for (ia, ta), (ib, tb) in zip(bordes, bordes[1:]):
+            hueco = list(range(ia + 1, ib))
+            if not hueco:
+                continue
+            t0, t1 = ta[1], tb[0]
+            pesos = [len(guion[i][1]) + 1 for i in hueco]
+            acc = t0
+            for i, w in zip(hueco, pesos):
+                d = (t1 - t0) * w / sum(pesos)
+                tiempos[i] = (acc, acc + d)
+                acc += d
+    escenas = []
+    for i, s in enumerate(escenas_cfg):
+        idx = [k for k, (e, _) in enumerate(guion) if e == i]
+        ini = 0.0 if i == 0 else tiempos[idx[0]][0] - 0.12
+        escenas.append(dict(s, inicio=ini, palabras=[], _idx=idx))
+    for i, e in enumerate(escenas):
+        fin = escenas[i + 1]["inicio"] if i + 1 < len(escenas) else dur_total + 0.3
+        e["dur"] = fin - e["inicio"]
+        e["palabras"] = [Palabra(guion[k][1], tiempos[k][0] - e["inicio"], tiempos[k][1] - e["inicio"])
+                         for k in e.pop("_idx")]
+    return escenas
+
+
 # =========================================================================== #
 # MONTAJE
 # =========================================================================== #
@@ -729,12 +797,8 @@ def generar(ruta_json: Path, audio_usuario: str | None = None):
         escenas = []
         t = 0.0
         if audio_usuario:
-            dur_total = duracion_audio(Path(audio_usuario))
-            largos = [len(s["texto"]) for s in cfg["escenas"]]
-            for s, L in zip(cfg["escenas"], largos):
-                d = dur_total * L / sum(largos)
-                escenas.append(dict(s, inicio=t, dur=d, palabras=tiempos_estimados(s["texto"], d)))
-                t += d
+            escenas = alinear_audio(audio_usuario, cfg["escenas"])
+            t = escenas[-1]["inicio"] + escenas[-1]["dur"]
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", audio_usuario, "-ar", str(SR), "-ac", "2",
                             str(tmp / "voz.wav")], check=True)
         else:
