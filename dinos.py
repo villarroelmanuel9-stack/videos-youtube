@@ -647,7 +647,8 @@ def tarjeta(img, t, t0, lado, y, titulo, valor, color=AMARILLO, emoji=None, dur=
     salida = 1.0 if dur is None else max(0.0, min(1.0, (t0 + dur + 0.3 - t) / 0.3))
     fv, ft = fuente(68), fuente(30)
     d = ImageDraw.Draw(img)
-    w = int(ancho or max(d.textlength(valor, font=fv), d.textlength(titulo, font=ft)) + 90 + (110 if emoji else 0))
+    w = int(ancho or max(d.textlength(valor, font=fv), d.textlength(titulo.upper(), font=ft)) + 90 +
+            (110 if emoji else 0))
     h = 170
     margen = 46
     if lado == "izq":
