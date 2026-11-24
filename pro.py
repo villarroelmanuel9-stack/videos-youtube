@@ -381,8 +381,11 @@ def bandera(img, x, y, w, h, t, tipo="chile", fase=0.0):
             d.rectangle((x0, 40 + dy + h / 2, x1 + 1, 40 + dy + h), fill=(214, 40, 50))
             if u <= 1 / 3:
                 cx, cy = 20 + w / 6, 40 + h / 4
-                if x0 <= cx <= x1 + 1:
-                    d.regular_polygon((cx, cy + dy, h / 8), 5, fill=(255, 255, 255))
+                if x0 <= cx < x1:
+                    R, r_ = h / 7, h / 17
+                    d.polygon([(cx + (R if k % 2 == 0 else r_) * math.cos(-math.pi / 2 + k * math.pi / 5),
+                                cy + dy + (R if k % 2 == 0 else r_) * math.sin(-math.pi / 2 + k * math.pi / 5))
+                               for k in range(10)], fill=(255, 255, 255))
         elif tipo == "alemania":
             for k, c in enumerate(((20, 20, 20), (245, 245, 245), (214, 40, 50))):
                 d.rectangle((x0, 40 + dy + h * k / 3, x1 + 1, 40 + dy + h * (k + 1) / 3), fill=c)
