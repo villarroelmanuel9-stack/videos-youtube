@@ -61,3 +61,11 @@ Notas que se aplican a cada video nuevo (se actualizan después de cada historia
 - Glifos raros: usar DejaVu (la fuente de máquina no los tiene y salen cuadrados).
 - Lo que se vea en el primer segundo tiene que estar en pantalla desde el fotograma 1 (el avión entraba tarde).
 - Render: ~3 min por video de 25–30 s con acabado; 3 en paralelo con 4 núcleos. Peso ~6 MB (crf 25).
+- **Basarse en lo real** (pedido del usuario): cada misterio tiene su ficha en `mis_kits.DETALLES` con el modelo y
+  color reales del vehículo (Avenger azul marino en formación de 5, Boeing 777 con franjas roja y azul, Lancastrian
+  sobre los Andes, goleta de 5 palos con el faro en espiral de Hatteras…), la época de la ropa (parka roja de Paula
+  Welden, fedora de los años 40), el lugar (desierto, fondo marino, estación de tren, casa en llamas) y el objeto
+  histórico (impresión «6EQUJ5», disco de Festo, diamante Hope). Sprites en `mis_reales.py`.
+- El vehículo o el objeto real **abre** el video; dos videos del mismo tema nunca repiten el orden de escenas.
+- Sonido por escena (no un ambiente fijo para todo el video): sonar, morse, crujido de madera, gaviotas, bocina de
+  niebla, goteo, papel, búho, fuego, tren, burbujas… siempre por debajo de la voz (informe de mezcla «OK»).

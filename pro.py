@@ -527,12 +527,102 @@ def sfx(tipo, dur, rng):
         x = ruido_filtrado(m, 18, rng) * 1.4 * mod * 0.07 * fade
     elif tipo == "explosion_lejana":
         x = ruido_filtrado(m, 150, rng) * 5 * np.exp(-tt * 2) * 0.15
+    # ---- efectos de la serie de misterios ----
+    elif tipo == "ping":  # radar / sonar
+        x = (np.sin(2 * np.pi * 1180 * tt) + 0.3 * np.sin(2 * np.pi * 2360 * tt)) * np.exp(-tt * 5) * 0.11
+    elif tipo == "morse":  # S.O.S. repetido
+        x = np.zeros(m)
+        t0 = 0.0
+        while t0 < dur - 0.3:
+            for largo in (0.07, 0.07, 0.07, 0.21, 0.21, 0.21, 0.07, 0.07, 0.07):
+                a0, a1 = int(t0 * SR), int(min(dur, t0 + largo) * SR)
+                x[a0:a1] = np.sin(2 * np.pi * 720 * tt[a0:a1])
+                t0 += largo + 0.07
+            t0 += 0.45
+        x = x * 0.05
+    elif tipo == "whoosh":
+        r = ruido_filtrado(m, 6, rng) * 2.4
+        x = r * np.sin(np.linspace(0, np.pi, m)) ** 3 * 0.05
+    elif tipo == "drone":  # tensión grave
+        lfo = 0.6 + 0.4 * np.sin(2 * np.pi * 0.12 * tt)
+        x = (np.sin(2 * np.pi * 55 * tt) + 0.5 * np.sin(2 * np.pi * 82.4 * tt + 1) + 0.25 *
+             np.sin(2 * np.pi * 110.5 * tt) + ruido_filtrado(m, 200, rng) * 6) * lfo * 0.035 * fade
+    elif tipo == "crujido":  # madera que cruje (barco, casa vieja)
+        f = 70 + 40 * np.sin(2 * np.pi * 0.9 * tt) + rng.normal(0, 6, m).cumsum() * 0.002
+        fase = 2 * np.pi * np.cumsum(f) / SR
+        x = np.sign(np.sin(fase)) * (0.5 + 0.5 * np.sin(fase * 0.5)) * np.sin(np.pi * np.clip(tt / dur, 0, 1)) * 0.03
+        x = np.convolve(x, np.ones(12) / 12, mode="same")
+    elif tipo == "goteo":  # gotas en una cueva
+        x = np.zeros(m)
+        t0 = 0.2
+        while t0 < dur - 0.1:
+            a0 = int(t0 * SR)
+            k = np.arange(int(0.05 * SR)) / SR
+            gota = np.sin(2 * np.pi * (1600 - 9000 * k) * k) * np.exp(-k * 70)
+            x[a0:a0 + len(gota)] += gota[:len(x[a0:a0 + len(gota)])]
+            t0 += 0.5 + rng.random() * 0.9
+        x = x * 0.09
+    elif tipo == "papel":
+        r = rng.normal(0, 1, m)
+        r = r - np.convolve(r, np.ones(6) / 6, mode="same")
+        x = r * np.exp(-tt * 6) * np.minimum(1, tt / 0.02) * 0.04
+    elif tipo == "gaviotas":
+        x = np.zeros(m)
+        for t0 in (0.1, 0.6, 1.4):
+            a0 = int(t0 * SR)
+            k = np.arange(int(0.4 * SR)) / SR
+            f = 1500 - 1300 * k + 60 * np.sin(2 * np.pi * 14 * k)
+            c = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.sin(np.pi * k / 0.4)
+            x[a0:a0 + len(c)] += c[:len(x[a0:a0 + len(c)])]
+        x = x * 0.035
+    elif tipo == "buho":
+        x = np.zeros(m)
+        for t0, l in ((0.1, 0.25), (0.5, 0.5)):
+            a0 = int(t0 * SR)
+            k = np.arange(int(l * SR)) / SR
+            c = np.sin(2 * np.pi * (390 - 30 * k) * k) * np.sin(np.pi * k / l)
+            x[a0:a0 + len(c)] += c[:len(x[a0:a0 + len(c)])]
+        x = x * 0.05
+    elif tipo == "sirena_niebla":  # bocina de faro en la niebla
+        env = np.minimum(1, tt / 0.3) * np.minimum(1, np.maximum(0, (dur - tt) / 0.6))
+        x = sum(np.sin(2 * np.pi * 108 * h * tt) / h for h in (1, 2, 3, 4)) * env * 0.05
+    elif tipo == "zumbido":
+        x = (np.sin(2 * np.pi * 60 * tt) + 0.4 * np.sin(2 * np.pi * 120 * tt) + 0.2 * np.sin(2 * np.pi * 180 * tt)) * \
+            (0.7 + 0.3 * np.sin(2 * np.pi * 0.2 * tt)) * 0.03 * fade
+    elif tipo == "fuego":
+        x = ruido_filtrado(m, 30, rng) * 3 * 0.05 * fade
+        for _ in range(int(dur * 9)):
+            a0 = rng.integers(0, max(1, m - 400))
+            x[a0:a0 + 300] += rng.normal(0, 0.04, 300) * np.exp(-np.arange(300) / 60)
+    elif tipo == "tren":  # traqueteo y silbato
+        chug = (np.sin(2 * np.pi * 3.2 * tt) > 0.6).astype(float)
+        x = ruido_filtrado(m, 40, rng) * 4 * chug * 0.05 * fade
+        k = tt < 1.2
+        x[k] += (np.sin(2 * np.pi * 880 * tt[k]) + np.sin(2 * np.pi * 1100 * tt[k])) * 0.025 * \
+            np.sin(np.pi * tt[k] / 1.2)
+    elif tipo == "jet":
+        x = (ruido_filtrado(m, 50, rng) * 5 + 0.15 * np.sin(2 * np.pi * 3100 * tt)) * 0.05 * fade
+    elif tipo == "helice":
+        mod = 0.6 + 0.4 * np.sin(2 * np.pi * 34 * tt)
+        x = (ruido_filtrado(m, 30, rng) * 3 * mod + 0.3 * np.sin(2 * np.pi * 88 * tt)) * 0.06 * fade
+    elif tipo == "burbujas":
+        x = np.zeros(m)
+        for _ in range(int(dur * 6)):
+            a0 = int(rng.random() * max(1, m - 3000))
+            k = np.arange(2500) / SR
+            c = np.sin(2 * np.pi * (300 + 6000 * k) * k) * np.exp(-k * 50)
+            x[a0:a0 + 2500] += c[:len(x[a0:a0 + 2500])]
+        x = x * 0.05
+    elif tipo == "campana":
+        x = sum(np.sin(2 * np.pi * f * tt) * a for f, a in ((440, 1), (1108, 0.5), (1760, 0.25))) * \
+            np.exp(-tt * 1.5) * 0.05
     else:
         return sfx_base(tipo, dur, rng)
     return x.astype(np.float32)
 
 
-AMBIENTES = {"lluvia", "viento", "olas", "rio", "insectos", "multitud", "ducha", "camion"}
+AMBIENTES = {"lluvia", "viento", "olas", "rio", "insectos", "multitud", "ducha", "camion", "drone", "zumbido",
+             "fuego", "jet", "helice"}
 
 
 def reverb(x, wet=0.22, dur=1.5, semilla=3):

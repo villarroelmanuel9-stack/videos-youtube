@@ -31,6 +31,8 @@ from dinos import TINTA, _grad, capsula, catmull, elipse, oscuro, claro, radius_
 from generar_short import render_emoji
 from realista import LienzoReal
 from verificar_misterios import cargar_guiones
+import mis_reales as R
+from mis_kits import DETALLES, KITS_EXTRA, figura, nubes, objeto, personas_de
 
 RAIZ = Path(__file__).resolve().parent
 ESTILO = {"modo": "color", "color": (255, 200, 80)}
@@ -45,6 +47,7 @@ PALETAS = {
     "frio": [(0, (60, 80, 120)), (0.55, (176, 170, 184)), (1, (176, 170, 184))],
     "verde": [(0, (8, 22, 20)), (0.6, (28, 56, 50)), (1, (28, 56, 50))],
     "purpura": [(0, (10, 8, 26)), (0.6, (54, 36, 70)), (1, (54, 36, 70))],
+    "dia": [(0, (52, 112, 186)), (0.55, (150, 196, 230)), (1, (196, 222, 236))],
 }
 
 
@@ -157,46 +160,87 @@ def ojo_brillo(img, x, y, t, col="#ffd060"):
 # KITS DE ESCENA: cada uno devuelve (fondo, dinamico(img, t, dur))
 # =========================================================================== #
 def kit_mar(ctx, var):
-    r, paleta = ctx["rnd"], ("tormenta" if var == 0 else "niebla" if var == 1 else "noche")
-    tipo_barco = "buque" if re.search(r"buque|transatl|vapor|marina|carguero|baychimo|cyclops|waratah", ctx["txt"]) \
-        else "velero"
+    r, det = ctx["rnd"], ctx["det"]
+    base = det.get("hora")
+    paleta = (base if var == 0 and base else ["tormenta", "niebla", "noche", "atardecer", "dia"][(ctx["n"] + var) % 5])
+    if base == "frio" or det.get("bar") == "franklin":
+        paleta = "frio"
+    modelo = det.get("bar") or ("vapor_waratah" if re.search(r"buque|vapor|carguero|transatl", ctx["txt"])
+                                else "bergantin")
+    agua = {"niebla": (92, 104, 112), "dia": (40, 100, 140), "atardecer": (70, 64, 90), "frio": (150, 170, 186)}
+    agua = agua.get(paleta, (22, 34, 46))
 
     def dib(L):
         L.img.alpha_composite(_grad(W * 2, H * 2, PALETAS[paleta]))
-        mar(L, 1150, (22, 34, 46) if paleta != "niebla" else (92, 104, 112))
+        mar(L, 1150, agua)
+        if paleta == "frio":  # témpanos y hielo del Ártico
+            rr = random.Random(ctx["n"])
+            for _ in range(7):
+                x = rr.uniform(-50, W + 50)
+                L.forma([(x - 160, 1180), (x - 120, 1120), (x + 90, 1110), (x + 170, 1180)], (232, 240, 248),
+                        suave=False, intensidad=0.12, textura=0.06)
+            L.forma([(-50, 1500), (W + 50, 1460), (W + 50, H), (-50, H)], (226, 236, 244), suave=False, borde=False,
+                    textura=0.08)
     fondo = full(dib)
-    bx = r.uniform(380, 700)
-    capa = LienzoReal(W, H, 0, 0)
-    (buque if tipo_barco == "buque" else velero)(capa, 0 + 540, 640, 0.9 if tipo_barco == "buque" else 1.0,
-                                                    (30, 30, 36) if paleta != "niebla" else (70, 72, 78))
-    barco = capa.final()
+    if paleta == "atardecer":
+        pegar_glow(fondo, 760, 1130, 300, "#ffb070", 0.8)
+    elif paleta == "dia":
+        pegar_glow(fondo, 840, 300, 160, "#fff6d0", 0.8)
+    barco = R.barco_real(modelo, sil=(84, 88, 94) if paleta == "niebla" else None)
+    escala = 0.78
+    barco = barco.resize((int(barco.width * escala), int(barco.height * escala)), Image.LANCZOS)
+    escora = det.get("escora", 0)
+    bx = r.uniform(400, 680)
+    deriva = 10 if modelo != "franklin" else 0
 
     def din(img, t, dur):
-        bob = 10 * math.sin(t * 1.4)
-        img.alpha_composite(barco.rotate(2.5 * math.sin(t * 1.1), resample=Image.BICUBIC),
-                            (int(bx - 540 + t * 12), int(1160 - 640 + bob)))
-        olas(img, t, 1170, col=(120, 150, 180) if paleta != "niebla" else (200, 210, 220), alfa=120)
+        nubes(img, t, paleta, y=560, n=4, semilla=ctx["n"])
+        bob = 10 * math.sin(t * 1.4) if modelo != "franklin" else 0
+        b = barco.rotate(escora + 2.5 * math.sin(t * 1.1) * (deriva > 0), resample=Image.BICUBIC)
+        img.alpha_composite(b, (int(bx - b.width / 2 + t * deriva), int(1185 - b.height * 0.76 + bob)))
+        if modelo != "franklin":
+            olas(img, t, 1170, col=(120, 150, 180) if paleta not in ("niebla", "dia") else (220, 230, 240), alfa=120)
         if paleta == "tormenta":
             particulas(img, t, "lluvia", 90, viento=-300, alfa=190)
             for t0 in (0.5, dur * 0.6):
                 relampago(img, t, t0)
-        niebla(img, t, 1100, 0.45 if paleta == "niebla" else 0.25, n=9)
+        elif paleta == "frio":
+            particulas(img, t, "nieve", 70, viento=-160, alfa=220)
+        niebla(img, t, 1100, 0.5 if paleta == "niebla" else 0.2, n=9)
     return fondo, din
 
 
 def kit_avion(ctx, var):
-    r, n = ctx["rnd"], ctx["n"]
-    a_ = int(ctx["anio"] or 1970)
-    tipo = "helice" if a_ < 1950 or re.search(r"avioneta|helice|aviadora", ctx["txt"]) else \
-        ("electra" if a_ < 1975 else "727")
-    pal = ["noche", "tormenta", "atardecer", "niebla"][(n + var) % 4]
-    escuadra = bool(re.search(r"cinco aviones|escuadr|formacion", ctx["txt"]))
-    izquierda = n % 2 == 1  # dirección de vuelo distinta según el misterio
-    nubes_col = {"noche": "#3a4054", "tormenta": "#2c3038", "atardecer": "#c07a6a", "niebla": "#c8ccd0"}[pal]
+    r, n, det = ctx["rnd"], ctx["n"], ctx["det"]
+    modelo = det.get("av")
+    pal = det.get("hora") if (var == 0 and det.get("hora")) else ["noche", "tormenta", "atardecer", "niebla"][(n + var) % 4]
+    if var == 1 and pal == "dia":
+        pal = "niebla"
+    cuantos = det.get("nav", 1)
+    izquierda = n % 2 == 1 and modelo != "globo"
+    nubes_hora = {"noche": "noche", "tormenta": "noche"}.get(pal, pal)
+    fondo_tipo = det.get("fondo", "mar")
 
     def dib(L):
         L.img.alpha_composite(_grad(W * 2, H * 2, PALETAS[pal]))
-        mar(L, 1500, {"atardecer": (60, 50, 70), "niebla": (110, 118, 124)}.get(pal, (14, 22, 34)))
+        if fondo_tipo == "andes":
+            pro.montanas(L, 1700, [(150, 900, 700), (600, 1000, 820), (1000, 800, 640)], (90, 96, 116), nieve=True,
+                         borde=False)
+            L.forma([(-50, 1690), (W + 50, 1690), (W + 50, H), (-50, H)], (232, 238, 246), suave=False, borde=False)
+        elif fondo_tipo == "artico":
+            L.forma([(-50, 1450), (W + 50, 1420), (W + 50, H), (-50, H)], (226, 236, 244), suave=False, borde=False,
+                    textura=0.1)
+            rr = random.Random(2)
+            for _ in range(6):
+                x = rr.uniform(0, W)
+                L.forma([(x - 100, 1460), (x - 40, 1380), (x + 60, 1400), (x + 110, 1460)], (210, 224, 236),
+                        suave=False, intensidad=0.1)
+        else:
+            agua = {"atardecer": (60, 50, 70), "niebla": (110, 118, 124), "dia": (40, 104, 150)}.get(pal, (14, 22, 34))
+            mar(L, 1500, agua)
+            if det.get("isla"):  # isla Howland: diminuta y plana en medio del Pacífico
+                L.forma(catmull([(380, 1515), (470, 1490), (640, 1490), (720, 1515)], 4), (214, 196, 150),
+                        intensidad=0.1)
         if pal in ("noche", "tormenta"):
             rr = random.Random(n)
             for _ in range(110):
@@ -210,35 +254,58 @@ def kit_avion(ctx, var):
         pegar_glow(fondo, mx, 1560, 220, "#9fb0d0", 0.35)
     elif pal == "atardecer":
         pegar_glow(fondo, 540, 1450, 380, "#ffb070", 0.7)
-    av = pro.avion(tipo)
-    oscuro_ = Image.new("RGBA", av.size, (20, 24, 34, 255))
-    oscuro_.putalpha(av.getchannel("A"))
-    sil = Image.blend(av, oscuro_, {"atardecer": 0.6, "niebla": 0.3}.get(pal, 0.45))
-    k = 0.5 if escuadra else 1.25
-    sil = sil.resize((int(sil.width * k), int(sil.height * k)), Image.LANCZOS)
+    elif pal == "dia":
+        pegar_glow(fondo, 860, 260, 170, "#fff6d0", 0.9)
+    if modelo:
+        av = R.avion_real(modelo)
+        ancho_obj = {"globo": 380}.get(modelo, 760 if cuantos == 1 else 330)
+    else:
+        a_ = int(ctx["anio"] or 1970)
+        av = pro.avion("helice" if a_ < 1950 else ("electra" if a_ < 1975 else "727"))
+        ancho_obj = 760 if cuantos == 1 else 330
+    k = ancho_obj / av.width
+    sombra_luz = {"noche": 0.45, "tormenta": 0.5, "niebla": 0.25, "atardecer": 0.3, "dia": 0.0, "frio": 0.1}[pal]
+    sil = av.resize((int(av.width * k), int(av.height * k)), Image.LANCZOS)
+    if sombra_luz:
+        osc = Image.new("RGBA", sil.size, (20, 24, 34, 255))
+        osc.putalpha(sil.getchannel("A"))
+        sil = Image.blend(sil, osc, sombra_luz)
     if izquierda:
         sil = sil.transpose(Image.FLIP_LEFT_RIGHT)
-    y0 = r.uniform(900, 1120)
-    formacion = [(0, 0), (-190, -110), (-190, 110), (-380, -220), (-380, 220)] if escuadra else [(0, 0)]
+    y0 = r.uniform(820, 1000) if modelo != "globo" else 760
+    formacion = [(0, 0), (-210, -120), (-210, 120), (-420, -240), (-420, 240)][:cuantos]
 
     def din(img, t, dur):
-        for i in range(5):
-            x = (i * 300 - t * 50) % (W + 600) - 300
-            pegar_glow(img, x, 700 + (i % 3) * 200, 300, nubes_col, 0.7)
-        avance = W * 0.75 * (t / max(dur, 0.1))
-        x = (W - 260 - avance) if izquierda else (260 + avance)
-        sgn = -1 if izquierda else 1
-        for j, (dx, dy) in enumerate(formacion):
-            xx, yy = x + dx * sgn, y0 + dy + 8 * math.sin(t * 1.3 + j)
-            img.alpha_composite(sil.rotate(3 * math.sin(t * 0.9 + j), resample=Image.BICUBIC),
-                                (int(xx - sil.width / 2), int(yy - sil.height / 2)))
-            if int(t * 2 + j) % 2 == 0:
-                pegar_glow(img, xx + sgn * sil.width * 0.42, yy, 22 * k, "#ff3030", 1.0)
+        nubes(img, t, nubes_hora, y=760, n=5, semilla=n)
+        if modelo == "globo":
+            x = 540 + 40 * math.sin(t * 0.3)
+            yy = y0 + t * 14 + 10 * math.sin(t)
+            img.alpha_composite(sil, (int(x - sil.width / 2), int(yy - sil.height / 2)))
+        else:
+            avance = W * 0.7 * (t / max(dur, 0.1))
+            x = (W - 300 - avance) if izquierda else (300 + avance)
+            sgn = -1 if izquierda else 1
+            for j, (dx, dy) in enumerate(formacion):
+                xx, yy = x + dx * sgn, y0 + dy + 8 * math.sin(t * 1.3 + j)
+                img.alpha_composite(sil.rotate(2.5 * math.sin(t * 0.9 + j), resample=Image.BICUBIC),
+                                    (int(xx - sil.width / 2), int(yy - sil.height / 2)))
+                if pal in ("noche", "tormenta", "niebla") and int(t * 2 + j) % 2 == 0:
+                    pegar_glow(img, xx + sgn * sil.width * 0.1, yy - sil.height * 0.1, 16, "#ff3030", 1.0)
+            if det.get("ovni") == "verde":  # Valentich: una luz verde lo seguía
+                pegar_glow(img, x - sgn * 260 + 40 * math.sin(t * 1.7), y0 - 220 + 30 * math.sin(t * 2.3), 90,
+                           "#60ff80", 0.85)
+            elif det.get("ovni") == "tictac":  # Nimitz: objeto blanco con forma de pastilla
+                ox, oy = x + sgn * 360, y0 + 260 + 20 * math.sin(t * 3)
+                ImageDraw.Draw(img).rounded_rectangle((ox - 90, oy - 26, ox + 90, oy + 26), radius=26,
+                                                      fill=(246, 246, 246), outline=(200, 200, 206), width=3)
+                pegar_glow(img, ox, oy, 120, "#ffffff", 0.35)
         if pal == "tormenta":
             particulas(img, t, "lluvia", 80, viento=-400, alfa=160)
             relampago(img, t, dur * 0.5)
         elif pal == "niebla":
             niebla(img, t, 1100, 0.5, n=10)
+        elif pal == "frio":
+            particulas(img, t, "nieve", 70, viento=-300, alfa=220)
     return fondo, din
 
 
@@ -292,7 +359,8 @@ def kit_radio(ctx, var):
             L.forma(elipse(x, 1200, 40, 40), (180, 160, 120), intensidad=0.3)
         L.forma([(260, 560), (820, 560), (820, 780), (260, 780)], (30, 34, 32), suave=False, intensidad=0.08)
     fondo = full(dib)
-    texto = "· · · — — — · · ·" if var != 1 or not ctx["canva"] else ctx["canva"].strip("¿?«»").upper()[:18]
+    texto = ctx["det"].get("radio") or ("· · · — — — · · ·" if var != 1 or not ctx["canva"] else
+                                        ctx["canva"].strip("¿?«»").upper()[:18])
 
     def din(img, t, dur):
         d = ImageDraw.Draw(img)
@@ -319,10 +387,18 @@ def kit_faro(ctx, var):
         mar(L, 1250, (20, 30, 42))
         L.forma(catmull([(160, 1300), (300, 1080), (700, 1040), (900, 1150), (980, 1300)], 4), (50, 48, 50),
                 intensidad=0.1, textura=0.1)
-        L.forma([(520, 1060), (560, 520), (640, 520), (680, 1060)], (226, 222, 214), suave=False, intensidad=0.1)
-        for k in range(3):
-            L.forma([(530, 900 - k * 140), (670, 900 - k * 140), (668, 860 - k * 140), (532, 860 - k * 140)],
-                    (170, 40, 40), suave=False, borde=False)
+        torre = L.forma([(520, 1060), (560, 520), (640, 520), (680, 1060)], (226, 222, 214), suave=False,
+                        intensidad=0.1)
+        estilo = ctx["det"].get("faro", "rojo")
+        if estilo == "espiral":
+            for k in range(-3, 6):
+                y = 560 + k * 130
+                L.forma([(480, y), (720, y - 120), (720, y - 50), (480, y + 70)], (30, 30, 34), suave=False,
+                        borde=False, clip=torre, sombra=False)
+        elif estilo == "rojo":
+            for k in range(3):
+                L.forma([(530, 900 - k * 140), (670, 900 - k * 140), (668, 860 - k * 140), (532, 860 - k * 140)],
+                        (170, 40, 40), suave=False, borde=False)
         L.forma([(540, 520), (660, 520), (650, 440), (550, 440)], (40, 40, 46), suave=False)
         L.forma([(530, 440), (600, 380), (670, 440)], (60, 60, 66), suave=False)
     fondo = full(dib)
@@ -383,7 +459,25 @@ def kit_luces(ctx, var):
     r = ctx["rnd"]
     pts = [(r.uniform(150, 930), r.uniform(450, 1000), r.uniform(0, 6)) for _ in range(5)]
 
+    tipo_ovni = ctx["det"].get("ovni")
+
     def din(img, t, dur):
+        if tipo_ovni == "v":  # luces de Phoenix: siete luces en V sobre la ciudad
+            for k in range(7):
+                dx = (k - 3) * 110
+                pegar_glow(img, 540 + dx + t * 10, 600 + abs(dx) * 0.5, 40, "#ffcf80", 0.9)
+            for k in range(40):
+                pegar_glow(img, 20 + k * 27, 1360 + (k % 3) * 8, 10, "#ffd080", 0.6)
+            return
+        if tipo_ovni == "verde":
+            pegar_glow(img, 540 + 160 * math.sin(t * 0.8), 700 + 60 * math.sin(t * 1.9), 140, "#60ff80", 0.85)
+            return
+        if tipo_ovni == "tictac":
+            x, y = 540 + 220 * math.sin(t * 1.4), 800 + 50 * math.sin(t * 2.2)
+            ImageDraw.Draw(img).rounded_rectangle((x - 110, y - 32, x + 110, y + 32), radius=32,
+                                                  fill=(246, 246, 246), outline=(200, 200, 206), width=3)
+            pegar_glow(img, x, y, 160, "#ffffff", 0.3)
+            return
         if ovni:
             x, y = 540 + 200 * math.sin(t * 0.6), 700 + 40 * math.sin(t * 1.3)
             d = ImageDraw.Draw(img)
@@ -450,6 +544,13 @@ def kit_escritorio(ctx, var):
                 w = r.randint(40, 120)
                 d.line([(x + j * w / 8, y + 5 * math.sin(j * 1.7 + k)) for j in range(9)], fill=(40, 50, 90), width=4)
                 x += w + 16
+    obj_real = ctx["det"].get("obj") if var != 1 else None
+    if obj_real:
+        o = objeto(obj_real, random.Random(ctx["n"]))
+        if o is not None:
+            k = min(860 / o.width, 1000 / o.height)
+            hoja = o.resize((int(o.width * k), int(o.height * k)), Image.LANCZOS)
+            modo = "objeto"
     hoja = hoja.rotate(r.uniform(-6, 6), expand=True, resample=Image.BICUBIC)
 
     def din(img, t, dur):
@@ -459,7 +560,7 @@ def kit_escritorio(ctx, var):
         img.alpha_composite(hoja, (int(540 - hoja.width / 2), int(y - hoja.height / 2)))
         fl = 1 + 0.1 * math.sin(t * 11)
         pegar_glow(img, 150, 400, 90 * fl, "#ffcf7a", 0.8)
-        if modo == "simbolos":  # lupa recorriendo los símbolos
+        if modo in ("simbolos", "objeto"):  # lupa recorriendo los símbolos
             lx, ly = 540 + 220 * math.sin(t * 0.7), 1000 + 260 * math.sin(t * 0.5)
             d = ImageDraw.Draw(img)
             d.ellipse((lx - 120, ly - 120, lx + 120, ly + 120), outline=(200, 170, 110), width=14)
@@ -538,11 +639,13 @@ def kit_cueva(ctx, var):
 
 def kit_ruinas(ctx, var):
     txt = ctx["clave"]
-    tipo = ("tumba" if re.search(r"tumba", txt) else "piramide" if re.search(r"piramid|teotihuacan|esfinge|egipto|maya", txt) else
+    tipo = ctx["det"].get("rui") or ("tumba" if re.search(r"tumba", txt) else "piramide" if re.search(r"piramid|teotihuacan|esfinge|egipto|maya", txt) else
             "esfera" if re.search(r"esfera", txt) else
             "piedras" if re.search(r"stonehenge|piedra|gobekli|pilares", txt) else
             "cabeza" if re.search(r"moai|cabeza|estatua|olmeca", txt) else
             "esfera" if re.search(r"esfera", txt) else "columnas")
+    if tipo == "terrazas":
+        tipo = "piedras"
     pal = "atardecer" if var != 2 else "noche"
 
     def dib(L):
@@ -554,6 +657,90 @@ def kit_ruinas(ctx, var):
         piedra = (176, 150, 120) if pal != "noche" else (90, 84, 90)
         if tipo == "piramide":
             piramide(L, 540, 1260, 900, 620, piedra)
+        elif tipo == "escalonada":  # pirámide mesoamericana con escalinata y templo en la cima
+            for k in range(6):
+                w, y = 860 - k * 120, 1270 - k * 95
+                L.forma([(540 - w / 2, y), (540 + w / 2, y), (540 + w / 2 - 30, y - 95), (540 - w / 2 + 30, y - 95)],
+                        oscuro(piedra, 1 - k * 0.03), suave=False, intensidad=0.1, textura=0.16)
+            L.forma([(490, 1270), (590, 1270), (570, 700), (510, 700)], claro(piedra, 0.1), suave=False)
+            for y in range(720, 1270, 22):
+                L.linea([(505, y), (575, y)], oscuro(piedra, 0.8), 3)
+            L.forma([(460, 700), (620, 700), (610, 590), (470, 590)], oscuro(piedra, 0.9), suave=False)
+            L.forma([(515, 700), (565, 700), (565, 630), (515, 630)], (30, 22, 18), suave=False, borde=False)
+            if ctx["tema"] in ("selva", "selva_tesoro"):
+                rr = random.Random(3)
+                for _ in range(10):
+                    x = rr.choice((rr.uniform(-60, 220), rr.uniform(860, 1140)))
+                    L.forma(elipse(x, rr.uniform(900, 1250), rr.uniform(120, 200), rr.uniform(90, 140)),
+                            (40, 90, 54), intensidad=0.1, ancho=3)
+        elif tipo == "olmeca":  # cabeza colosal olmeca con casco
+            L.forma(catmull([(330, 1280), (310, 900), (380, 700), (540, 650), (700, 700), (770, 900), (750, 1280)], 3),
+                    (120, 110, 96), intensidad=0.16, textura=0.2)
+            L.forma(catmull([(320, 860), (360, 700), (540, 640), (720, 700), (760, 860), (540, 800)], 3),
+                    (104, 96, 84), intensidad=0.12, textura=0.2)
+            for x in (440, 640):
+                L.forma(elipse(x, 950, 50, 22), (80, 74, 64), intensidad=0.2)
+            L.forma(elipse(540, 1050, 60, 45), (110, 100, 88), intensidad=0.2)
+            L.forma(elipse(540, 1160, 110, 36), (86, 78, 68), intensidad=0.2)
+        elif tipo == "moai":  # moáis sobre su plataforma, mirando tierra adentro con el mar detrás
+            L.forma([(-50, 1150), (W + 50, 1150), (W + 50, 1250), (-50, 1250)], (50, 100, 140), suave=False,
+                    borde=False)
+            L.forma([(60, 1290), (1020, 1290), (1000, 1230), (80, 1230)], (110, 100, 96), suave=False,
+                    intensidad=0.1, textura=0.2)
+            for k, x in enumerate((220, 430, 640, 850)):
+                hh = 560 - (k % 2) * 60
+                L.forma([(x - 75, 1230), (x - 85, 1230 - hh * 0.55), (x - 65, 1230 - hh), (x + 65, 1230 - hh),
+                         (x + 85, 1230 - hh * 0.55), (x + 75, 1230)], (96, 86, 80), suave=False, intensidad=0.16,
+                        textura=0.22)
+                L.forma([(x - 70, 1230 - hh + 40), (x + 70, 1230 - hh + 40), (x + 66, 1230 - hh + 100),
+                         (x - 66, 1230 - hh + 100)], (70, 62, 58), suave=False, borde=False)
+                L.forma([(x - 14, 1230 - hh + 100), (x + 14, 1230 - hh + 100), (x + 22, 1230 - hh * 0.62),
+                         (x - 22, 1230 - hh * 0.62)], (110, 100, 92), suave=False)
+        elif tipo == "tpilares":  # Göbekli Tepe: pilares en T con relieves de animales
+            for k in range(5):
+                x = 140 + k * 200
+                L.forma([(x - 34, 1290), (x - 34, 900), (x + 34, 900), (x + 34, 1290)], piedra, suave=False,
+                        intensidad=0.14, textura=0.18)
+                L.forma([(x - 90, 900), (x + 90, 900), (x + 90, 820), (x - 90, 820)], piedra, suave=False,
+                        intensidad=0.14, textura=0.18)
+                L.linea(catmull([(x - 20, 1100), (x, 1060), (x + 20, 1100), (x, 1140)], 4), oscuro(piedra, 0.6), 4)
+        elif tipo == "estepa":  # estepa de Mongolia con yurtas
+            L.forma(catmull([(-50, 1250), (W + 50, 1230), (W + 50, H), (-50, H)], 3), (120, 140, 70), borde=False,
+                    textura=0.18)
+            for x, s_ in ((260, 1.0), (720, 0.7)):
+                L.forma([(x - 150 * s_, 1300), (x - 150 * s_, 1200), (x + 150 * s_, 1200), (x + 150 * s_, 1300)],
+                        (236, 230, 214), suave=False, intensidad=0.1)
+                L.forma([(x - 170 * s_, 1200), (x, 1110 - 20 * s_), (x + 170 * s_, 1200)], (210, 200, 180),
+                        suave=False, intensidad=0.1)
+                L.forma([(x - 30 * s_, 1300), (x + 30 * s_, 1300), (x + 30 * s_, 1220), (x - 30 * s_, 1220)],
+                        (160, 50, 40), suave=False)
+        elif tipo == "nazca":  # vista aérea del desierto con el colibrí
+            L.d.rectangle((0, 0, W * 2, H * 2), fill=(200, 160, 120))
+            for _ in range(60):
+                xx, yy = random.uniform(0, W), random.uniform(0, H)
+                L.circulo(xx, yy, random.uniform(3, 8), (176, 136, 100), borde=False)
+            cuerpo = [(540, 420), (560, 600), (600, 900), (590, 1200), (540, 1500), (490, 1200), (480, 900),
+                      (520, 600)]
+            L.linea(catmull(cuerpo, 6), (240, 220, 190), 10)
+            L.linea([(540, 420), (540, 200)], (240, 220, 190), 10)  # pico
+            for lado in (-1, 1):
+                ala = [(540 + lado * 40, 820)] + [(540 + lado * (120 + k * 70), 820 - k * 80 + (k % 2) * 60)
+                                                  for k in range(6)] + [(540 + lado * 60, 1000)]
+                L.linea(ala, (240, 220, 190), 10)
+            for k in range(5):
+                L.linea([(480 + k * 30, 1500), (420 + k * 50, 1760)], (240, 220, 190), 8)
+        elif tipo == "torre":  # Torre de Londres
+            L.forma([(330, 1290), (330, 640), (750, 640), (750, 1290)], (196, 184, 160), suave=False,
+                    intensidad=0.1, textura=0.18)
+            for x in (300, 700):
+                L.forma([(x, 640), (x + 80, 640), (x + 80, 460), (x, 460)], (196, 184, 160), suave=False,
+                        intensidad=0.12, textura=0.16)
+                L.forma([(x - 6, 470), (x + 40, 400), (x + 86, 470)], (60, 70, 80), suave=False)
+            for k in range(8):
+                L.forma([(330 + k * 54, 640), (360 + k * 54, 640), (360 + k * 54, 600), (330 + k * 54, 600)],
+                        (196, 184, 160), suave=False)
+            for x, y in ((420, 800), (600, 800), (420, 1000), (600, 1000)):
+                L.forma([(x, y), (x + 40, y), (x + 40, y + 90), (x, y + 90)], (30, 26, 24), suave=False, borde=False)
         elif tipo == "piedras":
             for k in range(5):
                 x = 160 + k * 190
@@ -610,36 +797,68 @@ def kit_ruinas(ctx, var):
 
 
 def kit_calle(ctx, var):
-    pal = "niebla" if var == 0 else "noche"
-    victoriana = bool(re.search(r"18\d\d|londres|whitechapel", ctx["txt"]))
+    det = ctx["det"]
+    epoca = det.get("epoca", 1950)
+    pal = "niebla" if var == 0 else ("frio" if det.get("nieve") else "noche")
+    victoriana = epoca < 1915
 
     def dib(L):
         L.img.alpha_composite(_grad(W * 2, H * 2, PALETAS[pal]))
         col = (60, 58, 64) if pal == "noche" else (110, 108, 112)
+        ladrillo = (104, 62, 50) if victoriana else col
         for lado in (0, 1):
             x0 = 0 if lado == 0 else W - 330
-            L.forma([(x0, 1500), (x0, 300), (x0 + 330, 420 if lado == 0 else 300), (x0 + 330, 1500)], col,
-                    suave=False, intensidad=0.08, textura=0.12)
+            L.forma([(x0, 1500), (x0, 300), (x0 + 330, 420 if lado == 0 else 300), (x0 + 330, 1500)],
+                    oscuro(ladrillo, 0.8) if pal == "noche" else ladrillo, suave=False, intensidad=0.08, textura=0.16)
+            if victoriana:
+                for y in range(320, 1500, 40):
+                    L.linea([(x0, y), (x0 + 330, y)], oscuro(ladrillo, 0.75), 2)
             for k in range(6):
                 y = 460 + k * 160
                 L.forma([(x0 + 80, y), (x0 + 160, y), (x0 + 160, y + 100), (x0 + 80, y + 100)],
                         (230, 190, 110) if (k + lado) % 3 == 0 else (50, 50, 56), suave=False, borde=False)
-        L.forma([(0, 1500), (W, 1500), (W, H), (0, H)], (52, 50, 56), suave=False, borde=False, textura=0.16)
-        L.forma([(300, 1500), (780, 1500), (1000, H), (80, H)], (66, 64, 70), suave=False, borde=False, textura=0.1)
+        suelo = (226, 230, 238) if pal == "frio" else (52, 50, 56)
+        L.forma([(0, 1500), (W, 1500), (W, H), (0, H)], suelo, suave=False, borde=False, textura=0.16)
+        if victoriana:  # adoquines
+            for y in range(1520, H, 40):
+                for x in range(0, W, 70):
+                    L.forma(elipse(x + (y // 40 % 2) * 35, y, 30, 14), oscuro(suelo, 0.85) if pal != "frio" else
+                            (200, 206, 216), borde=False, sombra=False, brillo=False, textura=0)
+        else:
+            L.forma([(300, 1500), (780, 1500), (1000, H), (80, H)], oscuro(suelo, 0.9) if pal == "frio" else
+                    (66, 64, 70), suave=False, borde=False, textura=0.1)
     fondo = full(dib)
     r = ctx["rnd"]
     lx = r.choice((360, 720))
+    coche = R.auto("1920" if epoca < 1950 else "1975", (36, 44, 56) if epoca < 1950 else (110, 34, 30)) \
+        if det.get("auto") else None
 
     def din(img, t, dur):
         d = ImageDraw.Draw(img)
-        d.line((lx, 1500, lx, 820), fill=(30, 30, 34), width=14)
-        pegar_glow(img, lx, 820, 150, "#ffd890" if victoriana else "#fff0c0", 0.8)
-        x = 540 + 8 * math.sin(t)
-        s = max(0.35, 0.8 - t * 0.04)
-        silueta(d, x, 1500 - (0.8 - s) * 300, s, t * 0.6, agachado=False, col=(14, 14, 18))
+        if victoriana:  # farol de gas
+            d.line((lx, 1500, lx, 860), fill=(30, 30, 34), width=12)
+            d.polygon([(lx - 34, 860), (lx + 34, 860), (lx + 24, 790), (lx - 24, 790)], fill=(60, 56, 40))
+            pegar_glow(img, lx, 825, 170, "#ffb860", 0.85)
+        else:
+            d.line((lx, 1500, lx, 820), fill=(30, 30, 34), width=14)
+            pegar_glow(img, lx, 820, 150, "#fff0c0", 0.8)
+        if coche is not None:
+            img.alpha_composite(coche, (int(700 - coche.width / 2), int(1640 - coche.height * 0.83)))
+        per = personas_de(ctx)
+        if per:
+            for k, pk in enumerate(per):
+                s = max(0.42, 0.62 - t * 0.012)
+                figura(img, pk, 470 + k * 170 + 6 * math.sin(t), 1620 - t * 8, s, t, pose="caminar",
+                       espejo=(ctx["n"] + k) % 2 == 1, oscuridad=0.45 if pal == "noche" else 0.15)
+        else:
+            x = 540 + 8 * math.sin(t)
+            s = max(0.35, 0.8 - t * 0.04)
+            silueta(d, x, 1500 - (0.8 - s) * 300, s, t * 0.6, agachado=False, col=(14, 14, 18))
         niebla(img, t, 1350, 0.55 if pal == "niebla" else 0.35, n=10)
         if pal == "noche":
             particulas(img, t, "lluvia", 70, viento=-120, alfa=150)
+        elif pal == "frio":
+            particulas(img, t, "nieve", 80, viento=-120, alfa=220)
     return fondo, din
 
 
@@ -671,15 +890,30 @@ def kit_cartel(ctx, var):
 
 def kit_nieve(ctx, var):
     from andes import fondo_cordillera
+    det = ctx["det"]
     fondo = fondo_cordillera("noche" if var != 1 else "dia")
+    carpa = R.carpa_rota() if det.get("carpa") else None
 
     def din(img, t, dur):
+        if carpa is not None:
+            img.alpha_composite(carpa, (540 - carpa.width // 2, 1560 - carpa.height))
+            d = ImageDraw.Draw(img)
+            for k in range(9):  # huellas que se alejan de la carpa, ladera abajo
+                d.ellipse((560 + k * 50 - 12, 1600 + k * 30 - 6, 560 + k * 50 + 12, 1600 + k * 30 + 6),
+                          fill=(150, 160, 190))
+        for k, pk in enumerate(personas_de(ctx)):
+            figura(img, pk, 420 + k * 220 + t * 6, 1640 - k * 40, 0.5, t, pose="caminar", espejo=True,
+                   oscuridad=0.3 if var != 1 else 0.0, vel=0.5)
         particulas(img, t, "nieve", 110, viento=-260, vel=1.5)
-        if var == 2:
+        if var == 2 or det.get("huellas"):
             d = ImageDraw.Draw(img)
             for k in range(12):
                 x, y = 200 + k * 60, 1700 - k * 30
-                d.ellipse((x - 12, y - 6, x + 12, y + 6), fill=(150, 160, 190))
+                if det.get("huellas"):  # huellas de pezuña (Devon, 1855)
+                    d.ellipse((x - 14, y - 10, x + 14, y + 10), fill=(120, 130, 160))
+                    d.line((x, y - 10, x, y + 10), fill=(226, 232, 240), width=3)
+                else:
+                    d.ellipse((x - 12, y - 6, x + 12, y + 6), fill=(150, 160, 190))
     return fondo, din
 
 
@@ -688,6 +922,9 @@ def kit_selva(ctx, var):
     fondo = fondo_selva(oscura=var != 1, rio=var == 2, semilla=ctx["n"] + var)
 
     def din(img, t, dur):
+        for k, pk in enumerate(personas_de(ctx)):
+            if var != 2:
+                figura(img, pk, 380 + k * 200 + t * 10, 1700, 0.55, t, pose="caminar", oscuridad=0.3)
         niebla(img, t, 1200, 0.35)
         for i in range(10):
             bx = 300 + 400 * math.sin(t * 2 + i * 1.7)
@@ -703,11 +940,25 @@ def kit_lago(ctx, var):
         pinos(L, 1160, 18, 220, (30, 44, 40), random.Random(2))
         mar(L, 1150, (40, 56, 66))
     fondo = full(dib)
-    cuello = bool(re.search(r"ness|lago|monstruo", ctx["txt"]))
+    cuello = bool(re.search(r"ness|monstruo", ctx["txt"]))
+    det = ctx["det"]
+    coche = R.auto("1920", (36, 44, 56)) if det.get("auto") else None
 
     def din(img, t, dur):
         d = ImageDraw.Draw(img)
-        if cuello:
+        if coche is not None:
+            img.alpha_composite(coche, (300 - coche.width // 2, int(1300 - coche.height * 0.83)))
+            pegar_glow(img, 300 + coche.width * 0.4, 1255, 120, "#fff0b0", 0.7)
+        elif det.get("balsa"):  # balsa de oro en la laguna de Guatavita
+            x = 540 + 30 * math.sin(t * 0.4)
+            d.polygon([(x - 200, 1230), (x + 200, 1230), (x + 170, 1270), (x - 170, 1270)], fill=(150, 110, 40))
+            pegar_glow(img, x, 1150, 220, "#ffd050", 0.7 + 0.2 * math.sin(t * 3))
+            d.rounded_rectangle((x - 30, 1080, x + 30, 1230), radius=26, fill=(240, 190, 60))
+            d.ellipse((x - 26, 1030, x + 26, 1086), fill=(240, 190, 60))
+            for k in range(8):
+                f = (t * 0.5 + k / 8) % 1
+                pegar_glow(img, x - 100 + k * 28, 1240 + 90 * f, 8, "#ffe080", 1 - f)
+        elif cuello:
             x = 600 + 20 * math.sin(t * 0.5)
             pts = [(x - 120, 1250), (x - 60, 1000), (x - 10, 880), (x + 40, 860), (x + 60, 900), (x + 10, 920),
                    (x - 10, 1020), (x + 40, 1250)]
@@ -741,6 +992,10 @@ def kit_bosque(ctx, var):
 
     def din(img, t, dur):
         from alcatraz import linterna
+        if pal != "frio" and pal != "atardecer":
+            for k, pk in enumerate(personas_de(ctx)):  # la persona real entre los árboles
+                figura(img, pk, 600 + k * 150, 1650 - t * 8, max(0.36, 0.55 - t * 0.01), t, pose="caminar",
+                       espejo=True, oscuridad=0.3, vel=0.6)
         niebla(img, t, 1450, 0.5, n=10)
         if pal == "noche":
             linterna(img, 120, 1900, 540 + 300 * math.sin(t * 0.8), 1300 + 120 * math.sin(t * 1.3), ancho=230,
@@ -750,8 +1005,14 @@ def kit_bosque(ctx, var):
             pegar_glow(img, 700, 900, 300 + 500 * k, "#ffb060", 0.4 + 0.6 * k)
             particulas(img, t, "ceniza", 50, alfa=170)
         else:
-            d = ImageDraw.Draw(img)
-            silueta(d, 540, 1560 - t * 6, max(0.3, 0.7 - t * 0.03), t * 0.6, agachado=False, col=(10, 12, 16))
+            per = personas_de(ctx)
+            if per:  # la persona real se aleja por el sendero (p. ej. Paula Welden con su parka roja)
+                for k, pk in enumerate(per):
+                    figura(img, pk, 520 + k * 160, 1640 - t * 10, max(0.32, 0.55 - t * 0.012), t, pose="caminar",
+                           espejo=True, oscuridad=0.35, vel=0.6)
+            else:
+                d = ImageDraw.Draw(img)
+                silueta(d, 540, 1560 - t * 6, max(0.3, 0.7 - t * 0.03), t * 0.6, agachado=False, col=(10, 12, 16))
             particulas(img, t, "nieve", 50, viento=-80, alfa=200)
     return fondo, din
 
@@ -773,7 +1034,22 @@ def kit_pantalla(ctx, var):
         k = int(t * 15) % 6
         pantalla = _ESTATICA[k].copy()
         d = ImageDraw.Draw(pantalla)
-        if var == 1 or (var == 0 and int(t * 3) % 5 == 0):
+        obj = ctx["det"].get("obj")
+        if obj == "max" and var == 0:  # transmisión pirata: fondo de franjas que giran y figura enmascarada
+            for k in range(-8, 16):
+                x = k * 50 + (t * 120) % 100
+                d.polygon([(x, 0), (x + 25, 0), (x - 95, 480), (x - 120, 480)], fill=(70, 70, 90, 255))
+            d.ellipse((240, 110, 400, 300), fill=(220, 210, 200))
+            d.rectangle((300 - 70 + 20, 300, 380 + 20, 480), fill=(30, 30, 34))
+            d.rectangle((262, 170, 380, 200), fill=(20, 20, 24))
+        elif obj == "cigarra" and var == 0:  # imagen con la cigarra
+            d.rectangle((0, 0, 640, 480), fill=(10, 10, 12, 255))
+            d.ellipse((290, 120, 350, 380), fill=(200, 200, 200))
+            for lado in (-1, 1):
+                d.polygon([(320, 170), (320 + lado * 200, 140), (320 + lado * 220, 300), (320, 260)],
+                          fill=(150, 150, 150))
+            d.text((320, 430), "3301", font=maquina(40), fill=(220, 220, 220), anchor="mm")
+        elif var == 1 or (var == 0 and int(t * 3) % 5 == 0):
             d.rectangle((0, 0, 640, 480), fill=(14, 30, 16, 255))
             vis = texto[:max(1, int(t * 8))]
             d.text((30, 200), "> " + vis + ("_" if int(t * 3) % 2 else ""), font=maquina(44), fill=(90, 255, 120))
@@ -792,6 +1068,71 @@ KITS = {"mar": kit_mar, "avion": kit_avion, "radar": kit_radar, "faro": kit_faro
         "luces": kit_luces, "escritorio": kit_escritorio, "mapa": kit_mapa, "cueva": kit_cueva, "ruinas": kit_ruinas,
         "calle": kit_calle, "cartel": kit_cartel, "nieve": kit_nieve, "selva": kit_selva, "lago": kit_lago, "bosque": kit_bosque, "radio": kit_radio,
         "pantalla": kit_pantalla}
+KITS.update(KITS_EXTRA)
+
+
+def sonidos_kit(kit, var, dur, ctx):
+    """Efectos propios de cada escenario (además de la voz, que siempre va por encima)."""
+    det = ctx["det"]
+    hora = det.get("hora", "")
+    ev = []
+    if kit == "mar":
+        ev += [(0, "olas", dur), (0.3, "crujido", 1.6), (dur * 0.55, "crujido", 1.2)]
+        if hora == "dia" and var == 0:
+            ev.append((0.5, "gaviotas", 2.0))
+        if hora == "niebla" or var == 1:
+            ev.append((0.8, "sirena_niebla", 2.5))
+    elif kit == "avion":
+        modelo = det.get("av", "")
+        ev += [(0, "jet" if modelo in ("777", "f18") else ("viento" if modelo == "globo" else "helice"), dur),
+               (dur * 0.45, "whoosh", 0.9)]
+    elif kit == "radar":
+        ev += [(k * 1.4 + 0.2, "ping", 1.0) for k in range(int(dur / 1.4))]
+    elif kit == "radio":
+        ev += [(0, "estatica", dur), (0.3, "morse", max(0.5, dur - 0.5))]
+    elif kit == "faro":
+        ev += [(0, "viento", dur), (0, "olas", dur), (0.6, "sirena_niebla", 2.5)]
+    elif kit == "espacio":
+        ev += [(0, "drone", dur), (0.5, "ping", 1.0), (2.2, "ping", 1.0)]
+    elif kit == "luces":
+        ev += [(0, "zumbido", dur)]
+    elif kit == "escritorio":
+        ev += [(0.05, "papel", 0.5), (0.8, "reloj", max(0.5, dur - 0.8))]
+    elif kit == "mapa":
+        ev += [(0.05, "papel", 0.5), (0.6, "raspado", min(2.0, max(0.5, dur - 0.6)))]
+    elif kit == "cueva":
+        ev += [(0, "goteo", dur), (0, "drone", dur)]
+    elif kit == "ruinas":
+        ev += [(0, "viento", dur), (0, "drone", dur)]
+    elif kit == "calle":
+        ev += [(0.2, "pasos", max(0.5, dur - 0.3))] + ([(0, "lluvia", dur)] if var else [])
+    elif kit == "cartel":
+        ev += [(0.0, "papel", 0.5), (0, "lluvia", dur)]
+    elif kit == "nieve":
+        ev += [(0, "viento", dur)]
+    elif kit == "selva":
+        ev += [(0, "insectos", dur), (0, "rio", dur)]
+    elif kit == "lago":
+        ev += [(0, "olas", dur), (0.8, "buho", 1.2)]
+    elif kit == "bosque":
+        ev += [(0, "viento", dur), (0.6, "buho", 1.2), (dur * 0.6, "crujido", 0.8)]
+        if var % 3 == 2:
+            ev.append((max(0.0, dur * 0.3 - 0.2), "explosion_lejana", 3.0))
+    elif kit == "pantalla":
+        ev += [(0, "estatica", dur)]
+    elif kit == "desierto":
+        ev += [(0, "viento", dur), (0, "drone", dur)]
+    elif kit == "submarino":
+        ev += [(0, "burbujas", dur), (0, "drone", dur)]
+    elif kit == "playa":
+        ev += [(0, "olas", dur), (0.4, "gaviotas", 2.0)]
+    elif kit == "tren":
+        ev += [(0, "tren", dur)]
+    elif kit == "casa":
+        ev += [(0, "fuego", dur)] if var == 1 else [(0, "viento", dur), (0.5, "crujido", 1.0)]
+    elif kit == "palacio":
+        ev += [(0, "drone", dur), (0.3, "campana", 3.0)]
+    return ev
 
 SECUENCIAS = {  # el primero (o el tercero) abre el video; el resto se reparte distinto en cada misterio
     "mar": [("mar", 0), ("mapa", 0), ("mar", 1), ("escritorio", 2), ("radio", 0), ("mar", 2)],
@@ -799,9 +1140,9 @@ SECUENCIAS = {  # el primero (o el tercero) abre el video; el resto se reparte d
     "faro": [("faro", 0), ("mar", 0), ("escritorio", 2), ("faro", 2), ("mapa", 0)],
     "espacio": [("espacio", 0), ("escritorio", 0), ("radio", 0), ("radar", 0), ("espacio", 1)],
     "ovni": [("luces", 0), ("radar", 0), ("luces", 1), ("escritorio", 1), ("radio", 1)],
-    "codigo": [("escritorio", 0), ("calle", 0), ("escritorio", 1), ("mapa", 0), ("escritorio", 2), ("cartel", 0)],
+    "codigo": [("escritorio", 0), ("mapa", 0), ("escritorio", 1), ("ruinas", 1), ("escritorio", 2)],
     "tesoro": [("cueva", 0), ("mapa", 0), ("cueva", 1), ("escritorio", 1), ("bosque", 1), ("calle", 1)],
-    "antiguo": [("ruinas", 0), ("escritorio", 0), ("ruinas", 2), ("mapa", 0), ("cueva", 0), ("ruinas", 1)],
+    "antiguo": [("ruinas", 0), ("escritorio", 0), ("ruinas", 2), ("mapa", 0), ("ruinas", 1), ("escritorio", 1)],
     "crimen": [("calle", 0), ("escritorio", 1), ("cartel", 0), ("calle", 1), ("escritorio", 0)],
     "hielo": [("nieve", 0), ("mapa", 0), ("nieve", 1), ("escritorio", 2), ("nieve", 2), ("radio", 1)],
     "selva": [("selva", 0), ("mapa", 0), ("selva", 2), ("ruinas", 2), ("selva", 1)],
@@ -812,7 +1153,7 @@ SECUENCIAS = {  # el primero (o el tercero) abre el video; el resto se reparte d
     "senal": [("pantalla", 0), ("escritorio", 1), ("pantalla", 1), ("escritorio", 0), ("radio", 0)],
     "cartografia": [("mapa", 0), ("escritorio", 2), ("mar", 1), ("mar", 2), ("radar", 0)],
     "oceano": [("mar", 2), ("radar", 0), ("radio", 0), ("mar", 1), ("escritorio", 1)],
-    "joya": [("escritorio", 1), ("cueva", 0), ("calle", 1), ("cueva", 1), ("cartel", 0)],
+    "joya": [("escritorio", 1), ("cueva", 0), ("calle", 1), ("cueva", 1), ("palacio", 0)],
     "explosion": [("bosque", 2), ("escritorio", 1), ("mapa", 0), ("luces", 0), ("radio", 0)],
     "selva_persona": [("selva", 0), ("mapa", 0), ("selva", 2), ("cartel", 0), ("selva", 1)],
     "selva_tesoro": [("selva", 0), ("mapa", 0), ("cueva", 0), ("selva", 2), ("escritorio", 1)],
@@ -820,6 +1161,24 @@ SECUENCIAS = {  # el primero (o el tercero) abre el video; el resto se reparte d
 
 # tinte propio de cada misterio (sutil) para que dos videos del mismo tema no se vean iguales
 TINTES = [(0, 40, 60), (70, 30, 0), (40, 0, 60), (0, 50, 20), (60, 0, 10), (0, 0, 0), (20, 30, 70)]
+
+
+def completar(abre, tema, n):
+    """Escena de apertura fija + 3 escenas distintas del grupo del tema (sin repetir escenario)."""
+    r = random.Random(n * 7)
+    resto = [(k, (v + n) % 3 if k not in ("mapa", "cartel", "radar") else v) for k, v in SECUENCIAS[tema]
+             if k != abre[0]]
+    r.shuffle(resto)
+    vistos, sec = {abre[0]}, [abre]
+    for k in resto:
+        if k[0] not in vistos and len(sec) < 4:
+            sec.append(k)
+            vistos.add(k[0])
+    for k in (("mapa", 0), ("escritorio", 2), ("radio", 0)):
+        if len(sec) < 4 and k[0] not in vistos:
+            sec.append(k)
+            vistos.add(k[0])
+    return sec
 
 
 def secuencia_de(tema, n):
@@ -897,8 +1256,18 @@ def crear_escenas(g):
     tema = TEMA_N.get(g["n"]) or tema_de(txt)
     rnd = random.Random(g["n"] * 7919)
     anio = (re.findall(r"\b(1[0-9]{3}|20[0-2][0-9])\b", g["desc"] + " " + g["titulo"]) or [""])[0]
-    ctx = dict(clave=norm(g["nombre"] + " " + g["escena"]), n=g["n"], nombre=g["nombre"], canva=g["canva"], txt=txt, rnd=rnd, anio=anio, tema=tema)
-    secuencia = secuencia_de(tema, g["n"])
+    det = DETALLES.get(g["n"], {})
+    if "anio" in det:
+        anio = det["anio"]
+    ctx = dict(clave=norm(g["nombre"] + " " + g["escena"]), n=g["n"], nombre=g["nombre"], canva=g["canva"],
+               txt=txt, rnd=rnd, anio=anio, tema=tema, det=det)
+    secuencia = det.get("seq") or secuencia_de(tema, g["n"])
+    if not det.get("seq") and (det.get("av") or det.get("bar")):  # el vehículo real abre el video
+        abre = ("avion", 0) if det.get("av") else ("mar", 0)
+        secuencia = completar(abre, tema, g["n"])
+    elif not det.get("seq") and det.get("obj"):  # el objeto real (manuscrito, disco, diamante...) abre el video
+        abre = ("pantalla", 0) if det["obj"] in ("max", "cigarra") else ("escritorio", 0)
+        secuencia = completar(abre, tema, g["n"])
     tinte = TINTES[g["n"] % len(TINTES)]
     mayus = re.findall(r"\b[A-ZÁÉÍÓÚÑ]{4,}(?: [A-ZÁÉÍÓÚÑ]{2,})*\b", g["titulo"])
     escenas = {}
@@ -954,9 +1323,9 @@ def crear_escenas(g):
 
             def sonidos(self, dur):
                 ev = []
+                ev += sonidos_kit(self._kit, self._var, dur, ctx)
                 if self._i == 0:
                     ev += [(0.0, "golpe", 0.4), (0.35, "sello", 0.3)]
-                    ev += [(0, s, 60.0) for s in SONIDO[tema]]
                 if self._i == 2:
                     ev.append((0, "latido", dur))
                 if self._ultimo:
