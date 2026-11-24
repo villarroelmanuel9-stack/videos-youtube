@@ -1210,7 +1210,7 @@
 [intrigante] Seguro te dijeron que los soldados de Napoleón le rompieron la nariz a la Esfinge. Es falso.
 [narrador] Hay dibujos de la Esfinge sin nariz de antes de que Napoleón llegara a Egipto.
 [sorprendido] Un historiador árabe escribió que en el siglo catorce un hombre la dañó a propósito.
-[misterioso] Aún así, quién la construyó exactamente y qué secretos guarda sigue generando debates.
+[misterioso] Aun así, quién la construyó exactamente y qué secretos guarda sigue generando debates.
 [cercano] ¿Te lo habían contado mal? Comenta y suscríbete para más misterios reales.
 ```
 **T:** ¿Quién le ROMPIÓ la nariz a la Esfinge? 🦁 #shorts #esfinge #egipto
