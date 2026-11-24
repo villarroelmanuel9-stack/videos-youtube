@@ -951,7 +951,7 @@ def producir(n, guiones=None):
     CARPETA_SALIDA.mkdir(exist_ok=True)
     final_ = CARPETA_SALIDA / f"{nombre}.mp4"
     hecho.replace(final_)
-    (CARPETA_SALIDA / f"{nombre}.txt").write_text(
+    (RAIZ / "salida" / "misterios" / f"{nombre}.txt").write_text(
         f"TÍTULO: {g['titulo']}\n\nDESCRIPCIÓN:\n{g['desc'].split(' · ')[0]}\n\n¿Tú qué crees? Te leo en los "
         f"comentarios 👇\n🔔 Suscríbete para más historias reales que parecen inventadas.\n\n#shorts #misterio "
         f"#misterios #misteriossinresolver #enigmas #historiasreales #datoscuriosos #sabiasque #historia "
