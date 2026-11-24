@@ -15,6 +15,11 @@ Notas que se aplican a cada video nuevo (se actualizan después de cada historia
 - Revisar símbolos culturales (la estrella de Chile salió como pentágono la primera vez).
 - Textos formados con objetos (velas → "PAZ") necesitan un refuerzo visual para leerse.
 
+## Calidad de dibujo (desde Wojtek)
+- `realista.LienzoReal`: sombreado degradado, contornos finos del color del objeto, textura suave y `pelaje()`.
+- `Humano(realista=True, cabeza=0.86)`: personajes con proporciones algo más reales.
+- `pro.generar(..., acabado=True)`: curva de color, bloom en las luces y grano fino en cada fotograma.
+
 ## Audio (corregido tras el aviso del usuario: los efectos tapaban la voz)
 - **La voz siempre va en una pista aparte** y se mezcla al final con `mezcla_audio.mezcla_final()`; todos los motores
   (cine, caricatura, dinos, alcatraz, pro) pasan por ahí.
@@ -22,6 +27,8 @@ Notas que se aplican a cada video nuevo (se actualizan después de cada historia
 - Nunca normalizar todo junto por el pico: un golpe fuerte bajaba también la voz.
 - Cada video imprime un informe: **margen voz/efectos entre 15 y 30 dB**. Si sale "⚠ EFECTOS DEMASIADO ALTOS", no se entrega.
 - Para arreglar videos ya hechos sin redibujar: `python remezclar.py N`.
+- Desde Wojtek: `pro.generar(..., hifi=True)` → efectos con reverberación, paneo estéreo, ambientes envolventes y
+  sonidos nuevos (gruñido, camión, bocina de barco, artillería, ducha, botella, pasos, multitud). La voz no se toca.
 
 ## Retención
 - Gancho en el primer segundo con un dato que choque + imagen fuerte.
@@ -39,3 +46,4 @@ Notas que se aplican a cada video nuevo (se actualizan después de cada historia
 | Andes | Nieve, tonos fríos | Notas de cuaderno manuscritas | Coral | Página de diario con casillas + lápiz que escribe "suscríbete" |
 | Juliane Koepcke | Selva, lluvia, recuerdo en sepia | Libreta de campo | Verde lima | Mapa con la ruta dibujándose + brote que crece con "SUSCRÍBETE" |
 | Tregua de Navidad | Noche nevada, velas | Tarjetas navideñas antiguas | Cinta roja | Velas que escriben "PAZ" + regalo que se abre |
+| Wojtek (oso soldado) | Semi-realista: desierto, puerto, Montecassino, Escocia | Libretas militares verde oliva con bandera polaca | Subrayado rojo | Estatua de bronce + huellas + sello de huella "SUSCRÍBETE" |
