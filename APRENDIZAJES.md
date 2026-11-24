@@ -15,6 +15,14 @@ Notas que se aplican a cada video nuevo (se actualizan después de cada historia
 - Revisar símbolos culturales (la estrella de Chile salió como pentágono la primera vez).
 - Textos formados con objetos (velas → "PAZ") necesitan un refuerzo visual para leerse.
 
+## Audio (corregido tras el aviso del usuario: los efectos tapaban la voz)
+- **La voz siempre va en una pista aparte** y se mezcla al final con `mezcla_audio.mezcla_final()`; todos los motores
+  (cine, caricatura, dinos, alcatraz, pro) pasan por ahí.
+- La voz se normaliza a ≈ -18 dBFS; los efectos se limitan a -10 dBFS y bajan ~10 dB mientras se habla (ducking).
+- Nunca normalizar todo junto por el pico: un golpe fuerte bajaba también la voz.
+- Cada video imprime un informe: **margen voz/efectos entre 15 y 30 dB**. Si sale "⚠ EFECTOS DEMASIADO ALTOS", no se entrega.
+- Para arreglar videos ya hechos sin redibujar: `python remezclar.py N`.
+
 ## Retención
 - Gancho en el primer segundo con un dato que choque + imagen fuerte.
 - "Loop abierto" temprano ("y eso no es lo más loco…").

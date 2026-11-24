@@ -29,6 +29,8 @@ import wave
 from pathlib import Path
 
 import numpy as np
+
+from mezcla_audio import mezcla_final
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 from generar_short import (FPS, H, W, Palabra, agrupar_palabras, duracion_audio,
@@ -677,7 +679,8 @@ def ruido_filtrado(n, suav, rng):
 def disenar_sonido(voz: np.ndarray, cortes, golpes, total) -> np.ndarray:
     n = int(total * SR) + SR
     mix = np.zeros((n, 2), np.float32)
-    mix[:len(voz)] += voz[:n]
+    vz = np.zeros((n, 2), np.float32)
+    vz[:len(voz)] = voz[:n]  # la voz va aparte: mezcla_final la deja siempre por encima
     rng = np.random.default_rng(3)
     tt = np.arange(n) / SR
     pad = (np.sin(2 * np.pi * 55 * tt) + 0.6 * np.sin(2 * np.pi * 82.4 * tt) + 0.35 * np.sin(2 * np.pi * 110 * tt))
@@ -702,10 +705,7 @@ def disenar_sonido(voz: np.ndarray, cortes, golpes, total) -> np.ndarray:
         b *= np.exp(-np.arange(m) / SR * 3.5)
         seg = mix[s:s + m]
         seg += (0.3 * fuerza * b[:len(seg)])[:, None]
-    pico = np.abs(mix).max()
-    if pico > 0.98:
-        mix *= 0.98 / pico
-    return mix
+    return mezcla_final(vz, mix)
 
 
 def escribir_wav(ruta, x):

@@ -22,6 +22,8 @@ import tempfile
 from pathlib import Path
 
 import numpy as np
+
+from mezcla_audio import mezcla_final
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 from cine import SR, alinear_audio, escribir_wav, fuente, leer_wav, pegar_glow, ruido_filtrado, _primera_existente
@@ -1110,7 +1112,8 @@ def sfx(tipo, dur, rng):
 def mezclar(voz, cortes, eventos, total):
     n = int(total * SR) + SR
     mix = np.zeros((n, 2), np.float32)
-    mix[:len(voz)] += voz[:n]
+    vz = np.zeros((n, 2), np.float32)
+    vz[:len(voz)] = voz[:n]  # la voz va aparte: mezcla_final la deja siempre por encima
     rng = np.random.default_rng(12)
     tt = np.arange(n) / SR
     pad = (np.sin(2 * np.pi * 49 * tt) + 0.6 * np.sin(2 * np.pi * 73.4 * tt) + 0.35 * np.sin(2 * np.pi * 98 * tt + 1))
@@ -1129,10 +1132,7 @@ def mezclar(voz, cortes, eventos, total):
         x = sfx(tipo, dur, rng)
         seg = mix[s:s + len(x)]
         seg += x[:len(seg)][:, None]
-    pico = np.abs(mix).max()
-    if pico > 0.97:
-        mix *= 0.97 / pico
-    return mix
+    return mezcla_final(vz, mix)
 
 
 # =========================================================================== #

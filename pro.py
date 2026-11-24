@@ -16,6 +16,8 @@ import tempfile
 from pathlib import Path
 
 import numpy as np
+
+from mezcla_audio import mezcla_final
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 from alcatraz import EscenaAlc, maquina, sfx as sfx_base
@@ -487,7 +489,8 @@ def sfx(tipo, dur, rng):
 def mezclar(voz, cortes, eventos, total, pad_hz=(49, 73.4, 98)):
     n = int(total * SR) + SR
     mix = np.zeros((n, 2), np.float32)
-    mix[:len(voz)] += voz[:n]
+    vz = np.zeros((n, 2), np.float32)
+    vz[:len(voz)] = voz[:n]  # la voz va aparte: mezcla_final la deja siempre por encima
     rng = np.random.default_rng(21)
     tt = np.arange(n) / SR
     pad = sum(np.sin(2 * np.pi * f * tt + i) * a for i, (f, a) in enumerate(zip(pad_hz, (1, 0.6, 0.35))))
@@ -506,10 +509,7 @@ def mezclar(voz, cortes, eventos, total, pad_hz=(49, 73.4, 98)):
         x = sfx(tipo, dur, rng)
         seg = mix[s:s + len(x)]
         seg += x[:len(seg)][:, None]
-    pico = np.abs(mix).max()
-    if pico > 0.97:
-        mix *= 0.97 / pico
-    return mix
+    return mezcla_final(vz, mix)
 
 
 # =========================================================================== #
