@@ -185,70 +185,131 @@ def kit_mar(ctx, var):
 
 
 def kit_avion(ctx, var):
-    r = ctx["rnd"]
+    r, n = ctx["rnd"], ctx["n"]
     a_ = int(ctx["anio"] or 1970)
     tipo = "helice" if a_ < 1950 or re.search(r"avioneta|helice|aviadora", ctx["txt"]) else \
         ("electra" if a_ < 1975 else "727")
-    pal = "tormenta" if var else "noche"
+    pal = ["noche", "tormenta", "atardecer", "niebla"][(n + var) % 4]
+    escuadra = bool(re.search(r"cinco aviones|escuadr|formacion", ctx["txt"]))
+    izquierda = n % 2 == 1  # dirección de vuelo distinta según el misterio
+    nubes_col = {"noche": "#3a4054", "tormenta": "#2c3038", "atardecer": "#c07a6a", "niebla": "#c8ccd0"}[pal]
 
     def dib(L):
         L.img.alpha_composite(_grad(W * 2, H * 2, PALETAS[pal]))
-        mar(L, 1500, (14, 22, 34))
-        rr = random.Random(3)
-        for _ in range(110):
-            L.circulo(rr.randint(0, W), rr.randint(0, 1100), rr.choice((1.5, 2, 2.5)), (230, 230, 255), borde=False)
+        mar(L, 1500, {"atardecer": (60, 50, 70), "niebla": (110, 118, 124)}.get(pal, (14, 22, 34)))
+        if pal in ("noche", "tormenta"):
+            rr = random.Random(n)
+            for _ in range(110):
+                L.circulo(rr.randint(0, W), rr.randint(0, 1100), rr.choice((1.5, 2, 2.5)), (230, 230, 255),
+                          borde=False)
     fondo = full(dib)
-    pegar_glow(fondo, 800, 330, 150, "#dfe8ff", 0.6)
-    ImageDraw.Draw(fondo).ellipse((760, 290, 840, 370), fill=(236, 238, 246))
-    pegar_glow(fondo, 800, 1560, 220, "#9fb0d0", 0.35)
+    if pal == "noche":
+        mx = 260 if izquierda else 800
+        pegar_glow(fondo, mx, 330, 150, "#dfe8ff", 0.6)
+        ImageDraw.Draw(fondo).ellipse((mx - 40, 290, mx + 40, 370), fill=(236, 238, 246))
+        pegar_glow(fondo, mx, 1560, 220, "#9fb0d0", 0.35)
+    elif pal == "atardecer":
+        pegar_glow(fondo, 540, 1450, 380, "#ffb070", 0.7)
     av = pro.avion(tipo)
-    a = av.convert("LA").convert("RGBA")
-    a.putalpha(av.getchannel("A"))
-    oscuro_ = Image.new("RGBA", a.size, (20, 24, 34, 255))
+    oscuro_ = Image.new("RGBA", av.size, (20, 24, 34, 255))
     oscuro_.putalpha(av.getchannel("A"))
-    sil = Image.blend(av, oscuro_, 0.45)
-    sil = sil.resize((int(sil.width * 1.25), int(sil.height * 1.25)), Image.LANCZOS)
-    y0 = r.uniform(960, 1120)
+    sil = Image.blend(av, oscuro_, {"atardecer": 0.6, "niebla": 0.3}.get(pal, 0.45))
+    k = 0.5 if escuadra else 1.25
+    sil = sil.resize((int(sil.width * k), int(sil.height * k)), Image.LANCZOS)
+    if izquierda:
+        sil = sil.transpose(Image.FLIP_LEFT_RIGHT)
+    y0 = r.uniform(900, 1120)
+    formacion = [(0, 0), (-190, -110), (-190, 110), (-380, -220), (-380, 220)] if escuadra else [(0, 0)]
 
     def din(img, t, dur):
         for i in range(5):
             x = (i * 300 - t * 50) % (W + 600) - 300
-            pegar_glow(img, x, 700 + (i % 3) * 200, 300, "#3a4054", 0.7)
-        x = 260 + W * 0.75 * (t / max(dur, 0.1))
-        img.alpha_composite(sil.rotate(3 * math.sin(t * 0.9), resample=Image.BICUBIC),
-                            (int(x - sil.width / 2), int(y0 - sil.height / 2)))
-        if int(t * 2) % 2 == 0:
-            pegar_glow(img, x + sil.width * 0.42, y0, 22, "#ff3030", 1.0)
-        pegar_glow(img, x - sil.width * 0.38, y0 - 20, 16, "#ffffff", 0.8)
-        if var:
+            pegar_glow(img, x, 700 + (i % 3) * 200, 300, nubes_col, 0.7)
+        avance = W * 0.75 * (t / max(dur, 0.1))
+        x = (W - 260 - avance) if izquierda else (260 + avance)
+        sgn = -1 if izquierda else 1
+        for j, (dx, dy) in enumerate(formacion):
+            xx, yy = x + dx * sgn, y0 + dy + 8 * math.sin(t * 1.3 + j)
+            img.alpha_composite(sil.rotate(3 * math.sin(t * 0.9 + j), resample=Image.BICUBIC),
+                                (int(xx - sil.width / 2), int(yy - sil.height / 2)))
+            if int(t * 2 + j) % 2 == 0:
+                pegar_glow(img, xx + sgn * sil.width * 0.42, yy, 22 * k, "#ff3030", 1.0)
+        if pal == "tormenta":
             particulas(img, t, "lluvia", 80, viento=-400, alfa=160)
             relampago(img, t, dur * 0.5)
+        elif pal == "niebla":
+            niebla(img, t, 1100, 0.5, n=10)
     return fondo, din
 
 
 def kit_radar(ctx, var):
-    fondo = _grad(W, H, [(0, (6, 14, 10)), (1, (2, 6, 4))])
+    n = ctx["n"]
+    tono = [((6, 14, 10), (40, 160, 90), (60, 255, 140), "#60ff90"),
+            ((16, 10, 4), (170, 110, 30), (255, 180, 60), "#ffc060"),
+            ((4, 10, 18), (40, 120, 170), (90, 200, 255), "#80d0ff")][n % 3]
+    fondo = _grad(W, H, [(0, tono[0]), (1, oscuro(tono[0], 0.4))])
     r = ctx["rnd"]
-    blips = [(r.uniform(-1, 1) * 260, r.uniform(-1, 1) * 260) for _ in range(5)]
+    blips = [(r.uniform(-1, 1) * 260, r.uniform(-1, 1) * 260) for _ in range(3 + n % 4)]
+    cy = 860 + (n % 3) * 40
 
     def din(img, t, dur):
-        cx, cy, R = 540, 900, 400
+        cx, R = 540, 400
         d = ImageDraw.Draw(img)
         for k in range(1, 5):
-            d.ellipse((cx - R * k / 4, cy - R * k / 4, cx + R * k / 4, cy + R * k / 4), outline=(40, 160, 90), width=3)
-        d.line((cx - R, cy, cx + R, cy), fill=(30, 110, 60), width=2)
-        d.line((cx, cy - R, cx, cy + R), fill=(30, 110, 60), width=2)
-        ang = t * 2.2
+            d.ellipse((cx - R * k / 4, cy - R * k / 4, cx + R * k / 4, cy + R * k / 4), outline=tono[1], width=3)
+        d.line((cx - R, cy, cx + R, cy), fill=oscuro(tono[1], 0.7), width=2)
+        d.line((cx, cy - R, cx, cy + R), fill=oscuro(tono[1], 0.7), width=2)
+        ang = t * 2.2 * (1 if n % 2 else -1)
         for k in range(18):
-            a = ang - k * 0.04
-            d.line((cx, cy, cx + R * math.cos(a), cy + R * math.sin(a)), fill=(60, 255, 140, int(140 * (1 - k / 18))),
+            a = ang - k * 0.04 * (1 if n % 2 else -1)
+            d.line((cx, cy, cx + R * math.cos(a), cy + R * math.sin(a)), fill=tono[2] + (int(140 * (1 - k / 18)),),
                    width=6)
         for i, (bx, by) in enumerate(blips):
-            vivo = not (i == 0 and t > dur * 0.55)
-            if vivo:
-                pegar_glow(img, cx + bx, cy + by, 22, "#60ff90", 0.6 + 0.4 * math.sin(t * 4 + i))
+            if not (i == 0 and t > dur * 0.55):
+                pegar_glow(img, cx + bx, cy + by, 22, tono[3], 0.6 + 0.4 * math.sin(t * 4 + i))
+        d.text((cx, cy + R + 50), f"{(n * 37) % 90 + 10}°{(n * 13) % 60:02d}' N", font=maquina(40), fill=tono[2],
+               anchor="mm")
         if t > dur * 0.55:
             d.text((cx, cy - R - 70), "SEÑAL PERDIDA", font=maquina(54), fill=(255, 80, 80), anchor="mm")
+    return fondo, din
+
+
+def kit_radio(ctx, var):
+    n = ctx["n"]
+    madera = [(92, 58, 34), (70, 44, 30), (110, 80, 50)][n % 3]
+
+    def dib(L):
+        L.img.alpha_composite(_grad(W * 2, H * 2, [(0, (24, 20, 18)), (1, (10, 8, 8))]))
+        L.forma([(0, 1380), (W, 1380), (W, H), (0, H)], oscuro(madera, 0.7), suave=False, borde=False, textura=0.15)
+        L.forma([(150, 1390), (930, 1390), (930, 820), (150, 820)], madera, suave=False, intensidad=0.1,
+                textura=0.16)
+        L.forma([(190, 860), (520, 860), (520, 1340), (190, 1340)], (40, 30, 24), suave=False, intensidad=0.05)
+        for y in range(890, 1330, 26):
+            L.linea([(205, y), (505, y)], (70, 54, 40), 6)
+        L.forma([(570, 870), (890, 870), (890, 1010), (570, 1010)], (60, 44, 30), suave=False)
+        for x in (640, 820):
+            L.forma(elipse(x, 1200, 62, 62), (40, 34, 30), intensidad=0.25)
+            L.forma(elipse(x, 1200, 40, 40), (180, 160, 120), intensidad=0.3)
+        L.forma([(260, 560), (820, 560), (820, 780), (260, 780)], (30, 34, 32), suave=False, intensidad=0.08)
+    fondo = full(dib)
+    texto = "· · · — — — · · ·" if var != 1 or not ctx["canva"] else ctx["canva"].strip("¿?«»").upper()[:18]
+
+    def din(img, t, dur):
+        d = ImageDraw.Draw(img)
+        fl = 0.8 + 0.2 * math.sin(t * 9)
+        d.rectangle((590, 890, 870, 990), fill=(255, 190, 90))
+        pegar_glow(img, 730, 940, 200 * fl, "#ffb050", 0.6)
+        aguja = 600 + (260 * (0.5 + 0.5 * math.sin(t * 0.7)))
+        d.line((aguja, 892, aguja, 988), fill=(150, 20, 20), width=6)
+        d.rectangle((280, 580, 800, 760), fill=(10, 24, 16))
+        amp = 50 * (0.4 + 0.6 * abs(math.sin(t * 2.3)))
+        if t > dur * 0.6:
+            amp *= max(0.05, 1 - (t - dur * 0.6) * 1.5)
+        pts = [(280 + i * 4, 670 + amp * math.sin(i * 0.35 + t * 12) * math.sin(i * 0.05 + t)) for i in range(131)]
+        d.line(pts, fill=(90, 255, 140), width=5)
+        pegar_glow(img, 540, 670, 260, "#60ff90", 0.25)
+        vis = texto[:max(0, int(t * 7))]
+        d.text((540, 470), vis, font=maquina(52), fill=(255, 220, 160), anchor="mm")
     return fondo, din
 
 
@@ -345,6 +406,8 @@ def kit_escritorio(ctx, var):
     modo = ["simbolos", "periodico", "carta"][var % 3]
     if re.search(r"codigo|cifrad|manuscrito|escritura|letras|acertijo|disco|simbol", ctx["txt"]):
         modo = "simbolos" if var != 1 else "periodico"
+    if modo == "simbolos" and ctx["tema"] not in ("codigo", "antiguo", "senal"):
+        modo = "periodico" if var == 0 else "carta"
 
     def dib(L):
         L.img.alpha_composite(_grad(W * 2, H * 2, [(0, (40, 28, 20)), (1, (18, 12, 8))]))
@@ -408,8 +471,14 @@ def kit_mapa(ctx, var):
     r = ctx["rnd"]
 
     def dib(L):
-        L.d.rectangle((0, 0, W * 2, H * 2), fill=(40, 30, 22))
-        L.forma([(70, 280), (1010, 260), (1030, 1260), (60, 1280)], (232, 214, 170), intensidad=0.05, textura=0.14)
+        nautica = ctx["n"] % 2 == 0
+        L.d.rectangle((0, 0, W * 2, H * 2), fill=(26, 30, 40) if nautica else (40, 30, 22))
+        L.forma([(70, 280), (1010, 260), (1030, 1260), (60, 1280)], (196, 214, 222) if nautica else (232, 214, 170),
+                intensidad=0.05, textura=0.14)
+        if nautica:
+            for k in range(1, 6):
+                L.linea([(70 + k * 160, 280), (70 + k * 160, 1260)], (150, 170, 186), 2)
+                L.linea([(70, 280 + k * 170), (1010, 280 + k * 170)], (150, 170, 186), 2)
         rr = random.Random(ctx["n"])
         costa = [(rr.uniform(150, 450), 380 + i * 110 + rr.uniform(-30, 30)) for i in range(8)]
         L.linea(catmull(costa, 5, cerrado=False), (120, 90, 60), 8)
@@ -721,33 +790,47 @@ def kit_pantalla(ctx, var):
 
 KITS = {"mar": kit_mar, "avion": kit_avion, "radar": kit_radar, "faro": kit_faro, "espacio": kit_espacio,
         "luces": kit_luces, "escritorio": kit_escritorio, "mapa": kit_mapa, "cueva": kit_cueva, "ruinas": kit_ruinas,
-        "calle": kit_calle, "cartel": kit_cartel, "nieve": kit_nieve, "selva": kit_selva, "lago": kit_lago, "bosque": kit_bosque,
+        "calle": kit_calle, "cartel": kit_cartel, "nieve": kit_nieve, "selva": kit_selva, "lago": kit_lago, "bosque": kit_bosque, "radio": kit_radio,
         "pantalla": kit_pantalla}
 
-SECUENCIAS = {
-    "mar": [("mar", 0), ("mar", 1), ("escritorio", 2), ("mar", 2)],
-    "aire": [("avion", 0), ("radar", 0), ("avion", 1), ("mapa", 0)],
-    "faro": [("faro", 0), ("mar", 0), ("escritorio", 2), ("faro", 2)],
-    "espacio": [("espacio", 0), ("escritorio", 0), ("radar", 0), ("espacio", 1)],
-    "ovni": [("luces", 0), ("radar", 0), ("luces", 1), ("escritorio", 1)],
-    "codigo": [("escritorio", 0), ("escritorio", 1), ("calle", 0), ("escritorio", 0)],
-    "tesoro": [("cueva", 0), ("mapa", 0), ("selva", 1), ("cueva", 1)],
-    "antiguo": [("ruinas", 0), ("escritorio", 0), ("ruinas", 2), ("mapa", 0)],
-    "crimen": [("calle", 0), ("escritorio", 1), ("cartel", 0), ("calle", 1)],
-    "hielo": [("nieve", 0), ("nieve", 1), ("mapa", 0), ("nieve", 2)],
-    "selva": [("selva", 0), ("mapa", 0), ("selva", 2), ("ruinas", 2)],
-    "criatura": [("lago", 0), ("escritorio", 1), ("lago", 2), ("selva", 0)],
-    "fenomeno": [("luces", 0), ("escritorio", 1), ("luces", 1), ("mapa", 0)],
-    "persona": [("calle", 0), ("cartel", 0), ("calle", 1), ("mapa", 0)],
-    "bosque": [("bosque", 0), ("cartel", 0), ("bosque", 1), ("mapa", 0)],
-    "senal": [("pantalla", 0), ("escritorio", 1), ("pantalla", 1), ("escritorio", 0)],
-    "cartografia": [("mapa", 0), ("escritorio", 2), ("mar", 1), ("mapa", 0)],
-    "oceano": [("mar", 2), ("radar", 0), ("mar", 1), ("escritorio", 1)],
-    "joya": [("escritorio", 1), ("cueva", 0), ("calle", 1), ("cueva", 1)],
-    "explosion": [("bosque", 2), ("escritorio", 1), ("bosque", 2), ("mapa", 0)],
-    "selva_persona": [("selva", 0), ("mapa", 0), ("selva", 2), ("cartel", 0)],
-    "selva_tesoro": [("selva", 0), ("mapa", 0), ("cueva", 0), ("selva", 2)],
+SECUENCIAS = {  # el primero (o el tercero) abre el video; el resto se reparte distinto en cada misterio
+    "mar": [("mar", 0), ("mapa", 0), ("mar", 1), ("escritorio", 2), ("radio", 0), ("mar", 2)],
+    "aire": [("avion", 0), ("radar", 0), ("radio", 1), ("avion", 1), ("mapa", 0), ("escritorio", 1)],
+    "faro": [("faro", 0), ("mar", 0), ("escritorio", 2), ("faro", 2), ("mapa", 0)],
+    "espacio": [("espacio", 0), ("escritorio", 0), ("radio", 0), ("radar", 0), ("espacio", 1)],
+    "ovni": [("luces", 0), ("radar", 0), ("luces", 1), ("escritorio", 1), ("radio", 1)],
+    "codigo": [("escritorio", 0), ("calle", 0), ("escritorio", 1), ("mapa", 0), ("escritorio", 2), ("cartel", 0)],
+    "tesoro": [("cueva", 0), ("mapa", 0), ("cueva", 1), ("escritorio", 1), ("bosque", 1), ("calle", 1)],
+    "antiguo": [("ruinas", 0), ("escritorio", 0), ("ruinas", 2), ("mapa", 0), ("cueva", 0), ("ruinas", 1)],
+    "crimen": [("calle", 0), ("escritorio", 1), ("cartel", 0), ("calle", 1), ("escritorio", 0)],
+    "hielo": [("nieve", 0), ("mapa", 0), ("nieve", 1), ("escritorio", 2), ("nieve", 2), ("radio", 1)],
+    "selva": [("selva", 0), ("mapa", 0), ("selva", 2), ("ruinas", 2), ("selva", 1)],
+    "criatura": [("lago", 0), ("escritorio", 1), ("lago", 2), ("bosque", 0), ("selva", 0)],
+    "fenomeno": [("luces", 0), ("escritorio", 1), ("luces", 1), ("mapa", 0), ("bosque", 1), ("radio", 0)],
+    "persona": [("calle", 0), ("cartel", 0), ("calle", 1), ("mapa", 0), ("escritorio", 1), ("escritorio", 2)],
+    "bosque": [("bosque", 0), ("cartel", 0), ("bosque", 1), ("mapa", 0), ("escritorio", 2)],
+    "senal": [("pantalla", 0), ("escritorio", 1), ("pantalla", 1), ("escritorio", 0), ("radio", 0)],
+    "cartografia": [("mapa", 0), ("escritorio", 2), ("mar", 1), ("mar", 2), ("radar", 0)],
+    "oceano": [("mar", 2), ("radar", 0), ("radio", 0), ("mar", 1), ("escritorio", 1)],
+    "joya": [("escritorio", 1), ("cueva", 0), ("calle", 1), ("cueva", 1), ("cartel", 0)],
+    "explosion": [("bosque", 2), ("escritorio", 1), ("mapa", 0), ("luces", 0), ("radio", 0)],
+    "selva_persona": [("selva", 0), ("mapa", 0), ("selva", 2), ("cartel", 0), ("selva", 1)],
+    "selva_tesoro": [("selva", 0), ("mapa", 0), ("cueva", 0), ("selva", 2), ("escritorio", 1)],
 }
+
+# tinte propio de cada misterio (sutil) para que dos videos del mismo tema no se vean iguales
+TINTES = [(0, 40, 60), (70, 30, 0), (40, 0, 60), (0, 50, 20), (60, 0, 10), (0, 0, 0), (20, 30, 70)]
+
+
+def secuencia_de(tema, n):
+    pool = SECUENCIAS[tema]
+    r = random.Random(n * 104729)
+    primero = pool[0] if n % 2 == 0 else pool[min(2, len(pool) - 1)]
+    resto = [k for k in pool if k != primero]
+    r.shuffle(resto)
+    sec = [primero] + resto[:3]
+    return [(k, (v + n) % 3 if k not in ("mapa", "cartel", "radar") else v) for k, v in sec]
+
 
 TEMA_N = {}
 for _tema, _nums in {
@@ -815,7 +898,8 @@ def crear_escenas(g):
     rnd = random.Random(g["n"] * 7919)
     anio = (re.findall(r"\b(1[0-9]{3}|20[0-2][0-9])\b", g["desc"] + " " + g["titulo"]) or [""])[0]
     ctx = dict(clave=norm(g["nombre"] + " " + g["escena"]), n=g["n"], nombre=g["nombre"], canva=g["canva"], txt=txt, rnd=rnd, anio=anio, tema=tema)
-    secuencia = SECUENCIAS[tema]
+    secuencia = secuencia_de(tema, g["n"])
+    tinte = TINTES[g["n"] % len(TINTES)]
     mayus = re.findall(r"\b[A-ZÁÉÍÓÚÑ]{4,}(?: [A-ZÁÉÍÓÚÑ]{2,})*\b", g["titulo"])
     escenas = {}
     n_par = len(g["parrafos"])
@@ -823,7 +907,8 @@ def crear_escenas(g):
 
     for i in range(n_par):
         ultimo = i == n_par - 1
-        kit, var = secuencia[min(i, len(secuencia) - 1)] if not ultimo else secuencia[0]
+        kit, var = secuencia[min(i, len(secuencia) - 1)] if not ultimo else (secuencia[0][0],
+                                                                             (secuencia[0][1] + 1) % 3)
         parrafo = g["parrafos"][i]
 
         class E(Escena):
@@ -833,6 +918,9 @@ def crear_escenas(g):
             def __init__(self):
                 super().__init__()
                 self.fondo, self.din = KITS[self._kit](ctx, self._var)
+                if any(tinte):
+                    self.fondo = self.fondo.copy()
+                    self.fondo.alpha_composite(Image.new("RGBA", (W, H), tinte + (34,)))
                 if self._ultimo:
                     self.fondo = self.fondo.copy()
                     self.fondo.alpha_composite(Image.new("RGBA", (W, H), (0, 0, 8, 120)))
