@@ -1,0 +1,884 @@
+[
+ {
+  "archivo": "Amelia Earhart  .mp3",
+  "n": 4,
+  "sim": 0.957,
+  "segundo": 25,
+  "cobertura": 0.931,
+  "final_ok": true,
+  "dur": 27.1
+ },
+ {
+  "archivo": "Asesino del Zodiaco  .mp3",
+  "n": 10,
+  "sim": 0.928,
+  "segundo": 11,
+  "cobertura": 0.901,
+  "final_ok": true,
+  "dur": 26.0
+ },
+ {
+  "archivo": "Carroll A. Deering  .mp3",
+  "n": 15,
+  "sim": 0.907,
+  "segundo": 1,
+  "cobertura": 0.895,
+  "final_ok": true,
+  "dur": 26.7
+ },
+ {
+  "archivo": "Colonia de Roanoke  .mp3",
+  "n": 5,
+  "sim": 0.981,
+  "segundo": 88,
+  "cobertura": 0.974,
+  "final_ok": true,
+  "dur": 29.4
+ },
+ {
+  "archivo": "Faro de las islas Flannan  .mp3",
+  "n": 5,
+  "sim": 0.981,
+  "segundo": 88,
+  "cobertura": 0.974,
+  "final_ok": true,
+  "dur": 29.4
+ },
+ {
+  "archivo": "Hombre de Somerton  .mp3",
+  "n": 12,
+  "sim": 0.922,
+  "segundo": 35,
+  "cobertura": 0.887,
+  "final_ok": true,
+  "dur": 30.2
+ },
+ {
+  "archivo": "Jack el Destripador  .mp3",
+  "n": 11,
+  "sim": 0.949,
+  "segundo": 65,
+  "cobertura": 0.918,
+  "final_ok": true,
+  "dur": 26.5
+ },
+ {
+  "archivo": "MH370  .mp3",
+  "n": 3,
+  "sim": 0.919,
+  "segundo": 18,
+  "cobertura": 0.892,
+  "final_ok": true,
+  "dur": 31.0
+ },
+ {
+  "archivo": "MV Joyita  .mp3",
+  "n": 17,
+  "sim": 0.934,
+  "segundo": 31,
+  "cobertura": 0.905,
+  "final_ok": true,
+  "dur": 25.7
+ },
+ {
+  "archivo": "Manuscrito Voynich  .mp3",
+  "n": 9,
+  "sim": 0.986,
+  "segundo": 67,
+  "cobertura": 0.986,
+  "final_ok": true,
+  "dur": 27.6
+ },
+ {
+  "archivo": "Mary Celeste  .mp3",
+  "n": 1,
+  "sim": 0.961,
+  "segundo": 15,
+  "cobertura": 0.937,
+  "final_ok": true,
+  "dur": 30.1
+ },
+ {
+  "archivo": "Mujer de Isdal  .mp3",
+  "n": 13,
+  "sim": 0.968,
+  "segundo": 35,
+  "cobertura": 0.953,
+  "final_ok": true,
+  "dur": 26.3
+ },
+ {
+  "archivo": "Paso Diatlov  .mp3",
+  "n": 7,
+  "sim": 0.945,
+  "segundo": 17,
+  "cobertura": 0.92,
+  "final_ok": true,
+  "dur": 31.1
+ },
+ {
+  "archivo": "SS Baychimo  .mp3",
+  "n": 18,
+  "sim": 0.902,
+  "segundo": 3,
+  "cobertura": 0.857,
+  "final_ok": true,
+  "dur": 24.7
+ },
+ {
+  "archivo": "SS Waratah  .mp3",
+  "n": 20,
+  "sim": 0.887,
+  "segundo": 16,
+  "cobertura": 0.864,
+  "final_ok": true,
+  "dur": 25.0
+ },
+ {
+  "archivo": "Señal Wow!  .mp3",
+  "n": 8,
+  "sim": 0.919,
+  "segundo": 15,
+  "cobertura": 0.877,
+  "final_ok": true,
+  "dur": 25.4
+ },
+ {
+  "archivo": "Star Dust stendec.mp3",
+  "n": 14,
+  "sim": 0.942,
+  "segundo": 66,
+  "cobertura": 0.915,
+  "final_ok": true,
+  "dur": 28.7
+ },
+ {
+  "archivo": "USS Cyclops  .mp3",
+  "n": 16,
+  "sim": 0.951,
+  "segundo": 66,
+  "cobertura": 0.932,
+  "final_ok": true,
+  "dur": 27.6
+ },
+ {
+  "archivo": "Vuelo 19  .mp3",
+  "n": 2,
+  "sim": 0.932,
+  "segundo": 79,
+  "cobertura": 0.908,
+  "final_ok": true,
+  "dur": 30.2
+ },
+ {
+  "archivo": "Vuelo Flying Tiger 739  .mp3",
+  "n": 18,
+  "sim": 0.902,
+  "segundo": 3,
+  "cobertura": 0.857,
+  "final_ok": true,
+  "dur": 24.7
+ },
+ {
+  "archivo": "misterio 096.mp3",
+  "n": 96,
+  "sim": 0.957,
+  "segundo": 61,
+  "cobertura": 0.931,
+  "final_ok": true,
+  "dur": 24.0
+ },
+ {
+  "archivo": "misterio 21.mp3",
+  "n": 21,
+  "sim": 0.902,
+  "segundo": 25,
+  "cobertura": 0.87,
+  "final_ok": true,
+  "dur": 25.9
+ },
+ {
+  "archivo": "misterio 22.mp3",
+  "n": 22,
+  "sim": 0.864,
+  "segundo": 60,
+  "cobertura": 0.806,
+  "final_ok": true,
+  "dur": 28.4
+ },
+ {
+  "archivo": "misterio 23.mp3",
+  "n": 23,
+  "sim": 0.873,
+  "segundo": 89,
+  "cobertura": 0.831,
+  "final_ok": true,
+  "dur": 28.0
+ },
+ {
+  "archivo": "misterio 24.mp3",
+  "n": 24,
+  "sim": 0.934,
+  "segundo": 15,
+  "cobertura": 0.919,
+  "final_ok": true,
+  "dur": 23.9
+ },
+ {
+  "archivo": "misterio 25.mp3",
+  "n": 25,
+  "sim": 0.923,
+  "segundo": 4,
+  "cobertura": 0.896,
+  "final_ok": true,
+  "dur": 26.1
+ },
+ {
+  "archivo": "misterio 26.mp3",
+  "n": 26,
+  "sim": 0.957,
+  "segundo": 31,
+  "cobertura": 0.931,
+  "final_ok": true,
+  "dur": 25.9
+ },
+ {
+  "archivo": "misterio 27.mp3",
+  "n": 27,
+  "sim": 0.878,
+  "segundo": 46,
+  "cobertura": 0.836,
+  "final_ok": true,
+  "dur": 26.5
+ },
+ {
+  "archivo": "misterio 28.mp3",
+  "n": 28,
+  "sim": 0.871,
+  "segundo": 76,
+  "cobertura": 0.836,
+  "final_ok": true,
+  "dur": 26.6
+ },
+ {
+  "archivo": "misterio 29.mp3",
+  "n": 29,
+  "sim": 0.954,
+  "segundo": 20,
+  "cobertura": 0.925,
+  "final_ok": true,
+  "dur": 25.2
+ },
+ {
+  "archivo": "misterio 30.mp3",
+  "n": 30,
+  "sim": 0.902,
+  "segundo": 44,
+  "cobertura": 0.857,
+  "final_ok": true,
+  "dur": 25.5
+ },
+ {
+  "archivo": "misterio 31.mp3",
+  "n": 31,
+  "sim": 0.95,
+  "segundo": 89,
+  "cobertura": 0.919,
+  "final_ok": true,
+  "dur": 25.2
+ },
+ {
+  "archivo": "misterio 32.mp3",
+  "n": 32,
+  "sim": 0.917,
+  "segundo": 58,
+  "cobertura": 0.902,
+  "final_ok": true,
+  "dur": 24.3
+ },
+ {
+  "archivo": "misterio 33.mp3",
+  "n": 33,
+  "sim": 0.908,
+  "segundo": 91,
+  "cobertura": 0.855,
+  "final_ok": true,
+  "dur": 25.5
+ },
+ {
+  "archivo": "misterio 34.mp3",
+  "n": 34,
+  "sim": 0.839,
+  "segundo": 42,
+  "cobertura": 0.776,
+  "final_ok": true,
+  "dur": 26.2
+ },
+ {
+  "archivo": "misterio 35.mp3",
+  "n": 35,
+  "sim": 0.968,
+  "segundo": 12,
+  "cobertura": 0.953,
+  "final_ok": true,
+  "dur": 25.2
+ },
+ {
+  "archivo": "misterio 36.mp3",
+  "n": 36,
+  "sim": 0.941,
+  "segundo": 31,
+  "cobertura": 0.914,
+  "final_ok": true,
+  "dur": 26.4
+ },
+ {
+  "archivo": "misterio 37.mp3",
+  "n": 37,
+  "sim": 0.924,
+  "segundo": 70,
+  "cobertura": 0.905,
+  "final_ok": true,
+  "dur": 27.2
+ },
+ {
+  "archivo": "misterio 38.mp3",
+  "n": 38,
+  "sim": 0.869,
+  "segundo": 16,
+  "cobertura": 0.828,
+  "final_ok": true,
+  "dur": 25.2
+ },
+ {
+  "archivo": "misterio 39.mp3",
+  "n": 39,
+  "sim": 0.952,
+  "segundo": 14,
+  "cobertura": 0.923,
+  "final_ok": true,
+  "dur": 26.4
+ },
+ {
+  "archivo": "misterio 40.mp3",
+  "n": 40,
+  "sim": 0.932,
+  "segundo": 39,
+  "cobertura": 0.902,
+  "final_ok": true,
+  "dur": 25.8
+ },
+ {
+  "archivo": "misterio 41.mp3",
+  "n": 41,
+  "sim": 0.913,
+  "segundo": 31,
+  "cobertura": 0.879,
+  "final_ok": true,
+  "dur": 28.0
+ },
+ {
+  "archivo": "misterio 42.mp3",
+  "n": 42,
+  "sim": 0.901,
+  "segundo": 54,
+  "cobertura": 0.868,
+  "final_ok": true,
+  "dur": 26.5
+ },
+ {
+  "archivo": "misterio 43.mp3",
+  "n": 43,
+  "sim": 0.923,
+  "segundo": 4,
+  "cobertura": 0.904,
+  "final_ok": true,
+  "dur": 27.5
+ },
+ {
+  "archivo": "misterio 44.mp3",
+  "n": 44,
+  "sim": 0.933,
+  "segundo": 73,
+  "cobertura": 0.918,
+  "final_ok": true,
+  "dur": 25.3
+ },
+ {
+  "archivo": "misterio 45.mp3",
+  "n": 45,
+  "sim": 0.918,
+  "segundo": 44,
+  "cobertura": 0.903,
+  "final_ok": true,
+  "dur": 24.5
+ },
+ {
+  "archivo": "misterio 46.mp3",
+  "n": 46,
+  "sim": 1.0,
+  "segundo": 32,
+  "cobertura": 1.0,
+  "final_ok": true,
+  "dur": 24.1
+ },
+ {
+  "archivo": "misterio 47.mp3",
+  "n": 47,
+  "sim": 0.967,
+  "segundo": 59,
+  "cobertura": 0.952,
+  "final_ok": true,
+  "dur": 24.5
+ },
+ {
+  "archivo": "misterio 48.mp3",
+  "n": 48,
+  "sim": 0.883,
+  "segundo": 65,
+  "cobertura": 0.841,
+  "final_ok": true,
+  "dur": 25.2
+ },
+ {
+  "archivo": "misterio 49.mp3",
+  "n": 49,
+  "sim": 0.93,
+  "segundo": 76,
+  "cobertura": 0.93,
+  "final_ok": true,
+  "dur": 26.0
+ },
+ {
+  "archivo": "misterio 50.mp3",
+  "n": 50,
+  "sim": 0.967,
+  "segundo": 75,
+  "cobertura": 0.967,
+  "final_ok": true,
+  "dur": 26.3
+ },
+ {
+  "archivo": "misterio 51.mp3",
+  "n": 51,
+  "sim": 0.938,
+  "segundo": 53,
+  "cobertura": 0.923,
+  "final_ok": true,
+  "dur": 25.9
+ },
+ {
+  "archivo": "misterio 52.mp3",
+  "n": 52,
+  "sim": 0.938,
+  "segundo": 91,
+  "cobertura": 0.924,
+  "final_ok": true,
+  "dur": 24.0
+ },
+ {
+  "archivo": "misterio 53.mp3",
+  "n": 53,
+  "sim": 0.908,
+  "segundo": 51,
+  "cobertura": 0.894,
+  "final_ok": true,
+  "dur": 27.3
+ },
+ {
+  "archivo": "misterio 54.mp3",
+  "n": 54,
+  "sim": 0.915,
+  "segundo": 42,
+  "cobertura": 0.915,
+  "final_ok": true,
+  "dur": 23.4
+ },
+ {
+  "archivo": "misterio 55.mp3",
+  "n": 55,
+  "sim": 0.97,
+  "segundo": 56,
+  "cobertura": 0.955,
+  "final_ok": true,
+  "dur": 27.6
+ },
+ {
+  "archivo": "misterio 56.mp3",
+  "n": 56,
+  "sim": 0.942,
+  "segundo": 95,
+  "cobertura": 0.95,
+  "final_ok": true,
+  "dur": 23.2
+ },
+ {
+  "archivo": "misterio 57.mp3",
+  "n": 57,
+  "sim": 0.909,
+  "segundo": 66,
+  "cobertura": 0.873,
+  "final_ok": true,
+  "dur": 23.5
+ },
+ {
+  "archivo": "misterio 58.mp3",
+  "n": 58,
+  "sim": 0.871,
+  "segundo": 32,
+  "cobertura": 0.844,
+  "final_ok": true,
+  "dur": 24.0
+ },
+ {
+  "archivo": "misterio 59.mp3",
+  "n": 59,
+  "sim": 0.942,
+  "segundo": 73,
+  "cobertura": 0.942,
+  "final_ok": true,
+  "dur": 25.8
+ },
+ {
+  "archivo": "misterio 60.mp3",
+  "n": 60,
+  "sim": 0.968,
+  "segundo": 48,
+  "cobertura": 0.952,
+  "final_ok": true,
+  "dur": 24.5
+ },
+ {
+  "archivo": "misterio 61.mp3",
+  "n": 61,
+  "sim": 0.938,
+  "segundo": 96,
+  "cobertura": 0.909,
+  "final_ok": true,
+  "dur": 25.2
+ },
+ {
+  "archivo": "misterio 62.mp3",
+  "n": 62,
+  "sim": 0.939,
+  "segundo": 88,
+  "cobertura": 0.912,
+  "final_ok": true,
+  "dur": 22.7
+ },
+ {
+  "archivo": "misterio 63.mp3",
+  "n": 63,
+  "sim": 0.871,
+  "segundo": 70,
+  "cobertura": 0.831,
+  "final_ok": true,
+  "dur": 24.5
+ },
+ {
+  "archivo": "misterio 64.mp3",
+  "n": 64,
+  "sim": 0.939,
+  "segundo": 70,
+  "cobertura": 0.912,
+  "final_ok": true,
+  "dur": 26.8
+ },
+ {
+  "archivo": "misterio 65.mp3",
+  "n": 65,
+  "sim": 0.905,
+  "segundo": 11,
+  "cobertura": 0.864,
+  "final_ok": true,
+  "dur": 23.6
+ },
+ {
+  "archivo": "misterio 66.mp3",
+  "n": 66,
+  "sim": 0.984,
+  "segundo": 14,
+  "cobertura": 0.984,
+  "final_ok": true,
+  "dur": 26.4
+ },
+ {
+  "archivo": "misterio 68.mp3",
+  "n": 68,
+  "sim": 0.967,
+  "segundo": 71,
+  "cobertura": 0.952,
+  "final_ok": true,
+  "dur": 23.3
+ },
+ {
+  "archivo": "misterio 69.mp3",
+  "n": 69,
+  "sim": 1.0,
+  "segundo": 93,
+  "cobertura": 1.0,
+  "final_ok": true,
+  "dur": 23.6
+ },
+ {
+  "archivo": "misterio 70.mp3",
+  "n": 70,
+  "sim": 1.0,
+  "segundo": 79,
+  "cobertura": 1.0,
+  "final_ok": true,
+  "dur": 21.9
+ },
+ {
+  "archivo": "misterio 71.mp3",
+  "n": 71,
+  "sim": 0.967,
+  "segundo": 68,
+  "cobertura": 0.967,
+  "final_ok": true,
+  "dur": 23.0
+ },
+ {
+  "archivo": "misterio 72.mp3",
+  "n": 72,
+  "sim": 0.944,
+  "segundo": 95,
+  "cobertura": 0.911,
+  "final_ok": true,
+  "dur": 23.1
+ },
+ {
+  "archivo": "misterio 73.mp3",
+  "n": 73,
+  "sim": 0.85,
+  "segundo": 44,
+  "cobertura": 0.794,
+  "final_ok": true,
+  "dur": 24.1
+ },
+ {
+  "archivo": "misterio 74.mp3",
+  "n": 74,
+  "sim": 0.889,
+  "segundo": 68,
+  "cobertura": 0.839,
+  "final_ok": true,
+  "dur": 23.6
+ },
+ {
+  "archivo": "misterio 75.mp3",
+  "n": 75,
+  "sim": 0.929,
+  "segundo": 50,
+  "cobertura": 0.908,
+  "final_ok": true,
+  "dur": 24.5
+ },
+ {
+  "archivo": "misterio 76.mp3",
+  "n": 76,
+  "sim": 0.966,
+  "segundo": 28,
+  "cobertura": 0.966,
+  "final_ok": true,
+  "dur": 22.5
+ },
+ {
+  "archivo": "misterio 78.mp3",
+  "n": 77,
+  "sim": 0.974,
+  "segundo": 76,
+  "cobertura": 0.966,
+  "final_ok": true,
+  "dur": 23.4
+ },
+ {
+  "archivo": "misterio 79.mp3",
+  "n": 78,
+  "sim": 0.97,
+  "segundo": 66,
+  "cobertura": 0.955,
+  "final_ok": true,
+  "dur": 25.0
+ },
+ {
+  "archivo": "misterio 80.mp3",
+  "n": 79,
+  "sim": 0.948,
+  "segundo": 70,
+  "cobertura": 0.917,
+  "final_ok": true,
+  "dur": 23.8
+ },
+ {
+  "archivo": "misterio 81.mp3",
+  "n": 80,
+  "sim": 0.984,
+  "segundo": 9,
+  "cobertura": 0.984,
+  "final_ok": true,
+  "dur": 24.3
+ },
+ {
+  "archivo": "misterio 82.mp3",
+  "n": 81,
+  "sim": 0.948,
+  "segundo": 83,
+  "cobertura": 0.917,
+  "final_ok": true,
+  "dur": 25.5
+ },
+ {
+  "archivo": "misterio 83.mp3",
+  "n": 82,
+  "sim": 0.942,
+  "segundo": 91,
+  "cobertura": 0.915,
+  "final_ok": true,
+  "dur": 27.2
+ },
+ {
+  "archivo": "misterio 84.mp3",
+  "n": 83,
+  "sim": 0.911,
+  "segundo": 18,
+  "cobertura": 0.879,
+  "final_ok": true,
+  "dur": 24.8
+ },
+ {
+  "archivo": "misterio 85.mp3",
+  "n": 84,
+  "sim": 0.941,
+  "segundo": 64,
+  "cobertura": 0.914,
+  "final_ok": true,
+  "dur": 26.4
+ },
+ {
+  "archivo": "misterio 86.mp3",
+  "n": 85,
+  "sim": 0.853,
+  "segundo": 91,
+  "cobertura": 0.817,
+  "final_ok": true,
+  "dur": 28.0
+ },
+ {
+  "archivo": "misterio 87.mp3",
+  "n": 86,
+  "sim": 0.938,
+  "segundo": 70,
+  "cobertura": 0.91,
+  "final_ok": true,
+  "dur": 27.6
+ },
+ {
+  "archivo": "misterio 88.mp3",
+  "n": 87,
+  "sim": 0.945,
+  "segundo": 10,
+  "cobertura": 0.945,
+  "final_ok": true,
+  "dur": 28.8
+ },
+ {
+  "archivo": "misterio 89.mp3",
+  "n": 88,
+  "sim": 0.966,
+  "segundo": 5,
+  "cobertura": 0.95,
+  "final_ok": true,
+  "dur": 24.3
+ },
+ {
+  "archivo": "misterio 90.mp3",
+  "n": 89,
+  "sim": 0.949,
+  "segundo": 33,
+  "cobertura": 0.933,
+  "final_ok": true,
+  "dur": 23.3
+ },
+ {
+  "archivo": "misterio 91.mp3",
+  "n": 90,
+  "sim": 0.86,
+  "segundo": 63,
+  "cobertura": 0.79,
+  "final_ok": true,
+  "dur": 22.5
+ },
+ {
+  "archivo": "misterio 92.mp3",
+  "n": 91,
+  "sim": 0.937,
+  "segundo": 33,
+  "cobertura": 0.908,
+  "final_ok": true,
+  "dur": 23.0
+ },
+ {
+  "archivo": "misterio 93.mp3",
+  "n": 92,
+  "sim": 0.952,
+  "segundo": 44,
+  "cobertura": 0.938,
+  "final_ok": true,
+  "dur": 23.4
+ },
+ {
+  "archivo": "misterio 94.mp3",
+  "n": 93,
+  "sim": 0.947,
+  "segundo": 69,
+  "cobertura": 0.94,
+  "final_ok": true,
+  "dur": 25.5
+ },
+ {
+  "archivo": "misterio 95.mp3",
+  "n": 94,
+  "sim": 0.952,
+  "segundo": 32,
+  "cobertura": 0.922,
+  "final_ok": true,
+  "dur": 25.0
+ },
+ {
+  "archivo": "misterio 96.mp3",
+  "n": 95,
+  "sim": 0.902,
+  "segundo": 56,
+  "cobertura": 0.859,
+  "final_ok": true,
+  "dur": 25.5
+ },
+ {
+  "archivo": "misterio 97.mp3",
+  "n": 97,
+  "sim": 1.0,
+  "segundo": 75,
+  "cobertura": 1.0,
+  "final_ok": true,
+  "dur": 24.8
+ },
+ {
+  "archivo": "misterio 98.mp3",
+  "n": 98,
+  "sim": 0.862,
+  "segundo": 22,
+  "cobertura": 0.803,
+  "final_ok": true,
+  "dur": 27.4
+ },
+ {
+  "archivo": "mistero 67.mp3",
+  "n": 67,
+  "sim": 0.869,
+  "segundo": 70,
+  "cobertura": 0.841,
+  "final_ok": true,
+  "dur": 25.2
+ }
+]

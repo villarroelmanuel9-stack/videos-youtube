@@ -606,7 +606,7 @@ def mezclar(voz, cortes, eventos, total, pad_hz=(49, 73.4, 98), hifi=False):
 # MONTAJE
 # =========================================================================== #
 def generar(ruta_json: Path, escenas_dict, estilo_sub, audio_usuario=None, sin_audio=False, cola=1.9,
-            pad_hz=(49, 73.4, 98), hifi=False, acabado=False):
+            pad_hz=(49, 73.4, 98), hifi=False, acabado=False, crf=19, salida_dir=None):
     cfg = json.loads(Path(ruta_json).read_text(encoding="utf-8"))
     nombre = Path(ruta_json).stem + "_pro"
     print(f"▶ {nombre}")
@@ -642,11 +642,12 @@ def generar(ruta_json: Path, escenas_dict, estilo_sub, audio_usuario=None, sin_a
         escribir_wav(tmp / "mezcla.wav", mezclar(leer_wav(tmp / "voz.wav"), [e["inicio"] for e in escenas[1:]],
                                                  eventos, total, pad_hz, hifi=hifi))
         (RAIZ / "salida").mkdir(exist_ok=True)
-        salida = RAIZ / "salida" / f"{nombre}.mp4"
+        salida = (Path(salida_dir) if salida_dir else RAIZ / "salida") / f"{nombre}.mp4"
+        salida.parent.mkdir(parents=True, exist_ok=True)
         proc = subprocess.Popen(
             ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
              "-r", str(FPS), "-i", "-", "-i", str(tmp / "mezcla.wav"), "-c:v", "libx264", "-preset", "medium",
-             "-crf", "19", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-shortest",
+             "-crf", str(crf), "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-shortest",
              "-movflags", "+faststart", str(salida)], stdin=subprocess.PIPE)
         for n in range(int(total * FPS)):
             tg = n / FPS

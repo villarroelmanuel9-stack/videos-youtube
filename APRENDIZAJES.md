@@ -49,3 +49,15 @@ Notas que se aplican a cada video nuevo (se actualizan después de cada historia
 | Juliane Koepcke | Selva, lluvia, recuerdo en sepia | Libreta de campo | Verde lima | Mapa con la ruta dibujándose + brote que crece con "SUSCRÍBETE" |
 | Tregua de Navidad | Noche nevada, velas | Tarjetas navideñas antiguas | Cinta roja | Velas que escriben "PAZ" + regalo que se abre |
 | Wojtek (oso soldado) | Semi-realista: desierto, puerto, Montecassino, Escocia | Libretas militares verde oliva con bandera polaca | Subrayado rojo | Estatua de bronce + huellas + sello de huella "SUSCRÍBETE" |
+| Misterios sin resolver (serie, 96 videos) | Nocturna/niebla según tema + acabado de cine | Fichas de expediente + sellos (SIN RESOLVER / MITO / ¿RESUELTO?) | Ámbar | 4 finales que rotan (CASO ABIERTO, comentario escribiéndose, signos «?», logo de la serie) + franja SUSCRÍBETE |
+
+## Serie de misterios (lote automático)
+- **Verificar siempre los audios por contenido, no por nombre**: de 98 archivos, 2 eran copias exactas de otros
+  (Roanoke = Flannan, Baychimo = Flying Tiger). `verificar_misterios.py` transcribe, identifica y deja el informe en
+  `guiones/verificacion_misterios.md`.
+- Cobertura 77–85 % con similitud > 0,83 = audio correcto (ElevenLabs cambia números y algunas palabras); revisar solo
+  si la similitud baja de 0,8 o falta el final.
+- El tema visual se asigna a mano por número (`TEMA_N`): las palabras clave sueltas confunden («mina» en «termina»).
+- Glifos raros: usar DejaVu (la fuente de máquina no los tiene y salen cuadrados).
+- Lo que se vea en el primer segundo tiene que estar en pantalla desde el fotograma 1 (el avión entraba tarde).
+- Render: ~3 min por video de 25–30 s con acabado; 3 en paralelo con 4 núcleos. Peso ~6 MB (crf 25).
