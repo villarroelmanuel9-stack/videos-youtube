@@ -204,7 +204,9 @@ BARCOS = {
     "balandra": dict(casco=(232, 228, 218), vela=(226, 214, 186), palos=1),  # Spray de Slocum
     "yate": dict(casco=(236, 236, 232), cubierta=(120, 82, 50)),  # MV Joyita
     "catamaran": dict(casco=(238, 238, 240), vela=(240, 240, 236)),  # Kaz II
-    "vapor_waratah": dict(casco=(30, 30, 34), super=(236, 232, 220), chimenea=(214, 170, 80), tope=(20, 20, 22)),
+    # Blue Anchor Line: casco negro, superestructura color café con leche y chimenea negra con franja blanca
+    "vapor_waratah": dict(casco=(30, 30, 34), super=(196, 166, 122), chimenea=(26, 26, 28), tope=(20, 20, 22),
+                          banda=True),
     "carbonero": dict(casco=(118, 124, 130), super=(150, 156, 160), chimenea=(110, 116, 120), tope=(30, 30, 34),
                       gruas=True),  # USS Cyclops (gris de la Marina)
     "carguero": dict(casco=(40, 42, 48), super=(214, 210, 200), chimenea=(160, 40, 34), tope=(24, 24, 26)),
@@ -261,6 +263,9 @@ def barco_real(modelo, sil=None):
         Lz.forma([(-70, -200), (140, -200), (130, -260), (-60, -260)], e["super"], suave=False, intensidad=0.1)
         Lz.forma([(10, -260), (84, -260), (78, -400), (16, -400)], e["chimenea"], suave=False, intensidad=0.14)
         Lz.forma([(15, -400), (79, -400), (80, -370), (14, -370)], e["tope"], suave=False, borde=False)
+        if e.get("banda") and not sil:  # franja blanca con el ancla azul
+            Lz.forma([(13, -345), (81, -345), (81, -300), (13, -300)], (240, 240, 236), suave=False, borde=False)
+            Lz.circulo(47, -322, 12, (40, 70, 160), borde=False)
         if not sil:
             for k in range(9):
                 Lz.circulo(-90 + k * 30, -140, 7, (240, 210, 130), borde=False)

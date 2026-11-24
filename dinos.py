@@ -1316,7 +1316,11 @@ ESCENAS_DINO = {f"dino_{i}": c for i, c in enumerate((D1, D2, D3, D4, D5, D6, D7
 # CÁMARA, SONIDO Y MONTAJE
 # =========================================================================== #
 def camara(img, cam, p, sac, t):
-    z0, z1, fx, fy = cam
+    if len(cam) == 6:  # zoom + recorrido de un punto a otro
+        z0, z1, fx0, fy0, fx1, fy1 = cam
+        fx, fy = fx0 + (fx1 - fx0) * ease(p), fy0 + (fy1 - fy0) * ease(p)
+    else:
+        z0, z1, fx, fy = cam
     z = z0 + (z1 - z0) * ease(p)
     cw, ch = W / z, H / z
     x0 = W * fx - cw / 2 + sac * 18 * math.sin(t * 83)

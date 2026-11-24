@@ -69,3 +69,9 @@ Notas que se aplican a cada video nuevo (se actualizan después de cada historia
 - El vehículo o el objeto real **abre** el video; dos videos del mismo tema nunca repiten el orden de escenas.
 - Sonido por escena (no un ambiente fijo para todo el video): sonar, morse, crujido de madera, gaviotas, bocina de
   niebla, goteo, papel, búho, fuego, tren, burbujas… siempre por debajo de la voz (informe de mezcla «OK»).
+- **v3 (pedido: «ninguno igual», «solo información de la historia»)**: los datos en pantalla salen de lo que el
+  narrador dice (años y cifras de la transcripción; nombres y lugares del guion, bien escritos) y aparecen justo
+  cuando se dicen; el mapa clava alfileres en los lugares nombrados; el titular del diario es el dato de esa parte.
+  Cada video tiene su propio color de subtítulos, transición, recorridos de cámara, recuadro, estilo de dato y cierre
+  (tablero de corcho, película, carpeta o pantallas con las imágenes del propio video). Nunca dos documentos iguales
+  en un mismo video. Textos (título, descripción, prompt de miniatura) en «textos misterios nuevos».

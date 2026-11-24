@@ -50,6 +50,26 @@ class Escena(EscenaAlc):
         return []
 
 
+def transicionar(a, k, tipo, idx):
+    """Entrada a una escena nueva: barrido, barrido vertical, destello, zoom o fundido."""
+    if tipo == "barrido":
+        return barrido(a, k, 1 if idx % 2 else -1)
+    if tipo == "vertical":
+        acc = a.astype(np.float32)
+        for i in range(1, 6):
+            acc += np.roll(a, int((1 if idx % 2 else -1) * i * 30 * k), axis=0)
+        return (acc / 6).astype(np.uint8)
+    if tipo == "destello":
+        return np.clip(a.astype(np.float32) * (1 - 0.7 * k) + 255 * 0.7 * k, 0, 255).astype(np.uint8)
+    if tipo == "zoom":
+        z = 1 + 0.35 * k
+        im = Image.fromarray(a)
+        cw, ch = W / z, H / z
+        im = im.resize((W, H), Image.BILINEAR, box=((W - cw) / 2, (H - ch) / 2, (W + cw) / 2, (H + ch) / 2))
+        return np.asarray(im)
+    return (a.astype(np.float32) * (1 - 0.9 * k)).astype(np.uint8)  # fundido a negro
+
+
 # =========================================================================== #
 # SUBTÍTULOS
 # =========================================================================== #
@@ -613,6 +633,13 @@ def sfx(tipo, dur, rng):
             c = np.sin(2 * np.pi * (300 + 6000 * k) * k) * np.exp(-k * 50)
             x[a0:a0 + 2500] += c[:len(x[a0:a0 + 2500])]
         x = x * 0.05
+    elif tipo == "riser":  # subida de tensión antes del final
+        f = 180 + 700 * (tt / dur) ** 2
+        x = (np.sin(2 * np.pi * np.cumsum(f) / SR) * 0.4 + ruido_filtrado(m, 8, rng) * 1.2 * (tt / dur)) * \
+            (tt / dur) ** 1.5 * 0.05
+    elif tipo == "boom":  # impacto grave del gancho
+        x = (np.sin(2 * np.pi * 46 * tt) + ruido_filtrado(m, 60, rng) * 4) * np.exp(-tt * 3.5) * \
+            np.minimum(1, tt / 0.01) * 0.12
     elif tipo == "campana":
         x = sum(np.sin(2 * np.pi * f * tt) * a for f, a in ((440, 1), (1108, 0.5), (1760, 0.25))) * \
             np.exp(-tt * 1.5) * 0.05
@@ -696,7 +723,8 @@ def mezclar(voz, cortes, eventos, total, pad_hz=(49, 73.4, 98), hifi=False):
 # MONTAJE
 # =========================================================================== #
 def generar(ruta_json: Path, escenas_dict, estilo_sub, audio_usuario=None, sin_audio=False, cola=1.9,
-            pad_hz=(49, 73.4, 98), hifi=False, acabado=False, crf=19, salida_dir=None):
+            pad_hz=(49, 73.4, 98), hifi=False, acabado=False, crf=19, salida_dir=None, transicion="barrido",
+            calidez=1.0):
     cfg = json.loads(Path(ruta_json).read_text(encoding="utf-8"))
     nombre = Path(ruta_json).stem + "_pro"
     print(f"▶ {nombre}")
@@ -748,13 +776,13 @@ def generar(ruta_json: Path, escenas_dict, estilo_sub, audio_usuario=None, sin_a
             img = o.mundo(tl, e["dur"])
             img = camara(img, o.camara, tl / e["dur"], o.sacudida(tl, e["dur"]), tg)
             o.encima(img, tl, e["dur"])
-            subtitulo(img, e["grupos"], tl, estilo_sub)
+            subtitulo(img, e["grupos"], tl, estilo_sub, y=estilo_sub.get("y", 1365))
             a = np.clip(np.asarray(img.convert("RGB"), np.float32) * VINETA, 0, 255).astype(np.uint8)
             if acabado:
                 from realista import acabado as _acabado
-                a = _acabado(a, n)
-            if idx > 0 and tl < 0.2:
-                a = barrido(a, 1 - tl / 0.2, 1 if idx % 2 else -1)
+                a = _acabado(a, n, calidez=calidez)
+            if idx > 0 and tl < 0.22:
+                a = transicionar(a, 1 - tl / 0.22, transicion, idx)
             for c in e["cortes"]:
                 if 0 <= tl - c < 0.2:
                     a = barrido(a, 1 - (tl - c) / 0.2, -1)

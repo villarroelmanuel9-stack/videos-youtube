@@ -33,6 +33,8 @@ from realista import LienzoReal
 from verificar_misterios import cargar_guiones
 import mis_reales as R
 from mis_kits import DETALLES, KITS_EXTRA, figura, nubes, objeto, personas_de
+from mis_v3 import (camaras_video, dibujar_dato, estilo_video, extraer_datos, frase_sello, kit_cierre, polvo,
+                    rayos)
 
 RAIZ = Path(__file__).resolve().parent
 ESTILO = {"modo": "color", "color": (255, 200, 80)}
@@ -191,12 +193,18 @@ def kit_mar(ctx, var):
     barco = barco.resize((int(barco.width * escala), int(barco.height * escala)), Image.LANCZOS)
     escora = det.get("escora", 0)
     bx = r.uniform(400, 680)
+    reflejo = barco.transpose(Image.FLIP_TOP_BOTTOM).resize((barco.width, int(barco.height * 0.45)))
+    reflejo = reflejo.filter(ImageFilter.GaussianBlur(3))
+    reflejo.putalpha(reflejo.getchannel("A").point(lambda v: int(v * 0.28)))
     deriva = 10 if modelo != "franklin" else 0
 
     def din(img, t, dur):
         nubes(img, t, paleta, y=560, n=4, semilla=ctx["n"])
         bob = 10 * math.sin(t * 1.4) if modelo != "franklin" else 0
         b = barco.rotate(escora + 2.5 * math.sin(t * 1.1) * (deriva > 0), resample=Image.BICUBIC)
+        if modelo != "franklin" and paleta != "frio":
+            img.alpha_composite(reflejo, (int(bx - reflejo.width / 2 + t * deriva + 6 * math.sin(t * 2)),
+                                          int(1185 + bob * 0.5)))
         img.alpha_composite(b, (int(bx - b.width / 2 + t * deriva), int(1185 - b.height * 0.76 + bob)))
         if modelo != "franklin":
             olas(img, t, 1170, col=(120, 150, 180) if paleta not in ("niebla", "dia") else (220, 230, 240), alfa=120)
@@ -506,6 +514,13 @@ def kit_escritorio(ctx, var):
         modo = "simbolos" if var != 1 else "periodico"
     if modo == "simbolos" and ctx["tema"] not in ("codigo", "antiguo", "senal"):
         modo = "periodico" if var == 0 else "carta"
+    usados = ctx.setdefault("usados", set())
+    if modo in usados:  # nunca dos documentos iguales en el mismo video
+        modo = next((m for m in ("periodico", "carta", "simbolos") if m not in usados and
+                     (m != "simbolos" or ctx["tema"] in ("codigo", "antiguo", "senal"))), "carta")
+    usados.add(modo)
+    i_ = ctx.get("i_escena", 0)
+    parrafo_escena = ctx.get("parrafos", [""] * 9)[i_] if i_ < len(ctx.get("parrafos", [])) else ""
 
     def dib(L):
         L.img.alpha_composite(_grad(W * 2, H * 2, [(0, (40, 28, 20)), (1, (18, 12, 8))]))
@@ -520,9 +535,19 @@ def kit_escritorio(ctx, var):
     d = ImageDraw.Draw(hoja)
     d.rectangle((0, 0, 759, 979), outline=(140, 120, 90), width=6)
     if modo == "periodico":
-        d.text((380, 70), "EL DIARIO", font=maquina(48), fill=(40, 30, 20), anchor="mm")
+        cabecera = ["EL DIARIO", "LA GACETA", "NOTICIAS", "LA CRÓNICA", "EDICIÓN EXTRA"][ctx["n"] % 5]
+        d.text((380, 62), cabecera, font=maquina(48), fill=(40, 30, 20), anchor="mm")
+        if ctx["anio"]:
+            d.text((380, 96), f"— {ctx['anio']} —", font=maquina(24), fill=(90, 70, 50), anchor="mm")
         d.line((30, 110, 730, 110), fill=(40, 30, 20), width=4)
-        tit = ctx["canva"] or ctx["nombre"].upper()
+        datos_esc = [d[2] for d in (ctx["datos"][i_] if i_ < len(ctx["datos"]) else [])]
+        if datos_esc:  # titular con lo que cuenta esta parte del relato
+            tit = datos_esc[0]
+        elif "titular" not in usados:
+            tit = ctx["canva"] or ctx["nombre"].upper()
+        else:
+            tit = " ".join(re.sub(r"[^\wÁÉÍÓÚÑáéíóúñ ]", "", parrafo_escena).split()[:3]).upper() or ctx["nombre"].upper()
+        usados.add("titular")
         f = pro.fuente(76)
         while d.textlength(tit, font=f) > 690 and f.size > 36:
             f = pro.fuente(f.size - 6)
@@ -564,6 +589,7 @@ def kit_escritorio(ctx, var):
         img.alpha_composite(hoja, (int(540 - hoja.width / 2), int(y - hoja.height / 2)))
         fl = 1 + 0.1 * math.sin(t * 11)
         pegar_glow(img, 150, 400, 90 * fl, "#ffcf7a", 0.8)
+        polvo(img, t, 300, 620, 380, n=14, semilla=ctx["n"])
         if modo in ("simbolos", "objeto"):  # lupa recorriendo los símbolos
             lx, ly = 540 + 220 * math.sin(t * 0.7), 1000 + 260 * math.sin(t * 0.5)
             d = ImageDraw.Draw(img)
@@ -574,6 +600,8 @@ def kit_escritorio(ctx, var):
 
 def kit_mapa(ctx, var):
     r = ctx["rnd"]
+    i_ = ctx.get("i_escena", 0)
+    lugares = [d[2].title()[:16] for d in (ctx["datos"][i_] if i_ < len(ctx["datos"]) else []) if d[1] == "nombre"][:2]
 
     def dib(L):
         nautica = ctx["n"] % 2 == 0
@@ -608,6 +636,16 @@ def kit_mapa(ctx, var):
             x, y = ruta[-1]
             d.line((x - 30, y - 30, x + 30, y + 30), fill=(190, 20, 20), width=12)
             d.line((x + 30, y - 30, x - 30, y + 30), fill=(190, 20, 20), width=12)
+        for k, nombre in enumerate(lugares):
+            px, py = ruta[int((k + 1) / (len(lugares) + 1) * (len(ruta) - 1))]
+            if n >= int((k + 1) / (len(lugares) + 1) * (len(ruta) - 1)):
+                d.line((px, py, px, py - 70), fill=(60, 40, 30), width=5)
+                d.ellipse((px - 18, py - 92, px + 18, py - 56), fill=(200, 30, 40), outline=(80, 10, 10), width=3)
+                f = manuscrita(46)
+                tw = d.textlength(nombre, font=f)
+                lx = min(max(px + 30, 90), W - 90 - tw)
+                d.rounded_rectangle((lx - 12, py - 120, lx + tw + 12, py - 64), radius=10, fill=(250, 244, 226))
+                d.text((lx, py - 92), nombre, font=f, fill=(90, 30, 20), anchor="lm")
         d.text((540, 1210), ctx["nombre"].upper()[:26], font=manuscrita(54), fill=(90, 50, 30), anchor="mm")
     return fondo, din
 
@@ -629,6 +667,7 @@ def kit_cueva(ctx, var):
     fondo = full(dib)
 
     def din(img, t, dur):
+        rayos(img, t, 540, (255, 220, 160), n=3, alfa=18, ancho=120)
         k = 0.8 + 0.2 * math.sin(t * 7)
         pegar_glow(img, 540, 1360, 380 * k, "#ffc850", 0.55)
         for x in (150, 930):
@@ -796,6 +835,8 @@ def kit_ruinas(ctx, var):
                 pegar_glow(img, x, 1150, 110 * fl, "#ff9a40", 0.75)
         else:
             particulas(img, t, "ceniza", 30, alfa=120)
+        if pal != "noche" and tipo != "nazca":
+            rayos(img, t, 700, (255, 230, 190), n=4, alfa=20)
         niebla(img, t, 1250, 0.18)
     return fondo, din
 
@@ -926,6 +967,7 @@ def kit_selva(ctx, var):
     fondo = fondo_selva(oscura=var != 1, rio=var == 2, semilla=ctx["n"] + var)
 
     def din(img, t, dur):
+        rayos(img, t, 300 + (ctx["n"] * 97) % 480, (230, 255, 200), n=4, alfa=24)
         for k, pk in enumerate(personas_de(ctx)):
             if var != 2:
                 figura(img, pk, 380 + k * 200 + t * 10, 1700, 0.55, t, pose="caminar", oscuridad=0.3)
@@ -977,6 +1019,8 @@ def kit_lago(ctx, var):
 
 def kit_bosque(ctx, var):
     pal = ["noche", "frio", "atardecer"][var % 3]
+    if pal == "atardecer" and ctx["tema"] != "explosion":  # el cielo en llamas es solo para Tunguska
+        pal = "noche" if var % 2 == 0 else "frio"
 
     def dib(L):
         L.img.alpha_composite(_grad(W * 2, H * 2, PALETAS[pal]))
@@ -1257,7 +1301,7 @@ def sello_de(parrafo):
     return "CASO ABIERTO", (200, 30, 40)
 
 
-def crear_escenas(g):
+def crear_escenas(g, datos=None):
     txt = norm(" ".join([g["nombre"], g["escena"], g["desc"]] + g["parrafos"]))
     tema = TEMA_N.get(g["n"]) or tema_de(txt)
     rnd = random.Random(g["n"] * 7919)
@@ -1265,8 +1309,12 @@ def crear_escenas(g):
     det = DETALLES.get(g["n"], {})
     if "anio" in det:
         anio = det["anio"]
+    n_par = len(g["parrafos"])
+    est = estilo_video(g["n"])
     ctx = dict(clave=norm(g["nombre"] + " " + g["escena"]), n=g["n"], nombre=g["nombre"], canva=g["canva"],
-               txt=txt, rnd=rnd, anio=anio, tema=tema, det=det)
+               txt=txt, rnd=rnd, anio=anio, tema=tema, det=det, est=est, fotos=[], i_escena=0,
+               parrafos=g["parrafos"],
+               datos=datos or [[] for _ in range(n_par)])
     secuencia = det.get("seq") or secuencia_de(tema, g["n"])
     if not det.get("seq") and (det.get("av") or det.get("bar")):  # el vehículo real abre el video
         abre = ("avion", 0) if det.get("av") else ("mar", 0)
@@ -1285,30 +1333,42 @@ def crear_escenas(g):
             nuevo.append((k, v))
         secuencia = nuevo
     tinte = TINTES[g["n"] % len(TINTES)]
-    mayus = re.findall(r"\b[A-ZÁÉÍÓÚÑ]{4,}(?: [A-ZÁÉÍÓÚÑ]{2,})*\b", g["titulo"])
+    cams = camaras_video(g["n"], n_par)
+    # sello con una frase del propio relato, solo una vez y en la escena que la dice
+    sello_idx, sello_txt = None, None
+    for k in range(2, n_par - 1):
+        f = frase_sello(g["parrafos"][k])
+        if f:
+            sello_idx, sello_txt = k, f
+            break
+    acento = est["acento"]
     escenas = {}
-    n_par = len(g["parrafos"])
-    camaras = [(1.0, 1.12, 0.5, 0.55), (1.12, 1.0, 0.5, 0.6), (1.0, 1.08, 0.45, 0.5), (1.06, 1.0, 0.55, 0.62)]
 
     for i in range(n_par):
         ultimo = i == n_par - 1
-        kit, var = secuencia[min(i, len(secuencia) - 1)] if not ultimo else (secuencia[0][0],
-                                                                             (secuencia[0][1] + 1) % 3)
+        kit, var = secuencia[min(i, len(secuencia) - 1)] if not ultimo else ("cierre", est["cierre"])
         parrafo = g["parrafos"][i]
 
         class E(Escena):
             _kit, _var, _i, _ultimo, _parrafo = kit, var, i, ultimo, parrafo
-            camara = camaras[(i + g["n"]) % 4]
+            camara = cams[i]
 
             def __init__(self):
                 super().__init__()
-                self.fondo, self.din = KITS[self._kit](ctx, self._var)
-                if any(tinte):
-                    self.fondo = self.fondo.copy()
-                    self.fondo.alpha_composite(Image.new("RGBA", (W, H), tinte + (34,)))
+                ctx["i_escena"] = self._i
                 if self._ultimo:
-                    self.fondo = self.fondo.copy()
-                    self.fondo.alpha_composite(Image.new("RGBA", (W, H), (0, 0, 8, 120)))
+                    self.fondo, self.din = kit_cierre(ctx, self._var)
+                else:
+                    self.fondo, self.din = KITS[self._kit](ctx, self._var)
+                    if any(tinte):
+                        self.fondo = self.fondo.copy()
+                        self.fondo.alpha_composite(Image.new("RGBA", (W, H), tinte + (34,)))
+                    try:  # foto de esta escena para el cierre del video
+                        foto = self.fondo.copy()
+                        self.din(foto, 1.6, 4.0)
+                        ctx["fotos"].append(foto)
+                    except Exception:  # noqa: BLE001
+                        pass
 
             def mundo(self, t, dur):
                 img = self.fondo.copy()
@@ -1321,83 +1381,61 @@ def crear_escenas(g):
             def encima(self, img, t, dur):
                 i_, ult = self._i, self._ultimo
                 if i_ == 0:
-                    chip(img, t, 0.05, "MISTERIOS SIN RESOLVER", y=150, fondo=(20, 20, 26), color=AMBAR, tam=34)
+                    chip(img, t, 0.05, "MISTERIOS SIN RESOLVER", y=150, fondo=(20, 20, 26), color=acento, tam=34,
+                         x=est["chip_x"])
                     if g["canva"]:
-                        sello(img, t, 0.35, g["canva"].strip("¿?«»").upper()[:22], W / 2, 780, ang=-8,
-                              color=(220, 50, 50), tam=86)
-                    ficha(img, t, dur * 0.45, "izq", 250, anio or "expediente", g["nombre"][:24], emoji="🔎")
-                elif i_ == 1 and not ult:
-                    if anio:
-                        numero(img, t, 0.3, anio, g["nombre"][:30], y=380, color=(240, 230, 210), tam=150)
-                elif i_ == 2 and not ult and mayus:
-                    chip(img, t, dur * 0.3, mayus[0], y=300, fondo=(160, 30, 36), tam=50)
-                elif not ult:
-                    txt_s, col = sello_de(self._parrafo)
-                    sello(img, t, dur * 0.55, txt_s, W / 2, 640, ang=-10, color=col, tam=90)
+                        sello(img, t, 0.35, g["canva"].strip("¿?«»").upper()[:22], W / 2, 830,
+                              ang=-8 if g["n"] % 2 else 7, color=(220, 50, 50) if g["n"] % 3 else (236, 236, 236),
+                              tam=86)
+                    lado = "der" if est["tarjeta"] == "ficha_der" or g["n"] % 2 else "izq"
+                    if est["tarjeta"].startswith("ficha"):
+                        ficha(img, t, dur * 0.45, lado, 250, anio or "EXPEDIENTE", g["nombre"][:24], emoji="🔎")
+                    else:
+                        pro.tarjeta(img, t, dur * 0.45, lado, 250, anio or "EXPEDIENTE", g["nombre"][:22],
+                                    est["tarjeta"], emoji="🔎")
+                for slot, (t0, tipo, texto) in enumerate(ctx["datos"][i_] if i_ < len(ctx["datos"]) else []):
+                    base = 560 if i_ == 0 else 330
+                    dibujar_dato(img, t, max(0.05, t0 - 0.1), tipo, texto, base + slot * 175, est["dato"], acento)
+                if i_ == sello_idx:
+                    sello(img, t, dur * 0.62, sello_txt, W / 2, 700, ang=-10, color=(210, 36, 44), tam=84)
                 if ult:
-                    final(img, t, dur, g, self)
+                    final(img, t, dur, g, est)
 
             def sonidos(self, dur):
                 ev = []
+                if self._ultimo:
+                    ev += [(-1.1, "riser", 1.2), (0, "drone", dur), (0.1, "papel", 0.5), (dur * 0.6, "pop", 0.2)]
+                    return ev
                 ev += sonidos_kit(self._kit, self._var, dur, ctx)
                 if self._i == 0:
-                    ev += [(0.0, "golpe", 0.4), (0.35, "sello", 0.3)]
+                    ev += [(0.0, "boom", 1.2), (0.35, "sello", 0.3)]
                 if self._i == 2:
                     ev.append((0, "latido", dur))
-                if self._ultimo:
-                    ev.append((dur * 0.6, "pop", 0.2))
-                elif self._i >= 3:
-                    ev.append((dur * 0.55, "sello", 0.3))
+                if self._i == sello_idx:
+                    ev.append((dur * 0.62, "sello", 0.3))
+                for t0, _, _ in (ctx["datos"][self._i] if self._i < len(ctx["datos"]) else []):
+                    ev.append((max(0.0, t0 - 0.1), "teclas" if est["dato"] == "maquina" else "pop", 0.25))
                 return ev
 
         escenas[f"mis{g['n']:02d}_{i + 1}"] = E
     return escenas, tema
 
 
-def final(img, t, dur, g, esc):
-    """Cuatro finales distintos que rotan según el número del misterio."""
+def final(img, t, dur, g, est):
+    """Pregunta del propio relato + franja de suscripción (el fondo es el cierre con las fotos del video)."""
     pregunta = (re.findall(r"[^.?!]*\?", g["parrafos"][-1]) or ["¿Tú qué crees?"])[0].strip()
-    estilo = g["n"] % 4
+    chip(img, t, 0.4, pregunta[:40], y=230, fondo=(20, 20, 26), color=est["acento"], tam=48)
     d = ImageDraw.Draw(img)
-    if estilo == 0:  # expediente que se cierra
-        sello(img, t, 0.3, "CASO ABIERTO", W / 2, 720, ang=-10, tam=100)
-        chip(img, t, 0.8, pregunta[:40], y=420, fondo=(20, 20, 26), color=AMBAR, tam=46)
-    elif estilo == 1:  # comentario escribiéndose
-        chip(img, t, 0.2, pregunta[:40], y=420, fondo=(20, 20, 26), color=AMBAR, tam=46)
-        if t > 0.8:
-            caja = (90, 690, W - 90, 830)
-            sombra_suave(img, caja, radio=34)
-            d.rounded_rectangle(caja, radius=34, fill=(255, 255, 255, 248), outline=TINTA, width=5)
-            vis = "Yo creo que..."[:max(0, int((t - 0.8) * 9))]
-            d.text((140, 760), vis + ("|" if int(t * 2.5) % 2 == 0 else ""), font=pro.fuente(48), fill=(60, 60, 70),
-                   anchor="lm")
-    elif estilo == 2:  # dos signos de pregunta gigantes
-        for k, x in enumerate((250, 830)):
-            p = pop((t - 0.2 - k * 0.15) / 0.3)
-            if p > 0.05:
-                d.text((x, 640 + 20 * math.sin(t * 3 + k)), "?", font=pro.fuente(int(300 * p)), fill=AMBAR,
-                       anchor="mm", stroke_width=10, stroke_fill=TINTA)
-        chip(img, t, 0.5, pregunta[:40], y=420, fondo=(20, 20, 26), color=AMBAR, tam=46)
-        chip(img, t, 1.0, "COMENTA 👇".replace(" 👇", ""), y=900, fondo=(160, 30, 36), tam=44)
-    else:  # logo de la serie entre la niebla
-        p = min(1.0, t / 1.2)
-        d.text((W / 2, 560), "MISTERIOS", font=pro.fuente(110), fill=(255, 220, 140, int(255 * p)), anchor="mm",
-               stroke_width=8, stroke_fill=(20, 16, 10))
-        d.text((W / 2, 680), "SIN RESOLVER", font=maquina(64), fill=(240, 240, 240, int(255 * p)), anchor="mm")
-        chip(img, t, 0.9, pregunta[:40], y=860, fondo=(20, 20, 26), color=AMBAR, tam=44)
-    ts = dur * 0.6
-    if t > ts:  # franja de suscripción
+    ts = dur * 0.55
+    if t > ts:
         q = ease((t - ts) / 0.4)
-        y = H - 240 + (1 - q) * 300
+        y = H - 250 + (1 - q) * 300
         caja = (110, y, W - 110, y + 120)
         sombra_suave(img, caja, radio=24)
-        d.rounded_rectangle(caja, radius=24, fill=(18, 18, 24, 245), outline=AMBAR, width=5)
-        d.text((W / 2, y + 60), "SUSCRÍBETE · más misterios reales", font=pro.fuente(42), fill=BLANCO, anchor="mm")
+        d.rounded_rectangle(caja, radius=24, fill=(18, 18, 24, 245), outline=est["acento"], width=5)
+        d.text((W / 2, y + 60), "COMENTA Y SUSCRÍBETE", font=pro.fuente(46), fill=BLANCO, anchor="mm")
 
 
-# =========================================================================== #
-# MONTAJE POR MISTERIO
-# =========================================================================== #
 def slug(s):
     return re.sub(r"[^a-z0-9]+", "_", norm(s)).strip("_")[:40]
 
@@ -1409,7 +1447,11 @@ def producir(n, guiones=None):
     if not audio.exists():
         print(f"✗ misterio {n:02d}: sin audio")
         return None
-    escenas, tema = crear_escenas(g)
+    from cine import alinear_audio
+    cfg_tmp = [{"texto": p, "visual": f"mis{n:02d}_{k + 1}"} for k, p in enumerate(g["parrafos"])]
+    datos = extraer_datos(audio, alinear_audio(str(audio), cfg_tmp))
+    escenas, tema = crear_escenas(g, datos)
+    est = estilo_video(n)
     jdir = RAIZ / "historias" / "misterios"
     jdir.mkdir(parents=True, exist_ok=True)
     nombre = f"misterio_{n:02d}_{slug(g['nombre'])}"
@@ -1418,8 +1460,9 @@ def producir(n, guiones=None):
                                                                  zip(g["parrafos"], escenas)]},
                             ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"▶ {nombre} · tema {tema}")
-    pro.generar(j, escenas, ESTILO, str(audio), False, cola=1.6, pad_hz=(46, 69, 92), hifi=True, acabado=True,
-                crf=25, salida_dir=RAIZ / "salida" / "misterios")
+    pro.generar(j, escenas, est["sub"], str(audio), False, cola=1.6, pad_hz=(46, 69, 92), hifi=True, acabado=True,
+                crf=25, salida_dir=RAIZ / "salida" / "misterios", transicion=est["transicion"],
+                calidez=est["calidez"])
     hecho = RAIZ / "salida" / "misterios" / f"{nombre}_pro.mp4"
     CARPETA_SALIDA.mkdir(exist_ok=True)
     final_ = CARPETA_SALIDA / f"{nombre}.mp4"
