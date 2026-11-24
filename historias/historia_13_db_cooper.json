@@ -4,7 +4,7 @@
   "velocidad": "+10%",
   "escenas": [
     {
-      "texto": "El veinticuatro de noviembre de mil novecientos setenta y uno, un hombre de traje y corbata subió a un avión en Estados Unidos… y se convirtió en leyenda.",
+      "texto": "El veinticuatro de noviembre de mil novecientos setenta y uno, un hombre de traje subió a un avión en Estados Unidos… y se convirtió en leyenda.",
       "visual": "13_1"
     },
     {
@@ -24,7 +24,7 @@
       "visual": "13_5"
     },
     {
-      "texto": "A pesar de una búsqueda enorme en los bosques, nunca encontraron su cuerpo, ni su paracaídas.",
+      "texto": "Pese a una enorme búsqueda, nunca encontraron su cuerpo, ni su paracaídas.",
       "visual": "13_6"
     },
     {

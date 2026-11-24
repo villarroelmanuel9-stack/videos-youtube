@@ -1,10 +1,10 @@
 [intrigante] Esta chica cayó desde tres kilómetros de altura, amarrada a su asiento… y sobrevivió.
 
-[narrador] Se llamaba Juliane Koepcke, tenía diecisiete años, y en la Nochebuena de mil novecientos setenta y uno volaba con su madre sobre la selva de Perú.
+[narrador] Juliane Koepcke tenía diecisiete años, y en la Nochebuena de mil novecientos setenta y uno volaba con su madre sobre la selva de Perú.
 
 [tenso] El avión entró en una tormenta. Un rayo lo alcanzó… y se partió en el aire.
 
-[dramático] Juliane despertó al día siguiente en medio de la selva, todavía atada a su asiento. Tenía la clavícula rota, una herida en el brazo… y una sola sandalia.
+[dramático] Juliane despertó al día siguiente en medio de la selva. Tenía la clavícula rota, una herida en el brazo… y una sola sandalia.
 
 [narrador] Sus padres eran biólogos, y su padre le había enseñado algo: si te pierdes en la selva, sigue el agua. Los ríos llevan a las personas.
 
