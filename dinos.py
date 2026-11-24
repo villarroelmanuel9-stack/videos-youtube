@@ -637,6 +637,9 @@ AMARILLO, ROJO, BLANCO, VERDE, AZUL = (255, 210, 50), (232, 52, 60), (255, 255, 
 
 def sombra_suave(img, caja, radio=28, alfa=110, blur=16):
     x0, y0, x1, y1 = caja
+    if x1 - x0 < 4 or y1 - y0 < 4:  # objeto todavía diminuto (animación de aparición)
+        return
+    radio = min(radio, (x1 - x0) / 2, (y1 - y0) / 2)
     pad = blur * 2
     s = Image.new("RGBA", (int(x1 - x0) + pad * 2, int(y1 - y0) + pad * 2), (0, 0, 0, 0))
     ImageDraw.Draw(s).rounded_rectangle((pad, pad + 8, pad + x1 - x0, pad + y1 - y0 + 8), radius=radius_ok(radio),
