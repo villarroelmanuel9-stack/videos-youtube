@@ -227,6 +227,10 @@ def kit_avion(ctx, var):
             pro.montanas(L, 1700, [(150, 900, 700), (600, 1000, 820), (1000, 800, 640)], (90, 96, 116), nieve=True,
                          borde=False)
             L.forma([(-50, 1690), (W + 50, 1690), (W + 50, H), (-50, H)], (232, 238, 246), suave=False, borde=False)
+        elif fondo_tipo == "desierto":
+            L.forma([(-50, 1450), (W + 50, 1420), (W + 50, H), (-50, H)], (206, 168, 124), suave=False, borde=False,
+                    textura=0.14)
+            pro.montanas(L, 1440, [(200, 600, 200), (800, 700, 240)], (170, 128, 96), nieve=False, borde=False)
         elif fondo_tipo == "artico":
             L.forma([(-50, 1450), (W + 50, 1420), (W + 50, H), (-50, H)], (226, 236, 244), suave=False, borde=False,
                     textura=0.1)
@@ -1174,8 +1178,8 @@ def completar(abre, tema, n):
         if k[0] not in vistos and len(sec) < 4:
             sec.append(k)
             vistos.add(k[0])
-    for k in (("mapa", 0), ("escritorio", 2), ("radio", 0)):
-        if len(sec) < 4 and k[0] not in vistos:
+    for k in (("mapa", 0), ("escritorio", 2), ("escritorio", 1), ("escritorio", 0)):
+        if len(sec) < 4 and k not in sec and (k[0] not in vistos or k[0] == "escritorio"):
             sec.append(k)
             vistos.add(k[0])
     return sec
@@ -1184,7 +1188,9 @@ def completar(abre, tema, n):
 def secuencia_de(tema, n):
     pool = SECUENCIAS[tema]
     r = random.Random(n * 104729)
-    primero = pool[0] if n % 2 == 0 else pool[min(2, len(pool) - 1)]
+    alterno = pool[min(2, len(pool) - 1)]
+    debil = alterno[0] in ("mapa", "escritorio", "cartel", "radar", "radio") or tema in ("cartografia", "faro")
+    primero = pool[0] if n % 2 == 0 or debil else alterno
     resto = [k for k in pool if k != primero]
     r.shuffle(resto)
     sec = [primero] + resto[:3]
@@ -1268,6 +1274,16 @@ def crear_escenas(g):
     elif not det.get("seq") and det.get("obj"):  # el objeto real (manuscrito, disco, diamante...) abre el video
         abre = ("pantalla", 0) if det["obj"] in ("max", "cigarra") else ("escritorio", 0)
         secuencia = completar(abre, tema, g["n"])
+    if anio and anio.isdigit() and int(anio) < 1912:  # sin radios ni radares antes de que existieran
+        usados = {k for k, _ in secuencia}
+        nuevo = []
+        for k, v in secuencia:
+            if k in ("radio", "radar", "pantalla"):
+                k, v = next((c for c in (("escritorio", 2), ("mapa", 0)) if c[0] not in usados),
+                            ("escritorio", 1))
+                usados.add(k)
+            nuevo.append((k, v))
+        secuencia = nuevo
     tinte = TINTES[g["n"] % len(TINTES)]
     mayus = re.findall(r"\b[A-ZÁÉÍÓÚÑ]{4,}(?: [A-ZÁÉÍÓÚÑ]{2,})*\b", g["titulo"])
     escenas = {}
