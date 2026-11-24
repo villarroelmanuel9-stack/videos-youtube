@@ -736,12 +736,17 @@ def alinear_audio(ruta, escenas_cfg):
     tiempos = [None] * len(guion)
     try:
         from faster_whisper import WhisperModel
-        crudo = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(ruta), "-ac", "1", "-ar", "16000",
-                                "-f", "f32le", "-"], capture_output=True, check=True).stdout
-        print("   · reconociendo tu voz para sincronizar subtítulos (puede tardar un minuto)...")
-        modelo = WhisperModel("small", device="cpu", compute_type="int8")
-        segs, _ = modelo.transcribe(np.frombuffer(crudo, np.float32), language="es", word_timestamps=True)
-        oidas = [(x.word.strip(), x.start, x.end) for sg in segs for x in sg.words]
+        cache = Path(str(ruta) + ".palabras.json")
+        if cache.exists() and cache.stat().st_mtime >= Path(ruta).stat().st_mtime:
+            oidas = [tuple(x) for x in json.loads(cache.read_text(encoding="utf-8"))]
+        else:
+            crudo = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(ruta), "-ac", "1", "-ar", "16000",
+                                    "-f", "f32le", "-"], capture_output=True, check=True).stdout
+            print("   · reconociendo tu voz para sincronizar subtítulos (puede tardar un minuto)...")
+            modelo = WhisperModel("small", device="cpu", compute_type="int8")
+            segs, _ = modelo.transcribe(np.frombuffer(crudo, np.float32), language="es", word_timestamps=True)
+            oidas = [(x.word.strip(), float(x.start), float(x.end)) for sg in segs for x in sg.words]
+            cache.write_text(json.dumps(oidas, ensure_ascii=False), encoding="utf-8")
         sm = difflib.SequenceMatcher(None, [_norm(w) for _, w in guion], [_norm(w) for w, _, _ in oidas],
                                      autojunk=False)
         for a, b, n in sm.get_matching_blocks():
