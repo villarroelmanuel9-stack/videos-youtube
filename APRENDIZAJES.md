@@ -19,6 +19,8 @@ Notas que se aplican a cada video nuevo (se actualizan después de cada historia
 - `realista.LienzoReal`: sombreado degradado, contornos finos del color del objeto, textura suave y `pelaje()`.
 - `Humano(realista=True, cabeza=0.86)`: personajes con proporciones algo más reales.
 - `pro.generar(..., acabado=True)`: curva de color, bloom en las luces y grano fino en cada fotograma.
+- Ojo con el grano: con mucho grano el video pesó 111 MB. Grano suave (1.6) que cambia cada 2 fotogramas y
+  entregar comprimido (crf 25) → archivos de ~20-30 MB.
 
 ## Audio (corregido tras el aviso del usuario: los efectos tapaban la voz)
 - **La voz siempre va en una pista aparte** y se mezcla al final con `mezcla_audio.mezcla_final()`; todos los motores

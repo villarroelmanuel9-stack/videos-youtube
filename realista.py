@@ -92,7 +92,7 @@ class LienzoReal(Lienzo):
 # --------------------------------------------------------------------------- #
 # Acabado de cine para cada fotograma (numpy)
 # --------------------------------------------------------------------------- #
-_GRANO = [np.random.default_rng(i).normal(0, 3.0, (960, 540, 1)).astype(np.float32) for i in range(4)]
+_GRANO = [np.random.default_rng(i).normal(0, 1.6, (960, 540, 1)).astype(np.float32) for i in range(4)]
 
 
 def acabado(a: np.ndarray, n: int, calidez=1.0, bloom=0.22) -> np.ndarray:
@@ -110,6 +110,6 @@ def acabado(a: np.ndarray, n: int, calidez=1.0, bloom=0.22) -> np.ndarray:
         bi = np.asarray(bi.resize((a.shape[1], a.shape[0]), Image.BILINEAR), np.float32) / 255.0
         f = f + bi * bloom
     out = f * 255.0
-    g = _GRANO[n % 4]
+    g = _GRANO[(n // 2) % 4]  # el grano cambia cada 2 fotogramas: más liviano para comprimir
     out = out + np.repeat(np.repeat(g, 2, 0), 2, 1)[:a.shape[0], :a.shape[1]]
     return np.clip(out, 0, 255).astype(np.uint8)
