@@ -67,22 +67,69 @@ def mar(L, y0, col):
 
 
 def velero(L, x, y, s, col=(24, 22, 26)):
-    L.forma([(x - 260 * s, y - 30 * s), (x + 280 * s, y - 40 * s), (x + 220 * s, y + 40 * s), (x - 220 * s, y + 40 * s)],
-            col, intensidad=0.06)
-    for k, mx in enumerate((-120, 20, 150)):
-        L.linea([(x + mx * s, y - 30 * s), (x + mx * s, y - (430 - k * 40) * s)], col, 8 * s)
-        L.forma([(x + (mx - 10) * s, y - (400 - k * 40) * s), (x + (mx + 120) * s, y - (360 - k * 40) * s),
-                 (x + (mx + 100) * s, y - 80 * s), (x + (mx - 10) * s, y - 70 * s)],
-                claro(col, 0.55) if col[0] < 100 else col, intensidad=0.1, textura=0.12)
+    """Bergantín de tres palos con velas cuadradas, bauprés, foque y jarcia."""
+    sil = col[0] > 60  # en niebla: silueta clara y sin detalle
+    casco = col if sil else (66, 44, 32)
+    vela = claro(col, 0.25) if sil else (206, 200, 182)
+    palo = oscuro(casco, 0.7)
+    P = lambda a, b: (x + a * s, y + b * s)
+    # jarcia (detrás de las velas)
+    tops = {-170: -560, 10: -640, 180: -520}
+    for mx, top in tops.items():
+        for dx in (-150, 150):
+            L.linea([P(mx, top + 20), P(mx + dx * 1.3, -40)], oscuro(casco, 0.6), 2.2 * s)
+    L.linea([P(10, -640), P(470, -170)], oscuro(casco, 0.6), 2.5 * s)
+    L.linea([P(-170, -560), P(10, -640)], oscuro(casco, 0.6), 2.5 * s)
+    # palos y bauprés
+    for mx, top in tops.items():
+        L.linea([P(mx, -40), P(mx, top)], palo, 9 * s)
+    L.linea([P(290, -80), P(480, -170)], palo, 8 * s)
+    # velas cuadradas (3 por palo, de mayor a menor) algo hinchadas
+    for mx, top in tops.items():
+        alto_total = -40 - top - 60
+        for n in range(3):
+            y0 = top + 30 + n * alto_total / 3
+            y1 = y0 + alto_total / 3 - 18
+            a0 = 70 + n * 22
+            a1 = 82 + n * 24
+            L.forma([P(mx - a0, y0), P(mx + a0, y0), P(mx + a1 + 6, y1), P(mx + 4, y1 + 10), P(mx - a1, y1)], vela,
+                    suave=False, intensidad=0.16, textura=0.1, ancho=3)
+            L.linea([P(mx - a0 - 8, y0), P(mx + a0 + 8, y0)], palo, 5 * s)
+    # foque triangular
+    L.forma([P(30, -600), P(450, -170), P(60, -150)], vela, suave=False, intensidad=0.12, textura=0.08, ancho=3)
+    # casco con popa alta y proa afilada
+    L.forma([P(-330, -110), P(-250, -60), P(250, -60), P(330, -100), P(270, 20), P(150, 55), P(-250, 55), P(-320, 0)],
+            casco, suave=False, intensidad=0.1, textura=0.14)
+    L.linea([P(-320, -40), P(300, -40)], claro(casco, 0.25), 4 * s)
+    if not sil:
+        for k in range(7):
+            L.circulo(*P(-200 + k * 60, -10), 7 * s, oscuro(casco, 0.6), borde=False)
 
 
 def buque(L, x, y, s, col=(30, 32, 38)):
-    L.forma([(x - 380 * s, y - 60 * s), (x + 420 * s, y - 70 * s), (x + 340 * s, y + 50 * s), (x - 330 * s, y + 50 * s)],
-            col, intensidad=0.06)
-    L.forma([(x - 120 * s, y - 60 * s), (x + 140 * s, y - 60 * s), (x + 130 * s, y - 170 * s), (x - 110 * s, y - 170 * s)],
-            claro(col, 0.1), suave=False)
-    L.forma([(x - 10 * s, y - 170 * s), (x + 50 * s, y - 170 * s), (x + 45 * s, y - 290 * s), (x - 5 * s, y - 290 * s)],
-            oscuro(col, 0.8), suave=False)
+    """Vapor de casco largo: línea de flotación roja, superestructura, chimenea y ojos de buey."""
+    sil = col[0] > 60
+    casco = col if sil else (34, 36, 44)
+    blanco = claro(col, 0.3) if sil else (214, 210, 200)
+    P = lambda a, b: (x + a * s, y + b * s)
+    for mx in (-260, 300):  # mástiles y cables
+        L.linea([P(mx, -70), P(mx, -420)], oscuro(casco, 0.8), 7 * s)
+    L.linea([P(-260, -410), P(300, -410)], oscuro(casco, 0.6), 2 * s)
+    L.linea([P(-260, -410), P(-440, -80)], oscuro(casco, 0.6), 2 * s)
+    L.linea([P(300, -410), P(460, -90)], oscuro(casco, 0.6), 2 * s)
+    L.forma([P(-120, -70), P(170, -70), P(160, -190), P(-110, -190)], blanco, suave=False, intensidad=0.1)
+    L.forma([P(-70, -190), P(130, -190), P(120, -250), P(-60, -250)], blanco, suave=False, intensidad=0.1)
+    L.forma([P(0, -250), P(70, -250), P(64, -380), P(6, -380)], (150, 40, 34) if not sil else oscuro(col, 0.85),
+            suave=False, intensidad=0.12)
+    L.forma([P(4, -380), P(66, -380), P(66, -360), P(4, -360)], (24, 24, 28), suave=False, borde=False)
+    if not sil:
+        for k in range(8):
+            L.circulo(*P(-90 + k * 32, -130), 7 * s, (240, 210, 130), borde=False)
+    L.forma([P(-450, -90), P(470, -95), P(400, 40), P(-400, 40)], casco, suave=False, intensidad=0.08, textura=0.12)
+    if not sil:
+        L.forma([P(-415, 10), P(415, 10), P(400, 40), P(-400, 40)], (130, 34, 30), suave=False, borde=False)
+        for k in range(14):
+            L.circulo(*P(-360 + k * 54, -40), 6 * s, (90, 96, 110), borde=False)
 
 
 def piramide(L, cx, base, ancho, alto, col):
@@ -423,6 +470,7 @@ def kit_cueva(ctx, var):
 def kit_ruinas(ctx, var):
     txt = ctx["clave"]
     tipo = ("tumba" if re.search(r"tumba", txt) else "piramide" if re.search(r"piramid|teotihuacan|esfinge|egipto|maya", txt) else
+            "esfera" if re.search(r"esfera", txt) else
             "piedras" if re.search(r"stonehenge|piedra|gobekli|pilares", txt) else
             "cabeza" if re.search(r"moai|cabeza|estatua|olmeca", txt) else
             "esfera" if re.search(r"esfera", txt) else "columnas")
