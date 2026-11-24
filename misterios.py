@@ -591,7 +591,7 @@ def kit_cartel(ctx, var):
     hoja = hoja.rotate(ctx["rnd"].uniform(-4, 4), expand=True, resample=Image.BICUBIC)
 
     def din(img, t, dur):
-        p = pop(t / 0.5)
+        p = max(0.08, pop(t / 0.5))
         h = hoja.resize((max(1, int(hoja.width * p)), max(1, int(hoja.height * p))))
         sombra_suave(img, (540 - h.width / 2 + 10, 900 - h.height / 2 + 10, 540 + h.width / 2 - 10,
                            900 + h.height / 2 - 10), radio=6, alfa=140)
