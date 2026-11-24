@@ -10,6 +10,11 @@ Notas que se aplican a cada video nuevo (se actualizan después de cada historia
 - Barridos de cámara entre escenas + destellos/sacudidas en momentos fuertes = más dinamismo.
 - Fondos en capas (parallax) y primer plano dan profundidad.
 
+- Guardar el reconocimiento de voz en caché (`*.palabras.json`) para previsualizar con los tiempos reales.
+- Motor común `pro.py` + personajes `humanos.py`: cada historia solo define sus escenas.
+- Revisar símbolos culturales (la estrella de Chile salió como pentágono la primera vez).
+- Textos formados con objetos (velas → "PAZ") necesitan un refuerzo visual para leerse.
+
 ## Retención
 - Gancho en el primer segundo con un dato que choque + imagen fuerte.
 - "Loop abierto" temprano ("y eso no es lo más loco…").
@@ -21,3 +26,8 @@ Notas que se aplican a cada video nuevo (se actualizan después de cada historia
 |---|---|---|---|---|
 | Dinosaurios | Cálida, día | Tarjetas blancas con emoji | Amarillo | Botón SUSCRIBIRSE con clic + "Comenta «dino»" |
 | Alcatraz | Fría, noche | Fichas de expediente + sellos | Celeste | Reja + carteles SE BUSCA + "CASO ABIERTO" + SÍ/NO |
+| D. B. Cooper | Retro años 70 (naranja/verde azulado) | Pases de abordar | Naranja | Tablero de detective + comentario escribiéndose + avioneta con cartel |
+| 33 mineros | Industrial, roca | Placas metálicas con franja de peligro + contador DÍA N | Caja amarilla | Bandera de Chile + "33" + pin "¿Dónde estabas?" + placa con lámpara |
+| Andes | Nieve, tonos fríos | Notas de cuaderno manuscritas | Coral | Página de diario con casillas + lápiz que escribe "suscríbete" |
+| Juliane Koepcke | Selva, lluvia, recuerdo en sepia | Libreta de campo | Verde lima | Mapa con la ruta dibujándose + brote que crece con "SUSCRÍBETE" |
+| Tregua de Navidad | Noche nevada, velas | Tarjetas navideñas antiguas | Cinta roja | Velas que escriben "PAZ" + regalo que se abre |
