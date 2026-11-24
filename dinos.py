@@ -103,8 +103,12 @@ class Lienzo:
         self.w, self.h, self.ox, self.oy = w, h, ox, oy
         self.img = Image.new("RGBA", (w * SS, h * SS), (0, 0, 0, 0))
         self.d = ImageDraw.Draw(self.img)
+        self.tf = None  # (cx, cy, escala): escala local, p. ej. cabezas más pequeñas
 
     def P(self, pts):
+        if self.tf:
+            cx, cy, k = self.tf
+            pts = [(cx + (x - cx) * k, cy + (y - cy) * k) for x, y in pts]
         return [((self.ox + x) * SS, (self.oy + y) * SS) for x, y in pts]
 
     def forma(self, pts, col, sombra=True, brillo=True, borde=True, ancho=5, suave=True, clip=None, luz=(-1, -1),
@@ -149,6 +153,8 @@ class Lienzo:
 
     def circulo(self, cx, cy, r, col, borde=True, ancho=4):
         (x, y), = self.P([(cx, cy)])
+        if self.tf:
+            r *= self.tf[2]
         self.d.ellipse((x - r * SS, y - r * SS, x + r * SS, y + r * SS), fill=col,
                        outline=TINTA if borde else None, width=int(ancho * SS) if borde else 0)
 
@@ -190,8 +196,9 @@ def _pierna(L, cadera, fase, col, largo=1.0, grosor=1.0, lejos=False):
 class Sprite:
     """Cachea los fotogramas de un personaje dibujado con Lienzo."""
 
-    def __init__(self, fn, w, h, ox, oy, fases=16):
+    def __init__(self, fn, w, h, ox, oy, fases=16, lienzo_cls=None):
         self.fn, self.w, self.h, self.ox, self.oy, self.fases = fn, w, h, ox, oy, fases
+        self.lienzo_cls = lienzo_cls or Lienzo
         self.cache = {}
 
     def get(self, fase, s=1.0, boca=0.0, parp=False, extra=None):
@@ -199,7 +206,7 @@ class Sprite:
         bi = round(boca * 4) / 4
         clave = (fi, round(s, 2), bi, parp, extra)
         if clave not in self.cache:
-            L = Lienzo(self.w, self.h, self.ox, self.oy)
+            L = self.lienzo_cls(self.w, self.h, self.ox, self.oy)
             self.fn(L, fi / self.fases * 2 * math.pi, bi, parp, extra)
             self.cache[clave] = L.final(s)
         return self.cache[clave]

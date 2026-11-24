@@ -18,13 +18,18 @@ class Humano:
     def __init__(self, ropa=(70, 90, 140), pantalon=(50, 55, 70), piel=(236, 192, 156), pelo=(60, 42, 30),
                  peinado="corto", sombrero=None, barba=False, lentes=False, corbata=None, chaleco=None,
                  cinturon=False, vestido=False, bufanda=None, zapatos=(40, 34, 32), descalzo_der=False,
-                 color_sombrero=None):
+                 color_sombrero=None, realista=False, cabeza=1.0):
         self.ropa, self.pantalon, self.piel, self.pelo = ropa, pantalon, piel, pelo
         self.peinado, self.sombrero, self.barba, self.lentes = peinado, sombrero, barba, lentes
         self.corbata, self.chaleco, self.cinturon, self.vestido = corbata, chaleco, cinturon, vestido
         self.bufanda, self.zapatos, self.descalzo_der = bufanda, zapatos, descalzo_der
         self.color_sombrero = color_sombrero
-        self.sprite = Sprite(self._dib, 600, 1000, 300, 960, fases=12)
+        self.cabeza = cabeza
+        lienzo_cls = None
+        if realista:
+            from realista import LienzoReal
+            lienzo_cls = LienzoReal
+        self.sprite = Sprite(self._dib, 600, 1000, 300, 960, fases=12, lienzo_cls=lienzo_cls)
 
     # ------------------------------------------------------------------ #
     def _dib(self, L: Lienzo, f, boca, parp, extra):
@@ -72,6 +77,8 @@ class Humano:
         # cuello y cabeza
         L.forma(capsula((0, -600), (0, -650), 62, 62), oscuro(piel, 0.92), sombra=False, brillo=False)
         hc = -740
+        if self.cabeza != 1.0:
+            L.tf = (0, -625, self.cabeza)
         if self.peinado == "largo":
             L.forma(catmull([(-108, -790), (-118, -660), (-96, -600), (96, -600), (118, -660), (108, -790)], 3),
                     self.pelo, intensidad=0.08)
@@ -85,6 +92,7 @@ class Humano:
         self._pelo(L, hc)
         self._cara(L, hc, expr, parp, boca)
         self._sombrero(L, hc)
+        L.tf = None
         # brazo delantero
         self._brazo(L, 1, pose, andar, atras=False)
 
@@ -184,7 +192,7 @@ class Humano:
             c = self.color_sombrero or (150, 130, 90)
             L.forma(catmull([(-112, -815), (-100, -895), (0, -925), (100, -895), (112, -815)], 3), c,
                     intensidad=0.1)
-            L.forma(elipse(30, -768, 110, 20), oscuro(c, 0.7), intensidad=0.1)
+            L.forma(elipse(30, -815, 110, 20), oscuro(c, 0.7), intensidad=0.1)
         elif s == "fedora":
             c = self.color_sombrero or (60, 56, 52)
             L.forma(elipse(0, -790, 160, 30), c, intensidad=0.1)

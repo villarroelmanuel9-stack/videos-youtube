@@ -84,7 +84,11 @@ def subtitulo(img, grupos, t, estilo, y=1365):
     img.alpha_composite(sombra.filter(ImageFilter.GaussianBlur(9)), (0, int(yy - 100)))
     for i, w in enumerate(pal):
         fnt = fa if i == activa else f
-        if i == activa and estilo.get("modo") == "caja":
+        if i == activa and estilo.get("modo") == "subrayado":
+            d.text((x, yy - 4), w, font=fnt, fill=BLANCO, anchor="lm", stroke_width=8, stroke_fill=(12, 12, 18))
+            d.rounded_rectangle((x - 4, yy + 40, x + anchos[i] + 4, yy + 56), radius=6, fill=estilo["color"],
+                                outline=(12, 12, 18), width=3)
+        elif i == activa and estilo.get("modo") == "caja":
             bx0, bx1 = x - 14, x + anchos[i] + 14
             d.rounded_rectangle((bx0, yy - 52, bx1, yy + 50), radius=16, fill=estilo["caja"], outline=TINTA,
                                 width=5)
@@ -151,6 +155,14 @@ def _cuerpo_tarjeta(estilo, w, h, titulo, valor, emoji):
             d.ellipse((cx - 9, oy + 22, cx + 9, oy + 40), fill=(200, 30, 40))
         fv = manuscrita(60)
         col_t, col_v = (170, 30, 40), (40, 30, 30)
+    if estilo == "militar":  # libreta militar de lona verde oliva con bandera polaca
+        d.rounded_rectangle((ox, oy, ox + w, oy + h), radius=10, fill=(84, 92, 60), outline=(40, 44, 28), width=5)
+        for k in range(0, w - 20, 16):
+            d.line((ox + 10 + k, oy + 10, ox + 18 + k, oy + 10), fill=(150, 150, 110), width=3)
+            d.line((ox + 10 + k, oy + h - 10, ox + 18 + k, oy + h - 10), fill=(150, 150, 110), width=3)
+        d.rectangle((ox + w - 70, oy + 26, ox + w - 26, oy + 46), fill=(245, 245, 245), outline=TINTA, width=2)
+        d.rectangle((ox + w - 70, oy + 46, ox + w - 26, oy + 66), fill=(214, 30, 50), outline=TINTA, width=2)
+        col_t, col_v = (214, 206, 150), BLANCO
     if emoji:
         em = render_emoji(emoji)
         if em is not None:
@@ -170,7 +182,7 @@ def tarjeta(img, t, t0, lado, y, titulo, valor, estilo, emoji=None, dur=None, gi
     fv = manuscrita(64) if estilo in ("nota", "diario", "navidad") else fuente(60)
     ft = manuscrita(32) if estilo == "nota" else maquina(28)
     tx = 150 if emoji else 44
-    extra = 130 if estilo == "boleto" else 40
+    extra = 130 if estilo == "boleto" else (110 if estilo == "militar" else 40)
     w = int(max(medidor.textlength(valor, font=fv), medidor.textlength(titulo.upper(), font=ft)) + tx + extra)
     capa = _cuerpo_tarjeta(estilo, w, 170, titulo, valor, emoji)
     ang = giro if giro is not None else (2 if lado == "izq" else -2)
@@ -479,6 +491,40 @@ def sfx(tipo, dur, rng):
             pos += dd * beat
             i += 1
         x *= fade
+    elif tipo == "gruñido":
+        f0 = 85 + 25 * np.sin(2 * np.pi * 2.3 * tt) + 10 * rng.normal(0, 1, m).cumsum() / np.sqrt(m)
+        fase = np.cumsum(2 * np.pi * f0 / SR)
+        tono = np.sin(fase) + 0.5 * np.sin(2 * fase) + 0.25 * np.sin(3 * fase)
+        x = (tono * 0.5 + ruido_filtrado(m, 12, rng) * 1.5) * (0.6 + 0.4 * np.sin(2 * np.pi * 9 * tt)) * 0.2
+        x *= np.minimum(1, tt / 0.12) * np.exp(-np.maximum(0, tt - dur * 0.6) * 4)
+    elif tipo == "camion":
+        f = 32 + 2 * np.sin(2 * np.pi * 0.4 * tt)
+        fase = np.cumsum(2 * np.pi * f / SR)
+        x = (sum(np.sin(fase * k) / k for k in range(1, 7)) * 0.5 + ruido_filtrado(m, 40, rng)) * 0.08 * fade
+    elif tipo == "bocina_barco":
+        env = np.minimum(1, tt / 0.3) * np.minimum(1, (dur - tt) / 0.5 + 1e-3)
+        x = sum((2 * ((f * tt) % 1) - 1) * a for f, a in ((98, 0.5), (147, 0.35), (196, 0.15))) * env * 0.12
+    elif tipo == "artilleria":
+        x = (np.sin(2 * np.pi * 42 * tt) * 1.2 + ruido_filtrado(m, 50, rng) * 4) * np.exp(-tt * 3.0) * \
+            np.minimum(1, tt / 0.01) * 0.35
+    elif tipo == "ducha":
+        r = rng.normal(0, 1, m)
+        x = (r - np.convolve(r, np.ones(6) / 6, mode="same")) * 0.05 * fade
+    elif tipo == "botella":
+        x = sum(np.sin(2 * np.pi * f * tt) * a for f, a in ((2630, 0.5), (3920, 0.3), (5240, 0.2))) * \
+            np.exp(-tt * 9) * 0.25
+    elif tipo == "pasos":
+        x = np.zeros(m)
+        for k in range(int(dur / 0.55) + 1):
+            s0 = int(k * 0.55 * SR)
+            nn = int(0.18 * SR)
+            if s0 + nn < m:
+                tn = np.arange(nn) / SR
+                x[s0:s0 + nn] += (np.sin(2 * np.pi * 58 * tn) + ruido_filtrado(nn, 20, rng)) * np.exp(-tn * 28) * 0.3
+    elif tipo == "multitud":
+        mod = np.repeat(rng.uniform(0.4, 1.0, int(dur * 5) + 2), SR // 5)[:m]
+        mod = np.convolve(mod, np.ones(2000) / 2000, mode="same")
+        x = ruido_filtrado(m, 18, rng) * 1.4 * mod * 0.07 * fade
     elif tipo == "explosion_lejana":
         x = ruido_filtrado(m, 150, rng) * 5 * np.exp(-tt * 2) * 0.15
     else:
@@ -486,7 +532,32 @@ def sfx(tipo, dur, rng):
     return x.astype(np.float32)
 
 
-def mezclar(voz, cortes, eventos, total, pad_hz=(49, 73.4, 98)):
+AMBIENTES = {"lluvia", "viento", "olas", "rio", "insectos", "multitud", "ducha", "camion"}
+
+
+def reverb(x, wet=0.22, dur=1.5, semilla=3):
+    """Reverberación estéreo por convolución (sala/espacio abierto) para que los efectos no suenen secos."""
+    rng = np.random.default_rng(semilla)
+    m = int(dur * SR)
+    t = np.arange(m) / SR
+    n = len(x)
+    L = 1 << int(np.ceil(np.log2(n + m)))
+    out = np.zeros_like(x)
+    for c in range(2):
+        ir = rng.normal(0, 1, m) * np.exp(-t / 0.3)
+        ir = np.convolve(ir, np.ones(8) / 8, mode="same")
+        ir[:int(0.015 * SR)] = 0
+        ir /= np.sqrt((ir ** 2).sum())
+        out[:, c] = np.fft.irfft(np.fft.rfft(x[:, c], L) * np.fft.rfft(ir, L), L)[:n]
+    return (x * (1 - wet * 0.3) + out * wet).astype(np.float32)
+
+
+def _paneo(p):
+    a = (p + 1) * math.pi / 4
+    return math.cos(a) * math.sqrt(2), math.sin(a) * math.sqrt(2)
+
+
+def mezclar(voz, cortes, eventos, total, pad_hz=(49, 73.4, 98), hifi=False):
     n = int(total * SR) + SR
     mix = np.zeros((n, 2), np.float32)
     vz = np.zeros((n, 2), np.float32)
@@ -496,19 +567,38 @@ def mezclar(voz, cortes, eventos, total, pad_hz=(49, 73.4, 98)):
     pad = sum(np.sin(2 * np.pi * f * tt + i) * a for i, (f, a) in enumerate(zip(pad_hz, (1, 0.6, 0.35))))
     pad *= 0.018 * (0.6 + 0.4 * np.sin(2 * np.pi * 0.09 * tt)) * np.clip(tt / 2, 0, 1)
     mix += pad[:, None]
-    for c in cortes:
+    for k, c in enumerate(cortes):
         m = int(0.45 * SR)
         s = int((c - 0.25) * SR)
         if s >= 0:
             w = ruido_filtrado(m, 5, rng) * np.sin(np.linspace(0, np.pi, m)) ** 2 * 0.12
-            mix[s:s + m] += w[:len(mix[s:s + m])][:, None]
+            if hifi:  # barrido estéreo de un lado al otro
+                lado = 1 if k % 2 else -1
+                pan = np.linspace(-lado, lado, m)
+                st = np.stack([w * np.cos((pan + 1) * math.pi / 4), w * np.sin((pan + 1) * math.pi / 4)], 1) * 1.4
+                mix[s:s + m] += st[:len(mix[s:s + m])]
+            else:
+                mix[s:s + m] += w[:len(mix[s:s + m])][:, None]
     for t0, tipo, dur in eventos:
         s = int(max(0.0, t0) * SR)
         if s >= n or dur <= 0:
             continue
+        if hifi and tipo in AMBIENTES:  # ambiente envolvente: izquierda y derecha distintos
+            xl, xr = sfx(tipo, dur, rng), sfx(tipo, dur, rng)
+            seg = mix[s:s + len(xl)]
+            seg[:, 0] += xl[:len(seg)]
+            seg[:, 1] += xr[:len(seg)]
+            continue
         x = sfx(tipo, dur, rng)
         seg = mix[s:s + len(x)]
-        seg += x[:len(seg)][:, None]
+        if hifi:
+            gl, gr = _paneo(((int(t0 * 1000) * 7919) % 100) / 100 * 1.0 - 0.5)
+            seg[:, 0] += x[:len(seg)] * gl
+            seg[:, 1] += x[:len(seg)] * gr
+        else:
+            seg += x[:len(seg)][:, None]
+    if hifi:
+        mix = reverb(mix)
     return mezcla_final(vz, mix)
 
 
@@ -516,7 +606,7 @@ def mezclar(voz, cortes, eventos, total, pad_hz=(49, 73.4, 98)):
 # MONTAJE
 # =========================================================================== #
 def generar(ruta_json: Path, escenas_dict, estilo_sub, audio_usuario=None, sin_audio=False, cola=1.9,
-            pad_hz=(49, 73.4, 98)):
+            pad_hz=(49, 73.4, 98), hifi=False, acabado=False):
     cfg = json.loads(Path(ruta_json).read_text(encoding="utf-8"))
     nombre = Path(ruta_json).stem + "_pro"
     print(f"▶ {nombre}")
@@ -550,7 +640,7 @@ def generar(ruta_json: Path, escenas_dict, estilo_sub, audio_usuario=None, sin_a
             eventos += [(e["inicio"] + t0, tipo, d) for t0, tipo, d in e["obj"].sonidos(e["dur"])]
             e["cortes"] = e["obj"].cortes(e["dur"])
         escribir_wav(tmp / "mezcla.wav", mezclar(leer_wav(tmp / "voz.wav"), [e["inicio"] for e in escenas[1:]],
-                                                 eventos, total, pad_hz))
+                                                 eventos, total, pad_hz, hifi=hifi))
         (RAIZ / "salida").mkdir(exist_ok=True)
         salida = RAIZ / "salida" / f"{nombre}.mp4"
         proc = subprocess.Popen(
@@ -569,6 +659,9 @@ def generar(ruta_json: Path, escenas_dict, estilo_sub, audio_usuario=None, sin_a
             o.encima(img, tl, e["dur"])
             subtitulo(img, e["grupos"], tl, estilo_sub)
             a = np.clip(np.asarray(img.convert("RGB"), np.float32) * VINETA, 0, 255).astype(np.uint8)
+            if acabado:
+                from realista import acabado as _acabado
+                a = _acabado(a, n)
             if idx > 0 and tl < 0.2:
                 a = barrido(a, 1 - tl / 0.2, 1 if idx % 2 else -1)
             for c in e["cortes"]:
