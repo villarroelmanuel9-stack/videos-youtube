@@ -160,7 +160,7 @@ GUION = {
         "interior pared=yeso piso=madera 1550 | pizarra 540 700 | formulas | persona 820 1760 0.55 tipo=traje",
         "cielo noche | mar | astro 800 300 | barco 540 1195 0.8 modelo=ferry",
         "cielo dia | ciudad 1300 era=1910 | suelo asfalto 1300 | palmera 140 1400 1.0 | auto 640 1640 1.0 era=1920 col=#8c2a24 | persona 300 1720 0.5 tipo=traje",
-        "interior pared=madera piso=madera 1550 | pizarra 540 700 | formulas | silla 540 1700 | polvo 540 800",
+        "cielo niebla | mar 1150 | muelle 1450 | maleta 540 1640 | niebla 1300 0.5",
     ],
     29: [  # Harold Holt
         "cielo dia | mar 1100 | olas bravo | suelo arena 1350 | persona 540 1720 0.55 tipo=nadador pose=caminar mov=-6",

@@ -75,3 +75,9 @@ Notas que se aplican a cada video nuevo (se actualizan después de cada historia
   Cada video tiene su propio color de subtítulos, transición, recorridos de cámara, recuadro, estilo de dato y cierre
   (tablero de corcho, película, carpeta o pantallas con las imágenes del propio video). Nunca dos documentos iguales
   en un mismo video. Textos (título, descripción, prompt de miniatura) en «textos misterios nuevos».
+- **v4 (queja: «todos tienen los mismos dibujos: mapa con pista, hoja»)**: se eliminaron los escenarios de relleno.
+  Cada uno de los 96 misterios tiene 4 escenas propias escritas en `guion_visual.py`, que dibujan literalmente lo que
+  dice cada párrafo (despegue de los Avenger en Florida, cabina con la brújula girando, hidroavión que desaparece,
+  triángulo de las Bermudas…). Se componen con `escenario.py` (+ `escenario_obj.py`, `escenario_extra.py`): una
+  línea por escena con capas (cielo, lugar, vehículos reales, personajes de época, objetos históricos, efectos).
+  Regla: un mapa u hoja solo aparece si la historia trata de ese documento (mapa de Piri Reis, carta «Dear Boss»).

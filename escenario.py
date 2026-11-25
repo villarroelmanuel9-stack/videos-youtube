@@ -54,7 +54,7 @@ def _parse(seg):
     for t in toks[1:]:
         if "=" in t:
             k, v = t.split("=", 1)
-            kw[k] = v.replace("_", " ")
+            kw[k] = v.replace("_", " ") if k in ("txt", "firma", "fecha", "cab") else v
         else:
             try:
                 nums.append(float(t))
@@ -1367,8 +1367,13 @@ def p_ola(sc, nums, flags, kw):
         d = ImageDraw.Draw(img)
         pts = [(x0 - 200, 1500), (x0 - 100, 900), (x0 + 50, 600), (x0 + 250, 560), (x0 + 330, 680), (x0 + 200, 720),
                (x0 + 300, 1100), (W + 200, 1500)]
-        d.polygon(pts, fill=(30, 60, 80, 235))
-        d.line(pts[1:6], fill=(230, 240, 250), width=16)
+        d.polygon(pts, fill=(26, 54, 74, 240))
+        interior = [(x0 - 40, 1500), (x0 + 20, 1000), (x0 + 120, 760), (x0 + 240, 700), (x0 + 200, 760), (x0 + 260, 1100),
+                    (W + 200, 1500)]
+        d.polygon(interior, fill=(40, 84, 104, 200))
+        d.line(pts[1:6], fill=(236, 244, 250), width=18)
+        for k in range(10):
+            pegar_glow(img, x0 + 60 + k * 26, 600 + 14 * math.sin(k + t * 6), 40, "#ffffff", 0.5)
         particulas(img, t, "lluvia", 60, viento=-500, alfa=120)
     return f
 
@@ -1510,7 +1515,8 @@ def p_satelite(sc, nums, flags, kw):
         d = ImageDraw.Draw(img)
         d.rectangle((x - 30, y - 30, x + 30, y + 30), fill=(200, 180, 120), outline=(60, 50, 30), width=3)
         for dx in (-1, 1):
-            d.rectangle((x + dx * 40, y - 18, x + dx * 150, y + 18), fill=(40, 60, 120), outline=(160, 170, 200), width=2)
+            xa, xb = sorted((x + dx * 40, x + dx * 150))
+            d.rectangle((xa, y - 18, xb, y + 18), fill=(40, 60, 120), outline=(160, 170, 200), width=2)
         for k in range(3):  # pulsos de señal hacia la Tierra
             r_ = ((t * 120 + k * 80) % 240)
             d.arc((x - r_, y + 40 - r_ * 0.4, x + r_, y + 40 + r_ * 0.4), 20, 160, fill=(150, 220, 255, int(200 * (1 - r_ / 240))),
