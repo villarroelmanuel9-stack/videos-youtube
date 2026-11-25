@@ -33,6 +33,8 @@ from realista import LienzoReal
 from verificar_misterios import cargar_guiones
 import mis_reales as R
 from mis_kits import DETALLES, KITS_EXTRA, figura, nubes, objeto, personas_de
+from guion_visual import GUION
+from escenario import componer, sonidos_de
 from mis_v3 import (camaras_video, dibujar_dato, estilo_video, extraer_datos, frase_sello, kit_cierre, polvo,
                     rayos)
 
@@ -1348,9 +1350,10 @@ def crear_escenas(g, datos=None):
         ultimo = i == n_par - 1
         kit, var = secuencia[min(i, len(secuencia) - 1)] if not ultimo else ("cierre", est["cierre"])
         parrafo = g["parrafos"][i]
+        spec = GUION.get(g["n"], [None] * 9)[i] if not ultimo and i < len(GUION.get(g["n"], [])) else None
 
         class E(Escena):
-            _kit, _var, _i, _ultimo, _parrafo = kit, var, i, ultimo, parrafo
+            _kit, _var, _i, _ultimo, _parrafo, _spec = kit, var, i, ultimo, parrafo, spec
             camara = cams[i]
 
             def __init__(self):
@@ -1359,7 +1362,10 @@ def crear_escenas(g, datos=None):
                 if self._ultimo:
                     self.fondo, self.din = kit_cierre(ctx, self._var)
                 else:
-                    self.fondo, self.din = KITS[self._kit](ctx, self._var)
+                    if self._spec:  # escena dibujada a medida para este párrafo
+                        self.fondo, self.din = componer(self._spec, ctx, semilla=g["n"] * 10 + self._i)
+                    else:
+                        self.fondo, self.din = KITS[self._kit](ctx, self._var)
                     if any(tinte):
                         self.fondo = self.fondo.copy()
                         self.fondo.alpha_composite(Image.new("RGBA", (W, H), tinte + (34,)))
@@ -1406,7 +1412,7 @@ def crear_escenas(g, datos=None):
                 if self._ultimo:
                     ev += [(-1.1, "riser", 1.2), (0, "drone", dur), (0.1, "papel", 0.5), (dur * 0.6, "pop", 0.2)]
                     return ev
-                ev += sonidos_kit(self._kit, self._var, dur, ctx)
+                ev += sonidos_de(self._spec, dur) if self._spec else sonidos_kit(self._kit, self._var, dur, ctx)
                 if self._i == 0:
                     ev += [(0.0, "boom", 1.2), (0.35, "sello", 0.3)]
                 if self._i == 2:
