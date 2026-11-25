@@ -1,0 +1,41 @@
+{
+  "_descripcion": "Configuración fija para subir los videos al canal de YouTube (@1mrelato) con Antwork. Leer antes de cada publicación.",
+  "cuenta_antwork": "45OhyCPy0UuSCvbNg2LB",
+  "siempre": {
+    "privacyStatus": "public",
+    "madeForKids": false,
+    "containsSyntheticMedia": false,
+    "calidad": "Full HD 1080x1920 (vertical 9:16, 30 fps): subir siempre el MP4 original de «misterios nuevos», nunca uno recomprimido o reducido"
+  },
+  "titulo_y_descripcion": "Tomar «Título» y «Descripción» del archivo del video en «textos misterios nuevos/<nombre del video>.md», sin cambios",
+  "ubicacion": {
+    "_nota": "Antwork todavía no permite fijar la ubicación del video en YouTube: se pone a mano en YouTube Studio (Detalles > Ubicación del video) con este dato.",
+    "1": "Océano Atlántico, Azores (Portugal)", "2": "Florida, Estados Unidos", "3": "Océano Índico (Malasia)",
+    "4": "Isla Howland, Océano Pacífico", "5": "Islas Flannan, Escocia", "7": "Montes Urales, Rusia",
+    "8": "Delaware, Ohio, Estados Unidos", "9": "New Haven, Connecticut, Estados Unidos", "10": "San Francisco, California, Estados Unidos",
+    "11": "Whitechapel, Londres, Reino Unido", "12": "Somerton Park, Adelaida, Australia", "13": "Isdalen, Bergen, Noruega",
+    "14": "Volcán Tupungato, Argentina", "15": "Cabo Hatteras, Carolina del Norte, Estados Unidos", "16": "Barbados (Mar Caribe)",
+    "17": "Vanua Levu, Fiyi", "18": "Guam, Océano Pacífico", "20": "Durban, Sudáfrica", "21": "Estrecho de Bass, Australia",
+    "22": "Svalbard, Noruega", "23": "Monte Everest, Nepal", "24": "Mato Grosso, Brasil", "25": "Chihuahua, México",
+    "26": "Canal de la Mancha", "27": "Marsella, Francia", "28": "Palermo, Italia", "29": "Cheviot Beach, Victoria, Australia",
+    "30": "Dijon, Francia", "31": "Cameron Highlands, Malasia", "32": "Surrey, Inglaterra", "33": "Bloomfield Township, Michigan, Estados Unidos",
+    "34": "Budapest, Hungría", "35": "Núremberg, Alemania", "36": "Torre de Londres, Reino Unido",
+    "37": "Fayetteville, Virginia Occidental, Estados Unidos", "38": "Bennington, Vermont, Estados Unidos", "39": "Niterói, Río de Janeiro, Brasil",
+    "40": "Chicago, Illinois, Estados Unidos", "41": "", "42": "Alpes de Ötztal, Italia", "43": "Alejandría, Egipto", "44": "Alejandría, Egipto",
+    "45": "Mongolia", "46": "Alejandría, Egipto", "47": "", "48": "Luxor, Egipto", "49": "Tikal, Guatemala", "50": "Teotihuacan, México",
+    "51": "La Venta, Tabasco, México", "52": "Nazca, Perú", "53": "Stonehenge, Wiltshire, Reino Unido", "54": "Şanlıurfa, Turquía",
+    "55": "Isla de Pascua, Chile", "56": "Isla de Pascua, Chile", "57": "Creta, Grecia", "58": "Festo, Creta, Grecia",
+    "59": "Mohenjo-daro, Pakistán", "60": "Anticitera, Grecia", "61": "Estambul, Turquía", "62": "Turín, Italia", "63": "Qumrán, Mar Muerto",
+    "64": "Bedford, Virginia, Estados Unidos", "65": "Wolverhampton, Inglaterra", "66": "Shugborough, Staffordshire, Inglaterra",
+    "67": "Isla Oak, Nueva Escocia, Canadá", "68": "Isla del Coco, Costa Rica", "69": "Laguna de Guatavita, Colombia",
+    "70": "Madre de Dios, Perú", "71": "Llanganates, Ecuador", "72": "Montañas Superstition, Arizona, Estados Unidos",
+    "73": "Kaliningrado, Rusia", "74": "Wałbrzych, Polonia", "75": "Tunguska, Siberia, Rusia", "76": "Hessdalen, Noruega",
+    "77": "Marfa, Texas, Estados Unidos", "78": "Taos, Nuevo México, Estados Unidos", "79": "Devon, Inglaterra",
+    "80": "Woolpit, Suffolk, Inglaterra", "81": "Condado de Bath, Kentucky, Estados Unidos", "82": "San Diego, California, Estados Unidos",
+    "83": "Phoenix, Arizona, Estados Unidos", "84": "Roswell, Nuevo México, Estados Unidos", "85": "Lago Ness, Escocia",
+    "86": "Canóvanas, Puerto Rico", "87": "Estrecho de Malaca", "88": "Townsville, Queensland, Australia", "89": "Nueva York, Estados Unidos",
+    "90": "Martha's Vineyard, Massachusetts, Estados Unidos", "91": "Papúa, Nueva Guinea", "92": "Valle de los Reyes, Luxor, Egipto",
+    "93": "La Mosquitia, Honduras", "94": "Washington D. C., Estados Unidos", "95": "Océano Pacífico Sur", "96": "Yonaguni, Okinawa, Japón",
+    "97": "Delta del Diquís, Costa Rica", "98": "Isla del Rey Guillermo, Nunavut, Canadá"
+  }
+}

@@ -81,3 +81,11 @@ Notas que se aplican a cada video nuevo (se actualizan después de cada historia
   triángulo de las Bermudas…). Se componen con `escenario.py` (+ `escenario_obj.py`, `escenario_extra.py`): una
   línea por escena con capas (cielo, lugar, vehículos reales, personajes de época, objetos históricos, efectos).
   Regla: un mapa u hoja solo aparece si la historia trata de ese documento (mapa de Piri Reis, carta «Dear Boss»).
+
+## Publicar en YouTube (Antwork, canal @1mrelato)
+- Configuración fija en `publicacion_youtube.json`: público, **no es contenido para niños** (`madeForKids: false`),
+  **sin contenido alterado o sintético** (`containsSyntheticMedia: false`), título y descripción tal cual del archivo
+  en «textos misterios nuevos», y siempre el MP4 original en Full HD 1080×1920.
+- Ubicación: Antwork no la permite todavía; el lugar de cada historia está en `publicacion_youtube.json` para ponerlo
+  en YouTube Studio.
+- Anotar cada video publicado en `textos misterios nuevos/SUBIDOS.md` para no repetir.
