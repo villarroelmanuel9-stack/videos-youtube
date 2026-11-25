@@ -81,16 +81,24 @@ _humanos = {}
 
 
 def figura(img, clave, x, y, s, t, pose="caminar", espejo=False, oscuridad=0.0, vel=0.7):
+    """Dibuja un personaje de época. Trabaja sobre un recorte del tamaño del personaje (mucho más rápido)."""
     if clave not in _humanos:
         _humanos[clave] = Humano(realista=True, **PERSONAS[clave])
-    capa = Image.new("RGBA", img.size, (0, 0, 0, 0))
-    _humanos[clave].dibujar(capa, x, y, s, t, pose=pose, espejo=espejo, vel=vel)
+    w, h = int(680 * s) + 40, int(1100 * s) + 40
+    ox, oy = int(x - 340 * s) - 20, int(y - 1040 * s) - 20
+    capa = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    _humanos[clave].dibujar(capa, x - ox, y - oy, s, t, pose=pose, espejo=espejo, vel=vel)
     if oscuridad > 0:
         a = np.asarray(capa).astype(np.float32)
         a[..., :3] *= (1 - oscuridad)
         a[..., 2] += 18 * oscuridad
         capa = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
-    img.alpha_composite(capa)
+    # pegar recortando lo que quede fuera del cuadro
+    x0, y0 = max(0, ox), max(0, oy)
+    x1, y1 = min(img.width, ox + w), min(img.height, oy + h)
+    if x1 <= x0 or y1 <= y0:
+        return
+    img.alpha_composite(capa.crop((x0 - ox, y0 - oy, x1 - ox, y1 - oy)), (x0, y0))
 
 
 def personas_de(ctx):
