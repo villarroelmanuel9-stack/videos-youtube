@@ -104,7 +104,9 @@ def generar(nums: list[int]):
     if not REFERENCIA.exists():
         armar_referencia()
     torch.set_num_threads(4)
-    modelo = ChatterboxMultilingualTTS.from_pretrained(device="cpu")
+    _cargar = torch.load  # los pesos vienen guardados para GPU: forzar CPU
+    torch.load = lambda *a, **k: _cargar(*a, **{**k, "map_location": "cpu"})
+    modelo = ChatterboxMultilingualTTS.from_pretrained(device=torch.device("cpu"))
     sr = modelo.sr
     todos = guiones()
     SALIDA.mkdir(parents=True, exist_ok=True)
