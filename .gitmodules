@@ -1,0 +1,51 @@
+[submodule "herramientas/rea-video"]
+	path = herramientas/rea-video
+	url = https://github.com/JuneYaooo/rea-video.git
+[submodule "herramientas/lemo-opuscar"]
+	path = herramientas/lemo-opuscar
+	url = https://github.com/lemomo-ai/lemo-opuscar.git
+[submodule "herramientas/awesome-opus5-5-videos"]
+	path = herramientas/awesome-opus5-5-videos
+	url = https://github.com/yihui-dev/awesome-opus5-5-videos.git
+[submodule "herramientas/hyperframes"]
+	path = herramientas/hyperframes
+	url = https://github.com/heygen-com/hyperframes.git
+[submodule "herramientas/remotion"]
+	path = herramientas/remotion
+	url = https://github.com/remotion-dev/remotion.git
+[submodule "herramientas/remotion-skills"]
+	path = herramientas/remotion-skills
+	url = https://github.com/remotion-dev/skills.git
+[submodule "herramientas/effectcraft"]
+	path = herramientas/effectcraft
+	url = https://github.com/storytold/effectcraft.git
+[submodule "herramientas/GSAP"]
+	path = herramientas/GSAP
+	url = https://github.com/greensock/GSAP.git
+[submodule "herramientas/mcp-for-blender"]
+	path = herramientas/mcp-for-blender
+	url = https://github.com/ahujasid/mcp-for-blender.git
+[submodule "herramientas/three.js"]
+	path = herramientas/three.js
+	url = https://github.com/mrdoob/three.js.git
+[submodule "herramientas/pixelfx"]
+	path = herramientas/pixelfx
+	url = https://github.com/patch-gg/pixelfx.git
+[submodule "herramientas/unslop"]
+	path = herramientas/unslop
+	url = https://github.com/heydamir/unslop.git
+[submodule "herramientas/impeccable"]
+	path = herramientas/impeccable
+	url = https://github.com/pbakaus/impeccable.git
+[submodule "herramientas/anthropic-skills"]
+	path = herramientas/anthropic-skills
+	url = https://github.com/anthropics/skills.git
+[submodule "herramientas/higgsfield"]
+	path = herramientas/higgsfield
+	url = https://github.com/higgsfield-ai/higgsfield.git
+[submodule "herramientas/open-higgsfield"]
+	path = herramientas/open-higgsfield
+	url = https://github.com/wide-trace/open-higgsfield.git
+[submodule "herramientas/open-source-higgsfield"]
+	path = herramientas/open-source-higgsfield
+	url = https://github.com/jutsuhq/open-source-higgsfield.git
