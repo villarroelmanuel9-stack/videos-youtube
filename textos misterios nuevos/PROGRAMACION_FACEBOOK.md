@@ -1,0 +1,95 @@
+# Facebook (página 1MRelatos) — Reels
+
+Publicados el 26/11: los 21 videos que ya estaban en YouTube (historias + Cicada, USS Cyclops, Saint-Exupéry, niños Sodder, Vuelo 19).
+
+Programados: mismas horas que YouTube y TikTok (hora de Chile), con la miniatura como portada del Reel cuando existe.
+
+| Fecha | Hora | Video | Antwork |
+|---|---|---|---|
+| viernes 27/11 | 08:00 | misterio_50_teotihuacan | caa2eb5dac64526144f8 |
+| viernes 27/11 | 10:00 | misterio_54_gobekli_tepe | 7997bda579477c092473 |
+| viernes 27/11 | 12:00 | misterio_04_amelia_earhart | 11dd501659d8e1e505d7 |
+| sábado 28/11 | 08:00 | misterio_15_carroll_a_deering | c769028877ac6728ab72 |
+| sábado 28/11 | 10:00 | misterio_56_rongorongo | 9498e9aa9dd666271976 |
+| sábado 28/11 | 12:00 | misterio_57_lineal_a | 96821d9875aed49e34e2 |
+| domingo 29/11 | 08:00 | misterio_05_faro_de_las_islas_flannan | 8d77e6516b636fd611c5 |
+| domingo 29/11 | 10:00 | misterio_52_las_lineas_de_nazca | dcce7158a267c4170306 |
+| domingo 29/11 | 12:00 | misterio_28_ettore_majorana | 920a6a2184a47e090266 |
+| lunes 30/11 | 08:00 | misterio_23_mallory_e_irvine_en_el_everest | d7d654f9b259ab2002dd |
+| lunes 30/11 | 10:00 | misterio_48_los_pueblos_del_mar | 5b4387ae4caeb65042a0 |
+| lunes 30/11 | 12:00 | misterio_49_el_colapso_maya | 68ddf4338538ac1853d3 |
+| martes 01/12 | 08:00 | misterio_26_glenn_miller | e90f9d9da56439bb0ebc |
+| martes 01/12 | 10:00 | misterio_11_jack_el_destripador | 6124423a0a61c5068a67 |
+| martes 01/12 | 12:00 | misterio_21_frederick_valentich | 46ffce4ca18d15845382 |
+| miércoles 02/12 | 08:00 | misterio_34_raoul_wallenberg | 17c521afd065b4722461 |
+| miércoles 02/12 | 10:00 | misterio_33_jimmy_hoffa | 369d836c15835b69a9d0 |
+| miércoles 02/12 | 12:00 | misterio_03_mh370 | 92679c01e9bb076f98d9 |
+| jueves 03/12 | 08:00 | misterio_59_la_escritura_del_indo | 5b593eaca9f669656a6c |
+| jueves 03/12 | 10:00 | misterio_20_ss_waratah | f05adfb7b1e9cebf310b |
+| jueves 03/12 | 12:00 | misterio_31_jim_thompson | e7fda337f3ca1468eb6e |
+| viernes 04/12 | 08:00 | misterio_29_harold_holt | 075e653be685ffa57035 |
+| viernes 04/12 | 10:00 | misterio_13_mujer_de_isdal | b9407a8fbaeb277a731a |
+| viernes 04/12 | 12:00 | misterio_10_asesino_del_zodiaco | d906418631dfaad82dd8 |
+| sábado 05/12 | 08:00 | misterio_14_star_dust_stendec | 4b3e9a861f542639bdf2 |
+| sábado 05/12 | 10:00 | misterio_38_triangulo_de_bennington | 7506812604acda4b4826 |
+| sábado 05/12 | 12:00 | misterio_12_hombre_de_somerton | ea8d5ca882dc4559ad6b |
+| domingo 06/12 | 08:00 | misterio_25_ambrose_bierce_en_mexico | 0dc7a9e8db3229dab153 |
+| domingo 06/12 | 10:00 | misterio_47_la_atlantida | 00477b6418a13b7f54ec |
+| domingo 06/12 | 12:00 | misterio_53_stonehenge | 3752bfe25f3ee0929ab8 |
+| lunes 07/12 | 08:00 | misterio_45_la_tumba_de_gengis_kan | 817a7b917a0472f4af96 |
+| lunes 07/12 | 10:00 | misterio_55_los_moais_de_isla_de_pascua | d1c00146e81dfe7d199f |
+| lunes 07/12 | 12:00 | misterio_22_el_globo_de_andree | 0abaae2bcbc2b055963b |
+| martes 08/12 | 08:00 | misterio_60_el_mecanismo_de_anticitera | ccaa370afb622b34178c |
+| martes 08/12 | 10:00 | misterio_07_paso_diatlov | 201ce9219addd8de4fef |
+| martes 08/12 | 12:00 | misterio_01_mary_celeste | 8d8fea18dcdfce939af7 |
+| miércoles 09/12 | 08:00 | misterio_18_vuelo_flying_tiger_739 | 86abb419ffb09ccbc8b9 |
+| miércoles 09/12 | 10:00 | misterio_32_agatha_christie | 86b2caab6f257bc10f0a |
+| miércoles 09/12 | 12:00 | misterio_42_otzi_el_hombre_de_hielo | 2803c65a049906e7e2c7 |
+| jueves 10/12 | 08:00 | misterio_35_kaspar_hauser | 23f8145ff960ea04e0fa |
+| jueves 10/12 | 10:00 | misterio_51_las_cabezas_olmecas | 9c0618240b87b9ff1408 |
+| jueves 10/12 | 12:00 | misterio_40_la_senal_de_max_headroom | d861e65690d5d703a882 |
+| viernes 11/12 | 08:00 | misterio_30_louis_le_prince | 59bcf8154f258af5ca1b |
+| viernes 11/12 | 10:00 | misterio_39_las_mascaras_de_plomo | ca5a9277468f2df250e5 |
+| viernes 11/12 | 12:00 | misterio_44_la_tumba_de_alejandro_magno | 82c494288d803bca3803 |
+| sábado 12/12 | 08:00 | misterio_43_la_tumba_de_cleopatra | aa9813e6e7c890837558 |
+| sábado 12/12 | 10:00 | misterio_17_mv_joyita | 3e99453c0f584b24708e |
+| sábado 12/12 | 12:00 | misterio_08_senal_wow | 30311c693df3a2e673ad |
+| domingo 13/12 | 08:00 | misterio_46_la_biblioteca_de_alejandria | 7bb561e3729385a9d3de |
+| domingo 13/12 | 10:00 | misterio_58_el_disco_de_festo | 3c06841e1419f33639ce |
+| domingo 13/12 | 12:00 | misterio_36_los_principes_de_la_torre | e8114fbce3c245611fea |
+| lunes 14/12 | 08:00 | misterio_24_percy_fawcett_y_la_ciudad_z | 6ca0cd121235548ca29d |
+| lunes 14/12 | 10:00 | misterio_09_manuscrito_voynich | 42f4a09206f075bc0ae8 |
+| lunes 14/12 | 12:00 | misterio_95_el_bloop | f94aa62e58cef1e0b145 |
+| martes 15/12 | 08:00 | misterio_89_dorothy_arnold | b7b311fff56c5808bea7 |
+| martes 15/12 | 10:00 | misterio_65_el_cifrado_dorabella | 09cf1176096d115fd869 |
+| martes 15/12 | 12:00 | misterio_79_las_huellas_del_diablo | 4c997c898475ee5ae23e |
+| miércoles 16/12 | 08:00 | misterio_62_la_sabana_santa_de_turin | 6756856c09ac0df729b0 |
+| miércoles 16/12 | 10:00 | misterio_68_el_tesoro_de_lima_en_la_isla_del_coco | b32f99e041762753d1fb |
+| miércoles 16/12 | 12:00 | misterio_74_el_tren_de_oro_nazi | 430583ade8305ff0ef30 |
+| jueves 17/12 | 08:00 | misterio_75_el_evento_de_tunguska | bf103c12c14fc6f12899 |
+| jueves 17/12 | 10:00 | misterio_91_michael_rockefeller | db134254edf6aaa3ca3c |
+| jueves 17/12 | 12:00 | misterio_83_las_luces_de_phoenix | a77ba481215db7793d99 |
+| viernes 18/12 | 08:00 | misterio_87_el_ourang_medan | eade9ad4473a931d1d91 |
+| viernes 18/12 | 10:00 | misterio_78_el_zumbido_de_taos | a4981366fa33d5d1a04d |
+| viernes 18/12 | 12:00 | misterio_64_los_cifrados_de_beale | ab364f711c58eb071dd4 |
+| sábado 19/12 | 08:00 | misterio_76_las_luces_de_hessdalen | e6ec1472f882b7c460eb |
+| sábado 19/12 | 10:00 | misterio_98_la_expedicion_franklin | 1e754a58eaef01f62b2d |
+| sábado 19/12 | 12:00 | misterio_77_las_luces_de_marfa | 8d24fb7026c773eb14c1 |
+| domingo 20/12 | 08:00 | misterio_93_la_ciudad_blanca_de_honduras | 22c4f7a005fb5dfc7a7e |
+| domingo 20/12 | 10:00 | misterio_84_roswell | 8388fec7a33581d227fb |
+| domingo 20/12 | 12:00 | misterio_85_el_monstruo_del_lago_ness | 23972a7d5ee9334b6d2b |
+| lunes 21/12 | 08:00 | misterio_71_el_tesoro_de_los_llanganates | c01bbbc811b292ec81eb |
+| lunes 21/12 | 10:00 | misterio_94_el_diamante_hope | a4061010056742c1dded |
+| lunes 21/12 | 12:00 | misterio_63_el_rollo_de_cobre | 7b93d81f50a45c277263 |
+| martes 22/12 | 08:00 | misterio_88_el_kaz_ii | 8b37ff2dd8d91e4bf5cc |
+| martes 22/12 | 10:00 | misterio_82_el_ovni_del_nimitz | 20da38ad20940c4988d4 |
+| martes 22/12 | 12:00 | misterio_70_paititi | 4c68aee494e12fcc18b5 |
+| miércoles 23/12 | 08:00 | misterio_69_el_dorado | 534c2b6658ab75b9e839 |
+| miércoles 23/12 | 10:00 | misterio_97_las_esferas_de_piedra_de_costa_rica | 3a11522fb8eb221e6c1d |
+| miércoles 23/12 | 12:00 | misterio_80_los_ninos_verdes_de_woolpit | f2692a6cda1033d65e0c |
+| jueves 24/12 | 08:00 | misterio_92_la_tumba_de_nefertiti | 14813c35a0c1c92831fb |
+| jueves 24/12 | 10:00 | misterio_96_yonaguni | e07bc7c0b3cb10aa7506 |
+| jueves 24/12 | 12:00 | misterio_73_la_camara_de_ambar | da0c7fe20fa78816dc1a |
+| viernes 25/12 | 08:00 | misterio_72_la_mina_del_holandes_perdido | 46ae01b10e806f96eddf |
+| viernes 25/12 | 10:00 | misterio_86_el_chupacabras | 31d3512f4e4edb62b230 |
+| viernes 25/12 | 12:00 | misterio_81_la_lluvia_de_carne_de_kentucky | 3a9607bca6843f48159b |
