@@ -89,3 +89,10 @@ Notas que se aplican a cada video nuevo (se actualizan después de cada historia
 - Ubicación: Antwork no la permite todavía; el lugar de cada historia está en `publicacion_youtube.json` para ponerlo
   en YouTube Studio.
 - Anotar cada video publicado en `textos misterios nuevos/SUBIDOS.md` para no repetir.
+
+## Serie «100 historias» (relatos: historia, cultura, terror, videojuegos)
+- **Duración pedida: 45–46 s por video.** La voz de Cristian Cornejo habla a ≈2,6 palabras/s, así que cada guion
+  tiene 110–120 palabras (≈44 s de voz) y la cola final se ajusta en el render para cerrar en 45–46 s.
+- Antes de escribir temas nuevos, revisar en Antwork lo ya publicado (YouTube y TikTok) y los 100 misterios para
+  no repetir. Guiones en `guiones/historias_100.md`; textos en «textos historias nuevas» (`generar_textos_historias.py`).
+- Videojuegos: contar la historia real, pero en dibujos y miniaturas no copiar personajes ni logotipos con derechos.
