@@ -1020,7 +1020,8 @@ def main():
     n = a.n
     nombre, parrafos = cargar_guion(n)
     plan = json.loads((PLANES / f"relato_{n:03d}.json").read_text(encoding="utf-8"))
-    audio = Path(a.audio) if a.audio else AUDIOS / f"relato_{n:03d}.mp3"
+    nueva = RAIZ / "voces nuevas" / f"relato_{n:03d}.mp3"  # las que sube el usuario tienen prioridad
+    audio = Path(a.audio) if a.audio else (nueva if nueva.exists() else AUDIOS / f"relato_{n:03d}.mp3")
     palabras, parrafo_de, fin_parrafo = [], [], []
     for emo, texto in parrafos:
         for w in texto.split():
