@@ -600,6 +600,19 @@ def version_hd(c: dict) -> dict:
         return {**c, "d": "mar_hd"}
     if d in ("iceberg", "transatlantico", "niebla"):
         return {**c, "d": d + "_hd"}
+    if d == "persona":
+        ropa = {"traje": "traje", "gris": "traje_gris", "uniforme": "uniforme", "bata": "bata", "vestido": "vestido",
+                "camarera": "vestido", "enfermera": "bata", "obrero": "obrero", "blanco": "camisa", "romano": "kimono_rojo",
+                "rojo": "vestido" if c.get("falda") else "traje_cafe", "azul": "kimono" if c.get("falda") else "traje"}.get(c.get("ropa", "traje"), "traje")
+        if c.get("falda") and ropa not in ("vestido", "kimono", "kimono_rojo", "bata"):
+            ropa = "vestido"
+        nuevo = {k: v for k, v in c.items() if k not in ("ropa", "falda", "pelo_largo", "expresion", "barba")}
+        nuevo.update(d="persona_real", ropa=ropa, peinado="largo" if c.get("pelo_largo") else c.get("peinado", "corto"))
+        if c.get("pelo") == "#ececec":
+            nuevo["pelo"] = "#d9d9d9"
+        if c.get("calvo"):
+            nuevo["peinado"] = "calvo"
+        return nuevo
     return c
 
 

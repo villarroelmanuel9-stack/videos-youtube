@@ -387,6 +387,8 @@ def perro(p, u, t):
     raza = p.get("raza", "akita")
     if raza == "akita":
         c1, c2, c3 = "#e3a865", "#b97a3c", "#f8f1e4"
+    elif raza == "crema":  # Hachiko era un akita blanco cremoso
+        c1, c2, c3 = "#f3e6cc", "#d2bb92", "#fffaf0"
     else:
         c1, c2, c3 = "#f2ede4", "#cfc5b5", "#ffffff"
     d = (f'<defs>{lin(c1, c2, u + "p", 0)}{lin(c2, "#8a5a2a" if raza == "akita" else "#b8ad9c", u + "s", 0)}'
@@ -403,7 +405,7 @@ def perro(p, u, t):
               f'<path d="M34,-160 L32,-8 Q34,4 58,4 Q74,4 72,-8 L72,-160 Z" fill="url(#{u}p)" stroke="{TINTA}" stroke-width="4"/>'
               f'<path d="M34,-26 L72,-26" stroke="{c3}" stroke-width="16"/>'
               f'<path d="M-132,-170 Q-150,-110 -140,-40" stroke="#fff" stroke-opacity=".25" stroke-width="8" fill="none"/>')
-    if raza != "akita":
+    if raza == "laika":
         cuerpo += (f'<ellipse cx="-60" cy="-150" rx="48" ry="34" fill="#c9a27a" opacity=".85"/>'
                    f'<ellipse cx="-110" cy="-60" rx="30" ry="22" fill="#c9a27a" opacity=".8"/>')
     cabeza = (f'<g id="{u}cab"><path d="M68,-246 Q56,-332 122,-352 Q172,-356 192,-308 Q228,-298 244,-278 Q240,-256 204,-252 L154,-244 Q104,-222 68,-246 Z" '

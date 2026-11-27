@@ -286,26 +286,36 @@ P[23] = dict(tema="historia", estilo="frio", claves=["verde.", "Eiffel,", "cobre
     FIN("¿Lo sabías? Comenta", ["¿LO", "SABÍAS?"], capas=NY + [D("estatua_libertad", x=540, y=1450, s=1.05, color="verde")], comentario="Siempre pensé que era verde"),
 ])
 
-# ================================================================ 28 · Hachiko
-ANDEN = [C("atardecer", horizonte=1250, astro="sol", astro_x=820, astro_y=700, astro_r=60), D("ciudad", era="antigua", y=1260, color="#4a3a3a", color_lejos="#6b4a4a"),
-         D("suelo", y=1260, colores=["#9a8a7a", "#5a4a3c"])]
-P[28] = dict(tema="cultura", estilo="calido", claves=["diez", "Hachiko", "regresó.", "estatua"], tomas=[
-    E("Este perro esperó", ANDEN + [D("perro", x=540, y=1560, s=1.2)], "push", dato=["CASI", "10 AÑOS"], amb="multitud", amb_vol=.4),
-    E("Hachiko era un", [D("interior", pared="#7a5a3a", piso="#3a2a1e", luz_x=540, luz_y=900), D("perro", x=500, y=1550, s=2.1)], "push_fuerte", texto="HACHIKO", amb="ninguno"),
-    E("Cada día acompañaba", [C("dia", horizonte=1300), D("ciudad", era="antigua", y=1310), D("suelo", y=1300, colores=["#b9a88a", "#7a6a55"]),
-      D("persona", x=380, y=1600, s=1.3, ropa="traje", sombrero="fedora", mov="camina", avance=160), D("perro", x=680, y=1600, s=.8)], "pan_der", dato=["PROFESOR", "UENO"], amb="multitud", amb_vol=.4),
+# ================================================================ 28 · Hachiko (realista, Tokio años 20)
+UENO = dict(ropa="traje", sombrero="fedora", bigote=True, piel="asiatica", pelo="#1b1b1b")
+TARDE_JP = [C("atardecer", horizonte=1120, astro="sol", astro_x=820, astro_y=980, astro_r=70, nubes=5), D("pueblo_jp", y=1080, hora="atardecer")]
+HACHI = dict(raza="crema", collar=True)
+P[28] = dict(tema="cultura", estilo="calido", claves=["diez", "Hachiko", "regresó.", "estatua"], miniatura=0, tomas=[
+    E("Este perro esperó", TARDE_JP + [D("anden_hd", fuga_x=700, fuga_y=1080), D("sombra_larga", x=420, y=1660, largo=460, angulo=-14),
+      D("perro", x=420, y=1660, s=.95, **HACHI)], "push", dato=["CASI", "10 AÑOS"], amb="viento", amb_vol=.5),
+    E("Hachiko era un", TARDE_JP + [D("suelo", y=1120, colores=["#a8906e", "#5a4630"]), D("perro", x=480, y=1700, s=2.1, **HACHI)], "push_fuerte",
+      texto="HACHIKO", amb="ninguno"),
+    E("Cada día acompañaba", [C("dia", horizonte=1250), D("pueblo_jp", y=1300), D("suelo", y=1300, colores=["#b9a684", "#7a6a50"]),
+      D("persona_real", x=330, y=1720, s=1.8, mov="camina", avance=180, **UENO), D("perro", x=620, y=1720, s=.85, **HACHI),
+      D("persona_real", x=930, y=1430, s=.9, ropa="kimono", piel="asiatica", pelo="#111")], "pan_der", dato=["PROFESOR", "UENO"], amb="multitud", amb_vol=.5),
     M("a la estación", [35.658, 139.70], 30, zoom_desde=4, centro_desde=[36, 138], resaltar=["Japan"], pines=[{"lat": 35.658, "lon": 139.70, "texto": "SHIBUYA, TOKIO"}]),
-    E("y por la", ANDEN + [D("tren", x=540, y=1350, s=1.0), D("perro", x=760, y=1600, s=.9)], "fijo", texto="ESPERABA EL TREN", amb="tren"),
+    E("y por la", TARDE_JP + [D("estacion_jp", x=540, y=1420, s=1.0), D("suelo", y=1420, colores=["#9a8a70", "#4a3e30"]),
+      D("persona_real", x=170, y=1560, s=.9, ropa="kimono_rojo", piel="asiatica", peinado="mono", pelo="#111"),
+      D("persona_real", x=900, y=1560, s=.95, ropa="traje_gris", piel="asiatica", sombrero="bombin", pelo="#111"), D("perro", x=560, y=1760, s=1.0, **HACHI)],
+      "push", texto=["LO ESPERABA", "A LA SALIDA"], acento=1, amb="multitud", amb_vol=.5),
     F("En mayo de", "21", "MAYO", "1925"),
-    E("el profesor sufrió", [D("interior", pared="#3a3a4a", piso="#1d1d26", vista="tormenta", ventana_x=650), D("persona", x=380, y=1450, s=1.3, ropa="traje", mov="desvanece", desvanece_en=1.0)],
-      "push", texto=["NUNCA", "REGRESÓ"], acento=1, amb="lluvia", amb_vol=.6),
-    E("Hachiko siguió yendo", ANDEN + [D("tren", x=540, y=1350, s=1.0, mov="parte"), D("perro", x=540, y=1600, s=1.0)], "fijo", texto="CADA TARDE", amb="tren"),
+    E("el profesor sufrió", [D("interior", pared="#6b5040", piso="#3a2a1e", vista="dia", ventana_x=650, papel=True),
+      D("persona_real", x=380, y=1560, s=1.9, mov="desvanece", desvanece_en=1.0, **UENO)], "push", texto=["NUNCA", "REGRESÓ"], acento=1, amb="ninguno"),
+    E("Hachiko siguió yendo", TARDE_JP + [D("anden_hd", fuga_x=700, fuga_y=1080), D("tren_jp", x=1080, y=1180, s=.55, mov="parte"),
+      D("sombra_larga", x=480, y=1700, largo=520, angulo=-14), D("perro", x=480, y=1700, s=1.05, **HACHI)], "fijo", texto="CADA TARDE", amb="tren"),
     E("a la misma", [D("interior", pared="#5a4a3c", piso="#2a1d14"), D("calendario", x=540, y=1450, s=1.4, anios=["1926", "1928", "1930", "1932", "1935"])],
       "fijo", texto="A LA MISMA HORA", sfx="papel", sfx_dur=.6),
     T("hasta su muerte", ["HASTA", "1935"], acento=1, icono="🐾"),
-    E("Hoy tiene una", [C("dia", horizonte=1300), D("ciudad", era="moderna", y=1310), D("suelo", y=1300, colores=["#9aa0a6", "#5c6268"]), D("estatua_perro", x=540, y=1600, s=1.1)],
-      "push", dato=["ESTATUA EN", "SHIBUYA"], amb="multitud", amb_vol=.5),
-    FIN("¿Tienes una mascota", ["¿TIENES UNA", "MASCOTA ASÍ?"], capas=ANDEN + [D("perro", x=540, y=1560, s=1.2)], comentario="Mi perro me espera siempre 🐶"),
+    E("Hoy tiene una", [C("noche", horizonte=1300), D("ciudad", era="moderna", y=1310), D("suelo", y=1300, colores=["#5c6268", "#2a2e33"]),
+      D("estatua_perro", x=540, y=1640, s=1.1), D("persona_real", x=200, y=1620, s=1.1, ropa="abrigo", piel="asiatica", pelo="#111"),
+      D("persona_real", x=880, y=1620, s=1.05, ropa="camisa", piel="asiatica", pelo="#2a1d14", peinado="largo")], "push", dato=["ESTATUA EN", "SHIBUYA"], amb="multitud", amb_vol=.6),
+    FIN("¿Tienes una mascota", ["¿TIENES UNA", "MASCOTA ASÍ?"], capas=TARDE_JP + [D("anden_hd", fuga_x=700, fuga_y=1080), D("perro", x=540, y=1700, s=1.0, **HACHI)],
+        comentario="Mi perro me espera siempre 🐶"),
 ])
 
 # ================================================================ 32 · Momias Chinchorro

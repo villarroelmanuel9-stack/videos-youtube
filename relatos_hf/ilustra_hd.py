@@ -264,3 +264,183 @@ def sombra_larga(p, u, t):
     x, y, l, a = p.get("x", 540), p.get("y", 1600), p.get("largo", 420), p.get("angulo", -18)
     return (f'<defs><filter id="{u}b"><feGaussianBlur stdDeviation="6"/></filter></defs>'
             f'<ellipse cx="{x - l / 2}" cy="{y}" rx="{l / 2}" ry="{p.get("ancho", 40)}" fill="#000" opacity=".38" filter="url(#{u}b)" transform="rotate({a} {x} {y})"/>')
+
+
+# ============================================================================ personaje realista
+PIELES = {"clara": ("#f0c9a4", "#c99876"), "media": ("#d9a77c", "#a8754e"), "morena": ("#a8714a", "#7a4c2e"),
+          "asiatica": ("#ecc79e", "#c49770")}
+TELAS = {"traje": ("#2b3140", "#151924"), "traje_gris": ("#5c6270", "#353a45"), "traje_cafe": ("#5a4636", "#33271d"),
+         "uniforme": ("#4a5a3a", "#2c3622"), "bata": ("#f2f2ee", "#c4c6c8"), "kimono": ("#3a4a6a", "#1f2a40"),
+         "kimono_rojo": ("#8a2a3a", "#55151f"), "abrigo": ("#3a2e24", "#1f1812"), "vestido": ("#6b2d3f", "#3e1824"),
+         "obrero": ("#5a4a36", "#352b1e"), "camisa": ("#e8e4da", "#b8b2a4")}
+
+
+@dib("persona_real")
+def persona_real(p, u, t):
+    """Personaje de proporciones reales (≈7 cabezas), sombreado de luz y sombra, ropa de época.
+    ropa: traje, traje_gris, traje_cafe, uniforme, bata, kimono, kimono_rojo, abrigo, vestido, obrero.
+    piel: clara, media, morena, asiatica. pelo, peinado (corto, largo, mono, calvo), sombrero (fedora, bombin,
+    boina, gorra), bigote, lentes, mira (der/izq), mov (camina, saluda, respira, desvanece)."""
+    ropa = p.get("ropa", "traje")
+    c1, c2 = TELAS.get(ropa, TELAS["traje"])
+    pi, ps = PIELES.get(p.get("piel", "clara"), PIELES["clara"])
+    pelo = p.get("pelo", "#2a1d14")
+    peinado = p.get("peinado", "corto")
+    larga = ropa in ("kimono", "kimono_rojo", "vestido")
+    O = f'stroke="{TIN}" stroke-width="3" stroke-linejoin="round"'
+    d = (f'<defs>{lin(c1, c2, u + "t", 0)}{lin(pi, ps, u + "p", 0)}{lin("#2a2f3d", "#141822", u + "pa", 0)}'
+         f'<linearGradient id="{u}sh" x1="0" y1="0" x2="1" y2="0"><stop offset=".45" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient></defs>')
+    partes = [d]
+    # piernas y calzado
+    if not larga:
+        pant = {"bata": "#3a3f4a", "uniforme": c2, "obrero": "#3a3024"}.get(ropa, c2)
+        partes.append(f'<path d="M-30,-218 L-26,-14 L-6,-14 L-2,-150 L2,-150 L6,-14 L26,-14 L30,-218 Z" fill="{pant}" {O}/>'
+                      f'<path d="M4,-200 L8,-14 L26,-14 L28,-200 Z" fill="#000" opacity=".22"/>')
+    partes.append(f'<path d="M-32,-16 Q-34,0 -2,0 L-2,-16 Z M2,-16 L2,0 Q36,0 34,-16 Z" fill="#141010" {O}/>'
+                  f'<path d="M-28,-12 L-10,-12" stroke="#fff" stroke-opacity=".25" stroke-width="2"/>')
+    # cuerpo
+    if larga:
+        partes.append(f'<path d="M-50,-362 Q0,-378 50,-362 L56,-230 L44,-14 L-44,-14 L-56,-230 Z" fill="url(#{u}t)" {O}/>'
+                      f'<path d="M-50,-362 L0,-300 L50,-362" fill="none" stroke="{TIN}" stroke-width="3"/>'
+                      f'<path d="M0,-300 L-6,-14" stroke="{TIN}" stroke-width="2.5" opacity=".7"/>')
+        if ropa.startswith("kimono"):
+            partes.append(f'<rect x="-54" y="-262" width="108" height="34" fill="#c9a24a" {O}/><path d="M-20,-262 L20,-262 L14,-228 L-14,-228 Z" fill="#8a6a2a"/>')
+        partes.append(f'<path d="M10,-360 L52,-362 L56,-230 L44,-14 L8,-14 Z" fill="url(#{u}sh)"/>')
+    else:
+        largo = -168 if ropa in ("traje", "traje_gris", "traje_cafe", "bata", "uniforme") else (-110 if ropa == "abrigo" else -206)
+        partes.append(f'<path d="M-52,-364 Q0,-380 52,-364 L56,{largo} L-56,{largo} Z" fill="url(#{u}t)" {O}/>')
+        if ropa != "obrero":
+            partes.append(f'<path d="M-14,-368 L0,-318 L14,-368 Z" fill="#f2efe6" {O}/>'
+                          f'<path d="M-3,-336 L3,-336 L6,-290 L0,-280 L-6,-290 Z" fill="{p.get("corbata", "#6a1a1e")}"/>'
+                          f'<path d="M-14,-368 L-26,-300 L-4,-262 M14,-368 L26,-300 L4,-262" fill="none" stroke="{TIN}" stroke-width="2.5"/>'
+                          f'<path d="M-4,-262 L0,{largo}" stroke="{TIN}" stroke-width="2" opacity=".6"/>'
+                          f'<circle cx="6" cy="-240" r="3" fill="{TIN}"/><circle cx="6" cy="-210" r="3" fill="{TIN}"/>'
+                          f'<path d="M-40,-250 L-20,-250 M22,-250 L42,-250" stroke="{TIN}" stroke-width="2" opacity=".6"/>')
+        partes.append(f'<path d="M12,-364 L52,-364 L56,{largo} L10,{largo} Z" fill="url(#{u}sh)"/>'
+                      f'<path d="M-46,-356 Q-54,-300 -52,{largo + 20}" stroke="#fff" stroke-opacity=".18" stroke-width="5" fill="none"/>')
+    # brazos con mano
+    manga = 26 if not ropa.startswith("kimono") else 40
+    for lado, idb in ((-1, "bi"), (1, "bd")):
+        partes.append(f'<g id="{u}{idb}"><path d="M{lado * 50},-356 Q{lado * 66},-290 {lado * 60},-216" stroke="{TIN}" stroke-width="{manga + 6}" stroke-linecap="round" fill="none"/>'
+                      f'<path d="M{lado * 50},-356 Q{lado * 66},-290 {lado * 60},-216" stroke="{c1 if lado < 0 else c2}" stroke-width="{manga}" stroke-linecap="round" fill="none"/>'
+                      f'<ellipse cx="{lado * 60}" cy="-200" rx="10" ry="14" fill="url(#{u}p)" {O}/></g>')
+    # cuello y cabeza (≈1/7 del alto)
+    partes.append(f'<path d="M-9,-384 L9,-384 L10,-362 L-10,-362 Z" fill="{ps}"/>')
+    partes.append(f'<ellipse cx="0" cy="-412" rx="24" ry="31" fill="url(#{u}p)" {O}/>')
+    partes.append(f'<ellipse cx="-24" cy="-410" rx="5" ry="8" fill="{ps}" {O}/><ellipse cx="24" cy="-410" rx="5" ry="8" fill="{ps}" {O}/>')
+    partes.append(f'<path d="M6,-440 Q26,-428 22,-392 Q16,-384 4,-382 Q14,-410 6,-440 Z" fill="#000" opacity=".13"/>')
+    mira = 2 if p.get("mira", "der") == "der" else -2
+    partes.append(f'<path d="M-15,-420 Q-9,-424 -4,-420 M4,-420 Q9,-424 15,-420" stroke="{pelo if pelo not in ("#ececec", "#d9d9d9") else "#8a8a8a"}" stroke-width="2.6" fill="none" stroke-linecap="round"/>'
+                  f'<ellipse cx="{-9 + mira}" cy="-412" rx="3.2" ry="2.4" fill="{TIN}"/><ellipse cx="{9 + mira}" cy="-412" rx="3.2" ry="2.4" fill="{TIN}"/>'
+                  f'<path d="M-14,-414 Q-9,-417 -4,-414 M4,-414 Q9,-417 14,-414" stroke="{TIN}" stroke-width="1.6" fill="none"/>'
+                  f'<path d="M1,-410 Q-3,-398 3,-396" stroke="{ps}" stroke-width="2.4" fill="none" stroke-linecap="round"/>'
+                  f'<path d="M-7,-388 Q0,-385 7,-388" stroke="#8a4a3a" stroke-width="2.4" fill="none" stroke-linecap="round"/>')
+    if p.get("bigote"):
+        partes.append(f'<path d="M-11,-392 Q-5,-397 0,-393 Q5,-397 11,-392 Q5,-389 0,-391 Q-5,-389 -11,-392 Z" fill="{pelo}"/>')
+    if p.get("lentes"):
+        partes.append(f'<circle cx="-9" cy="-412" r="7" fill="none" stroke="#222" stroke-width="2"/><circle cx="9" cy="-412" r="7" fill="none" stroke="#222" stroke-width="2"/>'
+                      f'<line x1="-2" x2="2" y1="-412" y2="-412" stroke="#222" stroke-width="2"/>')
+    if peinado == "corto":
+        partes.append(f'<path d="M-24,-418 Q-26,-446 0,-446 Q24,-446 25,-418 Q20,-432 4,-434 Q-10,-428 -24,-418 Z" fill="{pelo}" {O}/>'
+                      f'<path d="M-12,-440 Q0,-444 12,-438" stroke="#fff" stroke-opacity=".25" stroke-width="2" fill="none"/>')
+    elif peinado == "largo":
+        partes.append(f'<path d="M-26,-414 Q-30,-450 0,-448 Q30,-450 26,-414 Q30,-360 22,-350 L14,-392 Q16,-428 0,-430 Q-16,-428 -14,-392 L-22,-350 Q-30,-360 -26,-414 Z" fill="{pelo}" {O}/>')
+    elif peinado == "mono":
+        partes.append(f'<path d="M-25,-416 Q-26,-448 0,-447 Q26,-448 25,-416 Q18,-436 0,-436 Q-18,-436 -25,-416 Z" fill="{pelo}" {O}/>'
+                      f'<circle cx="0" cy="-452" r="13" fill="{pelo}" {O}/><line x1="-14" x2="14" y1="-456" y2="-448" stroke="#c9a24a" stroke-width="2.5"/>')
+    som = p.get("sombrero")
+    if som == "fedora":
+        partes.append(f'<path d="M-22,-432 Q-20,-466 0,-466 Q20,-466 22,-432 Z" fill="#4a3d2c" {O}/><rect x="-22" y="-440" width="44" height="7" fill="#1f1812"/>'
+                      f'<path d="M-40,-430 Q0,-440 40,-430 Q0,-424 -40,-430 Z" fill="#4a3d2c" {O}/>')
+    elif som == "bombin":
+        partes.append(f'<path d="M-22,-432 Q-24,-470 0,-470 Q24,-470 22,-432 Z" fill="#151515" {O}/><path d="M-34,-430 Q0,-438 34,-430" stroke="#151515" stroke-width="6" fill="none"/>')
+    elif som == "boina":
+        partes.append(f'<ellipse cx="-2" cy="-440" rx="30" ry="12" fill="#2a2a3a" {O}/>')
+    elif som == "gorra":
+        partes.append(f'<path d="M-25,-428 Q0,-462 25,-428 Z" fill="{p.get("color_sombrero", "#2a3142")}" {O}/><rect x="0" y="-432" width="36" height="7" rx="3" fill="{TIN}"/>')
+    elif som == "copa":
+        partes.append(f'<rect x="-20" y="-484" width="40" height="52" rx="3" fill="#121216" {O}/><rect x="-20" y="-446" width="40" height="7" fill="#5a1d2a"/>'
+                      f'<path d="M-36,-432 L36,-432" stroke="#121216" stroke-width="7" stroke-linecap="round"/>')
+    elif som == "cofia":
+        partes.append(f'<path d="M-22,-440 L22,-440 L17,-456 L-17,-456 Z" fill="#fff" {O}/><rect x="-4" y="-455" width="8" height="10" fill="#c41e1e"/>')
+    elif som == "casco_ww":
+        partes.append(f'<path d="M-30,-424 Q0,-470 30,-424 Z" fill="#4b5a35" {O}/>')
+    s = "".join(partes)
+    mov = p.get("mov")
+    if mov == "camina":
+        deriva(t, f"#{u}", f"x: '+={p.get('avance', 160)}'")
+        vaiven(t, f"#{u}in", "y: -5", periodo=0.55)
+        vaiven(t, f"#{u}bi", "rotation: 10, transformOrigin: '50% 0%'", periodo=1.1)
+        vaiven(t, f"#{u}bd", "rotation: -10, transformOrigin: '50% 0%'", periodo=1.1)
+    elif mov == "saluda":
+        vaiven(t, f"#{u}bd", "rotation: -60, transformOrigin: '0% 0%'", periodo=0.6)
+    elif mov == "respira":
+        vaiven(t, f"#{u}in", "scaleY: 1.01, transformOrigin: '50% 100%'", periodo=2.6)
+    elif mov == "desvanece":
+        anim(t, f"#{u}in", "{opacity: 1}", "{opacity: 0, y: -30, duration: 0.9, ease: 'power2.in'}", p.get("desvanece_en", 1.0))
+    sombra = '<ellipse cx="0" cy="2" rx="60" ry="9" fill="#000" opacity=".3"/>'
+    return g(p, sombra + f'<g id="{u}in">{s}</g>', u)
+
+
+# ============================================================================ Japón años 20
+@dib("pueblo_jp")
+def pueblo_jp(p, u, t):
+    """Calle de casas japonesas de madera (machiya): techos de teja oscura con alero curvo, celosías,
+    cortinas noren y faroles de papel encendidos."""
+    y = p.get("y", 1250)
+    rng = random.Random(p.get("semilla", 6))
+    noche = p.get("hora") in ("noche", "atardecer")
+    s = [f'<defs>{filtros(u)}{lin("#8a6a4a", "#4a3624", u + "m", 0)}{lin("#3a3e48", "#1d2028", u + "te")}</defs>']
+    x = -140
+    k = 0
+    while x < 1220:
+        w = rng.uniform(170, 240)
+        h = rng.uniform(170, 240)
+        alt = rng.uniform(0, 40)
+        s.append(f'<g id="{u}c{k}">'
+                 f'<rect x="{x:.0f}" y="{y - h - alt:.0f}" width="{w:.0f}" height="{h + alt:.0f}" fill="url(#{u}m)" stroke="{TIN}" stroke-width="3"/>'
+                 + "".join(f'<line x1="{x + 8 + j * 10:.0f}" x2="{x + 8 + j * 10:.0f}" y1="{y - h * .62 - alt:.0f}" y2="{y - 20:.0f}" stroke="#3a2614" stroke-width="3"/>' for j in range(int((w - 16) / 10)))
+                 + f'<path d="M{x - 26:.0f},{y - h - alt + 6:.0f} Q{x + w / 2:.0f},{y - h - alt - 24:.0f} {x + w + 26:.0f},{y - h - alt + 6:.0f} L{x + w - 10:.0f},{y - h - alt - 50:.0f} L{x + 10:.0f},{y - h - alt - 50:.0f} Z" fill="url(#{u}te)" stroke="{TIN}" stroke-width="3"/>'
+                 + "".join(f'<path d="M{x - 18 + j * 18:.0f},{y - h - alt + 2:.0f} q4,-26 2,-48" stroke="#4a4e58" stroke-width="2" fill="none"/>' for j in range(int((w + 36) / 18)))
+                 + f'<path d="M{x + w * .25:.0f},{y - h * .55 - alt:.0f} L{x + w * .75:.0f},{y - h * .55 - alt:.0f} L{x + w * .75:.0f},{y - h * .3 - alt:.0f} L{x + w * .25:.0f},{y - h * .3 - alt:.0f} Z" fill="{rng.choice(["#2f4a7a", "#7a2a2a", "#3a5a3a"])}" opacity=".9"/>'
+                 + "</g>")
+        if noche or rng.random() < .5:
+            lx, ly = x + w * .85, y - h * .45 - alt
+            s.append(f'<line x1="{lx:.0f}" y1="{ly - 40:.0f}" x2="{lx:.0f}" y2="{ly - 18:.0f}" stroke="{TIN}" stroke-width="2"/>'
+                     f'<circle cx="{lx:.0f}" cy="{ly:.0f}" r="40" fill="#ffb35c" opacity="{.45 if noche else .15}" filter="url(#{u}blur18)"/>'
+                     f'<ellipse cx="{lx:.0f}" cy="{ly:.0f}" rx="13" ry="18" fill="{"#ffcf7a" if noche else "#f2e6cf"}" stroke="#8a2a1e" stroke-width="2.5"/>')
+        x += w + rng.uniform(6, 18)
+        k += 1
+    return "".join(s)
+
+
+@dib("estacion_jp")
+def estacion_jp(p, u, t):
+    """Estación de Shibuya (años 20): edificio de madera de dos aguas con alero, reloj y andén techado."""
+    s = (f'<defs>{filtros(u)}{lin("#c9b48f", "#8a7454", u + "m", 0)}{lin("#3a3e48", "#1d2028", u + "te")}</defs>'
+         f'<rect x="-420" y="-300" width="840" height="300" fill="url(#{u}m)" stroke="{TIN}" stroke-width="5"/>'
+         f'<path d="M-470,-290 Q0,-330 470,-290 L380,-440 L-380,-440 Z" fill="url(#{u}te)" stroke="{TIN}" stroke-width="5"/>'
+         f'<path d="M-170,-440 Q0,-470 170,-440 L120,-540 L-120,-540 Z" fill="url(#{u}te)" stroke="{TIN}" stroke-width="4"/>'
+         f'<circle cx="0" cy="-360" r="44" fill="#f4efe4" stroke="{TIN}" stroke-width="5"/><path d="M0,-360 L0,-392 M0,-360 L22,-352" stroke="{TIN}" stroke-width="4"/>'
+         + "".join(f'<rect x="{x}" y="-240" width="90" height="140" fill="#ffd27a" stroke="{TIN}" stroke-width="4"/><line x1="{x + 45}" x2="{x + 45}" y1="-240" y2="-100" stroke="{TIN}" stroke-width="3"/>'
+                   for x in (-370, -250, 160, 280))
+         + f'<rect x="-90" y="-240" width="180" height="240" fill="#3a2614" stroke="{TIN}" stroke-width="4"/>'
+         + f'<rect x="-440" y="-312" width="880" height="16" fill="#5a4630"/>')
+    return g(p, s, u)
+
+
+@dib("tren_jp")
+def tren_jp(p, u, t):
+    """Vagón de pasajeros de madera de los años 20 (marrón rojizo) con ventanillas iluminadas."""
+    s = (f'<defs>{lin("#7a3a2a", "#3e1a12", u + "c")}</defs>'
+         f'<rect x="-520" y="-300" width="1040" height="250" rx="22" fill="url(#{u}c)" stroke="{TIN}" stroke-width="5"/>'
+         f'<path d="M-530,-300 Q0,-350 530,-300" fill="#2a1a14" stroke="{TIN}" stroke-width="4"/>'
+         + "".join(f'<rect x="{-480 + k * 92}" y="-250" width="62" height="80" rx="8" fill="#ffd27a" stroke="{TIN}" stroke-width="3"/>' for k in range(11))
+         + f'<rect x="-520" y="-90" width="1040" height="14" fill="#c9a24a"/>'
+         + "".join(f'<circle cx="{x}" cy="-36" r="36" fill="#111" stroke="#666" stroke-width="6"/>' for x in (-420, -330, 330, 420)))
+    mov = p.get("mov", "llega")
+    if mov == "llega":
+        anim(t, f"#{u}", "{x: -1300}", f"{{x: 0, duration: {min(2.6, t.dur * .8):.2f}, ease: 'power2.out'}}")
+    elif mov == "parte":
+        anim(t, f"#{u}", "{x: 0}", f"{{x: 1400, duration: {t.dur:.2f}, ease: 'power2.in'}}", .3)
+    return g(p, s, u)
