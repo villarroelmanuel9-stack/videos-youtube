@@ -1,0 +1,330 @@
+{
+ "tema": "misterio",
+ "estilo": "periodico",
+ "claves": [
+  "falso.",
+  "Piltdown,",
+  "África",
+  "orangután,"
+ ],
+ "tomas": [
+  {
+   "en": "Durante cuarenta años,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "boiserie"
+    },
+    {
+     "d": "libro",
+     "x": 540,
+     "y": 1500,
+     "s": 1.4
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "EL «ESLABÓN",
+    "PERDIDO»"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "y era falso.",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "boiserie"
+    },
+    {
+     "d": "vitrina",
+     "x": 540,
+     "y": 1650,
+     "s": 1.1
+    },
+    {
+     "d": "craneo_fosil",
+     "x": 540,
+     "y": 1480,
+     "s": 0.5
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": "¡ERA FALSO!",
+   "sfx": "boom",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "En mil novecientos",
+   "tipo": "mapa",
+   "centro": [
+    50.97,
+    0.07
+   ],
+   "zoom": 30,
+   "zoom_desde": 3,
+   "centro_desde": [
+    50,
+    -2
+   ],
+   "resaltar": [
+    "United Kingdom"
+   ],
+   "pines": [
+    {
+     "lat": 50.97,
+     "lon": 0.07,
+     "texto": "PILTDOWN"
+    }
+   ],
+   "titulo": "1912"
+  },
+  {
+   "en": "el aficionado Charles",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#7a6a4a",
+      "#3a3020"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.8,
+     "ropa": "traje_cafe",
+     "bigote": true,
+     "sombrero": "bombin"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "CHARLES",
+    "DAWSON"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "un cráneo con",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "craneo_fosil",
+     "x": 540,
+     "y": 1500,
+     "s": 1.4
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CEREBRO GRANDE,",
+    "MANDÍBULA DE MONO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Parecía la prueba",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#7a6a4a",
+      "#3a3020"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "bandera",
+     "x": 540,
+     "y": 1600,
+     "s": 1.1,
+     "colores": [
+      "#1a3a8a",
+      "#ffffff",
+      "#c8102e"
+     ]
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "¿EL ORIGEN EN",
+    "EUROPA?"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Muchos expertos lo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "boiserie"
+    },
+    {
+     "d": "persona_real",
+     "x": 200,
+     "y": 1760,
+     "s": 1.2,
+     "ropa": "traje",
+     "bigote": true,
+     "lentes": true
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.2,
+     "ropa": "traje_gris",
+     "bigote": true,
+     "lentes": false
+    },
+    {
+     "d": "persona_real",
+     "x": 880,
+     "y": 1760,
+     "s": 1.2,
+     "ropa": "traje_cafe",
+     "bigote": true,
+     "lentes": true
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "LOS EXPERTOS",
+    "LO ACEPTARON"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "En mil novecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#dfe8e6",
+     "piso": "#9aa8a6",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1650,
+     "s": 1.2
+    },
+    {
+     "d": "craneo_fosil",
+     "x": 540,
+     "y": 1450,
+     "s": 0.8,
+     "lupa": true
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "1953",
+    "NUEVAS PRUEBAS"
+   ]
+  },
+  {
+   "en": "era un cráneo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "craneo_fosil",
+     "x": 540,
+     "y": 1500,
+     "s": 1.5
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "CRÁNEO MEDIEVAL +",
+    "MANDÍBULA DE ORANGUTÁN"
+   ],
+   "acento": 1,
+   "sfx": "boom"
+  },
+  {
+   "en": "Nunca se supo",
+   "tipo": "titulo",
+   "lineas": [
+    "¿QUIÉN",
+    "LO HIZO?"
+   ],
+   "acento": 1,
+   "icono": "🕵️"
+  },
+  {
+   "en": "¿Conocías este fraude?",
+   "tipo": "final",
+   "lineas": [
+    "¿CONOCÍAS",
+    "ESTE FRAUDE?"
+   ],
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "boiserie"
+    },
+    {
+     "d": "craneo_fosil",
+     "x": 540,
+     "y": 1600,
+     "s": 1.0
+    }
+   ],
+   "comentario": "Ni idea 😳"
+  }
+ ]
+}

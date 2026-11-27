@@ -1,0 +1,369 @@
+{
+ "tema": "historia",
+ "estilo": "terror",
+ "claves": [
+  "brujería.",
+  "diablo.",
+  "Diecinueve",
+  "centeno"
+ ],
+ "tomas": [
+  {
+   "en": "En mil seiscientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2a1e",
+     "piso": "#1a120c",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "velas",
+     "x": 820,
+     "y": 1500,
+     "s": 0.5,
+     "n": 2
+    },
+    {
+     "d": "persona_real",
+     "x": 420,
+     "y": 1740,
+     "s": 1.7,
+     "ropa": "vestido",
+     "peinado": "mono",
+     "pelo": "#6a4a2a",
+     "mira": "der"
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "GRITABAN Y SE",
+    "RETORCÍAN"
+   ],
+   "acento": 1,
+   "sacudir": true,
+   "amb": "viento"
+  },
+  {
+   "en": "y acusar a",
+   "tipo": "titulo",
+   "lineas": [
+    "¡BRUJERÍA!"
+   ],
+   "entrada": "flash",
+   "sfx": "boom"
+  },
+  {
+   "en": "Fue en Salem,",
+   "tipo": "mapa",
+   "centro": [
+    42.52,
+    -70.9
+   ],
+   "zoom": 20,
+   "zoom_desde": 2,
+   "centro_desde": [
+    40,
+    -90
+   ],
+   "resaltar": [
+    "United States of America"
+   ],
+   "pines": [
+    {
+     "lat": 42.52,
+     "lon": -70.9,
+     "texto": "SALEM"
+    }
+   ],
+   "titulo": "1692"
+  },
+  {
+   "en": "Los médicos no",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2a1e",
+     "piso": "#1a120c",
+     "luz_x": 540,
+     "luz_y": 900,
+     "cuadros": 0
+    },
+    {
+     "d": "cama",
+     "x": 540,
+     "y": 1550,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 850,
+     "y": 1700,
+     "s": 1.4,
+     "ropa": "puritano",
+     "sombrero": "copa",
+     "barba": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¿OBRA DEL",
+    "DIABLO?"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Más de doscientas",
+   "tipo": "contador",
+   "hasta": 200,
+   "unidad": "ACUSADOS",
+   "sub": "MÁS DE",
+   "icono": "⚖️"
+  },
+  {
+   "en": "Las pruebas eran",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a3a2a",
+     "piso": "#20160e",
+     "luz_x": 540,
+     "luz_y": 600,
+     "pared_estilo": "boiserie",
+     "cuadros": 0
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1600,
+     "s": 1.4
+    },
+    {
+     "d": "persona_real",
+     "x": 300,
+     "y": 1500,
+     "s": 1.1,
+     "ropa": "puritano",
+     "sombrero": "copa"
+    },
+    {
+     "d": "persona_real",
+     "x": 780,
+     "y": 1500,
+     "s": 1.1,
+     "ropa": "puritano",
+     "sombrero": "copa",
+     "barba": true
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1820,
+     "s": 1.4,
+     "ropa": "luto",
+     "peinado": "mono"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SUEÑOS Y",
+    "VISIONES"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "Diecinueve fueron ahorcadas",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "casa",
+     "tipo": "colonial",
+     "x": 300,
+     "y": 1420,
+     "s": 0.7,
+     "luces": false
+    },
+    {
+     "d": "catedral",
+     "x": 800,
+     "y": 1420,
+     "s": 0.6
+    },
+    {
+     "d": "suelo",
+     "y": 1420,
+     "colores": [
+      "#5a4a3a",
+      "#2a1d14"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "velas",
+     "x": 540,
+     "y": 1650,
+     "s": 0.8,
+     "n": 5
+    }
+   ],
+   "camara": "pull",
+   "dato": [
+    "19",
+    "EJECUTADAS"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "Una teoría dice",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "trigal",
+     "y": 1300,
+     "circulo": false
+    },
+    {
+     "d": "particulas",
+     "tipo": "polvo",
+     "n": 30
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¿UN HONGO DEL",
+    "CENTENO?"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Pero muchos historiadores",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "casa",
+     "tipo": "colonial",
+     "x": 300,
+     "y": 1420,
+     "s": 0.7,
+     "luces": false
+    },
+    {
+     "d": "catedral",
+     "x": 800,
+     "y": 1420,
+     "s": 0.6
+    },
+    {
+     "d": "suelo",
+     "y": 1420,
+     "colores": [
+      "#5a4a3a",
+      "#2a1d14"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "persona_real",
+     "x": 200,
+     "y": 1720,
+     "s": 1.0,
+     "ropa": "puritano",
+     "sombrero": "copa"
+    },
+    {
+     "d": "persona_real",
+     "x": 420,
+     "y": 1720,
+     "s": 1.0,
+     "ropa": "luto",
+     "peinado": "mono"
+    },
+    {
+     "d": "persona_real",
+     "x": 680,
+     "y": 1720,
+     "s": 1.0,
+     "ropa": "puritano"
+    },
+    {
+     "d": "persona_real",
+     "x": 900,
+     "y": 1720,
+     "s": 1.0,
+     "ropa": "vestido",
+     "peinado": "mono"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "MIEDO, RENCOR",
+    "Y PÁNICO"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "¿Tú qué crees",
+   "tipo": "final",
+   "lineas": [
+    "¿QUÉ CREES",
+    "QUE PASÓ?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "casa",
+     "tipo": "colonial",
+     "x": 300,
+     "y": 1420,
+     "s": 0.7,
+     "luces": false
+    },
+    {
+     "d": "catedral",
+     "x": 800,
+     "y": 1420,
+     "s": 0.6
+    },
+    {
+     "d": "suelo",
+     "y": 1420,
+     "colores": [
+      "#5a4a3a",
+      "#2a1d14"
+     ],
+     "tipo": "tierra"
+    }
+   ],
+   "comentario": "Fue el miedo 😨"
+  }
+ ]
+}

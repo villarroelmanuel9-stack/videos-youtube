@@ -1,0 +1,357 @@
+{
+ "tema": "cultura",
+ "estilo": "clasico",
+ "claves": [
+  "oír.",
+  "veintiocho",
+  "vibraciones",
+  "alegría»."
+ ],
+ "tomas": [
+  {
+   "en": "Una de las",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a1a22",
+     "piso": "#2a1410",
+     "luz_x": 540,
+     "luz_y": 600,
+     "pared_estilo": "boiserie",
+     "cuadros": 0
+    },
+    {
+     "d": "piano",
+     "x": 540,
+     "y": 1650,
+     "s": 1.1
+    },
+    {
+     "d": "notas",
+     "n": 7,
+     "color": "#ffd36a"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "NO PODÍA",
+    "OÍR"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Ludwig van Beethoven",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "boiserie"
+    },
+    {
+     "d": "piano",
+     "x": 640,
+     "y": 1650,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 300,
+     "y": 1720,
+     "s": 1.7,
+     "ropa": "traje",
+     "peinado": "alborotado",
+     "pelo": "#5a4a3a",
+     "panuelo": "#f2efe6"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "BEETHOVEN",
+    "28 AÑOS"
+   ]
+  },
+  {
+   "en": "Lo escondió durante",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2a1e",
+     "piso": "#1a120c",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "velas",
+     "x": 700,
+     "y": 1500,
+     "s": 0.6,
+     "n": 2
+    },
+    {
+     "d": "persona_real",
+     "x": 400,
+     "y": 1760,
+     "s": 1.9,
+     "ropa": "traje",
+     "peinado": "alborotado",
+     "pelo": "#5a4a3a",
+     "panuelo": "#f2efe6"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¿UN MÚSICO",
+    "SORDO?"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Llegó a escribirle",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2a1e",
+     "piso": "#1a120c",
+     "luz_x": 540,
+     "luz_y": 900,
+     "cuadros": 0
+    },
+    {
+     "d": "carta",
+     "x": 540,
+     "y": 1550,
+     "s": 1.0,
+     "texto": "A mis hermanos",
+     "firma": "L. v. B."
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "PENSÓ EN",
+    "RENDIRSE"
+   ],
+   "acento": 1,
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Pero siguió componiendo,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "piano",
+     "x": 540,
+     "y": 1650,
+     "s": 1.3
+    },
+    {
+     "d": "notas",
+     "n": 6,
+     "color": "#9ad0ff"
+    },
+    {
+     "d": "persona_real",
+     "x": 230,
+     "y": 1720,
+     "s": 1.5,
+     "ropa": "traje",
+     "peinado": "alborotado",
+     "pelo": "#5a4a3a",
+     "panuelo": "#f2efe6"
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "SENTÍA LAS",
+    "VIBRACIONES"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "En mil ochocientos",
+   "tipo": "fecha",
+   "dia": "7",
+   "mes": "MAYO",
+   "anio": "1824"
+  },
+  {
+   "en": "estrenó su Novena",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a1a22",
+     "piso": "#2a1410",
+     "luz_x": 540,
+     "luz_y": 600,
+     "pared_estilo": "boiserie",
+     "cuadros": 0
+    },
+    {
+     "d": "piano",
+     "x": 780,
+     "y": 1650,
+     "s": 0.8
+    },
+    {
+     "d": "persona_real",
+     "x": 180,
+     "y": 1720,
+     "s": 1.0,
+     "ropa": "traje"
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1720,
+     "s": 1.0,
+     "ropa": "traje"
+    },
+    {
+     "d": "persona_real",
+     "x": 480,
+     "y": 1720,
+     "s": 1.0,
+     "ropa": "traje"
+    },
+    {
+     "d": "persona_real",
+     "x": 620,
+     "y": 1700,
+     "s": 1.5,
+     "ropa": "traje",
+     "peinado": "alborotado",
+     "pelo": "#5a4a3a",
+     "panuelo": "#f2efe6"
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "«HIMNO DE",
+    "LA ALEGRÍA»"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.2
+  },
+  {
+   "en": "Al terminar, el",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a1a22",
+     "piso": "#2a1410",
+     "luz_x": 540,
+     "luz_y": 600,
+     "pared_estilo": "boiserie",
+     "cuadros": 0
+    },
+    {
+     "d": "butacas"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1500,
+     "s": 1.4,
+     "ropa": "traje",
+     "peinado": "alborotado",
+     "pelo": "#5a4a3a",
+     "panuelo": "#f2efe6",
+     "mira": "izq"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "…Y ÉL NO",
+    "LO OÍA"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 1.0
+  },
+  {
+   "en": "Una cantante tuvo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a1a22",
+     "piso": "#2a1410",
+     "luz_x": 540,
+     "luz_y": 600,
+     "pared_estilo": "boiserie",
+     "cuadros": 0
+    },
+    {
+     "d": "persona_real",
+     "x": 380,
+     "y": 1720,
+     "s": 1.6,
+     "ropa": "vestido",
+     "peinado": "mono",
+     "pelo": "#4a3a2a"
+    },
+    {
+     "d": "persona_real",
+     "x": 700,
+     "y": 1720,
+     "s": 1.6,
+     "ropa": "traje",
+     "peinado": "alborotado",
+     "pelo": "#5a4a3a",
+     "panuelo": "#f2efe6",
+     "mira": "izq"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "VIO LA",
+    "OVACIÓN"
+   ],
+   "acento": 1,
+   "amb": "multitud"
+  },
+  {
+   "en": "¿Conoces el Himno",
+   "tipo": "final",
+   "lineas": [
+    "¿CONOCES EL",
+    "HIMNO?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a1a22",
+     "piso": "#2a1410",
+     "luz_x": 540,
+     "luz_y": 600,
+     "pared_estilo": "boiserie",
+     "cuadros": 0
+    },
+    {
+     "d": "piano",
+     "x": 540,
+     "y": 1650,
+     "s": 1.0
+    }
+   ]
+  }
+ ]
+}

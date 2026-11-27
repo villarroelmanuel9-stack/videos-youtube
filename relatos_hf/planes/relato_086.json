@@ -1,0 +1,355 @@
+{
+ "tema": "ciencia",
+ "estilo": "pop",
+ "claves": [
+  "cine.",
+  "hanafuda.",
+  "quiebra.",
+  "Boy."
+ ],
+ "tomas": [
+  {
+   "en": "Nintendo es más",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#8a6a4a",
+     "piso": "#4a3420",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "liso",
+     "cuadros": 0
+    },
+    {
+     "d": "farol",
+     "x": 200,
+     "y": 800
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1650,
+     "s": 1.2
+    },
+    {
+     "d": "naipes",
+     "x": 540,
+     "y": 1450,
+     "s": 0.9
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "MÁS ANTIGUA QUE",
+    "EL CINE"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Fue fundada en",
+   "tipo": "mapa",
+   "centro": [
+    35.01,
+    135.77
+   ],
+   "zoom": 12,
+   "zoom_desde": 2,
+   "centro_desde": [
+    36,
+    138
+   ],
+   "resaltar": [
+    "Japan"
+   ],
+   "pines": [
+    {
+     "lat": 35.01,
+     "lon": 135.77,
+     "texto": "KIOTO"
+    }
+   ],
+   "titulo": "1889"
+  },
+  {
+   "en": "por Fusajiro Yamauchi.",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1300
+    },
+    {
+     "d": "pueblo_jp",
+     "y": 1330
+    },
+    {
+     "d": "suelo",
+     "y": 1330,
+     "colores": [
+      "#8a7a62",
+      "#3a3024"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "farol",
+     "x": 880,
+     "y": 900
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.8,
+     "ropa": "kimono",
+     "piel": "asiatica",
+     "bigote": true,
+     "pelo": "#2a2a2a"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "FUSAJIRO",
+    "YAMAUCHI"
+   ],
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "No hacía videojuegos:",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#8a6a4a",
+     "piso": "#4a3420",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "liso",
+     "cuadros": 0
+    },
+    {
+     "d": "farol",
+     "x": 880,
+     "y": 800
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1650,
+     "s": 1.3
+    },
+    {
+     "d": "naipes",
+     "x": 420,
+     "y": 1450,
+     "s": 0.8
+    },
+    {
+     "d": "persona_real",
+     "x": 760,
+     "y": 1700,
+     "s": 1.3,
+     "ropa": "kimono",
+     "piel": "asiatica",
+     "peinado": "calvo"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "NAIPES",
+    "HANAFUDA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "En los años",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "ciudad",
+     "era": "moderna",
+     "y": 1330,
+     "hora": "dia"
+    },
+    {
+     "d": "suelo",
+     "y": 1330,
+     "colores": [
+      "#5a5a5e",
+      "#2a2a2e"
+     ],
+     "tipo": "asfalto"
+    },
+    {
+     "d": "auto_60",
+     "x": 330,
+     "y": 1700,
+     "s": 0.9,
+     "color": "#e0b020"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "TAXIS, ARROZ",
+    "Y HOTELES"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "Casi todos fracasaron,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3a3e",
+     "piso": "#1a1a1e",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "caja",
+     "x": 540,
+     "y": 1600,
+     "s": 1.2
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CERCA DE LA",
+    "QUIEBRA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Entonces empezó a",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a1a3a",
+     "piso": "#100a18",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "arcade",
+     "x": 330,
+     "y": 1750,
+     "s": 1.0
+    },
+    {
+     "d": "arcade",
+     "x": 760,
+     "y": 1750,
+     "s": 1.0
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "JUGUETES Y",
+    "ARCADES"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Un ingeniero de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#dfe8e6",
+     "piso": "#9aa8a6",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1650,
+     "s": 1.2
+    },
+    {
+     "d": "persona_real",
+     "x": 780,
+     "y": 1720,
+     "s": 1.6,
+     "ropa": "bata",
+     "piel": "asiatica",
+     "lentes": true
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "GUNPEI",
+    "YOKOI"
+   ]
+  },
+  {
+   "en": "Fue un éxito,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz_x": 540,
+     "luz_y": 900,
+     "cuadros": 0
+    },
+    {
+     "d": "mando",
+     "x": 540,
+     "y": 1450,
+     "s": 1.4
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "CREÓ LA",
+    "GAME BOY"
+   ],
+   "acento": 1,
+   "sfx": "ping",
+   "sfx_dur": 0.5
+  },
+  {
+   "en": "¿Cuál fue tu",
+   "tipo": "final",
+   "lineas": [
+    "¿TU PRIMERA",
+    "CONSOLA?"
+   ],
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#8a6a4a",
+     "piso": "#4a3420",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "liso",
+     "cuadros": 0
+    },
+    {
+     "d": "naipes",
+     "x": 540,
+     "y": 1500,
+     "s": 1.0
+    }
+   ],
+   "comentario": "La Game Boy 🎮"
+  }
+ ]
+}

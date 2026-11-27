@@ -1,0 +1,307 @@
+{
+ "tema": "misterio",
+ "estilo": "neon",
+ "claves": [
+  "rojos,",
+  "persiguió",
+  "Mothman»,",
+  "cuarenta"
+ ],
+ "tomas": [
+  {
+   "en": "Ojos rojos, brillantes,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "arboles",
+     "y": 1320,
+     "n": 6,
+     "color": "#0d140a"
+    },
+    {
+     "d": "ojos",
+     "x": 540,
+     "y": 1100,
+     "s": 1.2,
+     "en": 0.3,
+     "color": "#ff3030"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": "OJOS ROJOS",
+   "amb": "viento"
+  },
+  {
+   "en": "y unas alas",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1100
+    },
+    {
+     "d": "puente",
+     "y": 1250
+    },
+    {
+     "d": "mothman",
+     "x": 540,
+     "y": 1240,
+     "s": 1.0
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "ALAS",
+    "ENORMES"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Fue en Point",
+   "tipo": "mapa",
+   "centro": [
+    38.84,
+    -82.14
+   ],
+   "zoom": 10,
+   "zoom_desde": 2,
+   "centro_desde": [
+    39,
+    -95
+   ],
+   "resaltar": [
+    "United States of America"
+   ],
+   "pines": [
+    {
+     "lat": 38.84,
+     "lon": -82.14,
+     "texto": "POINT PLEASANT"
+    }
+   ],
+   "titulo": "NOV. 1966"
+  },
+  {
+   "en": "Dos parejas contaron",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4a5a",
+     "piso": "#1a222a",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "persona_real",
+     "x": 780,
+     "y": 1720,
+     "s": 1.5,
+     "ropa": "uniforme",
+     "sombrero": "fedora"
+    },
+    {
+     "d": "persona_real",
+     "x": 300,
+     "y": 1720,
+     "s": 1.4,
+     "ropa": "camisa"
+    },
+    {
+     "d": "persona_real",
+     "x": 470,
+     "y": 1730,
+     "s": 1.3,
+     "ropa": "vestido",
+     "peinado": "largo"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "FUERON A LA",
+    "POLICÍA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "que una criatura",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "arboles",
+     "y": 1320,
+     "n": 6,
+     "color": "#0d140a"
+    },
+    {
+     "d": "suelo",
+     "y": 1320,
+     "colores": [
+      "#2a2a2e",
+      "#0d0d10"
+     ],
+     "tipo": "asfalto"
+    },
+    {
+     "d": "auto_60",
+     "x": 300,
+     "y": 1700,
+     "s": 1.0,
+     "mov": "avanza",
+     "avance": 300
+    },
+    {
+     "d": "mothman",
+     "x": 200,
+     "y": 1300,
+     "s": 0.7
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "¡LOS",
+    "PERSIGUIÓ!"
+   ],
+   "acento": 1,
+   "sfx": "boom",
+   "sfx_dur": 0.6,
+   "amb": "viento"
+  },
+  {
+   "en": "Durante un año",
+   "tipo": "contador",
+   "hasta": 100,
+   "unidad": "AVISTAMIENTOS",
+   "sub": "DECENAS DE",
+   "icono": "👁️"
+  },
+  {
+   "en": "Los diarios la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "periodico",
+     "x": 540,
+     "y": 1550,
+     "s": 1.1,
+     "titular": "MOTHMAN"
+    }
+   ],
+   "camara": "push",
+   "texto": "«MOTHMAN»",
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "En diciembre de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1100
+    },
+    {
+     "d": "puente",
+     "y": 1250,
+     "colapso": true,
+     "en": 1.2
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "¡EL PUENTE",
+    "COLAPSÓ!"
+   ],
+   "acento": 1,
+   "sacudir": true,
+   "sfx": "crujido",
+   "sfx_dur": 2.0
+  },
+  {
+   "en": "y murieron cuarenta",
+   "tipo": "contador",
+   "hasta": 46,
+   "unidad": "PERSONAS",
+   "sub": "MURIERON",
+   "icono": "🕯️"
+  },
+  {
+   "en": "Después de eso,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1100
+    },
+    {
+     "d": "puente",
+     "y": 1250
+    },
+    {
+     "d": "mothman",
+     "x": 540,
+     "y": 1240,
+     "s": 1.0,
+     "mov": "desvanece",
+     "desvanece_en": 1.5
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "¿VINO A",
+    "ADVERTIR?"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "¿Crees en el",
+   "tipo": "final",
+   "lineas": [
+    "¿CREES EN EL",
+    "HOMBRE POLILLA?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1100
+    },
+    {
+     "d": "puente",
+     "y": 1250
+    },
+    {
+     "d": "mothman",
+     "x": 540,
+     "y": 1240,
+     "s": 0.9
+    }
+   ]
+  }
+ ]
+}

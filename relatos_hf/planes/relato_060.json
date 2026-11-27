@@ -1,0 +1,412 @@
+{
+ "tema": "misterio",
+ "estilo": "clasico",
+ "claves": [
+  "hadas…",
+  "Cottingley.",
+  "Doyle,",
+  "recortados"
+ ],
+ "tomas": [
+  {
+   "en": "En mil novecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "arboles",
+     "y": 1270,
+     "n": 7,
+     "color": "#2e4a22"
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1450
+    },
+    {
+     "d": "suelo",
+     "y": 1550,
+     "colores": [
+      "#5a8a3a",
+      "#2a4a1a"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "persona_real",
+     "x": 380,
+     "y": 1780,
+     "s": 1.3,
+     "ropa": "vestido",
+     "peinado": "largo",
+     "pelo": "#6a4a2a"
+    },
+    {
+     "d": "hadas",
+     "x": 680,
+     "y": 1450,
+     "n": 4
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "1917",
+    "¿HADAS?"
+   ],
+   "amb": "rio"
+  },
+  {
+   "en": "Elsie Wright y",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "arboles",
+     "y": 1270,
+     "n": 7,
+     "color": "#2e4a22"
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1450
+    },
+    {
+     "d": "suelo",
+     "y": 1550,
+     "colores": [
+      "#5a8a3a",
+      "#2a4a1a"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1780,
+     "s": 1.4,
+     "ropa": "vestido",
+     "peinado": "largo",
+     "pelo": "#6a4a2a"
+    },
+    {
+     "d": "persona_real",
+     "x": 700,
+     "y": 1800,
+     "s": 1.15,
+     "ropa": "vestido",
+     "peinado": "largo",
+     "pelo": "#c09a5a"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ELSIE Y",
+    "FRANCES"
+   ],
+   "amb": "rio"
+  },
+  {
+   "en": "Para demostrar que",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "arboles",
+     "y": 1270,
+     "n": 7,
+     "color": "#2e4a22"
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1450
+    },
+    {
+     "d": "suelo",
+     "y": 1550,
+     "colores": [
+      "#5a8a3a",
+      "#2a4a1a"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "camara_antigua",
+     "x": 760,
+     "y": 1800,
+     "s": 1.1
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1780,
+     "s": 1.4,
+     "ropa": "vestido",
+     "peinado": "largo",
+     "pelo": "#6a4a2a"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UNA CÁMARA",
+    "PRESTADA"
+   ],
+   "acento": 1,
+   "amb": "rio"
+  },
+  {
+   "en": "y volvieron con",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "arboles",
+     "y": 1270,
+     "n": 7,
+     "color": "#2e4a22"
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1450
+    },
+    {
+     "d": "suelo",
+     "y": 1550,
+     "colores": [
+      "#5a8a3a",
+      "#2a4a1a"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1780,
+     "s": 1.6,
+     "ropa": "vestido",
+     "peinado": "largo",
+     "pelo": "#c09a5a"
+    },
+    {
+     "d": "hadas",
+     "x": 540,
+     "y": 1350,
+     "n": 5
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "HADAS",
+    "BAILANDO"
+   ],
+   "acento": 1,
+   "sfx": "ping",
+   "sfx_dur": 0.5,
+   "amb": "rio"
+  },
+  {
+   "en": "Incluso Arthur Conan",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "boiserie"
+    },
+    {
+     "d": "libro",
+     "x": 780,
+     "y": 1600,
+     "s": 0.7
+    },
+    {
+     "d": "persona_real",
+     "x": 380,
+     "y": 1760,
+     "s": 1.8,
+     "ropa": "traje",
+     "bigote": true,
+     "pelo": "#6a5a4a"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ARTHUR",
+    "CONAN DOYLE"
+   ]
+  },
+  {
+   "en": "creyó que eran",
+   "tipo": "titulo",
+   "lineas": [
+    "¡CREYÓ QUE",
+    "ERAN REALES!"
+   ],
+   "acento": 1,
+   "icono": "🧚"
+  },
+  {
+   "en": "Recién en mil",
+   "tipo": "titulo",
+   "lineas": [
+    "1983:",
+    "CONFESARON"
+   ],
+   "acento": 1,
+   "icono": "🗝️"
+  },
+  {
+   "en": "eran dibujos recortados",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 900,
+     "cuadros": 0
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1650,
+     "s": 1.2
+    },
+    {
+     "d": "libro",
+     "x": 380,
+     "y": 1450,
+     "s": 0.7
+    },
+    {
+     "d": "hadas",
+     "x": 680,
+     "y": 1350,
+     "n": 2
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "RECORTES CON",
+    "ALFILERES"
+   ],
+   "acento": 1,
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Pero Frances juró",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "arboles",
+     "y": 1270,
+     "n": 7,
+     "color": "#2e4a22"
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1450
+    },
+    {
+     "d": "suelo",
+     "y": 1550,
+     "colores": [
+      "#5a8a3a",
+      "#2a4a1a"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "hadas",
+     "x": 540,
+     "y": 1400,
+     "n": 3
+    },
+    {
+     "d": "niebla",
+     "y": 1450,
+     "op": 0.4
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "LA QUINTA FOTO",
+    "¿ERA REAL?"
+   ],
+   "acento": 1,
+   "amb": "rio"
+  },
+  {
+   "en": "¿Tú les habrías",
+   "tipo": "final",
+   "lineas": [
+    "¿LES HABRÍAS",
+    "CREÍDO?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "arboles",
+     "y": 1270,
+     "n": 7,
+     "color": "#2e4a22"
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1450
+    },
+    {
+     "d": "suelo",
+     "y": 1550,
+     "colores": [
+      "#5a8a3a",
+      "#2a4a1a"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "hadas",
+     "x": 540,
+     "y": 1350,
+     "n": 3
+    }
+   ]
+  }
+ ]
+}

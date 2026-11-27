@@ -1,0 +1,289 @@
+{
+ "tema": "ciencia",
+ "estilo": "pop",
+ "claves": [
+  "hospital…",
+  "destellos",
+  "convulsiones.",
+  "reglas"
+ ],
+ "tomas": [
+  {
+   "en": "El dieciséis de",
+   "tipo": "fecha",
+   "dia": "16",
+   "mes": "DICIEMBRE",
+   "anio": "1997"
+  },
+  {
+   "en": "cientos de niños",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#c8b89a",
+     "piso": "#7a6a4a",
+     "luz": false,
+     "cuadros": 0,
+     "pared_estilo": "liso",
+     "vista": "noche",
+     "ventana_x": 820
+    },
+    {
+     "d": "tv_tubo",
+     "x": 760,
+     "y": 1650,
+     "s": 1.0,
+     "color": "#3a5a8a"
+    },
+    {
+     "d": "persona_real",
+     "x": 300,
+     "y": 1800,
+     "s": 1.3,
+     "ropa": "camisa",
+     "piel": "asiatica",
+     "peinado": "corto",
+     "pelo": "#111",
+     "mira": "der"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "NIÑOS AL",
+    "HOSPITAL"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Era un capítulo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#c8b89a",
+     "piso": "#7a6a4a",
+     "luz": false,
+     "cuadros": 0,
+     "pared_estilo": "liso",
+     "vista": "noche",
+     "ventana_x": 820
+    },
+    {
+     "d": "tv_tubo",
+     "x": 540,
+     "y": 1650,
+     "s": 1.5,
+     "color": "#3a5a8a"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UN DIBUJO",
+    "ANIMADO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "En una escena,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#c8b89a",
+     "piso": "#7a6a4a",
+     "luz": false,
+     "cuadros": 0,
+     "pared_estilo": "liso",
+     "vista": "noche",
+     "ventana_x": 820
+    },
+    {
+     "d": "tv_tubo",
+     "x": 540,
+     "y": 1650,
+     "s": 1.5,
+     "destellos": true,
+     "en": 0.3
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "DESTELLOS ROJOS",
+    "Y AZULES"
+   ],
+   "acento": 1,
+   "sfx": "pop",
+   "sfx_dur": 0.3
+  },
+  {
+   "en": "durante unos cinco",
+   "tipo": "contador",
+   "hasta": 5,
+   "unidad": "SEGUNDOS",
+   "sub": "DURANTE",
+   "icono": "⚡"
+  },
+  {
+   "en": "Muchos niños sintieron",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#c8b89a",
+     "piso": "#7a6a4a",
+     "luz": false,
+     "cuadros": 0,
+     "pared_estilo": "liso",
+     "vista": "noche",
+     "ventana_x": 820
+    },
+    {
+     "d": "tv_tubo",
+     "x": 760,
+     "y": 1650,
+     "s": 0.9,
+     "destellos": true,
+     "en": 0.1
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1780,
+     "s": 1.6,
+     "ropa": "camisa",
+     "piel": "asiatica",
+     "peinado": "corto",
+     "pelo": "#111"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "MAREOS Y",
+    "NÁUSEAS"
+   ],
+   "acento": 1,
+   "sacudir": true
+  },
+  {
+   "en": "Unos seiscientos ochenta",
+   "tipo": "contador",
+   "hasta": 685,
+   "unidad": "NIÑOS",
+   "sub": "AL HOSPITAL",
+   "icono": "🚑"
+  },
+  {
+   "en": "Algunos sufrieron convulsiones.",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350
+    },
+    {
+     "d": "ciudad",
+     "era": "moderna",
+     "y": 1380,
+     "hora": "noche"
+    },
+    {
+     "d": "sirenas_policia",
+     "y": 1500
+    }
+   ],
+   "camara": "push",
+   "texto": "CONVULSIONES",
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "La serie dejó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#c8b89a",
+     "piso": "#7a6a4a",
+     "luz": false,
+     "cuadros": 0,
+     "pared_estilo": "liso",
+     "vista": "noche",
+     "ventana_x": 820
+    },
+    {
+     "d": "tv_tubo",
+     "x": 540,
+     "y": 1650,
+     "s": 1.4,
+     "color": "#111"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "4 MESES",
+    "FUERA DEL AIRE"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Desde entonces, en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3a4a",
+     "piso": "#1a1a24",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "carta",
+     "x": 540,
+     "y": 1550,
+     "s": 1.0,
+     "texto": "Reglas de TV",
+     "firma": ""
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "REGLAS PARA",
+    "LAS LUCES"
+   ],
+   "acento": 1,
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "¿Lo sabías? Comenta",
+   "tipo": "final",
+   "lineas": [
+    "¿LO",
+    "SABÍAS?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#c8b89a",
+     "piso": "#7a6a4a",
+     "luz": false,
+     "cuadros": 0,
+     "pared_estilo": "liso",
+     "vista": "noche",
+     "ventana_x": 820
+    },
+    {
+     "d": "tv_tubo",
+     "x": 540,
+     "y": 1650,
+     "s": 1.3,
+     "color": "#3a5a8a"
+    }
+   ]
+  }
+ ]
+}

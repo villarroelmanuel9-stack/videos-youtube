@@ -1,0 +1,263 @@
+{
+ "tema": "misterio",
+ "estilo": "terror",
+ "claves": [
+  "millones",
+  "canteras",
+  "kilómetros.",
+  "salió."
+ ],
+ "tomas": [
+  {
+   "en": "Bajo las calles",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1100
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1150,
+     "hora": "noche"
+    },
+    {
+     "d": "torre_eiffel",
+     "x": 800,
+     "y": 1160,
+     "s": 0.6
+    },
+    {
+     "d": "suelo",
+     "y": 1150,
+     "colores": [
+      "#4a3a2a",
+      "#1a120c"
+     ]
+    }
+   ],
+   "camara": "baja",
+   "texto": [
+    "BAJO PARÍS"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "descansan los restos",
+   "tipo": "contador",
+   "hasta": 6,
+   "unidad": "MILLONES",
+   "sub": "DE PERSONAS",
+   "icono": "💀"
+  },
+  {
+   "en": "A finales del",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1350
+    },
+    {
+     "d": "catedral",
+     "x": 540,
+     "y": 1450,
+     "s": 0.8
+    },
+    {
+     "d": "estacas",
+     "x": 540,
+     "y": 1700,
+     "s": 1.0
+    },
+    {
+     "d": "suelo",
+     "y": 1450,
+     "colores": [
+      "#5a4a3a",
+      "#2a1d14"
+     ],
+     "tipo": "tierra"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CEMENTERIOS",
+    "LLENOS"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Así que trasladaron",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1380,
+     "hora": "noche"
+    },
+    {
+     "d": "suelo",
+     "y": 1380,
+     "colores": [
+      "#6a6a5a",
+      "#2a2a22"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "barril",
+     "x": 400,
+     "y": 1700,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 700,
+     "y": 1720,
+     "s": 1.3,
+     "ropa": "obrero",
+     "sombrero": "boina"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "DE NOCHE,",
+    "A LAS CANTERAS"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Los acomodaron en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "osario"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "PAREDES DE",
+    "CALAVERAS"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "que se extienden",
+   "tipo": "titulo",
+   "lineas": [
+    "KILÓMETROS"
+   ],
+   "acento": 0,
+   "icono": "🗺️"
+  },
+  {
+   "en": "En mil setecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "osario"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1500,
+     "s": 1.0,
+     "ropa": "obrero",
+     "mov": "camina",
+     "avance": -40
+    },
+    {
+     "d": "velas",
+     "x": 600,
+     "y": 1350,
+     "s": 0.4,
+     "n": 1
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "PHILIBERT",
+    "ASPAIRT · 1793"
+   ],
+   "amb": "viento",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "y nunca salió.",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "tunel"
+    },
+    {
+     "d": "velas",
+     "x": 540,
+     "y": 1500,
+     "s": 0.6,
+     "n": 1
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": "NUNCA SALIÓ",
+   "amb": "viento"
+  },
+  {
+   "en": "Encontraron sus restos",
+   "tipo": "contador",
+   "hasta": 11,
+   "unidad": "AÑOS",
+   "sub": "DESPUÉS",
+   "icono": "⏳"
+  },
+  {
+   "en": "Hoy hay una",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "osario"
+    },
+    {
+     "d": "cartel",
+     "x": 540,
+     "y": 1550,
+     "s": 0.7,
+     "titulo": "PHILIBERT",
+     "sub": "1793"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UNA TUMBA CON",
+    "SU NOMBRE"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "¿Te atreverías a",
+   "tipo": "final",
+   "lineas": [
+    "¿TE ATREVERÍAS",
+    "A BAJAR?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "osario"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,312 @@
+{
+ "tema": "misterio",
+ "estilo": "terror",
+ "claves": [
+  "nada.",
+  "rifles",
+  "treinta",
+  "espíritus"
+ ],
+ "tomas": [
+  {
+   "en": "En California hay",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1400
+    },
+    {
+     "d": "suelo",
+     "y": 1450,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "mansion",
+     "x": 540,
+     "y": 1460,
+     "s": 1.0
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "PUERTAS A",
+    "LA NADA"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "y puertas que",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a3a3a",
+     "piso": "#2a1a1a",
+     "luz": false,
+     "pared_estilo": "papel",
+     "cuadros": 0
+    },
+    {
+     "d": "puerta_tumba",
+     "x": 540,
+     "y": 1600,
+     "s": 1.0
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "ESCALERAS AL",
+    "TECHO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Sarah Winchester heredó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2a2a",
+     "piso": "#1a1010",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "boiserie"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.9,
+     "ropa": "luto",
+     "peinado": "mono",
+     "pelo": "#4a4a4a"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "SARAH",
+    "WINCHESTER"
+   ]
+  },
+  {
+   "en": "de la empresa",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "vitrina",
+     "x": 540,
+     "y": 1650,
+     "s": 1.1
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "FORTUNA DE",
+    "RIFLES"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "En mil ochocientos",
+   "tipo": "mapa",
+   "centro": [
+    37.32,
+    -121.95
+   ],
+   "zoom": 10,
+   "zoom_desde": 2,
+   "centro_desde": [
+    39,
+    -100
+   ],
+   "resaltar": [
+    "United States of America"
+   ],
+   "pines": [
+    {
+     "lat": 37.32,
+     "lon": -121.95,
+     "texto": "SAN JOSÉ"
+    }
+   ],
+   "titulo": "1886"
+  },
+  {
+   "en": "La construcción no",
+   "tipo": "contador",
+   "hasta": 38,
+   "unidad": "AÑOS",
+   "sub": "DÍA Y NOCHE",
+   "icono": "🔨"
+  },
+  {
+   "en": "Llegó a tener",
+   "tipo": "contador",
+   "hasta": 160,
+   "unidad": "HABITACIONES",
+   "sub": "UNAS",
+   "icono": "🚪"
+  },
+  {
+   "en": "pasillos sin salida",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "pasillo",
+     "luz": false
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1500,
+     "s": 1.0,
+     "ropa": "luto",
+     "peinado": "mono",
+     "pelo": "#4a4a4a",
+     "mov": "camina",
+     "avance": -60
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "PASILLOS SIN",
+    "SALIDA"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "La leyenda dice",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1400
+    },
+    {
+     "d": "suelo",
+     "y": 1450,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "mansion",
+     "x": 540,
+     "y": 1460,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1500,
+     "s": 1.0,
+     "ropa": "camisa",
+     "peinado": "largo",
+     "mov": "desvanece"
+    },
+    {
+     "d": "niebla",
+     "y": 1400,
+     "op": 0.6
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¿PARA CONFUNDIR",
+    "ESPÍRITUS?"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Los historiadores creen",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1650,
+     "s": 1.2
+    },
+    {
+     "d": "hoja",
+     "x": 540,
+     "y": 1480,
+     "s": 0.8
+    },
+    {
+     "d": "persona_real",
+     "x": 820,
+     "y": 1720,
+     "s": 1.5,
+     "ropa": "luto",
+     "peinado": "mono",
+     "pelo": "#4a4a4a"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "LE GUSTABA",
+    "DISEÑAR"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "¿Tú cuál crees?",
+   "tipo": "final",
+   "lineas": [
+    "¿TÚ CUÁL",
+    "CREES?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1400
+    },
+    {
+     "d": "suelo",
+     "y": 1450,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "mansion",
+     "x": 540,
+     "y": 1460,
+     "s": 1.0
+    }
+   ],
+   "comentario": "Los espíritus 👻"
+  }
+ ]
+}

@@ -1,79 +1,143 @@
 {
- "tema": "tierra",
- "etiqueta": "HISTORIA REAL",
- "ambiente": "drone",
+ "tema": "historia",
+ "estilo": "terror",
  "claves": [
   "Chile.",
   "nueve",
-  "cinco.",
-  "Valdivia.",
-  "siempre.",
   "Hawái",
-  "Japón,",
-  "erupción."
+  "volcán"
  ],
  "tomas": [
   {
-   "en": "El terremoto más fuerte",
-   "tipo": "titulo",
-   "lineas": [
-    "EL TERREMOTO",
-    "MÁS FUERTE",
+   "en": "El terremoto más",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "nieve": true,
+     "colores": [
+      "#7a8a9a",
+      "#5a6a7a",
+      "#3a4a5a"
+     ]
+    },
+    {
+     "d": "ciudad",
+     "era": "colonial",
+     "y": 1340,
+     "hora": "dia",
+     "semilla": 11
+    },
+    {
+     "d": "suelo",
+     "y": 1340,
+     "colores": [
+      "#7a7a6a",
+      "#3a3a2e"
+     ],
+     "tipo": "adoquin"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "EL MÁS FUERTE",
     "DE LA HISTORIA"
    ],
    "acento": 1,
-   "icono": "🌎",
    "sacudir": true,
-   "sfx": "boom"
+   "sfx": "crujido",
+   "sfx_dur": 2.0,
+   "amb": "viento"
   },
   {
-   "en": "fue en Chile",
-   "tipo": "mapa",
-   "centro": [
-    -36,
-    -71
-   ],
-   "zoom_desde": 1,
-   "zoom": 3.2,
-   "resaltar": [
-    "Chile"
-   ],
-   "pines": [
-    {
-     "lat": -33.4,
-     "lon": -70.6,
-     "texto": "CHILE 🇨🇱"
-    }
-   ]
-  },
-  {
-   "en": "El veintidós de mayo",
+   "en": "El veintidós de",
    "tipo": "fecha",
    "dia": "22",
    "mes": "MAYO",
    "anio": "1960",
-   "hora": "15:11",
-   "sfx": "papel",
-   "sfx_dur": 0.6
+   "hora": "15:11"
   },
   {
-   "en": "la tierra se sacudió",
-   "tipo": "sismo",
+   "en": "la tierra se",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "nieve": true,
+     "colores": [
+      "#7a8a9a",
+      "#5a6a7a",
+      "#3a4a5a"
+     ]
+    },
+    {
+     "d": "ciudad",
+     "era": "colonial",
+     "y": 1340,
+     "hora": "dia",
+     "semilla": 11
+    },
+    {
+     "d": "suelo",
+     "y": 1340,
+     "colores": [
+      "#7a7a6a",
+      "#3a3a2e"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "persona_real",
+     "x": 200,
+     "y": 1740,
+     "s": 1.0,
+     "ropa": "abrigo",
+     "mov": "camina",
+     "avance": -120
+    },
+    {
+     "d": "persona_real",
+     "x": 420,
+     "y": 1740,
+     "s": 1.0,
+     "ropa": "vestido",
+     "mov": "camina",
+     "avance": -120
+    },
+    {
+     "d": "persona_real",
+     "x": 700,
+     "y": 1740,
+     "s": 1.0,
+     "ropa": "obrero",
+     "mov": "camina",
+     "avance": -120
+    }
+   ],
+   "camara": "fijo",
    "texto": "10 MINUTOS",
    "sacudir": true,
-   "sfx": "derrumbe",
-   "sfx_dur": 3.0
+   "sfx": "crujido",
+   "sfx_dur": 3.0,
+   "amb": "multitud",
+   "amb_vol": 0.5
   },
   {
-   "en": "Midió nueve coma cinco",
-   "tipo": "contador",
-   "desde": 0,
-   "hasta": 9.5,
-   "decimales": 1,
-   "unidad": "DE MAGNITUD",
-   "sub": "RÉCORD MUNDIAL",
-   "sfx": "riser",
-   "sfx_dur": 1.2
+   "en": "Midió nueve coma",
+   "tipo": "sismo",
+   "magnitud": "9,5"
   },
   {
    "en": "El epicentro estuvo",
@@ -82,18 +146,14 @@
     -39.8,
     -73.2
    ],
+   "zoom": 14,
+   "zoom_desde": 2,
    "centro_desde": [
-    -36,
+    -35,
     -71
    ],
-   "zoom_desde": 3.2,
-   "zoom": 9,
    "resaltar": [
     "Chile"
-   ],
-   "ondas": [
-    -39.8,
-    -73.2
    ],
    "pines": [
     {
@@ -104,71 +164,87 @@
    ]
   },
   {
-   "en": "Partes de la costa",
-   "tipo": "icono",
-   "iconos": [
-    "🏘️"
+   "en": "Partes de la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1250
+    },
+    {
+     "d": "mar",
+     "hora": "tormenta",
+     "horizonte": 1250
+    },
+    {
+     "d": "casa",
+     "tipo": "madera",
+     "x": 540,
+     "y": 1420,
+     "s": 0.9,
+     "r": -8,
+     "luces": false
+    }
    ],
-   "mov": "hundir",
-   "texto": "LA COSTA SE HUNDIÓ",
-   "sub": "PARA SIEMPRE",
-   "sfx": "crujido"
-  },
-  {
-   "en": "Pero eso no fue todo",
-   "tipo": "titulo",
-   "lineas": [
-    "PERO ESO",
-    "NO FUE TODO…"
+   "camara": "baja",
+   "texto": [
+    "LA COSTA SE",
+    "HUNDIÓ"
    ],
    "acento": 1,
-   "entrada": "flash",
-   "sfx": "riser",
-   "sfx_dur": 1.0
+   "amb": "olas"
   },
   {
    "en": "El tsunami cruzó",
-   "tipo": "mapa",
-   "centro_lon": -148,
-   "centro": [
-    8,
-    -148
-   ],
-   "centro_desde": [
-    -39.8,
-    -73.2
-   ],
-   "zoom_desde": 4,
-   "zoom": 2.0,
-   "resaltar": [
-    "Chile",
-    "Japan"
-   ],
-   "ruta": [
-    [
-     -39.8,
-     -73.2
-    ],
-    [
-     19.7,
-     -155.1
-    ],
-    [
-     38.3,
-     141.0
-    ]
-   ],
-   "ondas": [
-    -39.8,
-    -73.2
-   ],
-   "paso_pines": 0.9,
-   "pines": [
+   "tipo": "escena",
+   "capas": [
     {
-     "lat": -39.8,
-     "lon": -73.2,
-     "texto": "CHILE"
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1300
     },
+    {
+     "d": "mar",
+     "hora": "tormenta",
+     "horizonte": 1300
+    },
+    {
+     "d": "ola",
+     "x": 200,
+     "y": 1600,
+     "s": 1.2,
+     "avance": 400
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "CRUZÓ EL",
+    "PACÍFICO"
+   ],
+   "acento": 1,
+   "sfx": "boom",
+   "amb": "olas",
+   "amb_vol": 1.2
+  },
+  {
+   "en": "y causó muertes",
+   "tipo": "mapa",
+   "centro": [
+    20,
+    -170
+   ],
+   "zoom": 2.2,
+   "zoom_desde": 1.2,
+   "centro_desde": [
+    -20,
+    -100
+   ],
+   "resaltar": [
+    "Japan",
+    "Chile"
+   ],
+   "pines": [
     {
      "lat": 19.7,
      "lon": -155.1,
@@ -176,47 +252,88 @@
     },
     {
      "lat": 38.3,
-     "lon": 141.0,
+     "lon": 141.6,
      "texto": "JAPÓN"
     }
-   ],
-   "titulo": "TSUNAMI 🌊",
-   "sfx": "olas",
-   "sfx_dur": 4.0
+   ]
   },
   {
-   "en": "casi un día después",
-   "tipo": "icono",
-   "iconos": [
-    "⏳"
+   "en": "Dos días más",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "rojo",
+     "horizonte": 1350
+    },
+    {
+     "d": "volcan",
+     "x": 540,
+     "y": 1400,
+     "s": 1.0
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#4a3a2a",
+      "#1a120c"
+     ]
+    },
+    {
+     "d": "particulas",
+     "tipo": "ceniza",
+     "n": 60
+    }
    ],
-   "mov": "latir",
-   "texto": "CASI 1 DÍA DESPUÉS",
-   "sub": "17.000 KM DE OCÉANO"
-  },
-  {
-   "en": "Dos días más tarde",
-   "tipo": "icono",
-   "iconos": [
-    "🌋"
+   "camara": "pull",
+   "dato": [
+    "CORDÓN",
+    "CAULLE"
    ],
-   "mov": "erupcion",
-   "particulas": "#FF7A1A",
-   "texto": "CORDÓN CAULLE",
-   "sub": "ENTRÓ EN ERUPCIÓN",
-   "sacudir": true,
-   "sfx": "explosion_lejana",
-   "sfx_dur": 2.5
+   "amb": "fuego"
   },
   {
    "en": "¿Tu familia vivió",
-   "tipo": "pregunta",
+   "tipo": "final",
    "lineas": [
-    "¿TU FAMILIA VIVIÓ",
-    "UN GRAN TERREMOTO?"
+    "¿TU FAMILIA LO",
+    "VIVIÓ?"
    ],
-   "acento": 1,
-   "entrada": "zoom"
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "nieve": true,
+     "colores": [
+      "#7a8a9a",
+      "#5a6a7a",
+      "#3a4a5a"
+     ]
+    },
+    {
+     "d": "ciudad",
+     "era": "colonial",
+     "y": 1340,
+     "hora": "dia",
+     "semilla": 11
+    },
+    {
+     "d": "suelo",
+     "y": 1340,
+     "colores": [
+      "#7a7a6a",
+      "#3a3a2e"
+     ],
+     "tipo": "adoquin"
+    }
+   ],
+   "comentario": "Mi abuela me lo contó 🙏"
   }
  ]
 }

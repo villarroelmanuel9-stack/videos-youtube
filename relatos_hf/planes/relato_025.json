@@ -48,10 +48,13 @@
   },
   {
    "en": "En mil seiscientos",
-   "tipo": "fecha",
-   "dia": "1665",
-   "mes": "AÑO",
-   "anio": "PESTE"
+   "tipo": "titulo",
+   "lineas": [
+    "1665:",
+    "LA PESTE"
+   ],
+   "acento": 1,
+   "icono": "☠️"
   },
   {
    "en": "y cerró la",

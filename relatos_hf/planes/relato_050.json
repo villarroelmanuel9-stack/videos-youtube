@@ -1,0 +1,390 @@
+{
+ "tema": "cultura",
+ "estilo": "terror",
+ "claves": [
+  "verano».",
+  "Tambora,",
+  "Byron,",
+  "dieciocho"
+ ],
+ "tomas": [
+  {
+   "en": "Mil ochocientos dieciséis",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "arboles",
+     "y": 1320,
+     "n": 6,
+     "color": "#3a4a3a"
+    },
+    {
+     "d": "suelo",
+     "y": 1320,
+     "colores": [
+      "#e6edf7",
+      "#9aa8bf"
+     ],
+     "tipo": "nieve"
+    },
+    {
+     "d": "particulas",
+     "tipo": "nieve",
+     "n": 60
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "«EL AÑO SIN",
+    "VERANO»"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Un año antes,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "rojo",
+     "horizonte": 1300
+    },
+    {
+     "d": "mar",
+     "hora": "atardecer",
+     "horizonte": 1350
+    },
+    {
+     "d": "volcan",
+     "x": 540,
+     "y": 1380,
+     "s": 1.1
+    },
+    {
+     "d": "particulas",
+     "tipo": "ceniza",
+     "n": 60
+    }
+   ],
+   "camara": "pull",
+   "dato": [
+    "VOLCÁN",
+    "TAMBORA · 1815"
+   ],
+   "sfx": "boom",
+   "amb": "fuego"
+  },
+  {
+   "en": "en Indonesia, había",
+   "tipo": "mapa",
+   "centro": [
+    -8.25,
+    118.0
+   ],
+   "zoom": 6,
+   "zoom_desde": 1.5,
+   "centro_desde": [
+    0,
+    60
+   ],
+   "resaltar": [
+    "Indonesia"
+   ],
+   "pines": [
+    {
+     "lat": -8.25,
+     "lon": 118.0,
+     "texto": "TAMBORA"
+    }
+   ]
+  },
+  {
+   "en": "Su ceniza enfrió",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#c8ced6",
+      "#8a929e"
+     ],
+     "tipo": "nieve"
+    },
+    {
+     "d": "casa",
+     "tipo": "granja",
+     "x": 540,
+     "y": 1450,
+     "s": 0.8,
+     "luces": false
+    },
+    {
+     "d": "particulas",
+     "tipo": "nieve",
+     "n": 80
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "NIEVE EN",
+    "PLENO VERANO"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "En una casa",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1300,
+     "nieve": true,
+     "colores": [
+      "#4a5a6a",
+      "#3a4a5a",
+      "#2a3a4a"
+     ]
+    },
+    {
+     "d": "mar",
+     "hora": "tormenta",
+     "horizonte": 1350
+    },
+    {
+     "d": "mansion",
+     "x": 540,
+     "y": 1420,
+     "s": 0.6
+    },
+    {
+     "d": "rayo",
+     "x": 820,
+     "y": 1000,
+     "en": 1.5
+    },
+    {
+     "d": "lluvia"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "LAGO",
+    "DE GINEBRA"
+   ],
+   "amb": "lluvia",
+   "sfx": "boom",
+   "sfx_en": 1.5
+  },
+  {
+   "en": "un grupo de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2a2a",
+     "piso": "#1a1010",
+     "vista": "noche",
+     "ventana_x": 700,
+     "luz": false
+    },
+    {
+     "d": "velas",
+     "x": 540,
+     "y": 1500,
+     "s": 0.7,
+     "n": 3
+    },
+    {
+     "d": "persona_real",
+     "x": 220,
+     "y": 1760,
+     "s": 1.3,
+     "ropa": "traje",
+     "pelo": "#2a1a10"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.3,
+     "ropa": "vestido",
+     "peinado": "largo",
+     "pelo": "#6a3a1a"
+    },
+    {
+     "d": "persona_real",
+     "x": 860,
+     "y": 1760,
+     "s": 1.3,
+     "ropa": "abrigo",
+     "bigote": true
+    }
+   ],
+   "camara": "pull",
+   "dato": [
+    "LORD BYRON",
+    "Y AMIGOS"
+   ],
+   "amb": "lluvia",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Para pasar el",
+   "tipo": "titulo",
+   "lineas": [
+    "UN DESAFÍO:",
+    "HISTORIAS DE TERROR"
+   ],
+   "acento": 1,
+   "icono": "🕯️"
+  },
+  {
+   "en": "Mary Shelley, de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2a2a",
+     "piso": "#1a1010",
+     "vista": "noche",
+     "ventana_x": 700,
+     "luz": false
+    },
+    {
+     "d": "velas",
+     "x": 380,
+     "y": 1500,
+     "s": 0.6,
+     "n": 1
+    },
+    {
+     "d": "persona_real",
+     "x": 620,
+     "y": 1720,
+     "s": 1.8,
+     "ropa": "vestido",
+     "peinado": "largo",
+     "pelo": "#6a3a1a"
+    },
+    {
+     "d": "rayo",
+     "x": 750,
+     "y": 900,
+     "en": 2.0
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "MARY SHELLEY",
+    "18 AÑOS"
+   ],
+   "amb": "lluvia"
+  },
+  {
+   "en": "tuvo una pesadilla",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2620",
+     "piso": "#0d120e",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "cama",
+     "x": 540,
+     "y": 1550,
+     "s": 1.1
+    },
+    {
+     "d": "rayo",
+     "x": 540,
+     "y": 1000,
+     "en": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 820,
+     "y": 1650,
+     "s": 1.4,
+     "ropa": "bata",
+     "peinado": "alborotado"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "DABA VIDA A",
+    "UN CUERPO"
+   ],
+   "acento": 1,
+   "sfx": "boom",
+   "sfx_en": 1.0
+  },
+  {
+   "en": "Así nació la",
+   "tipo": "titulo",
+   "lineas": [
+    "LA PRIMERA",
+    "CIENCIA FICCIÓN"
+   ],
+   "acento": 1,
+   "icono": "⚡"
+  },
+  {
+   "en": "¿Has leído Frankenstein?",
+   "tipo": "final",
+   "lineas": [
+    "¿HAS LEÍDO",
+    "FRANKENSTEIN?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1300,
+     "nieve": true,
+     "colores": [
+      "#4a5a6a",
+      "#3a4a5a",
+      "#2a3a4a"
+     ]
+    },
+    {
+     "d": "mar",
+     "hora": "tormenta",
+     "horizonte": 1350
+    },
+    {
+     "d": "mansion",
+     "x": 540,
+     "y": 1420,
+     "s": 0.6
+    }
+   ]
+  }
+ ]
+}

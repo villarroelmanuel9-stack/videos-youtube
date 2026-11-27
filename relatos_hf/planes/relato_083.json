@@ -1,0 +1,312 @@
+{
+ "tema": "misterio",
+ "estilo": "neon",
+ "claves": [
+  "extraterrestres.",
+  "huellas",
+  "confesaron:",
+  "auténtico»."
+ ],
+ "tomas": [
+  {
+   "en": "Durante años, aparecieron",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1150
+    },
+    {
+     "d": "trigal",
+     "y": 1150
+    }
+   ],
+   "camara": "baja",
+   "texto": [
+    "FIGURAS",
+    "PERFECTAS"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Muchos creyeron que",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1150
+    },
+    {
+     "d": "trigal",
+     "y": 1150,
+     "noche": true
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 500,
+     "r": 300,
+     "color": "#8dff9c",
+     "op": 0.4,
+     "parpadeo": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¿MENSAJES",
+    "EXTRATERRESTRES?"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Eran círculos enormes,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1150
+    },
+    {
+     "d": "trigal",
+     "y": 1150
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SIN HUELLAS",
+    "ALREDEDOR"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Llegaron científicos, curiosos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1150
+    },
+    {
+     "d": "trigal",
+     "y": 1150
+    },
+    {
+     "d": "persona_real",
+     "x": 150,
+     "y": 1800,
+     "s": 1.0,
+     "ropa": "bata",
+     "lentes": true
+    },
+    {
+     "d": "persona_real",
+     "x": 380,
+     "y": 1800,
+     "s": 1.0,
+     "ropa": "camisa"
+    },
+    {
+     "d": "persona_real",
+     "x": 680,
+     "y": 1800,
+     "s": 1.0,
+     "ropa": "abrigo"
+    },
+    {
+     "d": "persona_real",
+     "x": 900,
+     "y": 1800,
+     "s": 1.0,
+     "ropa": "traje",
+     "sombrero": "fedora"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "CAZADORES",
+    "DE OVNIS"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "En mil novecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1740,
+     "s": 1.6,
+     "ropa": "abrigo",
+     "sombrero": "gorra",
+     "pelo": "#d9d9d9",
+     "bigote": true
+    },
+    {
+     "d": "persona_real",
+     "x": 760,
+     "y": 1740,
+     "s": 1.6,
+     "ropa": "sueter",
+     "pelo": "#bfbfbf",
+     "peinado": "calvo"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "DOUG Y DAVE",
+    "1991"
+   ]
+  },
+  {
+   "en": "los hacían ellos",
+   "tipo": "titulo",
+   "lineas": [
+    "¡ERAN ELLOS!",
+    "DESDE 1976"
+   ],
+   "acento": 0,
+   "entrada": "flash",
+   "sfx": "boom"
+  },
+  {
+   "en": "Usaban una tabla",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1150
+    },
+    {
+     "d": "trigal",
+     "y": 1150,
+     "noche": true
+    },
+    {
+     "d": "persona_real",
+     "x": 400,
+     "y": 1750,
+     "s": 1.4,
+     "ropa": "abrigo",
+     "sombrero": "gorra",
+     "pelo": "#d9d9d9",
+     "bigote": true,
+     "mov": "camina",
+     "avance": 150
+    },
+    {
+     "d": "caja",
+     "x": 520,
+     "y": 1780,
+     "s": 0.4
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "TABLA, CUERDA",
+    "Y UNA GORRA"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Lo demostraron frente",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1150
+    },
+    {
+     "d": "trigal",
+     "y": 1150
+    },
+    {
+     "d": "microfono",
+     "x": 820,
+     "y": 1800,
+     "s": 0.8
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1800,
+     "s": 1.3,
+     "ropa": "traje",
+     "lentes": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "«ES",
+    "AUTÉNTICO»"
+   ],
+   "acento": 1,
+   "sfx": "ping",
+   "sfx_dur": 0.4
+  },
+  {
+   "en": "Hoy hay artistas",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1150
+    },
+    {
+     "d": "trigal",
+     "y": 1150,
+     "noche": true
+    }
+   ],
+   "camara": "baja",
+   "texto": [
+    "EN UNA",
+    "SOLA NOCHE"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "¿Tú creías que",
+   "tipo": "final",
+   "lineas": [
+    "¿CREÍAS QUE",
+    "ERAN OVNIS?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1150
+    },
+    {
+     "d": "trigal",
+     "y": 1150,
+     "noche": true
+    }
+   ]
+  }
+ ]
+}

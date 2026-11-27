@@ -1,0 +1,318 @@
+{
+ "tema": "ciencia",
+ "estilo": "retro",
+ "claves": [
+  "laboratorio…",
+  "aburridas.",
+  "osciloscopio,",
+  "patentó:"
+ ],
+ "tomas": [
+  {
+   "en": "Uno de los",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6a7a7a",
+     "piso": "#2a3232",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0
+    },
+    {
+     "d": "osciloscopio",
+     "x": 540,
+     "y": 1700,
+     "s": 1.3
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "EN UNA PANTALLA",
+    "DE LABORATORIO"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "en mil novecientos",
+   "tipo": "titulo",
+   "lineas": [
+    "1958"
+   ],
+   "icono": "🎾"
+  },
+  {
+   "en": "El físico William",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6a7a7a",
+     "piso": "#2a3232",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.9,
+     "ropa": "traje_gris",
+     "lentes": true,
+     "peinado": "calvo",
+     "bigote": true
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "WILLIAM",
+    "HIGINBOTHAM"
+   ]
+  },
+  {
+   "en": "trabajaba en el",
+   "tipo": "mapa",
+   "centro": [
+    40.87,
+    -72.87
+   ],
+   "zoom": 20,
+   "zoom_desde": 2,
+   "centro_desde": [
+    40,
+    -95
+   ],
+   "resaltar": [
+    "United States of America"
+   ],
+   "pines": [
+    {
+     "lat": 40.87,
+     "lon": -72.87,
+     "texto": "BROOKHAVEN"
+    }
+   ]
+  },
+  {
+   "en": "Cada año abrían",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6a7a7a",
+     "piso": "#2a3232",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1650,
+     "s": 1.3
+    },
+    {
+     "d": "frasco",
+     "x": 400,
+     "y": 1430,
+     "s": 0.5
+    },
+    {
+     "d": "persona_real",
+     "x": 200,
+     "y": 1800,
+     "s": 1.0,
+     "ropa": "abrigo"
+    },
+    {
+     "d": "persona_real",
+     "x": 880,
+     "y": 1800,
+     "s": 1.0,
+     "ropa": "vestido"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "EXHIBICIONES",
+    "ABURRIDAS"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.2
+  },
+  {
+   "en": "Así que conectó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2620",
+     "piso": "#0d120e",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "osciloscopio",
+     "x": 540,
+     "y": 1700,
+     "s": 1.6
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": "UN OSCILOSCOPIO",
+   "amb": "zumbido",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Creó «Tennis for",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2620",
+     "piso": "#0d120e",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "osciloscopio",
+     "x": 540,
+     "y": 1600,
+     "s": 1.3
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "«TENNIS",
+    "FOR TWO»"
+   ],
+   "acento": 1,
+   "sfx": "pop",
+   "sfx_dur": 0.4
+  },
+  {
+   "en": "Los visitantes hicieron",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6a7a7a",
+     "piso": "#2a3232",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0
+    },
+    {
+     "d": "osciloscopio",
+     "x": 800,
+     "y": 1650,
+     "s": 0.7
+    },
+    {
+     "d": "persona_real",
+     "x": 560,
+     "y": 1780,
+     "s": 1.1,
+     "ropa": "camisa"
+    },
+    {
+     "d": "persona_real",
+     "x": 400,
+     "y": 1760,
+     "s": 1.0,
+     "ropa": "vestido"
+    },
+    {
+     "d": "persona_real",
+     "x": 260,
+     "y": 1740,
+     "s": 0.9000000000000001,
+     "ropa": "traje"
+    },
+    {
+     "d": "persona_real",
+     "x": 130,
+     "y": 1720,
+     "s": 0.8,
+     "ropa": "abrigo"
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "LARGAS",
+    "FILAS"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Pero Higinbotham nunca",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6a7a7a",
+     "piso": "#2a3232",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.8,
+     "ropa": "traje_gris",
+     "lentes": true,
+     "peinado": "calvo",
+     "bigote": true
+    },
+    {
+     "d": "carta",
+     "x": 850,
+     "y": 1600,
+     "s": 0.6,
+     "texto": "Patente",
+     "firma": "—"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "NUNCA LO",
+    "PATENTÓ"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "¿Cuál es el",
+   "tipo": "final",
+   "lineas": [
+    "¿EL JUEGO MÁS",
+    "ANTIGUO?"
+   ],
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6a7a7a",
+     "piso": "#2a3232",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0
+    },
+    {
+     "d": "osciloscopio",
+     "x": 540,
+     "y": 1700,
+     "s": 1.2
+    }
+   ],
+   "comentario": "El Pong 🏓"
+  }
+ ]
+}

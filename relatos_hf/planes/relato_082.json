@@ -1,0 +1,416 @@
+{
+ "tema": "misterio",
+ "estilo": "periodico",
+ "claves": [
+  "metros.",
+  "petrificado.",
+  "Hull,",
+  "copia"
+ ],
+ "tomas": [
+  {
+   "en": "En mil ochocientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#7a9a6a",
+      "#5a7a4a",
+      "#3a5a2a"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#8a7a5a",
+      "#3a3020"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "gigante_piedra",
+     "x": 540,
+     "y": 1650,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 200,
+     "y": 1520,
+     "s": 0.9,
+     "ropa": "obrero",
+     "sombrero": "fedora"
+    },
+    {
+     "d": "persona_real",
+     "x": 880,
+     "y": 1520,
+     "s": 0.9,
+     "ropa": "obrero",
+     "sombrero": "fedora"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "1869",
+    "UN GIGANTE"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "encontraron a un",
+   "tipo": "contador",
+   "hasta": 3,
+   "unidad": "METROS",
+   "sub": "DE PIEDRA",
+   "icono": "🗿"
+  },
+  {
+   "en": "Fue en una",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#7a9a6a",
+      "#5a7a4a",
+      "#3a5a2a"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#8a7a5a",
+      "#3a3020"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "casa",
+     "tipo": "granja",
+     "x": 540,
+     "y": 1420,
+     "s": 0.9
+    }
+   ],
+   "camara": "pull",
+   "dato": [
+    "CARDIFF",
+    "NUEVA YORK"
+   ],
+   "amb": "insectos",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Miles de personas",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#7a9a6a",
+      "#5a7a4a",
+      "#3a5a2a"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#8a7a5a",
+      "#3a3020"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "carpa",
+     "x": 540,
+     "y": 1500,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 150,
+     "y": 1760,
+     "s": 1.0,
+     "ropa": "traje",
+     "sombrero": "copa"
+    },
+    {
+     "d": "persona_real",
+     "x": 350,
+     "y": 1760,
+     "s": 1.0,
+     "ropa": "vestido",
+     "sombrero": null
+    },
+    {
+     "d": "persona_real",
+     "x": 730,
+     "y": 1760,
+     "s": 1.0,
+     "ropa": "traje_cafe",
+     "sombrero": "bombin"
+    },
+    {
+     "d": "persona_real",
+     "x": 930,
+     "y": 1760,
+     "s": 1.0,
+     "ropa": "abrigo",
+     "sombrero": "copa"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "PAGABAN POR",
+    "VERLO"
+   ],
+   "acento": 1,
+   "amb": "multitud"
+  },
+  {
+   "en": "y muchos creyeron",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#8a7a5a",
+      "#3a3020"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "gigante_piedra",
+     "x": 540,
+     "y": 1600,
+     "s": 1.5
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "¿UN HOMBRE",
+    "PETRIFICADO?"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "En realidad, lo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.9,
+     "ropa": "traje",
+     "barba": true,
+     "sombrero": "bombin"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "GEORGE HULL",
+    "TABACALERO"
+   ]
+  },
+  {
+   "en": "después de discutir",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "boiserie"
+    },
+    {
+     "d": "libro",
+     "x": 540,
+     "y": 1550,
+     "s": 0.8
+    },
+    {
+     "d": "persona_real",
+     "x": 260,
+     "y": 1720,
+     "s": 1.5,
+     "ropa": "traje",
+     "barba": true
+    },
+    {
+     "d": "persona_real",
+     "x": 820,
+     "y": 1720,
+     "s": 1.5,
+     "ropa": "puritano",
+     "pelo": "#d9d9d9"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¿GIGANTES DE",
+    "LA BIBLIA?"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Lo esculpieron en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a4a44",
+     "piso": "#22221e",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "gigante_piedra",
+     "x": 540,
+     "y": 1650,
+     "s": 1.1
+    },
+    {
+     "d": "frasco",
+     "x": 900,
+     "y": 1650,
+     "s": 0.7,
+     "contenido": "liquido",
+     "color_liquido": "#c9e86a"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "YESO Y",
+    "ÁCIDO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Lo más loco:",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "carpa",
+     "x": 320,
+     "y": 1500,
+     "s": 0.8
+    },
+    {
+     "d": "carpa",
+     "x": 780,
+     "y": 1500,
+     "s": 0.8
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#8a7a5a",
+      "#3a3020"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "cartel",
+     "x": 540,
+     "y": 1700,
+     "s": 0.8,
+     "titulo": "¡EL GIGANTE!",
+     "sub": "P. T. BARNUM"
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "¡UNA COPIA",
+    "DE LA COPIA!"
+   ],
+   "acento": 1,
+   "amb": "multitud"
+  },
+  {
+   "en": "¿Tú habrías pagado",
+   "tipo": "final",
+   "lineas": [
+    "¿HABRÍAS PAGADO",
+    "POR VERLO?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#7a9a6a",
+      "#5a7a4a",
+      "#3a5a2a"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#8a7a5a",
+      "#3a3020"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "gigante_piedra",
+     "x": 540,
+     "y": 1650,
+     "s": 1.0
+    }
+   ]
+  }
+ ]
+}

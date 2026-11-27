@@ -1,0 +1,349 @@
+{
+ "tema": "misterio",
+ "estilo": "calido",
+ "claves": [
+  "momificar.",
+  "impuesto:",
+  "solos,",
+  "Museo"
+ ],
+ "tomas": [
+  {
+   "en": "En México hay",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2a2a",
+     "piso": "#1a1010",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "momia_gto",
+     "x": 330,
+     "y": 1700,
+     "s": 1.2
+    },
+    {
+     "d": "momia_gto",
+     "x": 760,
+     "y": 1700,
+     "s": 1.1
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "NADIE QUISO",
+    "MOMIFICARLAS"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "En mil ochocientos",
+   "tipo": "mapa",
+   "centro": [
+    21.02,
+    -101.26
+   ],
+   "zoom": 12,
+   "zoom_desde": 2,
+   "centro_desde": [
+    23,
+    -102
+   ],
+   "resaltar": [
+    "Mexico"
+   ],
+   "pines": [
+    {
+     "lat": 21.02,
+     "lon": -101.26,
+     "texto": "GUANAJUATO"
+    }
+   ],
+   "titulo": "1865"
+  },
+  {
+   "en": "Guanajuato creó un",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#a88a6a",
+      "#8a6a4a",
+      "#6a4a32"
+     ]
+    },
+    {
+     "d": "ciudad",
+     "era": "colonial",
+     "y": 1350,
+     "hora": "dia",
+     "semilla": 21
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#a8906e",
+      "#5a4630"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "carta",
+     "x": 540,
+     "y": 1650,
+     "s": 0.8,
+     "texto": "Impuesto",
+     "firma": "Panteón"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UN IMPUESTO",
+    "A LOS MUERTOS"
+   ],
+   "acento": 1,
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Si no pagaban,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#a8906e",
+      "#5a4630"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "ataud",
+     "x": 540,
+     "y": 1600,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 820,
+     "y": 1720,
+     "s": 1.4,
+     "ropa": "obrero",
+     "sombrero": "fedora",
+     "piel": "media"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "LOS",
+    "DESENTERRABAN"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "muchos se habían",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1a14",
+     "piso": "#0d0a06",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "momia_gto",
+     "x": 540,
+     "y": 1750,
+     "s": 1.7
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "¡SE MOMIFICARON",
+    "SOLOS!"
+   ],
+   "acento": 1,
+   "sfx": "boom"
+  },
+  {
+   "en": "por el clima",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "desierto",
+     "y": 1300
+    },
+    {
+     "d": "particulas",
+     "tipo": "polvo",
+     "n": 40
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "CLIMA SECO",
+    "Y SUELO"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Las momias se",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "momia_gto",
+     "x": 330,
+     "y": 1650,
+     "s": 1.0
+    },
+    {
+     "d": "momia_gto",
+     "x": 760,
+     "y": 1650,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 200,
+     "y": 1800,
+     "s": 1.0,
+     "ropa": "traje"
+    },
+    {
+     "d": "persona_real",
+     "x": 900,
+     "y": 1800,
+     "s": 1.0,
+     "ropa": "vestido"
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "PAGABAN POR",
+    "VERLAS"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "Algunas conservan la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1a14",
+     "piso": "#0d0a06",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "vitrina",
+     "x": 540,
+     "y": 1700,
+     "s": 1.3
+    },
+    {
+     "d": "momia_gto",
+     "x": 540,
+     "y": 1640,
+     "s": 0.7
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "ROPA, PELO…",
+    "Y SORPRESA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Hoy el Museo",
+   "tipo": "contador",
+   "hasta": 1000,
+   "unidad": "VISITANTES",
+   "sub": "MILES AL AÑO",
+   "icono": "🏛️"
+  },
+  {
+   "en": "¿Lo visitarías? Comenta",
+   "tipo": "final",
+   "lineas": [
+    "¿LO",
+    "VISITARÍAS?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#a88a6a",
+      "#8a6a4a",
+      "#6a4a32"
+     ]
+    },
+    {
+     "d": "ciudad",
+     "era": "colonial",
+     "y": 1350,
+     "hora": "dia",
+     "semilla": 21
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#a8906e",
+      "#5a4630"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "catedral",
+     "x": 540,
+     "y": 1380,
+     "s": 0.6
+    }
+   ]
+  }
+ ]
+}

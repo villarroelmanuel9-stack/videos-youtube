@@ -1,0 +1,290 @@
+{
+ "tema": "cultura",
+ "estilo": "calido",
+ "claves": [
+  "millones…",
+  "novecientos",
+  "rojo»,",
+  "Johanna,"
+ ],
+ "tomas": [
+  {
+   "en": "Hoy sus cuadros",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#e6e2da",
+     "piso": "#8a7a6a",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0
+    },
+    {
+     "d": "caballete",
+     "x": 540,
+     "y": 1700,
+     "s": 1.3,
+     "cuadro": "girasoles"
+    },
+    {
+     "d": "persona_real",
+     "x": 200,
+     "y": 1800,
+     "s": 1.1,
+     "ropa": "traje"
+    },
+    {
+     "d": "persona_real",
+     "x": 880,
+     "y": 1800,
+     "s": 1.1,
+     "ropa": "vestido"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CIENTOS DE",
+    "MILLONES"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "pero en vida,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1250
+    },
+    {
+     "d": "girasoles",
+     "y": 1250
+    },
+    {
+     "d": "persona_real",
+     "x": 760,
+     "y": 1800,
+     "s": 1.6,
+     "ropa": "obrero",
+     "barba": true,
+     "pelo": "#c0552a",
+     "sombrero": "boina"
+    },
+    {
+     "d": "caballete",
+     "x": 330,
+     "y": 1760,
+     "s": 1.0,
+     "cuadro": "girasoles"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "VINCENT",
+    "VAN GOGH"
+   ],
+   "amb": "insectos",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Pintó unos novecientos",
+   "tipo": "contador",
+   "hasta": 900,
+   "unidad": "CUADROS",
+   "sub": "EN 10 AÑOS",
+   "icono": "🎨"
+  },
+  {
+   "en": "Vivía con lo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a7aaa",
+     "piso": "#8a5a2a",
+     "vista": "dia",
+     "ventana_x": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "cama",
+     "x": 380,
+     "y": 1550,
+     "s": 1.0
+    },
+    {
+     "d": "silla",
+     "x": 760,
+     "y": 1650,
+     "s": 0.9
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "VIVÍA CON",
+    "LO JUSTO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "y su hermano",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "carta",
+     "x": 540,
+     "y": 1550,
+     "s": 1.0,
+     "texto": "Querido Vincent",
+     "firma": "Theo"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "THEO LE MANDABA",
+    "DINERO"
+   ],
+   "acento": 0,
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "De todos ellos,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#e6e2da",
+     "piso": "#8a7a6a",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0
+    },
+    {
+     "d": "caballete",
+     "x": 540,
+     "y": 1750,
+     "s": 1.5,
+     "cuadro": "vinedo"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "«EL VIÑEDO",
+    "ROJO»"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "en mil ochocientos",
+   "tipo": "contador",
+   "hasta": 400,
+   "unidad": "FRANCOS",
+   "sub": "1890",
+   "icono": "💰"
+  },
+  {
+   "en": "Ese mismo año",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "trigal",
+     "y": 1300,
+     "circulo": false
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.6,
+     "ropa": "obrero",
+     "barba": true,
+     "pelo": "#c0552a",
+     "sombrero": "boina"
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "CREÍA HABER",
+    "FRACASADO"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Fue la esposa",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "caja",
+     "x": 330,
+     "y": 1650,
+     "s": 0.8
+    },
+    {
+     "d": "persona_real",
+     "x": 700,
+     "y": 1760,
+     "s": 1.7,
+     "ropa": "vestido",
+     "peinado": "mono",
+     "pelo": "#4a3a2a"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "JOHANNA",
+    "VAN GOGH-BONGER"
+   ]
+  },
+  {
+   "en": "¿Cuál es tu",
+   "tipo": "final",
+   "lineas": [
+    "¿TU CUADRO",
+    "FAVORITO?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1250
+    },
+    {
+     "d": "girasoles",
+     "y": 1250
+    },
+    {
+     "d": "caballete",
+     "x": 540,
+     "y": 1760,
+     "s": 1.1
+    }
+   ],
+   "comentario": "La noche estrellada ✨"
+  }
+ ]
+}

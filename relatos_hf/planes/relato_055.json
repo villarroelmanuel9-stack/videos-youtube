@@ -1,0 +1,301 @@
+{
+ "tema": "historia",
+ "estilo": "retro",
+ "claves": [
+  "pintar",
+  "Coubertin,",
+  "deporte.",
+  "aficionados."
+ ],
+ "tomas": [
+  {
+   "en": "Hubo una época",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "estadio",
+     "y": 1300
+    },
+    {
+     "d": "podio",
+     "x": 540,
+     "y": 1700,
+     "s": 1.0
+    },
+    {
+     "d": "caballete",
+     "x": 540,
+     "y": 1500,
+     "s": 0.6,
+     "cuadro": "atletas"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "MEDALLA POR",
+    "PINTAR"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "El creador de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "boiserie"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.9,
+     "ropa": "traje",
+     "bigote": true,
+     "pelo": "#d9d9d9"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "PIERRE DE",
+    "COUBERTIN"
+   ]
+  },
+  {
+   "en": "quería unir el",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "estadio",
+     "y": 1300
+    },
+    {
+     "d": "balon",
+     "x": 300,
+     "y": 1650,
+     "s": 0.6
+    },
+    {
+     "d": "libro",
+     "x": 780,
+     "y": 1650,
+     "s": 0.8
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "DEPORTE Y",
+    "CULTURA"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Por eso, entre",
+   "tipo": "titulo",
+   "lineas": [
+    "1912 – 1948"
+   ],
+   "icono": "🏅"
+  },
+  {
+   "en": "se entregaron medallas",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#e6e2da",
+     "piso": "#8a7a6a",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0
+    },
+    {
+     "d": "caballete",
+     "x": 280,
+     "y": 1700,
+     "s": 0.9,
+     "cuadro": "atletas"
+    },
+    {
+     "d": "piano",
+     "x": 760,
+     "y": 1700,
+     "s": 0.7
+    },
+    {
+     "d": "libro",
+     "x": 540,
+     "y": 1800,
+     "s": 0.6
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "PINTURA, MÚSICA,",
+    "LITERATURA"
+   ],
+   "acento": 0
+  },
+  {
+   "en": "La única condición:",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#e6e2da",
+     "piso": "#8a7a6a",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0
+    },
+    {
+     "d": "caballete",
+     "x": 540,
+     "y": 1750,
+     "s": 1.5,
+     "cuadro": "atletas"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "INSPIRADAS EN",
+    "EL DEPORTE"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "El propio Coubertin",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "medalla",
+     "x": 760,
+     "y": 1250,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1760,
+     "s": 1.7,
+     "ropa": "traje",
+     "bigote": true,
+     "pelo": "#d9d9d9"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¡GANÓ UN ORO!"
+   ],
+   "amb": "ninguno"
+  },
+  {
+   "en": "con un poema",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2a1e",
+     "piso": "#1a120c",
+     "luz_x": 540,
+     "luz_y": 900
+    },
+    {
+     "d": "carta",
+     "x": 540,
+     "y": 1550,
+     "s": 1.0,
+     "texto": "Oda al deporte",
+     "firma": "¿?"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CON NOMBRE",
+    "FALSO"
+   ],
+   "acento": 1,
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Al final se",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "estadio",
+     "y": 1300
+    },
+    {
+     "d": "podio",
+     "x": 540,
+     "y": 1700,
+     "s": 1.0
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "SOLO",
+    "AFICIONADOS"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "¿En qué arte",
+   "tipo": "final",
+   "lineas": [
+    "¿EN QUÉ ARTE",
+    "GANARÍAS?"
+   ],
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#e6e2da",
+     "piso": "#8a7a6a",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0
+    },
+    {
+     "d": "medalla",
+     "x": 540,
+     "y": 1400,
+     "s": 1.2
+    }
+   ],
+   "comentario": "En dormir 😴"
+  }
+ ]
+}

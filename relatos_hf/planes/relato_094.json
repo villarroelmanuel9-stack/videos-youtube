@@ -1,0 +1,305 @@
+{
+ "tema": "misterio",
+ "estilo": "neon",
+ "claves": [
+  "pesadillas…",
+  "Polybius",
+  "negro",
+  "rastro."
+ ],
+ "tomas": [
+  {
+   "en": "Dicen que en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1a0d24",
+     "piso": "#0a0610",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "polybius",
+     "x": 540,
+     "y": 1750,
+     "s": 1.4
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CAUSABA",
+    "PESADILLAS"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Según la leyenda,",
+   "tipo": "mapa",
+   "centro": [
+    45.52,
+    -122.68
+   ],
+   "zoom": 12,
+   "zoom_desde": 2,
+   "centro_desde": [
+    40,
+    -100
+   ],
+   "resaltar": [
+    "United States of America"
+   ],
+   "pines": [
+    {
+     "lat": 45.52,
+     "lon": -122.68,
+     "texto": "PORTLAND"
+    }
+   ],
+   "titulo": "1981"
+  },
+  {
+   "en": "Los jugadores se",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1a0d24",
+     "piso": "#0a0610",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "polybius",
+     "x": 700,
+     "y": 1750,
+     "s": 1.1
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1780,
+     "s": 1.5,
+     "ropa": "overol",
+     "mira": "der"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SE VOLVÍAN",
+    "ADICTOS"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Algunos habrían sufrido",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1a24",
+     "piso": "#0d0a12",
+     "luz": false,
+     "cuadros": 0,
+     "vista": "noche",
+     "ventana_x": 760
+    },
+    {
+     "d": "cama",
+     "x": 420,
+     "y": 1600,
+     "s": 1.0
+    },
+    {
+     "d": "notas",
+     "distorsion": true,
+     "n": 5
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "INSOMNIO Y",
+    "ALUCINACIONES"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Y cada cierto",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1a0d24",
+     "piso": "#0a0610",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "polybius",
+     "x": 540,
+     "y": 1750,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 230,
+     "y": 1780,
+     "s": 1.5,
+     "ropa": "traje",
+     "sombrero": "fedora",
+     "lentes": true
+    },
+    {
+     "d": "persona_real",
+     "x": 850,
+     "y": 1780,
+     "s": 1.5,
+     "ropa": "traje",
+     "sombrero": "fedora",
+     "lentes": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "HOMBRES DE",
+    "NEGRO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "y anotaban datos.",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1a0d24",
+     "piso": "#0a0610",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1780,
+     "s": 2.0,
+     "ropa": "traje",
+     "sombrero": "fedora",
+     "lentes": true
+    },
+    {
+     "d": "libro",
+     "x": 700,
+     "y": 1450,
+     "s": 0.4
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "ANOTABAN",
+    "DATOS"
+   ],
+   "acento": 1,
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Semanas después, las",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1a0d24",
+     "piso": "#0a0610",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "polybius",
+     "x": 540,
+     "y": 1750,
+     "s": 1.2,
+     "mov": "desvanece",
+     "desvanece_en": 1.0
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "DESAPARECIERON",
+    "SIN RASTRO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Nunca se ha",
+   "tipo": "titulo",
+   "lineas": [
+    "NI UNA",
+    "PRUEBA"
+   ],
+   "acento": 1,
+   "icono": "❓"
+  },
+  {
+   "en": "Pero la leyenda",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1a0d24",
+     "piso": "#0a0610",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "polybius",
+     "x": 330,
+     "y": 1750,
+     "s": 1.0
+    },
+    {
+     "d": "arcade",
+     "x": 760,
+     "y": 1750,
+     "s": 1.0
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "JUEGOS, SERIES",
+    "Y RÉPLICAS"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "¿Crees que existió?",
+   "tipo": "final",
+   "lineas": [
+    "¿CREES QUE",
+    "EXISTIÓ?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1a0d24",
+     "piso": "#0a0610",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "polybius",
+     "x": 540,
+     "y": 1750,
+     "s": 1.2
+    }
+   ]
+  }
+ ]
+}

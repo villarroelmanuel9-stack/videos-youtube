@@ -292,8 +292,8 @@ def particulas(p, u, t):
     tipo = p.get("tipo", "brasas")
     rng = random.Random(len(u))
     col = {"brasas": "#ffb347", "nieve": "#ffffff", "polvo": "#e9d8b0", "ceniza": "#9a9a9a", "chispas": "#fff2a8",
-           "verde": "#8dff9c"}.get(tipo, "#ffffff")
-    sube = tipo in ("brasas", "chispas", "verde")
+           "verde": "#8dff9c", "roja": "#ff3b3b", "moscas": "#111111"}.get(tipo, "#ffffff")
+    sube = tipo in ("brasas", "chispas", "verde", "roja")
     out = []
     for k in range(p.get("n", 40)):
         x, y = rng.uniform(0, 1080), rng.uniform(300, 1700)
@@ -301,7 +301,7 @@ def particulas(p, u, t):
         out.append(f'<circle id="{u}p{k}" cx="{x:.0f}" cy="{y:.0f}" r="{r:.1f}" fill="{col}" opacity="{rng.uniform(.4, .9):.2f}"/>')
         dy = -rng.uniform(250, 600) if sube else rng.uniform(250, 600)
         anim(t, f"#{u}p{k}", "{x: 0, y: 0}", f"{{x: {rng.uniform(-80, 80):.0f}, y: {dy:.0f}, duration: {max(0.5, t.dur):.2f}, ease: 'none'}}")
-    if sube and tipo != "verde":
+    if sube and tipo not in ("verde", "roja"):
         out = [f'<g style="mix-blend-mode:screen">'] + out + ["</g>"]
     return "".join(out)
 

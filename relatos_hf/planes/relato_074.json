@@ -1,0 +1,462 @@
+{
+ "tema": "historia",
+ "estilo": "terror",
+ "claves": [
+  "sangrienta».",
+  "Hungría,",
+  "juicio.",
+  "enemigos,"
+ ],
+ "tomas": [
+  {
+   "en": "La llamaban «la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1350
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1380,
+     "colores": [
+      "#3a3a4a",
+      "#2a2a3a",
+      "#1a1a2a"
+     ]
+    },
+    {
+     "d": "castillo",
+     "x": 540,
+     "y": 1420,
+     "s": 1.0
+    },
+    {
+     "d": "suelo",
+     "y": 1420,
+     "colores": [
+      "#3a3a2a",
+      "#141410"
+     ],
+     "tipo": "tierra"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "«LA CONDESA",
+    "SANGRIENTA»"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Pero hay historiadores",
+   "tipo": "titulo",
+   "lineas": [
+    "¿Y SI NO",
+    "FUE ASÍ?"
+   ],
+   "acento": 1,
+   "icono": "🤔"
+  },
+  {
+   "en": "Isabel Báthory fue",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3a3e",
+     "piso": "#1a1a1e",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "antorcha",
+     "x": 200,
+     "y": 1300,
+     "s": 0.8
+    },
+    {
+     "d": "antorcha",
+     "x": 880,
+     "y": 1300,
+     "s": 0.8
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.9,
+     "ropa": "luto",
+     "peinado": "mono",
+     "pelo": "#2a1a10",
+     "piel": "clara"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ISABEL",
+    "BÁTHORY"
+   ],
+   "amb": "fuego",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "una de las",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3a3e",
+     "piso": "#1a1a1e",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "antorcha",
+     "x": 540,
+     "y": 1250,
+     "s": 0.8
+    },
+    {
+     "d": "tesoro",
+     "x": 540,
+     "y": 1650,
+     "s": 1.0
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "DE LAS MÁS",
+    "RICAS"
+   ],
+   "acento": 1,
+   "amb": "fuego",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "En mil seiscientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1350
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1380,
+     "colores": [
+      "#3a3a4a",
+      "#2a2a3a",
+      "#1a1a2a"
+     ]
+    },
+    {
+     "d": "castillo",
+     "x": 540,
+     "y": 1420,
+     "s": 1.0
+    },
+    {
+     "d": "suelo",
+     "y": 1420,
+     "colores": [
+      "#3a3a2a",
+      "#141410"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "persona_real",
+     "x": 250,
+     "y": 1740,
+     "s": 0.9,
+     "ropa": "vestido",
+     "peinado": "largo"
+    },
+    {
+     "d": "persona_real",
+     "x": 830,
+     "y": 1740,
+     "s": 0.9,
+     "ropa": "vestido",
+     "peinado": "largo"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "1610",
+    "ACUSADA"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "Nunca tuvo un",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3a3e",
+     "piso": "#1a1a1e",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1650,
+     "s": 1.3
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1500,
+     "s": 1.0,
+     "ropa": "traje",
+     "barba": true
+    },
+    {
+     "d": "persona_real",
+     "x": 760,
+     "y": 1500,
+     "s": 1.0,
+     "ropa": "traje",
+     "barba": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "NUNCA TUVO",
+    "UN JUICIO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "La encerraron en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a2e",
+     "piso": "#121214",
+     "luz": false,
+     "cuadros": 0,
+     "vista": "noche",
+     "ventana_x": 540
+    },
+    {
+     "d": "velas",
+     "x": 700,
+     "y": 1550,
+     "s": 0.5,
+     "n": 1
+    },
+    {
+     "d": "persona_real",
+     "x": 420,
+     "y": 1760,
+     "s": 1.6,
+     "ropa": "luto",
+     "peinado": "mono",
+     "pelo": "#2a1a10",
+     "piel": "clara"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "ENCERRADA",
+    "4 AÑOS"
+   ],
+   "acento": 1,
+   "sfx": "crujido",
+   "sfx_dur": 0.8
+  },
+  {
+   "en": "Con el tiempo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3a3e",
+     "piso": "#1a1a1e",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "antorcha",
+     "x": 540,
+     "y": 1250,
+     "s": 0.8
+    },
+    {
+     "d": "barril",
+     "x": 540,
+     "y": 1650,
+     "s": 1.2
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 1600,
+     "r": 300,
+     "color": "#c1121f",
+     "op": 0.4
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¿BAÑOS DE",
+    "SANGRE?"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "algo que nadie",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 900,
+     "cuadros": 0
+    },
+    {
+     "d": "libro",
+     "x": 540,
+     "y": 1500,
+     "s": 1.3
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "INVENTADO",
+    "DESPUÉS"
+   ],
+   "acento": 1,
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Algunos historiadores creen",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1350
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1380,
+     "colores": [
+      "#3a3a4a",
+      "#2a2a3a",
+      "#1a1a2a"
+     ]
+    },
+    {
+     "d": "castillo",
+     "x": 540,
+     "y": 1420,
+     "s": 1.0
+    },
+    {
+     "d": "suelo",
+     "y": 1420,
+     "colores": [
+      "#3a3a2a",
+      "#141410"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "persona_real",
+     "x": 200,
+     "y": 1760,
+     "s": 1.0,
+     "ropa": "traje",
+     "barba": true,
+     "sombrero": "copa"
+    },
+    {
+     "d": "persona_real",
+     "x": 400,
+     "y": 1760,
+     "s": 1.0,
+     "ropa": "traje",
+     "barba": true,
+     "sombrero": "copa"
+    },
+    {
+     "d": "persona_real",
+     "x": 700,
+     "y": 1760,
+     "s": 1.0,
+     "ropa": "traje",
+     "barba": true,
+     "sombrero": "copa"
+    },
+    {
+     "d": "persona_real",
+     "x": 900,
+     "y": 1760,
+     "s": 1.0,
+     "ropa": "traje",
+     "barba": true,
+     "sombrero": "copa"
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "¿VÍCTIMA DE",
+    "SUS ENEMIGOS?"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "¿Culpable o víctima?",
+   "tipo": "final",
+   "lineas": [
+    "¿CULPABLE",
+    "O VÍCTIMA?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1350
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1380,
+     "colores": [
+      "#3a3a4a",
+      "#2a2a3a",
+      "#1a1a2a"
+     ]
+    },
+    {
+     "d": "castillo",
+     "x": 540,
+     "y": 1420,
+     "s": 1.0
+    },
+    {
+     "d": "suelo",
+     "y": 1420,
+     "colores": [
+      "#3a3a2a",
+      "#141410"
+     ],
+     "tipo": "tierra"
+    }
+   ],
+   "comentario": "Víctima ⚖️"
+  }
+ ]
+}

@@ -1,0 +1,334 @@
+{
+ "tema": "ciencia",
+ "estilo": "neon",
+ "claves": [
+  "creadores.",
+  "injusto.",
+  "píxel",
+  "Pascua»:"
+ ],
+ "tomas": [
+  {
+   "en": "Los secretos escondidos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#a8845a",
+     "piso": "#5a3a22",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "rombos"
+    },
+    {
+     "d": "tv_tubo",
+     "x": 540,
+     "y": 1650,
+     "s": 1.2,
+     "color": "#3a2a6a"
+    },
+    {
+     "d": "pixeles",
+     "x": 540,
+     "y": 1350,
+     "s": 0.6
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SECRETOS EN",
+    "LOS JUEGOS"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "A fines de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3a4a",
+     "piso": "#1a1a24",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "persona_real",
+     "x": 200,
+     "y": 1760,
+     "s": 1.2,
+     "ropa": "camisa",
+     "bigote": true
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.2,
+     "ropa": "sueter",
+     "bigote": false
+    },
+    {
+     "d": "persona_real",
+     "x": 880,
+     "y": 1760,
+     "s": 1.2,
+     "ropa": "camisa",
+     "bigote": true
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "SIN NOMBRES",
+    "DE SUS CREADORES"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Warren Robinett, creador",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3a4a",
+     "piso": "#1a1a24",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "computadora",
+     "x": 760,
+     "y": 1600,
+     "s": 0.8
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1760,
+     "s": 1.8,
+     "ropa": "camisa",
+     "bigote": true,
+     "pelo": "#5a3a1e",
+     "lentes": true
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "WARREN",
+    "ROBINETT"
+   ]
+  },
+  {
+   "en": "pensó que era",
+   "tipo": "titulo",
+   "lineas": [
+    "¡INJUSTO!"
+   ],
+   "entrada": "flash"
+  },
+  {
+   "en": "Así que escondió",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#0d0d14",
+     "piso": "#06060a",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "pixeles",
+     "x": 540,
+     "y": 1350,
+     "s": 1.2
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 1300,
+     "r": 300,
+     "color": "#b47aff",
+     "op": 0.4
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UNA HABITACIÓN",
+    "SECRETA"
+   ],
+   "acento": 1,
+   "sfx": "ping",
+   "sfx_dur": 0.4
+  },
+  {
+   "en": "Para llegar, había",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#0d0d14",
+     "piso": "#06060a",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "texto_svg",
+     "x": 540,
+     "y": 1300,
+     "texto": "·",
+     "tam": 200,
+     "color": "#9a9a9a",
+     "borde": 0
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "UN SOLO",
+    "PÍXEL"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Ahí aparecía el",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#a8845a",
+     "piso": "#5a3a22",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "rombos"
+    },
+    {
+     "d": "tv_tubo",
+     "x": 540,
+     "y": 1650,
+     "s": 1.3,
+     "color": "#6a2a8a"
+    },
+    {
+     "d": "texto_svg",
+     "x": 470,
+     "y": 1450,
+     "texto": "CREATED BY",
+     "tam": 40,
+     "color": "#fff",
+     "borde": 0
+    },
+    {
+     "d": "texto_svg",
+     "x": 470,
+     "y": 1510,
+     "texto": "ROBINETT",
+     "tam": 50,
+     "color": "#ffd36a",
+     "borde": 0
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "«CREADO POR WARREN",
+    "ROBINETT»"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Un adolescente lo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#a8845a",
+     "piso": "#5a3a22",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "rombos"
+    },
+    {
+     "d": "tv_tubo",
+     "x": 700,
+     "y": 1650,
+     "s": 1.0,
+     "color": "#3a2a6a"
+    },
+    {
+     "d": "mando",
+     "x": 380,
+     "y": 1700,
+     "s": 0.6
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1780,
+     "s": 1.3,
+     "ropa": "overol"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UN ADOLESCENTE",
+    "LO DESCUBRIÓ"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "En vez de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz_x": 540,
+     "luz_y": 900,
+     "cuadros": 0
+    },
+    {
+     "d": "texto_svg",
+     "x": 540,
+     "y": 1300,
+     "texto": "🥚",
+     "tam": 10,
+     "color": "#000"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "«HUEVO DE",
+    "PASCUA»"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "¿Cuál es tu",
+   "tipo": "final",
+   "lineas": [
+    "¿TU EASTER EGG",
+    "FAVORITO?"
+   ],
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#a8845a",
+     "piso": "#5a3a22",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "rombos"
+    },
+    {
+     "d": "tv_tubo",
+     "x": 540,
+     "y": 1650,
+     "s": 1.2,
+     "color": "#3a2a6a"
+    }
+   ],
+   "comentario": "El de Minecraft 🥚"
+  }
+ ]
+}

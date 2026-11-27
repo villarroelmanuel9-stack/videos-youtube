@@ -1,0 +1,249 @@
+{
+ "tema": "misterio",
+ "estilo": "terror",
+ "claves": [
+  "niños.",
+  "agudas",
+  "inventado.",
+  "fantasmas."
+ ],
+ "tomas": [
+  {
+   "en": "Una de las",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "torre_lapidas"
+    },
+    {
+     "d": "notas",
+     "distorsion": true,
+     "n": 6
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¿UNA MÚSICA",
+    "MALDITA?"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "En dos mil",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "computadora",
+     "x": 540,
+     "y": 1550,
+     "s": 1.2
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "2010",
+    "UNA HISTORIA"
+   ],
+   "amb": "zumbido",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "que en mil",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "torre_lapidas"
+    }
+   ],
+   "camara": "baja",
+   "texto": [
+    "PUEBLO",
+    "LAVANDA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "tenía frecuencias tan",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "torre_lapidas"
+    },
+    {
+     "d": "notas",
+     "distorsion": true,
+     "n": 9
+    },
+    {
+     "d": "silbido",
+     "x1": 200,
+     "y1": 900,
+     "x2": 900,
+     "color": "#b47aff"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "SOLO LOS NIÑOS",
+    "LAS OÍAN"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Según el relato,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#c8b89a",
+     "piso": "#7a6a4a",
+     "luz": false,
+     "cuadros": 0,
+     "pared_estilo": "liso"
+    },
+    {
+     "d": "tv_tubo",
+     "x": 700,
+     "y": 1650,
+     "s": 0.9,
+     "color": "#6a3a8a"
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1780,
+     "s": 1.5,
+     "ropa": "camisa",
+     "piel": "asiatica",
+     "pelo": "#111"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "DOLOR DE CABEZA",
+    "Y MIEDO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Todo era inventado.",
+   "tipo": "titulo",
+   "lineas": [
+    "TODO ERA",
+    "INVENTADO"
+   ],
+   "acento": 1,
+   "entrada": "flash",
+   "sfx": "boom"
+  },
+  {
+   "en": "Fue una creepypasta,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "computadora",
+     "x": 540,
+     "y": 1550,
+     "s": 1.1
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 1300,
+     "r": 300,
+     "color": "#b47aff",
+     "op": 0.35
+    }
+   ],
+   "camara": "push",
+   "texto": "«CREEPYPASTA»",
+   "amb": "zumbido",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "Pero se volvió",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "pantalla",
+     "tipo": "sala",
+     "x": 540,
+     "y": 1450,
+     "s": 1.0
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "MUCHOS AÚN",
+    "LA CREEN"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Lo cierto: la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "torre_lapidas"
+    },
+    {
+     "d": "notas",
+     "distorsion": true,
+     "n": 5
+    },
+    {
+     "d": "ojos",
+     "x": 540,
+     "y": 900,
+     "s": 0.6,
+     "en": 1.0,
+     "color": "#dfe8ff"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "EL PUEBLO DE",
+    "LOS FANTASMAS"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "¿Tú la creías?",
+   "tipo": "final",
+   "lineas": [
+    "¿TÚ LA",
+    "CREÍAS?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "torre_lapidas"
+    }
+   ]
+  }
+ ]
+}

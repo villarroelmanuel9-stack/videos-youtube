@@ -314,7 +314,13 @@ def arboles(p, u, t):
                          f'<circle cx="{bx - 6:.0f}" cy="{by + L + 14:.0f}" r="3.5" fill="#111"/><circle cx="{bx + 6:.0f}" cy="{by + L + 14:.0f}" r="3.5" fill="#111"/>'
                          f'<path d="M{bx - 16:.0f},{by + L + 32:.0f} L{bx + 16:.0f},{by + L + 32:.0f} L{bx + 22:.0f},{by + L + 80:.0f} L{bx - 22:.0f},{by + L + 80:.0f} Z" fill="{rng.choice(["#b9a58a", "#8a7d6a", "#c7a3a3"])}" {O3}/></g>')
                 vaiven(t, f"#{u}m{k}{r}", f"rotation: {rng.choice([-5, 5])}, transformOrigin: '50% 0%'", periodo=rng.uniform(1.6, 2.6))
-        s.append(f'<ellipse cx="{x:.0f}" cy="{y - h:.0f}" rx="{rng.uniform(150, 230):.0f}" ry="{rng.uniform(110, 160):.0f}" fill="{col}" opacity=".95"/>')
+        if p.get("tipo") == "pino":
+            for k2 in range(4):
+                w, yy = 190 - k2 * 38, y - h * (.25 + k2 * .2)
+                s.append(f'<path d="M{x - w:.0f},{yy:.0f} L{x:.0f},{yy - h * .32:.0f} L{x + w:.0f},{yy:.0f} Z" fill="{col}" opacity=".97"/>'
+                         + (f'<path d="M{x - w:.0f},{yy:.0f} L{x:.0f},{yy - h * .32:.0f} L{x - w * .3:.0f},{yy - 10:.0f} Z" fill="#fff" opacity=".55"/>' if p.get("nieve") else ""))
+        else:
+            s.append(f'<ellipse cx="{x:.0f}" cy="{y - h:.0f}" rx="{rng.uniform(150, 230):.0f}" ry="{rng.uniform(110, 160):.0f}" fill="{col}" opacity=".95"/>')
     return f'<g id="{u}">{"".join(s)}</g>'
 
 
@@ -451,6 +457,8 @@ def perro(p, u, t):
         c1, c2, c3 = "#f3e6cc", "#d2bb92", "#fffaf0"
     elif raza == "husky":
         c1, c2, c3 = "#8a929e", "#4a525e", "#f4f4f0"
+    elif raza == "collie":  # Pickles: blanco y negro
+        c1, c2, c3 = "#2a2a2e", "#111114", "#f6f4ee"
     else:
         c1, c2, c3 = "#f2ede4", "#cfc5b5", "#ffffff"
     d = (f'<defs>{lin(c1, c2, u + "p", 0)}{lin(c2, "#8a5a2a" if raza == "akita" else "#b8ad9c", u + "s", 0)}'

@@ -1,0 +1,281 @@
+{
+ "tema": "misterio",
+ "estilo": "retro",
+ "claves": [
+  "existe.",
+  "Taured.",
+  "Andorra.",
+  "desaparecido…"
+ ],
+ "tomas": [
+  {
+   "en": "Cuenta una leyenda",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "avion",
+     "x": 540,
+     "y": 900,
+     "s": 0.9,
+     "avance": 200
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#5a5a5e",
+      "#2a2a2e"
+     ],
+     "tipo": "asfalto"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "TOKIO",
+    "1954"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "desde un país",
+   "tipo": "titulo",
+   "lineas": [
+    "UN PAÍS QUE",
+    "NO EXISTE"
+   ],
+   "acento": 1,
+   "icono": "🌍"
+  },
+  {
+   "en": "Según la historia,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#8a8a7a",
+     "piso": "#3a3a32",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0,
+     "vista": "dia",
+     "ventana_x": 760
+    },
+    {
+     "d": "pasaporte",
+     "x": 540,
+     "y": 1650,
+     "s": 1.2
+    }
+   ],
+   "camara": "push",
+   "texto": "«TAURED»",
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Decía que estaba",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#8a8a7a",
+     "piso": "#3a3a32",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0,
+     "vista": "dia",
+     "ventana_x": 760
+    },
+    {
+     "d": "mostrador",
+     "x": 540,
+     "y": 1700,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1700,
+     "s": 1.6,
+     "ropa": "traje_gris",
+     "sombrero": "fedora",
+     "bigote": true
+    },
+    {
+     "d": "persona_real",
+     "x": 780,
+     "y": 1700,
+     "s": 1.5,
+     "ropa": "uniforme",
+     "piel": "asiatica"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "ENTRE FRANCIA",
+    "Y ESPAÑA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Le mostraron un",
+   "tipo": "mapa",
+   "centro": [
+    42.5,
+    1.5
+   ],
+   "zoom": 25,
+   "zoom_desde": 4,
+   "centro_desde": [
+    43,
+    2
+   ],
+   "resaltar": [
+    "Andorra",
+    "France",
+    "Spain"
+   ],
+   "pines": [
+    {
+     "lat": 42.5,
+     "lon": 1.5,
+     "texto": "ANDORRA"
+    }
+   ]
+  },
+  {
+   "en": "Él se enojó:",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#8a8a7a",
+     "piso": "#3a3a32",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0,
+     "vista": "dia",
+     "ventana_x": 760
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 2.0,
+     "ropa": "traje_gris",
+     "sombrero": "fedora",
+     "bigote": true
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "«EXISTE HACE",
+    "MIL AÑOS»"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Lo dejaron en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6a5a4a",
+     "piso": "#2a1d14",
+     "luz": false,
+     "vista": "noche",
+     "ventana_x": 700
+    },
+    {
+     "d": "cama",
+     "x": 420,
+     "y": 1600,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 800,
+     "y": 1720,
+     "s": 1.4,
+     "ropa": "uniforme",
+     "piel": "asiatica"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "EN UN HOTEL,",
+    "VIGILADO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "A la mañana",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6a5a4a",
+     "piso": "#2a1d14",
+     "vista": "dia",
+     "ventana_x": 700
+    },
+    {
+     "d": "cama",
+     "x": 420,
+     "y": 1600,
+     "s": 1.0
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "HABÍA",
+    "DESAPARECIDO"
+   ],
+   "acento": 1,
+   "sfx": "boom",
+   "sfx_dur": 0.5
+  },
+  {
+   "en": "Nunca se ha",
+   "tipo": "titulo",
+   "lineas": [
+    "NINGÚN REGISTRO",
+    "OFICIAL"
+   ],
+   "acento": 1,
+   "icono": "📁"
+  },
+  {
+   "en": "¿Viajó de otra",
+   "tipo": "final",
+   "lineas": [
+    "¿VINO DE OTRA",
+    "DIMENSIÓN?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#8a8a7a",
+     "piso": "#3a3a32",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0,
+     "vista": "dia",
+     "ventana_x": 760
+    },
+    {
+     "d": "pasaporte",
+     "x": 540,
+     "y": 1650,
+     "s": 1.0
+    }
+   ]
+  }
+ ]
+}

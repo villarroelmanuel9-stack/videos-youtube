@@ -1,0 +1,491 @@
+{
+ "tema": "ciencia",
+ "estilo": "neon",
+ "claves": [
+  "epidemia",
+  "corrupta»,",
+  "mascotas",
+  "epidemiólogos"
+ ],
+ "tomas": [
+  {
+   "en": "En dos mil",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1300
+    },
+    {
+     "d": "castillo",
+     "x": 540,
+     "y": 1380,
+     "s": 0.9
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1400,
+     "hora": "atardecer",
+     "semilla": 8
+    },
+    {
+     "d": "suelo",
+     "y": 1400,
+     "colores": [
+      "#8a7a62",
+      "#3a3024"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "particulas",
+     "tipo": "roja",
+     "n": 40
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "2005",
+    "UNA EPIDEMIA"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "y los científicos",
+   "tipo": "titulo",
+   "lineas": [
+    "¡LA ESTUDIARON",
+    "CIENTÍFICOS!"
+   ],
+   "acento": 1,
+   "icono": "🔬"
+  },
+  {
+   "en": "En el videojuego",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "computadora",
+     "x": 540,
+     "y": 1550,
+     "s": 1.2
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UN JUEGO",
+    "EN LÍNEA"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "un jefe lanzaba",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "rojo",
+     "horizonte": 1300
+    },
+    {
+     "d": "castillo",
+     "x": 540,
+     "y": 1380,
+     "s": 1.0
+    },
+    {
+     "d": "suelo",
+     "y": 1380,
+     "colores": [
+      "#3a2a2a",
+      "#140a0a"
+     ]
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 1200,
+     "r": 500,
+     "color": "#c1121f",
+     "op": 0.4
+    },
+    {
+     "d": "particulas",
+     "tipo": "roja",
+     "n": 60
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "«SANGRE",
+    "CORRUPTA»"
+   ],
+   "acento": 1,
+   "sfx": "boom"
+  },
+  {
+   "en": "Pero un error",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1300
+    },
+    {
+     "d": "castillo",
+     "x": 540,
+     "y": 1380,
+     "s": 0.9
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1400,
+     "hora": "atardecer",
+     "semilla": 8
+    },
+    {
+     "d": "suelo",
+     "y": 1400,
+     "colores": [
+      "#8a7a62",
+      "#3a3024"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "perro",
+     "raza": "laika",
+     "x": 540,
+     "y": 1720,
+     "s": 1.0
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 1600,
+     "r": 200,
+     "color": "#ff3b3b",
+     "op": 0.5
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "LAS MASCOTAS",
+    "LA LLEVARON"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Se contagió de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1300
+    },
+    {
+     "d": "castillo",
+     "x": 540,
+     "y": 1380,
+     "s": 0.9
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1400,
+     "hora": "atardecer",
+     "semilla": 8
+    },
+    {
+     "d": "suelo",
+     "y": 1400,
+     "colores": [
+      "#8a7a62",
+      "#3a3024"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "persona_real",
+     "x": 180,
+     "y": 1760,
+     "s": 1.0,
+     "ropa": "tunica",
+     "barba": true,
+     "pelo": "#6a4a2a"
+    },
+    {
+     "d": "persona_real",
+     "x": 400,
+     "y": 1760,
+     "s": 1.0,
+     "ropa": "tunica_roja",
+     "peinado": "largo",
+     "pelo": "#c09a5a"
+    },
+    {
+     "d": "persona_real",
+     "x": 660,
+     "y": 1760,
+     "s": 1.0,
+     "ropa": "obrero",
+     "sombrero": "casco_ww"
+    },
+    {
+     "d": "persona_real",
+     "x": 900,
+     "y": 1760,
+     "s": 1.0,
+     "ropa": "kimono",
+     "peinado": "mono"
+    },
+    {
+     "d": "particulas",
+     "tipo": "roja",
+     "n": 70
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "MILES",
+    "MURIERON"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Algunos ayudaban a",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1300
+    },
+    {
+     "d": "castillo",
+     "x": 540,
+     "y": 1380,
+     "s": 0.9
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1400,
+     "hora": "atardecer",
+     "semilla": 8
+    },
+    {
+     "d": "suelo",
+     "y": 1400,
+     "colores": [
+      "#8a7a62",
+      "#3a3024"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "persona_real",
+     "x": 300,
+     "y": 1760,
+     "s": 1.4,
+     "ropa": "tunica",
+     "barba": true,
+     "pelo": "#6a4a2a"
+    },
+    {
+     "d": "luz",
+     "x": 300,
+     "y": 1500,
+     "r": 200,
+     "color": "#8dff9c",
+     "op": 0.5
+    },
+    {
+     "d": "persona_real",
+     "x": 800,
+     "y": 1760,
+     "s": 1.3,
+     "ropa": "tunica_roja",
+     "peinado": "largo",
+     "pelo": "#c09a5a",
+     "mov": "camina",
+     "avance": 200
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CURAR O",
+    "HUIR"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "y algunos la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1300
+    },
+    {
+     "d": "castillo",
+     "x": 540,
+     "y": 1380,
+     "s": 0.9
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1400,
+     "hora": "atardecer",
+     "semilla": 8
+    },
+    {
+     "d": "suelo",
+     "y": 1400,
+     "colores": [
+      "#8a7a62",
+      "#3a3024"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.8,
+     "ropa": "obrero",
+     "sombrero": "casco_ww"
+    },
+    {
+     "d": "particulas",
+     "tipo": "roja",
+     "n": 80
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "¡A",
+    "PROPÓSITO!"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Los desarrolladores tuvieron",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "pantalla",
+     "tipo": "sala",
+     "x": 540,
+     "y": 1450,
+     "s": 1.0,
+     "alarma": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "REINICIAR LOS",
+    "SERVIDORES"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Y años después,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#dfe8e6",
+     "piso": "#9aa8a6",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "libro",
+     "x": 380,
+     "y": 1600,
+     "s": 0.8
+    },
+    {
+     "d": "persona_real",
+     "x": 780,
+     "y": 1720,
+     "s": 1.6,
+     "ropa": "bata",
+     "lentes": true,
+     "peinado": "mono"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¿CÓMO REACCIONA",
+    "LA GENTE?"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "¿Tú habrías ayudado",
+   "tipo": "final",
+   "lineas": [
+    "¿AYUDAR",
+    "O HUIR?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1300
+    },
+    {
+     "d": "castillo",
+     "x": 540,
+     "y": 1380,
+     "s": 0.9
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1400,
+     "hora": "atardecer",
+     "semilla": 8
+    },
+    {
+     "d": "suelo",
+     "y": 1400,
+     "colores": [
+      "#8a7a62",
+      "#3a3024"
+     ],
+     "tipo": "adoquin"
+    }
+   ],
+   "comentario": "Yo huía 🏃"
+  }
+ ]
+}

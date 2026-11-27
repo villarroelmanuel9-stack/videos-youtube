@@ -1,0 +1,306 @@
+{
+ "tema": "terror",
+ "estilo": "terror",
+ "claves": [
+  "distinta.",
+  "roja,",
+  "notas",
+  "abrir»."
+ ],
+ "tomas": [
+  {
+   "en": "La Annabelle de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1a1410",
+     "piso": "#0a0806",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "muneca",
+     "x": 540,
+     "y": 1600,
+     "s": 1.5
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "LA DE LAS",
+    "PELÍCULAS"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "pero la verdadera",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1a1410",
+     "piso": "#0a0806",
+     "luz_x": 540,
+     "luz_y": 900,
+     "cuadros": 0
+    },
+    {
+     "d": "muneca_trapo",
+     "x": 540,
+     "y": 1650,
+     "s": 1.6
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": "LA VERDADERA",
+   "sfx": "boom",
+   "sfx_dur": 0.5
+  },
+  {
+   "en": "Es una muñeca",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#b8945a",
+     "piso": "#5a3a22",
+     "vista": "noche",
+     "ventana_x": 700,
+     "pared_estilo": "rombos"
+    },
+    {
+     "d": "silla",
+     "x": 540,
+     "y": 1700,
+     "s": 1.1
+    },
+    {
+     "d": "muneca_trapo",
+     "x": 540,
+     "y": 1500,
+     "s": 0.9
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "DE TRAPO Y",
+    "LANA ROJA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "una «Raggedy Ann»",
+   "tipo": "titulo",
+   "lineas": [
+    "AÑOS",
+    "70"
+   ],
+   "icono": "🧸"
+  },
+  {
+   "en": "Según la historia,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#b8945a",
+     "piso": "#5a3a22",
+     "vista": "noche",
+     "ventana_x": 700,
+     "pared_estilo": "rombos"
+    },
+    {
+     "d": "muneca_trapo",
+     "x": 760,
+     "y": 1700,
+     "s": 0.8
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1720,
+     "s": 1.6,
+     "ropa": "bata",
+     "peinado": "largo",
+     "pelo": "#6a4a2a"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ESTUDIANTE DE",
+    "ENFERMERÍA"
+   ]
+  },
+  {
+   "en": "Ella y su",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#b8945a",
+     "piso": "#5a3a22",
+     "vista": "noche",
+     "ventana_x": 700,
+     "pared_estilo": "rombos"
+    },
+    {
+     "d": "cama",
+     "x": 330,
+     "y": 1600,
+     "s": 0.9
+    },
+    {
+     "d": "muneca_trapo",
+     "x": 800,
+     "y": 1700,
+     "s": 0.8,
+     "mov": "desvanece"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "CAMBIABA DE",
+    "LUGAR"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "y que aparecían",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1a14",
+     "piso": "#0d0a06",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "carta",
+     "x": 540,
+     "y": 1550,
+     "s": 1.0,
+     "texto": "Ayúdanos",
+     "firma": ""
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "NOTAS ESCRITAS",
+    "A MANO"
+   ],
+   "acento": 1,
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Los investigadores paranormales",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1740,
+     "s": 1.6,
+     "ropa": "traje",
+     "peinado": "corto"
+    },
+    {
+     "d": "persona_real",
+     "x": 730,
+     "y": 1740,
+     "s": 1.6,
+     "ropa": "vestido",
+     "peinado": "largo",
+     "pelo": "#3a2a1e"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ED Y LORRAINE",
+    "WARREN"
+   ]
+  },
+  {
+   "en": "y la guardaron",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a221a",
+     "piso": "#120e0a",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "vitrina",
+     "x": 540,
+     "y": 1700,
+     "s": 1.3
+    },
+    {
+     "d": "muneca_trapo",
+     "x": 540,
+     "y": 1550,
+     "s": 0.6
+    },
+    {
+     "d": "cartel",
+     "x": 540,
+     "y": 1150,
+     "s": 0.6,
+     "titulo": "PELIGRO",
+     "sub": "NO ABRIR"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "«PELIGRO,",
+    "NO ABRIR»"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "¿Tú crees en",
+   "tipo": "final",
+   "lineas": [
+    "¿CREES EN",
+    "ESTAS HISTORIAS?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a221a",
+     "piso": "#120e0a",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "vitrina",
+     "x": 540,
+     "y": 1700,
+     "s": 1.2
+    },
+    {
+     "d": "muneca_trapo",
+     "x": 540,
+     "y": 1550,
+     "s": 0.6
+    }
+   ]
+  }
+ ]
+}

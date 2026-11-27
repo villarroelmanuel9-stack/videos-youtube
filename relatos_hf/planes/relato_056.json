@@ -1,0 +1,381 @@
+{
+ "tema": "historia",
+ "estilo": "pop",
+ "claves": [
+  "perro.",
+  "Rimet,",
+  "rescate",
+  "Pickles"
+ ],
+ "tomas": [
+  {
+   "en": "En mil novecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1330,
+     "hora": "dia",
+     "semilla": 3
+    },
+    {
+     "d": "suelo",
+     "y": 1330,
+     "colores": [
+      "#5a8a3a",
+      "#2a4a1a"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "trofeo",
+     "x": 380,
+     "y": 1700,
+     "s": 1.0
+    },
+    {
+     "d": "perro",
+     "raza": "collie",
+     "x": 740,
+     "y": 1720,
+     "s": 1.1
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¡ROBARON LA",
+    "COPA!"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Faltaban cuatro meses",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "estadio",
+     "y": 1300
+    }
+   ],
+   "camara": "pull",
+   "dato": [
+    "MUNDIAL",
+    "INGLATERRA 66"
+   ],
+   "amb": "multitud"
+  },
+  {
+   "en": "El trofeo, la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "boiserie"
+    },
+    {
+     "d": "vitrina",
+     "x": 540,
+     "y": 1650,
+     "s": 1.1
+    },
+    {
+     "d": "trofeo",
+     "x": 540,
+     "y": 1500,
+     "s": 0.6
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "COPA",
+    "JULES RIMET"
+   ]
+  },
+  {
+   "en": "Un domingo, aprovechando",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "vitrina",
+     "x": 380,
+     "y": 1650,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 780,
+     "y": 1720,
+     "s": 1.6,
+     "ropa": "abrigo",
+     "sombrero": "fedora",
+     "mov": "camina",
+     "avance": 200
+    }
+   ],
+   "camara": "pan_der",
+   "texto": "¡SE LA LLEVARON!",
+   "sfx": "crujido",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Hubo pedidos de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4a5a",
+     "piso": "#1a222a",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "telefono",
+     "x": 380,
+     "y": 1550,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 760,
+     "y": 1720,
+     "s": 1.6,
+     "ropa": "uniforme",
+     "sombrero": "casco_ww"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "PEDIDOS DE",
+    "RESCATE"
+   ],
+   "acento": 1,
+   "amb": "estatica",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "Una semana después,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1330,
+     "hora": "dia",
+     "semilla": 3
+    },
+    {
+     "d": "suelo",
+     "y": 1330,
+     "colores": [
+      "#5a8a3a",
+      "#2a4a1a"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1720,
+     "s": 1.5,
+     "ropa": "traje_cafe",
+     "mira": "der"
+    },
+    {
+     "d": "perro",
+     "raza": "collie",
+     "x": 640,
+     "y": 1740,
+     "s": 1.0
+    }
+   ],
+   "camara": "pan_der",
+   "dato": [
+    "PICKLES",
+    "COLLIE"
+   ],
+   "amb": "insectos",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "y el perro",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1330,
+     "hora": "dia",
+     "semilla": 3
+    },
+    {
+     "d": "suelo",
+     "y": 1330,
+     "colores": [
+      "#5a8a3a",
+      "#2a4a1a"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "arbusto",
+     "x": 700,
+     "y": 1700,
+     "s": 1.1,
+     "paquete": true
+    },
+    {
+     "d": "perro",
+     "raza": "collie",
+     "x": 330,
+     "y": 1760,
+     "s": 1.2
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UN PAQUETE DE",
+    "PAPEL DE DIARIO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Era la Copa.",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#5a8a3a",
+      "#2a4a1a"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "trofeo",
+     "x": 540,
+     "y": 1600,
+     "s": 1.5
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": "¡ERA LA COPA!",
+   "sfx": "ping",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Pickles se hizo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "estadio",
+     "y": 1300
+    },
+    {
+     "d": "perro",
+     "raza": "collie",
+     "x": 540,
+     "y": 1760,
+     "s": 1.4
+    },
+    {
+     "d": "medalla",
+     "x": 560,
+     "y": 1450,
+     "s": 0.5
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "¡INVITADO A LA",
+    "CELEBRACIÓN!"
+   ],
+   "acento": 1,
+   "amb": "multitud"
+  },
+  {
+   "en": "¿Tienes un perro",
+   "tipo": "final",
+   "lineas": [
+    "¿TU PERRO ES",
+    "ASÍ DE LISTO?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1330,
+     "hora": "dia",
+     "semilla": 3
+    },
+    {
+     "d": "suelo",
+     "y": 1330,
+     "colores": [
+      "#5a8a3a",
+      "#2a4a1a"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "perro",
+     "raza": "collie",
+     "x": 540,
+     "y": 1720,
+     "s": 1.3
+    }
+   ],
+   "comentario": "El mío solo come 🐶"
+  }
+ ]
+}

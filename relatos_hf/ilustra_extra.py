@@ -402,3 +402,618 @@ def manzano(p, u, t):
     if p.get("cae_en") is not None:
         anim(t, f"#{u}m", "{y: 0}", "{y: 340, duration: 0.7, ease: 'bounce.out'}", p["cae_en"])
     return g(p, "".join(s), u)
+
+
+# ============================================================================ tanda 3 (historias 30 y 47-95)
+def _llama(u, x, y, k=1.0, t=None, idn="f"):
+    """Llama de vela pequeña con halo; parpadea si se pasa t."""
+    s = (f'<g id="{u}{idn}"><ellipse cx="{x}" cy="{y}" rx="{30 * k:.0f}" ry="{30 * k:.0f}" fill="#ffb347" opacity=".35" filter="url(#{u}blur6)"/>'
+         f'<path d="M{x},{y - 22 * k:.0f} Q{x + 9 * k:.0f},{y - 4 * k:.0f} {x},{y + 6 * k:.0f} Q{x - 9 * k:.0f},{y - 4 * k:.0f} {x},{y - 22 * k:.0f} Z" fill="#ffd36a"/>'
+         f'<path d="M{x},{y - 10 * k:.0f} Q{x + 4 * k:.0f},{y} {x},{y + 4 * k:.0f} Q{x - 4 * k:.0f},{y} {x},{y - 10 * k:.0f} Z" fill="#fff6d0"/></g>')
+    if t is not None:
+        vaiven(t, f"#{u}{idn}", "scaleY: 1.15, opacity: 0.8, transformOrigin: '50% 100%'", periodo=.35)
+    return s
+
+
+@dib("calabaza")
+def calabaza(p, u, t):
+    """Linterna tallada con cara y brasa adentro. tipo: nabo (Irlanda, Samhain) | calabaza."""
+    nabo = p.get("tipo", "calabaza") == "nabo"
+    c1, c2 = ("#efe6d2", "#b9a98a") if nabo else ("#f08a24", "#b0520e")
+    s = [f'<defs>{filtros(u)}{rad([(0, c1, 1), (1, c2, 1)], u + "c", "40%", "35%", "70%")}</defs>']
+    if nabo:
+        s.append(f'<path d="M-130,-20 Q-150,-170 -60,-220 Q0,-240 60,-220 Q150,-170 130,-20 Q60,10 0,8 Q-60,10 -130,-20 Z" fill="url(#{u}c)" {O}/>'
+                 f'<path d="M-60,-220 Q-20,-250 0,-232 Q20,-250 60,-220" fill="#a8549a" opacity=".75"/>'
+                 f'<path d="M0,-236 Q-10,-300 -40,-330 M0,-236 Q14,-310 40,-340" stroke="#5a7a3a" stroke-width="9" fill="none" stroke-linecap="round"/>')
+    else:
+        for k, dx in enumerate((-90, -40, 0, 40, 90)):
+            s.append(f'<ellipse cx="{dx}" cy="-110" rx="{80 if k in (0, 4) else 70}" ry="112" fill="url(#{u}c)" {O}/>')
+        s.append(f'<path d="M0,-218 Q-6,-260 14,-280" stroke="#4a5a2a" stroke-width="16" fill="none" stroke-linecap="round"/>')
+    cara = (f'<path d="M-70,-140 L-30,-140 L-50,-100 Z M30,-140 L70,-140 L50,-100 Z M-12,-96 L12,-96 L0,-76 Z '
+            f'M-80,-60 L-56,-40 L-36,-56 L-16,-36 L4,-56 L24,-36 L44,-56 L64,-40 L84,-60 Q60,-10 0,-12 Q-60,-10 -80,-60 Z"')
+    s.append(f'<path id="{u}cara" {cara[6:]} fill="#ffcf5a" stroke="#4a2a10" stroke-width="3"/>'
+             f'<circle cx="0" cy="-90" r="140" fill="#ff9a3c" opacity=".22" filter="url(#{u}blur40)"/>')
+    vaiven(t, f"#{u}cara", "opacity: 0.75", periodo=.4)
+    return g(p, "".join(s), u)
+
+
+@dib("muro_piedra")
+def muro_piedra(p, u, t):
+    """Muro bajo de piedras apiladas (campo irlandés) a lo ancho de la toma, en y."""
+    y, rng = p.get("y", 1500), random.Random(3)
+    s = [f'<rect x="-20" y="{y - 150}" width="1120" height="170" fill="#4a4a46"/>']
+    for fila in range(4):
+        x = -40 + fila % 2 * 40
+        while x < 1100:
+            w = rng.uniform(70, 130)
+            c = rng.choice(["#8a8a80", "#7a7a70", "#6a6a62", "#9a968a"])
+            s.append(f'<rect x="{x:.0f}" y="{y - 150 + fila * 40:.0f}" width="{w - 6:.0f}" height="36" rx="14" fill="{c}" {O3}/>'
+                     f'<path d="M{x + 8:.0f},{y - 142 + fila * 40:.0f} l{w * .5:.0f},0" stroke="#fff" stroke-opacity=".2" stroke-width="3"/>')
+            if rng.random() < .25:
+                s.append(f'<ellipse cx="{x + w / 2:.0f}" cy="{y - 150 + fila * 40:.0f}" rx="{w * .3:.0f}" ry="7" fill="#4a6a32" opacity=".8"/>')
+            x += w
+    return f'<g id="{u}">{"".join(s)}</g>'
+
+
+@dib("torta")
+def torta(p, u, t):
+    """Torta de cumpleaños de dos pisos con velas encendidas."""
+    s = [f'<defs>{filtros(u)}{lin("#f7e1ea", "#d9a9ba", u + "t", 0)}</defs>',
+         f'<ellipse cx="0" cy="0" rx="230" ry="26" fill="#e8e4dc" {O}/>',
+         f'<path d="M-190,-8 L-190,-140 Q0,-170 190,-140 L190,-8 Q0,20 -190,-8 Z" fill="url(#{u}t)" {O}/>',
+         f'<path d="M-190,-140 Q-150,-110 -120,-140 Q-90,-110 -60,-140 Q-30,-110 0,-140 Q30,-110 60,-140 Q90,-110 120,-140 Q150,-110 190,-140" fill="#fff" {O3}/>',
+         f'<path d="M-120,-150 L-120,-250 Q0,-270 120,-250 L120,-150" fill="url(#{u}t)" {O}/>',
+         f'<ellipse cx="0" cy="-252" rx="120" ry="18" fill="#fbeff4" {O3}/>']
+    for k, x in enumerate((-80, -40, 0, 40, 80)):
+        s.append(f'<rect x="{x - 6}" y="-320" width="12" height="64" fill="{["#5aa0e0", "#f0c040", "#e05a7a", "#7ac05a", "#a07ae0"][k]}" {O3}/>'
+                 + _llama(u, x, -332, 1.0, t if k == 2 else None, f"f{k}"))
+    s.append("".join(f'<circle cx="{random.Random(k).uniform(-180, 180):.0f}" cy="{random.Random(k + 9).uniform(-130, -30):.0f}" r="5" fill="{["#e05a7a", "#5aa0e0", "#f0c040"][k % 3]}"/>' for k in range(18)))
+    return g(p, "".join(s), u)
+
+
+@dib("caballete")
+def caballete(p, u, t):
+    """Caballete con lienzo. cuadro: girasoles | vinedo (rojo) | atletas | vacio."""
+    cu = p.get("cuadro", "girasoles")
+    s = [f'<path d="M-140,0 L-40,-560 M140,0 L40,-560 M0,-560 L0,0" stroke="#6a4a2a" stroke-width="18" stroke-linecap="round"/>'
+         f'<rect x="-170" y="-200" width="340" height="18" fill="#5a3a1e" {O3}/>',
+         f'<rect x="-160" y="-520" width="320" height="320" fill="#f2ead8" {O}/>']
+    rng = random.Random(7)
+    if cu == "girasoles":
+        s.append(f'<rect x="-150" y="-510" width="300" height="300" fill="#e6c25a"/><path d="M-60,-220 L-40,-300 L60,-300 L80,-220 Z" fill="#c98a3a" {O3}/>')
+        for k in range(7):
+            cx, cy = rng.uniform(-110, 110), rng.uniform(-470, -330)
+            s.append("".join(f'<ellipse cx="{cx + 26 * math.cos(a):.0f}" cy="{cy + 26 * math.sin(a):.0f}" rx="16" ry="7" transform="rotate({math.degrees(a):.0f} {cx + 26 * math.cos(a):.0f} {cy + 26 * math.sin(a):.0f})" fill="#f4a81c"/>'
+                             for a in [i * math.pi / 6 for i in range(12)]) + f'<circle cx="{cx:.0f}" cy="{cy:.0f}" r="16" fill="#6a3a12"/>')
+    elif cu == "vinedo":
+        s.append(f'<rect x="-150" y="-510" width="300" height="120" fill="#f0b040"/><circle cx="60" cy="-450" r="34" fill="#fff2a0"/>'
+                 f'<rect x="-150" y="-390" width="300" height="180" fill="#b8321e"/>'
+                 + "".join(f'<path d="M{-150 + k * 50},-210 Q{-120 + k * 40},-300 {-60 + k * 30},-390" stroke="#7a1a10" stroke-width="10" fill="none"/>' for k in range(7))
+                 + "".join(f'<circle cx="{rng.uniform(-140, 140):.0f}" cy="{rng.uniform(-380, -220):.0f}" r="6" fill="#2a3a8a"/>' for _ in range(16)))
+    elif cu == "atletas":
+        s.append(f'<rect x="-150" y="-510" width="300" height="300" fill="#c9b48a"/>'
+                 + "".join(f'<path d="M{x},-260 L{x + 10},-330 L{x - 10},-380 M{x + 10},-330 L{x + 40},-300 M{x + 10},-330 L{x - 20},-300 M{x - 10},-380 L{x + 30},-400 M{x - 10},-380 L{x - 40},-350" stroke="#5a3a22" stroke-width="10" stroke-linecap="round" fill="none"/>'
+                           f'<circle cx="{x - 14}" cy="-398" r="12" fill="#5a3a22"/>' for x in (-80, 20, 110)))
+    s.append(f'<rect x="-160" y="-520" width="320" height="320" fill="none" stroke="#2a1a0e" stroke-width="10"/>')
+    return g(p, "".join(s), u)
+
+
+@dib("girasoles")
+def girasoles(p, u, t):
+    """Campo de girasoles a lo ancho, desde y hacia abajo (las filas cercanas más grandes)."""
+    y0, rng = p.get("y", 1350), random.Random(2)
+    s = [f'<rect x="-20" y="{y0}" width="1120" height="{1940 - y0}" fill="#4a6a22"/>']
+    for fila in range(5):
+        yy, k = y0 + 20 + fila * fila * 40, .35 + fila * .3
+        for x in range(-40, 1120, int(120 * k)):
+            cx = x + rng.uniform(-10, 10)
+            r = 30 * k
+            s.append(f'<path d="M{cx:.0f},{yy + 140 * k:.0f} L{cx:.0f},{yy:.0f}" stroke="#3a5a1a" stroke-width="{8 * k:.0f}"/>'
+                     f'<ellipse cx="{cx - 20 * k:.0f}" cy="{yy + 70 * k:.0f}" rx="{24 * k:.0f}" ry="{10 * k:.0f}" fill="#4f7a22"/>'
+                     f'<circle cx="{cx:.0f}" cy="{yy:.0f}" r="{r * 1.7:.0f}" fill="#f4b41c" stroke="#c98a10" stroke-width="2"/>'
+                     f'<circle cx="{cx:.0f}" cy="{yy:.0f}" r="{r * .8:.0f}" fill="#5a2e10"/>')
+    return f'<g id="{u}">{"".join(s)}</g>'
+
+
+@dib("piano")
+def piano(p, u, t):
+    """Piano de cola negro, de costado, con la tapa abierta y partitura."""
+    s = (f'<defs>{lin("#3a3a40", "#0a0a0e", u + "n", 90)}</defs>'
+         f'<path d="M-260,-300 L-260,-180 L240,-180 Q300,-180 300,-240 Q300,-300 200,-310 Z" fill="url(#{u}n)" {O}/>'
+         f'<path d="M-250,-300 L160,-520 L200,-505 L-230,-290 Z" fill="#1a1a1e" {O}/>'
+         f'<path d="M-30,-410 L-30,-300" stroke="{TIN}" stroke-width="5"/>'
+         f'<rect x="-300" y="-250" width="60" height="22" fill="#f6f4ee" {O3}/>'
+         + "".join(f'<rect x="{-300 + k * 10}" y="-250" width="5" height="13" fill="#111"/>' for k in range(6))
+         + f'<rect x="-280" y="-330" width="70" height="52" fill="#f2ead8" {O3}/><path d="M-274,-318 l58,0 M-274,-306 l58,0 M-274,-294 l58,0" stroke="#555" stroke-width="1.5"/>'
+         f'<path d="M-230,-180 L-226,0 M200,-180 L196,0 M-20,-180 L-18,-10" stroke="#111" stroke-width="18" stroke-linecap="round"/>'
+         f'<path d="M-240,-292 L180,-300" stroke="#fff" stroke-opacity=".18" stroke-width="4"/>')
+    return g(p, s, u)
+
+
+@dib("trofeo")
+def trofeo(p, u, t):
+    """Copa dorada con figura alada (estilo Copa Jules Rimet) sobre base."""
+    s = (f'<defs>{filtros(u)}{lin("#fff2a0", "#b8860b", u + "o", 0)}</defs>'
+         f'<circle cx="0" cy="-200" r="200" fill="#ffd36a" opacity=".25" filter="url(#{u}blur40)"/>'
+         f'<path d="M-70,0 L-60,-70 L60,-70 L70,0 Z" fill="#2a5a8a" {O}/>'
+         f'<path d="M-24,-70 Q-40,-170 -20,-230 L20,-230 Q40,-170 24,-70 Z" fill="url(#{u}o)" {O}/>'
+         f'<path d="M-20,-200 Q-120,-260 -110,-360 Q-60,-300 -18,-280 Z M20,-200 Q120,-260 110,-360 Q60,-300 18,-280 Z" fill="url(#{u}o)" {O}/>'
+         f'<path d="M-80,-300 L80,-300 L60,-380 L-60,-380 Z" fill="url(#{u}o)" {O}/>'
+         f'<ellipse cx="0" cy="-380" rx="62" ry="12" fill="#e8c24a" {O3}/>'
+         f'<path id="{u}b" d="M-40,-340 L-30,-180" stroke="#fff" stroke-opacity=".6" stroke-width="6"/>')
+    vaiven(t, f"#{u}b", "opacity: 0.1", periodo=1.2)
+    return g(p, s, u)
+
+
+@dib("medalla")
+def medalla(p, u, t):
+    """Medalla de oro con cinta."""
+    s = (f'<defs>{lin("#fff2a0", "#b8860b", u + "o", 0)}</defs>'
+         f'<path d="M-60,-300 L-10,-120 L10,-120 L60,-300 L30,-300 L0,-170 L-30,-300 Z" fill="#1a4a9a" {O}/>'
+         f'<circle cx="0" cy="-80" r="80" fill="url(#{u}o)" {O}/><circle cx="0" cy="-80" r="60" fill="none" stroke="#a87a1a" stroke-width="4"/>'
+         f'<path d="M-20,-100 L0,-60 L20,-100" stroke="#a87a1a" stroke-width="6" fill="none"/>')
+    vaiven(t, f"#{u}", "rotation: 6, transformOrigin: '50% 0%'", periodo=1.6)
+    return g(p, s, u)
+
+
+@dib("podio")
+def podio(p, u, t):
+    """Podio de tres escalones con números."""
+    s = "".join(f'<rect x="{x}" y="{-h}" width="200" height="{h}" fill="{c}" {O}/><text x="{x + 100}" y="{-h + 80}" font-size="70" font-weight="900" text-anchor="middle" fill="#fff" font-family="Anton, sans-serif">{n}</text>'
+                for x, h, c, n in ((-300, 150, "#9aa0a8", 2), (-100, 230, "#d9b13a", 1), (100, 110, "#b0703a", 3)))
+    return g(p, s, u)
+
+
+@dib("hadas")
+def hadas(p, u, t):
+    """Hadas pequeñas de papel con alas, revoloteando alrededor de (x, y)."""
+    x0, y0, rng = p.get("x", 540), p.get("y", 1200), random.Random(4)
+    s = [f'<defs>{filtros(u)}</defs>']
+    for k in range(p.get("n", 4)):
+        x, y = x0 + rng.uniform(-260, 260), y0 + rng.uniform(-200, 160)
+        s.append(f'<g id="{u}h{k}"><circle cx="{x:.0f}" cy="{y:.0f}" r="50" fill="#fff6c0" opacity=".4" filter="url(#{u}blur18)"/>'
+                 f'<path d="M{x:.0f},{y:.0f} q-50,-40 -40,-70 q30,10 40,60 q10,-50 40,-60 q10,30 -40,70 Z" fill="#e8f4ff" opacity=".85" stroke="#8aa0c0" stroke-width="2"/>'
+                 f'<path d="M{x - 8:.0f},{y + 4:.0f} L{x + 8:.0f},{y + 4:.0f} L{x + 14:.0f},{y + 50:.0f} L{x - 14:.0f},{y + 50:.0f} Z" fill="#f2e6f2" stroke="{TIN}" stroke-width="2"/>'
+                 f'<circle cx="{x:.0f}" cy="{y - 8:.0f}" r="9" fill="#f6dcc4" stroke="{TIN}" stroke-width="2"/></g>')
+        vaiven(t, f"#{u}h{k}", f"y: {rng.uniform(-30, -12):.0f}, x: {rng.uniform(-14, 14):.0f}", periodo=rng.uniform(.8, 1.4))
+    return "".join(s)
+
+
+@dib("camara_antigua")
+def camara_antigua(p, u, t):
+    """Cámara de cajón de madera sobre trípode, con fuelle y lente."""
+    s = (f'<path d="M0,-260 L-110,0 M0,-260 L110,0 M0,-260 L10,0" stroke="#5a3a1e" stroke-width="12" stroke-linecap="round"/>'
+         f'<rect x="-90" y="-400" width="110" height="140" fill="#6a4a2a" {O}/><path d="M20,-390 L90,-370 L90,-290 L20,-270 Z" fill="#2a2a2e" {O}/>'
+         + "".join(f'<path d="M{30 + k * 15},-385 L{30 + k * 15},-275" stroke="#111" stroke-width="2"/>' for k in range(4))
+         + f'<circle cx="100" cy="-330" r="26" fill="#1a1a1e" {O}/><circle cx="100" cy="-330" r="14" fill="#3a5a7a"/><circle cx="94" cy="-336" r="5" fill="#fff" opacity=".7"/>'
+         f'<rect x="-70" y="-420" width="40" height="20" fill="#c9a24a" {O3}/>')
+    return g(p, s, u)
+
+
+@dib("muneca_trapo")
+def muneca_trapo(p, u, t):
+    """Muñeca de trapo sonriente con pelo de lana roja y vestido azul (como la Annabelle real)."""
+    s = (f'<path d="M-50,-10 L-40,-120 M50,-10 L40,-120" stroke="#f2f2f2" stroke-width="30" stroke-linecap="round"/>'
+         + "".join(f'<path d="M{x - 15},-30 l30,0" stroke="#c0392b" stroke-width="6"/>' for x in (-48, 48))
+         + f'<path d="M-80,-120 L-50,-260 L50,-260 L80,-120 Z" fill="#3a6aaa" {O}/><path d="M-60,-130 L60,-130 L50,-230 L-50,-230 Z" fill="#f6f4ee" opacity=".9"/>'
+         f'<path d="M-50,-250 L-110,-170 M50,-250 L110,-170" stroke="#f2e6dc" stroke-width="26" stroke-linecap="round"/>'
+         f'<circle cx="0" cy="-320" r="70" fill="#f6e6da" {O}/>'
+         + "".join(f'<circle cx="{70 * math.cos(a):.0f}" cy="{-320 - 60 * math.sin(a):.0f}" r="20" fill="#d6381e" {O3}/>' for a in [i * math.pi / 9 for i in range(-1, 11)])
+         + f'<circle cx="-24" cy="-326" r="9" fill="#111"/><circle cx="24" cy="-326" r="9" fill="#111"/>'
+         f'<path d="M-6,-306 L6,-306 L0,-296 Z" fill="#d6381e"/><path d="M-34,-290 Q0,-262 34,-290" stroke="#c0392b" stroke-width="5" fill="none"/>'
+         f'<circle cx="-40" cy="-296" r="10" fill="#f08a8a" opacity=".6"/><circle cx="40" cy="-296" r="10" fill="#f08a8a" opacity=".6"/>')
+    return g(p, s, u)
+
+
+@dib("mansion")
+def mansion(p, u, t):
+    """Casa grande. estilo: victoriana (Winchester, torres y añadidos) | amityville (techo holandés con dos ventanas
+    de cuarto de luna que parecen ojos). luces=True enciende ventanas."""
+    est, luces = p.get("estilo", "victoriana"), p.get("luces", True)
+    vl = "#ffcf6a" if luces else "#2a3040"
+    s = [f'<defs>{filtros(u)}</defs>']
+    if est == "amityville":
+        s.append(f'<rect x="-260" y="-360" width="520" height="360" fill="#e6dcc8" {O}/>'
+                 f'<path d="M-300,-360 L-220,-560 L220,-560 L300,-360 Z" fill="#3a2a24" {O}/>'
+                 f'<path d="M-200,-560 L0,-700 L200,-560 Z" fill="#2a1d18" {O}/>'
+                 f'<path d="M-130,-470 Q-80,-530 -30,-470 Z M30,-470 Q80,-530 130,-470 Z" fill="{vl}" {O}/>'
+                 f'<circle cx="-80" cy="-480" r="90" fill="#ffb347" opacity="{.3 if luces else 0}" filter="url(#{u}blur40)"/>'
+                 f'<circle cx="80" cy="-480" r="90" fill="#ffb347" opacity="{.3 if luces else 0}" filter="url(#{u}blur40)"/>'
+                 + "".join(f'<rect x="{x}" y="-300" width="80" height="110" fill="{vl if k % 2 else "#2a3040"}" {O3}/><rect x="{x - 14}" y="-300" width="12" height="110" fill="#1a3a2a"/>'
+                           for k, x in enumerate((-210, -60, 130)))
+                 + f'<rect x="-40" y="-150" width="80" height="150" fill="#3a2a1e" {O}/><rect x="-300" y="-40" width="600" height="40" fill="#cfc4b0" {O3}/>')
+    else:
+        for x, w, h in ((-420, 200, 380), (-230, 260, 520), (30, 220, 460), (240, 200, 360)):
+            s.append(f'<rect x="{x}" y="{-h}" width="{w}" height="{h}" fill="#8a7a6a" {O}/>'
+                     f'<path d="M{x - 20},{-h} L{x + w / 2},{-h - 140} L{x + w + 20},{-h} Z" fill="#3a2a3a" {O}/>'
+                     + "".join(f'<rect x="{x + 30 + c * 70}" y="{-h + 50 + r * 120}" width="40" height="70" fill="{vl if (c + r + x) % 3 else "#2a3040"}" {O3}/>'
+                               for c in range(int(w // 80)) for r in range(int(h // 140))))
+        s.append(f'<rect x="-70" y="-760" width="140" height="240" fill="#7a6a5a" {O}/><path d="M-90,-760 L0,-900 L90,-760 Z" fill="#2a1d2a" {O}/>'
+                 f'<rect x="-30" y="-700" width="60" height="90" fill="{vl}" {O3}/>'
+                 f'<path d="M-440,0 L-440,-40 L460,-40 L460,0 Z" fill="#5a4a3a" {O3}/>'
+                 + "".join(f'<path d="M{x},-40 l0,-60" stroke="#e6dcc8" stroke-width="8"/>' for x in range(-420, 450, 60)))
+    return g(p, "".join(s), u)
+
+
+@dib("osario")
+def osario(p, u, t):
+    """Pared de calaveras y huesos ordenados (catacumbas), a toda la toma, con túnel al fondo."""
+    rng = random.Random(9)
+    s = [f'<defs>{filtros(u)}{rad([(0, "#5a4a30", 1), (1, "#0d0a06", 1)], u + "f", "50%", "45%", "70%")}</defs>',
+         f'<rect x="0" y="0" width="1080" height="1920" fill="url(#{u}f)"/>',
+         f'<path d="M390,1500 L390,980 Q540,860 690,980 L690,1500 Z" fill="#070504"/>']
+    for lado in (-1, 1):
+        for fila in range(14):
+            yy = 500 + fila * 90
+            for c in range(5):
+                x = (540 + lado * (200 + c * 80 + fila * 4))
+                if fila % 3 == 0:
+                    s.append(f'<circle cx="{x:.0f}" cy="{yy:.0f}" r="34" fill="#d8cba8" {O3}/><circle cx="{x - 12:.0f}" cy="{yy - 2:.0f}" r="9" fill="#1a140c"/>'
+                             f'<circle cx="{x + 12:.0f}" cy="{yy - 2:.0f}" r="9" fill="#1a140c"/><path d="M{x - 4:.0f},{yy + 14:.0f} l4,-8 l4,8 Z" fill="#1a140c"/>')
+                else:
+                    s.append(f'<rect x="{x - 40:.0f}" y="{yy - 16:.0f}" width="80" height="32" rx="14" fill="{rng.choice(["#c9b88f", "#b8a67e", "#d8c9a4"])}" {O3}/>'
+                             f'<circle cx="{x - 40:.0f}" cy="{yy:.0f}" r="18" fill="#cdbd94" {O3}/>')
+    s.append(f'<rect x="0" y="1500" width="1080" height="420" fill="#2a2216"/><path d="M0,1500 L1080,1500" stroke="#000" stroke-width="6"/>')
+    return f'<g id="{u}">{"".join(s)}</g>'
+
+
+@dib("antorcha")
+def antorcha(p, u, t):
+    """Antorcha de pared con fuego que titila."""
+    s = (f'<defs>{filtros(u)}</defs><circle cx="0" cy="-200" r="220" fill="#ff8a2a" opacity=".3" filter="url(#{u}blur40)"/>'
+         f'<path d="M-14,0 L-24,-150 L24,-150 L14,0 Z" fill="#4a3020" {O}/><rect x="-34" y="-170" width="68" height="26" fill="#3a3a3e" {O3}/>'
+         f'<path id="{u}f" d="M0,-330 Q50,-240 30,-180 Q0,-160 -30,-180 Q-50,-240 0,-330 Z" fill="#ff9a2a"/>'
+         f'<path d="M0,-270 Q24,-220 14,-190 Q0,-180 -14,-190 Q-24,-220 0,-270 Z" fill="#ffe08a"/>')
+    vaiven(t, f"#{u}f", "scaleY: 1.15, scaleX: 0.9, transformOrigin: '50% 100%'", periodo=.3)
+    return g(p, s, u)
+
+
+@dib("mothman")
+def mothman(p, u, t):
+    """Criatura oscura gigante con alas y ojos rojos brillantes."""
+    s = (f'<defs>{filtros(u)}</defs>'
+         f'<g id="{u}a"><path d="M-40,-420 Q-300,-560 -460,-380 Q-360,-360 -300,-260 Q-220,-300 -140,-220 Q-90,-300 -40,-260 Z" fill="#0d0b10" stroke="#2a2030" stroke-width="3"/>'
+         f'<path d="M40,-420 Q300,-560 460,-380 Q360,-360 300,-260 Q220,-300 140,-220 Q90,-300 40,-260 Z" fill="#0d0b10" stroke="#2a2030" stroke-width="3"/></g>'
+         f'<path d="M-60,-440 Q0,-500 60,-440 L70,-180 L40,0 L10,0 L0,-150 L-10,0 L-40,0 L-70,-180 Z" fill="#0a090c"/>'
+         f'<circle cx="-24" cy="-420" r="60" fill="#ff1a1a" opacity=".45" filter="url(#{u}blur18)"/><circle cx="24" cy="-420" r="60" fill="#ff1a1a" opacity=".45" filter="url(#{u}blur18)"/>'
+         f'<ellipse cx="-24" cy="-420" rx="16" ry="11" fill="#ff3030"/><ellipse cx="24" cy="-420" rx="16" ry="11" fill="#ff3030"/>'
+         f'<circle cx="-22" cy="-422" r="4" fill="#fff"/><circle cx="26" cy="-422" r="4" fill="#fff"/>')
+    vaiven(t, f"#{u}a", "scaleY: 0.85, transformOrigin: '50% 70%'", periodo=1.1)
+    return g(p, s, u)
+
+
+@dib("puente")
+def puente(p, u, t):
+    """Puente colgante de acero sobre un río, a lo ancho en y. colapso=True lo quiebra al tiempo `en`."""
+    y = p.get("y", 1300)
+    s = [f'<g id="{u}p">',
+         f'<rect x="-20" y="{y}" width="1120" height="30" fill="#5a6068" {O}/>',
+         f'<rect x="230" y="{y - 420}" width="40" height="450" fill="#6a7078" {O}/><rect x="810" y="{y - 420}" width="40" height="450" fill="#6a7078" {O}/>',
+         f'<path d="M-20,{y - 200} Q120,{y - 30} 250,{y - 420} Q540,{y - 40} 830,{y - 420} Q960,{y - 30} 1100,{y - 200}" stroke="#8a9098" stroke-width="12" fill="none"/>']
+    for x in range(0, 1100, 40):
+        dy = abs(((x - 250) % 580) - 290) / 290
+        s.append(f'<line x1="{x}" y1="{y}" x2="{x}" y2="{y - 60 - 300 * dy ** 2:.0f}" stroke="#8a9098" stroke-width="3"/>')
+    s.append('</g>')
+    s.append(f'<rect x="-20" y="{y + 160}" width="1120" height="{1940 - y}" fill="#14202a"/>')
+    if p.get("colapso"):
+        t.js.append(f'tl.to("#{u}p", {{rotation: 8, y: 260, transformOrigin: "50% 100%", duration: 1.2, ease: "power2.in"}}, {t.at(p.get("en", 1.0))});')
+    return f'<g id="{u}">{"".join(s)}</g>'
+
+
+@dib("auto_60")
+def auto_60(p, u, t):
+    """Auto de los años 60 de costado, con faros encendidos (mirando a la derecha)."""
+    col = p.get("color", "#2a4a6a")
+    s = (f'<defs>{filtros(u)}{lin(col, "#0d1824", u + "c")}</defs>'
+         f'<path d="M-300,-60 L-290,-140 L-160,-150 L-90,-230 L120,-230 L200,-150 L310,-130 L320,-60 Z" fill="url(#{u}c)" {O}/>'
+         f'<path d="M-80,-216 L110,-216 L170,-152 L-140,-152 Z" fill="#9ab8d0" opacity=".85" {O3}/><path d="M20,-216 L20,-152" stroke="{TIN}" stroke-width="5"/>'
+         f'<path d="M-300,-100 L320,-100" stroke="#d8dce0" stroke-width="5"/>'
+         f'<circle cx="-180" cy="-50" r="56" fill="#141414" {O}/><circle cx="-180" cy="-50" r="24" fill="#b8bcc0"/>'
+         f'<circle cx="200" cy="-50" r="56" fill="#141414" {O}/><circle cx="200" cy="-50" r="24" fill="#b8bcc0"/>'
+         f'<path d="M318,-120 L700,-200 L700,0 L318,-80 Z" fill="#fff6c0" opacity=".25" filter="url(#{u}blur18)"/><circle cx="312" cy="-110" r="12" fill="#fff6c0"/>')
+    if p.get("mov") == "avanza":
+        deriva(t, f"#{u}", f"x: '+={p.get('avance', 200)}'")
+    return g(p, s, u)
+
+
+@dib("diablo_jersey")
+def diablo_jersey(p, u, t):
+    """Criatura alada con cabeza de caballo, cuernos, patas con pezuñas y cola (leyenda de Nueva Jersey)."""
+    s = (f'<defs>{filtros(u)}</defs>'
+         f'<g id="{u}a"><path d="M-30,-300 Q-260,-460 -380,-300 Q-300,-300 -260,-220 Q-180,-260 -110,-200 Q-70,-260 -30,-230 Z" fill="#1a1012" stroke="#3a2a2a" stroke-width="3"/>'
+         f'<path d="M30,-300 Q260,-460 380,-300 Q300,-300 260,-220 Q180,-260 110,-200 Q70,-260 30,-230 Z" fill="#1a1012" stroke="#3a2a2a" stroke-width="3"/></g>'
+         f'<path d="M-40,-320 Q0,-340 40,-320 L50,-140 Q0,-120 -50,-140 Z" fill="#2a1a16" {O}/>'
+         f'<path d="M20,-320 Q40,-420 90,-430 Q140,-420 150,-380 L110,-360 Q70,-370 50,-330 Z" fill="#2a1a16" {O}/>'
+         f'<path d="M70,-430 L60,-480 L84,-436 M100,-432 L110,-484 L114,-432" stroke="#5a4a3a" stroke-width="7" fill="none"/>'
+         f'<circle cx="112" cy="-404" r="7" fill="#ff3030"/>'
+         f'<path d="M-30,-140 L-50,-40 L-40,0 M30,-140 L50,-40 L40,0" stroke="#2a1a16" stroke-width="16" fill="none" stroke-linecap="round"/>'
+         f'<path d="M-50,0 l20,0 M30,0 l20,0" stroke="#111" stroke-width="10"/>'
+         f'<path d="M-40,-160 Q-160,-120 -150,-40 Q-140,0 -180,10" stroke="#2a1a16" stroke-width="8" fill="none"/><path d="M-186,4 l-14,-14 l20,-4 Z" fill="#2a1a16"/>')
+    vaiven(t, f"#{u}a", "scaleY: 0.8, transformOrigin: '50% 80%'", periodo=.9)
+    if p.get("vuela"):
+        vaiven(t, f"#{u}", "y: -40", periodo=1.8)
+    return g(p, s, u)
+
+
+@dib("slender")
+def slender(p, u, t):
+    """Figura altísima y delgada, sin rostro, de traje negro (borrosa al fondo)."""
+    s = (f'<defs>{filtros(u)}</defs><g filter="url(#{u}blur2)" opacity="{p.get("op", .85)}">'
+         f'<path d="M-14,0 L-10,-460 L10,-460 L14,0 Z" fill="#0b0b0e"/><path d="M-34,-460 L-26,-860 Q0,-880 26,-860 L34,-460 Z" fill="#0b0b0e"/>'
+         f'<path d="M-6,-860 L0,-800 L6,-860 Z" fill="#f2f2f2"/><path d="M-2,-850 L2,-850 L3,-780 L-3,-780 Z" fill="#7a1a1a"/>'
+         f'<path d="M-30,-850 Q-60,-700 -70,-430 M30,-850 Q60,-700 70,-430" stroke="#0b0b0e" stroke-width="16" fill="none"/>'
+         f'<ellipse cx="0" cy="-920" rx="34" ry="46" fill="#ecebe6"/></g>')
+    return g(p, s, u)
+
+
+@dib("gigante_piedra")
+def gigante_piedra(p, u, t):
+    """Gigante de piedra (yeso) de 3 m acostado en una fosa de tierra."""
+    s = (f'<defs>{lin("#bdb6a6", "#7a7466", u + "p")}</defs>'
+         f'<ellipse cx="0" cy="-40" rx="470" ry="90" fill="#3a2a1a" {O}/>'
+         f'<path d="M-380,-70 Q-420,-110 -380,-140 Q-330,-160 -300,-120 L-250,-110 Q-150,-150 0,-140 Q150,-150 280,-120 L380,-110 Q420,-90 380,-70 L280,-60 Q150,-40 0,-50 Q-150,-40 -280,-60 Z" fill="url(#{u}p)" {O}/>'
+         f'<path d="M-120,-130 Q-100,-90 -120,-60 M60,-140 Q80,-100 60,-55 M-300,-120 Q-280,-110 -300,-90" stroke="#5a5448" stroke-width="3" fill="none"/>'
+         f'<path d="M-200,-90 Q-140,-80 -60,-90 M120,-90 Q200,-80 260,-90" stroke="#fff" stroke-opacity=".25" stroke-width="5" fill="none"/>')
+    return g(p, s, u)
+
+
+@dib("trigal")
+def trigal(p, u, t):
+    """Campo de trigo en perspectiva desde y hacia abajo, con círculo gigante (circulo=True)."""
+    y0, rng = p.get("y", 1250), random.Random(6)
+    noche = p.get("noche", False)
+    c1, c2 = ("#6a6a3a", "#2a2a14") if noche else ("#e6c25a", "#a8822a")
+    s = [f'<defs>{lin(c1, c2, u + "t")}</defs><rect x="-20" y="{y0}" width="1120" height="{1940 - y0}" fill="url(#{u}t)"/>']
+    for k in range(70):
+        yy = y0 + (k / 70) ** 1.6 * (1920 - y0)
+        s.append(f'<path d="M-20,{yy:.0f} L1100,{yy:.0f}" stroke="#000" stroke-opacity=".08" stroke-width="{1 + k / 20:.1f}"/>')
+    if p.get("circulo", True):
+        cy = y0 + (1920 - y0) * .45
+        for r, op in ((380, .9), (300, 0), (220, .9), (120, 0), (60, .9)):
+            s.append(f'<ellipse cx="540" cy="{cy:.0f}" rx="{r}" ry="{r * .3:.0f}" fill="{"#c9a44a" if not noche else "#4a4a26"}" opacity="{op}" stroke="{c2}" stroke-width="3"/>')
+        s.append(f'<ellipse cx="540" cy="{cy:.0f}" rx="300" ry="90" fill="none" stroke="{c1}" stroke-width="40"/>')
+    for k in range(60):
+        x, yy = rng.uniform(0, 1080), rng.uniform(1700, 1920)
+        s.append(f'<path d="M{x:.0f},{yy + 120:.0f} Q{x + 6:.0f},{yy + 40:.0f} {x + 12:.0f},{yy:.0f}" stroke="{c2}" stroke-width="3" fill="none"/><ellipse cx="{x + 12:.0f}" cy="{yy - 12:.0f}" rx="5" ry="16" fill="{c1}"/>')
+    return f'<g id="{u}">{"".join(s)}</g>'
+
+
+@dib("naipes")
+def naipes(p, u, t):
+    """Abanico de cartas hanafuda pintadas (flores, luna, grulla)."""
+    motivos = ['<circle cx="0" cy="-110" r="34" fill="#f2f2f2"/><rect x="-60" y="-80" width="120" height="70" fill="#c0392b"/>',
+               '<path d="M-40,-60 Q0,-170 40,-60" stroke="#2a6a2a" stroke-width="8" fill="none"/><circle cx="-20" cy="-120" r="16" fill="#e05a8a"/><circle cx="20" cy="-100" r="14" fill="#e05a8a"/>',
+               '<path d="M-50,-40 L0,-150 L50,-40 Z" fill="#2a3a6a"/><circle cx="0" cy="-160" r="16" fill="#d6381e"/>',
+               '<circle cx="-10" cy="-120" r="24" fill="#c0392b"/><path d="M-60,-60 Q0,-90 60,-60" stroke="#111" stroke-width="10"/>']
+    s = "".join(f'<g transform="rotate({(k - 1.5) * 16})"><rect x="-70" y="-200" width="140" height="200" rx="10" fill="#f4e8cc" {O}/>'
+                f'<rect x="-60" y="-190" width="120" height="180" fill="#1a1a1a"/><g>{m}</g></g>' for k, m in enumerate(motivos))
+    return g(p, s, u)
+
+
+@dib("farol")
+def farol(p, u, t):
+    """Farol de papel rojo colgante (Japón), con luz cálida y vaivén."""
+    s = (f'<defs>{filtros(u)}</defs><line x1="0" y1="-400" x2="0" y2="-240" stroke="#2a1a10" stroke-width="4"/>'
+         f'<circle cx="0" cy="-160" r="150" fill="#ff8a3a" opacity=".3" filter="url(#{u}blur40)"/>'
+         f'<rect x="-40" y="-250" width="80" height="16" fill="#1a1a1a"/><rect x="-40" y="-70" width="80" height="16" fill="#1a1a1a"/>'
+         f'<ellipse cx="0" cy="-160" rx="80" ry="100" fill="#d83a2a" {O}/>'
+         + "".join(f'<path d="M-80,{-160 + k * 22} Q0,{-150 + k * 22} 80,{-160 + k * 22}" stroke="#8a1a10" stroke-width="2" fill="none"/>' for k in range(-3, 4))
+         + '<text x="0" y="-140" font-size="60" text-anchor="middle" fill="#1a1a1a" font-family="serif">任</text>')
+    vaiven(t, f"#{u}", "rotation: 5, transformOrigin: '50% 0%'", periodo=2.0)
+    return g(p, s, u, origen=(0, -400))
+
+
+@dib("tetris")
+def tetris(p, u, t):
+    """Computadora soviética con pantalla verde y piezas de bloques cayendo (sin marcas)."""
+    s = [f'<defs>{filtros(u)}</defs><rect x="-260" y="-520" width="520" height="440" rx="20" fill="#cfc6b0" {O}/>'
+         f'<rect x="-210" y="-480" width="420" height="330" rx="16" fill="#0a1a0c" {O3}/>'
+         f'<rect x="-210" y="-480" width="420" height="330" rx="16" fill="#2aff6a" opacity=".07"/>'
+         f'<rect x="-300" y="-80" width="600" height="80" fill="#b8ae98" {O}/>' + "".join(f'<rect x="{-280 + k * 46}" y="-64" width="38" height="22" fill="#e6dcc8" {O3}/>' for k in range(12))]
+    col = "#2aff6a"
+    piezas = [[(0, 0), (1, 0), (2, 0), (1, 1)], [(0, 0), (0, 1), (1, 1), (2, 1)], [(0, 0), (1, 0), (0, 1), (1, 1)], [(0, 0), (1, 0), (2, 0), (3, 0)]]
+    for k, pz in enumerate(piezas):
+        x0, y0 = -150 + k * 80, -460
+        s.append(f'<g id="{u}p{k}">' + "".join(f'<rect x="{x0 + a * 26}" y="{y0 + b * 26}" width="24" height="24" fill="none" stroke="{col}" stroke-width="3"/>' for a, b in pz) + '</g>')
+        anim(t, f"#{u}p{k}", "{y: 0}", f"{{y: {200 - k * 26}, duration: {max(.5, t.dur * (.5 + k * .12)):.2f}, ease: 'steps(8)'}}")
+    s.append("".join(f'<rect x="{-200 + c * 26}" y="{-200 + r * 26}" width="24" height="24" fill="none" stroke="{col}" stroke-width="3"/>'
+                     for r in range(2) for c in range(15) if (c + r * 3) % 7))
+    return g(p, "".join(s), u)
+
+
+@dib("osciloscopio")
+def osciloscopio(p, u, t):
+    """Osciloscopio de 1958 con pantalla redonda verde: tenis visto de costado (pelota que rebota) y dos controles."""
+    s = (f'<defs>{filtros(u)}</defs><rect x="-260" y="-560" width="520" height="460" rx="20" fill="#5a6068" {O}/>'
+         f'<circle cx="-40" cy="-330" r="180" fill="#04140a" {O}/><circle cx="-40" cy="-330" r="180" fill="#2aff6a" opacity=".08"/>'
+         f'<path d="M-200,-240 L120,-240 M-40,-240 L-40,-300" stroke="#5cff8a" stroke-width="4"/>'
+         f'<circle id="{u}b" cx="-170" cy="-300" r="9" fill="#bfffcf" filter="url(#{u}blur2)"/>'
+         + "".join(f'<circle cx="170" cy="{-480 + k * 80}" r="22" fill="#1a1a1e" {O3}/>' for k in range(4))
+         + "".join(f'<g transform="translate({x},0)"><rect x="-50" y="-60" width="100" height="60" rx="10" fill="#2a2a2e" {O}/><circle cx="0" cy="-30" r="18" fill="#c9c9c9" {O3}/></g>' for x in (-180, 180)))
+    t.js.append(f'tl.to("#{u}b", {{keyframes: [{{x: 120, y: -50, duration: .5}}, {{x: 240, y: 60, duration: .5}}, {{x: 120, y: -50, duration: .5}}, {{x: 0, y: 0, duration: .5}}], repeat: {max(1, int(t.dur / 2))}, ease: "sine.inOut"}}, {t.at(0)});')
+    return g(p, s, u)
+
+
+@dib("tv_tubo")
+def tv_tubo(p, u, t):
+    """Televisor de tubo. destellos=True alterna rojo y azul muy rápido; si no, muestra `color` de pantalla."""
+    s = (f'<defs>{filtros(u)}</defs><rect x="-260" y="-460" width="520" height="400" rx="30" fill="#3a3a40" {O}/>'
+         f'<rect id="{u}s" x="-220" y="-420" width="380" height="320" rx="30" fill="{p.get("color", "#2a3a5a")}" {O3}/>'
+         f'<rect x="-220" y="-420" width="380" height="320" rx="30" fill="url(#{u}g)" opacity=".0"/>'
+         f'<circle cx="210" cy="-380" r="16" fill="#1a1a1e"/><circle cx="210" cy="-330" r="16" fill="#1a1a1e"/>'
+         f'<path d="M-200,-60 L-220,0 M180,-60 L200,0" stroke="#2a2a2e" stroke-width="12"/>'
+         f'<path d="M-180,-400 Q-100,-410 -60,-380" stroke="#fff" stroke-opacity=".25" stroke-width="6" fill="none"/>')
+    if p.get("destellos"):
+        s += f'<rect id="{u}h" x="-1000" y="-1600" width="2200" height="2200" fill="#ff2a2a" opacity="0" style="mix-blend-mode:screen"/>'
+        n = int(min(5, t.dur) / .12)
+        t.js.append(f'tl.to("#{u}s", {{keyframes: [{{fill: "#ff2020", duration: .06}}, {{fill: "#2050ff", duration: .06}}], repeat: {n}}}, {t.at(p.get("en", .3))});')
+        t.js.append(f'tl.to("#{u}h", {{keyframes: [{{opacity: .25, fill: "#ff2020", duration: .06}}, {{opacity: .2, fill: "#2050ff", duration: .06}}], repeat: {n}}}, {t.at(p.get("en", .3))});')
+    return g(p, s, u)
+
+
+@dib("notas")
+def notas(p, u, t):
+    """Notas musicales flotando (distorsion=True las tiñe de morado y las hace temblar)."""
+    rng, dist = random.Random(8), p.get("distorsion", False)
+    col = "#b47aff" if dist else p.get("color", "#ffffff")
+    s = []
+    for k in range(p.get("n", 7)):
+        x, y = rng.uniform(150, 930), rng.uniform(500, 1300)
+        s.append(f'<g id="{u}n{k}"><ellipse cx="{x:.0f}" cy="{y:.0f}" rx="22" ry="16" fill="{col}" transform="rotate(-20 {x:.0f} {y:.0f})"/>'
+                 f'<path d="M{x + 20:.0f},{y:.0f} L{x + 20:.0f},{y - 90:.0f} Q{x + 50:.0f},{y - 70:.0f} {x + 48:.0f},{y - 40:.0f}" stroke="{col}" stroke-width="7" fill="none"/></g>')
+        vaiven(t, f"#{u}n{k}", f"y: {rng.uniform(-40, -15):.0f}, rotation: {rng.uniform(-14, 14) if dist else 4:.0f}", periodo=rng.uniform(.25, .5) if dist else rng.uniform(1.2, 2))
+    return "".join(s)
+
+
+@dib("torre_lapidas")
+def torre_lapidas(p, u, t):
+    """Pueblo pixelado morado con torre de lápidas bajo la luna (estilo 8 bits genérico)."""
+    px = 30
+    s = [f'<rect x="0" y="0" width="1080" height="1920" fill="#2a1a3a"/><rect x="780" y="240" width="150" height="150" fill="#f2e6ff"/>']
+    for r in range(12):
+        for c in range(7):
+            x, y = 330 + c * px * 2, 1500 - r * px * 2
+            s.append(f'<rect x="{x}" y="{y}" width="{px * 2 - 4}" height="{px * 2 - 4}" fill="{"#6a4a8a" if (r + c) % 2 else "#5a3a7a"}"/>')
+    s.append('<rect x="300" y="620" width="480" height="80" fill="#3a2a4a"/><rect x="420" y="540" width="240" height="80" fill="#3a2a4a"/>')
+    for k in range(10):
+        x, y = 120 + (k % 5) * 200, 1620 + (k // 5) * 150
+        s.append(f'<rect x="{x}" y="{y}" width="60" height="90" fill="#a8a0b8"/><rect x="{x + 20}" y="{y + 20}" width="20" height="40" fill="#6a6078"/>')
+    s.append('<rect x="0" y="1590" width="1080" height="12" fill="#4a3a5a"/>')
+    return f'<g id="{u}">{"".join(s)}</g>'
+
+
+@dib("chimenea")
+def chimenea(p, u, t):
+    """Chimenea de ladrillo con fuego, repisa y medias colgadas (Navidad si navidad=True)."""
+    s = [f'<defs>{filtros(u)}</defs><rect x="-300" y="-520" width="600" height="520" fill="#8a3a2a" {O}/>']
+    s.append("".join(f'<rect x="{-300 + (r % 2) * 30 + c * 60}" y="{-520 + r * 30}" width="56" height="26" fill="#a24a34" opacity=".8"/>' for r in range(17) for c in range(10) if -300 + (r % 2) * 30 + c * 60 < 270))
+    s.append(f'<rect x="-340" y="-540" width="680" height="40" fill="#5a3a22" {O}/><path d="M-170,0 L-170,-300 Q0,-380 170,-300 L170,0 Z" fill="#140a06" {O}/>'
+             f'<circle cx="0" cy="-100" r="200" fill="#ff8a2a" opacity=".35" filter="url(#{u}blur40)"/>'
+             f'<path id="{u}f" d="M-90,-20 Q-100,-120 -40,-180 Q-30,-120 0,-200 Q30,-130 50,-170 Q100,-110 90,-20 Z" fill="#ff9a2a"/>'
+             f'<path d="M-50,-20 Q-50,-90 -10,-120 Q20,-80 50,-20 Z" fill="#ffe08a"/>'
+             f'<rect x="-110" y="-30" width="220" height="24" rx="10" fill="#4a2a14" {O3}/>')
+    vaiven(t, f"#{u}f", "scaleY: 1.12, transformOrigin: '50% 100%'", periodo=.35)
+    if p.get("navidad", True):
+        for k, x in enumerate((-220, -80, 80, 220)):
+            s.append(f'<path d="M{x - 26},-500 L{x + 20},-500 L{x + 20},-400 L{x + 44},-380 L{x + 30},-350 L{x - 26},-380 Z" fill="{["#c0392b", "#2a7a3a", "#c0392b", "#2a7a3a"][k]}" {O3}/>'
+                     f'<rect x="{x - 30}" y="-510" width="54" height="20" fill="#f6f4ee" {O3}/>')
+    return g(p, "".join(s), u)
+
+
+@dib("butacas")
+def butacas(p, u, t):
+    """Primer plano: filas de butacas de cine/teatro vistas de atrás con siluetas de público."""
+    rng = random.Random(5)
+    s = []
+    for fila in range(3):
+        y, k = 1560 + fila * 150, 1 + fila * .3
+        for x in range(-60, 1140, int(150 * k)):
+            s.append(f'<rect x="{x}" y="{y}" width="{130 * k:.0f}" height="{200 * k:.0f}" rx="18" fill="#6a1a22" {O3}/>')
+            if rng.random() < .75:
+                s.append(f'<circle cx="{x + 65 * k:.0f}" cy="{y - 40 * k:.0f}" r="{38 * k:.0f}" fill="#0b0b0e"/><path d="M{x + 10 * k:.0f},{y + 10:.0f} Q{x + 65 * k:.0f},{y - 20 * k:.0f} {x + 120 * k:.0f},{y + 10:.0f}" fill="#0b0b0e"/>')
+    return f'<g id="{u}">{"".join(s)}</g>'
+
+
+@dib("arbusto")
+def arbusto(p, u, t):
+    """Arbusto de jardín; paquete=True asoma por delante un paquete envuelto en papel de diario con brillo dorado."""
+    s = [f'<defs>{filtros(u)}</defs>']
+    rng = random.Random(1)
+    for k in range(14):
+        a = k / 14 * math.pi
+        s.append(f'<circle cx="{-200 + 400 * k / 13 + rng.uniform(-20, 20):.0f}" cy="{-60 - 180 * math.sin(a) + rng.uniform(-20, 20):.0f}" r="{rng.uniform(70, 100):.0f}" fill="{rng.choice(["#2e5a22", "#3a6a2a", "#264a1c"])}"/>')
+    s.append("".join(f'<ellipse cx="{rng.uniform(-220, 220):.0f}" cy="{rng.uniform(-280, -40):.0f}" rx="16" ry="8" fill="#5a8a3a" opacity=".7"/>' for _ in range(30)))
+    s.append('<path d="M-260,0 L260,0" stroke="#1a2a10" stroke-width="10"/>')
+    if p.get("paquete"):
+        s.append(f'<circle cx="60" cy="-120" r="60" fill="#ffd36a" opacity=".45" filter="url(#{u}blur18)"/>'
+                 f'<path d="M-40,-10 L-50,-110 L90,-120 L100,-10 Z" fill="#d8d2c0" {O}/>'
+                 + "".join(f'<path d="M-40,{-100 + k * 16} l130,-4" stroke="#555" stroke-width="2"/>' for k in range(6))
+                 + '<path d="M50,-118 L70,-118 L66,-150 L54,-150 Z" fill="#e8c24a"/>')
+    return g(p, "".join(s), u)
+
+
+@dib("ola")
+def ola(p, u, t):
+    """Ola gigante (tsunami) que avanza desde la izquierda."""
+    s = (f'<defs>{lin("#2a6a8a", "#0a2a3a", u + "o")}</defs>'
+         f'<path d="M-700,0 L-700,-600 Q-300,-820 0,-700 Q220,-620 180,-480 Q140,-560 40,-540 Q120,-420 60,-300 Q200,-200 400,0 Z" fill="url(#{u}o)" {O}/>'
+         f'<path d="M0,-700 Q220,-620 180,-480 Q140,-560 40,-540" stroke="#e6f4ff" stroke-width="22" fill="none" stroke-linecap="round"/>'
+         + "".join(f'<circle cx="{random.Random(k).uniform(0, 220):.0f}" cy="{random.Random(k + 1).uniform(-700, -480):.0f}" r="{random.Random(k + 2).uniform(6, 16):.0f}" fill="#fff" opacity=".8"/>' for k in range(16)))
+    deriva(t, f"#{u}", f"x: '+={p.get('avance', 300)}'", ease="power1.in")
+    return g(p, s, u)
+
+
+@dib("sabana")
+def sabana(p, u, t):
+    """Sábana blanca que se levanta sola y flota en el aire (fantasma de la granja Bell)."""
+    s = (f'<defs>{filtros(u)}</defs><g id="{u}s"><path d="M-220,0 Q-240,-120 -160,-180 Q0,-240 160,-180 Q240,-120 220,0 Q180,-40 140,0 Q100,-50 60,0 Q20,-50 -20,0 Q-60,-50 -100,0 Q-140,-50 -180,0 Z" '
+         f'fill="#f2f0ea" opacity=".92" {O3}/><path d="M-120,-160 Q-60,-60 -80,-10 M80,-170 Q40,-80 60,-10" stroke="#c8c4b8" stroke-width="5" fill="none"/></g>')
+    anim(t, f"#{u}s", "{y: 80, rotation: 0}", f"{{y: -160, rotation: -6, duration: {max(.6, t.dur * .7):.2f}, ease: 'sine.inOut'}}", dt=p.get("en", .4))
+    return g(p, s, u)
+
+
+@dib("craneo_fosil")
+def craneo_fosil(p, u, t):
+    """Cráneo humano marrón con mandíbula de simio (fraude de Piltdown), sobre mesa, con lupa opcional."""
+    s = (f'<defs>{lin("#a8784a", "#5a3a1e", u + "c", 0)}</defs>'
+         f'<path d="M-140,-120 Q-150,-280 0,-300 Q150,-290 150,-150 Q140,-100 100,-90 L-90,-90 Q-130,-90 -140,-120 Z" fill="url(#{u}c)" {O}/>'
+         f'<ellipse cx="-50" cy="-170" rx="34" ry="28" fill="#2a1a0e"/><ellipse cx="50" cy="-170" rx="34" ry="28" fill="#2a1a0e"/>'
+         f'<path d="M-10,-140 L0,-112 L10,-140 Z" fill="#2a1a0e"/>'
+         f'<path d="M-110,-80 Q-120,-10 -60,0 L80,0 Q140,-10 130,-80 L100,-90 Q80,-40 0,-40 Q-80,-40 -90,-80 Z" fill="#7a4e26" {O}/>'
+         + "".join(f'<rect x="{-60 + k * 22}" y="-62" width="16" height="20" fill="#d8c89a" {O3}/>' for k in range(6))
+         + '<path d="M-120,-230 Q-60,-260 20,-250" stroke="#fff" stroke-opacity=".2" stroke-width="6" fill="none"/>'
+         '<path d="M-150,-200 Q-80,-190 -40,-230 M40,-280 Q60,-230 110,-220" stroke="#3a2210" stroke-width="2" fill="none"/>')
+    if p.get("lupa"):
+        s += f'<circle cx="230" cy="-140" r="70" fill="#cfe6ff" fill-opacity=".25" stroke="#3a3a3e" stroke-width="12"/><path d="M280,-90 L360,0" stroke="#5a3a1e" stroke-width="20" stroke-linecap="round"/>'
+    return g(p, s, u)
+
+
+@dib("pasaporte")
+def pasaporte(p, u, t):
+    """Pasaporte antiguo abierto de un país (texto), con sellos."""
+    pais = p.get("pais", "TAURED")
+    s = (f'<rect x="-260" y="-340" width="520" height="340" rx="14" fill="#5a1a22" {O}/>'
+         f'<rect x="-246" y="-326" width="240" height="312" fill="#efe6cf"/><rect x="6" y="-326" width="240" height="312" fill="#f4ecd8"/>'
+         f'<text x="-126" y="-250" font-size="34" font-weight="900" text-anchor="middle" fill="#5a1a22" font-family="serif">{pais}</text>'
+         f'<rect x="-200" y="-220" width="140" height="170" fill="#c8bca0" {O3}/><circle cx="-130" cy="-170" r="34" fill="#8a7a62"/><path d="M-185,-60 Q-130,-130 -75,-60 Z" fill="#8a7a62"/>'
+         + "".join(f'<path d="M30,{-290 + k * 30} l190,0" stroke="#9a8a6a" stroke-width="2"/>' for k in range(8))
+         + '<circle cx="130" cy="-100" r="50" fill="none" stroke="#2a4a8a" stroke-width="6" opacity=".7"/><text x="130" y="-90" font-size="22" text-anchor="middle" fill="#2a4a8a" opacity=".8" font-family="sans-serif">1954</text>')
+    return g(p, s, u)
+
+
+@dib("momia_gto")
+def momia_gto(p, u, t):
+    """Momia natural de pie (Guanajuato), piel reseca y restos de ropa, boca abierta."""
+    s = (f'<defs>{lin("#a89070", "#6a5238", u + "p", 0)}</defs>'
+         f'<path d="M-40,0 L-34,-200 L-4,-200 L-8,0 Z M8,0 L4,-200 L34,-200 L40,0 Z" fill="url(#{u}p)" {O}/>'
+         f'<path d="M-60,-200 L-50,-400 Q0,-420 50,-400 L60,-200 Z" fill="url(#{u}p)" {O}/>'
+         + "".join(f'<path d="M-40,{-380 + k * 26} Q0,{-370 + k * 26} 40,{-380 + k * 26}" stroke="#4a3a28" stroke-width="2" fill="none"/>' for k in range(6))
+         + f'<path d="M-62,-300 L-56,-200 L60,-200 L64,-300 Q30,-260 0,-290 Q-30,-260 -62,-300 Z" fill="#5a4a6a" opacity=".85" {O3}/>'
+         f'<path d="M-50,-390 Q-90,-300 -70,-200 M50,-390 Q90,-300 70,-200" stroke="#7a6248" stroke-width="22" stroke-linecap="round" fill="none"/>'
+         f'<ellipse cx="0" cy="-460" rx="44" ry="56" fill="url(#{u}p)" {O}/>'
+         f'<ellipse cx="-16" cy="-470" rx="10" ry="12" fill="#1a120a"/><ellipse cx="16" cy="-470" rx="10" ry="12" fill="#1a120a"/>'
+         f'<ellipse cx="0" cy="-424" rx="14" ry="20" fill="#1a120a"/><path d="M-40,-500 Q0,-530 40,-500" stroke="#3a2a1a" stroke-width="10" fill="none"/>')
+    return g(p, s, u)
+
+
+@dib("polybius")
+def polybius(p, u, t):
+    """Máquina arcade negra sin marcas con espirales psicodélicas que giran en la pantalla."""
+    s = (f'<defs>{filtros(u)}</defs><path d="M-160,0 L-160,-560 L-120,-640 L120,-640 L160,-560 L160,0 Z" fill="#0d0d10" {O}/>'
+         f'<rect x="-120" y="-540" width="240" height="200" fill="#000" {O3}/>'
+         f'<g id="{u}e" transform="translate(0,-440)">' + "".join(f'<path d="M0,0 ' + " ".join(f'L{r * math.cos(a + k * 2.1):.0f},{r * math.sin(a + k * 2.1) * .8:.0f}' for r, a in [(i * 4, i * .35) for i in range(1, 26)]) + f'" stroke="{c}" stroke-width="5" fill="none"/>'
+                                                                for k, c in enumerate(["#ff3df0", "#3df5ff", "#fff23d"])) + '</g>'
+         f'<rect x="-120" y="-540" width="240" height="200" fill="#ff3df0" opacity=".2" filter="url(#{u}blur18)"/>'
+         f'<path d="M-160,-320 L160,-320 L180,-260 L-180,-260 Z" fill="#1a1a1e" {O}/><circle cx="-60" cy="-300" r="12" fill="#ff3030"/><circle cx="40" cy="-296" r="10" fill="#3df5ff"/><circle cx="80" cy="-296" r="10" fill="#3df5ff"/>'
+         f'<rect x="-40" y="-180" width="80" height="40" fill="#1a1a1e" {O3}/>')
+    t.js.append(f'tl.to("#{u}e", {{rotation: 720, svgOrigin: "0 -440", duration: {max(.5, t.dur):.2f}, ease: "none"}}, {t.at(0)});')
+    return g(p, s, u)
+
+
+@dib("disquete")
+def disquete(p, u, t):
+    """Disquete de 5¼ (negro, con etiqueta)."""
+    s = (f'<rect x="-150" y="-300" width="300" height="300" rx="10" fill="#141416" {O}/><circle cx="0" cy="-150" r="40" fill="#5a5a5e" {O3}/>'
+         f'<rect x="-14" y="-110" width="28" height="100" rx="12" fill="#3a3a3e"/><rect x="-120" y="-290" width="240" height="70" fill="#f2efe6"/>'
+         f'<path d="M-110,-270 l180,0 M-110,-246 l140,0" stroke="#2a4a8a" stroke-width="4"/>')
+    return g(p, s, u)

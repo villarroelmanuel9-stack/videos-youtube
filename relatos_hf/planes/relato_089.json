@@ -1,0 +1,342 @@
+{
+ "tema": "ciencia",
+ "estilo": "frio",
+ "claves": [
+  "dinero",
+  "Moscú.",
+  "disquetes",
+  "noventa"
+ ],
+ "tomas": [
+  {
+   "en": "Uno de los",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a6a5a",
+     "piso": "#2a322a",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0,
+     "vista": "nieve",
+     "ventana_x": 780
+    },
+    {
+     "d": "tetris",
+     "x": 540,
+     "y": 1600,
+     "s": 1.2
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CREADO EN LA",
+    "UNIÓN SOVIÉTICA"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "y su creador",
+   "tipo": "titulo",
+   "lineas": [
+    "SU CREADOR",
+    "NO COBRÓ"
+   ],
+   "acento": 1,
+   "icono": "🚫"
+  },
+  {
+   "en": "En mil novecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1350
+    },
+    {
+     "d": "ciudad",
+     "era": "sovietica",
+     "y": 1380,
+     "hora": "dia"
+    },
+    {
+     "d": "suelo",
+     "y": 1380,
+     "colores": [
+      "#e6edf7",
+      "#9aa8bf"
+     ],
+     "tipo": "nieve"
+    },
+    {
+     "d": "particulas",
+     "tipo": "nieve",
+     "n": 50
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "MOSCÚ",
+    "1984"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "Alekséi Pázhitnov trabajaba",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a6a5a",
+     "piso": "#2a322a",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0,
+     "vista": "nieve",
+     "ventana_x": 780
+    },
+    {
+     "d": "tetris",
+     "x": 700,
+     "y": 1600,
+     "s": 0.9
+    },
+    {
+     "d": "persona_real",
+     "x": 280,
+     "y": 1720,
+     "s": 1.6,
+     "ropa": "sueter",
+     "bigote": true,
+     "pelo": "#3a2a1e",
+     "lentes": true
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ALEKSÉI",
+    "PÁZHITNOV"
+   ],
+   "amb": "zumbido",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "En su tiempo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#0a1a0c",
+     "piso": "#050a06",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "tetris",
+     "x": 540,
+     "y": 1650,
+     "s": 1.5
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "PIEZAS QUE",
+    "CAÍAN"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "inspirado en un",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "luz_x": 540,
+     "luz_y": 900,
+     "cuadros": 0
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1650,
+     "s": 1.2
+    },
+    {
+     "d": "bloques",
+     "x": 540,
+     "y": 1450,
+     "s": 0.8
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UN ROMPECABEZAS",
+    "DE NIÑO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Se volvió adictivo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a6a5a",
+     "piso": "#2a322a",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0,
+     "vista": "nieve",
+     "ventana_x": 780
+    },
+    {
+     "d": "disquete",
+     "x": 330,
+     "y": 1600,
+     "s": 0.8
+    },
+    {
+     "d": "disquete",
+     "x": 560,
+     "y": 1640,
+     "s": 0.7
+    },
+    {
+     "d": "disquete",
+     "x": 780,
+     "y": 1600,
+     "s": 0.8
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "COPIAS EN",
+    "DISQUETES"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Pero en la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1350
+    },
+    {
+     "d": "ciudad",
+     "era": "sovietica",
+     "y": 1380
+    },
+    {
+     "d": "bandera",
+     "x": 540,
+     "y": 1500,
+     "s": 1.2,
+     "colores": [
+      "#c8102e"
+     ]
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "ERA DEL",
+    "ESTADO"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Empresas de varios",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3a4a",
+     "piso": "#1a1a24",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "boiserie"
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1650,
+     "s": 1.4
+    },
+    {
+     "d": "persona_real",
+     "x": 250,
+     "y": 1550,
+     "s": 1.0,
+     "ropa": "traje",
+     "bigote": true
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1550,
+     "s": 1.0,
+     "ropa": "traje",
+     "lentes": true
+    },
+    {
+     "d": "persona_real",
+     "x": 830,
+     "y": 1550,
+     "s": 1.0,
+     "ropa": "traje",
+     "peinado": "calvo"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "PELEARON LOS",
+    "DERECHOS"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Pázhitnov recién empezó",
+   "tipo": "contador",
+   "hasta": 12,
+   "unidad": "AÑOS",
+   "sub": "DESPUÉS COBRÓ",
+   "icono": "⏳"
+  },
+  {
+   "en": "¿Eres bueno en",
+   "tipo": "final",
+   "lineas": [
+    "¿ERES BUENO",
+    "EN TETRIS?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a6a5a",
+     "piso": "#2a322a",
+     "luz_x": 540,
+     "luz_y": 600,
+     "cuadros": 0,
+     "vista": "nieve",
+     "ventana_x": 780
+    },
+    {
+     "d": "tetris",
+     "x": 540,
+     "y": 1600,
+     "s": 1.1
+    }
+   ]
+  }
+ ]
+}

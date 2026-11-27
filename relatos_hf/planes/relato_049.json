@@ -1,0 +1,331 @@
+{
+ "tema": "cultura",
+ "estilo": "pop",
+ "claves": [
+  "pagar.",
+  "alumnos",
+  "Warner.",
+  "todos."
+ ],
+ "tomas": [
+  {
+   "en": "Durante décadas, para",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a1a1e",
+     "piso": "#110a0c",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "pantalla",
+     "x": 540,
+     "y": 1150,
+     "s": 1.6,
+     "texto": ""
+    },
+    {
+     "d": "torta",
+     "x": 540,
+     "y": 1500,
+     "s": 1.0
+    },
+    {
+     "d": "butacas"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "HABÍA QUE",
+    "PAGAR"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "La melodía nació",
+   "tipo": "titulo",
+   "lineas": [
+    "1893"
+   ],
+   "icono": "🎵"
+  },
+  {
+   "en": "Dos hermanas profesoras",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6a7a6a",
+     "piso": "#3a2a1e",
+     "vista": "dia",
+     "ventana_x": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1720,
+     "s": 1.6,
+     "ropa": "vestido",
+     "peinado": "mono",
+     "pelo": "#4a3a2a"
+    },
+    {
+     "d": "persona_real",
+     "x": 750,
+     "y": 1720,
+     "s": 1.6,
+     "ropa": "vestido",
+     "peinado": "mono",
+     "pelo": "#6a4a2a"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "MILDRED Y",
+    "PATTY HILL"
+   ]
+  },
+  {
+   "en": "la crearon para",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6a7a6a",
+     "piso": "#3a2a1e",
+     "vista": "dia",
+     "ventana_x": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "notas",
+     "n": 6,
+     "color": "#3a2a1e"
+    },
+    {
+     "d": "persona_real",
+     "x": 220,
+     "y": 1800,
+     "s": 0.9,
+     "ropa": "camisa",
+     "peinado": "corto"
+    },
+    {
+     "d": "persona_real",
+     "x": 420,
+     "y": 1800,
+     "s": 0.9,
+     "ropa": "camisa",
+     "peinado": "corto"
+    },
+    {
+     "d": "persona_real",
+     "x": 640,
+     "y": 1800,
+     "s": 0.9,
+     "ropa": "camisa",
+     "peinado": "corto"
+    },
+    {
+     "d": "persona_real",
+     "x": 860,
+     "y": 1800,
+     "s": 0.9,
+     "ropa": "camisa",
+     "peinado": "corto"
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "«BUENOS DÍAS",
+    "A TODOS»"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Con los años,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#e6c2a4",
+     "piso": "#6a4a2a",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "papel"
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1650,
+     "s": 1.3
+    },
+    {
+     "d": "torta",
+     "x": 540,
+     "y": 1480,
+     "s": 0.9
+    },
+    {
+     "d": "notas",
+     "n": 7,
+     "color": "#ffffff"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CAMBIÓ LA",
+    "LETRA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Una editorial registró",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3a4a",
+     "piso": "#1a1a24",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "carta",
+     "x": 540,
+     "y": 1500,
+     "s": 1.0,
+     "texto": "Derechos de autor",
+     "firma": "Warner"
+    },
+    {
+     "d": "texto_svg",
+     "x": 760,
+     "y": 1400,
+     "texto": "©",
+     "tam": 220,
+     "color": "#c0392b",
+     "borde": 6
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "LOS DERECHOS:",
+    "WARNER"
+   ],
+   "acento": 1,
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Cobraba alrededor de",
+   "tipo": "contador",
+   "hasta": 2,
+   "unidad": "MILLONES",
+   "sub": "DE DÓLARES AL AÑO",
+   "icono": "💵"
+  },
+  {
+   "en": "Por eso en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a1a1e",
+     "piso": "#110a0c",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "pantalla",
+     "x": 540,
+     "y": 1150,
+     "s": 1.6,
+     "texto": ""
+    },
+    {
+     "d": "notas",
+     "n": 5,
+     "color": "#ffd36a"
+    },
+    {
+     "d": "butacas"
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "CANTABAN",
+    "OTRA CANCIÓN"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "En dos mil",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "boiserie"
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1650,
+     "s": 1.3
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1500,
+     "s": 1.4,
+     "ropa": "traje",
+     "peinado": "calvo",
+     "lentes": true
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "2016",
+    "ES DE TODOS"
+   ],
+   "sfx": "boom",
+   "sfx_dur": 0.5
+  },
+  {
+   "en": "¿Cuál es tu",
+   "tipo": "final",
+   "lineas": [
+    "¿CUÁL ES TU",
+    "CANCIÓN?"
+   ],
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#e6c2a4",
+     "piso": "#6a4a2a",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "papel"
+    },
+    {
+     "d": "torta",
+     "x": 540,
+     "y": 1600,
+     "s": 1.1
+    }
+   ],
+   "comentario": "Las mañanitas 🎂"
+  }
+ ]
+}

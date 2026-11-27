@@ -1275,7 +1275,7 @@ GRANJA_EN = [C("dia", horizonte=1300), D("montanas", horizonte=1320, colores=["#
 P[25] = dict(tema="ciencia", estilo="clasico", claves=["ciencia", "colores", "manzana", "milagroso»."], tomas=[
     E("Durante una pandemia,", [D("interior", pared="#6b5a46", piso="#3a2a1e", vista="dia", ventana_x=650, luz_x=300, luz_y=600), D("velas", x=300, y=1400, s=.8, n=2),
       D("persona_real", x=300, y=1580, s=1.6, ropa="tunica_roja", peinado="largo", pelo="#6a5a4a")], "push", texto=["CAMBIÓ LA", "CIENCIA"], acento=1, amb="ninguno"),
-    F("En mil seiscientos", "1665", "AÑO", "PESTE"),
+    T("En mil seiscientos", ["1665:", "LA PESTE"], acento=1, icono="☠️"),
     E("y cerró la", [C("niebla", horizonte=1300), D("castillo", x=540, y=1400, s=.9), D("suelo", y=1400, colores=["#6a6a5a", "#2a2a22"], tipo="adoquin")], "pull",
       dato=["CAMBRIDGE", "CERRADA"], amb="viento"),
     E("Isaac Newton, de", GRANJA_EN + [D("casa", tipo="granja", x=540, y=1420, s=.9, luces=False), D("persona_real", x=780, y=1720, s=1.3, ropa="tunica_roja", peinado="largo", pelo="#6a5a4a")],
@@ -1488,6 +1488,685 @@ P[40] = dict(tema="ciencia", estilo="neon", claves=["muerte».", "invisibles", "
     E("Aparecieron sus huesos", [D("interior", **LAB_X), D("mano_rx", x=540, y=1600, s=1.5)], "push_fuerte", texto=["HUESOS", "Y ANILLO"], acento=1, sfx="boom"),
     T("Röntgen ganó el", ["PRIMER NOBEL", "DE FÍSICA"], acento=1, icono="🏅"),
     FIN("¿Cuántas radiografías te", ["¿CUÁNTAS TE", "HAN TOMADO?"], capas=[D("interior", **LAB_X), D("mano_rx", x=540, y=1600, s=1.1)], comentario="Como 5 🦴"),
+])
+
+# ================================================================ 30 · Terremoto de Valdivia (rehecho)
+VALDIVIA = [C("dia", horizonte=1300), D("montanas", horizonte=1320, nieve=True, colores=["#7a8a9a", "#5a6a7a", "#3a4a5a"]),
+            D("ciudad", era="colonial", y=1340, hora="dia", semilla=11), D("suelo", y=1340, colores=["#7a7a6a", "#3a3a2e"], tipo="adoquin")]
+P[30] = dict(tema="historia", estilo="terror", claves=["Chile.", "nueve", "Hawái", "volcán"], tomas=[
+    E("El terremoto más", VALDIVIA, "push", texto=["EL MÁS FUERTE", "DE LA HISTORIA"], acento=1, sacudir=True, sfx="crujido", sfx_dur=2.0, amb="viento"),
+    F("El veintidós de", "22", "MAYO", "1960", hora="15:11"),
+    E("la tierra se", VALDIVIA + [D("persona_real", x=x, y=1740, s=1.0, ropa=r, mov="camina", avance=-120) for x, r in [(200, "abrigo"), (420, "vestido"), (700, "obrero")]],
+      "fijo", texto="10 MINUTOS", sacudir=True, sfx="crujido", sfx_dur=3.0, amb="multitud", amb_vol=.5),
+    {"en": "Midió nueve coma", "tipo": "sismo", "magnitud": "9,5"},
+    M("El epicentro estuvo", [-39.8, -73.2], 14, zoom_desde=2, centro_desde=[-35, -71], resaltar=["Chile"], pines=[{"lat": -39.8, "lon": -73.2, "texto": "VALDIVIA"}]),
+    E("Partes de la", [C("tormenta", horizonte=1250), MAR("tormenta", horizonte=1250), D("casa", tipo="madera", x=540, y=1420, s=.9, r=-8, luces=False)], "baja",
+      texto=["LA COSTA SE", "HUNDIÓ"], acento=1, amb="olas"),
+    E("El tsunami cruzó", [C("tormenta", horizonte=1300), MAR("tormenta", horizonte=1300), D("ola", x=200, y=1600, s=1.2, avance=400)], "push_fuerte",
+      texto=["CRUZÓ EL", "PACÍFICO"], acento=1, sfx="boom", amb="olas", amb_vol=1.2),
+    M("y causó muertes", [20, -170], 2.2, zoom_desde=1.2, centro_desde=[-20, -100], resaltar=["Japan", "Chile"], pines=[{"lat": 19.7, "lon": -155.1, "texto": "HAWÁI"}, {"lat": 38.3, "lon": 141.6, "texto": "JAPÓN"}]),
+    E("Dos días más", [C("rojo", horizonte=1350), D("volcan", x=540, y=1400, s=1.0), D("suelo", y=1350, colores=["#4a3a2a", "#1a120c"]), D("particulas", tipo="ceniza", n=60)],
+      "pull", dato=["CORDÓN", "CAULLE"], amb="fuego"),
+    FIN("¿Tu familia vivió", ["¿TU FAMILIA LO", "VIVIÓ?"], capas=VALDIVIA, comentario="Mi abuela me lo contó 🙏"),
+])
+
+# ================================================================ 47 · Nabos de Halloween
+IRLANDA = [C("noche", horizonte=1350), D("montanas", horizonte=1360, colores=["#2a3a2a", "#1e2e1e", "#142014"]), D("suelo", y=1500, colores=["#3a4a2a", "#141a0e"], tipo="pasto")]
+P[47] = dict(tema="cultura", estilo="terror", claves=["nabos.", "Samhain,", "brasa", "calabazas:"], tomas=[
+    E("Antes de las", IRLANDA + [D("muro_piedra", y=1520), D("calabaza", tipo="nabo", x=540, y=1470, s=1.3), D("niebla", y=1450, op=.5)], "push",
+      texto=["SE TALLABAN", "NABOS"], acento=1, amb="viento"),
+    M("La tradición viene", [53.3, -8.0], 7, zoom_desde=2, centro_desde=[50, 0], resaltar=["Ireland"], pines=[{"lat": 53.3, "lon": -8.0, "texto": "IRLANDA"}]),
+    E("y de una", IRLANDA + [D("hoguera", x=540, y=1600, s=1.2)] + [D("persona_real", x=x, y=1720, s=1.0, ropa="tunica", peinado="largo", pelo=c) for x, c in [(220, "#6a3a1a"), (860, "#c0552a")]],
+      "push", texto="SAMHAIN", amb="fuego", amb_vol=.6),
+    E("Se creía que", IRLANDA + [D("niebla", y=1400, op=.7), D("persona_real", x=540, y=1600, s=1.3, ropa="camisa", peinado="largo", mov="desvanece", desvanece_en=2.0),
+      D("luz", x=540, y=1300, r=400, color="#cfe0ff", op=.3)], "push", texto=["LOS MUERTOS SE", "ACERCABAN"], acento=1, amb="viento"),
+    E("La gente tallaba", [D("interior", pared="#3a2a1e", piso="#1a120c", luz=False, cuadros=0), D("mesa", x=540, y=1650, s=1.2), D("calabaza", tipo="nabo", x=420, y=1440, s=.8),
+      D("calabaza", tipo="nabo", x=680, y=1450, s=.6)], "push", texto=["CARAS", "TERRORÍFICAS"], acento=1),
+    E("y les ponía", [D("interior", pared="#1a1410", piso="#0a0806", luz=False, cuadros=0), D("calabaza", tipo="nabo", x=540, y=1500, s=1.8)], "push_fuerte",
+      texto=["UNA BRASA", "ADENTRO"], acento=1, amb="fuego", amb_vol=.4),
+    E("Según la leyenda,", IRLANDA + [D("persona_real", x=540, y=1720, s=1.5, ropa="obrero", sombrero="fedora", barba=True, mov="camina", avance=200), D("calabaza", tipo="nabo", x=620, y=1500, s=.4)],
+      "pan_der", texto=["JACK, CONDENADO", "A VAGAR"], acento=0, amb="viento"),
+    E("En el siglo", [C("dia", horizonte=1250), MAR("dia", horizonte=1250), D("velero", x=540, y=1290, s=.9, avance=200, reflejo=True)], "pan_der",
+      texto=["EMIGRARON A", "EE.UU."], acento=1, amb="olas"),
+    E("y encontraron calabazas:", [C("atardecer", horizonte=1350), D("suelo", y=1350, colores=["#6a5a3a", "#2a2010"], tipo="tierra"),
+      D("calabaza", x=320, y=1650, s=1.0), D("calabaza", x=760, y=1700, s=1.3), D("calabaza", tipo="nabo", x=540, y=1600, s=.5)], "push", texto=["MÁS GRANDES", "Y FÁCILES"], acento=1),
+    FIN("¿Tú celebras Halloween?", ["¿CELEBRAS", "HALLOWEEN?"], final="si_no", capas=IRLANDA + [D("calabaza", x=540, y=1600, s=1.2)]),
+])
+
+# ================================================================ 48 · Papá Noel y Coca-Cola
+SALA_NAV = dict(pared="#6b2d2f", piso="#3a1d14", luz_x=540, luz_y=700, pared_estilo="papel")
+SANTA = dict(ropa="santa", barba=True, bigote=True, pelo="#f2f2f2", peinado="corto")
+P[48] = dict(tema="cultura", estilo="calido", claves=["mito.", "renos.", "rojo", "popularizar"], tomas=[
+    E("Dicen que Coca-Cola", [D("interior", **SALA_NAV), D("chimenea", x=330, y=1650, s=.8), D("persona_real", x=780, y=1760, s=1.7, **SANTA)], "push",
+      texto="ES UN MITO", amb="fuego", amb_vol=.4),
+    E("El personaje viene", [D("catedral", x=540, y=1450, s=.9), C("dia", horizonte=1450), D("suelo", y=1450, colores=["#a89a7a", "#5a4a3a"], tipo="adoquin"),
+      D("persona_real", x=540, y=1760, s=1.6, ropa="tunica_roja", barba=True, pelo="#d9d9d9", sombrero="copa")], "push", dato=["SAN NICOLÁS", "SIGLO IV"]),
+    E("famoso por hacer", [C("noche", horizonte=1350), D("ciudad", era="antigua", y=1380, hora="noche"), D("suelo", y=1380, colores=["#e6edf7", "#9aa8bf"], tipo="nieve"),
+      D("caja", x=540, y=1650, s=.9), D("particulas", tipo="nieve", n=60)], "push", texto=["REGALOS EN", "SECRETO"], acento=1, amb="viento", amb_vol=.4),
+    E("En mil ochocientos", [C("noche", horizonte=1500), D("ciudad", era="antigua", y=1550, hora="noche"), D("trineo", x=200, y=900, s=.8, perros=6, avance=500)], "pan_der",
+      dato=["1823", "TRINEO Y RENOS"], amb="viento", amb_vol=.4),
+    E("Después, el dibujante", [D("interior", pared="#5a4a3c", piso="#2a1d14", luz_x=540, luz_y=700), D("caballete", x=640, y=1750, s=1.1, cuadro="vacio"),
+      D("persona_real", x=300, y=1720, s=1.6, ropa="traje", barba=True, bigote=True, pelo="#3a2a1e")], "push", dato=["THOMAS NAST", "DIBUJANTE"]),
+    E("como un hombre", [D("interior", **SALA_NAV), D("persona_real", x=540, y=1800, s=2.2, **SANTA)], "push_fuerte", texto=["GORDO Y", "DE BARBA BLANCA"], acento=1),
+    E("Y antes de", [D("interior", pared="#3a2a1e", piso="#1a120c", luz_x=540, luz_y=700), D("cartel", x=540, y=1600, s=1.0, titulo="FELIZ NAVIDAD", sub="1915")],
+      "push", texto=["YA ERA ROJO", "ANTES DE 1930"], acento=0, sfx="papel", sfx_dur=.6),
+    T("Lo que sí", ["COCA-COLA LO", "POPULARIZÓ"], acento=1, icono="🥤"),
+    E("con los dibujos", [D("interior", **SALA_NAV), D("chimenea", x=330, y=1650, s=.8), D("caja", x=780, y=1700, s=.6), D("persona_real", x=760, y=1760, s=1.5, **SANTA)],
+      "pull", dato=["HADDON", "SUNDBLOM · 1931"], amb="fuego", amb_vol=.4),
+    FIN("¿Tú también creías", ["¿TÚ CREÍAS", "EL MITO?"], final="si_no", capas=[D("interior", **SALA_NAV), D("chimenea", x=540, y=1650, s=.9)]),
+])
+
+# ================================================================ 49 · Cumpleaños feliz
+CINE = [D("interior", pared="#2a1a1e", piso="#110a0c", luz=False, cuadros=0), D("pantalla", x=540, y=1150, s=1.6, texto="")]
+AULA = dict(pared="#6a7a6a", piso="#3a2a1e", vista="dia", ventana_x=700, cuadros=0)
+P[49] = dict(tema="cultura", estilo="pop", claves=["pagar.", "alumnos", "Warner.", "todos."], tomas=[
+    E("Durante décadas, para", CINE + [D("torta", x=540, y=1500, s=1.0), D("butacas")], "push", texto=["HABÍA QUE", "PAGAR"], acento=1, amb="multitud", amb_vol=.3),
+    T("La melodía nació", ["1893"], icono="🎵"),
+    E("Dos hermanas profesoras", [D("interior", **AULA), D("persona_real", x=330, y=1720, s=1.6, ropa="vestido", peinado="mono", pelo="#4a3a2a"),
+      D("persona_real", x=750, y=1720, s=1.6, ropa="vestido", peinado="mono", pelo="#6a4a2a")], "push", dato=["MILDRED Y", "PATTY HILL"]),
+    E("la crearon para", [D("interior", **AULA), D("notas", n=6, color="#3a2a1e")] + [D("persona_real", x=x, y=1800, s=.9, ropa="camisa", peinado="corto") for x in (220, 420, 640, 860)],
+      "pull", texto=["«BUENOS DÍAS", "A TODOS»"], acento=1),
+    E("Con los años,", [D("interior", pared="#e6c2a4", piso="#6a4a2a", luz_x=540, luz_y=700, pared_estilo="papel"), D("mesa", x=540, y=1650, s=1.3), D("torta", x=540, y=1480, s=.9), D("notas", n=7, color="#ffffff")],
+      "push", texto=["CAMBIÓ LA", "LETRA"], acento=1),
+    E("Una editorial registró", [D("interior", pared="#3a3a4a", piso="#1a1a24", luz_x=540, luz_y=700), D("carta", x=540, y=1500, s=1.0, texto="Derechos de autor", firma="Warner"),
+      D("texto_svg", x=760, y=1400, texto="©", tam=220, color="#c0392b", borde=6)], "push_fuerte", texto=["LOS DERECHOS:", "WARNER"], acento=1, sfx="papel", sfx_dur=.6),
+    N("Cobraba alrededor de", 2, "MILLONES", "DE DÓLARES AL AÑO", icono="💵"),
+    E("Por eso en", CINE + [D("notas", n=5, color="#ffd36a"), D("butacas")], "pull", texto=["CANTABAN", "OTRA CANCIÓN"], acento=1, amb="multitud", amb_vol=.3),
+    E("En dos mil", [D("interior", pared="#5a4a3c", piso="#2a1d14", luz_x=540, luz_y=700, pared_estilo="boiserie"), D("mesa", x=540, y=1650, s=1.3),
+      D("persona_real", x=540, y=1500, s=1.4, ropa="traje", peinado="calvo", lentes=True)], "push", dato=["2016", "ES DE TODOS"], sfx="boom", sfx_dur=.5),
+    FIN("¿Cuál es tu", ["¿CUÁL ES TU", "CANCIÓN?"], capas=[D("interior", pared="#e6c2a4", piso="#6a4a2a", luz_x=540, luz_y=700, pared_estilo="papel"), D("torta", x=540, y=1600, s=1.1)],
+        comentario="Las mañanitas 🎂"),
+])
+
+# ================================================================ 50 · Frankenstein y el año sin verano
+GINEBRA = [C("tormenta", horizonte=1300), D("montanas", horizonte=1300, nieve=True, colores=["#4a5a6a", "#3a4a5a", "#2a3a4a"]), MAR("tormenta", horizonte=1350)]
+P[50] = dict(tema="cultura", estilo="terror", claves=["verano».", "Tambora,", "Byron,", "dieciocho"], tomas=[
+    E("Mil ochocientos dieciséis", [C("niebla", horizonte=1300), D("arboles", y=1320, n=6, color="#3a4a3a"), D("suelo", y=1320, colores=["#e6edf7", "#9aa8bf"], tipo="nieve"), D("particulas", tipo="nieve", n=60)],
+      "push", texto=["«EL AÑO SIN", "VERANO»"], acento=1, amb="viento"),
+    E("Un año antes,", [C("rojo", horizonte=1300), MAR("atardecer", horizonte=1350), D("volcan", x=540, y=1380, s=1.1), D("particulas", tipo="ceniza", n=60)], "pull",
+      dato=["VOLCÁN", "TAMBORA · 1815"], sfx="boom", amb="fuego"),
+    M("en Indonesia, había", [-8.25, 118.0], 6, zoom_desde=1.5, centro_desde=[0, 60], resaltar=["Indonesia"], pines=[{"lat": -8.25, "lon": 118.0, "texto": "TAMBORA"}]),
+    E("Su ceniza enfrió", [C("niebla", horizonte=1300), D("suelo", y=1300, colores=["#c8ced6", "#8a929e"], tipo="nieve"), D("casa", tipo="granja", x=540, y=1450, s=.8, luces=False),
+      D("particulas", tipo="nieve", n=80)], "push", texto=["NIEVE EN", "PLENO VERANO"], acento=1, amb="viento"),
+    E("En una casa", GINEBRA + [D("mansion", x=540, y=1420, s=.6), D("rayo", x=820, y=1000, en=1.5), D("lluvia")], "push", dato=["LAGO", "DE GINEBRA"], amb="lluvia", sfx="boom", sfx_en=1.5),
+    E("un grupo de", [D("interior", pared="#3a2a2a", piso="#1a1010", vista="noche", ventana_x=700, luz=False), D("velas", x=540, y=1500, s=.7, n=3)] +
+      [D("persona_real", x=x, y=1760, s=1.3, ropa=r, **k) for x, r, k in [(220, "traje", {"pelo": "#2a1a10"}), (540, "vestido", {"peinado": "largo", "pelo": "#6a3a1a"}), (860, "abrigo", {"bigote": True})]],
+      "pull", dato=["LORD BYRON", "Y AMIGOS"], amb="lluvia", amb_vol=.5),
+    T("Para pasar el", ["UN DESAFÍO:", "HISTORIAS DE TERROR"], acento=1, icono="🕯️"),
+    E("Mary Shelley, de", [D("interior", pared="#3a2a2a", piso="#1a1010", vista="noche", ventana_x=700, luz=False), D("velas", x=380, y=1500, s=.6, n=1),
+      D("persona_real", x=620, y=1720, s=1.8, ropa="vestido", peinado="largo", pelo="#6a3a1a"), D("rayo", x=750, y=900, en=2.0)], "push", dato=["MARY SHELLEY", "18 AÑOS"], amb="lluvia"),
+    E("tuvo una pesadilla", [D("interior", pared="#1d2620", piso="#0d120e", luz=False, cuadros=0), D("cama", x=540, y=1550, s=1.1), D("rayo", x=540, y=1000, en=1.0),
+      D("persona_real", x=820, y=1650, s=1.4, ropa="bata", peinado="alborotado")], "push_fuerte", texto=["DABA VIDA A", "UN CUERPO"], acento=1, sfx="boom", sfx_en=1.0),
+    T("Así nació la", ["LA PRIMERA", "CIENCIA FICCIÓN"], acento=1, icono="⚡"),
+    FIN("¿Has leído Frankenstein?", ["¿HAS LEÍDO", "FRANKENSTEIN?"], final="si_no", capas=GINEBRA + [D("mansion", x=540, y=1420, s=.6)]),
+])
+
+# ================================================================ 52 · Van Gogh
+ARLES = [C("atardecer", horizonte=1250), D("girasoles", y=1250)]
+VINCENT = dict(ropa="obrero", barba=True, pelo="#c0552a", sombrero="boina")
+P[52] = dict(tema="cultura", estilo="calido", claves=["millones…", "novecientos", "rojo»,", "Johanna,"], tomas=[
+    E("Hoy sus cuadros", [D("interior", pared="#e6e2da", piso="#8a7a6a", luz_x=540, luz_y=600, cuadros=0), D("caballete", x=540, y=1700, s=1.3, cuadro="girasoles")]
+      + [D("persona_real", x=x, y=1800, s=1.1, ropa=r) for x, r in [(200, "traje"), (880, "vestido")]], "push", texto=["CIENTOS DE", "MILLONES"], acento=1, amb="multitud", amb_vol=.3),
+    E("pero en vida,", ARLES + [D("persona_real", x=760, y=1800, s=1.6, **VINCENT), D("caballete", x=330, y=1760, s=1.0, cuadro="girasoles")], "push", dato=["VINCENT", "VAN GOGH"], amb="insectos", amb_vol=.4),
+    N("Pintó unos novecientos", 900, "CUADROS", "EN 10 AÑOS", icono="🎨"),
+    E("Vivía con lo", [D("interior", pared="#5a7aaa", piso="#8a5a2a", vista="dia", ventana_x=700, cuadros=0), D("cama", x=380, y=1550, s=1.0), D("silla", x=760, y=1650, s=.9)],
+      "push", texto=["VIVÍA CON", "LO JUSTO"], acento=1),
+    E("y su hermano", [D("interior", pared="#5a4a3c", piso="#2a1d14", luz_x=540, luz_y=700), D("carta", x=540, y=1550, s=1.0, texto="Querido Vincent", firma="Theo")], "push",
+      texto=["THEO LE MANDABA", "DINERO"], acento=0, sfx="papel", sfx_dur=.6),
+    E("De todos ellos,", [D("interior", pared="#e6e2da", piso="#8a7a6a", luz_x=540, luz_y=600, cuadros=0), D("caballete", x=540, y=1750, s=1.5, cuadro="vinedo")], "push_fuerte",
+      texto=["«EL VIÑEDO", "ROJO»"], acento=1),
+    N("en mil ochocientos", 400, "FRANCOS", "1890", icono="💰"),
+    E("Ese mismo año", [C("niebla", horizonte=1300), D("trigal", y=1300, circulo=False), D("persona_real", x=540, y=1760, s=1.6, **VINCENT)], "pull", texto=["CREÍA HABER", "FRACASADO"], acento=1, amb="viento"),
+    E("Fue la esposa", [D("interior", pared="#5a4a3c", piso="#2a1d14", luz_x=540, luz_y=700), D("caja", x=330, y=1650, s=.8), D("persona_real", x=700, y=1760, s=1.7, ropa="vestido", peinado="mono", pelo="#4a3a2a")],
+      "push", dato=["JOHANNA", "VAN GOGH-BONGER"]),
+    FIN("¿Cuál es tu", ["¿TU CUADRO", "FAVORITO?"], capas=ARLES + [D("caballete", x=540, y=1760, s=1.1)], comentario="La noche estrellada ✨"),
+])
+
+# ================================================================ 53 · Beethoven
+TEATRO = dict(pared="#5a1a22", piso="#2a1410", luz_x=540, luz_y=600, pared_estilo="boiserie", cuadros=0)
+LUDWIG = dict(ropa="traje", peinado="alborotado", pelo="#5a4a3a", panuelo="#f2efe6")
+P[53] = dict(tema="cultura", estilo="clasico", claves=["oír.", "veintiocho", "vibraciones", "alegría»."], tomas=[
+    E("Una de las", [D("interior", **TEATRO), D("piano", x=540, y=1650, s=1.1), D("notas", n=7, color="#ffd36a")], "push", texto=["NO PODÍA", "OÍR"], acento=1),
+    E("Ludwig van Beethoven", [D("interior", pared="#5a4a3c", piso="#2a1d14", luz_x=540, luz_y=700, pared_estilo="boiserie"), D("piano", x=640, y=1650, s=1.0),
+      D("persona_real", x=300, y=1720, s=1.7, **LUDWIG)], "push", dato=["BEETHOVEN", "28 AÑOS"]),
+    E("Lo escondió durante", [D("interior", pared="#3a2a1e", piso="#1a120c", luz=False, cuadros=0), D("velas", x=700, y=1500, s=.6, n=2), D("persona_real", x=400, y=1760, s=1.9, **LUDWIG)],
+      "push", texto=["¿UN MÚSICO", "SORDO?"], acento=1),
+    E("Llegó a escribirle", [D("interior", pared="#3a2a1e", piso="#1a120c", luz_x=540, luz_y=900, cuadros=0), D("carta", x=540, y=1550, s=1.0, texto="A mis hermanos", firma="L. v. B.")],
+      "push", texto=["PENSÓ EN", "RENDIRSE"], acento=1, sfx="papel", sfx_dur=.6),
+    E("Pero siguió componiendo,", [D("interior", pared="#5a4a3c", piso="#2a1d14", luz=False, cuadros=0), D("piano", x=540, y=1650, s=1.3), D("ondas" if False else "notas", n=6, color="#9ad0ff"),
+      D("persona_real", x=230, y=1720, s=1.5, **LUDWIG)], "fijo", texto=["SENTÍA LAS", "VIBRACIONES"], acento=1),
+    F("En mil ochocientos", "7", "MAYO", "1824"),
+    E("estrenó su Novena", [D("interior", **TEATRO), D("piano", x=780, y=1650, s=.8)] + [D("persona_real", x=x, y=1720, s=1.0, ropa="traje") for x in (180, 330, 480)] +
+      [D("persona_real", x=620, y=1700, s=1.5, **LUDWIG)], "pull", texto=["«HIMNO DE", "LA ALEGRÍA»"], acento=1, amb="multitud", amb_vol=.2),
+    E("Al terminar, el", [D("interior", **TEATRO), D("butacas"), D("persona_real", x=540, y=1500, s=1.4, **LUDWIG, mira="izq")], "push", texto=["…Y ÉL NO", "LO OÍA"], acento=1, amb="multitud", amb_vol=1.0),
+    E("Una cantante tuvo", [D("interior", **TEATRO), D("persona_real", x=380, y=1720, s=1.6, ropa="vestido", peinado="mono", pelo="#4a3a2a"), D("persona_real", x=700, y=1720, s=1.6, **LUDWIG, mira="izq")],
+      "push", texto=["VIO LA", "OVACIÓN"], acento=1, amb="multitud"),
+    FIN("¿Conoces el Himno", ["¿CONOCES EL", "HIMNO?"], final="si_no", capas=[D("interior", **TEATRO), D("piano", x=540, y=1650, s=1.0)]),
+])
+
+# ================================================================ 55 · Medallas olímpicas de arte
+P[55] = dict(tema="historia", estilo="retro", claves=["pintar", "Coubertin,", "deporte.", "aficionados."], tomas=[
+    E("Hubo una época", [C("dia", horizonte=1300), D("estadio", y=1300), D("podio", x=540, y=1700, s=1.0), D("caballete", x=540, y=1500, s=.6, cuadro="atletas")], "push",
+      texto=["MEDALLA POR", "PINTAR"], acento=1, amb="multitud", amb_vol=.5),
+    E("El creador de", [D("interior", pared="#5a4a3c", piso="#2a1d14", luz_x=540, luz_y=700, pared_estilo="boiserie"), D("persona_real", x=540, y=1760, s=1.9, ropa="traje", bigote=True, pelo="#d9d9d9")],
+      "push", dato=["PIERRE DE", "COUBERTIN"]),
+    E("quería unir el", [C("dia", horizonte=1300), D("estadio", y=1300), D("balon", x=300, y=1650, s=.6), D("libro", x=780, y=1650, s=.8)], "push", texto=["DEPORTE Y", "CULTURA"], acento=1, amb="multitud", amb_vol=.4),
+    T("Por eso, entre", ["1912 – 1948"], icono="🏅"),
+    E("se entregaron medallas", [D("interior", pared="#e6e2da", piso="#8a7a6a", luz_x=540, luz_y=600, cuadros=0), D("caballete", x=280, y=1700, s=.9, cuadro="atletas"),
+      D("piano", x=760, y=1700, s=.7), D("libro", x=540, y=1800, s=.6)], "pan_der", texto=["PINTURA, MÚSICA,", "LITERATURA"], acento=0),
+    E("La única condición:", [D("interior", pared="#e6e2da", piso="#8a7a6a", luz_x=540, luz_y=600, cuadros=0), D("caballete", x=540, y=1750, s=1.5, cuadro="atletas")], "push",
+      texto=["INSPIRADAS EN", "EL DEPORTE"], acento=1),
+    E("El propio Coubertin", [D("interior", pared="#5a4a3c", piso="#2a1d14", luz_x=540, luz_y=700), D("medalla", x=760, y=1250, s=1.0), D("persona_real", x=330, y=1760, s=1.7, ropa="traje", bigote=True, pelo="#d9d9d9")],
+      "push", texto=["¡GANÓ UN ORO!"], amb="ninguno"),
+    E("con un poema", [D("interior", pared="#3a2a1e", piso="#1a120c", luz_x=540, luz_y=900), D("carta", x=540, y=1550, s=1.0, texto="Oda al deporte", firma="¿?")], "push",
+      texto=["CON NOMBRE", "FALSO"], acento=1, sfx="papel", sfx_dur=.6),
+    E("Al final se", [C("dia", horizonte=1300), D("estadio", y=1300), D("podio", x=540, y=1700, s=1.0)], "pull", texto=["SOLO", "AFICIONADOS"], acento=1, amb="multitud", amb_vol=.4),
+    FIN("¿En qué arte", ["¿EN QUÉ ARTE", "GANARÍAS?"], capas=[D("interior", pared="#e6e2da", piso="#8a7a6a", luz_x=540, luz_y=600, cuadros=0), D("medalla", x=540, y=1400, s=1.2)], comentario="En dormir 😴"),
+])
+
+# ================================================================ 56 · Pickles y la Copa
+LONDRES66 = [C("dia", horizonte=1300), D("ciudad", era="antigua", y=1330, hora="dia", semilla=3), D("suelo", y=1330, colores=["#5a8a3a", "#2a4a1a"], tipo="pasto")]
+P[56] = dict(tema="historia", estilo="pop", claves=["perro.", "Rimet,", "rescate", "Pickles"], tomas=[
+    E("En mil novecientos", LONDRES66 + [D("trofeo", x=380, y=1700, s=1.0), D("perro", raza="collie", x=740, y=1720, s=1.1)], "push", texto=["¡ROBARON LA", "COPA!"], acento=1, amb="viento", amb_vol=.4),
+    E("Faltaban cuatro meses", [C("dia", horizonte=1300), D("estadio", y=1300)], "pull", dato=["MUNDIAL", "INGLATERRA 66"], amb="multitud"),
+    E("El trofeo, la", [D("interior", pared="#3a3226", piso="#1a140f", luz_x=540, luz_y=700, pared_estilo="boiserie"), D("vitrina", x=540, y=1650, s=1.1), D("trofeo", x=540, y=1500, s=.6)],
+      "push", dato=["COPA", "JULES RIMET"]),
+    E("Un domingo, aprovechando", [D("interior", pared="#3a3226", piso="#1a140f", luz=False, cuadros=0), D("vitrina", x=380, y=1650, s=1.0),
+      D("persona_real", x=780, y=1720, s=1.6, ropa="abrigo", sombrero="fedora", mov="camina", avance=200)], "pan_der", texto="¡SE LA LLEVARON!", sfx="crujido", sfx_dur=.6),
+    E("Hubo pedidos de", [D("interior", pared="#3a4a5a", piso="#1a222a", luz_x=540, luz_y=700, cuadros=0), D("telefono", x=380, y=1550, s=1.0), D("persona_real", x=760, y=1720, s=1.6, ropa="uniforme", sombrero="casco_ww")],
+      "push", texto=["PEDIDOS DE", "RESCATE"], acento=1, amb="estatica", amb_vol=.3),
+    E("Una semana después,", LONDRES66 + [D("persona_real", x=330, y=1720, s=1.5, ropa="traje_cafe", mira="der"), D("perro", raza="collie", x=640, y=1740, s=1.0)], "pan_der",
+      dato=["PICKLES", "COLLIE"], amb="insectos", amb_vol=.3),
+    E("y el perro", LONDRES66 + [D("arbusto", x=700, y=1700, s=1.1, paquete=True), D("perro", raza="collie", x=330, y=1760, s=1.2)], "push", texto=["UN PAQUETE DE", "PAPEL DE DIARIO"], acento=1),
+    E("Era la Copa.", [C("dia", horizonte=1300), D("suelo", y=1300, colores=["#5a8a3a", "#2a4a1a"], tipo="pasto"), D("trofeo", x=540, y=1600, s=1.5)], "push_fuerte", texto="¡ERA LA COPA!", sfx="ping", sfx_dur=.6),
+    E("Pickles se hizo", [C("dia", horizonte=1300), D("estadio", y=1300), D("perro", raza="collie", x=540, y=1760, s=1.4), D("medalla", x=560, y=1450, s=.5)], "pull",
+      texto=["¡INVITADO A LA", "CELEBRACIÓN!"], acento=1, amb="multitud"),
+    FIN("¿Tienes un perro", ["¿TU PERRO ES", "ASÍ DE LISTO?"], capas=LONDRES66 + [D("perro", raza="collie", x=540, y=1720, s=1.3)], comentario="El mío solo come 🐶"),
+])
+
+# ================================================================ 60 · Hadas de Cottingley
+ARROYO = [C("dia", horizonte=1250), D("arboles", y=1270, n=7, color="#2e4a22"), MAR("dia", horizonte=1450), D("suelo", y=1550, colores=["#5a8a3a", "#2a4a1a"], tipo="pasto")]
+NINA = dict(ropa="vestido", peinado="largo", pelo="#6a4a2a")
+P[60] = dict(tema="misterio", estilo="clasico", claves=["hadas…", "Cottingley.", "Doyle,", "recortados"], tomas=[
+    E("En mil novecientos", ARROYO + [D("persona_real", x=380, y=1780, s=1.3, **NINA), D("hadas", x=680, y=1450, n=4)], "push", dato=["1917", "¿HADAS?"], amb="rio"),
+    E("Elsie Wright y", ARROYO + [D("persona_real", x=330, y=1780, s=1.4, **NINA), D("persona_real", x=700, y=1800, s=1.15, ropa="vestido", peinado="largo", pelo="#c09a5a")], "push",
+      dato=["ELSIE Y", "FRANCES"], amb="rio"),
+    E("Para demostrar que", ARROYO + [D("camara_antigua", x=760, y=1800, s=1.1), D("persona_real", x=330, y=1780, s=1.4, **NINA)], "push", texto=["UNA CÁMARA", "PRESTADA"], acento=1, amb="rio"),
+    E("y volvieron con", ARROYO + [D("persona_real", x=540, y=1780, s=1.6, ropa="vestido", peinado="largo", pelo="#c09a5a"), D("hadas", x=540, y=1350, n=5)], "push_fuerte",
+      texto=["HADAS", "BAILANDO"], acento=1, sfx="ping", sfx_dur=.5, amb="rio"),
+    E("Incluso Arthur Conan", [D("interior", pared="#5a4a3c", piso="#2a1d14", luz_x=540, luz_y=700, pared_estilo="boiserie"), D("libro", x=780, y=1600, s=.7),
+      D("persona_real", x=380, y=1760, s=1.8, ropa="traje", bigote=True, pelo="#6a5a4a")], "push", dato=["ARTHUR", "CONAN DOYLE"]),
+    T("creyó que eran", ["¡CREYÓ QUE", "ERAN REALES!"], acento=1, icono="🧚"),
+    F("Recién en mil", "", "AÑO", "1983") if False else T("Recién en mil", ["1983:", "CONFESARON"], acento=1, icono="🗝️"),
+    E("eran dibujos recortados", [D("interior", pared="#3a3226", piso="#1a140f", luz_x=540, luz_y=900, cuadros=0), D("mesa", x=540, y=1650, s=1.2), D("libro", x=380, y=1450, s=.7),
+      D("hadas", x=680, y=1350, n=2)], "push", texto=["RECORTES CON", "ALFILERES"], acento=1, sfx="papel", sfx_dur=.6),
+    E("Pero Frances juró", ARROYO + [D("hadas", x=540, y=1400, n=3), D("niebla", y=1450, op=.4)], "push", texto=["LA QUINTA FOTO", "¿ERA REAL?"], acento=1, amb="rio"),
+    FIN("¿Tú les habrías", ["¿LES HABRÍAS", "CREÍDO?"], final="si_no", capas=ARROYO + [D("hadas", x=540, y=1350, n=3)]),
+])
+
+# ================================================================ 61 · Hombre de Piltdown
+MUSEO = dict(pared="#3a3226", piso="#1a140f", luz_x=540, luz_y=700, pared_estilo="boiserie")
+P[61] = dict(tema="misterio", estilo="periodico", claves=["falso.", "Piltdown,", "África", "orangután,"], tomas=[
+    E("Durante cuarenta años,", [D("interior", **MUSEO), D("libro", x=540, y=1500, s=1.4)], "push", texto=["EL «ESLABÓN", "PERDIDO»"], acento=1),
+    E("y era falso.", [D("interior", **MUSEO), D("vitrina", x=540, y=1650, s=1.1), D("craneo_fosil", x=540, y=1480, s=.5)], "push_fuerte", texto="¡ERA FALSO!", sfx="boom", sfx_dur=.6),
+    M("En mil novecientos", [50.97, 0.07], 30, zoom_desde=3, centro_desde=[50, -2], resaltar=["United Kingdom"], pines=[{"lat": 50.97, "lon": 0.07, "texto": "PILTDOWN"}], titulo="1912"),
+    E("el aficionado Charles", [C("niebla", horizonte=1300), D("suelo", y=1300, colores=["#7a6a4a", "#3a3020"], tipo="tierra"), D("persona_real", x=540, y=1760, s=1.8, ropa="traje_cafe", bigote=True, sombrero="bombin")],
+      "push", dato=["CHARLES", "DAWSON"], amb="viento"),
+    E("un cráneo con", [D("interior", pared="#1d2233", piso="#0d1018", luz=False, cuadros=0), D("craneo_fosil", x=540, y=1500, s=1.4)], "push", texto=["CEREBRO GRANDE,", "MANDÍBULA DE MONO"], acento=1),
+    E("Parecía la prueba", [C("dia", horizonte=1300), D("suelo", y=1300, colores=["#7a6a4a", "#3a3020"], tipo="tierra"), D("bandera", x=540, y=1600, s=1.1, colores=["#1a3a8a", "#ffffff", "#c8102e"])],
+      "pull", texto=["¿EL ORIGEN EN", "EUROPA?"], acento=1),
+    E("Muchos expertos lo", [D("interior", **MUSEO)] + [D("persona_real", x=x, y=1760, s=1.2, ropa=r, bigote=True, lentes=k) for x, r, k in [(200, "traje", True), (540, "traje_gris", False), (880, "traje_cafe", True)]],
+      "pan_der", texto=["LOS EXPERTOS", "LO ACEPTARON"], acento=1),
+    E("En mil novecientos", [D("interior", pared="#dfe8e6", piso="#9aa8a6", luz_x=540, luz_y=700, cuadros=0), D("mesa", x=540, y=1650, s=1.2), D("craneo_fosil", x=540, y=1450, s=.8, lupa=True)],
+      "push", dato=["1953", "NUEVAS PRUEBAS"]),
+    E("era un cráneo", [D("interior", pared="#1d2233", piso="#0d1018", luz=False, cuadros=0), D("craneo_fosil", x=540, y=1500, s=1.5)], "push_fuerte",
+      texto=["CRÁNEO MEDIEVAL +", "MANDÍBULA DE ORANGUTÁN"], acento=1, sfx="boom"),
+    T("Nunca se supo", ["¿QUIÉN", "LO HIZO?"], acento=1, icono="🕵️"),
+    FIN("¿Conocías este fraude?", ["¿CONOCÍAS", "ESTE FRAUDE?"], capas=[D("interior", **MUSEO), D("craneo_fosil", x=540, y=1600, s=1.0)], comentario="Ni idea 😳"),
+])
+
+# ================================================================ 66 · Annabelle real
+DEPTO70 = dict(pared="#b8945a", piso="#5a3a22", vista="noche", ventana_x=700, pared_estilo="rombos")
+P[66] = dict(tema="terror", estilo="terror", claves=["distinta.", "roja,", "notas", "abrir»."], tomas=[
+    E("La Annabelle de", [D("interior", pared="#1a1410", piso="#0a0806", luz=False, cuadros=0), D("muneca", x=540, y=1600, s=1.5)], "push", texto=["LA DE LAS", "PELÍCULAS"], acento=1, amb="viento", amb_vol=.4),
+    E("pero la verdadera", [D("interior", pared="#1a1410", piso="#0a0806", luz_x=540, luz_y=900, cuadros=0), D("muneca_trapo", x=540, y=1650, s=1.6)], "push_fuerte", texto="LA VERDADERA", sfx="boom", sfx_dur=.5),
+    E("Es una muñeca", [D("interior", **DEPTO70), D("silla", x=540, y=1700, s=1.1), D("muneca_trapo", x=540, y=1500, s=.9)], "push", texto=["DE TRAPO Y", "LANA ROJA"], acento=1),
+    T("una «Raggedy Ann»", ["AÑOS", "70"], icono="🧸"),
+    E("Según la historia,", [D("interior", **DEPTO70), D("muneca_trapo", x=760, y=1700, s=.8), D("persona_real", x=330, y=1720, s=1.6, ropa="bata", peinado="largo", pelo="#6a4a2a")], "push",
+      dato=["ESTUDIANTE DE", "ENFERMERÍA"]),
+    E("Ella y su", [D("interior", **DEPTO70), D("cama", x=330, y=1600, s=.9), D("muneca_trapo", x=800, y=1700, s=.8, mov="desvanece")], "pan_der", texto=["CAMBIABA DE", "LUGAR"], acento=1, amb="viento", amb_vol=.3),
+    E("y que aparecían", [D("interior", pared="#1d1a14", piso="#0d0a06", luz=False, cuadros=0), D("carta", x=540, y=1550, s=1.0, texto="Ayúdanos", firma="")], "push", texto=["NOTAS ESCRITAS", "A MANO"], acento=1, sfx="papel", sfx_dur=.6),
+    E("Los investigadores paranormales", [D("interior", pared="#3a3226", piso="#1a140f", luz_x=540, luz_y=700), D("persona_real", x=330, y=1740, s=1.6, ropa="traje", peinado="corto"),
+      D("persona_real", x=730, y=1740, s=1.6, ropa="vestido", peinado="largo", pelo="#3a2a1e")], "push", dato=["ED Y LORRAINE", "WARREN"]),
+    E("y la guardaron", [D("interior", pared="#2a221a", piso="#120e0a", luz=False, cuadros=0), D("vitrina", x=540, y=1700, s=1.3), D("muneca_trapo", x=540, y=1550, s=.6),
+      D("cartel", x=540, y=1150, s=.6, titulo="PELIGRO", sub="NO ABRIR")], "push_fuerte", texto=["«PELIGRO,", "NO ABRIR»"], acento=1),
+    FIN("¿Tú crees en", ["¿CREES EN", "ESTAS HISTORIAS?"], final="si_no", capas=[D("interior", pared="#2a221a", piso="#120e0a", luz=False, cuadros=0), D("vitrina", x=540, y=1700, s=1.2), D("muneca_trapo", x=540, y=1550, s=.6)]),
+])
+
+# ================================================================ 67 · La bruja de Bell
+TENNESSEE = [C("noche", horizonte=1300), D("arboles", y=1320, n=6, color="#14200f"), D("suelo", y=1320, colores=["#3a4a2a", "#141a0e"], tipo="pasto")]
+CUARTO_BELL = dict(pared="#4a3a2a", piso="#20160e", luz=False, vista="noche", ventana_x=720)
+P[67] = dict(tema="terror", estilo="terror", claves=["persona.", "golpes", "Jackson", "frasco"], tomas=[
+    E("Es la única", TENNESSEE + [D("casa", tipo="madera", x=540, y=1450, s=.9, luces=True), D("niebla", y=1400, op=.5)], "push", texto=["EL ESPÍRITU", "QUE MATÓ"], acento=1, amb="viento"),
+    M("En mil ochocientos", [36.5, -87.0], 7, zoom_desde=2, centro_desde=[39, -95], resaltar=["United States of America"], pines=[{"lat": 36.5, "lon": -87.0, "texto": "TENNESSEE"}], titulo="1817"),
+    E("Primero vieron un", TENNESSEE + [D("ojos", x=540, y=1500, s=.8, en=.5, color="#ffcf6a")], "push", texto=["UN ANIMAL", "EXTRAÑO"], acento=1, amb="insectos", amb_vol=.4),
+    E("Después empezaron los", [D("interior", **CUARTO_BELL), D("cama", x=420, y=1550, s=1.0), D("velas", x=820, y=1500, s=.5, n=1)], "fijo", texto=["GOLPES EN LAS", "PAREDES"], acento=1,
+      sacudir=True, sfx="crujido", sfx_dur=1.0),
+    E("y las sábanas", [D("interior", **CUARTO_BELL), D("cama", x=420, y=1550, s=1.0), D("sabana", x=420, y=1400, s=1.0, en=.3)], "push", texto=["SÁBANAS", "ARRANCADAS"], acento=1, amb="viento"),
+    E("Con el tiempo,", [D("interior", **CUARTO_BELL), D("silbido", x1=200, y1=1000, x2=900, color="#dfe8ff"), D("persona_real", x=540, y=1760, s=1.8, ropa="obrero", barba=True, pelo="#d9d9d9")],
+      "push", texto=["UNA VOZ DE", "MUJER"], acento=1, amb="viento"),
+    E("Dicen que hasta", TENNESSEE + [D("persona_real", x=540, y=1760, s=1.8, ropa="uniforme", pelo="#d9d9d9", peinado="alborotado")], "push", dato=["ANDREW", "JACKSON"], amb="insectos", amb_vol=.3),
+    T("En mil ochocientos", ["1820:", "JOHN BELL MURIÓ"], acento=1, icono="⚰️"),
+    E("Junto a él", [D("interior", pared="#1d1a14", piso="#0d0a06", luz=False, cuadros=0), D("frasco", x=540, y=1500, s=1.3, contenido="liquido", color_liquido="#4a3a5a")], "push_fuerte",
+      texto=["UN FRASCO", "EXTRAÑO"], acento=1, sfx="boom", sfx_dur=.5),
+    FIN("¿Crees que fue", ["¿FUE", "REAL?"], final="si_no", capas=TENNESSEE + [D("casa", tipo="madera", x=540, y=1450, s=.9, luces=True)]),
+])
+
+# ================================================================ 69 · Casa Winchester
+SANJOSE = [C("noche", horizonte=1400), D("suelo", y=1450, colores=["#3a4a2a", "#141a0e"], tipo="pasto")]
+SARAH = dict(ropa="luto", peinado="mono", pelo="#4a4a4a")
+P[69] = dict(tema="misterio", estilo="terror", claves=["nada.", "rifles", "treinta", "espíritus"], tomas=[
+    E("En California hay", SANJOSE + [D("mansion", x=540, y=1460, s=1.0)], "push", texto=["PUERTAS A", "LA NADA"], acento=1, amb="viento"),
+    E("y puertas que", [D("interior", pared="#5a3a3a", piso="#2a1a1a", luz=False, pared_estilo="papel", cuadros=0), D("pasillo" if False else "puerta_tumba", x=540, y=1600, s=1.0)], "push_fuerte",
+      texto=["ESCALERAS AL", "TECHO"], acento=1),
+    E("Sarah Winchester heredó", [D("interior", pared="#3a2a2a", piso="#1a1010", luz_x=540, luz_y=700, pared_estilo="boiserie"), D("persona_real", x=540, y=1760, s=1.9, **SARAH)], "push",
+      dato=["SARAH", "WINCHESTER"]),
+    E("de la empresa", [D("interior", pared="#3a3226", piso="#1a140f", luz_x=540, luz_y=700), D("vitrina", x=540, y=1650, s=1.1)], "push", texto=["FORTUNA DE", "RIFLES"], acento=1),
+    M("En mil ochocientos", [37.32, -121.95], 10, zoom_desde=2, centro_desde=[39, -100], resaltar=["United States of America"], pines=[{"lat": 37.32, "lon": -121.95, "texto": "SAN JOSÉ"}], titulo="1886"),
+    N("La construcción no", 38, "AÑOS", "DÍA Y NOCHE", icono="🔨"),
+    N("Llegó a tener", 160, "HABITACIONES", "UNAS", icono="🚪"),
+    E("pasillos sin salida", [D("pasillo", luz=False), D("persona_real", x=540, y=1500, s=1.0, **SARAH, mov="camina", avance=-60)], "push", texto=["PASILLOS SIN", "SALIDA"], acento=1, amb="viento", amb_vol=.4),
+    E("La leyenda dice", SANJOSE + [D("mansion", x=540, y=1460, s=1.0), D("persona_real", x=540, y=1500, s=1.0, ropa="camisa", peinado="largo", mov="desvanece") , D("niebla", y=1400, op=.6)],
+      "push", texto=["¿PARA CONFUNDIR", "ESPÍRITUS?"], acento=1, amb="viento"),
+    E("Los historiadores creen", [D("interior", pared="#5a4a3c", piso="#2a1d14", luz_x=540, luz_y=700), D("mesa", x=540, y=1650, s=1.2), D("hoja", x=540, y=1480, s=.8),
+      D("persona_real", x=820, y=1720, s=1.5, **SARAH)], "push", texto=["LE GUSTABA", "DISEÑAR"], acento=1),
+    FIN("¿Tú cuál crees?", ["¿TÚ CUÁL", "CREES?"], capas=SANJOSE + [D("mansion", x=540, y=1460, s=1.0)], comentario="Los espíritus 👻"),
+])
+
+# ================================================================ 70 · Catacumbas de París
+P[70] = dict(tema="misterio", estilo="terror", claves=["millones", "canteras", "kilómetros.", "salió."], tomas=[
+    E("Bajo las calles", [C("noche", horizonte=1100), D("ciudad", era="antigua", y=1150, hora="noche"), D("torre_eiffel", x=800, y=1160, s=.6), D("suelo", y=1150, colores=["#4a3a2a", "#1a120c"])],
+      "baja", texto=["BAJO PARÍS"], amb="viento"),
+    N("descansan los restos", 6, "MILLONES", "DE PERSONAS", icono="💀"),
+    E("A finales del", [C("niebla", horizonte=1350), D("catedral", x=540, y=1450, s=.8), D("estacas", x=540, y=1700, s=1.0), D("suelo", y=1450, colores=["#5a4a3a", "#2a1d14"], tipo="tierra")],
+      "push", texto=["CEMENTERIOS", "LLENOS"], acento=1, amb="viento"),
+    E("Así que trasladaron", [C("noche", horizonte=1350), D("ciudad", era="antigua", y=1380, hora="noche"), D("suelo", y=1380, colores=["#6a6a5a", "#2a2a22"], tipo="adoquin"),
+      D("carpa" if False else "barril", x=400, y=1700, s=1.0), D("persona_real", x=700, y=1720, s=1.3, ropa="obrero", sombrero="boina")], "pan_der", texto=["DE NOCHE,", "A LAS CANTERAS"], acento=1),
+    E("Los acomodaron en", [D("osario")], "push", texto=["PAREDES DE", "CALAVERAS"], acento=1, amb="viento", amb_vol=.4),
+    T("que se extienden", ["KILÓMETROS"], acento=0, icono="🗺️"),
+    E("En mil setecientos", [D("osario"), D("persona_real", x=540, y=1500, s=1.0, ropa="obrero", mov="camina", avance=-40), D("velas", x=600, y=1350, s=.4, n=1)], "push",
+      dato=["PHILIBERT", "ASPAIRT · 1793"], amb="viento", amb_vol=.5),
+    E("y nunca salió.", [D("tunel"), D("velas", x=540, y=1500, s=.6, n=1)], "push_fuerte", texto="NUNCA SALIÓ", amb="viento"),
+    N("Encontraron sus restos", 11, "AÑOS", "DESPUÉS", icono="⏳"),
+    E("Hoy hay una", [D("osario"), D("lapida" if False else "cartel", x=540, y=1550, s=.7, titulo="PHILIBERT", sub="1793")], "push", texto=["UNA TUMBA CON", "SU NOMBRE"], acento=1),
+    FIN("¿Te atreverías a", ["¿TE ATREVERÍAS", "A BAJAR?"], final="si_no", capas=[D("osario")]),
+])
+
+# ================================================================ 71 · Momias de Guanajuato
+GTO = [C("dia", horizonte=1300), D("montanas", horizonte=1320, colores=["#a88a6a", "#8a6a4a", "#6a4a32"]), D("ciudad", era="colonial", y=1350, hora="dia", semilla=21),
+       D("suelo", y=1350, colores=["#a8906e", "#5a4630"], tipo="adoquin")]
+P[71] = dict(tema="misterio", estilo="calido", claves=["momificar.", "impuesto:", "solos,", "Museo"], tomas=[
+    E("En México hay", [D("interior", pared="#3a2a2a", piso="#1a1010", luz=False, cuadros=0), D("momia_gto", x=330, y=1700, s=1.2), D("momia_gto", x=760, y=1700, s=1.1)], "push",
+      texto=["NADIE QUISO", "MOMIFICARLAS"], acento=1),
+    M("En mil ochocientos", [21.02, -101.26], 12, zoom_desde=2, centro_desde=[23, -102], resaltar=["Mexico"], pines=[{"lat": 21.02, "lon": -101.26, "texto": "GUANAJUATO"}], titulo="1865"),
+    E("Guanajuato creó un", GTO + [D("carta", x=540, y=1650, s=.8, texto="Impuesto", firma="Panteón")], "push", texto=["UN IMPUESTO", "A LOS MUERTOS"], acento=1, sfx="papel", sfx_dur=.6),
+    E("Si no pagaban,", [C("dia", horizonte=1300), D("suelo", y=1300, colores=["#a8906e", "#5a4630"], tipo="tierra"), D("ataud", x=540, y=1600, s=1.0),
+      D("persona_real", x=820, y=1720, s=1.4, ropa="obrero", sombrero="fedora", piel="media")], "push", texto=["LOS", "DESENTERRABAN"], acento=1, amb="viento"),
+    E("muchos se habían", [D("interior", pared="#1d1a14", piso="#0d0a06", luz=False, cuadros=0), D("momia_gto", x=540, y=1750, s=1.7)], "push_fuerte", texto=["¡SE MOMIFICARON", "SOLOS!"], acento=1, sfx="boom"),
+    E("por el clima", [C("dia", horizonte=1300), D("desierto", y=1300), D("particulas", tipo="polvo", n=40)], "pan_der", texto=["CLIMA SECO", "Y SUELO"], acento=1, amb="viento"),
+    E("Las momias se", [D("interior", pared="#3a3226", piso="#1a140f", luz_x=540, luz_y=700, cuadros=0), D("momia_gto", x=330, y=1650, s=1.0), D("momia_gto", x=760, y=1650, s=1.0)]
+      + [D("persona_real", x=x, y=1800, s=1.0, ropa=r) for x, r in [(200, "traje"), (900, "vestido")]], "pull", texto=["PAGABAN POR", "VERLAS"], acento=1, amb="multitud", amb_vol=.3),
+    E("Algunas conservan la", [D("interior", pared="#1d1a14", piso="#0d0a06", luz=False, cuadros=0), D("vitrina", x=540, y=1700, s=1.3), D("momia_gto", x=540, y=1640, s=.7)], "push",
+      texto=["ROPA, PELO…", "Y SORPRESA"], acento=1),
+    N("Hoy el Museo", 1000, "VISITANTES", "MILES AL AÑO", icono="🏛️"),
+    FIN("¿Lo visitarías? Comenta", ["¿LO", "VISITARÍAS?"], final="si_no", capas=GTO + [D("catedral", x=540, y=1380, s=.6)]),
+])
+
+# ================================================================ 73 · Brujas de Salem
+SALEM = [C("niebla", horizonte=1300), D("casa", tipo="colonial", x=300, y=1420, s=.7, luces=False), D("catedral", x=800, y=1420, s=.6), D("suelo", y=1420, colores=["#5a4a3a", "#2a1d14"], tipo="tierra")]
+JUICIO = dict(pared="#4a3a2a", piso="#20160e", luz_x=540, luz_y=600, pared_estilo="boiserie", cuadros=0)
+PURITANO = dict(ropa="puritano", sombrero="copa")
+P[73] = dict(tema="historia", estilo="terror", claves=["brujería.", "diablo.", "Diecinueve", "centeno"], tomas=[
+    E("En mil seiscientos", [D("interior", pared="#3a2a1e", piso="#1a120c", luz=False, cuadros=0), D("velas", x=820, y=1500, s=.5, n=2),
+      D("persona_real", x=420, y=1740, s=1.7, ropa="vestido", peinado="mono", pelo="#6a4a2a", mira="der")], "fijo", texto=["GRITABAN Y SE", "RETORCÍAN"], acento=1, sacudir=True, amb="viento"),
+    T("y acusar a", ["¡BRUJERÍA!"], entrada="flash", sfx="boom"),
+    M("Fue en Salem,", [42.52, -70.9], 20, zoom_desde=2, centro_desde=[40, -90], resaltar=["United States of America"], pines=[{"lat": 42.52, "lon": -70.9, "texto": "SALEM"}], titulo="1692"),
+    E("Los médicos no", [D("interior", pared="#3a2a1e", piso="#1a120c", luz_x=540, luz_y=900, cuadros=0), D("cama", x=540, y=1550, s=1.0), D("persona_real", x=850, y=1700, s=1.4, **PURITANO, barba=True)],
+      "push", texto=["¿OBRA DEL", "DIABLO?"], acento=1),
+    N("Más de doscientas", 200, "ACUSADOS", "MÁS DE", icono="⚖️"),
+    E("Las pruebas eran", [D("interior", **JUICIO), D("mesa", x=540, y=1600, s=1.4), D("persona_real", x=300, y=1500, s=1.1, **PURITANO), D("persona_real", x=780, y=1500, s=1.1, **PURITANO, barba=True),
+      D("persona_real", x=540, y=1820, s=1.4, ropa="luto", peinado="mono")], "push", texto=["SUEÑOS Y", "VISIONES"], acento=1, amb="multitud", amb_vol=.3),
+    E("Diecinueve fueron ahorcadas", SALEM + [D("velas", x=540, y=1650, s=.8, n=5)], "pull", dato=["19", "EJECUTADAS"], amb="viento"),
+    E("Una teoría dice", [C("dia", horizonte=1300), D("trigal", y=1300, circulo=False), D("particulas", tipo="polvo", n=30)], "push", texto=["¿UN HONGO DEL", "CENTENO?"], acento=1, amb="viento", amb_vol=.4),
+    E("Pero muchos historiadores", SALEM + [D("persona_real", x=x, y=1720, s=1.0, ropa=r, **k) for x, r, k in [(200, "puritano", {"sombrero": "copa"}), (420, "luto", {"peinado": "mono"}), (680, "puritano", {}), (900, "vestido", {"peinado": "mono"})]],
+      "pan_der", texto=["MIEDO, RENCOR", "Y PÁNICO"], acento=1, amb="multitud", amb_vol=.4),
+    FIN("¿Tú qué crees", ["¿QUÉ CREES", "QUE PASÓ?"], capas=SALEM, comentario="Fue el miedo 😨"),
+])
+
+# ================================================================ 74 · Condesa Báthory
+CACHTICE = [C("tormenta", horizonte=1350), D("montanas", horizonte=1380, colores=["#3a3a4a", "#2a2a3a", "#1a1a2a"]), D("castillo", x=540, y=1420, s=1.0), D("suelo", y=1420, colores=["#3a3a2a", "#141410"], tipo="tierra")]
+SALON = dict(pared="#3a3a3e", piso="#1a1a1e", luz=False, cuadros=0)
+ISABEL = dict(ropa="luto", peinado="mono", pelo="#2a1a10", piel="clara")
+P[74] = dict(tema="historia", estilo="terror", claves=["sangrienta».", "Hungría,", "juicio.", "enemigos,"], tomas=[
+    E("La llamaban «la", CACHTICE, "push", texto=["«LA CONDESA", "SANGRIENTA»"], acento=1, amb="viento"),
+    T("Pero hay historiadores", ["¿Y SI NO", "FUE ASÍ?"], acento=1, icono="🤔"),
+    E("Isabel Báthory fue", [D("interior", **SALON), D("antorcha", x=200, y=1300, s=.8), D("antorcha", x=880, y=1300, s=.8), D("persona_real", x=540, y=1760, s=1.9, **ISABEL)],
+      "push", dato=["ISABEL", "BÁTHORY"], amb="fuego", amb_vol=.4),
+    E("una de las", [D("interior", **SALON), D("antorcha", x=540, y=1250, s=.8), D("tesoro", x=540, y=1650, s=1.0)], "push", texto=["DE LAS MÁS", "RICAS"], acento=1, amb="fuego", amb_vol=.3),
+    E("En mil seiscientos", CACHTICE + [D("persona_real", x=x, y=1740, s=.9, ropa="vestido", peinado="largo") for x in (250, 830)], "push", dato=["1610", "ACUSADA"], amb="viento"),
+    E("Nunca tuvo un", [D("interior", **SALON), D("mesa", x=540, y=1650, s=1.3), D("persona_real", x=330, y=1500, s=1.0, ropa="traje", barba=True), D("persona_real", x=760, y=1500, s=1.0, ropa="traje", barba=True)],
+      "push", texto=["NUNCA TUVO", "UN JUICIO"], acento=1),
+    E("La encerraron en", [D("interior", pared="#2a2a2e", piso="#121214", luz=False, cuadros=0, vista="noche", ventana_x=540), D("velas", x=700, y=1550, s=.5, n=1), D("persona_real", x=420, y=1760, s=1.6, **ISABEL)],
+      "push", texto=["ENCERRADA", "4 AÑOS"], acento=1, sfx="crujido", sfx_dur=.8),
+    E("Con el tiempo", [D("interior", **SALON), D("antorcha", x=540, y=1250, s=.8), D("barril", x=540, y=1650, s=1.2), D("luz", x=540, y=1600, r=300, color="#c1121f", op=.4)], "push",
+      texto=["¿BAÑOS DE", "SANGRE?"], acento=1),
+    E("algo que nadie", [D("interior", pared="#3a3226", piso="#1a140f", luz_x=540, luz_y=900, cuadros=0), D("libro", x=540, y=1500, s=1.3)], "push", texto=["INVENTADO", "DESPUÉS"], acento=1, sfx="papel", sfx_dur=.6),
+    E("Algunos historiadores creen", CACHTICE + [D("persona_real", x=x, y=1760, s=1.0, ropa="traje", barba=True, sombrero="copa") for x in (200, 400, 700, 900)], "pull",
+      texto=["¿VÍCTIMA DE", "SUS ENEMIGOS?"], acento=1, amb="viento"),
+    FIN("¿Culpable o víctima?", ["¿CULPABLE", "O VÍCTIMA?"], capas=CACHTICE, comentario="Víctima ⚖️"),
+])
+
+# ================================================================ 76 · Amityville
+AMITY = [C("noche", horizonte=1450), D("arboles", y=1460, n=5, color="#14200f"), D("mansion", estilo="amityville", x=540, y=1520, s=1.0), D("suelo", y=1520, colores=["#3a4a2a", "#141a0e"], tipo="pasto")]
+P[76] = dict(tema="terror", estilo="terror", claves=["mentira", "DeFeo", "moscas", "vino»."], tomas=[
+    E("La casa embrujada", AMITY, "push", texto=["¿LA CASA MÁS", "EMBRUJADA?"], acento=1, amb="viento"),
+    T("podría haber sido", ["¿UNA", "MENTIRA?"], acento=1, icono="🍷"),
+    M("En mil novecientos", [40.67, -73.42], 25, zoom_desde=2, centro_desde=[40, -90], resaltar=["United States of America"], pines=[{"lat": 40.67, "lon": -73.42, "texto": "AMITYVILLE"}], titulo="1974"),
+    E("Ronald DeFeo mató", AMITY + [D("sirenas_policia", y=1500)], "push", texto=["MATÓ A", "SU FAMILIA"], acento=1, amb="viento"),
+    E("Un año después,", [C("dia", horizonte=1450), D("arboles", y=1460, n=5), D("mansion", estilo="amityville", x=540, y=1520, s=1.0, luces=False), D("suelo", y=1520, colores=["#5a8a3a", "#2a4a1a"], tipo="pasto"),
+      D("persona_real", x=200, y=1800, s=1.2, ropa="camisa", bigote=True), D("persona_real", x=880, y=1800, s=1.2, ropa="vestido", peinado="largo")], "pull", dato=["LOS LUTZ", "1975"]),
+    E("Contaron que escuchaban", [D("interior", pared="#5a4a3a", piso="#2a1d14", luz=False, cuadros=0), D("silbido", x1=200, y1=1000, x2=900, color="#dfe8ff")], "push", texto="VOCES", amb="viento"),
+    E("que un enjambre", [D("interior", pared="#5a4a3a", piso="#2a1d14", luz=False, vista="nieve", ventana_x=540, cuadros=0), D("particulas", tipo="moscas", n=80)], "push_fuerte",
+      texto=["MOSCAS EN", "PLENO INVIERNO"], acento=1, amb="zumbido", amb_vol=.6),
+    N("y que una", 28, "DÍAS", "HUYERON A LOS", icono="🏃"),
+    E("Su historia se", [D("interior", pared="#2a1a1e", piso="#110a0c", luz=False, cuadros=0), D("pantalla", x=540, y=1150, s=1.6, texto=""), D("libro", x=540, y=1500, s=.9), D("butacas")],
+      "pull", texto=["LIBRO Y", "PELÍCULA"], acento=1),
+    E("Pero años después,", [D("interior", pared="#3a3226", piso="#1a140f", luz_x=540, luz_y=700), D("mesa", x=540, y=1650, s=1.2), D("botella", x=420, y=1450, s=.8), D("botella", x=560, y=1460, s=.7),
+      D("persona_real", x=820, y=1700, s=1.5, ropa="traje", bigote=True)], "push", texto=["«CON MUCHAS BOTELLAS", "DE VINO»"], acento=1),
+    E("Las familias que", AMITY[:2] + [D("mansion", estilo="amityville", x=540, y=1520, s=1.0, luces=False), D("suelo", y=1520, colores=["#3a4a2a", "#141a0e"], tipo="pasto")], "pull",
+      texto=["NO NOTARON", "NADA"], acento=1, amb="insectos", amb_vol=.3),
+    FIN("¿Tú qué crees?", ["¿TÚ QUÉ", "CREES?"], capas=AMITY, comentario="Fue el vino 🍷"),
+])
+
+# ================================================================ 77 · Hombre Polilla
+POINT = [C("noche", horizonte=1100), D("puente", y=1250)]
+P[77] = dict(tema="misterio", estilo="neon", claves=["rojos,", "persiguió", "Mothman»,", "cuarenta"], tomas=[
+    E("Ojos rojos, brillantes,", [C("noche", horizonte=1300), D("arboles", y=1320, n=6, color="#0d140a"), D("ojos", x=540, y=1100, s=1.2, en=.3, color="#ff3030")], "push_fuerte",
+      texto="OJOS ROJOS", amb="viento"),
+    E("y unas alas", POINT + [D("mothman", x=540, y=1240, s=1.0)], "push", texto=["ALAS", "ENORMES"], acento=1, amb="viento"),
+    M("Fue en Point", [38.84, -82.14], 10, zoom_desde=2, centro_desde=[39, -95], resaltar=["United States of America"], pines=[{"lat": 38.84, "lon": -82.14, "texto": "POINT PLEASANT"}], titulo="NOV. 1966"),
+    E("Dos parejas contaron", [D("interior", pared="#3a4a5a", piso="#1a222a", luz_x=540, luz_y=700, cuadros=0), D("persona_real", x=780, y=1720, s=1.5, ropa="uniforme", sombrero="fedora"),
+      D("persona_real", x=300, y=1720, s=1.4, ropa="camisa"), D("persona_real", x=470, y=1730, s=1.3, ropa="vestido", peinado="largo")], "push", texto=["FUERON A LA", "POLICÍA"], acento=1),
+    E("que una criatura", [C("noche", horizonte=1300), D("arboles", y=1320, n=6, color="#0d140a"), D("suelo", y=1320, colores=["#2a2a2e", "#0d0d10"], tipo="asfalto"),
+      D("auto_60", x=300, y=1700, s=1.0, mov="avanza", avance=300), D("mothman", x=200, y=1300, s=.7)], "pan_der", texto=["¡LOS", "PERSIGUIÓ!"], acento=1, sfx="boom", sfx_dur=.6, amb="viento"),
+    N("Durante un año", 100, "AVISTAMIENTOS", "DECENAS DE", icono="👁️"),
+    E("Los diarios la", [D("interior", pared="#3a3226", piso="#1a140f", luz_x=540, luz_y=700), D("periodico", x=540, y=1550, s=1.1, titular="MOTHMAN")], "push", texto="«MOTHMAN»", sfx="papel", sfx_dur=.6),
+    E("En diciembre de", [C("noche", horizonte=1100), D("puente", y=1250, colapso=True, en=1.2)], "fijo", texto=["¡EL PUENTE", "COLAPSÓ!"], acento=1, sacudir=True, sfx="crujido", sfx_dur=2.0),
+    N("y murieron cuarenta", 46, "PERSONAS", "MURIERON", icono="🕯️"),
+    E("Después de eso,", POINT + [D("mothman", x=540, y=1240, s=1.0, mov="desvanece", desvanece_en=1.5)], "pull", texto=["¿VINO A", "ADVERTIR?"], acento=1, amb="viento"),
+    FIN("¿Crees en el", ["¿CREES EN EL", "HOMBRE POLILLA?"], final="si_no", capas=POINT + [D("mothman", x=540, y=1240, s=.9)]),
+])
+
+# ================================================================ 78 · Diablo de Jersey
+PINOS = [C("noche", horizonte=1300), D("arboles", y=1350, n=7, tipo="pino", nieve=True, color="#1e3020"), D("suelo", y=1350, colores=["#e6edf7", "#9aa8bf"], tipo="nieve")]
+P[78] = dict(tema="misterio", estilo="terror", claves=["trece…", "diablo».", "huellas", "recompensas"], tomas=[
+    E("Según la leyenda,", [D("interior", pared="#4a3a2a", piso="#20160e", luz=False, cuadros=0), D("velas", x=760, y=1500, s=.6, n=2), D("cama", x=420, y=1600, s=1.0)], "push",
+      dato=["NUEVA JERSEY", "1735"], amb="viento"),
+    T("y nació un", ["EL HIJO", "NÚMERO 13"], acento=1, icono="🌑"),
+    E("Cuentan que la", [D("interior", pared="#4a3a2a", piso="#20160e", luz=False, cuadros=0), D("velas", x=760, y=1500, s=.6, n=2), D("persona_real", x=420, y=1760, s=1.8, ropa="vestido", peinado="mono", pelo="#3a2a1e")],
+      "push", texto=["«SERÍA EL", "DIABLO»"], acento=1, sfx="boom", sfx_dur=.6),
+    E("El bebé se", [D("interior", pared="#1a1410", piso="#0a0806", luz=False, cuadros=0), D("diablo_jersey", x=540, y=1600, s=1.3)], "push_fuerte",
+      texto=["ALAS, COLA Y", "PATAS DE CABALLO"], acento=1, amb="viento"),
+    E("y escapó volando", PINOS + [D("casa", tipo="madera", x=300, y=1460, s=.7, luces=True), D("diablo_jersey", x=700, y=900, s=.8, vuela=True)], "sube", texto=["POR LA", "CHIMENEA"], acento=1, amb="viento"),
+    E("Durante siglos hubo", PINOS + [D("ojos", x=600, y=1300, s=.8, en=1.0, color="#ff3030")], "push", texto=["UNA CRIATURA", "EN LOS BOSQUES"], acento=1, amb="viento"),
+    T("Pero lo más", ["ENERO", "1909"], acento=0, icono="❄️"),
+    E("en una sola", PINOS + [D("huellas", x=540, y=1600, s=1.0)], "push", texto=["MILES VIERON", "HUELLAS"], acento=1, amb="viento"),
+    E("Cerraron escuelas y", [C("dia", horizonte=1350), D("ciudad", era="antigua", y=1380, hora="dia"), D("suelo", y=1380, colores=["#e6edf7", "#9aa8bf"], tipo="nieve"),
+      D("cartel", x=540, y=1650, s=.9, titulo="RECOMPENSA", sub="$10.000")], "push", texto=["¡RECOMPENSA!"], amb="viento", amb_vol=.5),
+    FIN("¿Qué crees que", ["¿QUÉ CREES", "QUE VIERON?"], capas=PINOS + [D("diablo_jersey", x=540, y=1000, s=.7, vuela=True)], comentario="Un búho 🦉"),
+])
+
+# ================================================================ 79 · Hombre de Taured
+ADUANA = dict(pared="#8a8a7a", piso="#3a3a32", luz_x=540, luz_y=600, cuadros=0, vista="dia", ventana_x=760)
+VIAJERO = dict(ropa="traje_gris", sombrero="fedora", bigote=True)
+P[79] = dict(tema="misterio", estilo="retro", claves=["existe.", "Taured.", "Andorra.", "desaparecido…"], tomas=[
+    E("Cuenta una leyenda", [C("dia", horizonte=1300), D("avion", x=540, y=900, s=.9, avance=200), D("suelo", y=1300, colores=["#5a5a5e", "#2a2a2e"], tipo="asfalto")], "push",
+      dato=["TOKIO", "1954"], amb="viento"),
+    T("desde un país", ["UN PAÍS QUE", "NO EXISTE"], acento=1, icono="🌍"),
+    E("Según la historia,", [D("interior", **ADUANA), D("pasaporte", x=540, y=1650, s=1.2)], "push", texto="«TAURED»", sfx="papel", sfx_dur=.6),
+    E("Decía que estaba", [D("interior", **ADUANA), D("mostrador", x=540, y=1700, s=1.0), D("persona_real", x=330, y=1700, s=1.6, **VIAJERO), D("persona_real", x=780, y=1700, s=1.5, ropa="uniforme", piel="asiatica")],
+      "push", texto=["ENTRE FRANCIA", "Y ESPAÑA"], acento=1),
+    M("Le mostraron un", [42.5, 1.5], 25, zoom_desde=4, centro_desde=[43, 2], resaltar=["Andorra", "France", "Spain"], pines=[{"lat": 42.5, "lon": 1.5, "texto": "ANDORRA"}]),
+    E("Él se enojó:", [D("interior", **ADUANA), D("persona_real", x=540, y=1760, s=2.0, **VIAJERO)], "push_fuerte", texto=["«EXISTE HACE", "MIL AÑOS»"], acento=1),
+    E("Lo dejaron en", [D("interior", pared="#6a5a4a", piso="#2a1d14", luz=False, vista="noche", ventana_x=700), D("cama", x=420, y=1600, s=1.0), D("persona_real", x=800, y=1720, s=1.4, ropa="uniforme", piel="asiatica")],
+      "push", texto=["EN UN HOTEL,", "VIGILADO"], acento=1),
+    E("A la mañana", [D("interior", pared="#6a5a4a", piso="#2a1d14", vista="dia", ventana_x=700), D("cama", x=420, y=1600, s=1.0)], "push", texto=["HABÍA", "DESAPARECIDO"], acento=1, sfx="boom", sfx_dur=.5),
+    T("Nunca se ha", ["NINGÚN REGISTRO", "OFICIAL"], acento=1, icono="📁"),
+    FIN("¿Viajó de otra", ["¿VINO DE OTRA", "DIMENSIÓN?"], final="si_no", capas=[D("interior", **ADUANA), D("pasaporte", x=540, y=1650, s=1.0)]),
+])
+
+# ================================================================ 80 · Slender Man
+PARQUE = [C("dia", horizonte=1300), D("arboles", y=1320, n=6)]
+P[80] = dict(tema="misterio", estilo="neon", claves=["rostro,", "Photoshop.", "Knudsen,", "internet."], tomas=[
+    E("Un hombre altísimo,", PARQUE + [D("slender", x=540, y=1360, s=1.0), D("suelo", y=1320, colores=["#5a7a3a", "#2a3a1a"], tipo="pasto")], "push", texto=["SIN ROSTRO", "Y DE TRAJE"], acento=1, amb="viento"),
+    T("Pero nació en", ["NACIÓ EN", "INTERNET"], acento=1, icono="💻"),
+    E("En junio de", [D("interior", pared="#2a2a3a", piso="#121218", luz=False, cuadros=0), D("computadora", x=540, y=1550, s=1.2)], "push", dato=["JUNIO", "2009"], amb="zumbido", amb_vol=.3),
+    T("crear imágenes paranormales", ["UN CONCURSO DE", "PHOTOSHOP"], acento=1, icono="🖼️"),
+    E("Un usuario, Eric", [D("interior", pared="#2a2a3a", piso="#121218", luz=False, cuadros=0), D("computadora", x=540, y=1550, s=1.0), D("persona_real", x=820, y=1720, s=1.5, ropa="sueter")],
+      "push", dato=["ERIC", "KNUDSEN"], amb="zumbido", amb_vol=.3),
+    E("publicó dos fotos", PARQUE + [D("slender", x=820, y=1350, s=.8, op=.5), D("suelo", y=1320, colores=["#5a7a3a", "#2a3a1a"], tipo="pasto")] +
+      [D("persona_real", x=x, y=1720, s=1.0, ropa=r, peinado=pe) for x, r, pe in [(250, "camisa", "corto"), (450, "vestido", "largo"), (620, "overol", "corto")]],
+      "push", texto=["¿LA VES AL", "FONDO?"], acento=1, amb="viento"),
+    E("Debajo escribió textos", [D("interior", pared="#3a3226", piso="#1a140f", luz_x=540, luz_y=900, cuadros=0), D("carta", x=540, y=1550, s=1.0, texto="Testimonio", firma="1983")],
+      "push", texto=["COMO SI FUERAN", "REALES"], acento=1, sfx="papel", sfx_dur=.6),
+    E("Otros usuarios empezaron", [D("interior", pared="#2a2a3a", piso="#121218", luz=False, cuadros=0), D("pantalla", tipo="sala", x=540, y=1450, s=1.0)], "pull",
+      texto=["HISTORIAS, VIDEOS", "Y JUEGOS"], acento=1),
+    E("En pocos años,", PARQUE + [D("niebla", y=1300, op=.6), D("slender", x=540, y=1380, s=1.1), D("suelo", y=1320, colores=["#3a4a2a", "#141a0e"], tipo="pasto")], "push_fuerte",
+      texto=["LEYENDA", "MUNDIAL"], acento=1, sfx="boom"),
+    FIN("¿Lo conocías? Comenta", ["¿LO", "CONOCÍAS?"], final="si_no", capas=PARQUE + [D("slender", x=760, y=1360, s=.8, op=.6)]),
+])
+
+# ================================================================ 82 · Gigante de Cardiff
+CARDIFF = [C("dia", horizonte=1300), D("montanas", horizonte=1320, colores=["#7a9a6a", "#5a7a4a", "#3a5a2a"]), D("suelo", y=1300, colores=["#8a7a5a", "#3a3020"], tipo="tierra")]
+P[82] = dict(tema="misterio", estilo="periodico", claves=["metros.", "petrificado.", "Hull,", "copia"], tomas=[
+    E("En mil ochocientos", CARDIFF + [D("gigante_piedra", x=540, y=1650, s=1.0)] + [D("persona_real", x=x, y=1520, s=.9, ropa="obrero", sombrero="fedora") for x in (200, 880)],
+      "push", dato=["1869", "UN GIGANTE"], amb="viento"),
+    N("encontraron a un", 3, "METROS", "DE PIEDRA", icono="🗿"),
+    E("Fue en una", CARDIFF + [D("casa", tipo="granja", x=540, y=1420, s=.9)], "pull", dato=["CARDIFF", "NUEVA YORK"], amb="insectos", amb_vol=.4),
+    E("Miles de personas", CARDIFF + [D("carpa", x=540, y=1500, s=1.0)] + [D("persona_real", x=x, y=1760, s=1.0, ropa=r, sombrero=h) for x, r, h in [(150, "traje", "copa"), (350, "vestido", None), (730, "traje_cafe", "bombin"), (930, "abrigo", "copa")]],
+      "pan_der", texto=["PAGABAN POR", "VERLO"], acento=1, amb="multitud"),
+    E("y muchos creyeron", [C("dia", horizonte=1300), D("suelo", y=1300, colores=["#8a7a5a", "#3a3020"], tipo="tierra"), D("gigante_piedra", x=540, y=1600, s=1.5)], "push_fuerte",
+      texto=["¿UN HOMBRE", "PETRIFICADO?"], acento=1),
+    E("En realidad, lo", [D("interior", pared="#5a4a3c", piso="#2a1d14", luz_x=540, luz_y=700), D("persona_real", x=540, y=1760, s=1.9, ropa="traje", barba=True, sombrero="bombin")], "push",
+      dato=["GEORGE HULL", "TABACALERO"]),
+    E("después de discutir", [D("interior", pared="#5a4a3c", piso="#2a1d14", luz_x=540, luz_y=700, pared_estilo="boiserie"), D("libro", x=540, y=1550, s=.8),
+      D("persona_real", x=260, y=1720, s=1.5, ropa="traje", barba=True), D("persona_real", x=820, y=1720, s=1.5, ropa="puritano", pelo="#d9d9d9")], "push", texto=["¿GIGANTES DE", "LA BIBLIA?"], acento=1),
+    E("Lo esculpieron en", [D("interior", pared="#4a4a44", piso="#22221e", luz_x=540, luz_y=700, cuadros=0), D("gigante_piedra", x=540, y=1650, s=1.1), D("frasco", x=900, y=1650, s=.7, contenido="liquido", color_liquido="#c9e86a")],
+      "push", texto=["YESO Y", "ÁCIDO"], acento=1),
+    E("Lo más loco:", [C("dia", horizonte=1300), D("carpa", x=320, y=1500, s=.8), D("carpa", x=780, y=1500, s=.8), D("suelo", y=1300, colores=["#8a7a5a", "#3a3020"], tipo="tierra"),
+      D("cartel", x=540, y=1700, s=.8, titulo="¡EL GIGANTE!", sub="P. T. BARNUM")], "pull", texto=["¡UNA COPIA", "DE LA COPIA!"], acento=1, amb="multitud"),
+    FIN("¿Tú habrías pagado", ["¿HABRÍAS PAGADO", "POR VERLO?"], final="si_no", capas=CARDIFF + [D("gigante_piedra", x=540, y=1650, s=1.0)]),
+])
+
+# ================================================================ 83 · Círculos en los cultivos
+CAMPO_UK = [C("noche", horizonte=1150), D("trigal", y=1150, noche=True)]
+DOUG = dict(ropa="abrigo", sombrero="gorra", pelo="#d9d9d9", bigote=True)
+P[83] = dict(tema="misterio", estilo="neon", claves=["extraterrestres.", "huellas", "confesaron:", "auténtico»."], tomas=[
+    E("Durante años, aparecieron", [C("dia", horizonte=1150), D("trigal", y=1150)], "baja", texto=["FIGURAS", "PERFECTAS"], acento=1, amb="viento"),
+    E("Muchos creyeron que", CAMPO_UK + [D("luz", x=540, y=500, r=300, color="#8dff9c", op=.4, parpadeo=True)], "push", texto=["¿MENSAJES", "EXTRATERRESTRES?"], acento=1, amb="zumbido", amb_vol=.4),
+    E("Eran círculos enormes,", [C("dia", horizonte=1150), D("trigal", y=1150)], "push", texto=["SIN HUELLAS", "ALREDEDOR"], acento=1, amb="viento"),
+    E("Llegaron científicos, curiosos", [C("dia", horizonte=1150), D("trigal", y=1150)] + [D("persona_real", x=x, y=1800, s=1.0, ropa=r, **k) for x, r, k in [(150, "bata", {"lentes": True}), (380, "camisa", {}), (680, "abrigo", {}), (900, "traje", {"sombrero": "fedora"})]],
+      "pan_der", texto=["CAZADORES", "DE OVNIS"], acento=1, amb="multitud", amb_vol=.4),
+    E("En mil novecientos", [D("interior", pared="#5a4a3c", piso="#2a1d14", luz_x=540, luz_y=700), D("persona_real", x=330, y=1740, s=1.6, **DOUG), D("persona_real", x=760, y=1740, s=1.6, ropa="sueter", pelo="#bfbfbf", peinado="calvo")],
+      "push", dato=["DOUG Y DAVE", "1991"]),
+    T("los hacían ellos", ["¡ERAN ELLOS!", "DESDE 1976"], acento=0, entrada="flash", sfx="boom"),
+    E("Usaban una tabla", CAMPO_UK + [D("persona_real", x=400, y=1750, s=1.4, **DOUG, mov="camina", avance=150), D("caja", x=520, y=1780, s=.4)], "pan_der",
+      texto=["TABLA, CUERDA", "Y UNA GORRA"], acento=1, amb="viento"),
+    E("Lo demostraron frente", [C("dia", horizonte=1150), D("trigal", y=1150), D("microfono", x=820, y=1800, s=.8), D("persona_real", x=330, y=1800, s=1.3, ropa="traje", lentes=True)], "push",
+      texto=["«ES", "AUTÉNTICO»"], acento=1, sfx="ping", sfx_dur=.4),
+    E("Hoy hay artistas", CAMPO_UK, "baja", texto=["EN UNA", "SOLA NOCHE"], acento=1, amb="viento"),
+    FIN("¿Tú creías que", ["¿CREÍAS QUE", "ERAN OVNIS?"], final="si_no", capas=CAMPO_UK),
+])
+
+# ================================================================ 86 · Nintendo desde 1889
+KIOTO = [C("atardecer", horizonte=1300), D("pueblo_jp", y=1330), D("suelo", y=1330, colores=["#8a7a62", "#3a3024"], tipo="tierra")]
+TALLER = dict(pared="#8a6a4a", piso="#4a3420", luz_x=540, luz_y=700, pared_estilo="liso", cuadros=0)
+P[86] = dict(tema="ciencia", estilo="pop", claves=["cine.", "hanafuda.", "quiebra.", "Boy."], tomas=[
+    E("Nintendo es más", [D("interior", **TALLER), D("farol", x=200, y=800), D("mesa", x=540, y=1650, s=1.2), D("naipes", x=540, y=1450, s=.9)], "push",
+      texto=["MÁS ANTIGUA QUE", "EL CINE"], acento=1),
+    M("Fue fundada en", [35.01, 135.77], 12, zoom_desde=2, centro_desde=[36, 138], resaltar=["Japan"], pines=[{"lat": 35.01, "lon": 135.77, "texto": "KIOTO"}], titulo="1889"),
+    E("por Fusajiro Yamauchi.", KIOTO + [D("farol", x=880, y=900), D("persona_real", x=540, y=1760, s=1.8, ropa="kimono", piel="asiatica", bigote=True, pelo="#2a2a2a")], "push",
+      dato=["FUSAJIRO", "YAMAUCHI"], amb="viento", amb_vol=.4),
+    E("No hacía videojuegos:", [D("interior", **TALLER), D("farol", x=880, y=800), D("mesa", x=540, y=1650, s=1.3), D("naipes", x=420, y=1450, s=.8),
+      D("persona_real", x=760, y=1700, s=1.3, ropa="kimono", piel="asiatica", peinado="calvo")], "push", texto=["NAIPES", "HANAFUDA"], acento=1),
+    E("En los años", [C("dia", horizonte=1300), D("ciudad", era="moderna", y=1330, hora="dia"), D("suelo", y=1330, colores=["#5a5a5e", "#2a2a2e"], tipo="asfalto"),
+      D("auto_60", x=330, y=1700, s=.9, color="#e0b020")], "pan_der", texto=["TAXIS, ARROZ", "Y HOTELES"], acento=1, amb="multitud", amb_vol=.3),
+    E("Casi todos fracasaron,", [D("interior", pared="#3a3a3e", piso="#1a1a1e", luz=False, cuadros=0), D("caja", x=540, y=1600, s=1.2)], "push", texto=["CERCA DE LA", "QUIEBRA"], acento=1),
+    E("Entonces empezó a", [D("interior", pared="#2a1a3a", piso="#100a18", luz=False, cuadros=0), D("arcade", x=330, y=1750, s=1.0), D("arcade", x=760, y=1750, s=1.0)], "pull",
+      texto=["JUGUETES Y", "ARCADES"], acento=1, amb="zumbido", amb_vol=.4),
+    E("Un ingeniero de", [D("interior", pared="#dfe8e6", piso="#9aa8a6", luz_x=540, luz_y=700, cuadros=0), D("mesa", x=540, y=1650, s=1.2), D("persona_real", x=780, y=1720, s=1.6, ropa="bata", piel="asiatica", lentes=True)],
+      "push", dato=["GUNPEI", "YOKOI"]),
+    E("Fue un éxito,", [D("interior", pared="#2a2a3a", piso="#121218", luz_x=540, luz_y=900, cuadros=0), D("mando", x=540, y=1450, s=1.4)], "push_fuerte", texto=["CREÓ LA", "GAME BOY"], acento=1, sfx="ping", sfx_dur=.5),
+    FIN("¿Cuál fue tu", ["¿TU PRIMERA", "CONSOLA?"], capas=[D("interior", **TALLER), D("naipes", x=540, y=1500, s=1.0)], comentario="La Game Boy 🎮"),
+])
+
+# ================================================================ 89 · Tetris soviético
+OFI_MOSCU = dict(pared="#5a6a5a", piso="#2a322a", luz_x=540, luz_y=600, cuadros=0, vista="nieve", ventana_x=780)
+ALEKSEI = dict(ropa="sueter", bigote=True, pelo="#3a2a1e", lentes=True)
+P[89] = dict(tema="ciencia", estilo="frio", claves=["dinero", "Moscú.", "disquetes", "noventa"], tomas=[
+    E("Uno de los", [D("interior", **OFI_MOSCU), D("tetris", x=540, y=1600, s=1.2)], "push", texto=["CREADO EN LA", "UNIÓN SOVIÉTICA"], acento=1, amb="zumbido", amb_vol=.3),
+    T("y su creador", ["SU CREADOR", "NO COBRÓ"], acento=1, icono="🚫"),
+    E("En mil novecientos", [C("niebla", horizonte=1350), D("ciudad", era="sovietica", y=1380, hora="dia"), D("suelo", y=1380, colores=["#e6edf7", "#9aa8bf"], tipo="nieve"), D("particulas", tipo="nieve", n=50)],
+      "push", dato=["MOSCÚ", "1984"], amb="viento"),
+    E("Alekséi Pázhitnov trabajaba", [D("interior", **OFI_MOSCU), D("tetris", x=700, y=1600, s=.9), D("persona_real", x=280, y=1720, s=1.6, **ALEKSEI)], "push", dato=["ALEKSÉI", "PÁZHITNOV"], amb="zumbido", amb_vol=.3),
+    E("En su tiempo", [D("interior", pared="#0a1a0c", piso="#050a06", luz=False, cuadros=0), D("tetris", x=540, y=1650, s=1.5)], "push_fuerte", texto=["PIEZAS QUE", "CAÍAN"], acento=1),
+    E("inspirado en un", [D("interior", pared="#5a4a3c", piso="#2a1d14", luz_x=540, luz_y=900, cuadros=0), D("mesa", x=540, y=1650, s=1.2), D("bloques", x=540, y=1450, s=.8)], "push",
+      texto=["UN ROMPECABEZAS", "DE NIÑO"], acento=1),
+    E("Se volvió adictivo", [D("interior", **OFI_MOSCU), D("disquete", x=330, y=1600, s=.8), D("disquete", x=560, y=1640, s=.7), D("disquete", x=780, y=1600, s=.8)], "pan_der",
+      texto=["COPIAS EN", "DISQUETES"], acento=1),
+    E("Pero en la", [C("niebla", horizonte=1350), D("ciudad", era="sovietica", y=1380), D("bandera", x=540, y=1500, s=1.2, colores=["#c8102e"])], "push", texto=["ERA DEL", "ESTADO"], acento=1, amb="viento"),
+    E("Empresas de varios", [D("interior", pared="#3a3a4a", piso="#1a1a24", luz_x=540, luz_y=700, pared_estilo="boiserie"), D("mesa", x=540, y=1650, s=1.4)] +
+      [D("persona_real", x=x, y=1550, s=1.0, ropa="traje", **k) for x, k in [(250, {"bigote": True}), (540, {"lentes": True}), (830, {"peinado": "calvo"})]], "push", texto=["PELEARON LOS", "DERECHOS"], acento=1),
+    N("Pázhitnov recién empezó", 12, "AÑOS", "DESPUÉS COBRÓ", icono="⏳"),
+    FIN("¿Eres bueno en", ["¿ERES BUENO", "EN TETRIS?"], final="si_no", capas=[D("interior", **OFI_MOSCU), D("tetris", x=540, y=1600, s=1.1)]),
+])
+
+# ================================================================ 90 · Tennis for Two
+LAB58 = dict(pared="#6a7a7a", piso="#2a3232", luz_x=540, luz_y=600, cuadros=0)
+WILLY = dict(ropa="traje_gris", lentes=True, peinado="calvo", bigote=True)
+P[90] = dict(tema="ciencia", estilo="retro", claves=["laboratorio…", "aburridas.", "osciloscopio,", "patentó:"], tomas=[
+    E("Uno de los", [D("interior", **LAB58), D("osciloscopio", x=540, y=1700, s=1.3)], "push", texto=["EN UNA PANTALLA", "DE LABORATORIO"], acento=1, amb="zumbido", amb_vol=.4),
+    T("en mil novecientos", ["1958"], icono="🎾"),
+    E("El físico William", [D("interior", **LAB58), D("persona_real", x=540, y=1760, s=1.9, **WILLY)], "push", dato=["WILLIAM", "HIGINBOTHAM"]),
+    M("trabajaba en el", [40.87, -72.87], 20, zoom_desde=2, centro_desde=[40, -95], resaltar=["United States of America"], pines=[{"lat": 40.87, "lon": -72.87, "texto": "BROOKHAVEN"}]),
+    E("Cada año abrían", [D("interior", **LAB58), D("mesa", x=540, y=1650, s=1.3), D("frasco", x=400, y=1430, s=.5)] + [D("persona_real", x=x, y=1800, s=1.0, ropa=r) for x, r in [(200, "abrigo"), (880, "vestido")]],
+      "pan_der", texto=["EXHIBICIONES", "ABURRIDAS"], acento=1, amb="multitud", amb_vol=.2),
+    E("Así que conectó", [D("interior", pared="#1d2620", piso="#0d120e", luz=False, cuadros=0), D("osciloscopio", x=540, y=1700, s=1.6)], "push_fuerte", texto="UN OSCILOSCOPIO", amb="zumbido", amb_vol=.5),
+    E("Creó «Tennis for", [D("interior", pared="#1d2620", piso="#0d120e", luz=False, cuadros=0), D("osciloscopio", x=540, y=1600, s=1.3)], "push", texto=["«TENNIS", "FOR TWO»"], acento=1, sfx="pop", sfx_dur=.4),
+    E("Los visitantes hicieron", [D("interior", **LAB58), D("osciloscopio", x=800, y=1650, s=.7)] + [D("persona_real", x=x, y=1780 - k * 20, s=1.1 - k * .1, ropa=r) for k, (x, r) in enumerate([(560, "camisa"), (400, "vestido"), (260, "traje"), (130, "abrigo")])],
+      "pull", texto=["LARGAS", "FILAS"], acento=1, amb="multitud", amb_vol=.5),
+    E("Pero Higinbotham nunca", [D("interior", **LAB58), D("persona_real", x=540, y=1760, s=1.8, **WILLY), D("carta", x=850, y=1600, s=.6, texto="Patente", firma="—")], "push",
+      texto=["NUNCA LO", "PATENTÓ"], acento=1),
+    FIN("¿Cuál es el", ["¿EL JUEGO MÁS", "ANTIGUO?"], capas=[D("interior", **LAB58), D("osciloscopio", x=540, y=1700, s=1.2)], comentario="El Pong 🏓"),
+])
+
+# ================================================================ 91 · Primer easter egg
+LIVING = dict(pared="#a8845a", piso="#5a3a22", luz_x=540, luz_y=700, pared_estilo="rombos")
+WARREN = dict(ropa="camisa", bigote=True, pelo="#5a3a1e", lentes=True)
+P[91] = dict(tema="ciencia", estilo="neon", claves=["creadores.", "injusto.", "píxel", "Pascua»:"], tomas=[
+    E("Los secretos escondidos", [D("interior", **LIVING), D("tv_tubo", x=540, y=1650, s=1.2, color="#3a2a6a"), D("pixeles", x=540, y=1350, s=.6)], "push", texto=["SECRETOS EN", "LOS JUEGOS"], acento=1),
+    E("A fines de", [D("interior", pared="#3a3a4a", piso="#1a1a24", luz_x=540, luz_y=700, cuadros=0)] + [D("persona_real", x=x, y=1760, s=1.2, ropa=r, bigote=b) for x, r, b in [(200, "camisa", True), (540, "sueter", False), (880, "camisa", True)]],
+      "pan_der", texto=["SIN NOMBRES", "DE SUS CREADORES"], acento=1),
+    E("Warren Robinett, creador", [D("interior", pared="#3a3a4a", piso="#1a1a24", luz_x=540, luz_y=700, cuadros=0), D("computadora", x=760, y=1600, s=.8), D("persona_real", x=330, y=1760, s=1.8, **WARREN)],
+      "push", dato=["WARREN", "ROBINETT"]),
+    T("pensó que era", ["¡INJUSTO!"], entrada="flash"),
+    E("Así que escondió", [D("interior", pared="#0d0d14", piso="#06060a", luz=False, cuadros=0), D("pixeles", x=540, y=1350, s=1.2), D("luz", x=540, y=1300, r=300, color="#b47aff", op=.4)],
+      "push", texto=["UNA HABITACIÓN", "SECRETA"], acento=1, sfx="ping", sfx_dur=.4),
+    E("Para llegar, había", [D("interior", pared="#0d0d14", piso="#06060a", luz=False, cuadros=0), D("texto_svg", x=540, y=1300, texto="·", tam=200, color="#9a9a9a", borde=0)], "push_fuerte",
+      texto=["UN SOLO", "PÍXEL"], acento=1),
+    E("Ahí aparecía el", [D("interior", **LIVING), D("tv_tubo", x=540, y=1650, s=1.3, color="#6a2a8a"), D("texto_svg", x=470, y=1450, texto="CREATED BY", tam=40, color="#fff", borde=0),
+      D("texto_svg", x=470, y=1510, texto="ROBINETT", tam=50, color="#ffd36a", borde=0)], "push", texto=["«CREADO POR WARREN", "ROBINETT»"], acento=1),
+    E("Un adolescente lo", [D("interior", **LIVING), D("tv_tubo", x=700, y=1650, s=1.0, color="#3a2a6a"), D("mando", x=380, y=1700, s=.6), D("persona_real", x=330, y=1780, s=1.3, ropa="overol")],
+      "push", texto=["UN ADOLESCENTE", "LO DESCUBRIÓ"], acento=1),
+    E("En vez de", [D("interior", pared="#2a2a3a", piso="#121218", luz_x=540, luz_y=900, cuadros=0), D("texto_svg", x=540, y=1300, texto="🥚", tam=10, color="#000")], "push",
+      texto=["«HUEVO DE", "PASCUA»"], acento=1),
+    FIN("¿Cuál es tu", ["¿TU EASTER EGG", "FAVORITO?"], capas=[D("interior", **LIVING), D("tv_tubo", x=540, y=1650, s=1.2, color="#3a2a6a")], comentario="El de Minecraft 🥚"),
+])
+
+# ================================================================ 92 · Episodio de Pokémon
+SALA_JP = dict(pared="#c8b89a", piso="#7a6a4a", luz=False, cuadros=0, pared_estilo="liso", vista="noche", ventana_x=820)
+NINO_JP = dict(ropa="camisa", piel="asiatica", peinado="corto", pelo="#111")
+P[92] = dict(tema="ciencia", estilo="pop", claves=["hospital…", "destellos", "convulsiones.", "reglas"], tomas=[
+    F("El dieciséis de", "16", "DICIEMBRE", "1997"),
+    E("cientos de niños", [D("interior", **SALA_JP), D("tv_tubo", x=760, y=1650, s=1.0, color="#3a5a8a"), D("persona_real", x=300, y=1800, s=1.3, **NINO_JP, mira="der")], "push",
+      texto=["NIÑOS AL", "HOSPITAL"], acento=1),
+    E("Era un capítulo", [D("interior", **SALA_JP), D("tv_tubo", x=540, y=1650, s=1.5, color="#3a5a8a")], "push", texto=["UN DIBUJO", "ANIMADO"], acento=1),
+    E("En una escena,", [D("interior", **SALA_JP), D("tv_tubo", x=540, y=1650, s=1.5, destellos=True, en=.3)], "fijo", texto=["DESTELLOS ROJOS", "Y AZULES"], acento=1, sfx="pop", sfx_dur=.3),
+    N("durante unos cinco", 5, "SEGUNDOS", "DURANTE", icono="⚡"),
+    E("Muchos niños sintieron", [D("interior", **SALA_JP), D("tv_tubo", x=760, y=1650, s=.9, destellos=True, en=.1), D("persona_real", x=330, y=1780, s=1.6, **NINO_JP)], "push",
+      texto=["MAREOS Y", "NÁUSEAS"], acento=1, sacudir=True),
+    N("Unos seiscientos ochenta", 685, "NIÑOS", "AL HOSPITAL", icono="🚑"),
+    E("Algunos sufrieron convulsiones.", [C("noche", horizonte=1350), D("ciudad", era="moderna", y=1380, hora="noche"), D("sirenas_policia", y=1500)], "push", texto="CONVULSIONES", amb="viento", amb_vol=.4),
+    E("La serie dejó", [D("interior", **SALA_JP), D("tv_tubo", x=540, y=1650, s=1.4, color="#111")], "push", texto=["4 MESES", "FUERA DEL AIRE"], acento=1),
+    E("Desde entonces, en", [D("interior", pared="#3a3a4a", piso="#1a1a24", luz_x=540, luz_y=700, cuadros=0), D("carta", x=540, y=1550, s=1.0, texto="Reglas de TV", firma="")], "push",
+      texto=["REGLAS PARA", "LAS LUCES"], acento=1, sfx="papel", sfx_dur=.6),
+    FIN("¿Lo sabías? Comenta", ["¿LO", "SABÍAS?"], final="si_no", capas=[D("interior", **SALA_JP), D("tv_tubo", x=540, y=1650, s=1.3, color="#3a5a8a")]),
+])
+
+# ================================================================ 93 · Epidemia de World of Warcraft
+FANTASIA = [C("atardecer", horizonte=1300), D("castillo", x=540, y=1380, s=.9), D("ciudad", era="antigua", y=1400, hora="atardecer", semilla=8), D("suelo", y=1400, colores=["#8a7a62", "#3a3024"], tipo="adoquin")]
+HEROE = [dict(ropa="tunica", barba=True, pelo="#6a4a2a"), dict(ropa="tunica_roja", peinado="largo", pelo="#c09a5a"), dict(ropa="obrero", sombrero="casco_ww"), dict(ropa="kimono", peinado="mono")]
+P[93] = dict(tema="ciencia", estilo="neon", claves=["epidemia", "corrupta»,", "mascotas", "epidemiólogos"], tomas=[
+    E("En dos mil", FANTASIA + [D("particulas", tipo="roja", n=40)], "push", dato=["2005", "UNA EPIDEMIA"], amb="viento"),
+    T("y los científicos", ["¡LA ESTUDIARON", "CIENTÍFICOS!"], acento=1, icono="🔬"),
+    E("En el videojuego", [D("interior", pared="#2a2a3a", piso="#121218", luz=False, cuadros=0), D("computadora", x=540, y=1550, s=1.2)], "push", texto=["UN JUEGO", "EN LÍNEA"], acento=1, amb="zumbido", amb_vol=.3),
+    E("un jefe lanzaba", [C("rojo", horizonte=1300), D("castillo", x=540, y=1380, s=1.0), D("suelo", y=1380, colores=["#3a2a2a", "#140a0a"]), D("luz", x=540, y=1200, r=500, color="#c1121f", op=.4),
+      D("particulas", tipo="roja", n=60)], "push_fuerte", texto=["«SANGRE", "CORRUPTA»"], acento=1, sfx="boom"),
+    E("Pero un error", FANTASIA + [D("perro", raza="laika", x=540, y=1720, s=1.0), D("luz", x=540, y=1600, r=200, color="#ff3b3b", op=.5)], "push", texto=["LAS MASCOTAS", "LA LLEVARON"], acento=1),
+    E("Se contagió de", FANTASIA + [D("persona_real", x=x, y=1760, s=1.0, **h) for x, h in zip((180, 400, 660, 900), HEROE)] + [D("particulas", tipo="roja", n=70)], "pan_der",
+      texto=["MILES", "MURIERON"], acento=1, amb="multitud", amb_vol=.5),
+    E("Algunos ayudaban a", FANTASIA + [D("persona_real", x=300, y=1760, s=1.4, **HEROE[0]), D("luz", x=300, y=1500, r=200, color="#8dff9c", op=.5),
+      D("persona_real", x=800, y=1760, s=1.3, **HEROE[1], mov="camina", avance=200)], "push", texto=["CURAR O", "HUIR"], acento=1),
+    E("y algunos la", FANTASIA + [D("persona_real", x=540, y=1760, s=1.8, **HEROE[2]), D("particulas", tipo="roja", n=80)], "push_fuerte", texto=["¡A", "PROPÓSITO!"], acento=1),
+    E("Los desarrolladores tuvieron", [D("interior", pared="#2a2a3a", piso="#121218", luz=False, cuadros=0), D("pantalla", tipo="sala", x=540, y=1450, s=1.0, alarma=True)], "push", texto=["REINICIAR LOS", "SERVIDORES"], acento=1),
+    E("Y años después,", [D("interior", pared="#dfe8e6", piso="#9aa8a6", luz_x=540, luz_y=700, cuadros=0), D("libro", x=380, y=1600, s=.8), D("persona_real", x=780, y=1720, s=1.6, ropa="bata", lentes=True, peinado="mono")],
+      "push", texto=["¿CÓMO REACCIONA", "LA GENTE?"], acento=1),
+    FIN("¿Tú habrías ayudado", ["¿AYUDAR", "O HUIR?"], capas=FANTASIA, comentario="Yo huía 🏃"),
+])
+
+# ================================================================ 94 · Polybius
+SALON_ARC = dict(pared="#1a0d24", piso="#0a0610", luz=False, cuadros=0)
+MIB = dict(ropa="traje", sombrero="fedora", lentes=True)
+P[94] = dict(tema="misterio", estilo="neon", claves=["pesadillas…", "Polybius", "negro", "rastro."], tomas=[
+    E("Dicen que en", [D("interior", **SALON_ARC), D("polybius", x=540, y=1750, s=1.4)], "push", texto=["CAUSABA", "PESADILLAS"], acento=1, amb="zumbido", amb_vol=.5),
+    M("Según la leyenda,", [45.52, -122.68], 12, zoom_desde=2, centro_desde=[40, -100], resaltar=["United States of America"], pines=[{"lat": 45.52, "lon": -122.68, "texto": "PORTLAND"}], titulo="1981"),
+    E("Los jugadores se", [D("interior", **SALON_ARC), D("polybius", x=700, y=1750, s=1.1), D("persona_real", x=330, y=1780, s=1.5, ropa="overol", mira="der")], "push", texto=["SE VOLVÍAN", "ADICTOS"], acento=1, amb="zumbido", amb_vol=.5),
+    E("Algunos habrían sufrido", [D("interior", pared="#1d1a24", piso="#0d0a12", luz=False, cuadros=0, vista="noche", ventana_x=760), D("cama", x=420, y=1600, s=1.0), D("notas", distorsion=True, n=5)],
+      "push", texto=["INSOMNIO Y", "ALUCINACIONES"], acento=1, amb="viento"),
+    E("Y cada cierto", [D("interior", **SALON_ARC), D("polybius", x=540, y=1750, s=1.0), D("persona_real", x=230, y=1780, s=1.5, **MIB), D("persona_real", x=850, y=1780, s=1.5, **MIB)], "push",
+      texto=["HOMBRES DE", "NEGRO"], acento=1),
+    E("y anotaban datos.", [D("interior", **SALON_ARC), D("persona_real", x=540, y=1780, s=2.0, **MIB), D("libro", x=700, y=1450, s=.4)], "push_fuerte", texto=["ANOTABAN", "DATOS"], acento=1, sfx="papel", sfx_dur=.6),
+    E("Semanas después, las", [D("interior", **SALON_ARC), D("polybius", x=540, y=1750, s=1.2, mov="desvanece", desvanece_en=1.0)], "push", texto=["DESAPARECIERON", "SIN RASTRO"], acento=1),
+    T("Nunca se ha", ["NI UNA", "PRUEBA"], acento=1, icono="❓"),
+    E("Pero la leyenda", [D("interior", **SALON_ARC), D("polybius", x=330, y=1750, s=1.0), D("arcade", x=760, y=1750, s=1.0)], "pull", texto=["JUEGOS, SERIES", "Y RÉPLICAS"], acento=1, amb="zumbido", amb_vol=.4),
+    FIN("¿Crees que existió?", ["¿CREES QUE", "EXISTIÓ?"], final="si_no", capas=[D("interior", **SALON_ARC), D("polybius", x=540, y=1750, s=1.2)]),
+])
+
+# ================================================================ 95 · Pueblo Lavanda
+P[95] = dict(tema="misterio", estilo="terror", claves=["niños.", "agudas", "inventado.", "fantasmas."], tomas=[
+    E("Una de las", [D("torre_lapidas"), D("notas", distorsion=True, n=6)], "push", texto=["¿UNA MÚSICA", "MALDITA?"], acento=1, amb="viento", amb_vol=.4),
+    E("En dos mil", [D("interior", pared="#2a2a3a", piso="#121218", luz=False, cuadros=0), D("computadora", x=540, y=1550, s=1.2)], "push", dato=["2010", "UNA HISTORIA"], amb="zumbido", amb_vol=.3),
+    E("que en mil", [D("torre_lapidas")], "baja", texto=["PUEBLO", "LAVANDA"], acento=1),
+    E("tenía frecuencias tan", [D("torre_lapidas"), D("notas", distorsion=True, n=9), D("silbido", x1=200, y1=900, x2=900, color="#b47aff")], "push_fuerte",
+      texto=["SOLO LOS NIÑOS", "LAS OÍAN"], acento=1),
+    E("Según el relato,", [D("interior", pared="#c8b89a", piso="#7a6a4a", luz=False, cuadros=0, pared_estilo="liso"), D("tv_tubo", x=700, y=1650, s=.9, color="#6a3a8a"),
+      D("persona_real", x=330, y=1780, s=1.5, ropa="camisa", piel="asiatica", pelo="#111")], "push", texto=["DOLOR DE CABEZA", "Y MIEDO"], acento=1),
+    T("Todo era inventado.", ["TODO ERA", "INVENTADO"], acento=1, entrada="flash", sfx="boom"),
+    E("Fue una creepypasta,", [D("interior", pared="#2a2a3a", piso="#121218", luz=False, cuadros=0), D("computadora", x=540, y=1550, s=1.1), D("luz", x=540, y=1300, r=300, color="#b47aff", op=.35)],
+      "push", texto="«CREEPYPASTA»", amb="zumbido", amb_vol=.3),
+    E("Pero se volvió", [D("interior", pared="#2a2a3a", piso="#121218", luz=False, cuadros=0), D("pantalla", tipo="sala", x=540, y=1450, s=1.0)], "pull", texto=["MUCHOS AÚN", "LA CREEN"], acento=1),
+    E("Lo cierto: la", [D("torre_lapidas"), D("notas", distorsion=True, n=5), D("ojos", x=540, y=900, s=.6, en=1.0, color="#dfe8ff")], "push", texto=["EL PUEBLO DE", "LOS FANTASMAS"], acento=1, amb="viento"),
+    FIN("¿Tú la creías?", ["¿TÚ LA", "CREÍAS?"], final="si_no", capas=[D("torre_lapidas")]),
 ])
 
 

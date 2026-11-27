@@ -1,0 +1,339 @@
+{
+ "tema": "cultura",
+ "estilo": "calido",
+ "claves": [
+  "mito.",
+  "renos.",
+  "rojo",
+  "popularizar"
+ ],
+ "tomas": [
+  {
+   "en": "Dicen que Coca-Cola",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6b2d2f",
+     "piso": "#3a1d14",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "papel"
+    },
+    {
+     "d": "chimenea",
+     "x": 330,
+     "y": 1650,
+     "s": 0.8
+    },
+    {
+     "d": "persona_real",
+     "x": 780,
+     "y": 1760,
+     "s": 1.7,
+     "ropa": "santa",
+     "barba": true,
+     "bigote": true,
+     "pelo": "#f2f2f2",
+     "peinado": "corto"
+    }
+   ],
+   "camara": "push",
+   "texto": "ES UN MITO",
+   "amb": "fuego",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "El personaje viene",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "catedral",
+     "x": 540,
+     "y": 1450,
+     "s": 0.9
+    },
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1450
+    },
+    {
+     "d": "suelo",
+     "y": 1450,
+     "colores": [
+      "#a89a7a",
+      "#5a4a3a"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.6,
+     "ropa": "tunica_roja",
+     "barba": true,
+     "pelo": "#d9d9d9",
+     "sombrero": "copa"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "SAN NICOLÁS",
+    "SIGLO IV"
+   ]
+  },
+  {
+   "en": "famoso por hacer",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1380,
+     "hora": "noche"
+    },
+    {
+     "d": "suelo",
+     "y": 1380,
+     "colores": [
+      "#e6edf7",
+      "#9aa8bf"
+     ],
+     "tipo": "nieve"
+    },
+    {
+     "d": "caja",
+     "x": 540,
+     "y": 1650,
+     "s": 0.9
+    },
+    {
+     "d": "particulas",
+     "tipo": "nieve",
+     "n": 60
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "REGALOS EN",
+    "SECRETO"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "En mil ochocientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1500
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1550,
+     "hora": "noche"
+    },
+    {
+     "d": "trineo",
+     "x": 200,
+     "y": 900,
+     "s": 0.8,
+     "perros": 6,
+     "avance": 500
+    }
+   ],
+   "camara": "pan_der",
+   "dato": [
+    "1823",
+    "TRINEO Y RENOS"
+   ],
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Después, el dibujante",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "caballete",
+     "x": 640,
+     "y": 1750,
+     "s": 1.1,
+     "cuadro": "vacio"
+    },
+    {
+     "d": "persona_real",
+     "x": 300,
+     "y": 1720,
+     "s": 1.6,
+     "ropa": "traje",
+     "barba": true,
+     "bigote": true,
+     "pelo": "#3a2a1e"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "THOMAS NAST",
+    "DIBUJANTE"
+   ]
+  },
+  {
+   "en": "como un hombre",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6b2d2f",
+     "piso": "#3a1d14",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "papel"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1800,
+     "s": 2.2,
+     "ropa": "santa",
+     "barba": true,
+     "bigote": true,
+     "pelo": "#f2f2f2",
+     "peinado": "corto"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "GORDO Y",
+    "DE BARBA BLANCA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Y antes de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2a1e",
+     "piso": "#1a120c",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "cartel",
+     "x": 540,
+     "y": 1600,
+     "s": 1.0,
+     "titulo": "FELIZ NAVIDAD",
+     "sub": "1915"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "YA ERA ROJO",
+    "ANTES DE 1930"
+   ],
+   "acento": 0,
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Lo que sí",
+   "tipo": "titulo",
+   "lineas": [
+    "COCA-COLA LO",
+    "POPULARIZÓ"
+   ],
+   "acento": 1,
+   "icono": "🥤"
+  },
+  {
+   "en": "con los dibujos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6b2d2f",
+     "piso": "#3a1d14",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "papel"
+    },
+    {
+     "d": "chimenea",
+     "x": 330,
+     "y": 1650,
+     "s": 0.8
+    },
+    {
+     "d": "caja",
+     "x": 780,
+     "y": 1700,
+     "s": 0.6
+    },
+    {
+     "d": "persona_real",
+     "x": 760,
+     "y": 1760,
+     "s": 1.5,
+     "ropa": "santa",
+     "barba": true,
+     "bigote": true,
+     "pelo": "#f2f2f2",
+     "peinado": "corto"
+    }
+   ],
+   "camara": "pull",
+   "dato": [
+    "HADDON",
+    "SUNDBLOM · 1931"
+   ],
+   "amb": "fuego",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "¿Tú también creías",
+   "tipo": "final",
+   "lineas": [
+    "¿TÚ CREÍAS",
+    "EL MITO?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6b2d2f",
+     "piso": "#3a1d14",
+     "luz_x": 540,
+     "luz_y": 700,
+     "pared_estilo": "papel"
+    },
+    {
+     "d": "chimenea",
+     "x": 540,
+     "y": 1650,
+     "s": 0.9
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,319 @@
+{
+ "tema": "misterio",
+ "estilo": "neon",
+ "claves": [
+  "rostro,",
+  "Photoshop.",
+  "Knudsen,",
+  "internet."
+ ],
+ "tomas": [
+  {
+   "en": "Un hombre altísimo,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "arboles",
+     "y": 1320,
+     "n": 6
+    },
+    {
+     "d": "slender",
+     "x": 540,
+     "y": 1360,
+     "s": 1.0
+    },
+    {
+     "d": "suelo",
+     "y": 1320,
+     "colores": [
+      "#5a7a3a",
+      "#2a3a1a"
+     ],
+     "tipo": "pasto"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SIN ROSTRO",
+    "Y DE TRAJE"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Pero nació en",
+   "tipo": "titulo",
+   "lineas": [
+    "NACIÓ EN",
+    "INTERNET"
+   ],
+   "acento": 1,
+   "icono": "💻"
+  },
+  {
+   "en": "En junio de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "computadora",
+     "x": 540,
+     "y": 1550,
+     "s": 1.2
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "JUNIO",
+    "2009"
+   ],
+   "amb": "zumbido",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "crear imágenes paranormales",
+   "tipo": "titulo",
+   "lineas": [
+    "UN CONCURSO DE",
+    "PHOTOSHOP"
+   ],
+   "acento": 1,
+   "icono": "🖼️"
+  },
+  {
+   "en": "Un usuario, Eric",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "computadora",
+     "x": 540,
+     "y": 1550,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 820,
+     "y": 1720,
+     "s": 1.5,
+     "ropa": "sueter"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ERIC",
+    "KNUDSEN"
+   ],
+   "amb": "zumbido",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "publicó dos fotos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "arboles",
+     "y": 1320,
+     "n": 6
+    },
+    {
+     "d": "slender",
+     "x": 820,
+     "y": 1350,
+     "s": 0.8,
+     "op": 0.5
+    },
+    {
+     "d": "suelo",
+     "y": 1320,
+     "colores": [
+      "#5a7a3a",
+      "#2a3a1a"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "persona_real",
+     "x": 250,
+     "y": 1720,
+     "s": 1.0,
+     "ropa": "camisa",
+     "peinado": "corto"
+    },
+    {
+     "d": "persona_real",
+     "x": 450,
+     "y": 1720,
+     "s": 1.0,
+     "ropa": "vestido",
+     "peinado": "largo"
+    },
+    {
+     "d": "persona_real",
+     "x": 620,
+     "y": 1720,
+     "s": 1.0,
+     "ropa": "overol",
+     "peinado": "corto"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¿LA VES AL",
+    "FONDO?"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Debajo escribió textos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 900,
+     "cuadros": 0
+    },
+    {
+     "d": "carta",
+     "x": 540,
+     "y": 1550,
+     "s": 1.0,
+     "texto": "Testimonio",
+     "firma": "1983"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "COMO SI FUERAN",
+    "REALES"
+   ],
+   "acento": 1,
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Otros usuarios empezaron",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "pantalla",
+     "tipo": "sala",
+     "x": 540,
+     "y": 1450,
+     "s": 1.0
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "HISTORIAS, VIDEOS",
+    "Y JUEGOS"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "En pocos años,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "arboles",
+     "y": 1320,
+     "n": 6
+    },
+    {
+     "d": "niebla",
+     "y": 1300,
+     "op": 0.6
+    },
+    {
+     "d": "slender",
+     "x": 540,
+     "y": 1380,
+     "s": 1.1
+    },
+    {
+     "d": "suelo",
+     "y": 1320,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "LEYENDA",
+    "MUNDIAL"
+   ],
+   "acento": 1,
+   "sfx": "boom"
+  },
+  {
+   "en": "¿Lo conocías? Comenta",
+   "tipo": "final",
+   "lineas": [
+    "¿LO",
+    "CONOCÍAS?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "arboles",
+     "y": 1320,
+     "n": 6
+    },
+    {
+     "d": "slender",
+     "x": 760,
+     "y": 1360,
+     "s": 0.8,
+     "op": 0.6
+    }
+   ]
+  }
+ ]
+}

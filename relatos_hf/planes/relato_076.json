@@ -1,0 +1,404 @@
+{
+ "tema": "terror",
+ "estilo": "terror",
+ "claves": [
+  "mentira",
+  "DeFeo",
+  "moscas",
+  "vino»."
+ ],
+ "tomas": [
+  {
+   "en": "La casa embrujada",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1450
+    },
+    {
+     "d": "arboles",
+     "y": 1460,
+     "n": 5,
+     "color": "#14200f"
+    },
+    {
+     "d": "mansion",
+     "estilo": "amityville",
+     "x": 540,
+     "y": 1520,
+     "s": 1.0
+    },
+    {
+     "d": "suelo",
+     "y": 1520,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¿LA CASA MÁS",
+    "EMBRUJADA?"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "podría haber sido",
+   "tipo": "titulo",
+   "lineas": [
+    "¿UNA",
+    "MENTIRA?"
+   ],
+   "acento": 1,
+   "icono": "🍷"
+  },
+  {
+   "en": "En mil novecientos",
+   "tipo": "mapa",
+   "centro": [
+    40.67,
+    -73.42
+   ],
+   "zoom": 25,
+   "zoom_desde": 2,
+   "centro_desde": [
+    40,
+    -90
+   ],
+   "resaltar": [
+    "United States of America"
+   ],
+   "pines": [
+    {
+     "lat": 40.67,
+     "lon": -73.42,
+     "texto": "AMITYVILLE"
+    }
+   ],
+   "titulo": "1974"
+  },
+  {
+   "en": "Ronald DeFeo mató",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1450
+    },
+    {
+     "d": "arboles",
+     "y": 1460,
+     "n": 5,
+     "color": "#14200f"
+    },
+    {
+     "d": "mansion",
+     "estilo": "amityville",
+     "x": 540,
+     "y": 1520,
+     "s": 1.0
+    },
+    {
+     "d": "suelo",
+     "y": 1520,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "sirenas_policia",
+     "y": 1500
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "MATÓ A",
+    "SU FAMILIA"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Un año después,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1450
+    },
+    {
+     "d": "arboles",
+     "y": 1460,
+     "n": 5
+    },
+    {
+     "d": "mansion",
+     "estilo": "amityville",
+     "x": 540,
+     "y": 1520,
+     "s": 1.0,
+     "luces": false
+    },
+    {
+     "d": "suelo",
+     "y": 1520,
+     "colores": [
+      "#5a8a3a",
+      "#2a4a1a"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "persona_real",
+     "x": 200,
+     "y": 1800,
+     "s": 1.2,
+     "ropa": "camisa",
+     "bigote": true
+    },
+    {
+     "d": "persona_real",
+     "x": 880,
+     "y": 1800,
+     "s": 1.2,
+     "ropa": "vestido",
+     "peinado": "largo"
+    }
+   ],
+   "camara": "pull",
+   "dato": [
+    "LOS LUTZ",
+    "1975"
+   ]
+  },
+  {
+   "en": "Contaron que escuchaban",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3a",
+     "piso": "#2a1d14",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "silbido",
+     "x1": 200,
+     "y1": 1000,
+     "x2": 900,
+     "color": "#dfe8ff"
+    }
+   ],
+   "camara": "push",
+   "texto": "VOCES",
+   "amb": "viento"
+  },
+  {
+   "en": "que un enjambre",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3a",
+     "piso": "#2a1d14",
+     "luz": false,
+     "vista": "nieve",
+     "ventana_x": 540,
+     "cuadros": 0
+    },
+    {
+     "d": "particulas",
+     "tipo": "moscas",
+     "n": 80
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "MOSCAS EN",
+    "PLENO INVIERNO"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 0.6
+  },
+  {
+   "en": "y que una",
+   "tipo": "contador",
+   "hasta": 28,
+   "unidad": "DÍAS",
+   "sub": "HUYERON A LOS",
+   "icono": "🏃"
+  },
+  {
+   "en": "Su historia se",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a1a1e",
+     "piso": "#110a0c",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "pantalla",
+     "x": 540,
+     "y": 1150,
+     "s": 1.6,
+     "texto": ""
+    },
+    {
+     "d": "libro",
+     "x": 540,
+     "y": 1500,
+     "s": 0.9
+    },
+    {
+     "d": "butacas"
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "LIBRO Y",
+    "PELÍCULA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Pero años después,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1650,
+     "s": 1.2
+    },
+    {
+     "d": "botella",
+     "x": 420,
+     "y": 1450,
+     "s": 0.8
+    },
+    {
+     "d": "botella",
+     "x": 560,
+     "y": 1460,
+     "s": 0.7
+    },
+    {
+     "d": "persona_real",
+     "x": 820,
+     "y": 1700,
+     "s": 1.5,
+     "ropa": "traje",
+     "bigote": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "«CON MUCHAS BOTELLAS",
+    "DE VINO»"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Las familias que",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1450
+    },
+    {
+     "d": "arboles",
+     "y": 1460,
+     "n": 5,
+     "color": "#14200f"
+    },
+    {
+     "d": "mansion",
+     "estilo": "amityville",
+     "x": 540,
+     "y": 1520,
+     "s": 1.0,
+     "luces": false
+    },
+    {
+     "d": "suelo",
+     "y": 1520,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "NO NOTARON",
+    "NADA"
+   ],
+   "acento": 1,
+   "amb": "insectos",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "¿Tú qué crees?",
+   "tipo": "final",
+   "lineas": [
+    "¿TÚ QUÉ",
+    "CREES?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1450
+    },
+    {
+     "d": "arboles",
+     "y": 1460,
+     "n": 5,
+     "color": "#14200f"
+    },
+    {
+     "d": "mansion",
+     "estilo": "amityville",
+     "x": 540,
+     "y": 1520,
+     "s": 1.0
+    },
+    {
+     "d": "suelo",
+     "y": 1520,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    }
+   ],
+   "comentario": "Fue el vino 🍷"
+  }
+ ]
+}
