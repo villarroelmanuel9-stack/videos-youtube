@@ -132,13 +132,13 @@ def plan_tiempo(D: float, npar: int):
     lead, cola_base, pausa_base = 0.4, 1.8, 0.45
     huecos = max(1, npar - 1)
     vt = OBJETIVO - lead - cola_base - pausa_base * huecos
-    tempo = min(1.15, max(0.86, D / vt))
+    tempo = min(1.06, max(0.94, D / vt))
     if abs(tempo - 1) < 0.015:
         tempo = 1.0
     V = D / tempo
     resto = OBJETIVO - lead - V - cola_base - pausa_base * huecos
-    pausa = min(1.3, max(0.25, pausa_base + resto / huecos))
-    cola = min(4.8, max(1.5, OBJETIVO - lead - V - pausa * huecos))
+    pausa = min(1.4, max(0.25, pausa_base + resto / huecos))
+    cola = min(5.0, max(1.5, OBJETIVO - lead - V - pausa * huecos))
     return tempo, lead, pausa, cola
 
 
@@ -177,16 +177,39 @@ def compactar_silencios(audio: Path, dir_: Path, maximo=0.5, deja=0.4):
     return destino, mover, len(y) / SR
 
 
-def procesar_voz(audio: Path, tempo: float, dir_: Path) -> np.ndarray:
-    """Ritmo con rubberband (sin cambiar el tono), limpieza de graves, presencia y compresión suave."""
+def tono_medio(ruta: Path) -> float:
+    x = np.frombuffer(subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(ruta), "-ac", "1", "-ar", "16000", "-f", "f32le", "-"],
+                                     capture_output=True, check=True).stdout, np.float32)
+    sr, fr, v = 16000, 640, []
+    for i in range(0, len(x) - fr, fr):
+        seg = x[i:i + fr]
+        if np.sqrt((seg ** 2).mean()) < 0.02:
+            continue
+        seg = seg - seg.mean()
+        ac = np.correlate(seg, seg, "full")[fr - 1:]
+        lo, hi = sr // 300, sr // 70
+        k = lo + int(np.argmax(ac[lo:hi]))
+        if ac[k] > 0.3 * ac[0]:
+            v.append(sr / k)
+    return float(np.median(v)) if v else 0.0
+
+
+def procesar_voz(audio: Path, tempo: float, dir_: Path, tono: float | None = None) -> np.ndarray:
+    """Voz lo más natural posible: ritmo casi intacto (±6 %), tono corregido solo si se pide, limpieza mínima."""
+    pitch = 1.0
+    if tono:
+        f0 = tono_medio(audio)
+        if f0 > tono * 1.05:
+            pitch = tono / f0
     filtros = []
-    if tempo != 1.0:
-        filtros.append(f"rubberband=tempo={tempo:.4f}:transients=smooth:window=standard")
-    filtros += ["highpass=f=75", "equalizer=f=250:t=q:w=1:g=-1.5", "equalizer=f=3200:t=q:w=1.2:g=2",
-                "acompressor=threshold=-20dB:ratio=2.2:attack=8:release=140:makeup=2", "deesser=i=0.35"]
+    if tempo != 1.0 or pitch != 1.0:
+        filtros.append(f"rubberband=tempo={tempo:.4f}:pitch={pitch:.4f}:formant=preserved:pitchq=quality:transients=smooth")
+    filtros += ["highpass=f=60"]
     destino = dir_ / "assets" / "voz.wav"
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(audio), "-af", ",".join(filtros), "-ac", "2",
                     "-ar", str(SR), str(destino)], check=True)
+    if pitch != 1.0:
+        print(f"   · tono corregido ×{pitch:.3f}")
     return leer_audio(destino)
 
 
@@ -925,11 +948,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("n", type=int)
     ap.add_argument("--sin-render", action="store_true")
+    ap.add_argument("--audio", help="otro archivo de voz (por defecto audios/relatos/relato_NNN.mp3)")
+    ap.add_argument("--tono", type=float, help="tono medio objetivo en Hz (ej. 148): baja la voz si está más aguda")
+    ap.add_argument("--sufijo", default="", help="agrega un sufijo al nombre del video")
     a = ap.parse_args()
     n = a.n
     nombre, parrafos = cargar_guion(n)
     plan = json.loads((PLANES / f"relato_{n:03d}.json").read_text(encoding="utf-8"))
-    audio = AUDIOS / f"relato_{n:03d}.mp3"
+    audio = Path(a.audio) if a.audio else AUDIOS / f"relato_{n:03d}.mp3"
     palabras, parrafo_de, fin_parrafo = [], [], []
     for emo, texto in parrafos:
         for w in texto.split():
@@ -945,7 +971,7 @@ def main():
     compacta, mover, D = compactar_silencios(audio, dir_)
     tiempos = [(mover(x), mover(y)) for x, y in tiempos]
     tempo, lead, pausa, cola = plan_tiempo(D, len(parrafos))
-    voz = procesar_voz(compacta, tempo, dir_)
+    voz = procesar_voz(compacta, tempo, dir_, a.tono)
     tiempos = [(x / tempo, y / tempo) for x, y in tiempos]
     voz, tiempos, total, cortes_parrafo = estirar(voz, tiempos, fin_parrafo, lead, pausa, cola)
     sfx = []
@@ -959,7 +985,7 @@ def main():
     if a.sin_render:
         return
     SALIDA.mkdir(exist_ok=True)
-    destino = SALIDA / f"{nombre_video(n, nombre)}.mp4"
+    destino = SALIDA / f"{nombre_video(n, nombre)}{a.sufijo}.mp4"
     subprocess.run(["npx", "--yes", HF, "render", "-q", "delivery", "-o", str(destino)], cwd=dir_, check=True)
     print("→", destino)
 
