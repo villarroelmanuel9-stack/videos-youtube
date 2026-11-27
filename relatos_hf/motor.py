@@ -1051,7 +1051,7 @@ def main():
         return
     SALIDA.mkdir(exist_ok=True)
     destino = SALIDA / f"{nombre_video(n, nombre)}{a.sufijo}.mp4"
-    subprocess.run(["npx", "--yes", HF, "render", "-q", "delivery", "-o", str(destino)], cwd=dir_, check=True)
+    subprocess.run(["npx", "--yes", HF, "render", "-q", "delivery", "--crf", "20", "-o", str(destino)], cwd=dir_, check=True)
     print("→", destino)
 
 

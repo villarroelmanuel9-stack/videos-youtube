@@ -308,7 +308,7 @@ P[28] = dict(tema="cultura", estilo="calido", claves=["diez", "Hachiko", "regres
       D("persona_real", x=380, y=1560, s=1.9, mov="desvanece", desvanece_en=1.0, **UENO)], "push", texto=["NUNCA", "REGRESÓ"], acento=1, amb="ninguno"),
     E("Hachiko siguió yendo", TARDE_JP + [D("anden_hd", fuga_x=700, fuga_y=1080), D("tren_jp", x=1080, y=1180, s=.55, mov="parte"),
       D("sombra_larga", x=480, y=1700, largo=520, angulo=-14), D("perro", x=480, y=1700, s=1.05, **HACHI)], "fijo", texto="CADA TARDE", amb="tren"),
-    E("a la misma", [D("interior", pared="#5a4a3c", piso="#2a1d14"), D("calendario", x=540, y=1450, s=1.4, anios=["1926", "1928", "1930", "1932", "1935"])],
+    E("a la misma", [D("interior", pared="#5a4a3c", piso="#2a1d14"), D("calendario", x=540, y=1180, s=1.3, anios=["1926", "1928", "1930", "1932", "1935"])],
       "fijo", texto="A LA MISMA HORA", sfx="papel", sfx_dur=.6),
     T("hasta su muerte", ["HASTA", "1935"], acento=1, icono="🐾"),
     E("Hoy tiene una", [C("noche", horizonte=1300), D("ciudad", era="moderna", y=1310), D("suelo", y=1300, colores=["#5c6268", "#2a2e33"]),
