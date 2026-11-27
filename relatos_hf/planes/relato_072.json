@@ -1,0 +1,365 @@
+{
+ "tema": "terror",
+ "estilo": "clasico",
+ "claves": [
+  "prohibido",
+  "peste",
+  "pruebas",
+  "derrumban."
+ ],
+ "tomas": [
+  {
+   "en": "Muy cerca de",
+   "tipo": "mapa",
+   "centro": [
+    45.38,
+    12.33
+   ],
+   "zoom": 40,
+   "zoom_desde": 3,
+   "centro_desde": [
+    44,
+    12
+   ],
+   "resaltar": [
+    "Italy"
+   ],
+   "pines": [
+    {
+     "lat": 45.38,
+     "lon": 12.33,
+     "texto": "POVEGLIA"
+    }
+   ]
+  },
+  {
+   "en": "hay una isla",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1300,
+     "astro": "sol",
+     "astro_x": 820,
+     "astro_y": 900,
+     "astro_r": 60
+    },
+    {
+     "d": "mar",
+     "hora": "atardecer",
+     "horizonte": 1300
+    },
+    {
+     "d": "isla",
+     "x": 540,
+     "y": 1330,
+     "s": 1.2,
+     "campanario": true
+    },
+    {
+     "d": "niebla",
+     "y": 1320,
+     "op": 0.35
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "PROHIBIDO",
+    "IR"
+   ],
+   "acento": 0,
+   "amb": "olas"
+  },
+  {
+   "en": "Poveglia se usó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "isla",
+     "x": 540,
+     "y": 1330,
+     "s": 1.0,
+     "campanario": true
+    }
+   ],
+   "camara": "pull",
+   "dato": [
+    "SIGLOS DE",
+    "CUARENTENA"
+   ],
+   "amb": "olas"
+  },
+  {
+   "en": "Los barcos que",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "mar",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "isla",
+     "x": 800,
+     "y": 1320,
+     "s": 0.6
+    },
+    {
+     "d": "velero",
+     "x": 300,
+     "y": 1330,
+     "s": 0.6,
+     "avance": 200,
+     "mov": "avanza"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "ENFERMOS DE",
+    "PESTE"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "dejaban ahí a",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "isla",
+     "x": 540,
+     "y": 1330,
+     "s": 1.0
+    },
+    {
+     "d": "velas",
+     "x": 540,
+     "y": 1260,
+     "s": 0.5,
+     "n": 3
+    },
+    {
+     "d": "niebla",
+     "y": 1300,
+     "op": 0.5
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "LEJOS DE",
+    "LA CIUDAD"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "A comienzos del",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "isla",
+     "x": 540,
+     "y": 1380,
+     "s": 1.4,
+     "campanario": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UN ASILO PARA",
+    "ANCIANOS"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "La leyenda dice",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a3a3a",
+     "piso": "#121a1a",
+     "luz": false
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 800,
+     "r": 600,
+     "color": "#8dff9c",
+     "op": 0.3,
+     "parpadeo": true
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1650,
+     "s": 1.7,
+     "ropa": "bata",
+     "pelo": "#3a3a3a"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¿UN MÉDICO",
+    "CRUEL?"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "pero no hay",
+   "tipo": "titulo",
+   "lineas": [
+    "NO HAY",
+    "PRUEBAS"
+   ],
+   "acento": 1,
+   "icono": "🔍"
+  },
+  {
+   "en": "El asilo cerró",
+   "tipo": "titulo",
+   "lineas": [
+    "CERRÓ EN",
+    "1968"
+   ],
+   "acento": 1,
+   "icono": "🔒"
+  },
+  {
+   "en": "Desde entonces, la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300,
+     "astro": "luna",
+     "astro_x": 800,
+     "astro_y": 420,
+     "astro_r": 60
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "isla",
+     "x": 540,
+     "y": 1330,
+     "s": 1.2,
+     "campanario": true,
+     "arboles": 11
+    },
+    {
+     "d": "niebla",
+     "y": 1300,
+     "op": 0.5
+    }
+   ],
+   "camara": "push",
+   "texto": "ABANDONADA",
+   "amb": "viento"
+  },
+  {
+   "en": "y con edificios",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1700
+    },
+    {
+     "d": "isla",
+     "x": 540,
+     "y": 1800,
+     "s": 2.2,
+     "campanario": true,
+     "arboles": 4
+    },
+    {
+     "d": "particulas",
+     "tipo": "polvo",
+     "n": 40
+    }
+   ],
+   "camara": "baja",
+   "texto": [
+    "SE",
+    "DERRUMBAN"
+   ],
+   "acento": 1,
+   "sfx": "derrumbe",
+   "sfx_dur": 2.0
+  },
+  {
+   "en": "¿Te atreverías a",
+   "tipo": "final",
+   "lineas": [
+    "¿PASARÍAS UNA",
+    "NOCHE AHÍ?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "isla",
+     "x": 540,
+     "y": 1330,
+     "s": 1.0,
+     "campanario": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,325 @@
+{
+ "tema": "historia",
+ "estilo": "retro",
+ "claves": [
+  "cuernos.",
+  "hierro,",
+  "Wagner.",
+  "siempre."
+ ],
+ "tomas": [
+  {
+   "en": "Los vikingos nunca",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a3242",
+     "piso": "#141824",
+     "luz_x": 540,
+     "luz_y": 800
+    },
+    {
+     "d": "casco",
+     "x": 540,
+     "y": 1450,
+     "s": 1.6,
+     "cuernos": true,
+     "tachar": 1.2
+    }
+   ],
+   "camara": "push",
+   "texto": "MITO",
+   "sfx": "boom",
+   "sfx_en": 1.2,
+   "amb": "ninguno"
+  },
+  {
+   "en": "Y sabemos de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "nieve": true,
+     "colores": [
+      "#6b7a8a",
+      "#4a5a6b",
+      "#2e3a48"
+     ]
+    },
+    {
+     "d": "mar",
+     "hora": "niebla",
+     "horizonte": 1260
+    },
+    {
+     "d": "velero",
+     "x": 540,
+     "y": 1290,
+     "s": 0.7,
+     "avance": 120,
+     "reflejo": true
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "¿DE DÓNDE",
+    "SALIÓ?"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "Los arqueólogos solo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "vitrina",
+     "x": 540,
+     "y": 1600,
+     "s": 1.2
+    },
+    {
+     "d": "casco",
+     "x": 540,
+     "y": 1380,
+     "s": 0.8
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "SOLO",
+    "1 CASCO"
+   ],
+   "amb": "ninguno"
+  },
+  {
+   "en": "en Noruega…",
+   "tipo": "mapa",
+   "centro": [
+    60.5,
+    9
+   ],
+   "zoom": 5,
+   "zoom_desde": 1.6,
+   "centro_desde": [
+    50,
+    10
+   ],
+   "resaltar": [
+    "Norway"
+   ],
+   "pines": [
+    {
+     "lat": 60.5,
+     "lon": 9,
+     "texto": "NORUEGA"
+    }
+   ]
+  },
+  {
+   "en": "y es simple,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a3242",
+     "piso": "#141824",
+     "luz_x": 540,
+     "luz_y": 900
+    },
+    {
+     "d": "casco",
+     "x": 540,
+     "y": 1550,
+     "s": 2.2
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "REDONDO",
+    "Y DE HIERRO"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "Tiene sentido: los",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "nieve": true,
+     "colores": [
+      "#6b7a8a",
+      "#4a5a6b",
+      "#2e3a48"
+     ]
+    },
+    {
+     "d": "mar",
+     "hora": "niebla",
+     "horizonte": 1260
+    },
+    {
+     "d": "casco",
+     "x": 540,
+     "y": 1350,
+     "s": 1.4,
+     "cuernos": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SE HABRÍAN",
+    "ENGANCHADO"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "y le darían",
+   "tipo": "titulo",
+   "lineas": [
+    "ALGO DE",
+    "DÓNDE AGARRAR"
+   ],
+   "acento": 1,
+   "icono": "✋"
+  },
+  {
+   "en": "La imagen nació",
+   "tipo": "titulo",
+   "lineas": [
+    "1876"
+   ],
+   "icono": "🎭"
+  },
+  {
+   "en": "con una ópera",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a0f1a",
+     "piso": "#2a0a0e",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 900,
+     "r": 600,
+     "color": "#fff3c4",
+     "op": 0.5
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1500,
+     "s": 1.5,
+     "ropa": "vestido",
+     "falda": true,
+     "pelo_largo": true,
+     "pelo": "#d8b04f"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ÓPERA DE",
+    "WAGNER"
+   ],
+   "amb": "multitud",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "El diseñador de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a0f1a",
+     "piso": "#2a0a0e"
+    },
+    {
+     "d": "casco",
+     "x": 540,
+     "y": 1450,
+     "s": 1.7,
+     "cuernos": true,
+     "cuernos_en": 0.5
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CUERNOS",
+    "Y ALAS"
+   ],
+   "acento": 0,
+   "sfx": "whoosh",
+   "sfx_en": 0.5,
+   "sfx_dur": 0.5
+  },
+  {
+   "en": "La idea gustó",
+   "tipo": "titulo",
+   "lineas": [
+    "QUEDÓ PARA",
+    "SIEMPRE"
+   ],
+   "acento": 1,
+   "icono": "🎬"
+  },
+  {
+   "en": "¿Tú también lo",
+   "tipo": "final",
+   "lineas": [
+    "¿TÚ TAMBIÉN",
+    "LO CREÍAS?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "nieve": true,
+     "colores": [
+      "#6b7a8a",
+      "#4a5a6b",
+      "#2e3a48"
+     ]
+    },
+    {
+     "d": "mar",
+     "hora": "niebla",
+     "horizonte": 1260
+    }
+   ]
+  }
+ ]
+}

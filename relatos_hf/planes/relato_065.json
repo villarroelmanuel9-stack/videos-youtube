@@ -1,0 +1,383 @@
+{
+ "tema": "terror",
+ "estilo": "retro",
+ "claves": [
+  "permiso",
+  "Robert.",
+  "Robert».",
+  "perdón"
+ ],
+ "tomas": [
+  {
+   "en": "En un museo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "vitrina",
+     "x": 540,
+     "y": 1600,
+     "s": 1.2
+    },
+    {
+     "d": "muneco",
+     "x": 540,
+     "y": 1380,
+     "s": 0.75
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UN MUSEO",
+    "DE FLORIDA"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "debes pedirle permiso",
+   "tipo": "titulo",
+   "lineas": [
+    "PÍDELE PERMISO",
+    "ANTES DE LA FOTO"
+   ],
+   "acento": 0,
+   "icono": "📷"
+  },
+  {
+   "en": "Se llama Robert.",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2218",
+     "piso": "#120e0a",
+     "luz_x": 540,
+     "luz_y": 800
+    },
+    {
+     "d": "muneco",
+     "x": 540,
+     "y": 1600,
+     "s": 1.8,
+     "gira": 1.4
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": "ROBERT"
+  },
+  {
+   "en": "A comienzos del",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6b5a46",
+     "piso": "#3a2a1e",
+     "vista": "dia",
+     "ventana_x": 650
+    },
+    {
+     "d": "persona",
+     "x": 360,
+     "y": 1450,
+     "s": 0.85,
+     "ropa": "azul",
+     "pelo": "#3a2a1e"
+    },
+    {
+     "d": "muneco",
+     "x": 640,
+     "y": 1450,
+     "s": 0.55
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "SIGLO XX",
+    "UN REGALO"
+   ]
+  },
+  {
+   "en": "a un niño",
+   "tipo": "mapa",
+   "centro": [
+    24.55,
+    -81.78
+   ],
+   "zoom": 25,
+   "zoom_desde": 2,
+   "centro_desde": [
+    30,
+    -85
+   ],
+   "resaltar": [
+    "United States of America"
+   ],
+   "pines": [
+    {
+     "lat": 24.55,
+     "lon": -81.78,
+     "texto": "KEY WEST"
+    }
+   ]
+  },
+  {
+   "en": "que lo llevaba",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "casa",
+     "tipo": "colonial",
+     "x": 540,
+     "y": 1380,
+     "s": 1.0,
+     "pared": "#f2efe8"
+    },
+    {
+     "d": "suelo",
+     "y": 1380,
+     "colores": [
+      "#d8c9a8",
+      "#9a8a6a"
+     ]
+    },
+    {
+     "d": "persona",
+     "x": 330,
+     "y": 1650,
+     "s": 0.85,
+     "ropa": "azul",
+     "mov": "camina",
+     "avance": 200
+    },
+    {
+     "d": "muneco",
+     "x": 470,
+     "y": 1650,
+     "s": 0.45
+    }
+   ],
+   "camara": "pan_der",
+   "texto": "A TODAS PARTES",
+   "amb": "insectos",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "La familia contaba",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2f3b55",
+     "piso": "#1d2233",
+     "vista": "noche",
+     "ventana_x": 680
+    },
+    {
+     "d": "cama",
+     "x": 400,
+     "y": 1500,
+     "s": 1.0
+    },
+    {
+     "d": "muneco",
+     "x": 420,
+     "y": 1300,
+     "s": 0.45
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "HABLABA",
+    "CON ÉL"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "y que se",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1d24",
+     "piso": "#0d0d12",
+     "luz": false
+    },
+    {
+     "d": "ojos",
+     "x": 540,
+     "y": 950,
+     "s": 1.1,
+     "en": 0.4
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "RISAS EN",
+    "SU CUARTO"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Cuando algo se",
+   "tipo": "titulo",
+   "lineas": [
+    "«FUE",
+    "ROBERT»"
+   ],
+   "acento": 1,
+   "entrada": "flash",
+   "sfx": "boom"
+  },
+  {
+   "en": "Hoy está en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "vitrina",
+     "x": 540,
+     "y": 1600,
+     "s": 1.2
+    },
+    {
+     "d": "muneco",
+     "x": 540,
+     "y": 1380,
+     "s": 0.75
+    }
+   ],
+   "camara": "pull",
+   "dato": [
+    "FORT EAST",
+    "MARTELLO"
+   ]
+  },
+  {
+   "en": "Las paredes están",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a3a2a",
+     "piso": "#1a140f"
+    },
+    {
+     "d": "carta",
+     "x": 160,
+     "y": 900,
+     "s": 0.35,
+     "r": -8,
+     "texto": "Perdón"
+    },
+    {
+     "d": "carta",
+     "x": 420,
+     "y": 820,
+     "s": 0.35,
+     "r": 5,
+     "texto": "Perdón"
+    },
+    {
+     "d": "carta",
+     "x": 700,
+     "y": 880,
+     "s": 0.35,
+     "r": -4,
+     "texto": "Perdón"
+    },
+    {
+     "d": "carta",
+     "x": 930,
+     "y": 840,
+     "s": 0.35,
+     "r": 9,
+     "texto": "Perdón"
+    },
+    {
+     "d": "carta",
+     "x": 280,
+     "y": 1300,
+     "s": 0.35,
+     "r": 6,
+     "texto": "Perdón"
+    },
+    {
+     "d": "carta",
+     "x": 560,
+     "y": 1260,
+     "s": 0.35,
+     "r": -7,
+     "texto": "Perdón"
+    },
+    {
+     "d": "carta",
+     "x": 840,
+     "y": 1320,
+     "s": 0.35,
+     "r": 4,
+     "texto": "Perdón"
+    }
+   ],
+   "camara": "pan_izq",
+   "texto": [
+    "CARTAS PIDIENDO",
+    "PERDÓN"
+   ],
+   "acento": 1,
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "¿Tú le pedirías",
+   "tipo": "final",
+   "lineas": [
+    "¿LE PEDIRÍAS",
+    "PERMISO?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "vitrina",
+     "x": 540,
+     "y": 1600,
+     "s": 1.2
+    },
+    {
+     "d": "muneco",
+     "x": 540,
+     "y": 1380,
+     "s": 0.75
+    }
+   ]
+  }
+ ]
+}

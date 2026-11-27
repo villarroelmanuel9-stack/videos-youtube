@@ -1,0 +1,285 @@
+{
+ "tema": "guerra",
+ "estilo": "pop",
+ "claves": [
+  "poderosa",
+  "Zar.",
+  "Hiroshima.",
+  "mitad"
+ ],
+ "tomas": [
+  {
+   "en": "La explosión más",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "nieve": true,
+     "colores": [
+      "#9aa8bf",
+      "#7d8aa6",
+      "#5c6a85"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1320,
+     "colores": [
+      "#e6edf7",
+      "#9aa8bf"
+     ]
+    },
+    {
+     "d": "hongo",
+     "x": 540,
+     "y": 1330,
+     "s": 1.25
+    },
+    {
+     "d": "explosion",
+     "x": 540,
+     "y": 1100,
+     "s": 1.6,
+     "en": 0.05
+    }
+   ],
+   "camara": "pull",
+   "sacudir": true,
+   "sfx": "boom",
+   "sfx_dur": 2.0,
+   "amb": "viento"
+  },
+  {
+   "en": "rompió ventanas a",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a4f5e",
+     "vista": "dia",
+     "ventana_x": 390,
+     "luz": false
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 600,
+     "r": 600,
+     "color": "#fff3a6",
+     "op": 0.9
+    }
+   ],
+   "camara": "push",
+   "sacudir": true,
+   "texto": "A CIENTOS DE KM",
+   "sfx": "explosion_lejana",
+   "sfx_dur": 2.0,
+   "amb": "viento"
+  },
+  {
+   "en": "Fue el treinta",
+   "tipo": "fecha",
+   "dia": "30",
+   "mes": "OCTUBRE",
+   "anio": "1961"
+  },
+  {
+   "en": "sobre una isla",
+   "tipo": "mapa",
+   "centro": [
+    73.8,
+    54.5
+   ],
+   "zoom": 4.5,
+   "zoom_desde": 1.5,
+   "centro_desde": [
+    60,
+    40
+   ],
+   "resaltar": [
+    "Russia"
+   ],
+   "pines": [
+    {
+     "lat": 73.8,
+     "lon": 54.5,
+     "texto": "NUEVA ZEMBLA"
+    }
+   ],
+   "titulo": "ÁRTICO"
+  },
+  {
+   "en": "La Unión Soviética",
+   "tipo": "titulo",
+   "lineas": [
+    "LA BOMBA",
+    "DEL ZAR"
+   ],
+   "acento": 1,
+   "icono": "💣"
+  },
+  {
+   "en": "Era tan grande",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1700
+    },
+    {
+     "d": "avion",
+     "x": 420,
+     "y": 950,
+     "s": 1.2,
+     "estrella": true,
+     "avance": 200
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "NO CABÍA EN",
+    "EL AVIÓN"
+   ],
+   "acento": 1,
+   "amb": "jet"
+  },
+  {
+   "en": "La lanzaron con",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1700
+    },
+    {
+     "d": "paracaidas",
+     "x": 540,
+     "y": 1100,
+     "s": 1.2
+    },
+    {
+     "d": "avion",
+     "x": 150,
+     "y": 500,
+     "s": 0.45,
+     "estrella": true,
+     "avance": 900
+    }
+   ],
+   "camara": "baja",
+   "texto": "PARACAÍDAS GIGANTE",
+   "amb": "viento"
+  },
+  {
+   "en": "Tuvo la fuerza",
+   "tipo": "contador",
+   "hasta": 50,
+   "unidad": "MEGATONES",
+   "sub": "50 MILLONES DE TONELADAS",
+   "icono": "💥"
+  },
+  {
+   "en": "más de tres",
+   "tipo": "contador",
+   "hasta": 3000,
+   "unidad": "VECES HIROSHIMA",
+   "sub": "MÁS DE",
+   "icono": "☢️"
+  },
+  {
+   "en": "Su hongo subió",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "nieve": true,
+     "colores": [
+      "#9aa8bf",
+      "#7d8aa6",
+      "#5c6a85"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1320,
+     "colores": [
+      "#e6edf7",
+      "#9aa8bf"
+     ]
+    },
+    {
+     "d": "hongo",
+     "x": 540,
+     "y": 1330,
+     "s": 1.5
+    }
+   ],
+   "camara": "sube",
+   "dato": [
+    "+60 KM",
+    "DE ALTURA"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "Y lo más",
+   "tipo": "titulo",
+   "lineas": [
+    "¡SOLO A LA",
+    "MITAD DE SU",
+    "POTENCIA!"
+   ],
+   "acento": 1,
+   "entrada": "flash",
+   "sfx": "riser",
+   "sfx_dur": 1.0
+  },
+  {
+   "en": "¿Te imaginabas algo",
+   "tipo": "final",
+   "lineas": [
+    "¿TE LO",
+    "IMAGINABAS?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "nieve": true,
+     "colores": [
+      "#9aa8bf",
+      "#7d8aa6",
+      "#5c6a85"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1320,
+     "colores": [
+      "#e6edf7",
+      "#9aa8bf"
+     ]
+    }
+   ]
+  }
+ ]
+}

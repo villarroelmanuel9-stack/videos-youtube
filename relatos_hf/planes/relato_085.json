@@ -1,0 +1,416 @@
+{
+ "tema": "gamer",
+ "estilo": "neon",
+ "claves": [
+  "secreto",
+  "semanas",
+  "colapsó.",
+  "cartuchos."
+ ],
+ "tomas": [
+  {
+   "en": "En mil novecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1250
+    },
+    {
+     "d": "desierto",
+     "y": 1250
+    },
+    {
+     "d": "camion",
+     "x": 540,
+     "y": 1500,
+     "s": 1.2
+    }
+   ],
+   "camara": "push",
+   "dato": "1983",
+   "amb": "camion"
+  },
+  {
+   "en": "camiones llenos de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2218",
+     "piso": "#120e0a"
+    },
+    {
+     "d": "caja",
+     "x": 540,
+     "y": 1600,
+     "s": 1.3
+    },
+    {
+     "d": "cartucho",
+     "x": 330,
+     "y": 1420,
+     "s": 0.6,
+     "r": -12,
+     "etiqueta": "#d97b2b"
+    },
+    {
+     "d": "cartucho",
+     "x": 540,
+     "y": 1420,
+     "s": 0.6,
+     "r": 4,
+     "etiqueta": "#2b59ff"
+    },
+    {
+     "d": "cartucho",
+     "x": 750,
+     "y": 1420,
+     "s": 0.6,
+     "r": 14,
+     "etiqueta": "#e3141b"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "LLENOS DE",
+    "VIDEOJUEGOS"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "fueron enterrados en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1250
+    },
+    {
+     "d": "desierto",
+     "y": 1250
+    },
+    {
+     "d": "excavadora",
+     "x": 400,
+     "y": 1450,
+     "s": 1.0
+    },
+    {
+     "d": "cartucho",
+     "x": 760,
+     "y": 1450,
+     "s": 0.5
+    },
+    {
+     "d": "cartucho",
+     "x": 860,
+     "y": 1460,
+     "s": 0.45,
+     "r": 20
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "ENTERRADOS",
+    "EN SECRETO"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Atari había hecho",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018",
+     "luz_x": 540,
+     "luz_y": 800
+    },
+    {
+     "d": "cartucho",
+     "x": 540,
+     "y": 1500,
+     "s": 1.8,
+     "etiqueta": "#58c46a"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "EL JUEGO DE",
+    "LA PELÍCULA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "la película más",
+   "tipo": "titulo",
+   "lineas": [
+    "LA PELÍCULA",
+    "MÁS EXITOSA"
+   ],
+   "acento": 1,
+   "icono": "🎬"
+  },
+  {
+   "en": "Pero lo desarrollaron",
+   "tipo": "contador",
+   "hasta": 5,
+   "unidad": "SEMANAS",
+   "sub": "PARA HACERLO",
+   "icono": "⏱️"
+  },
+  {
+   "en": "para que estuviera",
+   "tipo": "titulo",
+   "lineas": [
+    "LISTO PARA",
+    "NAVIDAD"
+   ],
+   "acento": 1,
+   "icono": "🎄"
+  },
+  {
+   "en": "El juego era",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018",
+     "luz": false
+    },
+    {
+     "d": "pantalla",
+     "x": 540,
+     "y": 1350,
+     "s": 1.4,
+     "texto": "???",
+     "tam": 160,
+     "color": "#ffd21f"
+    }
+   ],
+   "camara": "push",
+   "texto": "CONFUSO"
+  },
+  {
+   "en": "las tiendas devolvieron",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3a3a",
+     "piso": "#1d1d1d"
+    },
+    {
+     "d": "caja",
+     "x": 250,
+     "y": 1600,
+     "s": 0.6,
+     "cae": true,
+     "cae_en": 0.0,
+     "texto": "JUEGOS"
+    },
+    {
+     "d": "caja",
+     "x": 540,
+     "y": 1600,
+     "s": 0.6,
+     "cae": true,
+     "cae_en": 0.12,
+     "texto": "JUEGOS"
+    },
+    {
+     "d": "caja",
+     "x": 830,
+     "y": 1600,
+     "s": 0.6,
+     "cae": true,
+     "cae_en": 0.24,
+     "texto": "JUEGOS"
+    },
+    {
+     "d": "caja",
+     "x": 390,
+     "y": 1440,
+     "s": 0.6,
+     "cae": true,
+     "cae_en": 0.36,
+     "texto": "JUEGOS"
+    },
+    {
+     "d": "caja",
+     "x": 690,
+     "y": 1440,
+     "s": 0.6,
+     "cae": true,
+     "cae_en": 0.48,
+     "texto": "JUEGOS"
+    },
+    {
+     "d": "caja",
+     "x": 540,
+     "y": 1280,
+     "s": 0.6,
+     "cae": true,
+     "cae_en": 0.6,
+     "texto": "JUEGOS"
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "MILLONES DE",
+    "DEVOLUCIONES"
+   ],
+   "acento": 1,
+   "sfx": "patada",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Ese año, toda",
+   "tipo": "titulo",
+   "lineas": [
+    "LA INDUSTRIA",
+    "COLAPSÓ"
+   ],
+   "acento": 1,
+   "icono": "📉",
+   "sacudir": true
+  },
+  {
+   "en": "Durante décadas, el",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1250
+    },
+    {
+     "d": "desierto",
+     "y": 1250
+    },
+    {
+     "d": "niebla",
+     "y": 1250,
+     "op": 0.5
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UNA LEYENDA",
+    "URBANA"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Hasta que en",
+   "tipo": "mapa",
+   "centro": [
+    32.9,
+    -105.96
+   ],
+   "zoom": 12,
+   "zoom_desde": 2,
+   "centro_desde": [
+    38,
+    -98
+   ],
+   "resaltar": [
+    "United States of America"
+   ],
+   "pines": [
+    {
+     "lat": 32.9,
+     "lon": -105.96,
+     "texto": "ALAMOGORDO"
+    }
+   ],
+   "titulo": "2014"
+  },
+  {
+   "en": "y encontraron los",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "desierto",
+     "y": 1250
+    },
+    {
+     "d": "excavadora",
+     "x": 330,
+     "y": 1450,
+     "s": 1.0
+    },
+    {
+     "d": "cartucho",
+     "x": 640,
+     "y": 1520,
+     "s": 0.55,
+     "r": -15,
+     "etiqueta": "#d97b2b"
+    },
+    {
+     "d": "cartucho",
+     "x": 780,
+     "y": 1520,
+     "s": 0.55,
+     "r": 8,
+     "etiqueta": "#58c46a"
+    },
+    {
+     "d": "cartucho",
+     "x": 900,
+     "y": 1520,
+     "s": 0.55,
+     "r": -4,
+     "etiqueta": "#2b59ff"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¡LOS",
+    "ENCONTRARON!"
+   ],
+   "acento": 1,
+   "sfx": "boom",
+   "amb": "viento"
+  },
+  {
+   "en": "¿Sabías esta historia?",
+   "tipo": "final",
+   "lineas": [
+    "¿SABÍAS ESTA",
+    "HISTORIA?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1250
+    },
+    {
+     "d": "desierto",
+     "y": 1250
+    },
+    {
+     "d": "cartucho",
+     "x": 540,
+     "y": 1500,
+     "s": 0.8
+    }
+   ],
+   "comentario": "¡Increíble! 🎮"
+  }
+ ]
+}

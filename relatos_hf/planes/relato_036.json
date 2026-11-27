@@ -1,0 +1,286 @@
+{
+ "tema": "cultura",
+ "estilo": "pop",
+ "claves": [
+  "balcones",
+  "minero",
+  "tragedia.",
+  "siete"
+ ],
+ "tomas": [
+  {
+   "en": "En Guanajuato, México,",
+   "tipo": "mapa",
+   "centro": [
+    21.02,
+    -101.26
+   ],
+   "zoom": 9,
+   "zoom_desde": 1.5,
+   "centro_desde": [
+    20,
+    -95
+   ],
+   "resaltar": [
+    "Mexico"
+   ],
+   "pines": [
+    {
+     "lat": 21.02,
+     "lon": -101.26,
+     "texto": "GUANAJUATO"
+    }
+   ]
+  },
+  {
+   "en": "hay un callejón",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "callejon"
+    }
+   ],
+   "camara": "sube",
+   "texto": [
+    "CALLEJÓN",
+    "DEL BESO"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "que dos balcones",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "callejon"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "CASI SE",
+    "TOCAN"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "Cuenta la leyenda",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#8a4a2a",
+     "piso": "#3a1d10",
+     "papel": true,
+     "vista": "noche",
+     "ventana_x": 640
+    },
+    {
+     "d": "persona",
+     "x": 380,
+     "y": 1450,
+     "s": 1.3,
+     "ropa": "vestido",
+     "falda": true,
+     "pelo_largo": true,
+     "pelo": "#1b1b1b",
+     "mov": "respira"
+    }
+   ],
+   "camara": "push",
+   "dato": "CARMEN",
+   "amb": "ninguno"
+  },
+  {
+   "en": "hija de un",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#8a4a2a",
+     "piso": "#3a1d10",
+     "papel": true
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1600,
+     "s": 1.8,
+     "ropa": "traje",
+     "pelo": "#555"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "PADRE ESTRICTO",
+    "Y CELOSO"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "se enamoró de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1400
+    },
+    {
+     "d": "casa",
+     "tipo": "colonial",
+     "x": 540,
+     "y": 1450,
+     "s": 1.4
+    },
+    {
+     "d": "suelo",
+     "y": 1450,
+     "colores": [
+      "#6b5a46",
+      "#2a1d14"
+     ]
+    },
+    {
+     "d": "persona",
+     "x": 260,
+     "y": 1700,
+     "s": 1.0,
+     "ropa": "obrero",
+     "sombrero": "fedora"
+    }
+   ],
+   "camara": "pan_der",
+   "dato": [
+    "LUIS,",
+    "MINERO"
+   ],
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Luis alquiló la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "callejon"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "LA CASA",
+    "DE ENFRENTE"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "Los balcones estaban",
+   "tipo": "contador",
+   "hasta": 70,
+   "unidad": "CENTÍMETROS",
+   "sub": "DE SEPARACIÓN",
+   "icono": "📏"
+  },
+  {
+   "en": "y desde ahí",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "callejon",
+     "pareja": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "BESOS A",
+    "ESCONDIDAS"
+   ],
+   "acento": 0,
+   "amb": "ninguno"
+  },
+  {
+   "en": "Hasta que el",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "callejon"
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 600,
+     "r": 800,
+     "color": "#ff2a2a",
+     "op": 0.45,
+     "parpadeo": true
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "LOS",
+    "DESCUBRIÓ"
+   ],
+   "acento": 1,
+   "sfx": "boom",
+   "sacudir": true
+  },
+  {
+   "en": "Por eso, dicen,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "callejon",
+     "hora": "dia",
+     "escalon": "#b9a88a"
+    }
+   ],
+   "camara": "baja",
+   "texto": [
+    "EL TERCER",
+    "ESCALÓN"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "tendrán siete años",
+   "tipo": "titulo",
+   "lineas": [
+    "7 AÑOS DE",
+    "FELICIDAD"
+   ],
+   "acento": 1,
+   "icono": "💋"
+  },
+  {
+   "en": "Y las que",
+   "tipo": "titulo",
+   "lineas": [
+    "…O 7 DE",
+    "MALA SUERTE"
+   ],
+   "acento": 1,
+   "icono": "🐈‍⬛"
+  },
+  {
+   "en": "¿Te besarías ahí?",
+   "tipo": "final",
+   "lineas": [
+    "¿TE BESARÍAS",
+    "AHÍ?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "callejon",
+     "pareja": true
+    }
+   ]
+  }
+ ]
+}

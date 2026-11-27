@@ -1,0 +1,406 @@
+{
+ "tema": "terror",
+ "estilo": "terror",
+ "claves": [
+  "paredes?».",
+  "Observador».",
+  "joven»",
+  "escribía."
+ ],
+ "tomas": [
+  {
+   "en": "«¿Ya encontraron lo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1d24",
+     "piso": "#0d0d12",
+     "luz": false
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 900,
+     "r": 500,
+     "color": "#fff3c4",
+     "op": 0.4
+    },
+    {
+     "d": "carta",
+     "x": 540,
+     "y": 1500,
+     "s": 1.0,
+     "texto": "¿Ya encontraron...?",
+     "firma": ""
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "«LO QUE HAY EN",
+    "LAS PAREDES»"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Eso decía una",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1400
+    },
+    {
+     "d": "suelo",
+     "y": 1400,
+     "colores": [
+      "#22301e",
+      "#0a0e08"
+     ]
+    },
+    {
+     "d": "casa",
+     "x": 540,
+     "y": 1450,
+     "s": 1.4
+    },
+    {
+     "d": "niebla",
+     "y": 1450,
+     "op": 0.4
+    }
+   ],
+   "camara": "push",
+   "texto": "UNA CARTA",
+   "amb": "viento"
+  },
+  {
+   "en": "En dos mil",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1400
+    },
+    {
+     "d": "suelo",
+     "y": 1400,
+     "colores": [
+      "#4a7a3a",
+      "#22381c"
+     ]
+    },
+    {
+     "d": "casa",
+     "x": 540,
+     "y": 1450,
+     "s": 1.3,
+     "luces": false
+    },
+    {
+     "d": "persona",
+     "x": 250,
+     "y": 1700,
+     "s": 0.9,
+     "ropa": "azul"
+    },
+    {
+     "d": "persona",
+     "x": 830,
+     "y": 1700,
+     "s": 0.9,
+     "ropa": "vestido",
+     "falda": true,
+     "pelo_largo": true
+    }
+   ],
+   "camara": "pull",
+   "dato": [
+    "2014",
+    "CASA SOÑADA"
+   ],
+   "amb": "insectos",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "en Westfield, Nueva",
+   "tipo": "mapa",
+   "centro": [
+    40.65,
+    -74.35
+   ],
+   "zoom": 30,
+   "zoom_desde": 2,
+   "centro_desde": [
+    40,
+    -90
+   ],
+   "resaltar": [
+    "United States of America"
+   ],
+   "pines": [
+    {
+     "lat": 40.65,
+     "lon": -74.35,
+     "texto": "WESTFIELD"
+    }
+   ]
+  },
+  {
+   "en": "A los pocos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 800
+    },
+    {
+     "d": "carta",
+     "x": 540,
+     "y": 1560,
+     "s": 1.05,
+     "texto": "Querida familia:",
+     "firma": "El Observador"
+    }
+   ],
+   "camara": "push",
+   "texto": "LLEGÓ UNA CARTA",
+   "sfx": "papel",
+   "sfx_dur": 0.6,
+   "amb": "ninguno"
+  },
+  {
+   "en": "«El Observador».",
+   "tipo": "titulo",
+   "lineas": [
+    "«EL",
+    "OBSERVADOR»"
+   ],
+   "acento": 1,
+   "icono": "👁️",
+   "entrada": "flash"
+  },
+  {
+   "en": "Decía que su",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1400
+    },
+    {
+     "d": "suelo",
+     "y": 1400,
+     "colores": [
+      "#22301e",
+      "#0a0e08"
+     ]
+    },
+    {
+     "d": "casa",
+     "x": 540,
+     "y": 1450,
+     "s": 1.4
+    },
+    {
+     "d": "ojos",
+     "x": 540,
+     "y": 780,
+     "s": 1.4,
+     "en": 0.5,
+     "color": "#ffd21f"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "VIGILABAN",
+    "LA CASA"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "y preguntaba por",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3a5a",
+     "piso": "#1d1d2e",
+     "vista": "noche",
+     "ventana_x": 700
+    },
+    {
+     "d": "cama",
+     "x": 380,
+     "y": 1500,
+     "s": 1.0
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "PREGUNTABA POR",
+    "LOS NIÑOS"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "y por «la",
+   "tipo": "titulo",
+   "lineas": [
+    "«LA SANGRE",
+    "JOVEN»"
+   ],
+   "acento": 1,
+   "sfx": "boom",
+   "sacudir": true
+  },
+  {
+   "en": "Llegaron más cartas.",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a2a",
+     "piso": "#141414"
+    },
+    {
+     "d": "carta",
+     "x": 330,
+     "y": 1500,
+     "s": 0.7,
+     "r": -8,
+     "texto": "..."
+    },
+    {
+     "d": "carta",
+     "x": 750,
+     "y": 1520,
+     "s": 0.7,
+     "r": 7,
+     "texto": "..."
+    },
+    {
+     "d": "carta",
+     "x": 540,
+     "y": 1560,
+     "s": 0.75,
+     "texto": "Te vigilo"
+    }
+   ],
+   "camara": "fijo",
+   "texto": "MÁS CARTAS",
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "La familia nunca",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1400
+    },
+    {
+     "d": "suelo",
+     "y": 1400,
+     "colores": [
+      "#4a5a3a",
+      "#22301e"
+     ]
+    },
+    {
+     "d": "casa",
+     "x": 540,
+     "y": 1450,
+     "s": 1.3,
+     "luces": false
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "NUNCA SE",
+    "MUDARON"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "La policía investigó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1400
+    },
+    {
+     "d": "suelo",
+     "y": 1400,
+     "colores": [
+      "#22301e",
+      "#0a0e08"
+     ]
+    },
+    {
+     "d": "casa",
+     "x": 540,
+     "y": 1450,
+     "s": 1.3
+    },
+    {
+     "d": "sirenas_policia",
+     "x": 540,
+     "y": 1500
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "NUNCA SUPIERON",
+    "QUIÉN FUE"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "¿Tú vivirías en",
+   "tipo": "final",
+   "lineas": [
+    "¿VIVIRÍAS EN",
+    "ESA CASA?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1400
+    },
+    {
+     "d": "suelo",
+     "y": 1400,
+     "colores": [
+      "#22301e",
+      "#0a0e08"
+     ]
+    },
+    {
+     "d": "casa",
+     "x": 540,
+     "y": 1450,
+     "s": 1.3
+    }
+   ]
+  }
+ ]
+}

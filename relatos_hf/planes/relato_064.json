@@ -1,0 +1,387 @@
+{
+ "tema": "terror",
+ "estilo": "periodico",
+ "claves": [
+  "muñecas",
+  "voz.",
+  "cientos:",
+  "niña."
+ ],
+ "tomas": [
+  {
+   "en": "En los canales",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "mar",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "arboles",
+     "y": 1320,
+     "n": 5,
+     "color": "#2c3f24"
+    },
+    {
+     "d": "barca",
+     "x": 540,
+     "y": 1380,
+     "s": 1.1,
+     "techo": true,
+     "avance": 120,
+     "mov": "avanza"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": "XOCHIMILCO",
+   "amb": "olas",
+   "amb_vol": 0.6
+  },
+  {
+   "en": "en México, hay",
+   "tipo": "mapa",
+   "centro": [
+    19.29,
+    -99.1
+   ],
+   "zoom": 25,
+   "zoom_desde": 2,
+   "centro_desde": [
+    22,
+    -100
+   ],
+   "resaltar": [
+    "Mexico"
+   ],
+   "pines": [
+    {
+     "lat": 19.29,
+     "lon": -99.1,
+     "texto": "XOCHIMILCO"
+    }
+   ]
+  },
+  {
+   "en": "hay una isla",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "mar",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "arboles",
+     "y": 1350,
+     "n": 6,
+     "muñecas": true,
+     "color": "#2c3f24"
+    },
+    {
+     "d": "niebla",
+     "y": 1300,
+     "op": 0.5
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UNA ISLA DE",
+    "MUÑECAS"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "colgadas de los",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1900
+    },
+    {
+     "d": "arboles",
+     "y": 2300,
+     "n": 4,
+     "muñecas": true,
+     "color": "#2c3f24",
+     "semilla": 8
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": "COLGADAS",
+   "amb": "viento"
+  },
+  {
+   "en": "Su cuidador, Julián",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "mar",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "isla",
+     "x": 540,
+     "y": 1330,
+     "s": 1.1,
+     "arboles": 5
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1270,
+     "s": 0.8,
+     "ropa": "blanco",
+     "pelo": "#9a9a9a",
+     "sombrero": "fedora"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "JULIÁN",
+    "SANTANA"
+   ],
+   "amb": "olas",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "vivió ahí solo",
+   "tipo": "contador",
+   "hasta": 50,
+   "unidad": "AÑOS",
+   "sub": "SOLO EN LA ISLA",
+   "icono": "🏝️"
+  },
+  {
+   "en": "Contaba que una",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "niebla",
+     "y": 1300,
+     "op": 0.6
+    }
+   ],
+   "camara": "baja",
+   "texto": [
+    "UNA NIÑA",
+    "SE AHOGÓ"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "y que empezó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350
+    },
+    {
+     "d": "arboles",
+     "y": 1360,
+     "n": 6,
+     "color": "#1a2616"
+    },
+    {
+     "d": "silbido",
+     "x1": 540,
+     "y1": 900,
+     "x2": 1000,
+     "color": "#ffffff"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "ESCUCHABA",
+    "SU VOZ"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Para calmar su",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "mar",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "muneca",
+     "x": 540,
+     "y": 1420,
+     "s": 0.9
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "LA PRIMERA",
+    "MUÑECA"
+   ],
+   "acento": 1,
+   "amb": "olas",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Después siguió con",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1350
+    },
+    {
+     "d": "arboles",
+     "y": 1360,
+     "n": 8,
+     "muñecas": true,
+     "color": "#2c3f24",
+     "semilla": 3
+    }
+   ],
+   "camara": "pan_der",
+   "texto": "CIENTOS",
+   "amb": "viento"
+  },
+  {
+   "en": "sin ojos, sin",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a24",
+     "piso": "#121210",
+     "luz": false
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 900,
+     "r": 500,
+     "color": "#e9e2cf",
+     "op": 0.4
+    },
+    {
+     "d": "muneca",
+     "x": 540,
+     "y": 1500,
+     "s": 2.2
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "SIN OJOS,",
+    "SIN BRAZOS"
+   ],
+   "acento": 0
+  },
+  {
+   "en": "En dos mil",
+   "tipo": "titulo",
+   "lineas": [
+    "2001"
+   ],
+   "icono": "🕯️"
+  },
+  {
+   "en": "cerca del lugar",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "niebla",
+     "y": 1280,
+     "op": 0.6
+    },
+    {
+     "d": "muneca",
+     "x": 540,
+     "y": 1330,
+     "s": 0.5
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "EN EL MISMO",
+    "LUGAR"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "¿Te atreverías a",
+   "tipo": "final",
+   "lineas": [
+    "¿TE ATREVERÍAS",
+    "A IR?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "mar",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "arboles",
+     "y": 1350,
+     "n": 6,
+     "muñecas": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,313 @@
+{
+ "tema": "gamer",
+ "estilo": "clasico",
+ "claves": [
+  "casero",
+  "píxeles,",
+  "Segale,",
+  "carpintero."
+ ],
+ "tomas": [
+  {
+   "en": "El personaje más",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1d3a",
+     "piso": "#0d0d1d",
+     "luz": false
+    },
+    {
+     "d": "arcade",
+     "x": 540,
+     "y": 1600,
+     "s": 1.25,
+     "texto": "ARCADE"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "NO SE LLAMABA",
+    "MARIO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "y su nombre",
+   "tipo": "titulo",
+   "lineas": [
+    "SE LO DEBE A UN",
+    "CASERO ENOJADO"
+   ],
+   "acento": 1,
+   "icono": "😠"
+  },
+  {
+   "en": "En mil novecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1d3a",
+     "piso": "#0d0d1d",
+     "luz": false
+    },
+    {
+     "d": "arcade",
+     "x": 330,
+     "y": 1550,
+     "s": 0.9,
+     "texto": "1981",
+     "color": "#e3141b"
+    },
+    {
+     "d": "arcade",
+     "x": 780,
+     "y": 1550,
+     "s": 0.9,
+     "texto": "ARCADE"
+    }
+   ],
+   "camara": "pan_der",
+   "dato": "1981"
+  },
+  {
+   "en": "como «Jumpman», el",
+   "tipo": "titulo",
+   "lineas": [
+    "«JUMPMAN»",
+    "EL QUE SALTA"
+   ],
+   "acento": 1,
+   "icono": "🕹️"
+  },
+  {
+   "en": "Su bigote y",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#121226",
+     "piso": "#08080f",
+     "luz": false
+    },
+    {
+     "d": "pixeles",
+     "x": 540,
+     "y": 1300,
+     "s": 1.2,
+     "n": 12
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "POCOS",
+    "PÍXELES"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "era más fácil",
+   "tipo": "titulo",
+   "lineas": [
+    "BIGOTE Y GORRA:",
+    "MÁS FÁCILES"
+   ],
+   "acento": 0,
+   "icono": "👨"
+  },
+  {
+   "en": "Ese año, Nintendo",
+   "tipo": "mapa",
+   "centro": [
+    47.6,
+    -122.3
+   ],
+   "zoom": 10,
+   "zoom_desde": 2,
+   "centro_desde": [
+    40,
+    -100
+   ],
+   "resaltar": [
+    "United States of America"
+   ],
+   "pines": [
+    {
+     "lat": 47.6,
+     "lon": -122.3,
+     "texto": "SEATTLE"
+    }
+   ]
+  },
+  {
+   "en": "arrendaba un depósito",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a5a5a",
+     "piso": "#2a2a2a",
+     "luz_x": 540,
+     "luz_y": 500
+    },
+    {
+     "d": "caja",
+     "x": 240,
+     "y": 1600,
+     "s": 0.7
+    },
+    {
+     "d": "caja",
+     "x": 520,
+     "y": 1600,
+     "s": 0.7
+    },
+    {
+     "d": "caja",
+     "x": 800,
+     "y": 1600,
+     "s": 0.7
+    },
+    {
+     "d": "caja",
+     "x": 380,
+     "y": 1420,
+     "s": 0.7
+    },
+    {
+     "d": "caja",
+     "x": 660,
+     "y": 1420,
+     "s": 0.7
+    }
+   ],
+   "camara": "pan_izq",
+   "texto": "UN DEPÓSITO"
+  },
+  {
+   "en": "El dueño, Mario",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a5a5a",
+     "piso": "#2a2a2a"
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1650,
+     "s": 1.8,
+     "ropa": "traje",
+     "pelo": "#2a1a10"
+    }
+   ],
+   "camara": "push_fuerte",
+   "dato": [
+    "MARIO",
+    "SEGALE"
+   ],
+   "sacudir": true
+  },
+  {
+   "en": "entró a reclamar",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a5a5a",
+     "piso": "#2a2a2a"
+    },
+    {
+     "d": "carta",
+     "x": 540,
+     "y": 1560,
+     "s": 1.0,
+     "texto": "ARRIENDO",
+     "firma": "ATRASADO"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "ATRASADOS CON",
+    "EL ARRIENDO"
+   ],
+   "acento": 1,
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Cuando se fue,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a4a5a",
+     "piso": "#22222a"
+    },
+    {
+     "d": "persona",
+     "x": 270,
+     "y": 1550,
+     "s": 1.0,
+     "ropa": "azul"
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1550,
+     "s": 1.0,
+     "ropa": "gris"
+    },
+    {
+     "d": "persona",
+     "x": 810,
+     "y": 1550,
+     "s": 1.0,
+     "ropa": "rojo"
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "LE PUSIERON",
+    "SU NOMBRE"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Al principio, además,",
+   "tipo": "titulo",
+   "lineas": [
+    "NO ERA PLOMERO:",
+    "ERA CARPINTERO"
+   ],
+   "acento": 1,
+   "icono": "🔨"
+  },
+  {
+   "en": "¿Lo sabías? Comenta",
+   "tipo": "final",
+   "lineas": [
+    "¿LO",
+    "SABÍAS?"
+   ],
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1d3a",
+     "piso": "#0d0d1d",
+     "luz": false
+    },
+    {
+     "d": "arcade",
+     "x": 540,
+     "y": 1700,
+     "s": 1.0,
+     "texto": "ARCADE"
+    }
+   ]
+  }
+ ]
+}

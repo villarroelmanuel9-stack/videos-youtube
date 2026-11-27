@@ -1,0 +1,417 @@
+{
+ "tema": "misterio",
+ "estilo": "calido",
+ "claves": [
+  "Titanic",
+  "Britannic",
+  "sobrevivir."
+ ],
+ "tomas": [
+  {
+   "en": "Esta mujer sobrevivió",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1560,
+     "s": 1.5,
+     "ropa": "camarera",
+     "falda": true,
+     "pelo": "#2a1a10",
+     "pelo_largo": true,
+     "sombrero": "cofia",
+     "mov": "respira"
+    },
+    {
+     "d": "baranda",
+     "y": 1600
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "3 NAUFRAGIOS"
+   ],
+   "amb": "olas"
+  },
+  {
+   "en": "y dos de ellos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1200
+    },
+    {
+     "d": "mar",
+     "hora": "atardecer",
+     "horizonte": 1200
+    },
+    {
+     "d": "transatlantico",
+     "x": 300,
+     "y": 1230,
+     "s": 0.5,
+     "luces": false,
+     "avance": 50,
+     "reflejo": true
+    },
+    {
+     "d": "transatlantico",
+     "x": 800,
+     "y": 1260,
+     "s": 0.55,
+     "luces": false,
+     "avance": 40,
+     "reflejo": true
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "EL TITANIC",
+    "Y SU GEMELO"
+   ],
+   "acento": 0,
+   "amb": "olas"
+  },
+  {
+   "en": "Violet Jessop nació",
+   "tipo": "mapa",
+   "centro": [
+    -38.7,
+    -62.3
+   ],
+   "zoom": 4,
+   "centro_desde": [
+    -20,
+    -60
+   ],
+   "zoom_desde": 1.3,
+   "resaltar": [
+    "Argentina"
+   ],
+   "pines": [
+    {
+     "lat": -38.7,
+     "lon": -62.3,
+     "texto": "ARGENTINA"
+    }
+   ]
+  },
+  {
+   "en": "y era camarera",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6b2d3f",
+     "piso": "#3a1d14",
+     "papel": true,
+     "vista": "dia",
+     "ventana_x": 650
+    },
+    {
+     "d": "persona",
+     "x": 380,
+     "y": 1400,
+     "s": 1.2,
+     "ropa": "camarera",
+     "falda": true,
+     "pelo_largo": true,
+     "sombrero": "cofia",
+     "mov": "respira"
+    },
+    {
+     "d": "mesa",
+     "x": 760,
+     "y": 1460,
+     "s": 0.8,
+     "color": "#8a5a2f"
+    },
+    {
+     "d": "velas",
+     "x": 760,
+     "y": 1200,
+     "s": 0.6,
+     "n": 3
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "CAMARERA",
+    "DE LUJO"
+   ],
+   "amb": "ninguno"
+  },
+  {
+   "en": "En mil novecientos once",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1220
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1220
+    },
+    {
+     "d": "transatlantico",
+     "x": 330,
+     "y": 1250,
+     "s": 0.62,
+     "luces": false,
+     "avance": 60
+    },
+    {
+     "d": "transatlantico",
+     "x": 850,
+     "y": 1270,
+     "s": 0.4,
+     "casco": "#5c6268",
+     "luces": false,
+     "avance": -90
+    }
+   ],
+   "camara": "fijo",
+   "dato": [
+    "1911",
+    "OLYMPIC"
+   ],
+   "sacudir": true,
+   "sfx": "crujido",
+   "sfx_en": 1.2,
+   "sfx_dur": 1.8,
+   "amb": "olas"
+  },
+  {
+   "en": "Al año siguiente",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1180,
+     "astro": "luna",
+     "astro_x": 820,
+     "astro_y": 420,
+     "astro_r": 60
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1180,
+     "reflejo_x": 820
+    },
+    {
+     "d": "transatlantico",
+     "x": 560,
+     "y": 1240,
+     "s": 0.75,
+     "mov": "hundir",
+     "apagar_en": 1.5
+    }
+   ],
+   "camara": "fijo",
+   "dato": [
+    "1912",
+    "TITANIC"
+   ],
+   "amb": "olas"
+  },
+  {
+   "en": "Esa noche le",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1180,
+     "astro": "luna",
+     "astro_x": 820,
+     "astro_y": 420,
+     "astro_r": 60
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1180,
+     "reflejo_x": 820
+    },
+    {
+     "d": "bote",
+     "x": 540,
+     "y": 1330,
+     "s": 1.2,
+     "gente": 6
+    },
+    {
+     "d": "niebla",
+     "y": 1300,
+     "op": 0.35
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "LE ENTREGARON",
+    "UN BEBÉ"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "Y eso no",
+   "tipo": "titulo",
+   "lineas": [
+    "Y ESO",
+    "NO ES TODO…"
+   ],
+   "acento": 1,
+   "entrada": "flash",
+   "sfx": "riser",
+   "sfx_dur": 1.0
+  },
+  {
+   "en": "En mil novecientos dieciséis",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1220
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1220
+    },
+    {
+     "d": "transatlantico",
+     "x": 540,
+     "y": 1260,
+     "s": 0.8,
+     "hospital": true,
+     "avance": 80,
+     "reflejo": true
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "1916",
+    "BRITANNIC"
+   ],
+   "amb": "olas"
+  },
+  {
+   "en": "cuando explotó una",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1220
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1220
+    },
+    {
+     "d": "transatlantico",
+     "x": 540,
+     "y": 1260,
+     "s": 0.8,
+     "hospital": true,
+     "mov": "hundir"
+    },
+    {
+     "d": "explosion",
+     "x": 600,
+     "y": 1250,
+     "s": 1.0,
+     "en": 0.15
+    }
+   ],
+   "camara": "fijo",
+   "sacudir": true,
+   "sfx": "boom",
+   "texto": "¡UNA MINA!"
+  },
+  {
+   "en": "Saltó al agua",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1150
+    },
+    {
+     "d": "mar",
+     "hora": "niebla",
+     "horizonte": 1150
+    },
+    {
+     "d": "bote",
+     "x": 700,
+     "y": 1260,
+     "s": 0.6,
+     "gente": 4
+    },
+    {
+     "d": "niebla",
+     "y": 1200,
+     "op": 0.5
+    }
+   ],
+   "camara": "baja",
+   "texto": [
+    "SALTÓ",
+    "AL AGUA"
+   ],
+   "amb": "olas"
+  },
+  {
+   "en": "y volvió a",
+   "tipo": "contador",
+   "hasta": 3,
+   "unidad": "NAUFRAGIOS",
+   "sub": "Y SOBREVIVIÓ A LOS 3",
+   "icono": "⚓"
+  },
+  {
+   "en": "¿Tú te habrías",
+   "tipo": "final",
+   "lineas": [
+    "¿TE SUBIRÍAS",
+    "A OTRO BARCO?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1200
+    },
+    {
+     "d": "mar",
+     "hora": "atardecer",
+     "horizonte": 1200
+    }
+   ]
+  }
+ ]
+}

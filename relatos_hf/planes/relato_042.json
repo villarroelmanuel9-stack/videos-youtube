@@ -1,0 +1,351 @@
+{
+ "tema": "ciencia",
+ "estilo": "terror",
+ "claves": [
+  "radiactivos…",
+  "Nobel,",
+  "bolsillos.",
+  "plomo,"
+ ],
+ "tomas": [
+  {
+   "en": "Los cuadernos de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#141a18",
+     "piso": "#0a0e0c",
+     "luz": false
+    },
+    {
+     "d": "libro",
+     "x": 540,
+     "y": 1450,
+     "s": 1.4,
+     "radiactivo": true
+    },
+    {
+     "d": "particulas",
+     "tipo": "verde",
+     "n": 40
+    }
+   ],
+   "camara": "push",
+   "texto": "RADIACTIVOS",
+   "amb": "zumbido",
+   "amb_vol": 0.6
+  },
+  {
+   "en": "y lo seguirán",
+   "tipo": "contador",
+   "hasta": 1500,
+   "unidad": "AÑOS",
+   "sub": "MÁS DE",
+   "icono": "☢️"
+  },
+  {
+   "en": "Marie Curie descubrió",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4a4a",
+     "piso": "#1a2424",
+     "luz_x": 700,
+     "luz_y": 600,
+     "vista": "dia",
+     "ventana_x": 650
+    },
+    {
+     "d": "persona",
+     "x": 380,
+     "y": 1450,
+     "s": 1.3,
+     "ropa": "vestido",
+     "falda": true,
+     "pelo_largo": true,
+     "pelo": "#6b5a46"
+    },
+    {
+     "d": "mesa",
+     "x": 760,
+     "y": 1500,
+     "s": 0.7
+    },
+    {
+     "d": "frasco",
+     "x": 760,
+     "y": 1250,
+     "s": 0.55,
+     "contenido": "liquido"
+    },
+    {
+     "d": "luz",
+     "x": 760,
+     "y": 1150,
+     "r": 220,
+     "color": "#8dff9c",
+     "op": 0.8
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "MARIE",
+    "CURIE"
+   ],
+   "amb": "ninguno"
+  },
+  {
+   "en": "el polonio y",
+   "tipo": "titulo",
+   "lineas": [
+    "POLONIO",
+    "Y RADIO"
+   ],
+   "acento": 1,
+   "icono": "⚛️"
+  },
+  {
+   "en": "Fue la primera",
+   "tipo": "titulo",
+   "lineas": [
+    "1.ª MUJER CON",
+    "UN NOBEL"
+   ],
+   "acento": 1,
+   "icono": "🏅"
+  },
+  {
+   "en": "y la primera",
+   "tipo": "contador",
+   "hasta": 2,
+   "unidad": "PREMIOS NOBEL",
+   "sub": "EN CIENCIAS DISTINTAS",
+   "icono": "🏅"
+  },
+  {
+   "en": "En esa época",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4a4a",
+     "piso": "#1a2424",
+     "luz_x": 700,
+     "luz_y": 600
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1500,
+     "s": 1.2
+    },
+    {
+     "d": "frasco",
+     "x": 360,
+     "y": 1240,
+     "s": 0.6,
+     "contenido": "liquido"
+    },
+    {
+     "d": "frasco",
+     "x": 720,
+     "y": 1240,
+     "s": 0.6,
+     "contenido": "liquido"
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 1150,
+     "r": 500,
+     "color": "#8dff9c",
+     "op": 0.6,
+     "parpadeo": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "NADIE CONOCÍA",
+    "LOS PELIGROS"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "guardaba tubos de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4a4a",
+     "piso": "#1a2424",
+     "luz_x": 700,
+     "luz_y": 600
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1600,
+     "s": 1.7,
+     "ropa": "vestido",
+     "falda": true,
+     "pelo_largo": true,
+     "pelo": "#6b5a46"
+    },
+    {
+     "d": "luz",
+     "x": 600,
+     "y": 1350,
+     "r": 200,
+     "color": "#8dff9c",
+     "op": 0.9,
+     "parpadeo": true
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "TUBOS EN LOS",
+    "BOLSILLOS"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Murió en mil",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1a1a1a",
+     "piso": "#0a0a0a"
+    },
+    {
+     "d": "velas",
+     "x": 540,
+     "y": 1400,
+     "s": 1.4,
+     "n": 4
+    }
+   ],
+   "camara": "push",
+   "dato": "1934",
+   "amb": "ninguno"
+  },
+  {
+   "en": "Hoy sus cuadernos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2f38",
+     "piso": "#14171c",
+     "luz_x": 540,
+     "luz_y": 800
+    },
+    {
+     "d": "caja",
+     "x": 540,
+     "y": 1500,
+     "s": 1.5,
+     "plomo": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CAJAS DE",
+    "PLOMO"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "en París. Para",
+   "tipo": "mapa",
+   "centro": [
+    48.85,
+    2.35
+   ],
+   "zoom": 25,
+   "zoom_desde": 4,
+   "centro_desde": [
+    47,
+    5
+   ],
+   "resaltar": [
+    "France"
+   ],
+   "pines": [
+    {
+     "lat": 48.85,
+     "lon": 2.35,
+     "texto": "PARÍS"
+    }
+   ]
+  },
+  {
+   "en": "hay que firmar",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#dfe8e6",
+     "piso": "#9aa8a6",
+     "luz": false
+    },
+    {
+     "d": "persona",
+     "x": 330,
+     "y": 1450,
+     "s": 1.2,
+     "ropa": "bata",
+     "sombrero": "cofia"
+    },
+    {
+     "d": "carta",
+     "x": 760,
+     "y": 1450,
+     "s": 0.55,
+     "texto": "PERMISO",
+     "firma": "FIRMA"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "ROPA",
+    "PROTECTORA"
+   ],
+   "acento": 1,
+   "amb": "ninguno",
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "¿Te atreverías a",
+   "tipo": "final",
+   "lineas": [
+    "¿TE ATREVERÍAS",
+    "A LEERLOS?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#141a18",
+     "piso": "#0a0e0c",
+     "luz": false
+    },
+    {
+     "d": "libro",
+     "x": 540,
+     "y": 1500,
+     "s": 1.2,
+     "radiactivo": true
+    }
+   ]
+  }
+ ]
+}

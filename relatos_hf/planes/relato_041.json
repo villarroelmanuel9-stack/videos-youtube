@@ -1,0 +1,317 @@
+{
+ "tema": "ciencia",
+ "estilo": "clasico",
+ "claves": [
+  "permiso.",
+  "doscientos",
+  "sidra",
+  "museos."
+ ],
+ "tomas": [
+  {
+   "en": "Cuando Albert Einstein",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a5a6a",
+     "piso": "#1d2530",
+     "luz_x": 300,
+     "luz_y": 500,
+     "vista": "dia",
+     "ventana_x": 650
+    },
+    {
+     "d": "texto_svg",
+     "x": 800,
+     "y": 420,
+     "texto": "E = mc²",
+     "tam": 110,
+     "color": "#f4efe4"
+    },
+    {
+     "d": "persona",
+     "x": 380,
+     "y": 1450,
+     "s": 1.3,
+     "ropa": "gris",
+     "pelo": "#ececec",
+     "mov": "respira"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "1955",
+    "EINSTEIN"
+   ],
+   "amb": "ninguno"
+  },
+  {
+   "en": "un médico se",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#dfe8e6",
+     "piso": "#9aa8a6",
+     "luz": false
+    },
+    {
+     "d": "persona",
+     "x": 330,
+     "y": 1450,
+     "s": 1.2,
+     "ropa": "bata"
+    },
+    {
+     "d": "frasco",
+     "x": 740,
+     "y": 1400,
+     "s": 1.0
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SE LLEVÓ",
+    "SU CEREBRO"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "sin permiso.",
+   "tipo": "titulo",
+   "lineas": [
+    "SIN",
+    "PERMISO"
+   ],
+   "acento": 1,
+   "icono": "🤫",
+   "entrada": "flash"
+  },
+  {
+   "en": "Einstein había pedido",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a2a",
+     "piso": "#111"
+    },
+    {
+     "d": "velas",
+     "x": 540,
+     "y": 1400,
+     "s": 1.5,
+     "n": 5
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "PIDIÓ SER",
+    "CREMADO"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "Pero el patólogo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#dfe8e6",
+     "piso": "#9aa8a6",
+     "luz": false
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1650,
+     "s": 2.0,
+     "ropa": "bata",
+     "pelo": "#3a2a1e"
+    }
+   ],
+   "camara": "push_fuerte",
+   "dato": [
+    "THOMAS",
+    "HARVEY"
+   ],
+   "amb": "ninguno"
+  },
+  {
+   "en": "decidió guardar su",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018"
+    },
+    {
+     "d": "cerebro",
+     "x": 540,
+     "y": 1400,
+     "s": 1.4
+    },
+    {
+     "d": "particulas",
+     "tipo": "chispas",
+     "n": 25
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¿QUÉ LO HACÍA",
+    "GENIAL?"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "Lo cortó en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018"
+    },
+    {
+     "d": "cerebro",
+     "x": 540,
+     "y": 1400,
+     "s": 1.4,
+     "corte": true
+    }
+   ],
+   "camara": "fijo",
+   "texto": "+200 PEDAZOS",
+   "amb": "ninguno",
+   "sfx": "crujido",
+   "sfx_dur": 1.5
+  },
+  {
+   "en": "Perdió su trabajo",
+   "tipo": "titulo",
+   "lineas": [
+    "PERDIÓ SU",
+    "TRABAJO"
+   ],
+   "acento": 1,
+   "icono": "📦"
+  },
+  {
+   "en": "Durante décadas guardó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14"
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1500,
+     "s": 1.2
+    },
+    {
+     "d": "frasco",
+     "x": 330,
+     "y": 1240,
+     "s": 0.65
+    },
+    {
+     "d": "frasco",
+     "x": 540,
+     "y": 1240,
+     "s": 0.65
+    },
+    {
+     "d": "frasco",
+     "x": 750,
+     "y": 1240,
+     "s": 0.65
+    }
+   ],
+   "camara": "pan_der",
+   "texto": "EN FRASCOS",
+   "amb": "ninguno"
+  },
+  {
+   "en": "y en algún",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3a3a",
+     "piso": "#1d1d1d"
+    },
+    {
+     "d": "caja",
+     "x": 540,
+     "y": 1500,
+     "s": 1.4,
+     "texto": "SIDRA"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UNA CAJA",
+    "DE SIDRA"
+   ],
+   "acento": 1,
+   "sfx": "patada",
+   "sfx_dur": 0.4
+  },
+  {
+   "en": "Recién en mil",
+   "tipo": "titulo",
+   "lineas": [
+    "1998:",
+    "LO DEVOLVIÓ"
+   ],
+   "acento": 1,
+   "icono": "🏥"
+  },
+  {
+   "en": "Hoy hay partes",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a3242",
+     "piso": "#141824",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "vitrina",
+     "x": 540,
+     "y": 1600,
+     "s": 1.2
+    },
+    {
+     "d": "frasco",
+     "x": 540,
+     "y": 1380,
+     "s": 0.75
+    }
+   ],
+   "camara": "push",
+   "dato": "EN MUSEOS",
+   "amb": "ninguno"
+  },
+  {
+   "en": "¿Lo sabías? Comenta",
+   "tipo": "final",
+   "lineas": [
+    "¿LO",
+    "SABÍAS?"
+   ],
+   "comentario": "¡Qué locura! 🧠"
+  }
+ ]
+}

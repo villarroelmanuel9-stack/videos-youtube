@@ -1,0 +1,540 @@
+{
+ "tema": "guerra",
+ "estilo": "calido",
+ "claves": [
+  "solos.",
+  "siete",
+  "Efialtes",
+  "final."
+ ],
+ "tomas": [
+  {
+   "en": "En la batalla",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1250,
+     "astro": "sol",
+     "astro_x": 760,
+     "astro_y": 820,
+     "astro_r": 70
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "colores": [
+      "#7a4a5a",
+      "#5a3242",
+      "#3a1d2b"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#8a5a3a",
+      "#3a2214"
+     ]
+    },
+    {
+     "d": "particulas",
+     "tipo": "polvo",
+     "n": 30
+    },
+    {
+     "d": "espartano",
+     "x": 540,
+     "y": 1600,
+     "s": 1.25
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "300",
+    "ESPARTANOS"
+   ],
+   "acento": 0,
+   "amb": "viento",
+   "sfx": "boom"
+  },
+  {
+   "en": "no estaban solos.",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1250,
+     "astro": "sol",
+     "astro_x": 760,
+     "astro_y": 820,
+     "astro_r": 70
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "colores": [
+      "#7a4a5a",
+      "#5a3242",
+      "#3a1d2b"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#8a5a3a",
+      "#3a2214"
+     ]
+    },
+    {
+     "d": "particulas",
+     "tipo": "polvo",
+     "n": 30
+    },
+    {
+     "d": "espartano",
+     "x": 120,
+     "y": 1500,
+     "s": 0.55
+    },
+    {
+     "d": "espartano",
+     "x": 300,
+     "y": 1540,
+     "s": 0.6000000000000001
+    },
+    {
+     "d": "espartano",
+     "x": 480,
+     "y": 1500,
+     "s": 0.55
+    },
+    {
+     "d": "espartano",
+     "x": 660,
+     "y": 1540,
+     "s": 0.6000000000000001
+    },
+    {
+     "d": "espartano",
+     "x": 840,
+     "y": 1500,
+     "s": 0.55
+    },
+    {
+     "d": "espartano",
+     "x": 1000,
+     "y": 1540,
+     "s": 0.6000000000000001
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "NO ESTABAN",
+    "SOLOS"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.6
+  },
+  {
+   "en": "Fue en el",
+   "tipo": "titulo",
+   "lineas": [
+    "480",
+    "a. C."
+   ],
+   "acento": 0,
+   "icono": "🏛️"
+  },
+  {
+   "en": "El rey Leónidas",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1250,
+     "astro": "sol",
+     "astro_x": 760,
+     "astro_y": 820,
+     "astro_r": 70
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "colores": [
+      "#7a4a5a",
+      "#5a3242",
+      "#3a1d2b"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#8a5a3a",
+      "#3a2214"
+     ]
+    },
+    {
+     "d": "particulas",
+     "tipo": "polvo",
+     "n": 30
+    },
+    {
+     "d": "espartano",
+     "x": 480,
+     "y": 1650,
+     "s": 1.5
+    },
+    {
+     "d": "corona",
+     "x": 430,
+     "y": 620,
+     "s": 0.5
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "REY",
+    "LEÓNIDAS"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "defendió un paso",
+   "tipo": "mapa",
+   "centro": [
+    38.8,
+    22.5
+   ],
+   "zoom": 18,
+   "zoom_desde": 4,
+   "centro_desde": [
+    38,
+    24
+   ],
+   "resaltar": [
+    "Greece"
+   ],
+   "pines": [
+    {
+     "lat": 38.8,
+     "lon": 22.5,
+     "texto": "TERMÓPILAS"
+    }
+   ]
+  },
+  {
+   "en": "entre la montaña",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1150
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1150
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1300,
+     "colores": [
+      "#6b7a5a",
+      "#4a5a3e",
+      "#2e3a26"
+     ]
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "UN PASO",
+    "ESTRECHO"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "contra el enorme",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1250,
+     "astro": "sol",
+     "astro_x": 760,
+     "astro_y": 820,
+     "astro_r": 70
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "colores": [
+      "#7a4a5a",
+      "#5a3242",
+      "#3a1d2b"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#8a5a3a",
+      "#3a2214"
+     ]
+    },
+    {
+     "d": "particulas",
+     "tipo": "polvo",
+     "n": 30
+    },
+    {
+     "d": "ejercito",
+     "x": 540,
+     "y": 1500,
+     "s": 1.1,
+     "filas": 5,
+     "color": "#2a1d3a"
+    }
+   ],
+   "camara": "pan_izq",
+   "texto": [
+    "EJÉRCITO",
+    "PERSA"
+   ],
+   "acento": 1,
+   "amb": "multitud"
+  },
+  {
+   "en": "Pero junto a",
+   "tipo": "contador",
+   "hasta": 7000,
+   "unidad": "GRIEGOS",
+   "sub": "PELEABAN JUNTO A ELLOS",
+   "icono": "⚔️"
+  },
+  {
+   "en": "Resistieron dos días",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1250,
+     "astro": "sol",
+     "astro_x": 760,
+     "astro_y": 820,
+     "astro_r": 70
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "colores": [
+      "#7a4a5a",
+      "#5a3242",
+      "#3a1d2b"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#8a5a3a",
+      "#3a2214"
+     ]
+    },
+    {
+     "d": "particulas",
+     "tipo": "polvo",
+     "n": 30
+    },
+    {
+     "d": "calendario",
+     "x": 540,
+     "y": 1400,
+     "s": 1.2,
+     "anios": [
+      "DÍA 1",
+      "DÍA 2"
+     ]
+    }
+   ],
+   "camara": "fijo",
+   "texto": "RESISTIERON",
+   "amb": "viento"
+  },
+  {
+   "en": "Al tercer día,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1600,
+     "s": 1.4,
+     "ropa": "gris",
+     "pelo": "#1b1b1b",
+     "mov": "saluda"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "EL TRAIDOR",
+    "EFIALTES"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "un sendero escondido",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1100
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1700,
+     "colores": [
+      "#3b4a6b",
+      "#2a3552",
+      "#1a2238"
+     ]
+    },
+    {
+     "d": "huellas",
+     "x": 300,
+     "y": 1750,
+     "s": 1.6,
+     "n": 12,
+     "dx": 40,
+     "dy": 90
+    }
+   ],
+   "camara": "sube",
+   "texto": [
+    "SENDERO",
+    "ESCONDIDO"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Rodeados, Leónidas mandó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1250,
+     "astro": "sol",
+     "astro_x": 760,
+     "astro_y": 820,
+     "astro_r": 70
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "colores": [
+      "#7a4a5a",
+      "#5a3242",
+      "#3a1d2b"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#8a5a3a",
+      "#3a2214"
+     ]
+    },
+    {
+     "d": "particulas",
+     "tipo": "polvo",
+     "n": 30
+    },
+    {
+     "d": "espartano",
+     "x": 540,
+     "y": 1600,
+     "s": 1.3
+    },
+    {
+     "d": "ejercito",
+     "x": 540,
+     "y": 1350,
+     "s": 0.7,
+     "filas": 3,
+     "color": "#2a1d3a"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SE QUEDÓ HASTA",
+    "EL FINAL"
+   ],
+   "acento": 1,
+   "amb": "multitud"
+  },
+  {
+   "en": "¿Sabías esto? Comenta",
+   "tipo": "final",
+   "lineas": [
+    "¿SABÍAS",
+    "ESTO?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1250,
+     "astro": "sol",
+     "astro_x": 760,
+     "astro_y": 820,
+     "astro_r": 70
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "colores": [
+      "#7a4a5a",
+      "#5a3242",
+      "#3a1d2b"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#8a5a3a",
+      "#3a2214"
+     ]
+    },
+    {
+     "d": "particulas",
+     "tipo": "polvo",
+     "n": 30
+    }
+   ]
+  }
+ ]
+}

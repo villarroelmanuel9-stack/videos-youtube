@@ -1,0 +1,319 @@
+{
+ "tema": "misterio",
+ "estilo": "periodico",
+ "claves": [
+  "Jersey».",
+  "Halloween.",
+  "ficción,",
+  "competencia."
+ ],
+ "tomas": [
+  {
+   "en": "«Los marcianos están",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350,
+     "astro": "luna",
+     "astro_x": 820,
+     "astro_y": 380,
+     "astro_r": 60
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#2a3a22",
+      "#0d140a"
+     ]
+    },
+    {
+     "d": "casa",
+     "tipo": "granja",
+     "x": 300,
+     "y": 1400,
+     "s": 0.7
+    },
+    {
+     "d": "tripode",
+     "x": 740,
+     "y": 1450,
+     "s": 1.0
+    },
+    {
+     "d": "luz",
+     "x": 740,
+     "y": 900,
+     "r": 500,
+     "color": "#8dff9c",
+     "op": 0.5
+    }
+   ],
+   "camara": "push",
+   "texto": "«¡MARCIANOS!»",
+   "amb": "viento",
+   "sfx": "zumbido",
+   "sfx_dur": 2.5
+  },
+  {
+   "en": "Eso escucharon miles",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "vista": "noche",
+     "ventana_x": 680
+    },
+    {
+     "d": "radio",
+     "x": 360,
+     "y": 1450,
+     "s": 1.1
+    },
+    {
+     "d": "persona",
+     "x": 760,
+     "y": 1500,
+     "s": 1.1,
+     "ropa": "vestido",
+     "falda": true,
+     "pelo_largo": true
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "RADIO",
+    "1938"
+   ],
+   "amb": "estatica",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Era la víspera",
+   "tipo": "titulo",
+   "lineas": [
+    "VÍSPERA DE",
+    "HALLOWEEN"
+   ],
+   "acento": 1,
+   "icono": "🎃"
+  },
+  {
+   "en": "Orson Welles adaptó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz_x": 540,
+     "luz_y": 600
+    },
+    {
+     "d": "microfono",
+     "x": 540,
+     "y": 1450,
+     "s": 1.1
+    },
+    {
+     "d": "persona",
+     "x": 300,
+     "y": 1550,
+     "s": 1.2,
+     "ropa": "traje",
+     "pelo": "#1b1b1b"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ORSON",
+    "WELLES"
+   ],
+   "amb": "ninguno"
+  },
+  {
+   "en": "como si fueran",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218"
+    },
+    {
+     "d": "radio",
+     "x": 540,
+     "y": 1450,
+     "s": 1.6
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "NOTICIAS",
+    "«EN VIVO»"
+   ],
+   "acento": 1,
+   "amb": "estatica",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Al principio se",
+   "tipo": "titulo",
+   "lineas": [
+    "AVISARON:",
+    "ES FICCIÓN"
+   ],
+   "acento": 1,
+   "icono": "📻"
+  },
+  {
+   "en": "pero muchos sintonizaron",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14"
+    },
+    {
+     "d": "radio",
+     "x": 700,
+     "y": 1450,
+     "s": 1.0
+    },
+    {
+     "d": "persona",
+     "x": 330,
+     "y": 1500,
+     "s": 1.3,
+     "ropa": "traje",
+     "sombrero": "fedora"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SINTONIZARON",
+    "TARDE"
+   ],
+   "acento": 1,
+   "amb": "estatica",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Al día siguiente,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2a1e",
+     "piso": "#1a120c"
+    },
+    {
+     "d": "periodico",
+     "x": 540,
+     "y": 1560,
+     "s": 1.1,
+     "cabecera": "31 OCT 1938",
+     "titular": "¡PÁNICO!"
+    }
+   ],
+   "camara": "fijo",
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Hoy los historiadores",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 800
+    },
+    {
+     "d": "libro",
+     "x": 540,
+     "y": 1450,
+     "s": 1.4
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "EL PÁNICO FUE",
+    "MUCHO MENOR"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "que querían mostrar",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218"
+    },
+    {
+     "d": "radio",
+     "x": 300,
+     "y": 1450,
+     "s": 0.9
+    },
+    {
+     "d": "periodico",
+     "x": 760,
+     "y": 1600,
+     "s": 0.6,
+     "titular": "¡PELIGRO!",
+     "tam": 70
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "LA RADIO: SU",
+    "COMPETENCIA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "¿Tú te lo",
+   "tipo": "final",
+   "lineas": [
+    "¿TÚ TE LO",
+    "HABRÍAS CREÍDO?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350,
+     "astro": "luna",
+     "astro_x": 820,
+     "astro_y": 380,
+     "astro_r": 60
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#2a3a22",
+      "#0d140a"
+     ]
+    },
+    {
+     "d": "tripode",
+     "x": 740,
+     "y": 1450,
+     "s": 0.8
+    }
+   ]
+  }
+ ]
+}

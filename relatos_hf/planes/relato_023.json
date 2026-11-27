@@ -1,0 +1,393 @@
+{
+ "tema": "historia",
+ "estilo": "frio",
+ "claves": [
+  "verde.",
+  "Eiffel,",
+  "cobre",
+  "pátina,"
+ ],
+ "tomas": [
+  {
+   "en": "La Estatua de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "estatua_libertad",
+     "x": 540,
+     "y": 1450,
+     "s": 1.05,
+     "color": "verde"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "NO SIEMPRE",
+    "FUE VERDE"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "Cuando llegó a",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "ciudad",
+     "era": "moderna",
+     "y": 1350,
+     "color": "#4a5a7a",
+     "color_lejos": "#6b7a9a"
+    },
+    {
+     "d": "estatua_libertad",
+     "x": 540,
+     "y": 1480,
+     "s": 1.05
+    }
+   ],
+   "camara": "pull",
+   "dato": [
+    "COLOR DE",
+    "MONEDA NUEVA"
+   ],
+   "amb": "olas"
+  },
+  {
+   "en": "Fue un regalo",
+   "tipo": "mapa",
+   "centro": [
+    45,
+    -38
+   ],
+   "zoom": 1.6,
+   "zoom_desde": 1.0,
+   "resaltar": [
+    "France",
+    "United States of America"
+   ],
+   "color_pais": "#2f5d9e",
+   "ruta": [
+    [
+     48.8,
+     2.3
+    ],
+    [
+     40.7,
+     -74
+    ]
+   ],
+   "pines": [
+    {
+     "lat": 48.8,
+     "lon": 2.3,
+     "texto": "FRANCIA"
+    },
+    {
+     "lat": 40.7,
+     "lon": -74,
+     "texto": "NUEVA YORK"
+    }
+   ],
+   "paso_pines": 1.2
+  },
+  {
+   "en": "Viajó en barco,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "velero",
+     "x": 540,
+     "y": 1380,
+     "s": 0.9,
+     "avance": 200,
+     "reflejo": true
+    }
+   ],
+   "camara": "pan_der",
+   "texto": "EN BARCO",
+   "amb": "olas"
+  },
+  {
+   "en": "desarmada en más",
+   "tipo": "contador",
+   "hasta": 300,
+   "unidad": "PIEZAS",
+   "sub": "MÁS DE",
+   "icono": "🧩"
+  },
+  {
+   "en": "dentro de doscientas",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14"
+    },
+    {
+     "d": "caja",
+     "x": 300,
+     "y": 1500,
+     "s": 0.8,
+     "cae": true,
+     "cae_en": 0.1
+    },
+    {
+     "d": "caja",
+     "x": 760,
+     "y": 1500,
+     "s": 0.8,
+     "cae": true,
+     "cae_en": 0.3
+    },
+    {
+     "d": "caja",
+     "x": 530,
+     "y": 1290,
+     "s": 0.8,
+     "cae": true,
+     "cae_en": 0.5
+    },
+    {
+     "d": "caja",
+     "x": 530,
+     "y": 1500,
+     "s": 0.8,
+     "cae": true,
+     "cae_en": 0.2
+    }
+   ],
+   "camara": "fijo",
+   "texto": "214 CAJAS",
+   "sfx": "patada",
+   "sfx_en": 0.4,
+   "sfx_dur": 0.4
+  },
+  {
+   "en": "Por dentro tiene",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1500
+    },
+    {
+     "d": "torre_eiffel",
+     "x": 300,
+     "y": 1520,
+     "s": 1.0
+    },
+    {
+     "d": "estatua_libertad",
+     "x": 760,
+     "y": 1520,
+     "s": 0.85
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "GUSTAVE",
+    "EIFFEL"
+   ],
+   "amb": "viento",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Por fuera está",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1900
+    },
+    {
+     "d": "estatua_libertad",
+     "x": 540,
+     "y": 2300,
+     "s": 2.4
+    }
+   ],
+   "camara": "sube",
+   "texto": [
+    "LÁMINAS",
+    "DE COBRE"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "finas como dos",
+   "tipo": "titulo",
+   "lineas": [
+    "FINAS COMO",
+    "2 MONEDAS"
+   ],
+   "acento": 1,
+   "icono": "🪙"
+  },
+  {
+   "en": "En mil ochocientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1350,
+     "astro": "sol",
+     "astro_x": 820,
+     "astro_y": 500,
+     "astro_r": 70
+    },
+    {
+     "d": "mar",
+     "hora": "atardecer",
+     "horizonte": 1350
+    },
+    {
+     "d": "estatua_libertad",
+     "x": 480,
+     "y": 1450,
+     "s": 1.05
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "1886",
+    "ROJIZA Y DORADA"
+   ],
+   "amb": "olas"
+  },
+  {
+   "en": "Con la lluvia",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1350
+    },
+    {
+     "d": "mar",
+     "hora": "tormenta",
+     "horizonte": 1350
+    },
+    {
+     "d": "estatua_libertad",
+     "x": 540,
+     "y": 1450,
+     "s": 1.05,
+     "cambia_en": 0.4
+    },
+    {
+     "d": "lluvia"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "EL COBRE",
+    "SE OXIDÓ"
+   ],
+   "acento": 1,
+   "amb": "lluvia"
+  },
+  {
+   "en": "y en unos",
+   "tipo": "contador",
+   "hasta": 30,
+   "unidad": "AÑOS",
+   "sub": "PARA QUEDAR VERDE",
+   "icono": "⏳"
+  },
+  {
+   "en": "Esa capa verde,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "estatua_libertad",
+     "x": 540,
+     "y": 1450,
+     "s": 1.05,
+     "color": "verde"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "PÁTINA:",
+    "LA PROTEGE"
+   ],
+   "amb": "olas"
+  },
+  {
+   "en": "¿Lo sabías? Comenta",
+   "tipo": "final",
+   "lineas": [
+    "¿LO",
+    "SABÍAS?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "estatua_libertad",
+     "x": 540,
+     "y": 1450,
+     "s": 1.05,
+     "color": "verde"
+    }
+   ],
+   "comentario": "Siempre pensé que era verde"
+  }
+ ]
+}

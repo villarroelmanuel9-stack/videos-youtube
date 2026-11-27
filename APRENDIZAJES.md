@@ -96,3 +96,29 @@ Notas que se aplican a cada video nuevo (se actualizan después de cada historia
 - Antes de escribir temas nuevos, revisar en Antwork lo ya publicado (YouTube y TikTok) y los 100 misterios para
   no repetir. Guiones en `guiones/historias_100.md`; textos en «textos historias nuevas» (`generar_textos_historias.py`).
 - Videojuegos: contar la historia real, pero en dibujos y miniaturas no copiar personajes ni logotipos con derechos.
+
+## Relatos en HyperFrames (desde el 27/11, `relatos_hf/`)
+- **Motor**: `relatos_hf/motor.py N` arma un proyecto HyperFrames (HTML + GSAP) y lo renderiza a 1080×1920, 30 fps,
+  calidad «delivery» (~3,5 Mbps, -14 LUFS). Planes visuales en `relatos_hf/planes40.py` → `planes/relato_NNN.json`.
+  `validar.py` revisa que cada frase «en» exista en el guion, que existan los dibujos y los sonidos.
+- **Dibujo** (pedido: «mejora el dibujo»): ilustraciones vectoriales nuevas (`ilustra*.py`, ~100 elementos) con
+  degradados, contorno tinta, luz y reflejos, en capas con **profundidad**: la cámara (push, pull, pan, sube, baja)
+  mueve cada capa distinto (parallax). Cada elemento trae su propia animación (humo, olas, llamas, colas, luces).
+  El motor viejo en PIL se veía de bloques (iceberg cuadrado, edificios rectángulos): no se usa en los relatos.
+- **Cada toma dibuja lo que dice esa frase** (mapas reales con world-atlas, fechas, contadores, títulos, escenas).
+  Cambio de imagen cada 2–4 s (rea-video midió 4,6 s/toma en los videos viejos: muy lento para Shorts).
+- **Cada video distinto**: 8 identidades (`ESTILOS`): color de palabra activa, palabra clave, recuadro de dato
+  (ficha, post-it, sello, neón, etiqueta), forma del chip, transiciones y final (botón, chat escribiéndose,
+  botones SÍ/NO, sello SUSCRÍBETE + campana). Durante el cierre se ocultan los subtítulos (no duplicar texto).
+- **Voz** (pedido: «que la voz se escuche bien»): se acortan los silencios largos de ElevenLabs (los «…»),
+  el ritmo se ajusta con rubberband sin cambiar el tono (0,86–1,15), EQ suave (graves fuera, presencia +2 dB),
+  compresión ligera y de-esser. Mezcla final normalizada a -14 LUFS (estándar de YouTube).
+- **Efectos** (pedido: «no tienen que ser efectos»): sin zumbido sintético de fondo; solo ambientes naturales por
+  toma (mar, viento, fuego, multitud, lluvia…), barridos muy suaves en los cortes y pocos golpes. Margen
+  voz/efectos 20–30 dB.
+- **Duración 45–46 s**: el audio de ElevenLabs v3 salió de 30 a 50 s. Se resuelve con: silencios compactados →
+  ritmo → pausas entre párrafos (0,25–1,3 s) → cola final (1,5–4,8 s) con el cierre animado.
+- HyperFrames renderiza de a uno (bloqueo por cuenta): ~3,5–5,5 min por video; `lote.sh` deja la cola corriendo.
+- GSAP: nunca `fromTo` sobre un elemento compartido (#flash) — el estado inicial se aplica de inmediato y tapaba
+  el video; usar `set` + `to`. Las transformaciones de cámara de SVG se aplican con `setAttribute` desde un
+  objeto animado (con `svgOrigin` el mapa no se veía en el render).

@@ -1,0 +1,410 @@
+{
+ "tema": "misterio",
+ "claves": [
+  "Titanic",
+  "iceberg",
+  "«insumergible».",
+  "quinientas."
+ ],
+ "tomas": [
+  {
+   "en": "La noche del catorce",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1180,
+     "astro": "luna",
+     "astro_x": 820,
+     "astro_y": 420,
+     "astro_r": 60
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1180,
+     "reflejo_x": 820
+    },
+    {
+     "d": "iceberg",
+     "x": 150,
+     "y": 1190,
+     "s": 0.45,
+     "z": 0.4
+    },
+    {
+     "d": "transatlantico",
+     "x": 620,
+     "y": 1200,
+     "s": 0.74,
+     "avance": 150,
+     "reflejo": true,
+     "z": 0.8
+    },
+    {
+     "d": "niebla",
+     "y": 1210,
+     "op": 0.3
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "14 DE ABRIL",
+    "1912"
+   ],
+   "amb": "olas"
+  },
+  {
+   "en": "recibió varios avisos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "vista": "noche",
+     "ventana_x": 90
+    },
+    {
+     "d": "radio",
+     "x": 640,
+     "y": 1320,
+     "s": 0.9
+    },
+    {
+     "d": "carta",
+     "x": 330,
+     "y": 1450,
+     "s": 0.55,
+     "texto": "¡HIELO!",
+     "r": -6
+    }
+   ],
+   "camara": "push",
+   "texto": "6 AVISOS DE HIELO",
+   "amb": "ninguno",
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "y siguió navegando",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1180
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1180
+    },
+    {
+     "d": "transatlantico",
+     "x": 420,
+     "y": 1230,
+     "s": 1.05,
+     "avance": 320,
+     "reflejo": true
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "CASI A TODA",
+    "VELOCIDAD"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "Era el barco",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1180
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1180
+    },
+    {
+     "d": "transatlantico",
+     "x": 560,
+     "y": 1230,
+     "s": 0.95,
+     "luces": false,
+     "avance": 60
+    },
+    {
+     "d": "bote",
+     "x": 930,
+     "y": 1300,
+     "s": 0.4,
+     "gente": 2
+    }
+   ],
+   "camara": "pull",
+   "dato": [
+    "269 METROS",
+    "DE LARGO"
+   ],
+   "amb": "olas"
+  },
+  {
+   "en": "Muchos lo llamaban",
+   "tipo": "titulo",
+   "lineas": [
+    "«INSUMERGIBLE»"
+   ],
+   "icono": "🚢",
+   "tam": 150
+  },
+  {
+   "en": "A las once",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1180,
+     "astro": "luna",
+     "astro_x": 820,
+     "astro_y": 420,
+     "astro_r": 60
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1180,
+     "reflejo_x": 820
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1480,
+     "s": 1.25,
+     "ropa": "uniforme",
+     "sombrero": "gorra",
+     "mov": "respira"
+    },
+    {
+     "d": "baranda",
+     "y": 1520
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "23:40",
+    "VIGÍA"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "vieron un iceberg",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1180
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1180
+    },
+    {
+     "d": "iceberg",
+     "x": 540,
+     "y": 1260,
+     "s": 1.35
+    },
+    {
+     "d": "niebla",
+     "y": 1240,
+     "op": 0.4
+    }
+   ],
+   "camara": "push_fuerte",
+   "sacudir": true,
+   "sfx": "boom",
+   "amb": "viento"
+  },
+  {
+   "en": "Alcanzaron a girar",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1180
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1180
+    },
+    {
+     "d": "iceberg",
+     "x": 260,
+     "y": 1220,
+     "s": 0.8
+    },
+    {
+     "d": "transatlantico",
+     "x": 760,
+     "y": 1240,
+     "s": 0.8,
+     "avance": -80,
+     "reflejo": true
+    }
+   ],
+   "camara": "fijo",
+   "texto": "¡A BABOR!",
+   "sfx": "crujido",
+   "sfx_dur": 2.2,
+   "sacudir": true
+  },
+  {
+   "en": "El agua entró",
+   "tipo": "titulo",
+   "lineas": [
+    "EL AGUA ENTRÓ",
+    "EN VARIOS",
+    "COMPARTIMENTOS"
+   ],
+   "acento": 0,
+   "icono": "🌊"
+  },
+  {
+   "en": "En menos de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1180,
+     "astro": "luna",
+     "astro_x": 820,
+     "astro_y": 420,
+     "astro_r": 60
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1180,
+     "reflejo_x": 820
+    },
+    {
+     "d": "transatlantico",
+     "x": 560,
+     "y": 1240,
+     "s": 0.8,
+     "mov": "hundir",
+     "luces": true,
+     "apagar_en": 1.2
+    },
+    {
+     "d": "bote",
+     "x": 230,
+     "y": 1320,
+     "s": 0.55,
+     "gente": 6
+    }
+   ],
+   "camara": "fijo",
+   "dato": [
+    "MENOS DE",
+    "3 HORAS"
+   ],
+   "amb": "olas",
+   "sfx": "crujido",
+   "sfx_dur": 2.5
+  },
+  {
+   "en": "Había botes salvavidas",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1180,
+     "astro": "luna",
+     "astro_x": 820,
+     "astro_y": 420,
+     "astro_r": 60
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1180,
+     "reflejo_x": 820
+    },
+    {
+     "d": "bote",
+     "x": 300,
+     "y": 1290,
+     "s": 0.75,
+     "gente": 6
+    },
+    {
+     "d": "bote",
+     "x": 760,
+     "y": 1330,
+     "s": 0.6,
+     "gente": 5
+    },
+    {
+     "d": "niebla",
+     "y": 1250,
+     "op": 0.3
+    }
+   ],
+   "camara": "pan_izq",
+   "texto": [
+    "BOTES PARA",
+    "LA MITAD"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "Murieron más de",
+   "tipo": "contador",
+   "hasta": 1500,
+   "unidad": "PERSONAS",
+   "sub": "MURIERON",
+   "icono": "🕯️"
+  },
+  {
+   "en": "¿Qué habrías hecho",
+   "tipo": "final",
+   "lineas": [
+    "¿QUÉ HABRÍAS",
+    "HECHO TÚ?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1180,
+     "astro": "luna",
+     "astro_x": 820,
+     "astro_y": 420,
+     "astro_r": 60
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1180,
+     "reflejo_x": 820
+    }
+   ],
+   "comentario": "Me subo al primer bote"
+  }
+ ]
+}

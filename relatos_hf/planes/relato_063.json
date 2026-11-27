@@ -1,0 +1,397 @@
+{
+ "tema": "terror",
+ "estilo": "frio",
+ "claves": [
+  "escondido…",
+  "saliera.",
+  "llaves",
+  "resolvió."
+ ],
+ "tomas": [
+  {
+   "en": "En mil novecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#d8e0ee",
+      "#8a9bb8"
+     ]
+    },
+    {
+     "d": "particulas",
+     "tipo": "nieve",
+     "n": 60
+    },
+    {
+     "d": "casa",
+     "tipo": "granja",
+     "x": 420,
+     "y": 1420,
+     "s": 1.0
+    }
+   ],
+   "camara": "push",
+   "dato": "1922",
+   "amb": "viento"
+  },
+  {
+   "en": "en una granja",
+   "tipo": "mapa",
+   "centro": [
+    48.6,
+    11.4
+   ],
+   "zoom": 7,
+   "zoom_desde": 2,
+   "centro_desde": [
+    50,
+    5
+   ],
+   "resaltar": [
+    "Germany"
+   ],
+   "pines": [
+    {
+     "lat": 48.6,
+     "lon": 11.4,
+     "texto": "BAVIERA"
+    }
+   ]
+  },
+  {
+   "en": "alguien vivió escondido…",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2a1e",
+     "piso": "#1a120c",
+     "luz": false
+    },
+    {
+     "d": "ojos",
+     "x": 540,
+     "y": 900,
+     "s": 1.3,
+     "en": 0.6,
+     "color": "#ffd77a"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "ALGUIEN",
+    "ESCONDIDO"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "En Hinterkaifeck vivía",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#e6edf7",
+      "#9aa8bf"
+     ]
+    },
+    {
+     "d": "casa",
+     "tipo": "granja",
+     "x": 380,
+     "y": 1420,
+     "s": 1.0,
+     "luces": false
+    }
+   ],
+   "camara": "pull",
+   "dato": [
+    "HINTERKAIFECK",
+    "6 PERSONAS"
+   ],
+   "amb": "viento",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "el granjero vio",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#d8e0ee",
+      "#8a9bb8"
+     ]
+    },
+    {
+     "d": "particulas",
+     "tipo": "nieve",
+     "n": 60
+    },
+    {
+     "d": "casa",
+     "tipo": "granja",
+     "x": 540,
+     "y": 1200,
+     "s": 0.6
+    },
+    {
+     "d": "huellas",
+     "x": 520,
+     "y": 1800,
+     "s": 1.3,
+     "n": 10,
+     "dx": 0,
+     "dy": 60
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "HUELLAS QUE",
+    "ENTRABAN"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "pero ninguna que",
+   "tipo": "titulo",
+   "lineas": [
+    "NINGUNA QUE",
+    "SALIERA"
+   ],
+   "acento": 1,
+   "icono": "👣",
+   "entrada": "flash"
+  },
+  {
+   "en": "Escucharon pasos en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a3020",
+     "piso": "#21140c",
+     "luz": false
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 300,
+     "r": 400,
+     "color": "#ffd77a",
+     "op": 0.25
+    }
+   ],
+   "camara": "sube",
+   "texto": [
+    "PASOS EN",
+    "EL ÁTICO"
+   ],
+   "acento": 1,
+   "sfx": "pasos",
+   "sfx_dur": 2.0
+  },
+  {
+   "en": "y encontraron un",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2a1e",
+     "piso": "#1a120c"
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1500,
+     "s": 1.2
+    },
+    {
+     "d": "periodico",
+     "x": 540,
+     "y": 1260,
+     "s": 0.45,
+     "titular": "1922",
+     "tam": 80
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UN PERIÓDICO",
+    "QUE NADIE COMPRÓ"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Las llaves de",
+   "tipo": "titulo",
+   "lineas": [
+    "LAS LLAVES",
+    "DESAPARECIERON"
+   ],
+   "acento": 1,
+   "icono": "🔑"
+  },
+  {
+   "en": "Una noche, los",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#d8e0ee",
+      "#8a9bb8"
+     ]
+    },
+    {
+     "d": "particulas",
+     "tipo": "nieve",
+     "n": 60
+    },
+    {
+     "d": "casa",
+     "tipo": "granja",
+     "x": 420,
+     "y": 1420,
+     "s": 1.0,
+     "luces": false
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 900,
+     "r": 900,
+     "color": "#ff2a2a",
+     "op": 0.25
+    }
+   ],
+   "camara": "push",
+   "texto": "UNA NOCHE…",
+   "amb": "viento",
+   "sfx": "boom"
+  },
+  {
+   "en": "Y lo más",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1350
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#d8e0ee",
+      "#8a9bb8"
+     ]
+    },
+    {
+     "d": "casa",
+     "tipo": "granja",
+     "x": 420,
+     "y": 1420,
+     "s": 1.0,
+     "luces": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "ALGUIEN SIGUIÓ",
+    "EN LA GRANJA"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "El caso nunca",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a2a",
+     "piso": "#141414"
+    },
+    {
+     "d": "periodico",
+     "x": 540,
+     "y": 1560,
+     "s": 1.1,
+     "cabecera": "1922",
+     "titular": "SIN RESOLVER",
+     "tam": 80
+    }
+   ],
+   "camara": "fijo",
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "¿Quién crees que",
+   "tipo": "final",
+   "lineas": [
+    "¿QUIÉN CREES",
+    "QUE FUE?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#d8e0ee",
+      "#8a9bb8"
+     ]
+    },
+    {
+     "d": "particulas",
+     "tipo": "nieve",
+     "n": 60
+    },
+    {
+     "d": "casa",
+     "tipo": "granja",
+     "x": 420,
+     "y": 1420,
+     "s": 1.0,
+     "luces": false
+    }
+   ],
+   "comentario": "Alguien que conocían 🤔"
+  }
+ ]
+}

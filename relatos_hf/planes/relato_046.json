@@ -1,0 +1,375 @@
+{
+ "tema": "cultura",
+ "estilo": "frio",
+ "claves": [
+  "dinero.",
+  "tributo.",
+  "cien,",
+  "Europa."
+ ],
+ "tomas": [
+  {
+   "en": "Para los aztecas,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1350,
+     "astro": "sol",
+     "astro_x": 820,
+     "astro_y": 600,
+     "astro_r": 70
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#a8845a",
+      "#5a4430"
+     ]
+    },
+    {
+     "d": "templo_azteca",
+     "x": 540,
+     "y": 1400,
+     "s": 1.05
+    }
+   ],
+   "camara": "push",
+   "texto": "LOS AZTECAS",
+   "amb": "viento",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "el chocolate no",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6b3a1e",
+     "piso": "#2a160a",
+     "luz_x": 540,
+     "luz_y": 900
+    },
+    {
+     "d": "taza",
+     "x": 540,
+     "y": 1450,
+     "s": 1.6
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "NO SE COMÍA:",
+    "SE BEBÍA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "y las semillas",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a2e1a",
+     "piso": "#21140c",
+     "luz_x": 540,
+     "luz_y": 900
+    },
+    {
+     "d": "semillas",
+     "x": 540,
+     "y": 1500,
+     "s": 1.6
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "ERAN",
+    "DINERO"
+   ],
+   "acento": 1,
+   "sfx": "billetes",
+   "sfx_dur": 1.0
+  },
+  {
+   "en": "El cacao no",
+   "tipo": "mapa",
+   "centro": [
+    19.43,
+    -99.13
+   ],
+   "zoom": 12,
+   "zoom_desde": 2,
+   "centro_desde": [
+    22,
+    -100
+   ],
+   "resaltar": [
+    "Mexico"
+   ],
+   "pines": [
+    {
+     "lat": 19.43,
+     "lon": -99.13,
+     "texto": "VALLE DE MÉXICO"
+    }
+   ]
+  },
+  {
+   "en": "llegaba desde tierras",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "arboles",
+     "y": 1320,
+     "n": 7,
+     "color": "#2e5a2a"
+    },
+    {
+     "d": "suelo",
+     "y": 1320,
+     "colores": [
+      "#5a4a2a",
+      "#2a2214"
+     ]
+    },
+    {
+     "d": "cacao",
+     "x": 540,
+     "y": 1600,
+     "s": 1.2
+    },
+    {
+     "d": "particulas",
+     "tipo": "polvo",
+     "n": 20
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "DE TIERRAS",
+    "CÁLIDAS"
+   ],
+   "acento": 1,
+   "amb": "insectos"
+  },
+  {
+   "en": "Por eso era",
+   "tipo": "titulo",
+   "lineas": [
+    "MUY",
+    "VALIOSO"
+   ],
+   "acento": 1,
+   "icono": "💰"
+  },
+  {
+   "en": "Con unas pocas",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a2e1a",
+     "piso": "#21140c"
+    },
+    {
+     "d": "semillas",
+     "x": 330,
+     "y": 1500,
+     "s": 0.8
+    },
+    {
+     "d": "tomate",
+     "x": 760,
+     "y": 1500,
+     "s": 1.0
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "FRUTA O",
+    "UN TAMAL"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "y con unas",
+   "tipo": "contador",
+   "hasta": 100,
+   "unidad": "SEMILLAS",
+   "sub": "= 1 GUAJOLOTE",
+   "icono": "🦃"
+  },
+  {
+   "en": "Había hasta falsificadores,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a1a10",
+     "piso": "#120c06",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "cacao",
+     "x": 540,
+     "y": 1450,
+     "s": 1.4
+    }
+   ],
+   "camara": "push",
+   "texto": "FALSIFICADORES",
+   "sacudir": true,
+   "sfx": "boom"
+  },
+  {
+   "en": "que vaciaban las",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a1a10",
+     "piso": "#120c06"
+    },
+    {
+     "d": "semillas",
+     "x": 540,
+     "y": 1500,
+     "s": 1.4
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "RELLENAS DE",
+    "TIERRA O CERA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "La bebida era",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6b3a1e",
+     "piso": "#2a160a",
+     "luz_x": 540,
+     "luz_y": 900
+    },
+    {
+     "d": "taza",
+     "x": 540,
+     "y": 1450,
+     "s": 1.4
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "AMARGA Y",
+    "ESPUMOSA"
+   ],
+   "acento": 0
+  },
+  {
+   "en": "y la tomaban",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1350,
+     "astro": "sol",
+     "astro_x": 820,
+     "astro_y": 600,
+     "astro_r": 70
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#a8845a",
+      "#5a4430"
+     ]
+    },
+    {
+     "d": "templo_azteca",
+     "x": 540,
+     "y": 1400,
+     "s": 0.8
+    },
+    {
+     "d": "persona",
+     "x": 300,
+     "y": 1650,
+     "s": 1.2,
+     "ropa": "rojo",
+     "pelo": "#111"
+    },
+    {
+     "d": "persona",
+     "x": 780,
+     "y": 1650,
+     "s": 1.2,
+     "ropa": "azul",
+     "pelo": "#111"
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "NOBLES Y",
+    "GUERREROS"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "El azúcar se",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "velero",
+     "x": 540,
+     "y": 1290,
+     "s": 0.9,
+     "avance": 180,
+     "reflejo": true
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "EL AZÚCAR:",
+    "EN EUROPA"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "¿Lo prefieres dulce",
+   "tipo": "final",
+   "lineas": [
+    "¿DULCE O",
+    "AMARGO?"
+   ],
+   "comentario": "Dulce, obvio 🍫"
+  }
+ ]
+}

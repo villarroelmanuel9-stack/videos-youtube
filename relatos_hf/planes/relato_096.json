@@ -1,0 +1,304 @@
+{
+ "tema": "gamer",
+ "estilo": "frio",
+ "claves": [
+  "persona.",
+  "incompleta.",
+  "dólares.",
+  "cuadrados."
+ ],
+ "tomas": [
+  {
+   "en": "El videojuego más",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1500
+    },
+    {
+     "d": "suelo",
+     "y": 1500,
+     "colores": [
+      "#6fbf4a",
+      "#3a6b26"
+     ]
+    },
+    {
+     "d": "bloques",
+     "x": 540,
+     "y": 1500,
+     "s": 1.2,
+     "filas": 4
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "EL MÁS",
+    "VENDIDO"
+   ],
+   "acento": 1,
+   "sfx": "patada",
+   "sfx_dur": 0.4
+  },
+  {
+   "en": "empezó como el",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2f3b55",
+     "piso": "#1d2233",
+     "vista": "noche",
+     "ventana_x": 700
+    },
+    {
+     "d": "computadora",
+     "x": 420,
+     "y": 1500,
+     "s": 0.9
+    },
+    {
+     "d": "persona",
+     "x": 780,
+     "y": 1500,
+     "s": 1.0,
+     "ropa": "gris",
+     "sombrero": "fedora"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UNA SOLA",
+    "PERSONA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "En dos mil",
+   "tipo": "mapa",
+   "centro": [
+    59.33,
+    18.07
+   ],
+   "zoom": 6,
+   "zoom_desde": 1.6,
+   "centro_desde": [
+    55,
+    10
+   ],
+   "resaltar": [
+    "Sweden"
+   ],
+   "pines": [
+    {
+     "lat": 59.33,
+     "lon": 18.07,
+     "texto": "SUECIA, 2009"
+    }
+   ]
+  },
+  {
+   "en": "Markus Persson creó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4a5a",
+     "piso": "#1d252d"
+    },
+    {
+     "d": "computadora",
+     "x": 540,
+     "y": 1500,
+     "s": 1.3
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "MARKUS",
+    "PERSSON"
+   ]
+  },
+  {
+   "en": "La primera versión",
+   "tipo": "titulo",
+   "lineas": [
+    "EN UNOS",
+    "POCOS DÍAS"
+   ],
+   "acento": 1,
+   "icono": "⏱️"
+  },
+  {
+   "en": "La empezó a",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018",
+     "luz": false
+    },
+    {
+     "d": "pantalla",
+     "x": 540,
+     "y": 1350,
+     "s": 1.4,
+     "texto": "ALPHA",
+     "tam": 130,
+     "color": "#5cff7a"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "A LA VENTA…",
+    "INCOMPLETO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Los jugadores la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#6fbf4a",
+      "#3a6b26"
+     ]
+    },
+    {
+     "d": "persona",
+     "x": 200,
+     "y": 1600,
+     "s": 0.9,
+     "ropa": "azul"
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1600,
+     "s": 0.9,
+     "ropa": "rojo"
+    },
+    {
+     "d": "persona",
+     "x": 880,
+     "y": 1600,
+     "s": 0.9,
+     "ropa": "gris"
+    },
+    {
+     "d": "silbido",
+     "x1": 260,
+     "y1": 1250,
+     "x2": 820,
+     "color": "#ffd21f"
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "DE BOCA",
+    "EN BOCA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "En dos mil",
+   "tipo": "titulo",
+   "lineas": [
+    "2014"
+   ],
+   "icono": "🤝"
+  },
+  {
+   "en": "compró su empresa",
+   "tipo": "contador",
+   "hasta": 2500,
+   "unidad": "MILLONES",
+   "sub": "DE DÓLARES",
+   "icono": "💵"
+  },
+  {
+   "en": "Hoy Minecraft ha",
+   "tipo": "contador",
+   "hasta": 300,
+   "unidad": "MILLONES",
+   "sub": "DE COPIAS VENDIDAS",
+   "icono": "🎮"
+  },
+  {
+   "en": "Y todo, con",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1500
+    },
+    {
+     "d": "suelo",
+     "y": 1500,
+     "colores": [
+      "#6fbf4a",
+      "#3a6b26"
+     ]
+    },
+    {
+     "d": "bloques",
+     "x": 540,
+     "y": 1600,
+     "s": 1.7,
+     "filas": 5
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "CON BLOQUES",
+    "CUADRADOS"
+   ],
+   "acento": 1,
+   "sfx": "patada",
+   "sfx_dur": 0.4
+  },
+  {
+   "en": "¿Qué es lo",
+   "tipo": "final",
+   "lineas": [
+    "¿QUÉ HAS",
+    "CONSTRUIDO?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1500
+    },
+    {
+     "d": "suelo",
+     "y": 1500,
+     "colores": [
+      "#6fbf4a",
+      "#3a6b26"
+     ]
+    },
+    {
+     "d": "bloques",
+     "x": 540,
+     "y": 1600,
+     "s": 1.0,
+     "filas": 3
+    }
+   ],
+   "comentario": "¡Un castillo gigante! 🏰"
+  }
+ ]
+}

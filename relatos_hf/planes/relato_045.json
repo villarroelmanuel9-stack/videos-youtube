@@ -1,0 +1,345 @@
+{
+ "tema": "historia",
+ "estilo": "calido",
+ "claves": [
+  "medicina.",
+  "venenoso.",
+  "pastillas",
+  "escándalo,"
+ ],
+ "tomas": [
+  {
+   "en": "En el siglo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "mostrador",
+     "y": 1350
+    },
+    {
+     "d": "botella",
+     "x": 540,
+     "y": 1380,
+     "s": 1.4,
+     "color": "#a81d14",
+     "texto": "KÉTCHUP",
+     "sub": "MEDICINAL"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SE VENDÍA EN",
+    "FARMACIAS"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "como medicina.",
+   "tipo": "titulo",
+   "lineas": [
+    "COMO",
+    "MEDICINA"
+   ],
+   "acento": 1,
+   "icono": "💊",
+   "entrada": "flash"
+  },
+  {
+   "en": "Antes, el kétchup",
+   "tipo": "titulo",
+   "lineas": [
+    "NI SIQUIERA ERA",
+    "DE TOMATE"
+   ],
+   "acento": 1,
+   "icono": "🍅"
+  },
+  {
+   "en": "se hacía con",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a3a22",
+     "piso": "#2a1a0e"
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1500,
+     "s": 1.2
+    },
+    {
+     "d": "nuez",
+     "x": 380,
+     "y": 1240,
+     "s": 0.7
+    },
+    {
+     "d": "frasco",
+     "x": 700,
+     "y": 1240,
+     "s": 0.6,
+     "contenido": "liquido"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "PESCADO, NUECES",
+    "Y HONGOS"
+   ],
+   "acento": 0,
+   "amb": "ninguno"
+  },
+  {
+   "en": "En Estados Unidos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2a1d",
+     "piso": "#0d140d",
+     "luz": false
+    },
+    {
+     "d": "tomate",
+     "x": 540,
+     "y": 1400,
+     "s": 1.8
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 1100,
+     "r": 500,
+     "color": "#8dff9c",
+     "op": 0.4
+    }
+   ],
+   "camara": "push",
+   "texto": "¿VENENOSO?",
+   "amb": "ninguno"
+  },
+  {
+   "en": "En mil ochocientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "mostrador",
+     "y": 1350
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1420,
+     "s": 1.3,
+     "ropa": "traje",
+     "sombrero": "copa"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "1834",
+    "DR. BENNETT"
+   ],
+   "amb": "ninguno"
+  },
+  {
+   "en": "aseguró que el",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a1d14",
+     "piso": "#2a0e0a",
+     "luz_x": 540,
+     "luz_y": 900
+    },
+    {
+     "d": "tomate",
+     "x": 540,
+     "y": 1400,
+     "s": 1.6
+    },
+    {
+     "d": "particulas",
+     "tipo": "chispas",
+     "n": 30
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": "¡CURA TODO!",
+   "amb": "ninguno"
+  },
+  {
+   "en": "Empezó a vender",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "mostrador",
+     "y": 1350
+    },
+    {
+     "d": "frasco",
+     "x": 540,
+     "y": 1380,
+     "s": 1.3,
+     "contenido": "pildoras",
+     "etiqueta": "TOMATE"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "PASTILLAS",
+    "DE TOMATE"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "y tuvieron tanto",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "mostrador",
+     "y": 1350
+    },
+    {
+     "d": "frasco",
+     "x": 220,
+     "y": 1380,
+     "s": 0.7,
+     "contenido": "pildoras",
+     "etiqueta": "TOMATE"
+    },
+    {
+     "d": "frasco",
+     "x": 430,
+     "y": 1380,
+     "s": 0.7,
+     "contenido": "pildoras",
+     "etiqueta": "TOMATE"
+    },
+    {
+     "d": "frasco",
+     "x": 650,
+     "y": 1380,
+     "s": 0.7,
+     "contenido": "pildoras",
+     "etiqueta": "TOMATE"
+    },
+    {
+     "d": "frasco",
+     "x": 860,
+     "y": 1380,
+     "s": 0.7,
+     "contenido": "pildoras",
+     "etiqueta": "TOMATE"
+    }
+   ],
+   "camara": "pan_izq",
+   "texto": "¡ÉXITO!",
+   "amb": "multitud",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "que aparecieron imitadores",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "mostrador",
+     "y": 1350
+    },
+    {
+     "d": "frasco",
+     "x": 360,
+     "y": 1380,
+     "s": 0.9,
+     "contenido": "pildoras",
+     "etiqueta": "FALSO"
+    },
+    {
+     "d": "frasco",
+     "x": 720,
+     "y": 1380,
+     "s": 0.9,
+     "contenido": "pildoras",
+     "etiqueta": "FALSO"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "PÍLDORAS",
+    "FALSAS"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "El negocio terminó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2a1e",
+     "piso": "#1a120c"
+    },
+    {
+     "d": "periodico",
+     "x": 540,
+     "y": 1560,
+     "s": 1.1,
+     "cabecera": "1840",
+     "titular": "¡ESCÁNDALO!"
+    }
+   ],
+   "camara": "fijo",
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "y el kétchup",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#7a3a2a",
+     "piso": "#3a1a10",
+     "vista": "dia",
+     "ventana_x": 650
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1500,
+     "s": 1.2
+    },
+    {
+     "d": "botella",
+     "x": 540,
+     "y": 1240,
+     "s": 0.9,
+     "color": "#a81d14",
+     "texto": "KÉTCHUP",
+     "sub": ""
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SOLO UNA",
+    "SALSA"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "¿Con qué comes",
+   "tipo": "final",
+   "lineas": [
+    "¿CON QUÉ",
+    "LO COMES TÚ?"
+   ],
+   "comentario": "Con papas fritas 🍟"
+  }
+ ]
+}

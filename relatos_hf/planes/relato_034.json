@@ -1,0 +1,446 @@
+{
+ "tema": "terror",
+ "estilo": "neon",
+ "claves": [
+  "luces…",
+  "Caleuche,",
+  "brujos,",
+  "castigarte."
+ ],
+ "tomas": [
+  {
+   "en": "En las noches",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1200
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1200
+    },
+    {
+     "d": "niebla",
+     "y": 1150,
+     "op": 0.5,
+     "color": "#9fb4c9"
+    },
+    {
+     "d": "velero",
+     "x": 780,
+     "y": 1220,
+     "s": 0.35,
+     "fantasma": true
+    }
+   ],
+   "camara": "push",
+   "amb": "olas",
+   "texto": "CHILOÉ"
+  },
+  {
+   "en": "de Chiloé, dicen",
+   "tipo": "mapa",
+   "centro": [
+    -42.6,
+    -73.9
+   ],
+   "zoom": 10,
+   "zoom_desde": 1.6,
+   "centro_desde": [
+    -30,
+    -70
+   ],
+   "resaltar": [
+    "Chile"
+   ],
+   "pines": [
+    {
+     "lat": -42.6,
+     "lon": -73.9,
+     "texto": "CHILOÉ"
+    }
+   ]
+  },
+  {
+   "en": "que aparece un",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1200
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1200
+    },
+    {
+     "d": "niebla",
+     "y": 1150,
+     "op": 0.5,
+     "color": "#9fb4c9"
+    },
+    {
+     "d": "velero",
+     "x": 540,
+     "y": 1260,
+     "s": 0.9,
+     "fantasma": true,
+     "avance": 80,
+     "reflejo": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UN BARCO",
+    "LLENO DE LUCES"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "Es el Caleuche,",
+   "tipo": "titulo",
+   "lineas": [
+    "EL CALEUCHE"
+   ],
+   "icono": "👻"
+  },
+  {
+   "en": "Desde la orilla",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1200
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1200
+    },
+    {
+     "d": "velero",
+     "x": 720,
+     "y": 1230,
+     "s": 0.5,
+     "fantasma": true
+    },
+    {
+     "d": "silbido",
+     "x1": 720,
+     "y1": 1000,
+     "x2": 240,
+     "color": "#3df5ff"
+    },
+    {
+     "d": "suelo",
+     "y": 1500,
+     "colores": [
+      "#2a2a1e",
+      "#0d0d08"
+     ]
+    },
+    {
+     "d": "persona",
+     "x": 260,
+     "y": 1700,
+     "s": 1.0,
+     "ropa": "gris"
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "RISAS Y",
+    "ACORDEONES"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "Pero cuando alguien",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1200
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1200
+    },
+    {
+     "d": "niebla",
+     "y": 1150,
+     "op": 0.5,
+     "color": "#9fb4c9"
+    },
+    {
+     "d": "velero",
+     "x": 600,
+     "y": 1250,
+     "s": 0.8,
+     "fantasma": true,
+     "hundir_en": 0.6
+    },
+    {
+     "d": "barca",
+     "x": 200,
+     "y": 1290,
+     "s": 0.5,
+     "mov": "avanza",
+     "avance": 200
+    }
+   ],
+   "camara": "fijo",
+   "texto": "SE SUMERGE",
+   "amb": "olas",
+   "sfx": "burbujas",
+   "sfx_en": 0.8,
+   "sfx_dur": 1.5
+  },
+  {
+   "en": "Según la leyenda,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1200
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1200
+    },
+    {
+     "d": "niebla",
+     "y": 1150,
+     "op": 0.5,
+     "color": "#9fb4c9"
+    },
+    {
+     "d": "velero",
+     "x": 540,
+     "y": 1300,
+     "s": 1.2,
+     "fantasma": true
+    },
+    {
+     "d": "ojos",
+     "x": 540,
+     "y": 950,
+     "s": 1.2,
+     "en": 0.4,
+     "color": "#3df5ff"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "LO TRIPULAN",
+    "BRUJOS"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "y recoge a",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 700
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 700
+    },
+    {
+     "d": "particulas",
+     "tipo": "verde",
+     "n": 50
+    },
+    {
+     "d": "velero",
+     "x": 540,
+     "y": 720,
+     "s": 0.6,
+     "fantasma": true
+    }
+   ],
+   "camara": "baja",
+   "texto": [
+    "LOS AHOGADOS",
+    "DEL MAR"
+   ],
+   "acento": 0,
+   "amb": "burbujas",
+   "amb_vol": 0.6
+  },
+  {
+   "en": "en una fiesta",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1200
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1200
+    },
+    {
+     "d": "niebla",
+     "y": 1150,
+     "op": 0.5,
+     "color": "#9fb4c9"
+    },
+    {
+     "d": "velero",
+     "x": 540,
+     "y": 1280,
+     "s": 1.1,
+     "fantasma": true
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 950,
+     "r": 600,
+     "color": "#3df5ff",
+     "op": 0.4,
+     "parpadeo": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UNA FIESTA",
+    "SIN FIN"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "Algunos pescadores aseguran",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1200
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1200
+    },
+    {
+     "d": "niebla",
+     "y": 1150,
+     "op": 0.5,
+     "color": "#9fb4c9"
+    },
+    {
+     "d": "barca",
+     "x": 300,
+     "y": 1300,
+     "s": 0.9
+    },
+    {
+     "d": "persona",
+     "x": 300,
+     "y": 1260,
+     "s": 0.6,
+     "ropa": "obrero"
+    },
+    {
+     "d": "velero",
+     "x": 800,
+     "y": 1230,
+     "s": 0.4,
+     "fantasma": true,
+     "avance": -120
+    }
+   ],
+   "camara": "pan_izq",
+   "texto": "EN SILENCIO",
+   "amb": "olas"
+  },
+  {
+   "en": "Y dicen que,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1900
+    },
+    {
+     "d": "niebla",
+     "y": 1000,
+     "op": 0.6,
+     "color": "#9fb4c9"
+    },
+    {
+     "d": "ojos",
+     "x": 540,
+     "y": 900,
+     "s": 2.0,
+     "en": 0.5,
+     "color": "#ff2a2a"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "NO LO MIRES",
+    "DEMASIADO"
+   ],
+   "acento": 0,
+   "amb": "viento"
+  },
+  {
+   "en": "¿Has escuchado esta",
+   "tipo": "final",
+   "lineas": [
+    "¿CONOCÍAS",
+    "ESTA LEYENDA?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1200
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1200
+    },
+    {
+     "d": "niebla",
+     "y": 1150,
+     "op": 0.5,
+     "color": "#9fb4c9"
+    },
+    {
+     "d": "velero",
+     "x": 540,
+     "y": 1260,
+     "s": 0.7,
+     "fantasma": true
+    }
+   ]
+  }
+ ]
+}

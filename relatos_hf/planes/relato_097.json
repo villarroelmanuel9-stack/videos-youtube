@@ -1,0 +1,261 @@
+{
+ "tema": "gamer",
+ "estilo": "periodico",
+ "claves": [
+  "jugando.",
+  "secreto",
+  "borrarlo",
+  "treinta"
+ ],
+ "tomas": [
+  {
+   "en": "«Arriba, arriba, abajo,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1d3a",
+     "piso": "#0d0d1d",
+     "luz": false
+    },
+    {
+     "d": "mando",
+     "x": 540,
+     "y": 1400,
+     "s": 1.4,
+     "secuencia": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "EL CÓDIGO",
+    "SECRETO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "El truco más",
+   "tipo": "titulo",
+   "lineas": [
+    "EL TRUCO",
+    "MÁS FAMOSO"
+   ],
+   "acento": 1,
+   "icono": "🎮"
+  },
+  {
+   "en": "nació porque un",
+   "tipo": "titulo",
+   "lineas": [
+    "UN PROGRAMADOR",
+    "MALO JUGANDO"
+   ],
+   "acento": 1,
+   "icono": "😅"
+  },
+  {
+   "en": "A mediados de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a5a6a",
+     "piso": "#1d2530"
+    },
+    {
+     "d": "computadora",
+     "x": 760,
+     "y": 1500,
+     "s": 0.8
+    },
+    {
+     "d": "persona",
+     "x": 330,
+     "y": 1500,
+     "s": 1.2,
+     "ropa": "traje",
+     "pelo": "#111"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "KAZUHISA",
+    "HASHIMOTO"
+   ]
+  },
+  {
+   "en": "adaptaba el juego",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "espacio"
+    },
+    {
+     "d": "planeta",
+     "x": 860,
+     "y": 1500,
+     "r": 250
+    },
+    {
+     "d": "satelite",
+     "x": 200,
+     "y": 800,
+     "s": 0.7,
+     "avance": 400
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "UN JUEGO",
+    "DE NAVES"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Le parecía tan",
+   "tipo": "titulo",
+   "lineas": [
+    "DEMASIADO",
+    "DIFÍCIL"
+   ],
+   "acento": 1,
+   "icono": "😵"
+  },
+  {
+   "en": "Así que creó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1d3a",
+     "piso": "#0d0d1d",
+     "luz": false
+    },
+    {
+     "d": "mando",
+     "x": 540,
+     "y": 1400,
+     "s": 1.4,
+     "secuencia": true
+    },
+    {
+     "d": "particulas",
+     "tipo": "chispas",
+     "n": 30
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "TODAS LAS",
+    "MEJORAS"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Y se le",
+   "tipo": "titulo",
+   "lineas": [
+    "¡OLVIDÓ",
+    "BORRARLO!"
+   ],
+   "acento": 1,
+   "icono": "🤦",
+   "entrada": "flash"
+  },
+  {
+   "en": "Los jugadores lo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1d3a",
+     "piso": "#0d0d1d",
+     "luz": false
+    },
+    {
+     "d": "arcade",
+     "x": 540,
+     "y": 1550,
+     "s": 0.9,
+     "texto": "1986"
+    },
+    {
+     "d": "persona",
+     "x": 230,
+     "y": 1600,
+     "s": 0.9,
+     "ropa": "azul"
+    },
+    {
+     "d": "persona",
+     "x": 850,
+     "y": 1600,
+     "s": 0.9,
+     "ropa": "rojo"
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "LO",
+    "DESCUBRIERON"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "como Contra, donde",
+   "tipo": "contador",
+   "hasta": 30,
+   "unidad": "VIDAS",
+   "sub": "EN OTRO JUEGO",
+   "icono": "❤️"
+  },
+  {
+   "en": "Hoy aparece escondido",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018",
+     "luz": false
+    },
+    {
+     "d": "computadora",
+     "x": 540,
+     "y": 1500,
+     "s": 1.3
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "HASTA EN",
+    "PÁGINAS WEB"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "¿Lo sabías de",
+   "tipo": "final",
+   "lineas": [
+    "¿LO SABÍAS DE",
+    "MEMORIA?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1d3a",
+     "piso": "#0d0d1d",
+     "luz": false
+    },
+    {
+     "d": "mando",
+     "x": 540,
+     "y": 1500,
+     "s": 1.0
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,310 @@
+{
+ "tema": "guerra",
+ "estilo": "terror",
+ "claves": [
+  "misiles",
+  "«ataque»",
+  "falla",
+  "razón."
+ ],
+ "tomas": [
+  {
+   "en": "El veintiséis de",
+   "tipo": "fecha",
+   "dia": "26",
+   "mes": "SEPTIEMBRE",
+   "anio": "1983",
+   "hora": "00:14"
+  },
+  {
+   "en": "una alarma anunció",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2f2a",
+     "piso": "#141814",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 600,
+     "r": 700,
+     "color": "#ff2a2a",
+     "parpadeo": true
+    },
+    {
+     "d": "pantalla",
+     "x": 540,
+     "y": 1300,
+     "s": 1.4,
+     "alarma": true,
+     "texto": "ALERTA",
+     "tam": 130
+    }
+   ],
+   "camara": "push_fuerte",
+   "sacudir": true,
+   "amb": "zumbido",
+   "sfx": "estatica",
+   "sfx_dur": 1.5
+  },
+  {
+   "en": "cinco misiles nucleares",
+   "tipo": "mapa",
+   "centro": [
+    52,
+    -40
+   ],
+   "zoom": 1.6,
+   "zoom_desde": 1.0,
+   "resaltar": [
+    "United States of America",
+    "Russia"
+   ],
+   "color_pais": "#b3261e",
+   "ruta": [
+    [
+     40,
+     -100
+    ],
+    [
+     65,
+     -40
+    ],
+    [
+     56,
+     38
+    ]
+   ],
+   "pines": [
+    {
+     "lat": 40,
+     "lon": -100,
+     "texto": "EE.UU."
+    },
+    {
+     "lat": 56,
+     "lon": 38,
+     "texto": "URSS"
+    }
+   ],
+   "paso_pines": 1.0,
+   "titulo": "5 MISILES"
+  },
+  {
+   "en": "Era plena Guerra",
+   "tipo": "titulo",
+   "lineas": [
+    "GUERRA",
+    "FRÍA"
+   ],
+   "acento": 1,
+   "icono": "☢️"
+  },
+  {
+   "en": "Stanislav Petrov estaba",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2f2a",
+     "piso": "#141814",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "pantalla",
+     "x": 800,
+     "y": 1300,
+     "s": 0.8,
+     "texto": "OK",
+     "tam": 110
+    },
+    {
+     "d": "persona",
+     "x": 380,
+     "y": 1500,
+     "s": 1.3,
+     "ropa": "uniforme",
+     "sombrero": "gorra",
+     "mov": "respira"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "STANISLAV",
+    "PETROV"
+   ],
+   "amb": "zumbido"
+  },
+  {
+   "en": "Su deber era",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2f2a",
+     "piso": "#141814",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "telefono",
+     "x": 540,
+     "y": 1420,
+     "s": 1.4,
+     "suena": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "AVISAR PODÍA",
+    "INICIAR UNA",
+    "GUERRA NUCLEAR"
+   ],
+   "acento": 2,
+   "amb": "zumbido"
+  },
+  {
+   "en": "Las pantallas decían",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2f2a",
+     "piso": "#141814",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 800,
+     "r": 800,
+     "color": "#ff2a2a",
+     "parpadeo": true
+    },
+    {
+     "d": "pantalla",
+     "x": 540,
+     "y": 1400,
+     "s": 1.8,
+     "alarma": true,
+     "texto": "ATAQUE",
+     "tam": 120
+    }
+   ],
+   "camara": "push_fuerte",
+   "sacudir": true,
+   "amb": "zumbido"
+  },
+  {
+   "en": "Pero algo no",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2f2a",
+     "piso": "#141814",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 800,
+     "r": 700,
+     "color": "#ff2a2a",
+     "op": 0.35
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1700,
+     "s": 2.2,
+     "ropa": "uniforme",
+     "sombrero": "gorra"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¿SOLO",
+    "5 MISILES?"
+   ],
+   "acento": 1,
+   "amb": "zumbido"
+  },
+  {
+   "en": "Decidió reportarlo como",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2f2a",
+     "piso": "#141814",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "pantalla",
+     "x": 540,
+     "y": 1350,
+     "s": 1.5,
+     "texto": "FALLA",
+     "tam": 130
+    }
+   ],
+   "camara": "fijo",
+   "dato": "FALSA ALARMA",
+   "amb": "zumbido"
+  },
+  {
+   "en": "Tenía razón. Era",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1500,
+     "astro": "sol",
+     "astro_x": 820,
+     "astro_y": 380,
+     "astro_r": 80
+    },
+    {
+     "d": "rayos",
+     "x": 820,
+     "y": 380,
+     "op": 0.25
+    },
+    {
+     "d": "satelite",
+     "x": 180,
+     "y": 900,
+     "s": 0.6,
+     "avance": 300
+    }
+   ],
+   "camara": "pan_izq",
+   "texto": [
+    "REFLEJO DEL SOL",
+    "EN LAS NUBES"
+   ],
+   "acento": 0,
+   "amb": "viento",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "¿Qué habrías hecho",
+   "tipo": "final",
+   "lineas": [
+    "¿QUÉ HABRÍAS",
+    "HECHO TÚ?"
+   ],
+   "final": "si_no"
+  }
+ ]
+}

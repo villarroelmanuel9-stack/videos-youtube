@@ -1,0 +1,276 @@
+{
+ "tema": "cultura",
+ "estilo": "pop",
+ "claves": [
+  "campeón",
+  "empate",
+  "Ghiggia",
+  "«Maracanazo»."
+ ],
+ "tomas": [
+  {
+   "en": "El dieciséis de",
+   "tipo": "fecha",
+   "dia": "16",
+   "mes": "JULIO",
+   "anio": "1950"
+  },
+  {
+   "en": "unas doscientas mil",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "estadio"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": "200.000 PERSONAS",
+   "amb": "multitud",
+   "amb_vol": 1.4
+  },
+  {
+   "en": "para ver a",
+   "tipo": "mapa",
+   "centro": [
+    -22.912,
+    -43.23
+   ],
+   "zoom": 20,
+   "zoom_desde": 1.5,
+   "centro_desde": [
+    -15,
+    -50
+   ],
+   "resaltar": [
+    "Brazil"
+   ],
+   "pines": [
+    {
+     "lat": -22.912,
+     "lon": -43.23,
+     "texto": "MARACANÁ"
+    }
+   ]
+  },
+  {
+   "en": "A Brasil le",
+   "tipo": "titulo",
+   "lineas": [
+    "LE BASTABA",
+    "UN EMPATE"
+   ],
+   "acento": 1,
+   "icono": "🇧🇷"
+  },
+  {
+   "en": "contra Uruguay en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1500
+    },
+    {
+     "d": "suelo",
+     "y": 1500,
+     "colores": [
+      "#2f7d32",
+      "#174d1a"
+     ]
+    },
+    {
+     "d": "bandera",
+     "x": 250,
+     "y": 1500,
+     "s": 1.2,
+     "colores": [
+      "#1e9b3a",
+      "#ffdf00",
+      "#1e9b3a"
+     ]
+    },
+    {
+     "d": "bandera",
+     "x": 640,
+     "y": 1500,
+     "s": 1.2,
+     "colores": [
+      "#ffffff",
+      "#4f8fd8",
+      "#ffffff",
+      "#4f8fd8",
+      "#ffffff"
+     ]
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "BRASIL",
+    "VS URUGUAY"
+   ],
+   "acento": 1,
+   "amb": "multitud"
+  },
+  {
+   "en": "Los diarios ya",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2a1e",
+     "piso": "#1a120c"
+    },
+    {
+     "d": "periodico",
+     "x": 540,
+     "y": 1560,
+     "s": 1.1,
+     "cabecera": "1950",
+     "titular": "¡CAMPEONES!"
+    }
+   ],
+   "camara": "fijo",
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "y hasta había",
+   "tipo": "titulo",
+   "lineas": [
+    "MEDALLAS CON",
+    "SUS NOMBRES"
+   ],
+   "acento": 0,
+   "icono": "🥇"
+  },
+  {
+   "en": "Brasil se puso",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "estadio"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "1 - 0"
+   ],
+   "amb": "multitud",
+   "amb_vol": 1.6
+  },
+  {
+   "en": "Pero Uruguay empató,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "estadio"
+    },
+    {
+     "d": "arco",
+     "x": 540,
+     "y": 1600,
+     "s": 0.9
+    },
+    {
+     "d": "balon",
+     "x": 540,
+     "y": 1580,
+     "s": 1.0,
+     "mov": "gol",
+     "en": 0.3
+    }
+   ],
+   "camara": "push",
+   "texto": "1 - 1",
+   "amb": "multitud",
+   "amb_vol": 1.2
+  },
+  {
+   "en": "y a once",
+   "tipo": "contador",
+   "hasta": 11,
+   "unidad": "MINUTOS",
+   "sub": "DEL FINAL",
+   "icono": "⏱️"
+  },
+  {
+   "en": "Alcides Ghiggia disparó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "estadio"
+    },
+    {
+     "d": "arco",
+     "x": 540,
+     "y": 1600,
+     "s": 1.0
+    },
+    {
+     "d": "balon",
+     "x": 640,
+     "y": 1560,
+     "s": 1.2,
+     "mov": "gol",
+     "en": 0.5
+    }
+   ],
+   "camara": "push_fuerte",
+   "dato": "GHIGGIA",
+   "amb": "multitud"
+  },
+  {
+   "en": "y marcó el",
+   "tipo": "titulo",
+   "lineas": [
+    "2 - 1"
+   ],
+   "icono": "⚽",
+   "tam": 300,
+   "sfx": "boom"
+  },
+  {
+   "en": "El estadio quedó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "estadio",
+     "silencio": true
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "SILENCIO",
+    "TOTAL"
+   ],
+   "acento": 0,
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "y ese día",
+   "tipo": "titulo",
+   "lineas": [
+    "«EL",
+    "MARACANAZO»"
+   ],
+   "acento": 1,
+   "icono": "🇺🇾"
+  },
+  {
+   "en": "¿De qué país",
+   "tipo": "final",
+   "lineas": [
+    "¿DE QUÉ PAÍS",
+    "ERES HINCHA?"
+   ],
+   "capas": [
+    {
+     "d": "estadio"
+    }
+   ],
+   "comentario": "¡Arriba Chile! 🇨🇱"
+  }
+ ]
+}

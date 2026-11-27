@@ -1,0 +1,278 @@
+{
+ "tema": "terror",
+ "estilo": "retro",
+ "claves": [
+  "amarillos…",
+  "fluorescentes.",
+  "solo.",
+  "viral."
+ ],
+ "tomas": [
+  {
+   "en": "Si «te sales",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "pasillo"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "«TE SALES DE",
+    "LA REALIDAD»"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 1.0
+  },
+  {
+   "en": "terminas en un",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "pasillo",
+     "parpadeo": 0.6
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "PASILLOS",
+    "INFINITOS"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 1.0
+  },
+  {
+   "en": "Así empezó la",
+   "tipo": "titulo",
+   "lineas": [
+    "LOS",
+    "BACKROOMS"
+   ],
+   "acento": 1,
+   "icono": "🚪"
+  },
+  {
+   "en": "En mayo de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018",
+     "luz": false
+    },
+    {
+     "d": "computadora",
+     "x": 540,
+     "y": 1500,
+     "s": 1.4
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "MAYO",
+    "2019"
+   ]
+  },
+  {
+   "en": "alguien publicó en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018",
+     "luz": false
+    },
+    {
+     "d": "pantalla",
+     "x": 540,
+     "y": 1350,
+     "s": 1.4,
+     "texto": "ANÓNIMO",
+     "tam": 90
+    }
+   ],
+   "camara": "push",
+   "texto": "FORO ANÓNIMO"
+  },
+  {
+   "en": "una foto de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "pasillo"
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "UNA SALA",
+    "VACÍA"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 1.0,
+   "sfx": "ping",
+   "sfx_dur": 0.4
+  },
+  {
+   "en": "con alfombra húmeda,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "pasillo"
+    }
+   ],
+   "camara": "baja",
+   "texto": [
+    "ALFOMBRA",
+    "HÚMEDA"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 1.0
+  },
+  {
+   "en": "Otro usuario respondió",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018",
+     "luz": false
+    },
+    {
+     "d": "computadora",
+     "x": 540,
+     "y": 1500,
+     "s": 1.4
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "«LOS CUARTOS",
+    "TRASEROS»"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "millones de habitaciones",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "pasillo"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "MILLONES DE",
+    "HABITACIONES"
+   ],
+   "acento": 0,
+   "amb": "zumbido",
+   "amb_vol": 1.0
+  },
+  {
+   "en": "con el zumbido",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "pasillo",
+     "parpadeo": 0.3
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "ZUMBIDO",
+    "ETERNO"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 1.4
+  },
+  {
+   "en": "y que no",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "pasillo"
+    },
+    {
+     "d": "ojos",
+     "x": 540,
+     "y": 930,
+     "s": 0.5,
+     "en": 0.3,
+     "color": "#111"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "NO ESTÁS",
+    "SOLO"
+   ],
+   "acento": 1,
+   "sfx": "boom",
+   "sacudir": true,
+   "amb": "zumbido"
+  },
+  {
+   "en": "La idea se",
+   "tipo": "titulo",
+   "lineas": [
+    "SE VOLVIÓ",
+    "VIRAL"
+   ],
+   "acento": 1,
+   "icono": "📈"
+  },
+  {
+   "en": "Hoy hay cientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018",
+     "luz": false
+    },
+    {
+     "d": "arcade",
+     "x": 330,
+     "y": 1500,
+     "s": 0.75,
+     "texto": "NIVEL 0"
+    },
+    {
+     "d": "computadora",
+     "x": 780,
+     "y": 1500,
+     "s": 0.8
+    }
+   ],
+   "camara": "pan_izq",
+   "texto": [
+    "NIVELES, JUEGOS",
+    "Y VIDEOS"
+   ],
+   "acento": 0
+  },
+  {
+   "en": "¿Te dan miedo",
+   "tipo": "final",
+   "lineas": [
+    "¿TE DAN",
+    "MIEDO?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "pasillo"
+    }
+   ]
+  }
+ ]
+}

@@ -127,27 +127,87 @@ def leer_audio(ruta: Path) -> np.ndarray:
     return np.frombuffer(crudo, np.float32).reshape(-1, 2).copy()
 
 
-def estirar(voz: np.ndarray, tiempos, fin_parrafo: list[int]):
-    """Inserta silencios entre párrafos y al inicio para que el video dure ≈OBJETIVO s. Devuelve voz, tiempos, total."""
-    dur = len(voz) / SR
+def plan_tiempo(D: float, npar: int):
+    """Decide ritmo de la voz, pausas entre párrafos, entrada y cola para cerrar en OBJETIVO s sin forzar la voz."""
+    lead, cola_base, pausa_base = 0.4, 1.8, 0.45
+    huecos = max(1, npar - 1)
+    vt = OBJETIVO - lead - cola_base - pausa_base * huecos
+    tempo = min(1.15, max(0.86, D / vt))
+    if abs(tempo - 1) < 0.015:
+        tempo = 1.0
+    V = D / tempo
+    resto = OBJETIVO - lead - V - cola_base - pausa_base * huecos
+    pausa = min(1.3, max(0.25, pausa_base + resto / huecos))
+    cola = min(4.8, max(1.5, OBJETIVO - lead - V - pausa * huecos))
+    return tempo, lead, pausa, cola
+
+
+def compactar_silencios(audio: Path, dir_: Path, maximo=0.5, deja=0.4):
+    """Acorta silencios internos largos (los «…» de ElevenLabs) y devuelve (wav, función que mueve tiempos)."""
+    x = leer_audio(audio)
+    mono = np.abs(x).mean(1)
+    win = int(0.02 * SR)
+    n = len(mono) // win
+    rms = np.sqrt((mono[:n * win].reshape(n, win) ** 2).mean(1) + 1e-12)
+    umbral = max(10 ** (-42 / 20), np.percentile(rms, 90) * 0.03)
+    quietos = rms < umbral
+    cortes, k = [], 0
+    while k < n:
+        if quietos[k]:
+            j = k
+            while j < n and quietos[j]:
+                j += 1
+            if k > 0 and j < n and (j - k) * 0.02 > maximo:
+                cortes.append((k * 0.02 + deja / 2, j * 0.02 - deja / 2))
+            k = j
+        else:
+            k += 1
+    trozos, prev = [], 0.0
+    for a, b in cortes:
+        trozos.append(x[int(prev * SR):int(a * SR)])
+        prev = b
+    trozos.append(x[int(prev * SR):])
+    y = np.concatenate(trozos) if trozos else x
+    destino = dir_ / "assets" / "voz_compacta.wav"
+    escribir_wav(destino, y)
+
+    def mover(t):
+        quitado = sum(min(b, max(a, t)) - a for a, b in cortes)
+        return t - quitado
+    return destino, mover, len(y) / SR
+
+
+def procesar_voz(audio: Path, tempo: float, dir_: Path) -> np.ndarray:
+    """Ritmo con rubberband (sin cambiar el tono), limpieza de graves, presencia y compresión suave."""
+    filtros = []
+    if tempo != 1.0:
+        filtros.append(f"rubberband=tempo={tempo:.4f}:transients=smooth:window=standard")
+    filtros += ["highpass=f=75", "equalizer=f=250:t=q:w=1:g=-1.5", "equalizer=f=3200:t=q:w=1.2:g=2",
+                "acompressor=threshold=-20dB:ratio=2.2:attack=8:release=140:makeup=2", "deesser=i=0.35"]
+    destino = dir_ / "assets" / "voz.wav"
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(audio), "-af", ",".join(filtros), "-ac", "2",
+                    "-ar", str(SR), str(destino)], check=True)
+    return leer_audio(destino)
+
+
+def estirar(voz: np.ndarray, tiempos, fin_parrafo: list[int], lead: float, pausa: float, cola: float):
+    """Inserta la entrada, las pausas entre párrafos y la cola. Devuelve voz, tiempos, total y cortes de párrafo."""
     cortes = []
     for i in fin_parrafo[:-1]:
         a, b = tiempos[i][1], tiempos[i + 1][0]
-        cortes.append((a + b) / 2)
-    libre = OBJETIVO - INICIO - dur - COLA_MIN
-    pausa = min(0.9, max(0.0, libre / max(1, len(cortes))))
-    trozos, prev = [np.zeros((int(INICIO * SR), 2), np.float32)], 0
+        cortes.append(min(b - 0.02, a + 0.12))
+    trozos, prev = [np.zeros((int(lead * SR), 2), np.float32)], 0
     for c in cortes:
         s = int(c * SR)
         trozos += [voz[prev:s], np.zeros((int(pausa * SR), 2), np.float32)]
         prev = s
     trozos.append(voz[prev:])
     nueva = np.concatenate(trozos)
-    total = max(OBJETIVO, len(nueva) / SR + COLA_MIN)
+    total = round(len(nueva) / SR + cola, 2)
 
     def mover(x):
-        return x + INICIO + pausa * sum(1 for c in cortes if x > c)
-    return nueva, [(mover(a), mover(b)) for a, b in tiempos], round(total, 2), [mover(c) for c in cortes]
+        return x + lead + pausa * sum(1 for c in cortes if x > c)
+    return nueva, [(mover(a), mover(b)) for a, b in tiempos], total, [mover(c) for c in cortes]
 
 
 # --------------------------------------------------------------------------- piezas visuales
@@ -165,6 +225,7 @@ class Toma:
 
     def __init__(self, i: int, t0: float, dur: float, p: dict, tema, emocion: str):
         self.i, self.t0, self.dur, self.p, self.tema, self.emo = i, t0, dur, p, tema, emocion
+        self.estilo = ESTILOS[0]
         self.id = f"t{i}"
         self.html: list[str] = []
         self.js: list[str] = []
@@ -445,8 +506,180 @@ def toma_pregunta(t: Toma):
     t.js.append(f'tl.set("#{t.id}sus .susTxt", {{textContent: "SUSCRITO ✓"}}, {t.at(2.0)});')
 
 
+# --------------------------------------------------------------------------- identidad de cada video
+ESTILOS = [
+    dict(nombre="clasico", activa="#FFD21F", clave="#E3141B", caja=False, chip="caja", dato="ficha", final="boton",
+         trans=["barrido", "zoom", "barrido_izq", "flash"], barra="#FFD21F"),
+    dict(nombre="neon", activa="#3DF5FF", clave="#FF3DAE", caja=False, chip="pildora", dato="neon", final="chat",
+         trans=["zoom", "flash", "zoom", "barrido"], barra="#3DF5FF"),
+    dict(nombre="periodico", activa="#FFFFFF", clave="#FFD21F", caja="#B3261E", chip="cinta", dato="sello", final="sello",
+         trans=["barrido_izq", "barrido", "flash", "barrido_izq"], barra="#F4EFE4"),
+    dict(nombre="calido", activa="#FFB627", clave="#FF5A36", caja=False, chip="pildora", dato="post", final="si_no",
+         trans=["zoom", "barrido", "zoom", "barrido_izq"], barra="#FF8A3D"),
+    dict(nombre="frio", activa="#9BE7FF", clave="#FFD21F", caja=False, chip="caja", dato="etiqueta", final="chat",
+         trans=["barrido", "barrido", "flash", "zoom"], barra="#9BE7FF"),
+    dict(nombre="terror", activa="#B8FF6B", clave="#FF2A2A", caja=False, chip="cinta", dato="sello", final="si_no",
+         trans=["flash", "zoom", "flash", "barrido_izq"], barra="#B8FF6B"),
+    dict(nombre="pop", activa="#FFFFFF", clave="#FFE600", caja="#FF3D7F", chip="pildora", dato="etiqueta", final="sello",
+         trans=["zoom", "barrido_izq", "zoom", "barrido"], barra="#FF3D7F"),
+    dict(nombre="retro", activa="#FFD21F", clave="#5CFF7A", caja="#2B59FF", chip="caja", dato="neon", final="boton",
+         trans=["barrido", "zoom", "barrido_izq", "zoom"], barra="#5CFF7A"),
+]
+
+
+def estilo_de(n: int, plan: dict) -> dict:
+    base = dict(ESTILOS[(n * 5 + 3) % len(ESTILOS)])
+    if plan.get("estilo"):
+        base = dict(next(e for e in ESTILOS if e["nombre"] == plan["estilo"]))
+    base.update(plan.get("estilo_extra", {}))
+    return base
+
+
+def overlay_dato(t: "Toma", dato, lado: str, dt: float = 0.35):
+    e = t.estilo["dato"]
+    lineas = [dato] if isinstance(dato, str) else list(dato)
+    x = 70 if lado == "izq" else None
+    pos = f"left:{x}px;" if x is not None else "right:70px;"
+    filas = "".join(f'<div class="dl{k}">{esc(l)}</div>' for k, l in enumerate(lineas))
+    rot = {"ficha": -3, "post": 4, "sello": -7, "neon": 0, "etiqueta": 0}[e] * (1 if lado == "izq" else -1)
+    t.html.append(f'<div id="{t.id}d" class="dato dato-{e}" style="{pos}top:330px;transform:rotate({rot}deg)">{filas}</div>')
+    if e == "sello":
+        t.tw(f"#{t.id}d", "{scale: 2.6, opacity: 0}", "{scale: 1, opacity: 1, duration: 0.18, ease: 'power4.in'}", dt)
+    else:
+        t.tw(f"#{t.id}d", "{y: -50, opacity: 0}", "{y: 0, opacity: 1, duration: 0.3, ease: 'back.out(2)'}", dt)
+
+
+def overlay_texto(t: "Toma", lineas, dt=0.15, top=420, acento=None):
+    lineas = [lineas] if isinstance(lineas, str) else lineas
+    tam = t.p.get("tam") or ajustar(lineas, 150)
+    t.html.append(bloque_texto(f"{t.id}tx", lineas, top, tam, acento, acento=t.estilo["clave"]))
+    for k in range(len(lineas)):
+        t.tw(f"#{t.id}txl{k}", "{scale: 1.9, opacity: 0}", "{scale: 1, opacity: 1, duration: 0.2, ease: 'power4.out'}",
+             dt + 0.12 * k)
+
+
+CAMARAS = {"push": (0, 0, 0.14), "pull": (0, 0, -0.12), "pan_der": (-150, 0, 0.05), "pan_izq": (150, 0, 0.05),
+           "sube": (0, 170, 0.04), "baja": (0, -170, 0.04), "fijo": (0, 0, 0.03), "push_fuerte": (0, 0, 0.28)}
+
+
+def toma_escena(t: "Toma"):
+    import ilustra
+    import ilustra_mundo  # noqa: F401
+    import ilustra_obj  # noqa: F401
+    p = t.p
+    capas = p["capas"]
+    dx, dy, zm = CAMARAS[p.get("camara", "push")]
+    partes, zs = [], []
+    for k, c in enumerate(capas):
+        u = f"{t.id}k{k}"
+        z = c.get("z", round(0.1 + 0.9 * k / max(1, len(capas) - 1), 2))
+        partes.append(f'<g id="{t.id}z{k}">{ilustra.DIBUJOS[c["d"]](c, u, t)}</g>')
+        zs.append(z)
+    t.html.append(f'<svg id="{t.id}sv" class="full" viewBox="0 0 1080 1920" style="top:0;height:1920px">{"".join(partes)}</svg>')
+    capas_js = ",".join(f'[document.getElementById("{t.id}z{k}"), {z}]' for k, z in enumerate(zs))
+    escala = f"1 + {zm} * z * c.v" if zm >= 0 else f"1 + {-zm} * z * (1 - c.v)"
+    t.js.append(f'(() => {{ const c = {{v: 0}}; const L = [{capas_js}]; const pon = () => {{ for (const [el, z] of L) '
+                f'el.setAttribute("transform", `translate(${{540 + {dx} * z * c.v}} ${{960 + {dy} * z * c.v}}) '
+                f'scale(${{{escala}}}) translate(-540 -960)`); }}; pon(); '
+                f'tl.fromTo(c, {{v: 0}}, {{v: 1, duration: {max(0.3, t.dur):.2f}, ease: "sine.inOut", onUpdate: pon}}, {t.at(0)}); }})();')
+    if p.get("texto"):
+        overlay_texto(t, p["texto"], top=p.get("texto_top", 400), acento=p.get("acento"))
+    if p.get("dato"):
+        overlay_dato(t, p["dato"], p.get("lado", "izq" if t.i % 2 else "der"), p.get("dato_en", 0.35))
+
+
+def toma_final(t: "Toma"):
+    p = t.p
+    var = p.get("final") or t.estilo["final"]
+    lineas = p["lineas"]
+    tam = p.get("tam") or ajustar(lineas, 130)
+    if p.get("capas"):  # escena de fondo para el cierre
+        orig = t.p
+        t.p = {"capas": p["capas"], "camara": p.get("camara", "fijo")}
+        toma_escena(t)
+        t.p = orig
+        t.html.append('<div class="velo"></div>')
+    t.html.append(bloque_texto(f"{t.id}b", lineas, 330, tam, p.get("acento", len(lineas) - 1), acento=t.estilo["activa"]))
+    for k in range(len(lineas)):
+        t.tw(f"#{t.id}bl{k}", "{y: 60, opacity: 0}", "{y: 0, opacity: 1, duration: 0.3, ease: 'power3.out'}", 0.05 + 0.12 * k)
+    top = 330 + tam * 1.02 * len(lineas) + 50
+    if var == "boton":
+        t.html.append(f'<div id="{t.id}c" class="lin solo" style="top:{top:.0f}px;font-size:104px;color:{t.estilo["activa"]};{txt_borde(104)}">COMENTA 👇</div>'
+                      f'<div id="{t.id}sus" class="sus" style="top:{top + 180:.0f}px"><span class="susTxt">SUSCRÍBETE</span></div>'
+                      f'<div id="{t.id}dedo" class="emoji" style="font-size:140px;top:{top + 230:.0f}px;left:640px;width:200px">👆</div>')
+        t.tw(f"#{t.id}c", "{scale: 0.3, opacity: 0}", "{scale: 1, opacity: 1, duration: 0.3, ease: 'back.out(2)'}", 0.6)
+        t.tw(f"#{t.id}sus", "{scale: 0.3, opacity: 0}", "{scale: 1, opacity: 1, duration: 0.3, ease: 'back.out(2)'}", 1.0)
+        t.tw(f"#{t.id}dedo", "{x: 200, y: 300, opacity: 0}", "{x: 0, y: 0, opacity: 1, duration: 0.45, ease: 'power3.out'}", 1.4)
+        t.to(f"#{t.id}sus", "{scale: 0.92, duration: 0.1, yoyo: true, repeat: 1}", 1.9)
+        t.to(f"#{t.id}sus", "{backgroundColor: '#555', duration: 0.05}", 2.0)
+        t.js.append(f'tl.set("#{t.id}sus .susTxt", {{textContent: "SUSCRITO ✓"}}, {t.at(2.0)});')
+    elif var == "chat":
+        txt = p.get("comentario", "¡No tenía idea!")
+        t.html.append(f'<div id="{t.id}ch" class="chat" style="top:{top:.0f}px"><div class="avatar">🙂</div><div class="burbuja">'
+                      f'<div class="quien">@tú · ahora</div><div id="{t.id}ct" class="ctexto"></div></div></div>'
+                      f'<div id="{t.id}sus" class="sus" style="top:{top + 260:.0f}px"><span class="susTxt">🔔 SUSCRÍBETE</span></div>')
+        t.tw(f"#{t.id}ch", "{y: 80, opacity: 0}", "{y: 0, opacity: 1, duration: 0.35, ease: 'power3.out'}", 0.5)
+        for k in range(1, len(txt) + 1):
+            t.js.append(f'tl.set("#{t.id}ct", {{textContent: {json.dumps(txt[:k] + ("|" if k < len(txt) else ""))}}}, {t.at(0.8 + k * 0.06)});')
+        t.tw(f"#{t.id}sus", "{scale: 0.3, opacity: 0}", "{scale: 1, opacity: 1, duration: 0.3, ease: 'back.out(2)'}", 1.0 + len(txt) * 0.06)
+        t.to(f"#{t.id}sus", "{rotation: 4, duration: 0.08, yoyo: true, repeat: 7}", 1.5 + len(txt) * 0.06)
+    elif var == "si_no":
+        t.html.append(f'<div id="{t.id}si" class="boton_sn si" style="top:{top:.0f}px;left:150px">SÍ</div>'
+                      f'<div id="{t.id}no" class="boton_sn no" style="top:{top:.0f}px;left:600px">NO</div>'
+                      f'<div id="{t.id}c" class="lin solo" style="top:{top + 230:.0f}px;font-size:88px;color:#fff;{txt_borde(88)}">COMENTA Y SUSCRÍBETE 👇</div>')
+        t.tw(f"#{t.id}si", "{scale: 0, rotation: -20}", "{scale: 1, rotation: 0, duration: 0.35, ease: 'back.out(2.5)'}", 0.5)
+        t.tw(f"#{t.id}no", "{scale: 0, rotation: 20}", "{scale: 1, rotation: 0, duration: 0.35, ease: 'back.out(2.5)'}", 0.65)
+        vaiv = max(1, int((t.dur - 1.2) / 0.5))
+        t.to(f"#{t.id}si", "{scale: 1.1, duration: 0.25, yoyo: true, repeat: %d, ease: 'sine.inOut'}" % vaiv, 1.1)
+        t.to(f"#{t.id}no", "{scale: 1.1, duration: 0.25, yoyo: true, repeat: %d, ease: 'sine.inOut'}" % vaiv, 1.35)
+        t.tw(f"#{t.id}c", "{y: 50, opacity: 0}", "{y: 0, opacity: 1, duration: 0.3}", 0.9)
+    else:  # sello
+        t.html.append(f'<div id="{t.id}c" class="lin solo" style="top:{top:.0f}px;font-size:96px;color:{t.estilo["activa"]};{txt_borde(96)}">COMENTA 👇</div>'
+                      f'<div id="{t.id}st" class="sello_fin" style="top:{top + 170:.0f}px">SUSCRÍBETE</div>'
+                      f'<div id="{t.id}bell" class="emoji" style="font-size:130px;top:{top + 330:.0f}px">🔔</div>')
+        t.tw(f"#{t.id}c", "{scale: 0.3, opacity: 0}", "{scale: 1, opacity: 1, duration: 0.3, ease: 'back.out(2)'}", 0.5)
+        t.tw(f"#{t.id}st", "{scale: 3, opacity: 0, rotation: -20}", "{scale: 1, opacity: 1, rotation: -8, duration: 0.2, ease: 'power4.in'}", 1.0)
+        t.tw(f"#{t.id}bell", "{scale: 0}", "{scale: 1, duration: 0.3, ease: 'back.out(2)'}", 1.3)
+        t.to(f"#{t.id}bell", "{rotation: 16, duration: 0.08, yoyo: true, repeat: 9, transformOrigin: '50% 10%'}", 1.6)
+
+
+def mezclar_v2(voz, inicios, sfx, plan, total):
+    """Voz siempre adelante: ambientes suaves por toma, barridos discretos en los cortes y pocos golpes."""
+    import pro
+    from mezcla_audio import mezcla_final
+    n = int(total * SR) + SR
+    vz = np.zeros((n, 2), np.float32)
+    vz[:min(n, len(voz))] = voz[:n]
+    mix = np.zeros((n, 2), np.float32)
+    rng = np.random.default_rng(7)
+    tomas = plan["tomas"]
+    for i, t0 in enumerate(inicios):
+        t1 = inicios[i + 1] if i + 1 < len(inicios) else total
+        amb = tomas[i].get("amb", plan.get("ambiente"))
+        if not amb or amb == "ninguno":
+            continue
+        d = t1 - t0 + 0.8
+        xl, xr = pro.sfx(amb, d, rng), pro.sfx(amb, d, rng)
+        s = int(max(0, t0 - 0.3) * SR)
+        seg = mix[s:s + len(xl)]
+        g = float(tomas[i].get("amb_vol", plan.get("amb_vol", 1.6)))
+        seg[:, 0] += xl[:len(seg)] * g
+        seg[:, 1] += xr[:len(seg)] * g
+    for c in inicios[1:]:
+        w = pro.sfx("whoosh", 0.45, rng) * 0.35
+        s = int(max(0, c - 0.22) * SR)
+        mix[s:s + len(w)] += w[:len(mix[s:s + len(w)])][:, None]
+    for t0, tipo, d in sfx:
+        x = pro.sfx(tipo, d, rng) * 0.7
+        s = int(max(0, t0) * SR)
+        mix[s:s + len(x)] += x[:len(mix[s:s + len(x)])][:, None]
+    mix = pro.reverb(mix, wet=0.14)
+    return mezcla_final(vz, mix, nombre=str(plan.get("nombre", "")))
+
+
+
 TOMAS = {"titulo": toma_titulo, "fecha": toma_fecha, "contador": toma_contador, "sismo": toma_sismo,
-         "mapa": toma_mapa, "icono": toma_icono, "pregunta": toma_pregunta}
+         "mapa": toma_mapa, "icono": toma_icono, "pregunta": toma_final, "final": toma_final, "escena": toma_escena}
 
 
 # --------------------------------------------------------------------------- composición
@@ -468,7 +701,8 @@ def anclar(plan_tomas, palabras, tiempos):
     return [max(0.0, tiempos[i][0] - 0.12) for i in res], res
 
 
-def subtitulos(palabras, tiempos, claves, total):
+def subtitulos(palabras, tiempos, claves, total, estilo=None):
+    estilo = estilo or ESTILOS[0]
     grupos, g = [], []
     for k, w in enumerate(palabras):
         g.append(k)
@@ -489,10 +723,15 @@ def subtitulos(palabras, tiempos, claves, total):
             limpio = re.sub(r"^[¿¡«\"(]+|[,.?!…:;»\")]+$", "", w).upper()
             es_clave = norm(w) in claves_n
             spans.append(f'<span id="w{k}" class="w">{esc(limpio)}</span>')
-            col = ROJO if es_clave else AMARILLO
-            js.append(f'tl.to("#w{k}", {{color: "{col}", scale: 1.06, duration: 0.07, ease: "power2.out"}}, {tiempos[k][0]:.3f});')
-            if not es_clave:
-                js.append(f'tl.to("#w{k}", {{color: "#ffffff", scale: 1, duration: 0.1}}, {tiempos[k][1]:.3f});')
+            col = estilo["clave"] if es_clave else estilo["activa"]
+            if estilo["caja"] and not es_clave:
+                fin_w = max(tiempos[k][1], tiempos[k][0] + 0.12)
+                js.append(f'tl.set("#w{k}", {{backgroundColor: "{estilo["caja"]}"}}, {tiempos[k][0]:.3f});')
+                js.append(f'tl.set("#w{k}", {{backgroundColor: "rgba(0,0,0,0)"}}, {fin_w:.3f});')
+            else:
+                js.append(f'tl.to("#w{k}", {{color: "{col}", scale: 1.06, duration: 0.07, ease: "power2.out"}}, {tiempos[k][0]:.3f});')
+                if not es_clave:
+                    js.append(f'tl.to("#w{k}", {{color: "#ffffff", scale: 1, duration: 0.1}}, {tiempos[k][1]:.3f});')
         html.append(f'<div id="cap{i}" class="clip cap" data-start="{ini:.3f}" data-duration="{max(0.2, fin - ini):.3f}" '
                     f'data-track-index="20"><div id="ci{i}" class="capin">{"".join(spans)}</div></div>')
         js.append(f'tl.fromTo("#ci{i}", {{y: 30, scale: 0.88, opacity: 0}}, {{y: 0, scale: 1, opacity: 1, duration: 0.14, ease: "back.out(2)"}}, {ini:.3f});')
@@ -514,7 +753,8 @@ def fondo(tema, total):
     return html, js
 
 
-def css(tema):
+def css(tema, estilo=None):
+    estilo = estilo or ESTILOS[0]
     f1, f2, acento, part = tema
     return f'''@font-face {{ font-family: "Anton"; src: url("assets/fonts/Anton-Regular.woff") format("woff"); }}
 @font-face {{ font-family: "Emoji"; src: url("assets/fonts/NotoColorEmoji.ttf") format("truetype"); }}
@@ -547,26 +787,49 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:{f2}; }}
   padding:16px 56px; border-radius:60px; border:6px solid #000; white-space:nowrap; }}
 #chip {{ position:absolute; left:0; right:0; margin:0 auto; width:fit-content; top:296px; background:{ROJO}; color:#fff; font-size:40px;
   letter-spacing:2px; padding:8px 24px; border-radius:12px; border:4px solid #000; white-space:nowrap; }}
-#barra {{ position:absolute; left:0; top:0; height:14px; width:1080px; background:{AMARILLO}; transform-origin:0 50%; }}
+#barra {{ position:absolute; left:0; top:0; height:14px; width:1080px; background:{estilo["barra"]}; transform-origin:0 50%; }}
+.chip-pildora {{ border-radius:40px !important; }}
+.chip-cinta {{ border-radius:0 !important; background:{AMARILLO} !important; color:#000 !important; }}
+.dato {{ position:absolute; font-family:"Anton","Emoji"; text-align:center; padding:14px 30px; white-space:nowrap; }}
+.dato .dl0 {{ font-size:44px; }} .dato .dl1 {{ font-size:84px; line-height:1; }}
+.dato-ficha {{ background:#f6f1e6; color:#1b1b1b; border:6px solid #111; border-top:22px solid {ROJO}; border-radius:10px; box-shadow:0 18px 0 rgba(0,0,0,.35); }}
+.dato-post {{ background:#ffe66b; color:#222; border-radius:6px; box-shadow:0 16px 24px rgba(0,0,0,.4); }}
+.dato-sello {{ color:{ROJO}; border:10px double {ROJO}; border-radius:14px; background:rgba(255,255,255,.05); text-shadow:none; }}
+.dato-neon {{ color:#fff; border:5px solid {estilo["activa"]}; border-radius:18px; background:rgba(5,8,20,.78);
+  box-shadow:0 0 30px {estilo["activa"]}, inset 0 0 22px {estilo["activa"]}; }}
+.dato-etiqueta {{ background:#111; color:{estilo["activa"]}; border-radius:60px; border:5px solid #fff; }}
+.velo {{ position:absolute; inset:0; background:rgba(0,0,0,.45); }}
+.chat {{ position:absolute; left:90px; right:90px; display:flex; gap:22px; align-items:flex-start; }}
+.chat .avatar {{ width:110px; height:110px; border-radius:50%; background:#2f3b55; font-size:76px; line-height:110px;
+  text-align:center; font-family:"Emoji"; flex:none; border:5px solid #fff; }}
+.chat .burbuja {{ background:#fff; color:#111; border-radius:28px; padding:18px 30px; min-height:150px; flex:1; }}
+.chat .quien {{ font-size:34px; color:#666; }} .chat .ctexto {{ font-size:64px; line-height:1.05; }}
+.boton_sn {{ position:absolute; width:330px; height:190px; border-radius:40px; font-size:130px; line-height:190px;
+  text-align:center; color:#fff; border:8px solid #000; box-shadow:0 18px 0 rgba(0,0,0,.45); }}
+.boton_sn.si {{ background:#22b35e; }} .boton_sn.no {{ background:{ROJO}; }}
+.sello_fin {{ position:absolute; left:0; right:0; margin:0 auto; width:fit-content; font-size:120px; color:{ROJO};
+  border:14px double {ROJO}; border-radius:20px; padding:0 40px; background:rgba(255,255,255,.92); }}
 #handle {{ position:absolute; left:0; right:0; top:1365px; text-align:center; color:rgba(255,255,255,.6); font-size:34px;
   letter-spacing:3px; }}
 #flash {{ position:absolute; inset:0; background:#fff; opacity:0; }}
 #vineta {{ position:absolute; inset:0; background:radial-gradient(95% 65% at 50% 45%, transparent 55%, rgba(0,0,0,.8)); }}
 .cap {{ position:absolute; left:110px; right:160px; top:1150px; display:flex; justify-content:center; }}
 .capin {{ text-align:center; font-size:92px; line-height:1.05; color:#fff; {txt_borde(92, 9)} text-shadow:0 8px 0 rgba(0,0,0,.55); }}
-.w {{ display:inline-block; margin:0 .2em; }}'''
+.w {{ display:inline-block; margin:0 .2em; padding:0 .1em; border-radius:12px; background-color:rgba(0,0,0,0); }}'''
 
 
 def componer(n: int, plan: dict, palabras, tiempos, parrafo_de, total, dir_: Path, sfx_eventos: list):
     tema = TEMAS[plan.get("tema", "historia")]
+    estilo = estilo_de(n, plan)
     inicios, idx = anclar(plan["tomas"], palabras, tiempos)
     inicios[0] = 0.0
     html_tomas, js = [], []
-    entradas = ["barrido", "zoom", "barrido_izq", "flash"]
+    entradas = estilo["trans"]
     for i, (tm, t0) in enumerate(zip(plan["tomas"], inicios)):
         t1 = inicios[i + 1] if i + 1 < len(inicios) else total
         emo = parrafo_de[idx[i]]
         toma = Toma(i, t0, t1 - t0, tm, tema, emo)
+        toma.estilo = estilo
         TOMAS[tm["tipo"]](toma)
         html_tomas.append(f'<div id="{toma.id}" class="clip toma" data-start="{t0:.3f}" data-duration="{t1 - t0:.3f}" '
                           f'data-track-index="{10 + i % 2}"><div id="{toma.id}in" class="toma">{"".join(toma.html)}</div></div>')
@@ -588,7 +851,9 @@ def componer(n: int, plan: dict, palabras, tiempos, parrafo_de, total, dir_: Pat
             js.append(f'tl.set("#cam", {{x: 0, y: 0}}, {t0 + 0.08 + 0.05 * (veces + 1) + 0.01:.3f});')
         if tm.get("sfx"):
             sfx_eventos.append((t0 + float(tm.get("sfx_en", 0.1)), tm["sfx"], float(tm.get("sfx_dur", 1.6))))
-    caps, js_caps = subtitulos(palabras, tiempos, plan.get("claves", []), total)
+    fin_t = inicios[-1] if plan["tomas"][-1]["tipo"] in ("final", "pregunta") else total
+    n_fin = next((k for k, (a, b) in enumerate(tiempos) if a >= fin_t - 0.05), len(palabras))
+    caps, js_caps = subtitulos(palabras[:n_fin], tiempos[:n_fin], plan.get("claves", []), min(total, fin_t), estilo)
     f_html, f_js = fondo(tema, total)
     etiqueta = plan.get("etiqueta", "HISTORIA REAL")
     doc = f'''<!doctype html>
@@ -598,7 +863,7 @@ def componer(n: int, plan: dict, palabras, tiempos, parrafo_de, total, dir_: Pat
 <meta name="viewport" content="width=1080, height=1920" />
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
 <style>
-{css(tema)}
+{css(tema, estilo)}
 </style>
 </head>
 <body>
@@ -608,7 +873,7 @@ def componer(n: int, plan: dict, palabras, tiempos, parrafo_de, total, dir_: Pat
 {chr(10).join(html_tomas)}
 </div></div>
 <div id="fx" class="clip" data-start="0" data-duration="{total}" data-track-index="2"><div id="flash"></div><div id="vineta"></div></div>
-<div id="hud" class="clip" data-start="0" data-duration="{total}" data-track-index="3"><div id="barra"></div><div id="chip">{esc(etiqueta)}</div><div id="handle">@1MRELATO</div></div>
+<div id="hud" class="clip" data-start="0" data-duration="{total}" data-track-index="3"><div id="barra"></div><div id="chip" class="chip-{estilo["chip"]}">{esc(etiqueta)}</div><div id="handle">@1MRELATO</div></div>
 <div id="capsHost" data-track-kind="captions">
 {caps}
 </div>
@@ -671,21 +936,26 @@ def main():
             palabras.append(w)
             parrafo_de.append(emo)
         fin_parrafo.append(len(palabras) - 1)
-    voz = leer_audio(audio)
-    tiempos = alinear(palabras, oidas(audio), len(voz) / SR)
-    voz, tiempos, total, cortes_parrafo = estirar(voz, tiempos, fin_parrafo)
     dir_ = PROYECTOS / f"relato_{n:03d}"
     dir_.mkdir(parents=True, exist_ok=True)
     preparar_proyecto(dir_)
+    D = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
+                              str(audio)], capture_output=True, text=True).stdout)
+    tiempos = alinear(palabras, oidas(audio), D)
+    compacta, mover, D = compactar_silencios(audio, dir_)
+    tiempos = [(mover(x), mover(y)) for x, y in tiempos]
+    tempo, lead, pausa, cola = plan_tiempo(D, len(parrafos))
+    voz = procesar_voz(compacta, tempo, dir_)
+    tiempos = [(x / tempo, y / tempo) for x, y in tiempos]
+    voz, tiempos, total, cortes_parrafo = estirar(voz, tiempos, fin_parrafo, lead, pausa, cola)
     sfx = []
     inicios = componer(n, plan, palabras, tiempos, parrafo_de, total, dir_, sfx)
-    import pro
-    ambiente = plan.get("ambiente")
-    if ambiente:
-        sfx.insert(0, (0.0, ambiente, total))
-    mezcla = pro.mezclar(voz, inicios[1:], sfx, total, hifi=True)
-    escribir_wav(dir_ / "assets" / "mezcla.wav", mezcla[:int(total * SR)])
-    print(f"relato {n:03d}: {len(plan['tomas'])} tomas · voz {len(voz) / SR:.1f} s · video {total:.2f} s")
+    mezcla = mezclar_v2(voz, inicios, sfx, plan, total)
+    escribir_wav(dir_ / "assets" / "mezcla_bruta.wav", mezcla[:int(total * SR)])
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(dir_ / "assets" / "mezcla_bruta.wav"), "-af",
+                    "loudnorm=I=-14:TP=-1.2:LRA=9", "-ar", str(SR), str(dir_ / "assets" / "mezcla.wav")], check=True)
+    print(f"relato {n:03d}: {len(plan['tomas'])} tomas · voz {D:.1f} s × {1 / tempo:.2f} · pausas {pausa:.2f} s · "
+          f"cola {cola:.1f} s · video {total:.2f} s")
     if a.sin_render:
         return
     SALIDA.mkdir(exist_ok=True)

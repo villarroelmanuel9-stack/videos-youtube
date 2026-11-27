@@ -1,0 +1,391 @@
+{
+ "tema": "terror",
+ "estilo": "neon",
+ "claves": [
+  "solos.",
+  "temblaban.",
+  "Janet,",
+  "todas."
+ ],
+ "tomas": [
+  {
+   "en": "En mil novecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1400
+    },
+    {
+     "d": "suelo",
+     "y": 1400,
+     "colores": [
+      "#2a2a22",
+      "#0d0d08"
+     ]
+    },
+    {
+     "d": "casa",
+     "x": 540,
+     "y": 1450,
+     "s": 1.3,
+     "pared": "#8a4a3a",
+     "techo": "#3a2a2a"
+    }
+   ],
+   "camara": "push",
+   "dato": "1977",
+   "amb": "viento"
+  },
+  {
+   "en": "en una casa",
+   "tipo": "mapa",
+   "centro": [
+    51.65,
+    -0.08
+   ],
+   "zoom": 30,
+   "zoom_desde": 3,
+   "centro_desde": [
+    51,
+    3
+   ],
+   "resaltar": [
+    "United Kingdom"
+   ],
+   "pines": [
+    {
+     "lat": 51.65,
+     "lon": -0.08,
+     "texto": "ENFIELD, LONDRES"
+    }
+   ]
+  },
+  {
+   "en": "los muebles empezaron",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a5a",
+     "piso": "#2a1d2a",
+     "papel": true
+    },
+    {
+     "d": "mesa",
+     "x": 760,
+     "y": 1500,
+     "s": 0.8
+    },
+    {
+     "d": "silla",
+     "x": 360,
+     "y": 1500,
+     "s": 1.0,
+     "mov": "flota",
+     "en": 0.5
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SE MOVÍAN",
+    "SOLOS"
+   ],
+   "acento": 1,
+   "sfx": "crujido",
+   "sfx_dur": 1.5
+  },
+  {
+   "en": "Una madre y",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a5a",
+     "piso": "#2a1d2a",
+     "papel": true,
+     "vista": "noche",
+     "ventana_x": 700
+    },
+    {
+     "d": "persona",
+     "x": 250,
+     "y": 1500,
+     "s": 1.1,
+     "ropa": "vestido",
+     "falda": true,
+     "pelo_largo": true
+    },
+    {
+     "d": "persona",
+     "x": 450,
+     "y": 1500,
+     "s": 0.65,
+     "ropa": "azul"
+    },
+    {
+     "d": "persona",
+     "x": 590,
+     "y": 1500,
+     "s": 0.65,
+     "ropa": "rojo"
+    },
+    {
+     "d": "persona",
+     "x": 730,
+     "y": 1500,
+     "s": 0.65,
+     "ropa": "gris"
+    },
+    {
+     "d": "persona",
+     "x": 870,
+     "y": 1500,
+     "s": 0.65,
+     "ropa": "azul"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "UNA MADRE",
+    "Y 4 HIJOS"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Una noche, dos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2f3b55",
+     "piso": "#1d2233",
+     "vista": "noche",
+     "ventana_x": 680
+    },
+    {
+     "d": "cama",
+     "x": 300,
+     "y": 1500,
+     "s": 0.8,
+     "tiembla": true
+    },
+    {
+     "d": "cama",
+     "x": 760,
+     "y": 1550,
+     "s": 0.8,
+     "tiembla": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "LAS CAMAS",
+    "TEMBLABAN"
+   ],
+   "acento": 1,
+   "sfx": "crujido",
+   "sfx_dur": 2.0
+  },
+  {
+   "en": "Luego, una silla",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a5a",
+     "piso": "#2a1d2a",
+     "papel": true
+    },
+    {
+     "d": "silla",
+     "x": 300,
+     "y": 1500,
+     "s": 1.0,
+     "mov": "desliza",
+     "avance": 280,
+     "en": 0.3
+    },
+    {
+     "d": "persona",
+     "x": 830,
+     "y": 1500,
+     "s": 1.1,
+     "ropa": "azul",
+     "falda": true,
+     "sombrero": "gorra"
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "FRENTE A UNA",
+    "POLICÍA"
+   ],
+   "acento": 1,
+   "sfx": "crujido",
+   "sfx_en": 0.3,
+   "sfx_dur": 1.4
+  },
+  {
+   "en": "Investigadores pasaron meses",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a5a",
+     "piso": "#2a1d2a",
+     "papel": true
+    },
+    {
+     "d": "microfono",
+     "x": 700,
+     "y": 1500,
+     "s": 0.8
+    },
+    {
+     "d": "persona",
+     "x": 330,
+     "y": 1500,
+     "s": 1.2,
+     "ropa": "traje",
+     "pelo": "#6b5a46"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "MESES",
+    "INVESTIGANDO"
+   ],
+   "acento": 0
+  },
+  {
+   "en": "Grabaron golpes, juguetes",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a5a",
+     "piso": "#2a1d2a",
+     "papel": true
+    },
+    {
+     "d": "muneca",
+     "x": 320,
+     "y": 1000,
+     "s": 0.6
+    },
+    {
+     "d": "bloques",
+     "x": 760,
+     "y": 1300,
+     "s": 0.4,
+     "filas": 2
+    },
+    {
+     "d": "particulas",
+     "tipo": "polvo",
+     "n": 30
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "JUGUETES",
+    "VOLANDO"
+   ],
+   "acento": 1,
+   "sfx": "patada",
+   "sfx_dur": 0.6,
+   "sacudir": true
+  },
+  {
+   "en": "a una de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2a1d",
+     "piso": "#0d140d",
+     "luz": false
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 900,
+     "r": 600,
+     "color": "#8dff9c",
+     "op": 0.35
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1650,
+     "s": 1.7,
+     "ropa": "rojo",
+     "pelo_largo": true,
+     "pelo": "#6b4a2e"
+    }
+   ],
+   "camara": "push",
+   "dato": "JANET",
+   "amb": "zumbido",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "hablando con la",
+   "tipo": "titulo",
+   "lineas": [
+    "LA VOZ DE",
+    "UN ANCIANO"
+   ],
+   "acento": 1,
+   "icono": "👴",
+   "sfx": "gruñido",
+   "sfx_dur": 1.2
+  },
+  {
+   "en": "Años después, Janet",
+   "tipo": "titulo",
+   "lineas": [
+    "ADMITIÓ QUE",
+    "FINGIERON ALGO"
+   ],
+   "acento": 1,
+   "icono": "🤫"
+  },
+  {
+   "en": "pero insistió en",
+   "tipo": "titulo",
+   "lineas": [
+    "…PERO",
+    "NO TODO"
+   ],
+   "acento": 1,
+   "entrada": "flash",
+   "sfx": "boom"
+  },
+  {
+   "en": "¿Crees que algo",
+   "tipo": "final",
+   "lineas": [
+    "¿PASÓ ALGO",
+    "EN ESA CASA?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a5a",
+     "piso": "#2a1d2a",
+     "papel": true
+    },
+    {
+     "d": "silla",
+     "x": 540,
+     "y": 1500,
+     "s": 1.0
+    }
+   ]
+  }
+ ]
+}

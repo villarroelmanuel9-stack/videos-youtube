@@ -1,0 +1,324 @@
+{
+ "tema": "gamer",
+ "estilo": "calido",
+ "claves": [
+  "vándalos.",
+  "pizza",
+  "grosería.",
+  "Pac-Man."
+ ],
+ "tomas": [
+  {
+   "en": "Pac-Man se llamó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1d3a",
+     "piso": "#0d0d1d",
+     "luz": false
+    },
+    {
+     "d": "arcade",
+     "x": 540,
+     "y": 1600,
+     "s": 1.25,
+     "texto": "PUCK-MAN",
+     "color": "#ffd21f"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SE LLAMABA",
+    "PUCK-MAN"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "y le cambiaron",
+   "tipo": "titulo",
+   "lineas": [
+    "POR MIEDO A",
+    "LOS VÁNDALOS"
+   ],
+   "acento": 1,
+   "icono": "🖍️"
+  },
+  {
+   "en": "Fue creado en",
+   "tipo": "mapa",
+   "centro": [
+    35.68,
+    139.69
+   ],
+   "zoom": 6,
+   "zoom_desde": 1.8,
+   "centro_desde": [
+    35,
+    125
+   ],
+   "resaltar": [
+    "Japan"
+   ],
+   "pines": [
+    {
+     "lat": 35.68,
+     "lon": 139.69,
+     "texto": "JAPÓN, 1980"
+    }
+   ]
+  },
+  {
+   "en": "por Toru Iwatani.",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a5a6a",
+     "piso": "#1d2530"
+    },
+    {
+     "d": "computadora",
+     "x": 760,
+     "y": 1500,
+     "s": 0.8
+    },
+    {
+     "d": "persona",
+     "x": 330,
+     "y": 1500,
+     "s": 1.2,
+     "ropa": "traje",
+     "pelo": "#111"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "TORU",
+    "IWATANI"
+   ]
+  },
+  {
+   "en": "El nombre venía",
+   "tipo": "titulo",
+   "lineas": [
+    "«PAKU",
+    "PAKU»"
+   ],
+   "acento": 1,
+   "icono": "😋"
+  },
+  {
+   "en": "Iwatani contó que",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#7a3a2a",
+     "piso": "#3a1a10",
+     "luz_x": 540,
+     "luz_y": 900
+    },
+    {
+     "d": "pizza",
+     "x": 540,
+     "y": 1450,
+     "s": 1.4
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UNA PIZZA SIN",
+    "UN TROZO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Y quería un",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1d3a",
+     "piso": "#0d0d1d",
+     "luz": false
+    },
+    {
+     "d": "arcade",
+     "x": 540,
+     "y": 1550,
+     "s": 0.9,
+     "texto": "PUCK-MAN",
+     "color": "#ffd21f"
+    },
+    {
+     "d": "persona",
+     "x": 250,
+     "y": 1600,
+     "s": 1.0,
+     "ropa": "vestido",
+     "falda": true,
+     "pelo_largo": true
+    },
+    {
+     "d": "persona",
+     "x": 830,
+     "y": 1600,
+     "s": 1.0,
+     "ropa": "azul"
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "PARA TODOS",
+    "SIN VIOLENCIA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Cuando llegó a",
+   "tipo": "mapa",
+   "centro": [
+    38,
+    -160
+   ],
+   "zoom": 1.7,
+   "zoom_desde": 1.2,
+   "centro_lon": -170,
+   "resaltar": [
+    "Japan",
+    "United States of America"
+   ],
+   "color_pais": "#ffd21f",
+   "ruta": [
+    [
+     35.68,
+     139.69
+    ],
+    [
+     37.8,
+     -122.4
+    ]
+   ],
+   "pines": [
+    {
+     "lat": 35.68,
+     "lon": 139.69,
+     "texto": "JAPÓN"
+    },
+    {
+     "lat": 39,
+     "lon": -100,
+     "texto": "EE.UU."
+    }
+   ],
+   "paso_pines": 1.0
+  },
+  {
+   "en": "temieron que alguien",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1d3a",
+     "piso": "#0d0d1d",
+     "luz": false
+    },
+    {
+     "d": "arcade",
+     "x": 540,
+     "y": 1600,
+     "s": 1.25,
+     "texto": "PUCK-MAN",
+     "color": "#ffd21f"
+    },
+    {
+     "d": "texto_svg",
+     "x": 540,
+     "y": 520,
+     "texto": "P → ?",
+     "tam": 170,
+     "color": "#ff3d3d",
+     "aparece": 0.6
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CAMBIAR",
+    "LA P"
+   ],
+   "acento": 1,
+   "sfx": "crujido",
+   "sfx_dur": 0.8
+  },
+  {
+   "en": "y formara una",
+   "tipo": "titulo",
+   "lineas": [
+    "…Y FORMARA",
+    "UNA GROSERÍA"
+   ],
+   "acento": 1,
+   "icono": "🤬"
+  },
+  {
+   "en": "Así que lo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1d3a",
+     "piso": "#0d0d1d",
+     "luz": false
+    },
+    {
+     "d": "arcade",
+     "x": 540,
+     "y": 1600,
+     "s": 1.25,
+     "texto": "PAC-MAN",
+     "color": "#ffd21f"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": "PAC-MAN",
+   "sfx": "ping",
+   "sfx_dur": 0.4
+  },
+  {
+   "en": "Hoy es uno",
+   "tipo": "titulo",
+   "lineas": [
+    "DE LOS MÁS",
+    "RECONOCIDOS"
+   ],
+   "acento": 1,
+   "icono": "🌎"
+  },
+  {
+   "en": "¿Lo jugaste alguna",
+   "tipo": "final",
+   "lineas": [
+    "¿LO JUGASTE",
+    "ALGUNA VEZ?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1d3a",
+     "piso": "#0d0d1d",
+     "luz": false
+    },
+    {
+     "d": "arcade",
+     "x": 540,
+     "y": 1700,
+     "s": 1.0,
+     "texto": "PAC-MAN",
+     "color": "#ffd21f"
+    }
+   ]
+  }
+ ]
+}

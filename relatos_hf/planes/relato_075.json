@@ -1,0 +1,312 @@
+{
+ "tema": "misterio",
+ "estilo": "calido",
+ "claves": [
+  "dormida…",
+  "Rosalía",
+  "moño.",
+  "mira."
+ ],
+ "tomas": [
+  {
+   "en": "En unas catacumbas",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3428",
+     "piso": "#1a160f",
+     "luz": false
+    },
+    {
+     "d": "velas",
+     "x": 200,
+     "y": 1300,
+     "s": 0.8,
+     "n": 3
+    },
+    {
+     "d": "velas",
+     "x": 880,
+     "y": 1300,
+     "s": 0.8,
+     "n": 3
+    },
+    {
+     "d": "ataud",
+     "x": 540,
+     "y": 1500,
+     "s": 0.9
+    }
+   ],
+   "camara": "push",
+   "texto": "CATACUMBAS",
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "de Italia hay",
+   "tipo": "mapa",
+   "centro": [
+    38.12,
+    13.36
+   ],
+   "zoom": 30,
+   "zoom_desde": 3,
+   "centro_desde": [
+    42,
+    12
+   ],
+   "resaltar": [
+    "Italy"
+   ],
+   "pines": [
+    {
+     "lat": 38.12,
+     "lon": 13.36,
+     "texto": "PALERMO"
+    }
+   ]
+  },
+  {
+   "en": "una niña que",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3428",
+     "piso": "#1a160f",
+     "luz": false
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 1250,
+     "r": 500,
+     "color": "#ffcf7a",
+     "op": 0.5
+    },
+    {
+     "d": "ataud",
+     "x": 540,
+     "y": 1550,
+     "s": 1.4
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "PARECE",
+    "DORMIDA"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "desde hace más",
+   "tipo": "contador",
+   "hasta": 100,
+   "unidad": "AÑOS",
+   "sub": "MÁS DE",
+   "icono": "🕯️"
+  },
+  {
+   "en": "Se llama Rosalía",
+   "tipo": "titulo",
+   "lineas": [
+    "ROSALÍA",
+    "LOMBARDO"
+   ],
+   "acento": 0,
+   "icono": "🌸"
+  },
+  {
+   "en": "Murió en mil",
+   "tipo": "fecha",
+   "dia": "6",
+   "mes": "DICIEMBRE",
+   "anio": "1920"
+  },
+  {
+   "en": "Su padre, destrozado,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3428",
+     "piso": "#1a160f",
+     "luz": false
+    },
+    {
+     "d": "velas",
+     "x": 820,
+     "y": 1350,
+     "s": 0.9,
+     "n": 3
+    },
+    {
+     "d": "persona",
+     "x": 420,
+     "y": 1500,
+     "s": 1.3,
+     "ropa": "traje",
+     "pelo": "#3a2a1e"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "PIDIÓ QUE LA",
+    "CONSERVARAN"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "El resultado fue",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3428",
+     "piso": "#1a160f",
+     "luz": false
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 1250,
+     "r": 520,
+     "color": "#ffcf7a",
+     "op": 0.55
+    },
+    {
+     "d": "ataud",
+     "x": 540,
+     "y": 1600,
+     "s": 1.7
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "PIEL, PESTAÑAS",
+    "Y PELO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Su fórmula secreta",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 800
+    },
+    {
+     "d": "carta",
+     "x": 540,
+     "y": 1550,
+     "s": 1.0,
+     "texto": "Fórmula:",
+     "firma": "A. Salafia"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "DESCUBIERTA",
+    "EN 2009"
+   ],
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Muchos visitantes juran",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3428",
+     "piso": "#1a160f",
+     "luz": false
+    },
+    {
+     "d": "ataud",
+     "x": 540,
+     "y": 1550,
+     "s": 1.4
+    },
+    {
+     "d": "ojos",
+     "x": 360,
+     "y": 1310,
+     "s": 0.35,
+     "en": 1.0,
+     "color": "#3a2a1e"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "¿ABRE LOS",
+    "OJOS?"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "En realidad es",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3428",
+     "piso": "#1a160f",
+     "luz": false
+    },
+    {
+     "d": "luz",
+     "x": 300,
+     "y": 1200,
+     "r": 450,
+     "color": "#ffcf7a",
+     "op": 0.6,
+     "parpadeo": true
+    },
+    {
+     "d": "ataud",
+     "x": 540,
+     "y": 1550,
+     "s": 1.3
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "UN EFECTO",
+    "DE LA LUZ"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "¿Te atreverías a",
+   "tipo": "final",
+   "lineas": [
+    "¿TE ATREVERÍAS",
+    "A VERLA?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3428",
+     "piso": "#1a160f",
+     "luz": false
+    },
+    {
+     "d": "velas",
+     "x": 540,
+     "y": 1500,
+     "s": 1.2,
+     "n": 5
+    }
+   ]
+  }
+ ]
+}

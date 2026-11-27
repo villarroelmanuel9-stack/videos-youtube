@@ -1,0 +1,318 @@
+{
+ "tema": "ciencia",
+ "estilo": "frio",
+ "claves": [
+  "Luna?",
+  "espejos",
+  "láser",
+  "centímetros"
+ ],
+ "tomas": [
+  {
+   "en": "¿Fue real la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "espacio"
+    },
+    {
+     "d": "planeta",
+     "tipo": "luna",
+     "x": 540,
+     "y": 960,
+     "r": 420
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¿FUE REAL?"
+   ],
+   "amb": "drone",
+   "amb_vol": 0.8
+  },
+  {
+   "en": "Hay una prueba",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "espacio"
+    },
+    {
+     "d": "planeta",
+     "x": 300,
+     "y": 1500,
+     "r": 260
+    },
+    {
+     "d": "planeta",
+     "tipo": "luna",
+     "x": 800,
+     "y": 500,
+     "r": 120
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "HAY UNA",
+    "PRUEBA"
+   ],
+   "acento": 1,
+   "amb": "drone",
+   "amb_vol": 0.8
+  },
+  {
+   "en": "En mil novecientos sesenta",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "espacio",
+     "horizonte": 1300
+    },
+    {
+     "d": "planeta",
+     "x": 830,
+     "y": 430,
+     "r": 110
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#9a9688",
+      "#3e3c36"
+     ]
+    },
+    {
+     "d": "astronauta",
+     "x": 330,
+     "y": 1500,
+     "s": 0.8
+    },
+    {
+     "d": "bandera",
+     "x": 700,
+     "y": 1500,
+     "s": 1.1,
+     "colores": [
+      "#c41e1e",
+      "#ffffff",
+      "#c41e1e",
+      "#ffffff",
+      "#c41e1e",
+      "#ffffff",
+      "#c41e1e"
+     ],
+     "canton": true
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "JULIO",
+    "1969"
+   ],
+   "amb": "ninguno"
+  },
+  {
+   "en": "dejaron en la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "espacio",
+     "horizonte": 1300
+    },
+    {
+     "d": "planeta",
+     "x": 830,
+     "y": 430,
+     "r": 110
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#9a9688",
+      "#3e3c36"
+     ]
+    },
+    {
+     "d": "espejos",
+     "x": 540,
+     "y": 1450,
+     "s": 1.5,
+     "brillo_en": 0.6
+    },
+    {
+     "d": "astronauta",
+     "x": 180,
+     "y": 1520,
+     "s": 0.6
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "UN PANEL",
+    "DE ESPEJOS"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "Desde entonces, observatorios",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300,
+     "astro": "luna",
+     "astro_x": 820,
+     "astro_y": 380,
+     "astro_r": 70
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320
+    },
+    {
+     "d": "observatorio",
+     "x": 300,
+     "y": 1330,
+     "s": 0.9
+    },
+    {
+     "d": "laser",
+     "x1": 300,
+     "y1": 920,
+     "x2": 820,
+     "y2": 380,
+     "en": 0.8
+    }
+   ],
+   "camara": "fijo",
+   "texto": "DISPARAN UN LÁSER",
+   "amb": "viento",
+   "amb_vol": 0.6
+  },
+  {
+   "en": "y la luz",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "espacio"
+    },
+    {
+     "d": "planeta",
+     "x": 230,
+     "y": 1450,
+     "r": 200
+    },
+    {
+     "d": "planeta",
+     "tipo": "luna",
+     "x": 850,
+     "y": 420,
+     "r": 90
+    },
+    {
+     "d": "laser",
+     "x1": 300,
+     "y1": 1300,
+     "x2": 820,
+     "y2": 470,
+     "en": 0.1
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "REBOTA Y",
+    "VUELVE"
+   ],
+   "acento": 0,
+   "amb": "ninguno"
+  },
+  {
+   "en": "unos dos segundos",
+   "tipo": "contador",
+   "hasta": 2.5,
+   "unidad": "SEGUNDOS",
+   "sub": "IDA Y VUELTA",
+   "decimales": 1,
+   "icono": "⏱️"
+  },
+  {
+   "en": "Midiendo ese tiempo",
+   "tipo": "titulo",
+   "lineas": [
+    "PRECISIÓN DE",
+    "CENTÍMETROS"
+   ],
+   "acento": 1,
+   "icono": "📏"
+  },
+  {
+   "en": "Así descubrieron algo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "espacio"
+    },
+    {
+     "d": "planeta",
+     "x": 260,
+     "y": 1300,
+     "r": 230
+    },
+    {
+     "d": "planeta",
+     "tipo": "luna",
+     "x": 700,
+     "y": 800,
+     "r": 110,
+     "mov": "aleja",
+     "dx": 200,
+     "dy": -260
+    }
+   ],
+   "camara": "fijo",
+   "texto": "LA LUNA SE ALEJA",
+   "amb": "drone",
+   "amb_vol": 0.7
+  },
+  {
+   "en": "unos cuatro centímetros",
+   "tipo": "contador",
+   "hasta": 4,
+   "unidad": "CM POR AÑO",
+   "sub": "SE ALEJA DE NOSOTROS",
+   "icono": "🌙"
+  },
+  {
+   "en": "¿Tú crees que",
+   "tipo": "final",
+   "lineas": [
+    "¿FUIMOS",
+    "A LA LUNA?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "espacio"
+    },
+    {
+     "d": "planeta",
+     "tipo": "luna",
+     "x": 540,
+     "y": 1500,
+     "r": 600
+    }
+   ]
+  }
+ ]
+}

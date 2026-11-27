@@ -1,0 +1,347 @@
+{
+ "tema": "ciencia",
+ "estilo": "neon",
+ "claves": [
+  "Laika",
+  "Sputnik",
+  "volver.",
+  "calor"
+ ],
+ "tomas": [
+  {
+   "en": "En mil novecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1250
+    },
+    {
+     "d": "ciudad",
+     "era": "sovietica",
+     "y": 1260
+    },
+    {
+     "d": "suelo",
+     "y": 1250,
+     "colores": [
+      "#c9d3e6",
+      "#7d8aa6"
+     ]
+    },
+    {
+     "d": "particulas",
+     "tipo": "nieve",
+     "n": 60
+    },
+    {
+     "d": "perro",
+     "raza": "laika",
+     "x": 540,
+     "y": 1520,
+     "s": 1.0
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "1957",
+    "MOSCÚ"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "se convirtió en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "espacio"
+    },
+    {
+     "d": "planeta",
+     "x": 540,
+     "y": 1650,
+     "r": 700
+    },
+    {
+     "d": "satelite",
+     "x": 200,
+     "y": 600,
+     "s": 0.9,
+     "avance": 500
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "PRIMER SER VIVO",
+    "EN ÓRBITA"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "Se llamaba Laika",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2f3b55",
+     "piso": "#1d2233",
+     "luz_x": 540,
+     "luz_y": 900
+    },
+    {
+     "d": "perro",
+     "raza": "laika",
+     "x": 520,
+     "y": 1500,
+     "s": 1.9
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": "LAIKA",
+   "amb": "ninguno"
+  },
+  {
+   "en": "y viajó en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1400
+    },
+    {
+     "d": "suelo",
+     "y": 1400,
+     "colores": [
+      "#3a3f4a",
+      "#15181e"
+     ]
+    },
+    {
+     "d": "cohete",
+     "x": 540,
+     "y": 1420,
+     "s": 1.0
+    },
+    {
+     "d": "particulas",
+     "tipo": "chispas",
+     "n": 30
+    }
+   ],
+   "camara": "fijo",
+   "dato": "SPUTNIK 2",
+   "sfx": "riser",
+   "sfx_dur": 2.0,
+   "amb": "ninguno"
+  },
+  {
+   "en": "Los científicos soviéticos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4550",
+     "piso": "#1d2228",
+     "vista": "nieve",
+     "ventana_x": 680
+    },
+    {
+     "d": "persona",
+     "x": 300,
+     "y": 1420,
+     "s": 1.0,
+     "ropa": "bata",
+     "mov": "respira"
+    },
+    {
+     "d": "persona",
+     "x": 560,
+     "y": 1430,
+     "s": 0.95,
+     "ropa": "bata",
+     "pelo": "#7a5a3a"
+    },
+    {
+     "d": "perro",
+     "raza": "laika",
+     "x": 820,
+     "y": 1440,
+     "s": 0.7
+    }
+   ],
+   "camara": "pan_izq",
+   "texto": "PERROS DE LA CALLE",
+   "amb": "ninguno"
+  },
+  {
+   "en": "porque creían que",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1250
+    },
+    {
+     "d": "ciudad",
+     "era": "sovietica",
+     "y": 1260
+    },
+    {
+     "d": "suelo",
+     "y": 1250,
+     "colores": [
+      "#c9d3e6",
+      "#7d8aa6"
+     ]
+    },
+    {
+     "d": "particulas",
+     "tipo": "nieve",
+     "n": 60
+    },
+    {
+     "d": "perro",
+     "raza": "laika",
+     "x": 360,
+     "y": 1500,
+     "s": 0.8
+    },
+    {
+     "d": "perro",
+     "raza": "laika",
+     "x": 760,
+     "y": 1520,
+     "s": 0.65,
+     "espejo": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "FRÍO",
+    "Y HAMBRE"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "La entrenaron durante",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2f3b55",
+     "piso": "#1d2233"
+    },
+    {
+     "d": "capsula",
+     "x": 540,
+     "y": 1450,
+     "s": 1.4
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "CABINAS",
+    "CADA VEZ MÁS",
+    "PEQUEÑAS"
+   ],
+   "acento": 2,
+   "amb": "ninguno"
+  },
+  {
+   "en": "Pero había un",
+   "tipo": "titulo",
+   "lineas": [
+    "NO ESTABA HECHA",
+    "PARA VOLVER"
+   ],
+   "acento": 1,
+   "entrada": "flash",
+   "sfx": "boom"
+  },
+  {
+   "en": "Durante décadas, el",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2a1e"
+    },
+    {
+     "d": "periodico",
+     "x": 540,
+     "y": 1560,
+     "s": 1.1,
+     "cabecera": "1957",
+     "titular": "¡VIVE EN ÓRBITA!",
+     "tam": 70
+    }
+   ],
+   "camara": "fijo",
+   "amb": "ninguno",
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "En dos mil",
+   "tipo": "titulo",
+   "lineas": [
+    "2002:",
+    "LA VERDAD"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "murió a las",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "espacio"
+    },
+    {
+     "d": "planeta",
+     "x": 540,
+     "y": 1700,
+     "r": 600
+    },
+    {
+     "d": "capsula",
+     "x": 540,
+     "y": 1050,
+     "s": 1.0,
+     "calor": true
+    }
+   ],
+   "camara": "push",
+   "texto": "POR EL CALOR",
+   "amb": "ninguno"
+  },
+  {
+   "en": "¿Conocías su historia?",
+   "tipo": "final",
+   "lineas": [
+    "¿CONOCÍAS",
+    "SU HISTORIA?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "espacio"
+    },
+    {
+     "d": "planeta",
+     "x": 540,
+     "y": 1700,
+     "r": 600
+    }
+   ],
+   "comentario": "Pobre Laika 💔"
+  }
+ ]
+}

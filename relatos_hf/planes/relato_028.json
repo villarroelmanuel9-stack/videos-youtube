@@ -1,0 +1,392 @@
+{
+ "tema": "cultura",
+ "estilo": "calido",
+ "claves": [
+  "diez",
+  "Hachiko",
+  "regresó.",
+  "estatua"
+ ],
+ "tomas": [
+  {
+   "en": "Este perro esperó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1250,
+     "astro": "sol",
+     "astro_x": 820,
+     "astro_y": 700,
+     "astro_r": 60
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1260,
+     "color": "#4a3a3a",
+     "color_lejos": "#6b4a4a"
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#9a8a7a",
+      "#5a4a3c"
+     ]
+    },
+    {
+     "d": "perro",
+     "x": 540,
+     "y": 1560,
+     "s": 1.2
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "CASI",
+    "10 AÑOS"
+   ],
+   "amb": "multitud",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Hachiko era un",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#7a5a3a",
+     "piso": "#3a2a1e",
+     "luz_x": 540,
+     "luz_y": 900
+    },
+    {
+     "d": "perro",
+     "x": 500,
+     "y": 1550,
+     "s": 2.1
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": "HACHIKO",
+   "amb": "ninguno"
+  },
+  {
+   "en": "Cada día acompañaba",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1310
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#b9a88a",
+      "#7a6a55"
+     ]
+    },
+    {
+     "d": "persona",
+     "x": 380,
+     "y": 1600,
+     "s": 1.3,
+     "ropa": "traje",
+     "sombrero": "fedora",
+     "mov": "camina",
+     "avance": 160
+    },
+    {
+     "d": "perro",
+     "x": 680,
+     "y": 1600,
+     "s": 0.8
+    }
+   ],
+   "camara": "pan_der",
+   "dato": [
+    "PROFESOR",
+    "UENO"
+   ],
+   "amb": "multitud",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "a la estación",
+   "tipo": "mapa",
+   "centro": [
+    35.658,
+    139.7
+   ],
+   "zoom": 30,
+   "zoom_desde": 4,
+   "centro_desde": [
+    36,
+    138
+   ],
+   "resaltar": [
+    "Japan"
+   ],
+   "pines": [
+    {
+     "lat": 35.658,
+     "lon": 139.7,
+     "texto": "SHIBUYA, TOKIO"
+    }
+   ]
+  },
+  {
+   "en": "y por la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1250,
+     "astro": "sol",
+     "astro_x": 820,
+     "astro_y": 700,
+     "astro_r": 60
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1260,
+     "color": "#4a3a3a",
+     "color_lejos": "#6b4a4a"
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#9a8a7a",
+      "#5a4a3c"
+     ]
+    },
+    {
+     "d": "tren",
+     "x": 540,
+     "y": 1350,
+     "s": 1.0
+    },
+    {
+     "d": "perro",
+     "x": 760,
+     "y": 1600,
+     "s": 0.9
+    }
+   ],
+   "camara": "fijo",
+   "texto": "ESPERABA EL TREN",
+   "amb": "tren"
+  },
+  {
+   "en": "En mayo de",
+   "tipo": "fecha",
+   "dia": "21",
+   "mes": "MAYO",
+   "anio": "1925"
+  },
+  {
+   "en": "el profesor sufrió",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3a4a",
+     "piso": "#1d1d26",
+     "vista": "tormenta",
+     "ventana_x": 650
+    },
+    {
+     "d": "persona",
+     "x": 380,
+     "y": 1450,
+     "s": 1.3,
+     "ropa": "traje",
+     "mov": "desvanece",
+     "desvanece_en": 1.0
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "NUNCA",
+    "REGRESÓ"
+   ],
+   "acento": 1,
+   "amb": "lluvia",
+   "amb_vol": 0.6
+  },
+  {
+   "en": "Hachiko siguió yendo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1250,
+     "astro": "sol",
+     "astro_x": 820,
+     "astro_y": 700,
+     "astro_r": 60
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1260,
+     "color": "#4a3a3a",
+     "color_lejos": "#6b4a4a"
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#9a8a7a",
+      "#5a4a3c"
+     ]
+    },
+    {
+     "d": "tren",
+     "x": 540,
+     "y": 1350,
+     "s": 1.0,
+     "mov": "parte"
+    },
+    {
+     "d": "perro",
+     "x": 540,
+     "y": 1600,
+     "s": 1.0
+    }
+   ],
+   "camara": "fijo",
+   "texto": "CADA TARDE",
+   "amb": "tren"
+  },
+  {
+   "en": "a la misma",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14"
+    },
+    {
+     "d": "calendario",
+     "x": 540,
+     "y": 1450,
+     "s": 1.4,
+     "anios": [
+      "1926",
+      "1928",
+      "1930",
+      "1932",
+      "1935"
+     ]
+    }
+   ],
+   "camara": "fijo",
+   "texto": "A LA MISMA HORA",
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "hasta su muerte",
+   "tipo": "titulo",
+   "lineas": [
+    "HASTA",
+    "1935"
+   ],
+   "acento": 1,
+   "icono": "🐾"
+  },
+  {
+   "en": "Hoy tiene una",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "ciudad",
+     "era": "moderna",
+     "y": 1310
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#9aa0a6",
+      "#5c6268"
+     ]
+    },
+    {
+     "d": "estatua_perro",
+     "x": 540,
+     "y": 1600,
+     "s": 1.1
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ESTATUA EN",
+    "SHIBUYA"
+   ],
+   "amb": "multitud",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "¿Tienes una mascota",
+   "tipo": "final",
+   "lineas": [
+    "¿TIENES UNA",
+    "MASCOTA ASÍ?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1250,
+     "astro": "sol",
+     "astro_x": 820,
+     "astro_y": 700,
+     "astro_r": 60
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1260,
+     "color": "#4a3a3a",
+     "color_lejos": "#6b4a4a"
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#9a8a7a",
+      "#5a4a3c"
+     ]
+    },
+    {
+     "d": "perro",
+     "x": 540,
+     "y": 1560,
+     "s": 1.2
+    }
+   ],
+   "comentario": "Mi perro me espera siempre 🐶"
+  }
+ ]
+}

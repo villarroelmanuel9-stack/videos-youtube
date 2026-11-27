@@ -1,0 +1,336 @@
+{
+ "tema": "ciencia",
+ "estilo": "periodico",
+ "claves": [
+  "hablando.",
+  "cráneo",
+  "Gage»:",
+  "cerebro"
+ ],
+ "tomas": [
+  {
+   "en": "En mil ochocientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018",
+     "luz_x": 540,
+     "luz_y": 800
+    },
+    {
+     "d": "craneo",
+     "x": 540,
+     "y": 1450,
+     "s": 1.4,
+     "en": 0.4
+    }
+   ],
+   "camara": "push",
+   "dato": "1848",
+   "sfx": "boom",
+   "sfx_en": 0.4,
+   "sacudir": true
+  },
+  {
+   "en": "y siguió hablando.",
+   "tipo": "titulo",
+   "lineas": [
+    "¡Y SIGUIÓ",
+    "HABLANDO!"
+   ],
+   "acento": 1,
+   "entrada": "flash"
+  },
+  {
+   "en": "Phineas Gage era",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "colores": [
+      "#6b7a5a",
+      "#4a5a3e",
+      "#2e3a26"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#8a6a4a",
+      "#4a3222"
+     ]
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1600,
+     "s": 1.5,
+     "ropa": "obrero",
+     "sombrero": "fedora",
+     "mov": "respira"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "PHINEAS",
+    "GAGE"
+   ],
+   "amb": "viento",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "en la construcción",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "colores": [
+      "#6b7a5a",
+      "#4a5a3e",
+      "#2e3a26"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#8a6a4a",
+      "#4a3222"
+     ]
+    },
+    {
+     "d": "tren",
+     "x": 540,
+     "y": 1400,
+     "s": 1.0
+    }
+   ],
+   "camara": "pan_der",
+   "texto": "FERROCARRIL",
+   "amb": "tren"
+  },
+  {
+   "en": "La explosión lanzó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "colores": [
+      "#6b7a5a",
+      "#4a5a3e",
+      "#2e3a26"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#8a6a4a",
+      "#4a3222"
+     ]
+    },
+    {
+     "d": "explosion",
+     "x": 540,
+     "y": 1250,
+     "s": 1.4,
+     "en": 0.1
+    },
+    {
+     "d": "particulas",
+     "tipo": "polvo",
+     "n": 50
+    }
+   ],
+   "camara": "fijo",
+   "sacudir": true,
+   "sfx": "explosion_lejana",
+   "sfx_dur": 2.0,
+   "texto": "¡EXPLOSIÓN!"
+  },
+  {
+   "en": "una barra de",
+   "tipo": "contador",
+   "hasta": 6,
+   "unidad": "KILOS",
+   "sub": "MÁS DE 1 METRO DE HIERRO",
+   "icono": "🔩"
+  },
+  {
+   "en": "Le entró por",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018"
+    },
+    {
+     "d": "craneo",
+     "x": 540,
+     "y": 1500,
+     "s": 1.7,
+     "en": 0.2
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "ATRAVESÓ",
+    "SU CRÁNEO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Gage sobrevivió, habló",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "colores": [
+      "#6b7a5a",
+      "#4a5a3e",
+      "#2e3a26"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#8a6a4a",
+      "#4a3222"
+     ]
+    },
+    {
+     "d": "persona",
+     "x": 300,
+     "y": 1600,
+     "s": 1.3,
+     "ropa": "obrero",
+     "sombrero": "fedora",
+     "mov": "camina",
+     "avance": 260
+    }
+   ],
+   "camara": "pan_der",
+   "texto": "¡SOBREVIVIÓ!",
+   "amb": "viento",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Pero sus amigos",
+   "tipo": "titulo",
+   "lineas": [
+    "«YA NO",
+    "ERA GAGE»"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "el hombre amable",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a1d1d",
+     "piso": "#1a0d0d"
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 800,
+     "r": 700,
+     "color": "#ff2a2a",
+     "op": 0.35
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1700,
+     "s": 2.1,
+     "ropa": "obrero",
+     "sombrero": "fedora"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "IMPACIENTE",
+    "Y GROSERO"
+   ],
+   "acento": 1,
+   "sacudir": true
+  },
+  {
+   "en": "Su caso ayudó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018"
+    },
+    {
+     "d": "cerebro",
+     "x": 540,
+     "y": 1450,
+     "s": 1.5,
+     "zona": "frontal"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CADA PARTE",
+    "TIENE SU FUNCIÓN"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "¿Conocías este caso?",
+   "tipo": "final",
+   "lineas": [
+    "¿CONOCÍAS",
+    "ESTE CASO?"
+   ],
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018"
+    },
+    {
+     "d": "cerebro",
+     "x": 540,
+     "y": 1500,
+     "s": 1.2
+    }
+   ]
+  }
+ ]
+}

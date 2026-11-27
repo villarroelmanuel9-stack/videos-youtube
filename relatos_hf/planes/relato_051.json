@@ -1,0 +1,367 @@
+{
+ "tema": "terror",
+ "estilo": "terror",
+ "claves": [
+  "vampiro.",
+  "dragón».",
+  "Empalador.",
+  "estacas."
+ ],
+ "tomas": [
+  {
+   "en": "Drácula existió… pero",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350,
+     "astro": "luna",
+     "astro_x": 800,
+     "astro_y": 420,
+     "astro_r": 80
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1380,
+     "colores": [
+      "#2a2f45",
+      "#1d2135",
+      "#121526"
+     ]
+    },
+    {
+     "d": "castillo",
+     "x": 540,
+     "y": 1420,
+     "s": 1.0
+    },
+    {
+     "d": "niebla",
+     "y": 1380,
+     "op": 0.4
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "DRÁCULA",
+    "EXISTIÓ"
+   ],
+   "acento": 0,
+   "amb": "viento"
+  },
+  {
+   "en": "pero no era",
+   "tipo": "titulo",
+   "lineas": [
+    "NO ERA UN",
+    "VAMPIRO"
+   ],
+   "acento": 1,
+   "icono": "🦇",
+   "entrada": "flash"
+  },
+  {
+   "en": "Se llamaba Vlad",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a1d1d",
+     "piso": "#1a0d0d",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "trono",
+     "x": 540,
+     "y": 1500,
+     "s": 1.1
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1480,
+     "s": 1.15,
+     "ropa": "rojo",
+     "pelo": "#111",
+     "pelo_largo": true
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "VLAD",
+    "III"
+   ],
+   "amb": "ninguno"
+  },
+  {
+   "en": "y gobernó Valaquia,",
+   "tipo": "mapa",
+   "centro": [
+    44.7,
+    25.5
+   ],
+   "zoom": 7,
+   "zoom_desde": 1.6,
+   "centro_desde": [
+    48,
+    15
+   ],
+   "resaltar": [
+    "Romania"
+   ],
+   "pines": [
+    {
+     "lat": 44.7,
+     "lon": 25.5,
+     "texto": "VALAQUIA"
+    }
+   ]
+  },
+  {
+   "en": "en el siglo",
+   "tipo": "titulo",
+   "lineas": [
+    "SIGLO XV"
+   ],
+   "icono": "🏰"
+  },
+  {
+   "en": "Su padre pertenecía",
+   "tipo": "titulo",
+   "lineas": [
+    "ORDEN DEL",
+    "DRAGÓN"
+   ],
+   "acento": 1,
+   "icono": "🐉"
+  },
+  {
+   "en": "por eso lo",
+   "tipo": "titulo",
+   "lineas": [
+    "DRÁCULA:",
+    "«HIJO DEL DRAGÓN»"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Era famoso por",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350,
+     "astro": "luna",
+     "astro_x": 800,
+     "astro_y": 420,
+     "astro_r": 80
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1380,
+     "colores": [
+      "#2a2f45",
+      "#1d2135",
+      "#121526"
+     ]
+    },
+    {
+     "d": "castillo",
+     "x": 540,
+     "y": 1420,
+     "s": 1.1
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 900,
+     "r": 800,
+     "color": "#ff2a2a",
+     "op": 0.35
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": "CRUEL",
+   "amb": "viento"
+  },
+  {
+   "en": "Le decían Vlad",
+   "tipo": "titulo",
+   "lineas": [
+    "VLAD EL",
+    "EMPALADOR"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Se cuenta que,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1300
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#4a3a2a",
+      "#1a120c"
+     ]
+    },
+    {
+     "d": "ejercito",
+     "x": 540,
+     "y": 1500,
+     "s": 1.0,
+     "avance": -260,
+     "color": "#1a1020"
+    }
+   ],
+   "camara": "pan_izq",
+   "texto": [
+    "DIERON MEDIA",
+    "VUELTA"
+   ],
+   "acento": 1,
+   "amb": "multitud"
+  },
+  {
+   "en": "al ver un",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "rojo",
+     "horizonte": 1350
+    },
+    {
+     "d": "estacas",
+     "x": 540,
+     "y": 1450,
+     "s": 1.0
+    },
+    {
+     "d": "suelo",
+     "y": 1420,
+     "colores": [
+      "#1a0d0d",
+      "#0a0505"
+     ]
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "UN BOSQUE",
+    "DE ESTACAS"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Cuatrocientos años después,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2218",
+     "piso": "#120e0a",
+     "luz_x": 540,
+     "luz_y": 900
+    },
+    {
+     "d": "velas",
+     "x": 800,
+     "y": 1300,
+     "s": 0.8,
+     "n": 3
+    },
+    {
+     "d": "libro",
+     "x": 460,
+     "y": 1400,
+     "s": 1.0
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "BRAM STOKER",
+    "1897"
+   ],
+   "amb": "ninguno"
+  },
+  {
+   "en": "Curiosamente, Vlad nunca",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1380,
+     "colores": [
+      "#6b7a5a",
+      "#4a5a3e",
+      "#2e3a26"
+     ]
+    },
+    {
+     "d": "castillo",
+     "x": 540,
+     "y": 1420,
+     "s": 1.0
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "NUNCA VIVIÓ",
+    "EN BRAN"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "¿Sabías que Drácula",
+   "tipo": "final",
+   "lineas": [
+    "¿SABÍAS QUE",
+    "FUE REAL?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350,
+     "astro": "luna",
+     "astro_x": 800,
+     "astro_y": 420,
+     "astro_r": 80
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1380,
+     "colores": [
+      "#2a2f45",
+      "#1d2135",
+      "#121526"
+     ]
+    },
+    {
+     "d": "castillo",
+     "x": 540,
+     "y": 1420,
+     "s": 1.0
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,310 @@
+{
+ "tema": "historia",
+ "estilo": "periodico",
+ "claves": [
+  "Chile.",
+  "siete",
+  "máscara",
+  "Patrimonio"
+ ],
+ "tomas": [
+  {
+   "en": "Las momias más",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1300
+    },
+    {
+     "d": "desierto",
+     "y": 1300
+    },
+    {
+     "d": "momia",
+     "x": 540,
+     "y": 1600,
+     "s": 1.1
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "LAS MOMIAS",
+    "MÁS ANTIGUAS"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "no están en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "desierto",
+     "y": 1350
+    },
+    {
+     "d": "piramides",
+     "x": 540,
+     "y": 1400,
+     "s": 1.0
+    }
+   ],
+   "camara": "pull",
+   "texto": "NO ESTÁN EN EGIPTO",
+   "amb": "viento"
+  },
+  {
+   "en": "están en Chile.",
+   "tipo": "mapa",
+   "centro": [
+    -18.48,
+    -70.3
+   ],
+   "zoom": 9,
+   "zoom_desde": 1.4,
+   "centro_desde": [
+    0,
+    -60
+   ],
+   "resaltar": [
+    "Chile"
+   ],
+   "pines": [
+    {
+     "lat": -18.48,
+     "lon": -70.3,
+     "texto": "ARICA, CHILE"
+    }
+   ]
+  },
+  {
+   "en": "Los Chinchorro eran",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1150
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1150
+    },
+    {
+     "d": "desierto",
+     "y": 1250
+    },
+    {
+     "d": "barca",
+     "x": 700,
+     "y": 1170,
+     "s": 0.4,
+     "color": "#8a6a4a"
+    },
+    {
+     "d": "persona",
+     "x": 330,
+     "y": 1560,
+     "s": 1.1,
+     "ropa": "obrero",
+     "pelo": "#111"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": "PESCADORES",
+   "amb": "olas"
+  },
+  {
+   "en": "Momificaban a sus",
+   "tipo": "contador",
+   "hasta": 7000,
+   "unidad": "AÑOS",
+   "sub": "HACE UNOS",
+   "icono": "⏳"
+  },
+  {
+   "en": "unos dos mil",
+   "tipo": "titulo",
+   "lineas": [
+    "2.000 AÑOS",
+    "ANTES QUE",
+    "EGIPTO"
+   ],
+   "acento": 0
+  },
+  {
+   "en": "Y no solo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1300
+    },
+    {
+     "d": "desierto",
+     "y": 1300
+    },
+    {
+     "d": "momia",
+     "x": 300,
+     "y": 1600,
+     "s": 0.95
+    },
+    {
+     "d": "momia",
+     "x": 560,
+     "y": 1600,
+     "s": 0.75,
+     "color": "#8a1d1d"
+    },
+    {
+     "d": "momia",
+     "x": 780,
+     "y": 1600,
+     "s": 0.5
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "HOMBRES, MUJERES",
+    "Y NIÑOS"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Desarmaban el cuerpo,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a3a22",
+     "piso": "#2a1a0e",
+     "luz_x": 540,
+     "luz_y": 900
+    },
+    {
+     "d": "momia",
+     "x": 540,
+     "y": 1650,
+     "s": 1.5
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "PALOS Y",
+    "FIBRAS"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "lo cubrían con",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2214",
+     "piso": "#1a0e08",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "momia",
+     "x": 540,
+     "y": 1800,
+     "s": 2.2,
+     "color": "#8a1d1d"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "MÁSCARA NEGRA",
+    "O ROJA"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "Hoy se siguen",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "ciudad",
+     "era": "colonial",
+     "y": 1310
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#c9a27a",
+      "#8a6a4a"
+     ]
+    },
+    {
+     "d": "excavadora",
+     "x": 540,
+     "y": 1580,
+     "s": 1.0
+    }
+   ],
+   "camara": "pan_izq",
+   "dato": [
+    "AÚN APARECEN",
+    "EN ARICA"
+   ],
+   "amb": "camion",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "En dos mil",
+   "tipo": "titulo",
+   "lineas": [
+    "2021:",
+    "PATRIMONIO DE",
+    "LA HUMANIDAD"
+   ],
+   "acento": 0,
+   "icono": "🏆"
+  },
+  {
+   "en": "¿Las conocías? Comenta",
+   "tipo": "final",
+   "lineas": [
+    "¿LAS",
+    "CONOCÍAS?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1150
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1150
+    },
+    {
+     "d": "desierto",
+     "y": 1250
+    }
+   ]
+  }
+ ]
+}

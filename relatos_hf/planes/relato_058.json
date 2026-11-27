@@ -1,0 +1,381 @@
+{
+ "tema": "cultura",
+ "estilo": "clasico",
+ "claves": [
+  "silbando.",
+  "Gomera,",
+  "kilómetros",
+  "UNESCO"
+ ],
+ "tomas": [
+  {
+   "en": "En una isla",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "isla",
+     "x": 540,
+     "y": 1280,
+     "s": 1.1,
+     "arboles": 9
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UNA ISLA",
+    "DE ESPAÑA"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "la gente puede",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1200
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1600,
+     "colores": [
+      "#5a7a4a",
+      "#3e5a32",
+      "#2a3e22"
+     ]
+    },
+    {
+     "d": "persona",
+     "x": 180,
+     "y": 1350,
+     "s": 0.8,
+     "ropa": "blanco"
+    },
+    {
+     "d": "persona",
+     "x": 900,
+     "y": 1450,
+     "s": 0.8,
+     "ropa": "rojo",
+     "espejo": true
+    },
+    {
+     "d": "silbido",
+     "x1": 240,
+     "y1": 1080,
+     "x2": 850
+    }
+   ],
+   "camara": "fijo",
+   "texto": "¡SILBANDO!",
+   "sfx": "campana",
+   "sfx_dur": 0.4,
+   "amb": "viento",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Es el silbo",
+   "tipo": "titulo",
+   "lineas": [
+    "EL SILBO",
+    "GOMERO"
+   ],
+   "acento": 1,
+   "icono": "😙"
+  },
+  {
+   "en": "de la isla",
+   "tipo": "mapa",
+   "centro": [
+    28.1,
+    -17.23
+   ],
+   "zoom": 40,
+   "zoom_desde": 4,
+   "centro_desde": [
+    30,
+    -10
+   ],
+   "resaltar": [
+    "Spain"
+   ],
+   "pines": [
+    {
+     "lat": 28.1,
+     "lon": -17.23,
+     "texto": "LA GOMERA"
+    }
+   ]
+  },
+  {
+   "en": "La isla está",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 900
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1900,
+     "colores": [
+      "#4a6a3a",
+      "#2e4a26",
+      "#1a2e16"
+     ]
+    }
+   ],
+   "camara": "baja",
+   "texto": [
+    "BARRANCOS",
+    "PROFUNDOS"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "y gritar de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1200
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1600,
+     "colores": [
+      "#5a7a4a",
+      "#3e5a32",
+      "#2a3e22"
+     ]
+    },
+    {
+     "d": "persona",
+     "x": 200,
+     "y": 1380,
+     "s": 0.9,
+     "ropa": "blanco",
+     "mov": "saluda"
+    },
+    {
+     "d": "silbido",
+     "x1": 250,
+     "y1": 1100,
+     "x2": 520,
+     "color": "#ff5a36"
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "GRITAR",
+    "NO SERVÍA"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Los pastores aprendieron",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1200
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1600,
+     "colores": [
+      "#5a7a4a",
+      "#3e5a32",
+      "#2a3e22"
+     ]
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1600,
+     "s": 1.5,
+     "ropa": "obrero",
+     "sombrero": "fedora",
+     "mov": "respira"
+    }
+   ],
+   "camara": "push",
+   "dato": "PASTORES",
+   "amb": "viento",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "cambiando el tono",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1200
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1600,
+     "colores": [
+      "#5a7a4a",
+      "#3e5a32",
+      "#2a3e22"
+     ]
+    },
+    {
+     "d": "silbido",
+     "x1": 120,
+     "y1": 900,
+     "x2": 960,
+     "color": "#ffd21f"
+    },
+    {
+     "d": "silbido",
+     "x1": 120,
+     "y1": 1050,
+     "x2": 960,
+     "color": "#3df5ff"
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "VOCALES Y",
+    "CONSONANTES"
+   ],
+   "acento": 0
+  },
+  {
+   "en": "Así pueden enviarse",
+   "tipo": "contador",
+   "hasta": 2,
+   "unidad": "KILÓMETROS",
+   "sub": "MÁS DE",
+   "icono": "📢"
+  },
+  {
+   "en": "Casi desaparece en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14"
+    },
+    {
+     "d": "telefono",
+     "x": 540,
+     "y": 1450,
+     "s": 1.4,
+     "suena": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "LLEGARON LOS",
+    "TELÉFONOS"
+   ],
+   "acento": 1,
+   "sfx": "campana",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Pero desde mil",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a5a4a",
+     "piso": "#1d2d24",
+     "vista": "dia",
+     "ventana_x": 680
+    },
+    {
+     "d": "texto_svg",
+     "x": 330,
+     "y": 500,
+     "texto": "SILBO",
+     "tam": 120,
+     "color": "#f4efe4"
+    },
+    {
+     "d": "persona",
+     "x": 300,
+     "y": 1450,
+     "s": 0.8,
+     "ropa": "azul"
+    },
+    {
+     "d": "persona",
+     "x": 540,
+     "y": 1450,
+     "s": 0.8,
+     "ropa": "rojo"
+    },
+    {
+     "d": "persona",
+     "x": 780,
+     "y": 1450,
+     "s": 0.8,
+     "ropa": "blanco"
+    }
+   ],
+   "camara": "pan_der",
+   "dato": [
+    "1999:",
+    "EN LA ESCUELA"
+   ]
+  },
+  {
+   "en": "y la UNESCO",
+   "tipo": "titulo",
+   "lineas": [
+    "PROTEGIDO POR",
+    "LA UNESCO"
+   ],
+   "acento": 1,
+   "icono": "🏆"
+  },
+  {
+   "en": "¿Te imaginas hablar",
+   "tipo": "final",
+   "lineas": [
+    "¿TE IMAGINAS",
+    "HABLAR ASÍ?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1200
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1600,
+     "colores": [
+      "#5a7a4a",
+      "#3e5a32",
+      "#2a3e22"
+     ]
+    }
+   ]
+  }
+ ]
+}
