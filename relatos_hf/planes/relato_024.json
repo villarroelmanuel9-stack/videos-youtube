@@ -1,0 +1,349 @@
+{
+ "tema": "historia",
+ "estilo": "terror",
+ "claves": [
+  "Canadá…",
+  "explosivos",
+  "estalló.",
+  "kilómetros."
+ ],
+ "tomas": [
+  {
+   "en": "En mil novecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1200
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1200,
+     "hora": "dia"
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "transatlantico",
+     "x": 330,
+     "y": 1280,
+     "s": 0.45,
+     "luces": false,
+     "casco": "#5c6268"
+    },
+    {
+     "d": "transatlantico",
+     "x": 780,
+     "y": 1300,
+     "s": 0.45,
+     "luces": false,
+     "espejo": true
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "HALIFAX",
+    "1917"
+   ],
+   "sacudir": true,
+   "sfx": "crujido",
+   "sfx_dur": 1.5,
+   "amb": "olas"
+  },
+  {
+   "en": "y provocaron la",
+   "tipo": "titulo",
+   "lineas": [
+    "LA MAYOR EXPLOSIÓN",
+    "ANTES DE LA BOMBA"
+   ],
+   "acento": 0,
+   "icono": "💥"
+  },
+  {
+   "en": "Uno de ellos,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1200
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1200,
+     "hora": "dia"
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "transatlantico",
+     "x": 540,
+     "y": 1300,
+     "s": 0.7,
+     "luces": false,
+     "casco": "#4a3a2a"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "MONT",
+    "BLANC"
+   ],
+   "amb": "olas"
+  },
+  {
+   "en": "iba cargado con",
+   "tipo": "contador",
+   "hasta": 3000,
+   "unidad": "TONELADAS",
+   "sub": "DE EXPLOSIVOS",
+   "icono": "🧨"
+  },
+  {
+   "en": "Tras el choque,",
+   "tipo": "mapa",
+   "centro": [
+    44.67,
+    -63.6
+   ],
+   "zoom": 20,
+   "zoom_desde": 3,
+   "centro_desde": [
+    45,
+    -70
+   ],
+   "resaltar": [
+    "Canada"
+   ],
+   "pines": [
+    {
+     "lat": 44.67,
+     "lon": -63.6,
+     "texto": "HALIFAX"
+    }
+   ]
+  },
+  {
+   "en": "La tripulación huyó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1200
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1200,
+     "hora": "dia"
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "transatlantico",
+     "x": 700,
+     "y": 1300,
+     "s": 0.6,
+     "luces": false,
+     "casco": "#4a3a2a"
+    },
+    {
+     "d": "fuego",
+     "x": 700,
+     "y": 1270,
+     "s": 0.6,
+     "ancho": 260
+    },
+    {
+     "d": "bote",
+     "x": 280,
+     "y": 1340,
+     "s": 0.7,
+     "gente": 5
+    }
+   ],
+   "camara": "pan_izq",
+   "texto": [
+    "«¡VA A",
+    "EXPLOTAR!»"
+   ],
+   "acento": 1,
+   "amb": "fuego"
+  },
+  {
+   "en": "La gente se",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1200
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1200,
+     "hora": "dia"
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "fuego",
+     "x": 700,
+     "y": 1280,
+     "s": 0.6,
+     "ancho": 260
+    },
+    {
+     "d": "persona_real",
+     "x": 150,
+     "y": 1720,
+     "s": 1.0,
+     "ropa": "abrigo"
+    },
+    {
+     "d": "persona_real",
+     "x": 360,
+     "y": 1720,
+     "s": 1.0,
+     "ropa": "obrero"
+    },
+    {
+     "d": "persona_real",
+     "x": 570,
+     "y": 1720,
+     "s": 1.0,
+     "ropa": "vestido"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SE ACERCARON",
+    "A MIRAR"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Veinte minutos después,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "rojo",
+     "horizonte": 1250
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1250
+    },
+    {
+     "d": "hongo",
+     "x": 600,
+     "y": 1260,
+     "s": 1.1
+    },
+    {
+     "d": "explosion",
+     "x": 600,
+     "y": 1100,
+     "s": 2.0,
+     "en": 0.05
+    }
+   ],
+   "camara": "pull",
+   "texto": "¡ESTALLÓ!",
+   "sacudir": true,
+   "sfx": "boom",
+   "sfx_dur": 2.5
+  },
+  {
+   "en": "Un barrio entero",
+   "tipo": "contador",
+   "hasta": 2000,
+   "unidad": "PERSONAS",
+   "sub": "MURIERON",
+   "icono": "🕯️"
+  },
+  {
+   "en": "Un trozo del",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#7a7a6a",
+      "#3a3a2e"
+     ]
+    },
+    {
+     "d": "texto_svg",
+     "x": 540,
+     "y": 1500,
+     "texto": "⚓",
+     "tam": 300,
+     "color": "#3a3e46",
+     "borde": 0
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ANCLA A",
+    "+3 KM"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "¿Lo conocías? Comenta",
+   "tipo": "final",
+   "lineas": [
+    "¿LO",
+    "CONOCÍAS?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1200
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1200,
+     "hora": "dia"
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1250
+    }
+   ],
+   "comentario": "Nunca lo había escuchado 😮"
+  }
+ ]
+}

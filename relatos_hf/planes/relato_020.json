@@ -1,0 +1,430 @@
+{
+ "tema": "historia",
+ "estilo": "pop",
+ "claves": [
+  "ejército.",
+  "voces",
+  "nueve",
+  "hoguera"
+ ],
+ "tomas": [
+  {
+   "en": "Una campesina de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1300,
+     "colores": [
+      "#7a9a6a",
+      "#5a7a4a",
+      "#3a5a2e"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#6a8a4a",
+      "#2e4a22"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.9,
+     "ropa": "vestido",
+     "peinado": "corto",
+     "pelo": "#5a3a1e"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CAMPESINA,",
+    "17 AÑOS"
+   ],
+   "acento": 1,
+   "amb": "insectos",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "terminó al mando",
+   "tipo": "titulo",
+   "lineas": [
+    "AL MANDO DE",
+    "UN EJÉRCITO"
+   ],
+   "acento": 1,
+   "icono": "⚔️"
+  },
+  {
+   "en": "Juana de Arco",
+   "tipo": "mapa",
+   "centro": [
+    48.44,
+    5.67
+   ],
+   "zoom": 6,
+   "zoom_desde": 2,
+   "centro_desde": [
+    47,
+    2
+   ],
+   "resaltar": [
+    "France"
+   ],
+   "pines": [
+    {
+     "lat": 48.44,
+     "lon": 5.67,
+     "texto": "DOMRÉMY"
+    }
+   ]
+  },
+  {
+   "en": "Decía escuchar voces",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1300,
+     "colores": [
+      "#7a9a6a",
+      "#5a7a4a",
+      "#3a5a2e"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#6a8a4a",
+      "#2e4a22"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "rayos",
+     "x": 540,
+     "y": -100,
+     "op": 0.3
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.8,
+     "ropa": "vestido",
+     "peinado": "corto",
+     "pelo": "#5a3a1e",
+     "mira": "izq"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "ESCUCHABA",
+    "VOCES"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "En mil cuatrocientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a2a2a",
+     "piso": "#2a1410",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "trono",
+     "x": 700,
+     "y": 1500,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 700,
+     "y": 1480,
+     "s": 1.0,
+     "ropa": "tunica_roja",
+     "pelo": "#3a2a1e"
+    },
+    {
+     "d": "armadura",
+     "x": 300,
+     "y": 1650,
+     "s": 1.2
+    }
+   ],
+   "camara": "push",
+   "dato": "1429",
+   "texto": [
+    "ARMADURA",
+    "Y TROPAS"
+   ],
+   "acento": 0
+  },
+  {
+   "en": "La ciudad de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1300
+    },
+    {
+     "d": "castillo",
+     "x": 540,
+     "y": 1420,
+     "s": 1.0
+    },
+    {
+     "d": "ejercito",
+     "x": 540,
+     "y": 1600,
+     "s": 0.9,
+     "color": "#2a1d14"
+    },
+    {
+     "d": "suelo",
+     "y": 1420,
+     "colores": [
+      "#5a5a3a",
+      "#2a2a1a"
+     ]
+    }
+   ],
+   "camara": "pan_der",
+   "dato": [
+    "ORLEANS",
+    "SITIADA"
+   ],
+   "amb": "multitud"
+  },
+  {
+   "en": "Con Juana al",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1300,
+     "colores": [
+      "#7a9a6a",
+      "#5a7a4a",
+      "#3a5a2e"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#6a8a4a",
+      "#2e4a22"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "castillo",
+     "x": 760,
+     "y": 1350,
+     "s": 0.6
+    },
+    {
+     "d": "armadura",
+     "x": 380,
+     "y": 1780,
+     "s": 1.6
+    }
+   ],
+   "camara": "push",
+   "amb": "multitud",
+   "amb_vol": 0.8
+  },
+  {
+   "en": "el sitio se",
+   "tipo": "contador",
+   "hasta": 9,
+   "unidad": "DÍAS",
+   "sub": "PARA ROMPER EL SITIO",
+   "icono": "🗡️"
+  },
+  {
+   "en": "Dos años después",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz": false
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1650,
+     "s": 1.6,
+     "ropa": "vestido",
+     "peinado": "corto",
+     "pelo": "#5a3a1e",
+     "mira": "izq"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CAPTURADA Y",
+    "JUZGADA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Murió en la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "rojo",
+     "horizonte": 1300
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#3a2a1e",
+      "#120c08"
+     ]
+    },
+    {
+     "d": "hoguera",
+     "x": 540,
+     "y": 1600,
+     "s": 1.1
+    },
+    {
+     "d": "particulas",
+     "tipo": "brasas",
+     "n": 60
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "A LOS",
+    "19 AÑOS"
+   ],
+   "amb": "fuego"
+  },
+  {
+   "en": "Veinticinco años más",
+   "tipo": "titulo",
+   "lineas": [
+    "DECLARADA",
+    "INOCENTE"
+   ],
+   "acento": 1,
+   "icono": "⚖️"
+  },
+  {
+   "en": "Hoy es santa",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1300,
+     "colores": [
+      "#7a9a6a",
+      "#5a7a4a",
+      "#3a5a2e"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#6a8a4a",
+      "#2e4a22"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "armadura",
+     "x": 540,
+     "y": 1760,
+     "s": 1.8
+    }
+   ],
+   "camara": "sube",
+   "texto": [
+    "SANTA Y",
+    "HEROÍNA"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "¿Conocías su historia?",
+   "tipo": "final",
+   "lineas": [
+    "¿CONOCÍAS SU",
+    "HISTORIA?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1300,
+     "colores": [
+      "#7a9a6a",
+      "#5a7a4a",
+      "#3a5a2e"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#6a8a4a",
+      "#2e4a22"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "armadura",
+     "x": 540,
+     "y": 1760,
+     "s": 1.4
+    }
+   ],
+   "comentario": "¡Qué valiente! ⚔️"
+  }
+ ]
+}

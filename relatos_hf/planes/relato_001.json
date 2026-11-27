@@ -1,0 +1,440 @@
+{
+ "tema": "historia",
+ "estilo": "pop",
+ "claves": [
+  "día.",
+  "volcán.",
+  "yeso…"
+ ],
+ "tomas": [
+  {
+   "en": "En el año",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1250
+    },
+    {
+     "d": "volcan",
+     "x": 600,
+     "y": 1260,
+     "s": 1.0
+    },
+    {
+     "d": "templo_romano",
+     "x": 360,
+     "y": 1500,
+     "s": 0.7
+    },
+    {
+     "d": "suelo",
+     "y": 1250,
+     "colores": [
+      "#8a7a66",
+      "#3a3024"
+     ]
+    },
+    {
+     "d": "particulas",
+     "tipo": "ceniza",
+     "n": 70
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "AÑO 79",
+    "D. C."
+   ],
+   "amb": "fuego",
+   "sfx": "boom"
+  },
+  {
+   "en": "en solo un",
+   "tipo": "titulo",
+   "lineas": [
+    "EN SOLO",
+    "UN DÍA"
+   ],
+   "acento": 1,
+   "icono": "🌋"
+  },
+  {
+   "en": "Pompeya era una",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "volcan",
+     "x": 700,
+     "y": 1250,
+     "s": 0.8,
+     "erupcion": false
+    },
+    {
+     "d": "suelo",
+     "y": 1250,
+     "colores": [
+      "#b9a888",
+      "#6a5e4a"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "templo_romano",
+     "x": 540,
+     "y": 1520,
+     "s": 0.9
+    },
+    {
+     "d": "persona_real",
+     "x": 200,
+     "y": 1720,
+     "s": 1.2,
+     "ropa": "tunica",
+     "piel": "media",
+     "pelo": "#1b1b1b"
+    },
+    {
+     "d": "persona_real",
+     "x": 880,
+     "y": 1700,
+     "s": 1.15,
+     "ropa": "tunica_roja",
+     "piel": "media",
+     "peinado": "mono",
+     "pelo": "#2a1a10"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "TABERNAS Y",
+    "TEMPLOS"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "a los pies",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "volcan",
+     "x": 700,
+     "y": 1250,
+     "s": 0.8,
+     "erupcion": false
+    },
+    {
+     "d": "suelo",
+     "y": 1250,
+     "colores": [
+      "#b9a888",
+      "#6a5e4a"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "templo_romano",
+     "x": 300,
+     "y": 1480,
+     "s": 0.6
+    }
+   ],
+   "camara": "pull",
+   "texto": "EL MONTE VESUBIO",
+   "amb": "viento",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Nadie sabía que",
+   "tipo": "mapa",
+   "centro": [
+    40.82,
+    14.43
+   ],
+   "zoom": 22,
+   "zoom_desde": 3,
+   "centro_desde": [
+    42,
+    12
+   ],
+   "resaltar": [
+    "Italy"
+   ],
+   "pines": [
+    {
+     "lat": 40.75,
+     "lon": 14.49,
+     "texto": "POMPEYA"
+    },
+    {
+     "lat": 40.82,
+     "lon": 14.43,
+     "texto": "VESUBIO"
+    }
+   ],
+   "paso_pines": 0.8
+  },
+  {
+   "en": "Un mediodía, el",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "volcan",
+     "x": 540,
+     "y": 1260,
+     "s": 1.1
+    },
+    {
+     "d": "suelo",
+     "y": 1250,
+     "colores": [
+      "#8a7a66",
+      "#3a3024"
+     ]
+    }
+   ],
+   "camara": "pull",
+   "texto": "¡EXPLOTÓ!",
+   "sacudir": true,
+   "sfx": "explosion_lejana",
+   "sfx_dur": 2.5,
+   "amb": "fuego"
+  },
+  {
+   "en": "Primero cayó una",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1250
+    },
+    {
+     "d": "templo_romano",
+     "x": 540,
+     "y": 1500,
+     "s": 0.9
+    },
+    {
+     "d": "suelo",
+     "y": 1250,
+     "colores": [
+      "#6a6458",
+      "#2a2620"
+     ]
+    },
+    {
+     "d": "particulas",
+     "tipo": "ceniza",
+     "n": 120
+    }
+   ],
+   "camara": "baja",
+   "texto": [
+    "PIEDRAS",
+    "Y CENIZA"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Después, una nube",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "rojo",
+     "horizonte": 1250
+    },
+    {
+     "d": "volcan",
+     "x": 700,
+     "y": 1260,
+     "s": 1.0
+    },
+    {
+     "d": "niebla",
+     "y": 1150,
+     "op": 0.8,
+     "color": "#8a7060"
+    },
+    {
+     "d": "templo_romano",
+     "x": 300,
+     "y": 1480,
+     "s": 0.6
+    }
+   ],
+   "camara": "pan_izq",
+   "dato": [
+    "+100",
+    "KM/H"
+   ],
+   "amb": "fuego",
+   "sfx": "derrumbe",
+   "sfx_dur": 2.5
+  },
+  {
+   "en": "Mil ochocientos años",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "templo_romano",
+     "x": 540,
+     "y": 1480,
+     "s": 0.9,
+     "ruinas": true
+    },
+    {
+     "d": "suelo",
+     "y": 1250,
+     "colores": [
+      "#9a9488",
+      "#5a564c"
+     ]
+    },
+    {
+     "d": "persona_real",
+     "x": 780,
+     "y": 1700,
+     "s": 1.4,
+     "ropa": "obrero",
+     "sombrero": "fedora",
+     "bigote": true
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "1.800 AÑOS",
+    "DESPUÉS"
+   ],
+   "amb": "viento",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Los rellenaron con",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6a6458",
+     "piso": "#3a3630",
+     "luz_x": 540,
+     "luz_y": 900,
+     "cuadros": 0
+    },
+    {
+     "d": "molde_yeso",
+     "x": 540,
+     "y": 1500,
+     "s": 1.4
+    }
+   ],
+   "camara": "push",
+   "texto": "MOLDES DE YESO",
+   "amb": "ninguno"
+  },
+  {
+   "en": "y aparecieron las",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1200
+    },
+    {
+     "d": "suelo",
+     "y": 1200,
+     "colores": [
+      "#8a8478",
+      "#4a463e"
+     ]
+    },
+    {
+     "d": "molde_yeso",
+     "x": 300,
+     "y": 1500,
+     "s": 0.8
+    },
+    {
+     "d": "molde_yeso",
+     "x": 760,
+     "y": 1600,
+     "s": 1.0,
+     "espejo": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SU ÚLTIMO",
+    "SEGUNDO"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "¿Te gustaría visitar",
+   "tipo": "final",
+   "lineas": [
+    "¿VISITARÍAS",
+    "POMPEYA?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "volcan",
+     "x": 700,
+     "y": 1250,
+     "s": 0.8,
+     "erupcion": false
+    },
+    {
+     "d": "suelo",
+     "y": 1250,
+     "colores": [
+      "#b9a888",
+      "#6a5e4a"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "templo_romano",
+     "x": 540,
+     "y": 1500,
+     "s": 0.9,
+     "ruinas": true
+    }
+   ]
+  }
+ ]
+}

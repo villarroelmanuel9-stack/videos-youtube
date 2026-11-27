@@ -1,0 +1,302 @@
+{
+ "tema": "historia",
+ "estilo": "frio",
+ "claves": [
+  "mundo.",
+  "Endurance,",
+  "ninguno.",
+  "intacto,"
+ ],
+ "tomas": [
+  {
+   "en": "En mil novecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1150
+    },
+    {
+     "d": "hielo",
+     "y": 1150
+    },
+    {
+     "d": "velero",
+     "x": 540,
+     "y": 1230,
+     "s": 0.8
+    },
+    {
+     "d": "particulas",
+     "tipo": "nieve",
+     "n": 60
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ANTÁRTIDA",
+    "1915"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "y veintiocho hombres",
+   "tipo": "titulo",
+   "lineas": [
+    "28 HOMBRES",
+    "ATRAPADOS"
+   ],
+   "acento": 1,
+   "icono": "🧊"
+  },
+  {
+   "en": "Era el Endurance,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1150
+    },
+    {
+     "d": "hielo",
+     "y": 1150
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1750,
+     "s": 1.9,
+     "ropa": "abrigo",
+     "bigote": false,
+     "pelo": "#3a2a1e"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ERNEST",
+    "SHACKLETON"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "El barco quedó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1150
+    },
+    {
+     "d": "hielo",
+     "y": 1150
+    },
+    {
+     "d": "velero",
+     "x": 540,
+     "y": 1260,
+     "s": 1.0
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "ATRAPADO EN",
+    "EL HIELO"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "sfx": "crujido",
+   "sfx_dur": 2.0
+  },
+  {
+   "en": "hasta que se",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1150
+    },
+    {
+     "d": "hielo",
+     "y": 1150
+    },
+    {
+     "d": "velero",
+     "x": 540,
+     "y": 1260,
+     "s": 1.0,
+     "hundir_en": 0.5
+    }
+   ],
+   "camara": "fijo",
+   "texto": "SE HUNDIÓ",
+   "sfx": "crujido",
+   "sfx_dur": 2.5
+  },
+  {
+   "en": "Acamparon sobre el",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1150
+    },
+    {
+     "d": "hielo",
+     "y": 1150
+    },
+    {
+     "d": "carpa",
+     "x": 300,
+     "y": 1420,
+     "s": 0.6
+    },
+    {
+     "d": "carpa",
+     "x": 700,
+     "y": 1400,
+     "s": 0.5
+    },
+    {
+     "d": "bote",
+     "x": 540,
+     "y": 1520,
+     "s": 0.8,
+     "gente": 0
+    }
+   ],
+   "camara": "pan_der",
+   "texto": "ACAMPARON EN EL HIELO"
+  },
+  {
+   "en": "Desde ahí, Shackleton",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1100
+    },
+    {
+     "d": "mar",
+     "hora": "tormenta",
+     "horizonte": 1100
+    },
+    {
+     "d": "bote",
+     "x": 540,
+     "y": 1250,
+     "s": 1.2,
+     "gente": 6
+    },
+    {
+     "d": "lluvia"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "1.300 KM EN",
+    "UN BOTE"
+   ],
+   "acento": 0,
+   "amb": "olas",
+   "amb_vol": 1.2
+  },
+  {
+   "en": "cruzaron mil trescientos",
+   "tipo": "mapa",
+   "centro": [
+    -58,
+    -45
+   ],
+   "zoom": 3.5,
+   "zoom_desde": 1.5,
+   "centro_desde": [
+    -60,
+    -50
+   ],
+   "resaltar": [
+    "Falkland Is."
+   ],
+   "ruta": [
+    [
+     -61.1,
+     -55.2
+    ],
+    [
+     -54.2,
+     -36.5
+    ]
+   ],
+   "pines": [
+    {
+     "lat": -61.1,
+     "lon": -55.2,
+     "texto": "ISLA ELEFANTE"
+    },
+    {
+     "lat": -54.2,
+     "lon": -36.5,
+     "texto": "GEORGIA DEL SUR"
+    }
+   ],
+   "paso_pines": 1.2
+  },
+  {
+   "en": "Volvió por los",
+   "tipo": "titulo",
+   "lineas": [
+    "NO MURIÓ",
+    "NINGUNO"
+   ],
+   "acento": 1,
+   "icono": "🙌"
+  },
+  {
+   "en": "Y en dos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "bajo_agua"
+    },
+    {
+     "d": "velero",
+     "x": 540,
+     "y": 1500,
+     "s": 0.9
+    }
+   ],
+   "camara": "baja",
+   "dato": [
+    "2022:",
+    "LO ENCONTRARON"
+   ],
+   "amb": "burbujas",
+   "amb_vol": 0.6
+  },
+  {
+   "en": "¿Tú lo habrías",
+   "tipo": "final",
+   "lineas": [
+    "¿LO HABRÍAS",
+    "LOGRADO?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1150
+    },
+    {
+     "d": "hielo",
+     "y": 1150
+    }
+   ]
+  }
+ ]
+}

@@ -3,7 +3,7 @@
 import json, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent)); sys.path.insert(0, str(Path(__file__).parent.parent))
-import motor, ilustra, ilustra_mundo, ilustra_obj, ilustra_hd  # noqa
+import motor, ilustra, ilustra_mundo, ilustra_obj, ilustra_hd, ilustra_extra  # noqa
 import numpy as np, pro
 SONIDOS = set()
 r = np.random.default_rng(0)

@@ -1,0 +1,319 @@
+{
+ "tema": "ciencia",
+ "estilo": "retro",
+ "claves": [
+  "chocolate",
+  "magnetrón,",
+  "palomitas.",
+  "Radarange,"
+ ],
+ "tomas": [
+  {
+   "en": "El microondas se",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4a5a",
+     "piso": "#1d252d",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "microondas",
+     "x": 540,
+     "y": 1650,
+     "s": 1.0
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "POR UN",
+    "CHOCOLATE"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "En mil novecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4a5a",
+     "piso": "#1d252d",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "pantalla",
+     "x": 760,
+     "y": 1350,
+     "s": 0.9,
+     "texto": "RADAR",
+     "tam": 100
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1650,
+     "s": 1.7,
+     "ropa": "traje_gris",
+     "lentes": true,
+     "peinado": "calvo"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "PERCY SPENCER",
+    "1945"
+   ],
+   "amb": "zumbido",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Un día, al",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4a5a",
+     "piso": "#1d252d",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "computadora",
+     "x": 700,
+     "y": 1500,
+     "s": 0.8
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1650,
+     "s": 1.6,
+     "ropa": "traje_gris",
+     "lentes": true,
+     "peinado": "calvo",
+     "mov": "camina",
+     "avance": 120
+    }
+   ],
+   "camara": "pan_der",
+   "texto": "UN MAGNETRÓN",
+   "amb": "zumbido",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "notó que su",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a2a1e",
+     "piso": "#1a120c",
+     "luz_x": 540,
+     "luz_y": 800,
+     "cuadros": 0
+    },
+    {
+     "d": "texto_svg",
+     "x": 540,
+     "y": 1300,
+     "texto": "🍫",
+     "tam": 10,
+     "color": "#000"
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 1200,
+     "r": 400,
+     "color": "#ff9a3c",
+     "op": 0.4
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "¡EL CHOCOLATE SE",
+    "DERRITIÓ!"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Curioso, acercó granos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4a5a",
+     "piso": "#1d252d",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1550,
+     "s": 1.1
+    },
+    {
+     "d": "particulas",
+     "tipo": "chispas",
+     "n": 40
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¡PALOMITAS",
+    "DE MAÍZ!"
+   ],
+   "acento": 1,
+   "sfx": "pop",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Después probó con",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4a5a",
+     "piso": "#1d252d",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "explosion",
+     "x": 540,
+     "y": 1200,
+     "s": 0.6,
+     "en": 0.6
+    },
+    {
+     "d": "persona_real",
+     "x": 780,
+     "y": 1650,
+     "s": 1.5,
+     "ropa": "camisa",
+     "lentes": true
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "¡EL HUEVO LE",
+    "EXPLOTÓ!"
+   ],
+   "acento": 1,
+   "sacudir": true,
+   "sfx": "boom",
+   "sfx_en": 0.6
+  },
+  {
+   "en": "El primer horno",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4a5a",
+     "piso": "#1d252d",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "microondas",
+     "x": 420,
+     "y": 1700,
+     "s": 1.1
+    },
+    {
+     "d": "persona_real",
+     "x": 820,
+     "y": 1700,
+     "s": 1.5,
+     "ropa": "traje_gris",
+     "lentes": true,
+     "peinado": "calvo"
+    }
+   ],
+   "camara": "sube",
+   "dato": [
+    "RADARANGE",
+    "1,8 M"
+   ],
+   "amb": "zumbido",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "y pesaba más",
+   "tipo": "contador",
+   "hasta": 300,
+   "unidad": "KILOS",
+   "sub": "MÁS DE",
+   "icono": "⚖️"
+  },
+  {
+   "en": "Solo lo compraban",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1200
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1200
+    },
+    {
+     "d": "transatlantico",
+     "x": 540,
+     "y": 1280,
+     "s": 0.6,
+     "luces": false
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "RESTAURANTES",
+    "Y BARCOS"
+   ],
+   "acento": 0,
+   "amb": "olas"
+  },
+  {
+   "en": "¿Qué es lo",
+   "tipo": "final",
+   "lineas": [
+    "¿QUÉ CALIENTAS",
+    "PRIMERO?"
+   ],
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4a5a",
+     "piso": "#1d252d",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "microondas",
+     "x": 540,
+     "y": 1700,
+     "s": 1.0
+    }
+   ],
+   "comentario": "El café de la mañana ☕"
+  }
+ ]
+}

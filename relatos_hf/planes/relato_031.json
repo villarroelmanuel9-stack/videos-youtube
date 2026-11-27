@@ -1,0 +1,337 @@
+{
+ "tema": "historia",
+ "estilo": "calido",
+ "claves": [
+  "Chile.",
+  "naufragó",
+  "cabras,",
+  "Crusoe."
+ ],
+ "tomas": [
+  {
+   "en": "El verdadero Robinson",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "isla",
+     "x": 540,
+     "y": 1300,
+     "s": 1.3,
+     "arboles": 10
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "EL VERDADERO",
+    "ROBINSON CRUSOE"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "vivió solo en",
+   "tipo": "mapa",
+   "centro": [
+    -33.64,
+    -78.85
+   ],
+   "zoom": 8,
+   "zoom_desde": 2,
+   "centro_desde": [
+    -33,
+    -72
+   ],
+   "resaltar": [
+    "Chile"
+   ],
+   "pines": [
+    {
+     "lat": -33.64,
+     "lon": -78.85,
+     "texto": "JUAN FERNÁNDEZ"
+    }
+   ]
+  },
+  {
+   "en": "En mil setecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "velero",
+     "x": 540,
+     "y": 1290,
+     "s": 0.8,
+     "avance": 80,
+     "reflejo": true
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "1704",
+    "ALEXANDER SELKIRK"
+   ],
+   "amb": "olas"
+  },
+  {
+   "en": "Discutió con el",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1300
+    },
+    {
+     "d": "mar",
+     "hora": "atardecer",
+     "horizonte": 1300
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1720,
+     "s": 1.5,
+     "ropa": "obrero",
+     "barba": true,
+     "pelo": "#5a3a1e"
+    },
+    {
+     "d": "persona_real",
+     "x": 760,
+     "y": 1720,
+     "s": 1.5,
+     "ropa": "traje",
+     "sombrero": "bombin",
+     "bigote": true
+    },
+    {
+     "d": "baranda",
+     "y": 1740
+    }
+   ],
+   "camara": "push",
+   "texto": "¡DÉJENME EN LA ISLA!",
+   "amb": "olas"
+  },
+  {
+   "en": "Cuando se arrepintió,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "velero",
+     "x": 540,
+     "y": 1290,
+     "s": 0.7,
+     "mov": "avanza",
+     "avance": 500
+    },
+    {
+     "d": "suelo",
+     "y": 1500,
+     "colores": [
+      "#e6c98a",
+      "#a88a5a"
+     ],
+     "tipo": "arena"
+    },
+    {
+     "d": "persona_real",
+     "x": 300,
+     "y": 1760,
+     "s": 1.4,
+     "ropa": "obrero",
+     "barba": true,
+     "pelo": "#5a3a1e",
+     "mira": "der"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "EL BARCO SE",
+    "FUE SIN ÉL"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "Y tenía razón:",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1250
+    },
+    {
+     "d": "mar",
+     "hora": "tormenta",
+     "horizonte": 1250
+    },
+    {
+     "d": "velero",
+     "x": 540,
+     "y": 1290,
+     "s": 0.8,
+     "hundir_en": 0.6
+    },
+    {
+     "d": "lluvia"
+    }
+   ],
+   "camara": "fijo",
+   "texto": "ESE BARCO NAUFRAGÓ",
+   "sfx": "crujido",
+   "sfx_dur": 2.0
+  },
+  {
+   "en": "Vivió cuatro años",
+   "tipo": "contador",
+   "hasta": 4,
+   "unidad": "AÑOS Y 4 MESES",
+   "sub": "SOLO",
+   "icono": "🏝️"
+  },
+  {
+   "en": "Cazaba cabras, se",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1300,
+     "colores": [
+      "#5a8a4a",
+      "#3e6a32",
+      "#2a4a22"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#6a8a4a",
+      "#2e4a22"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "cabra",
+     "x": 780,
+     "y": 1650,
+     "s": 1.2
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1720,
+     "s": 1.5,
+     "ropa": "obrero",
+     "barba": true,
+     "pelo": "#5a3a1e"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "ROPA DE",
+    "PIEL DE CABRA"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Su historia inspiró",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "luz_x": 540,
+     "luz_y": 800
+    },
+    {
+     "d": "libro",
+     "x": 540,
+     "y": 1450,
+     "s": 1.4
+    }
+   ],
+   "camara": "push",
+   "texto": "«ROBINSON CRUSOE»",
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Hoy esa isla",
+   "tipo": "titulo",
+   "lineas": [
+    "ISLA ROBINSON",
+    "CRUSOE"
+   ],
+   "acento": 1,
+   "icono": "🇨🇱"
+  },
+  {
+   "en": "¿Tú aguantarías solo",
+   "tipo": "final",
+   "lineas": [
+    "¿AGUANTARÍAS",
+    "SOLO?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "isla",
+     "x": 540,
+     "y": 1300,
+     "s": 1.2
+    }
+   ]
+  }
+ ]
+}

@@ -52,7 +52,8 @@ def cielo_hd(p, u, t):
         out.append("".join(est))
         for k in range(4):
             vaiven(t, f".{u}e{k}", "opacity: 0.2", periodo=1.0 + k * .45, dt=.1 * k)
-    if p.get("astro") == "luna":
+    astro = p.get("astro", {"noche": "luna", "dia": "sol", "atardecer": "sol"}.get(hora))
+    if astro == "luna":
         ax, ay, ar = p.get("astro_x", 800), p.get("astro_y", 400), p.get("astro_r", 70)
         out.append(f'<defs><filter id="{u}lt"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="4" seed="9"/>'
                    f'<feColorMatrix values="0 0 0 0 .55 0 0 0 0 .53 0 0 0 0 .46 0 0 0 .9 -.25"/><feComposite in2="SourceGraphic" operator="in"/></filter>'
@@ -61,8 +62,8 @@ def cielo_hd(p, u, t):
                    f'<circle cx="{ax}" cy="{ay}" r="{ar * 2.2}" fill="#fff6d6" opacity=".22" filter="url(#{u}blur40)"/>'
                    f'<circle cx="{ax}" cy="{ay}" r="{ar}" fill="url(#{u}mo)"/>'
                    f'<circle cx="{ax}" cy="{ay}" r="{ar}" fill="#fff" filter="url(#{u}lt)" opacity=".8"/>')
-    if hora == "atardecer" and p.get("astro") == "sol":
-        ax, ay, ar = p.get("astro_x", 760), p.get("astro_y", 900), p.get("astro_r", 80)
+    if hora in ("atardecer", "dia") and astro == "sol":
+        ax, ay, ar = p.get("astro_x", 790), p.get("astro_y", hz - 200 if hora == "atardecer" else 330), p.get("astro_r", 80 if hora == "atardecer" else 60)
         out.append(f'<circle cx="{ax}" cy="{ay}" r="{ar * 4}" fill="#ffb35c" opacity=".35" filter="url(#{u}blur40)"/>'
                    f'<circle cx="{ax}" cy="{ay}" r="{ar * 1.6}" fill="#ffe0a0" opacity=".6" filter="url(#{u}blur18)"/>'
                    f'<circle cx="{ax}" cy="{ay}" r="{ar}" fill="#fff4d6"/>')
@@ -322,12 +323,34 @@ def persona_real(p, u, t):
                           f'<path d="M-40,-250 L-20,-250 M22,-250 L42,-250" stroke="{TIN}" stroke-width="2" opacity=".6"/>')
         partes.append(f'<path d="M12,-364 L52,-364 L56,{largo} L10,{largo} Z" fill="url(#{u}sh)"/>'
                       f'<path d="M-46,-356 Q-54,-300 -52,{largo + 20}" stroke="#fff" stroke-opacity=".18" stroke-width="5" fill="none"/>')
+    # detalles de tela: pliegues, bolsillos, pañuelo, cinturón, estampados
+    det = []
+    if not larga:
+        det.append(f'<path d="M-24,-120 q6,-10 0,-22 M22,-110 q-6,-12 0,-24" stroke="#000" stroke-opacity=".25" stroke-width="2" fill="none"/>')
+        if ropa in ("traje", "traje_gris", "traje_cafe"):
+            det.append(f'<path d="M-46,-216 L-24,-216 L-24,-206 L-46,-206 Z M24,-216 L46,-216 L46,-206 L24,-206 Z" fill="#000" opacity=".25"/>'
+                       f'<path d="M28,-336 L42,-336 L40,-326 L30,-326 Z" fill="{p.get("panuelo", "#f2efe6")}"/>'
+                       f'<path d="M-40,-300 q10,14 4,30 M38,-296 q-8,16 -2,30" stroke="#000" stroke-opacity=".2" stroke-width="2" fill="none"/>')
+        if ropa in ("obrero", "uniforme"):
+            det.append(f'<rect x="-52" y="-220" width="104" height="10" fill="#2a1d14"/><rect x="-8" y="-222" width="16" height="14" fill="#c9a24a"/>'
+                       f'<rect x="-40" y="-330" width="26" height="22" fill="#000" opacity=".18"/><rect x="14" y="-330" width="26" height="22" fill="#000" opacity=".18"/>')
+        det.append(f'<path d="M-30,-6 L-12,-6 M12,-6 L30,-6" stroke="#fff" stroke-opacity=".3" stroke-width="1.5"/>')
+    else:
+        rngp = random.Random(len(u))
+        if ropa == "vestido":
+            det.append("".join(f'<circle cx="{rngp.uniform(-40, 40):.0f}" cy="{rngp.uniform(-340, -30):.0f}" r="3.5" fill="#fff" opacity=".35"/>' for _ in range(26)))
+        elif ropa.startswith("kimono"):
+            det.append("".join(f'<path d="M{x},{yy} a10,10 0 0,1 20,0" stroke="#fff" stroke-opacity=".25" stroke-width="2" fill="none"/>' for x in range(-44, 40, 22) for yy in range(-210, -20, 30)))
+        det.append(f'<path d="M-30,-120 q8,40 4,100 M24,-140 q-6,50 0,120" stroke="#000" stroke-opacity=".18" stroke-width="2.5" fill="none"/>')
+    partes.append("".join(det))
     # brazos con mano
     manga = 26 if not ropa.startswith("kimono") else 40
     for lado, idb in ((-1, "bi"), (1, "bd")):
         partes.append(f'<g id="{u}{idb}"><path d="M{lado * 50},-356 Q{lado * 66},-290 {lado * 60},-216" stroke="{TIN}" stroke-width="{manga + 6}" stroke-linecap="round" fill="none"/>'
                       f'<path d="M{lado * 50},-356 Q{lado * 66},-290 {lado * 60},-216" stroke="{c1 if lado < 0 else c2}" stroke-width="{manga}" stroke-linecap="round" fill="none"/>'
-                      f'<ellipse cx="{lado * 60}" cy="-200" rx="10" ry="14" fill="url(#{u}p)" {O}/></g>')
+                      f'<path d="M{lado * 60 - 13},-222 L{lado * 60 + 13},-222" stroke="#f2efe6" stroke-width="5"/>'
+                      f'<ellipse cx="{lado * 60}" cy="-200" rx="10" ry="14" fill="url(#{u}p)" {O}/>'
+                      f'<path d="M{lado * 60 - 5},-192 l0,8 M{lado * 60},-190 l0,9 M{lado * 60 + 5},-192 l0,8" stroke="{ps}" stroke-width="1.5"/></g>')
     # cuello y cabeza (≈1/7 del alto)
     partes.append(f'<path d="M-9,-384 L9,-384 L10,-362 L-10,-362 Z" fill="{ps}"/>')
     partes.append(f'<ellipse cx="0" cy="-412" rx="24" ry="31" fill="url(#{u}p)" {O}/>')

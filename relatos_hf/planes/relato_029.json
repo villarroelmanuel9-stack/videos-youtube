@@ -1,0 +1,414 @@
+{
+ "tema": "historia",
+ "estilo": "frio",
+ "claves": [
+  "otro.",
+  "difteria",
+  "rompiendo.",
+  "olvidado"
+ ],
+ "tomas": [
+  {
+   "en": "El perro más",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "ciudad",
+     "era": "moderna",
+     "y": 1360,
+     "hora": "dia"
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#6a8a4a",
+      "#2e4a22"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "estatua_perro",
+     "x": 540,
+     "y": 1640,
+     "s": 1.0
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "ESTATUA EN",
+    "NUEVA YORK"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "pero el verdadero",
+   "tipo": "titulo",
+   "lineas": [
+    "EL VERDADERO HÉROE",
+    "FUE OTRO"
+   ],
+   "acento": 1,
+   "icono": "🐺"
+  },
+  {
+   "en": "En enero de",
+   "tipo": "mapa",
+   "centro": [
+    64.5,
+    -165.4
+   ],
+   "zoom": 6,
+   "zoom_desde": 1.6,
+   "centro_desde": [
+    60,
+    -150
+   ],
+   "resaltar": [
+    "United States of America"
+   ],
+   "pines": [
+    {
+     "lat": 64.5,
+     "lon": -165.4,
+     "texto": "NOME, ALASKA"
+    }
+   ],
+   "titulo": "ENERO 1925"
+  },
+  {
+   "en": "amenazaba a los",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a6a7a",
+     "piso": "#2a323a",
+     "vista": "nieve",
+     "ventana_x": 650
+    },
+    {
+     "d": "cama",
+     "x": 380,
+     "y": 1500,
+     "s": 1.0
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "DIFTERIA EN",
+    "LOS NIÑOS"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "El medicamento estaba",
+   "tipo": "contador",
+   "hasta": 1000,
+   "unidad": "KILÓMETROS",
+   "sub": "MÁS DE",
+   "icono": "💉"
+  },
+  {
+   "en": "Veinte equipos de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "nieve": true,
+     "colores": [
+      "#9aa8bf",
+      "#7d8aa6",
+      "#5c6a85"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#e6edf7",
+      "#9aa8bf"
+     ],
+     "tipo": "nieve"
+    },
+    {
+     "d": "particulas",
+     "tipo": "nieve",
+     "n": 70
+    },
+    {
+     "d": "trineo",
+     "x": 200,
+     "y": 1600,
+     "s": 1.0,
+     "perros": 5,
+     "avance": 400
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "20 EQUIPOS",
+    "DE TRINEOS"
+   ],
+   "acento": 0,
+   "amb": "viento"
+  },
+  {
+   "en": "con temperaturas bajo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "nieve": true,
+     "colores": [
+      "#9aa8bf",
+      "#7d8aa6",
+      "#5c6a85"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#e6edf7",
+      "#9aa8bf"
+     ],
+     "tipo": "nieve"
+    },
+    {
+     "d": "particulas",
+     "tipo": "nieve",
+     "n": 70
+    },
+    {
+     "d": "trineo",
+     "x": 300,
+     "y": 1650,
+     "s": 1.1,
+     "perros": 4,
+     "avance": 300
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "-40 °C"
+   ],
+   "amb": "viento",
+   "amb_vol": 1.2
+  },
+  {
+   "en": "Togo, un husky",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "nieve": true,
+     "colores": [
+      "#9aa8bf",
+      "#7d8aa6",
+      "#5c6a85"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#e6edf7",
+      "#9aa8bf"
+     ],
+     "tipo": "nieve"
+    },
+    {
+     "d": "particulas",
+     "tipo": "nieve",
+     "n": 70
+    },
+    {
+     "d": "perro",
+     "raza": "husky",
+     "x": 540,
+     "y": 1700,
+     "s": 1.6
+    }
+   ],
+   "camara": "push_fuerte",
+   "dato": [
+    "TOGO",
+    "12 AÑOS"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "cruzó un mar",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1200
+    },
+    {
+     "d": "hielo",
+     "y": 1200
+    },
+    {
+     "d": "trineo",
+     "x": 200,
+     "y": 1500,
+     "s": 0.9,
+     "perros": 5,
+     "avance": 500
+    },
+    {
+     "d": "particulas",
+     "tipo": "nieve",
+     "n": 90
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "UN MAR CONGELADO",
+    "QUE SE ROMPÍA"
+   ],
+   "acento": 1,
+   "sfx": "crujido",
+   "sfx_dur": 2.0,
+   "amb": "viento"
+  },
+  {
+   "en": "Balto corrió el",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "nieve": true,
+     "colores": [
+      "#9aa8bf",
+      "#7d8aa6",
+      "#5c6a85"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#e6edf7",
+      "#9aa8bf"
+     ],
+     "tipo": "nieve"
+    },
+    {
+     "d": "particulas",
+     "tipo": "nieve",
+     "n": 70
+    },
+    {
+     "d": "perro",
+     "raza": "husky",
+     "x": 540,
+     "y": 1700,
+     "s": 1.3,
+     "espejo": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "BALTO SE LLEVÓ",
+    "LA FAMA"
+   ],
+   "acento": 0,
+   "amb": "viento",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Togo fue casi",
+   "tipo": "titulo",
+   "lineas": [
+    "TOGO, CASI",
+    "OLVIDADO"
+   ],
+   "acento": 1,
+   "icono": "🐾"
+  },
+  {
+   "en": "¿Conocías a Togo?",
+   "tipo": "final",
+   "lineas": [
+    "¿CONOCÍAS",
+    "A TOGO?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1260,
+     "nieve": true,
+     "colores": [
+      "#9aa8bf",
+      "#7d8aa6",
+      "#5c6a85"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1260,
+     "colores": [
+      "#e6edf7",
+      "#9aa8bf"
+     ],
+     "tipo": "nieve"
+    },
+    {
+     "d": "particulas",
+     "tipo": "nieve",
+     "n": 70
+    },
+    {
+     "d": "perro",
+     "raza": "husky",
+     "x": 540,
+     "y": 1700,
+     "s": 1.2
+    }
+   ],
+   "comentario": "¡Justicia para Togo! 🐺"
+  }
+ ]
+}

@@ -1,0 +1,388 @@
+{
+ "tema": "historia",
+ "estilo": "clasico",
+ "claves": [
+  "equivocada.",
+  "rebotó.",
+  "Princip.",
+  "guerra."
+ ],
+ "tomas": [
+  {
+   "en": "La Primera Guerra",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1260
+    },
+    {
+     "d": "suelo",
+     "y": 1250,
+     "colores": [
+      "#9a9488",
+      "#5a564c"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "auto_1914",
+     "x": 540,
+     "y": 1700,
+     "s": 1.0
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "LA CALLE",
+    "EQUIVOCADA"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "El veintiocho de",
+   "tipo": "fecha",
+   "dia": "28",
+   "mes": "JUNIO",
+   "anio": "1914"
+  },
+  {
+   "en": "el archiduque Francisco",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1260
+    },
+    {
+     "d": "suelo",
+     "y": 1250,
+     "colores": [
+      "#9a9488",
+      "#5a564c"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "auto_1914",
+     "x": 540,
+     "y": 1700,
+     "s": 1.2
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "FRANCISCO",
+    "FERNANDO"
+   ],
+   "amb": "multitud",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "visitaba Sarajevo. Esa",
+   "tipo": "mapa",
+   "centro": [
+    43.85,
+    18.41
+   ],
+   "zoom": 18,
+   "zoom_desde": 3,
+   "centro_desde": [
+    46,
+    15
+   ],
+   "resaltar": [
+    "Bosnia and Herz."
+   ],
+   "pines": [
+    {
+     "lat": 43.85,
+     "lon": 18.41,
+     "texto": "SARAJEVO"
+    }
+   ]
+  },
+  {
+   "en": "ya le habían",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1260
+    },
+    {
+     "d": "suelo",
+     "y": 1250,
+     "colores": [
+      "#9a9488",
+      "#5a564c"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "auto_1914",
+     "x": 540,
+     "y": 1700,
+     "s": 1.0
+    },
+    {
+     "d": "explosion",
+     "x": 300,
+     "y": 1650,
+     "s": 0.6,
+     "en": 0.4
+    }
+   ],
+   "camara": "fijo",
+   "texto": "¡UNA BOMBA… REBOTÓ!",
+   "sacudir": true,
+   "sfx": "boom",
+   "sfx_en": 0.4
+  },
+  {
+   "en": "Los conspiradores se",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1260
+    },
+    {
+     "d": "suelo",
+     "y": 1250,
+     "colores": [
+      "#9a9488",
+      "#5a564c"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "persona_real",
+     "x": 200,
+     "y": 1700,
+     "s": 1.1,
+     "ropa": "traje",
+     "mov": "camina",
+     "avance": -160
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1700,
+     "s": 1.1,
+     "ropa": "traje_gris",
+     "mov": "camina",
+     "avance": 120
+    },
+    {
+     "d": "persona_real",
+     "x": 850,
+     "y": 1700,
+     "s": 1.1,
+     "ropa": "abrigo",
+     "mov": "camina",
+     "avance": 160
+    }
+   ],
+   "camara": "pull",
+   "texto": "SE DISPERSARON",
+   "amb": "multitud",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Uno de ellos,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1260
+    },
+    {
+     "d": "suelo",
+     "y": 1250,
+     "colores": [
+      "#9a9488",
+      "#5a564c"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1750,
+     "s": 1.9,
+     "ropa": "traje",
+     "pelo": "#1b1b1b",
+     "sombrero": "bombin"
+    }
+   ],
+   "camara": "push_fuerte",
+   "dato": [
+    "GAVRILO",
+    "PRINCIP"
+   ]
+  },
+  {
+   "en": "Horas después, el",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1260
+    },
+    {
+     "d": "suelo",
+     "y": 1250,
+     "colores": [
+      "#9a9488",
+      "#5a564c"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "auto_1914",
+     "x": 540,
+     "y": 1700,
+     "s": 1.0,
+     "mov": "frena"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": "DOBLÓ MAL",
+   "amb": "multitud",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Al frenar para",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1260
+    },
+    {
+     "d": "suelo",
+     "y": 1250,
+     "colores": [
+      "#9a9488",
+      "#5a564c"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "auto_1914",
+     "x": 650,
+     "y": 1700,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 200,
+     "y": 1720,
+     "s": 1.3,
+     "ropa": "traje",
+     "sombrero": "bombin"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "JUSTO FRENTE",
+    "A PRINCIP"
+   ],
+   "acento": 1,
+   "sfx": "crujido",
+   "sfx_dur": 1.0
+  },
+  {
+   "en": "Princip disparó. Un",
+   "tipo": "titulo",
+   "lineas": [
+    "UN MES DESPUÉS:",
+    "GUERRA"
+   ],
+   "acento": 1,
+   "icono": "💥",
+   "sfx": "boom"
+  },
+  {
+   "en": "¿Crees en las",
+   "tipo": "final",
+   "lineas": [
+    "¿CREES EN LAS",
+    "CASUALIDADES?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1260
+    },
+    {
+     "d": "suelo",
+     "y": 1250,
+     "colores": [
+      "#9a9488",
+      "#5a564c"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "auto_1914",
+     "x": 540,
+     "y": 1700,
+     "s": 1.0
+    }
+   ]
+  }
+ ]
+}

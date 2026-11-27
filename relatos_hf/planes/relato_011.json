@@ -1,0 +1,278 @@
+{
+ "tema": "guerra",
+ "estilo": "neon",
+ "claves": [
+  "no.",
+  "Arkhipov",
+  "votos",
+  "empezó."
+ ],
+ "tomas": [
+  {
+   "en": "En mil novecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "bajo_agua"
+    },
+    {
+     "d": "submarino",
+     "x": 540,
+     "y": 1000,
+     "s": 0.9
+    }
+   ],
+   "camara": "push",
+   "dato": "1962",
+   "amb": "burbujas",
+   "amb_vol": 0.6
+  },
+  {
+   "en": "y un solo",
+   "tipo": "titulo",
+   "lineas": [
+    "UN SOLO HOMBRE",
+    "DIJO QUE NO"
+   ],
+   "acento": 1,
+   "icono": "✋"
+  },
+  {
+   "en": "Era la Crisis",
+   "tipo": "mapa",
+   "centro": [
+    22.5,
+    -79.5
+   ],
+   "zoom": 6,
+   "zoom_desde": 1.5,
+   "centro_desde": [
+    30,
+    -80
+   ],
+   "resaltar": [
+    "Cuba",
+    "United States of America"
+   ],
+   "color_pais": "#b3261e",
+   "pines": [
+    {
+     "lat": 22.5,
+     "lon": -79.5,
+     "texto": "CUBA"
+    }
+   ],
+   "titulo": "CRISIS DE LOS MISILES"
+  },
+  {
+   "en": "El submarino B",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "bajo_agua"
+    },
+    {
+     "d": "submarino",
+     "x": 540,
+     "y": 1100,
+     "s": 1.1
+    }
+   ],
+   "camara": "pan_der",
+   "dato": "B-59",
+   "amb": "burbujas",
+   "amb_vol": 0.6
+  },
+  {
+   "en": "y los barcos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "bajo_agua"
+    },
+    {
+     "d": "submarino",
+     "x": 540,
+     "y": 1300,
+     "s": 0.8
+    },
+    {
+     "d": "explosion",
+     "x": 300,
+     "y": 700,
+     "s": 0.5,
+     "en": 0.4
+    },
+    {
+     "d": "explosion",
+     "x": 780,
+     "y": 900,
+     "s": 0.6,
+     "en": 1.2
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "CARGAS DE",
+    "PROFUNDIDAD"
+   ],
+   "acento": 1,
+   "sacudir": true,
+   "sfx": "explosion_lejana",
+   "sfx_dur": 2.0
+  },
+  {
+   "en": "Adentro hacía más",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3e30",
+     "piso": "#1a1c14",
+     "luz": false,
+     "cuadros": 0,
+     "pared_estilo": "liso"
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 800,
+     "r": 700,
+     "color": "#ff6a3c",
+     "op": 0.4
+    },
+    {
+     "d": "persona_real",
+     "x": 280,
+     "y": 1600,
+     "s": 1.2,
+     "ropa": "uniforme"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1600,
+     "s": 1.2,
+     "ropa": "uniforme"
+    },
+    {
+     "d": "persona_real",
+     "x": 800,
+     "y": 1600,
+     "s": 1.2,
+     "ropa": "uniforme"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "+40 °C",
+    "SIN AIRE"
+   ],
+   "amb": "zumbido",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "El capitán creyó",
+   "tipo": "titulo",
+   "lineas": [
+    "¿YA EMPEZÓ",
+    "LA GUERRA?"
+   ],
+   "acento": 1,
+   "icono": "☢️"
+  },
+  {
+   "en": "Pero para disparar",
+   "tipo": "contador",
+   "hasta": 3,
+   "unidad": "VOTOS",
+   "sub": "PARA DISPARAR",
+   "icono": "🗳️"
+  },
+  {
+   "en": "Vasili Arkhipov votó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3e30",
+     "piso": "#1a1c14",
+     "luz": false,
+     "cuadros": 0,
+     "pared_estilo": "liso"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1700,
+     "s": 2.1,
+     "ropa": "uniforme",
+     "sombrero": "gorra",
+     "color_sombrero": "#1d2233",
+     "mira": "izq"
+    }
+   ],
+   "camara": "push_fuerte",
+   "dato": [
+    "VASILI",
+    "ARKHIPOV"
+   ],
+   "texto": [
+    "VOTÓ EN",
+    "CONTRA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "El submarino salió",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1100
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1100
+    },
+    {
+     "d": "submarino",
+     "x": 540,
+     "y": 1150,
+     "s": 0.8,
+     "avance": 40
+    }
+   ],
+   "camara": "sube",
+   "texto": [
+    "LA GUERRA NUNCA",
+    "EMPEZÓ"
+   ],
+   "acento": 1,
+   "amb": "olas"
+  },
+  {
+   "en": "¿Conocías su nombre?",
+   "tipo": "final",
+   "lineas": [
+    "¿CONOCÍAS",
+    "SU NOMBRE?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1100
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1100
+    }
+   ],
+   "comentario": "Un héroe sin fama 🙌"
+  }
+ ]
+}

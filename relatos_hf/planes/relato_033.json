@@ -1,0 +1,282 @@
+{
+ "tema": "historia",
+ "estilo": "periodico",
+ "claves": [
+  "nadie",
+  "salitre,",
+  "artificial,",
+  "Patrimonio"
+ ],
+ "tomas": [
+  {
+   "en": "En medio del",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "desierto",
+     "y": 1250
+    },
+    {
+     "d": "ciudad",
+     "era": "colonial",
+     "y": 1300,
+     "semilla": 4
+    },
+    {
+     "d": "particulas",
+     "tipo": "polvo",
+     "n": 30
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UN PUEBLO",
+    "VACÍO"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "y nadie vive",
+   "tipo": "titulo",
+   "lineas": [
+    "Y NADIE",
+    "VIVE AHÍ"
+   ],
+   "acento": 1,
+   "icono": "🏚️"
+  },
+  {
+   "en": "Es Humberstone, una",
+   "tipo": "mapa",
+   "centro": [
+    -20.21,
+    -69.8
+   ],
+   "zoom": 12,
+   "zoom_desde": 2,
+   "centro_desde": [
+    -25,
+    -70
+   ],
+   "resaltar": [
+    "Chile"
+   ],
+   "pines": [
+    {
+     "lat": -20.21,
+     "lon": -69.8,
+     "texto": "HUMBERSTONE"
+    }
+   ],
+   "titulo": "1872"
+  },
+  {
+   "en": "Llegó a tener",
+   "tipo": "contador",
+   "hasta": 3500,
+   "unidad": "HABITANTES",
+   "sub": "TRABAJANDO EL SALITRE",
+   "icono": "⛏️"
+  },
+  {
+   "en": "que trabajaban extrayendo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "desierto",
+     "y": 1250
+    },
+    {
+     "d": "persona_real",
+     "x": 200,
+     "y": 1700,
+     "s": 1.1,
+     "ropa": "obrero",
+     "sombrero": "fedora",
+     "piel": "media"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1700,
+     "s": 1.1,
+     "ropa": "obrero",
+     "sombrero": "fedora",
+     "piel": "media"
+    },
+    {
+     "d": "persona_real",
+     "x": 880,
+     "y": 1700,
+     "s": 1.1,
+     "ropa": "obrero",
+     "sombrero": "fedora",
+     "piel": "media"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "EL ORO BLANCO",
+    "DE CHILE"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Pero en Alemania",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4a4a",
+     "piso": "#1a2424",
+     "luz_x": 700,
+     "luz_y": 600
+    },
+    {
+     "d": "frasco",
+     "x": 400,
+     "y": 1450,
+     "s": 0.9,
+     "contenido": "liquido",
+     "color_liquido": "#e9f3f6"
+    },
+    {
+     "d": "persona_real",
+     "x": 760,
+     "y": 1550,
+     "s": 1.3,
+     "ropa": "bata",
+     "bigote": true,
+     "lentes": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SALITRE",
+    "ARTIFICIAL"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "En mil novecientos",
+   "tipo": "titulo",
+   "lineas": [
+    "1960:",
+    "SE FUERON TODOS"
+   ],
+   "acento": 1,
+   "icono": "🚪"
+  },
+  {
+   "en": "Las casas, las",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "desierto",
+     "y": 1250
+    },
+    {
+     "d": "ciudad",
+     "era": "colonial",
+     "y": 1300,
+     "semilla": 7
+    },
+    {
+     "d": "particulas",
+     "tipo": "polvo",
+     "n": 40
+    }
+   ],
+   "camara": "pan_izq",
+   "texto": [
+    "CONGELADO EN",
+    "EL TIEMPO"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "y hasta la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "desierto",
+     "y": 1250
+    },
+    {
+     "d": "transatlantico",
+     "x": 540,
+     "y": 1500,
+     "s": 0.5,
+     "luces": false,
+     "casco": "#6a4a2a"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "PISCINA HECHA DE",
+    "UN BARCO"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Hoy es Patrimonio",
+   "tipo": "titulo",
+   "lineas": [
+    "PATRIMONIO DE",
+    "LA HUMANIDAD"
+   ],
+   "acento": 1,
+   "icono": "🏆"
+  },
+  {
+   "en": "¿Lo has visitado?",
+   "tipo": "final",
+   "lineas": [
+    "¿LO HAS",
+    "VISITADO?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "desierto",
+     "y": 1250
+    },
+    {
+     "d": "ciudad",
+     "era": "colonial",
+     "y": 1300,
+     "semilla": 4
+    }
+   ]
+  }
+ ]
+}

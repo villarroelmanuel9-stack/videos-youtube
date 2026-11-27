@@ -1,0 +1,343 @@
+{
+ "tema": "historia",
+ "estilo": "neon",
+ "claves": [
+  "vela.",
+  "maravillosas».",
+  "cinco",
+  "maldición"
+ ],
+ "tomas": [
+  {
+   "en": "En mil novecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#8a6a3a",
+     "piso": "#4a3620",
+     "luz_x": 540,
+     "luz_y": 800,
+     "cuadros": 0,
+     "pared_estilo": "liso"
+    },
+    {
+     "d": "puerta_tumba",
+     "x": 540,
+     "y": 1500,
+     "s": 1.0,
+     "agujero": true
+    },
+    {
+     "d": "velas",
+     "x": 260,
+     "y": 1500,
+     "s": 0.7,
+     "n": 1
+    }
+   ],
+   "camara": "push",
+   "dato": "1922",
+   "amb": "viento",
+   "amb_vol": 0.3
+  },
+  {
+   "en": "sellada hacía tres",
+   "tipo": "titulo",
+   "lineas": [
+    "SELLADA HACE",
+    "3.000 AÑOS"
+   ],
+   "acento": 1,
+   "icono": "🔒"
+  },
+  {
+   "en": "Howard Carter llevaba",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1300,
+     "colores": [
+      "#c9965a",
+      "#a8743e",
+      "#7a5228"
+     ]
+    },
+    {
+     "d": "desierto",
+     "y": 1300
+    },
+    {
+     "d": "persona_real",
+     "x": 360,
+     "y": 1700,
+     "s": 1.7,
+     "ropa": "traje_cafe",
+     "sombrero": "fedora",
+     "bigote": true
+    },
+    {
+     "d": "carpa",
+     "x": 820,
+     "y": 1420,
+     "s": 0.7
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "HOWARD",
+    "CARTER"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "en el Valle",
+   "tipo": "mapa",
+   "centro": [
+    25.74,
+    32.6
+   ],
+   "zoom": 25,
+   "zoom_desde": 2.5,
+   "centro_desde": [
+    27,
+    30
+   ],
+   "resaltar": [
+    "Egypt"
+   ],
+   "pines": [
+    {
+     "lat": 25.74,
+     "lon": 32.6,
+     "texto": "VALLE DE LOS REYES"
+    }
+   ]
+  },
+  {
+   "en": "y su patrocinador,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a5a4a",
+     "piso": "#2a1d14",
+     "vista": "dia",
+     "ventana_x": 650
+    },
+    {
+     "d": "persona_real",
+     "x": 380,
+     "y": 1550,
+     "s": 1.6,
+     "ropa": "traje_gris",
+     "bigote": true,
+     "peinado": "calvo",
+     "lentes": true
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "LORD",
+    "CARNARVON"
+   ],
+   "amb": "ninguno"
+  },
+  {
+   "en": "Entonces encontraron un",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1300,
+     "colores": [
+      "#c9965a",
+      "#a8743e",
+      "#7a5228"
+     ]
+    },
+    {
+     "d": "desierto",
+     "y": 1300
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1720,
+     "s": 1.6,
+     "ropa": "obrero",
+     "piel": "morena",
+     "pelo": "#111",
+     "sombrero": "gorra",
+     "color_sombrero": "#f2efe8"
+    }
+   ],
+   "camara": "baja",
+   "texto": [
+    "UN ESCALÓN",
+    "ESCONDIDO"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Al llegar a",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#8a6a3a",
+     "piso": "#4a3620",
+     "luz_x": 540,
+     "luz_y": 800,
+     "cuadros": 0,
+     "pared_estilo": "liso"
+    },
+    {
+     "d": "puerta_tumba",
+     "x": 540,
+     "y": 1500,
+     "s": 1.1,
+     "agujero": true
+    },
+    {
+     "d": "persona_real",
+     "x": 200,
+     "y": 1700,
+     "s": 1.5,
+     "ropa": "traje_cafe",
+     "sombrero": "fedora",
+     "bigote": true
+    }
+   ],
+   "camara": "push",
+   "texto": "¿VES ALGO?",
+   "amb": "ninguno"
+  },
+  {
+   "en": "Carter respondió: «Sí…",
+   "tipo": "titulo",
+   "lineas": [
+    "«SÍ… COSAS",
+    "MARAVILLOSAS»"
+   ],
+   "acento": 1,
+   "icono": "✨"
+  },
+  {
+   "en": "Adentro había oro,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6a4a20",
+     "piso": "#3a2410",
+     "luz_x": 540,
+     "luz_y": 900,
+     "cuadros": 0,
+     "pared_estilo": "liso"
+    },
+    {
+     "d": "tesoro",
+     "x": 540,
+     "y": 1550,
+     "s": 1.1
+    },
+    {
+     "d": "particulas",
+     "tipo": "chispas",
+     "n": 40
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "ORO, CARROS",
+    "Y ESTATUAS"
+   ],
+   "acento": 0,
+   "sfx": "ping",
+   "sfx_dur": 0.4
+  },
+  {
+   "en": "y más de",
+   "tipo": "contador",
+   "hasta": 5000,
+   "unidad": "OBJETOS",
+   "sub": "CASI INTACTOS",
+   "icono": "🏺"
+  },
+  {
+   "en": "Meses después, Carnarvon",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a2a",
+     "piso": "#141414",
+     "luz": false
+    },
+    {
+     "d": "velas",
+     "x": 540,
+     "y": 1400,
+     "s": 1.3,
+     "n": 4
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "MURIÓ POR UNA",
+    "INFECCIÓN"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "y así nació",
+   "tipo": "titulo",
+   "lineas": [
+    "LA MALDICIÓN",
+    "DEL FARAÓN"
+   ],
+   "acento": 0,
+   "icono": "⚱️",
+   "sfx": "boom"
+  },
+  {
+   "en": "¿Crees en la",
+   "tipo": "final",
+   "lineas": [
+    "¿CREES EN LA",
+    "MALDICIÓN?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#8a6a3a",
+     "piso": "#4a3620",
+     "luz_x": 540,
+     "luz_y": 800,
+     "cuadros": 0,
+     "pared_estilo": "liso"
+    },
+    {
+     "d": "tesoro",
+     "x": 540,
+     "y": 1600,
+     "s": 0.9
+    }
+   ]
+  }
+ ]
+}

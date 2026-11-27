@@ -1,0 +1,377 @@
+{
+ "tema": "historia",
+ "estilo": "periodico",
+ "claves": [
+  "mal",
+  "inmediatamente».",
+  "abriendo"
+ ],
+ "tomas": [
+  {
+   "en": "El Muro de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350
+    },
+    {
+     "d": "ciudad",
+     "era": "moderna",
+     "y": 1360,
+     "color": "#1d2233"
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#6a6a6a",
+      "#2a2a2a"
+     ]
+    },
+    {
+     "d": "muro_berlin",
+     "x": 540,
+     "y": 1520,
+     "s": 1.0
+    }
+   ],
+   "camara": "push",
+   "dato": "1989",
+   "amb": "viento"
+  },
+  {
+   "en": "por culpa de",
+   "tipo": "titulo",
+   "lineas": [
+    "POR UN PAPEL",
+    "MAL LEÍDO"
+   ],
+   "acento": 1,
+   "icono": "📄"
+  },
+  {
+   "en": "Durante veintiocho años,",
+   "tipo": "contador",
+   "hasta": 28,
+   "unidad": "AÑOS",
+   "sub": "DIVIDIÓ LA CIUDAD",
+   "icono": "🧱"
+  },
+  {
+   "en": "el muro había",
+   "tipo": "mapa",
+   "centro": [
+    52.52,
+    13.4
+   ],
+   "zoom": 30,
+   "zoom_desde": 3,
+   "centro_desde": [
+    52,
+    10
+   ],
+   "resaltar": [
+    "Germany"
+   ],
+   "pines": [
+    {
+     "lat": 52.52,
+     "lon": 13.4,
+     "texto": "BERLÍN"
+    }
+   ]
+  },
+  {
+   "en": "y cientos de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350
+    },
+    {
+     "d": "ciudad",
+     "era": "moderna",
+     "y": 1360,
+     "color": "#1d2233"
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#6a6a6a",
+      "#2a2a2a"
+     ]
+    },
+    {
+     "d": "muro_berlin",
+     "x": 540,
+     "y": 1520,
+     "s": 1.0
+    },
+    {
+     "d": "haz_luz",
+     "x": 900,
+     "y": 500,
+     "ang": 120,
+     "largo": 1200
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CIENTOS",
+    "MURIERON"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "El vocero Günter",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4a5a",
+     "piso": "#1d2530",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1560,
+     "s": 1.3
+    },
+    {
+     "d": "microfono",
+     "x": 540,
+     "y": 1320,
+     "s": 0.5
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1520,
+     "s": 1.4,
+     "ropa": "traje_gris",
+     "lentes": true,
+     "peinado": "calvo"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "GÜNTER",
+    "SCHABOWSKI"
+   ],
+   "amb": "multitud",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Un periodista le",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4a5a",
+     "piso": "#1d2530",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "persona_real",
+     "x": 300,
+     "y": 1600,
+     "s": 1.6,
+     "ropa": "traje",
+     "pelo": "#5a3a1e"
+    }
+   ],
+   "camara": "push",
+   "texto": "¿DESDE CUÁNDO?",
+   "amb": "multitud",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Él revisó sus",
+   "tipo": "titulo",
+   "lineas": [
+    "«QUE YO SEPA…",
+    "INMEDIATAMENTE»"
+   ],
+   "acento": 1,
+   "icono": "📺"
+  },
+  {
+   "en": "Esa misma noche,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350
+    },
+    {
+     "d": "ciudad",
+     "era": "moderna",
+     "y": 1360,
+     "color": "#1d2233"
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#6a6a6a",
+      "#2a2a2a"
+     ]
+    },
+    {
+     "d": "muro_berlin",
+     "x": 540,
+     "y": 1450,
+     "s": 0.8
+    },
+    {
+     "d": "persona_real",
+     "x": 120,
+     "y": 1700,
+     "s": 0.9,
+     "ropa": "abrigo"
+    },
+    {
+     "d": "persona_real",
+     "x": 300,
+     "y": 1740,
+     "s": 0.9,
+     "ropa": "traje_gris"
+    },
+    {
+     "d": "persona_real",
+     "x": 480,
+     "y": 1700,
+     "s": 0.9,
+     "ropa": "abrigo"
+    },
+    {
+     "d": "persona_real",
+     "x": 660,
+     "y": 1740,
+     "s": 0.9,
+     "ropa": "camisa"
+    },
+    {
+     "d": "persona_real",
+     "x": 840,
+     "y": 1700,
+     "s": 0.9,
+     "ropa": "abrigo"
+    },
+    {
+     "d": "persona_real",
+     "x": 980,
+     "y": 1740,
+     "s": 0.9,
+     "ropa": "traje"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "MILES EN LA",
+    "FRONTERA"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 1.2
+  },
+  {
+   "en": "Los guardias, sin",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350
+    },
+    {
+     "d": "ciudad",
+     "era": "moderna",
+     "y": 1360,
+     "color": "#1d2233"
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#6a6a6a",
+      "#2a2a2a"
+     ]
+    },
+    {
+     "d": "muro_berlin",
+     "x": 540,
+     "y": 1520,
+     "s": 1.0,
+     "abierto": true
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1640,
+     "s": 1.2,
+     "ropa": "uniforme",
+     "sombrero": "gorra",
+     "color_sombrero": "#3a4a2c"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¡ABRIERON",
+    "LAS PUERTAS!"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 1.4,
+   "sfx": "boom"
+  },
+  {
+   "en": "¿Sabías esta historia?",
+   "tipo": "final",
+   "lineas": [
+    "¿SABÍAS ESTA",
+    "HISTORIA?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350
+    },
+    {
+     "d": "ciudad",
+     "era": "moderna",
+     "y": 1360,
+     "color": "#1d2233"
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#6a6a6a",
+      "#2a2a2a"
+     ]
+    },
+    {
+     "d": "muro_berlin",
+     "x": 540,
+     "y": 1520,
+     "s": 1.0,
+     "abierto": true
+    }
+   ],
+   "comentario": "¡Por un papel! 😱"
+  }
+ ]
+}

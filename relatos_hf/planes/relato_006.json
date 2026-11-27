@@ -1,0 +1,301 @@
+{
+ "tema": "ciencia",
+ "estilo": "frio",
+ "claves": [
+  "problema».",
+  "aire.",
+  "calcetín",
+  "vivos."
+ ],
+ "tomas": [
+  {
+   "en": "«Houston, hemos tenido",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a5260",
+     "piso": "#2a2e36",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0,
+     "pared_estilo": "liso"
+    },
+    {
+     "d": "pantalla",
+     "x": 540,
+     "y": 1350,
+     "s": 1.4,
+     "alarma": true,
+     "texto": "ALARMA",
+     "tam": 110
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 700,
+     "r": 700,
+     "color": "#ff2a2a",
+     "op": 0.35,
+     "parpadeo": true
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "«HOUSTON, TENEMOS",
+    "UN PROBLEMA»"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 0.6,
+   "sacudir": true
+  },
+  {
+   "en": "camino a la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "espacio"
+    },
+    {
+     "d": "planeta",
+     "x": 860,
+     "y": 1500,
+     "r": 260
+    },
+    {
+     "d": "planeta",
+     "tipo": "luna",
+     "x": 250,
+     "y": 500,
+     "r": 120
+    },
+    {
+     "d": "satelite",
+     "x": 500,
+     "y": 1000,
+     "s": 0.8,
+     "avance": 200
+    }
+   ],
+   "camara": "pan_izq",
+   "texto": [
+    "CAMINO A",
+    "LA LUNA"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "En abril de",
+   "tipo": "fecha",
+   "dia": "13",
+   "mes": "ABRIL",
+   "anio": "1970"
+  },
+  {
+   "en": "un tanque de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "espacio"
+    },
+    {
+     "d": "planeta",
+     "x": 860,
+     "y": 1500,
+     "r": 260
+    },
+    {
+     "d": "explosion",
+     "x": 540,
+     "y": 950,
+     "s": 1.2,
+     "en": 0.2
+    },
+    {
+     "d": "satelite",
+     "x": 540,
+     "y": 950,
+     "s": 1.0,
+     "avance": 40
+    }
+   ],
+   "camara": "fijo",
+   "texto": "¡EXPLOTÓ UN TANQUE!",
+   "sacudir": true,
+   "sfx": "boom"
+  },
+  {
+   "en": "a más de",
+   "tipo": "contador",
+   "hasta": 300000,
+   "unidad": "KILÓMETROS",
+   "sub": "DE LA TIERRA",
+   "icono": "🌍"
+  },
+  {
+   "en": "Tuvieron que refugiarse",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a5260",
+     "piso": "#2a2e36",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0,
+     "pared_estilo": "liso"
+    },
+    {
+     "d": "persona_real",
+     "x": 250,
+     "y": 1550,
+     "s": 1.2,
+     "ropa": "camisa",
+     "pelo": "#5a3a1e"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1550,
+     "s": 1.2,
+     "ropa": "camisa",
+     "pelo": "#1b1b1b"
+    },
+    {
+     "d": "persona_real",
+     "x": 830,
+     "y": 1550,
+     "s": 1.2,
+     "ropa": "camisa",
+     "pelo": "#8a6a3a"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "MÓDULO PARA 2…",
+    "Y ERAN 3"
+   ],
+   "acento": 1,
+   "amb": "zumbido",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "El dióxido de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a5260",
+     "piso": "#2a2e36",
+     "luz_x": 540,
+     "luz_y": 700,
+     "cuadros": 0,
+     "pared_estilo": "liso"
+    },
+    {
+     "d": "pantalla",
+     "x": 540,
+     "y": 1350,
+     "s": 1.3,
+     "alarma": true,
+     "texto": "CO₂ ▲",
+     "tam": 120
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "EL AIRE SE",
+    "ENVENENABA"
+   ],
+   "acento": 1,
+   "amb": "zumbido"
+  },
+  {
+   "en": "y los filtros",
+   "tipo": "titulo",
+   "lineas": [
+    "FILTRO CUADRADO,",
+    "HUECO REDONDO"
+   ],
+   "acento": 1,
+   "icono": "🔲"
+  },
+  {
+   "en": "En la Tierra,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a6a7a",
+     "piso": "#2a323a",
+     "vista": "dia",
+     "ventana_x": 680
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1500,
+     "s": 1.2
+    },
+    {
+     "d": "persona_real",
+     "x": 250,
+     "y": 1520,
+     "s": 1.2,
+     "ropa": "camisa",
+     "lentes": true
+    },
+    {
+     "d": "persona_real",
+     "x": 830,
+     "y": 1520,
+     "s": 1.2,
+     "ropa": "camisa",
+     "pelo": "#8a6a3a"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "BOLSAS, CARTÓN",
+    "Y UN CALCETÍN"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Funcionó. Cuatro días",
+   "tipo": "titulo",
+   "lineas": [
+    "¡VOLVIERON",
+    "VIVOS!"
+   ],
+   "acento": 1,
+   "icono": "🚀"
+  },
+  {
+   "en": "¿Tú habrías mantenido",
+   "tipo": "final",
+   "lineas": [
+    "¿HABRÍAS MANTENIDO",
+    "LA CALMA?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "espacio"
+    },
+    {
+     "d": "planeta",
+     "x": 860,
+     "y": 1500,
+     "r": 260
+    }
+   ]
+  }
+ ]
+}

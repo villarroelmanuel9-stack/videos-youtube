@@ -1,0 +1,255 @@
+{
+ "tema": "ciencia",
+ "estilo": "clasico",
+ "claves": [
+  "desordenado.",
+  "moho",
+  "penicilina,",
+  "millones"
+ ],
+ "tomas": [
+  {
+   "en": "Uno de los",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a5a5a",
+     "piso": "#1d2626",
+     "vista": "dia",
+     "ventana_x": 680
+    },
+    {
+     "d": "mesa",
+     "x": 500,
+     "y": 1500,
+     "s": 1.2
+    },
+    {
+     "d": "frasco",
+     "x": 330,
+     "y": 1240,
+     "s": 0.5,
+     "contenido": "liquido",
+     "color_liquido": "#e8d27a"
+    },
+    {
+     "d": "frasco",
+     "x": 500,
+     "y": 1240,
+     "s": 0.5
+    },
+    {
+     "d": "libro",
+     "x": 680,
+     "y": 1250,
+     "s": 0.4
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UN LABORATORIO",
+    "DESORDENADO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "En septiembre de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a5a5a",
+     "piso": "#1d2626",
+     "vista": "dia",
+     "ventana_x": 680
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1700,
+     "s": 1.9,
+     "ropa": "bata",
+     "lentes": true,
+     "pelo": "#8a8a8a"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ALEXANDER",
+    "FLEMING · 1928"
+   ]
+  },
+  {
+   "en": "dejó apiladas unas",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a5a5a",
+     "piso": "#1d2626",
+     "luz_x": 540,
+     "luz_y": 900,
+     "cuadros": 0
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1500,
+     "s": 1.2
+    },
+    {
+     "d": "placa_petri",
+     "x": 540,
+     "y": 1320,
+     "s": 0.6
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "PLACAS SIN",
+    "LIMPIAR"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Al volver, notó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "placa_petri",
+     "x": 540,
+     "y": 1300,
+     "s": 1.5
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "UN MOHO",
+    "VERDE"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "y alrededor de",
+   "tipo": "titulo",
+   "lineas": [
+    "LAS BACTERIAS",
+    "MURIERON"
+   ],
+   "acento": 1,
+   "icono": "🦠"
+  },
+  {
+   "en": "Ese moho producía",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a5a5a",
+     "piso": "#1d2626",
+     "vista": "dia",
+     "ventana_x": 680
+    },
+    {
+     "d": "frasco",
+     "x": 540,
+     "y": 1450,
+     "s": 1.4,
+     "contenido": "liquido",
+     "color_liquido": "#e8d27a",
+     "etiqueta": "PENICILINA"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "EL PRIMER",
+    "ANTIBIÓTICO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Pero nadie le",
+   "tipo": "titulo",
+   "lineas": [
+    "NADIE LE HIZO",
+    "CASO POR AÑOS"
+   ],
+   "acento": 1,
+   "icono": "🤷"
+  },
+  {
+   "en": "Recién en la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#dfe8e6",
+     "piso": "#9aa8a6",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "cama",
+     "x": 380,
+     "y": 1500,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 820,
+     "y": 1550,
+     "s": 1.3,
+     "ropa": "bata",
+     "sombrero": "cofia",
+     "peinado": "mono"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "SALVÓ A LOS",
+    "SOLDADOS"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Desde entonces ha",
+   "tipo": "contador",
+   "hasta": 200,
+   "unidad": "MILLONES",
+   "sub": "DE VIDAS SALVADAS",
+   "icono": "💊"
+  },
+  {
+   "en": "¿Tú eres ordenado?",
+   "tipo": "final",
+   "lineas": [
+    "¿TÚ ERES",
+    "ORDENADO?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#4a5a5a",
+     "piso": "#1d2626",
+     "vista": "dia",
+     "ventana_x": 680
+    },
+    {
+     "d": "placa_petri",
+     "x": 540,
+     "y": 1500,
+     "s": 0.9
+    }
+   ]
+  }
+ ]
+}

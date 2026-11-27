@@ -1,0 +1,391 @@
+{
+ "tema": "ciencia",
+ "estilo": "pop",
+ "claves": [
+  "cabeza.",
+  "coágulo",
+  "gotero,",
+  "festival"
+ ],
+ "tomas": [
+  {
+   "en": "En mil novecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#a88a6a",
+      "#8a6a4a",
+      "#6a4a32"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#a8906e",
+      "#5a4630"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "casa",
+     "tipo": "granja",
+     "x": 300,
+     "y": 1420,
+     "s": 0.7
+    },
+    {
+     "d": "pollo",
+     "x": 640,
+     "y": 1720,
+     "s": 1.6,
+     "sin_cabeza": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "18 MESES",
+    "SIN CABEZA"
+   ],
+   "acento": 1,
+   "amb": "insectos",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Un granjero de",
+   "tipo": "mapa",
+   "centro": [
+    39.16,
+    -108.73
+   ],
+   "zoom": 10,
+   "zoom_desde": 2,
+   "centro_desde": [
+    39,
+    -100
+   ],
+   "resaltar": [
+    "United States of America"
+   ],
+   "pines": [
+    {
+     "lat": 39.16,
+     "lon": -108.73,
+     "texto": "FRUITA, COLORADO"
+    }
+   ]
+  },
+  {
+   "en": "le cortó la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#a88a6a",
+      "#8a6a4a",
+      "#6a4a32"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#a8906e",
+      "#5a4630"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1720,
+     "s": 1.5,
+     "ropa": "obrero",
+     "sombrero": "fedora",
+     "bigote": true
+    },
+    {
+     "d": "pollo",
+     "x": 760,
+     "y": 1720,
+     "s": 1.1
+    }
+   ],
+   "camara": "push",
+   "texto": "PARA LA CENA",
+   "amb": "insectos",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Pero el hacha",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d2233",
+     "piso": "#0d1018",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "cerebro",
+     "x": 540,
+     "y": 1350,
+     "s": 0.9,
+     "zona": "trasera"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "NO TOCÓ LA BASE",
+    "DEL CEREBRO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Mike se levantó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#a88a6a",
+      "#8a6a4a",
+      "#6a4a32"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#a8906e",
+      "#5a4630"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "pollo",
+     "x": 400,
+     "y": 1720,
+     "s": 1.6,
+     "sin_cabeza": true,
+     "mov": "camina",
+     "avance": 200
+    }
+   ],
+   "camara": "pan_der",
+   "texto": "¡SIGUIÓ CAMINANDO!",
+   "amb": "insectos",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Su dueño lo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6b5a46",
+     "piso": "#3a2a1e",
+     "vista": "dia",
+     "ventana_x": 650
+    },
+    {
+     "d": "pollo",
+     "x": 650,
+     "y": 1600,
+     "s": 1.3,
+     "sin_cabeza": true
+    },
+    {
+     "d": "frasco",
+     "x": 300,
+     "y": 1500,
+     "s": 0.7,
+     "contenido": "liquido",
+     "color_liquido": "#f4f0e0"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CON UN",
+    "GOTERO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Se volvió tan",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1350
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#8a6a4a",
+      "#3a2a1e"
+     ]
+    },
+    {
+     "d": "cartel",
+     "x": 330,
+     "y": 1650,
+     "s": 0.8,
+     "titulo": "¡MIKE!",
+     "sub": "25 CENTAVOS"
+    },
+    {
+     "d": "pollo",
+     "x": 780,
+     "y": 1700,
+     "s": 1.2,
+     "sin_cabeza": true
+    }
+   ],
+   "camara": "push",
+   "texto": "GIRAS POR EE.UU.",
+   "amb": "multitud",
+   "amb_vol": 0.6
+  },
+  {
+   "en": "y la gente",
+   "tipo": "contador",
+   "hasta": 25,
+   "unidad": "CENTAVOS",
+   "sub": "POR VERLO",
+   "icono": "🪙"
+  },
+  {
+   "en": "Hoy el pueblo",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#a88a6a",
+      "#8a6a4a",
+      "#6a4a32"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#a8906e",
+      "#5a4630"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "bandera",
+     "x": 200,
+     "y": 1500,
+     "s": 1.0,
+     "colores": [
+      "#ffd21f",
+      "#e3141b"
+     ]
+    },
+    {
+     "d": "pollo",
+     "x": 640,
+     "y": 1720,
+     "s": 1.4,
+     "sin_cabeza": true
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1720,
+     "s": 0.9,
+     "ropa": "camisa"
+    },
+    {
+     "d": "persona_real",
+     "x": 930,
+     "y": 1720,
+     "s": 0.9,
+     "ropa": "vestido"
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "UN FESTIVAL",
+    "CADA AÑO"
+   ],
+   "acento": 1,
+   "amb": "multitud"
+  },
+  {
+   "en": "¿Lo puedes creer?",
+   "tipo": "final",
+   "lineas": [
+    "¿LO PUEDES",
+    "CREER?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#a88a6a",
+      "#8a6a4a",
+      "#6a4a32"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#a8906e",
+      "#5a4630"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "pollo",
+     "x": 540,
+     "y": 1720,
+     "s": 1.3,
+     "sin_cabeza": true
+    }
+   ]
+  }
+ ]
+}

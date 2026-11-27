@@ -1,0 +1,278 @@
+{
+ "tema": "ciencia",
+ "estilo": "neon",
+ "claves": [
+  "muerte».",
+  "invisibles",
+  "anillo.",
+  "Nobel"
+ ],
+ "tomas": [
+  {
+   "en": "«He visto mi",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "mano_rx",
+     "x": 540,
+     "y": 1550,
+     "s": 1.2
+    }
+   ],
+   "camara": "push",
+   "texto": "«HE VISTO MI MUERTE»",
+   "amb": "zumbido",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "de su propia",
+   "tipo": "titulo",
+   "lineas": [
+    "LA PRIMERA",
+    "RADIOGRAFÍA"
+   ],
+   "acento": 1,
+   "icono": "🦴"
+  },
+  {
+   "en": "En noviembre de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "vista": "noche",
+     "ventana_x": 680
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1650,
+     "s": 1.7,
+     "ropa": "traje",
+     "barba": true,
+     "pelo": "#3a2a1e"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "WILHELM RÖNTGEN",
+    "1895"
+   ],
+   "amb": "ninguno"
+  },
+  {
+   "en": "experimentaba con un",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "mesa",
+     "x": 540,
+     "y": 1500,
+     "s": 1.2
+    },
+    {
+     "d": "frasco",
+     "x": 540,
+     "y": 1260,
+     "s": 0.6,
+     "contenido": "liquido",
+     "color_liquido": "#bfe6ff"
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 1150,
+     "r": 300,
+     "color": "#3df5ff",
+     "op": 0.6,
+     "parpadeo": true
+    }
+   ],
+   "camara": "push",
+   "texto": "UN TUBO DE VIDRIO",
+   "amb": "zumbido",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Notó que una",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "pantalla",
+     "x": 540,
+     "y": 1400,
+     "s": 1.2,
+     "texto": "",
+     "color": "#5cff7a"
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 1150,
+     "r": 400,
+     "color": "#5cff7a",
+     "op": 0.5
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "¡UNA PANTALLA",
+    "BRILLABA!"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Eran unos rayos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "laser",
+     "x1": 150,
+     "y1": 900,
+     "x2": 950,
+     "y2": 1000,
+     "en": 0.3
+    },
+    {
+     "d": "caja",
+     "x": 540,
+     "y": 1500,
+     "s": 0.8
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "ATRAVESABAN",
+    "TODO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Como no sabía",
+   "tipo": "titulo",
+   "lineas": [
+    "LOS LLAMÓ",
+    "RAYOS X"
+   ],
+   "acento": 1,
+   "icono": "❌"
+  },
+  {
+   "en": "Le pidió a",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#5a4a3c",
+     "piso": "#2a1d14",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1700,
+     "s": 1.8,
+     "ropa": "vestido",
+     "peinado": "mono",
+     "pelo": "#6a4a2e"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ANNA",
+    "BERTHA"
+   ]
+  },
+  {
+   "en": "Aparecieron sus huesos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "mano_rx",
+     "x": 540,
+     "y": 1600,
+     "s": 1.5
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "HUESOS",
+    "Y ANILLO"
+   ],
+   "acento": 1,
+   "sfx": "boom"
+  },
+  {
+   "en": "Röntgen ganó el",
+   "tipo": "titulo",
+   "lineas": [
+    "PRIMER NOBEL",
+    "DE FÍSICA"
+   ],
+   "acento": 1,
+   "icono": "🏅"
+  },
+  {
+   "en": "¿Cuántas radiografías te",
+   "tipo": "final",
+   "lineas": [
+    "¿CUÁNTAS TE",
+    "HAN TOMADO?"
+   ],
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "mano_rx",
+     "x": 540,
+     "y": 1600,
+     "s": 1.1
+    }
+   ],
+   "comentario": "Como 5 🦴"
+  }
+ ]
+}

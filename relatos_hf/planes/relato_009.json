@@ -1,0 +1,301 @@
+{
+ "tema": "ciencia",
+ "estilo": "terror",
+ "claves": [
+  "mayor",
+  "explosión",
+  "Baranov.",
+  "sobrevivieron."
+ ],
+ "tomas": [
+  {
+   "en": "Después de la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#4a4a42",
+      "#1a1a16"
+     ]
+    },
+    {
+     "d": "reactor",
+     "x": 540,
+     "y": 1420,
+     "s": 1.0
+    },
+    {
+     "d": "particulas",
+     "tipo": "ceniza",
+     "n": 50
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "CHERNÓBIL",
+    "1986"
+   ],
+   "amb": "zumbido",
+   "amb_vol": 0.6
+  },
+  {
+   "en": "había un peligro",
+   "tipo": "titulo",
+   "lineas": [
+    "UN PELIGRO",
+    "AÚN MAYOR"
+   ],
+   "acento": 1,
+   "icono": "☢️"
+  },
+  {
+   "en": "Los bomberos habían",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#4a4a42",
+      "#1a1a16"
+     ]
+    },
+    {
+     "d": "reactor",
+     "x": 540,
+     "y": 1420,
+     "s": 0.9
+    },
+    {
+     "d": "persona_real",
+     "x": 230,
+     "y": 1650,
+     "s": 1.1,
+     "ropa": "uniforme",
+     "sombrero": "casco_ww"
+    },
+    {
+     "d": "persona_real",
+     "x": 850,
+     "y": 1650,
+     "s": 1.1,
+     "ropa": "uniforme",
+     "sombrero": "casco_ww"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "MILES DE LITROS",
+    "DE AGUA"
+   ],
+   "acento": 1,
+   "amb": "fuego"
+  },
+  {
+   "en": "Mientras tanto, el",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#4a4a42",
+      "#1a1a16"
+     ]
+    },
+    {
+     "d": "reactor",
+     "x": 540,
+     "y": 1450,
+     "s": 1.2
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 1000,
+     "r": 500,
+     "color": "#ff6a00",
+     "op": 0.6,
+     "parpadeo": true
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "EL NÚCLEO",
+    "SE DERRETÍA"
+   ],
+   "acento": 1,
+   "amb": "fuego"
+  },
+  {
+   "en": "Si esa lava",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "tunel"
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 600,
+     "r": 500,
+     "color": "#ff6a00",
+     "op": 0.5
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "¿OTRA",
+    "EXPLOSIÓN?"
+   ],
+   "acento": 1,
+   "amb": "goteo",
+   "sfx": "boom"
+  },
+  {
+   "en": "Había que abrir",
+   "tipo": "titulo",
+   "lineas": [
+    "ABRIR LAS",
+    "VÁLVULAS"
+   ],
+   "acento": 1,
+   "icono": "🔧"
+  },
+  {
+   "en": "Tres trabajadores se",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3e44",
+     "piso": "#1a1c20",
+     "luz": false,
+     "cuadros": 0,
+     "pared_estilo": "liso"
+    },
+    {
+     "d": "persona_real",
+     "x": 250,
+     "y": 1600,
+     "s": 1.3,
+     "ropa": "obrero",
+     "sombrero": "casco_ww"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1600,
+     "s": 1.3,
+     "ropa": "obrero",
+     "sombrero": "casco_ww"
+    },
+    {
+     "d": "persona_real",
+     "x": 830,
+     "y": 1600,
+     "s": 1.3,
+     "ropa": "obrero",
+     "sombrero": "casco_ww"
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "ANANENKO, BEZPALOV",
+    "Y BARANOV"
+   ],
+   "acento": 0,
+   "amb": "zumbido",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Entraron por túneles",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "tunel"
+    },
+    {
+     "d": "haz_luz",
+     "x": 420,
+     "y": 1400,
+     "ang": -60,
+     "largo": 900,
+     "falla": true,
+     "falla_en": 1.5
+    },
+    {
+     "d": "haz_luz",
+     "x": 660,
+     "y": 1450,
+     "ang": -110,
+     "largo": 800
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "A OSCURAS",
+    "Y CON AGUA"
+   ],
+   "acento": 1,
+   "amb": "goteo"
+  },
+  {
+   "en": "Lo lograron. Y,",
+   "tipo": "titulo",
+   "lineas": [
+    "¡LOS TRES",
+    "SOBREVIVIERON!"
+   ],
+   "acento": 1,
+   "icono": "🦺"
+  },
+  {
+   "en": "¿Tú te habrías",
+   "tipo": "final",
+   "lineas": [
+    "¿TE HABRÍAS",
+    "OFRECIDO?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#4a4a42",
+      "#1a1a16"
+     ]
+    },
+    {
+     "d": "reactor",
+     "x": 540,
+     "y": 1420,
+     "s": 1.0
+    }
+   ]
+  }
+ ]
+}

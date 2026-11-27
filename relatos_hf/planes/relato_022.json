@@ -1,0 +1,321 @@
+{
+ "tema": "historia",
+ "estilo": "calido",
+ "claves": [
+  "desmontada",
+  "monstruosa».",
+  "radio.",
+  "seis"
+ ],
+ "tomas": [
+  {
+   "en": "La Torre Eiffel",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1380,
+     "hora": "dia"
+    },
+    {
+     "d": "suelo",
+     "y": 1380,
+     "colores": [
+      "#9a9488",
+      "#5a564c"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "torre_eiffel",
+     "x": 540,
+     "y": 1420,
+     "s": 1.2
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "IBA A SER",
+    "DESMONTADA"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "en mil novecientos",
+   "tipo": "titulo",
+   "lineas": [
+    "EN 1909"
+   ],
+   "icono": "🔧"
+  },
+  {
+   "en": "Se construyó para",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1380,
+     "hora": "dia"
+    },
+    {
+     "d": "suelo",
+     "y": 1380,
+     "colores": [
+      "#9a9488",
+      "#5a564c"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "torre_eiffel",
+     "x": 540,
+     "y": 1420,
+     "s": 1.1
+    },
+    {
+     "d": "persona_real",
+     "x": 180,
+     "y": 1720,
+     "s": 1.0,
+     "ropa": "traje",
+     "sombrero": "bombin"
+    },
+    {
+     "d": "persona_real",
+     "x": 900,
+     "y": 1720,
+     "s": 1.0,
+     "ropa": "vestido",
+     "sombrero": null
+    }
+   ],
+   "camara": "pull",
+   "dato": [
+    "EXPOSICIÓN",
+    "1889"
+   ],
+   "amb": "multitud",
+   "amb_vol": 0.6
+  },
+  {
+   "en": "con un permiso",
+   "tipo": "contador",
+   "hasta": 20,
+   "unidad": "AÑOS",
+   "sub": "DE PERMISO",
+   "icono": "📜"
+  },
+  {
+   "en": "Muchos artistas de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6b2d3f",
+     "piso": "#3a1d14",
+     "vista": "dia",
+     "ventana_x": 650
+    },
+    {
+     "d": "carta",
+     "x": 380,
+     "y": 1560,
+     "s": 0.8,
+     "texto": "Inútil y monstruosa",
+     "firma": "Los artistas"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "«INÚTIL Y",
+    "MONSTRUOSA»"
+   ],
+   "acento": 1,
+   "sfx": "papel",
+   "sfx_dur": 0.6
+  },
+  {
+   "en": "Gustave Eiffel buscó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1380,
+     "hora": "dia"
+    },
+    {
+     "d": "suelo",
+     "y": 1380,
+     "colores": [
+      "#9a9488",
+      "#5a564c"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.9,
+     "ropa": "traje",
+     "bigote": true,
+     "barba": true,
+     "pelo": "#d9d9d9",
+     "sombrero": "copa"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "GUSTAVE",
+    "EIFFEL"
+   ]
+  },
+  {
+   "en": "La ofreció para",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1350
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1380,
+     "hora": "dia"
+    },
+    {
+     "d": "suelo",
+     "y": 1380,
+     "colores": [
+      "#9a9488",
+      "#5a564c"
+     ],
+     "tipo": "adoquin"
+    },
+    {
+     "d": "torre_eiffel",
+     "x": 540,
+     "y": 1420,
+     "s": 1.1
+    },
+    {
+     "d": "silbido",
+     "x1": 560,
+     "y1": 420,
+     "x2": 1000,
+     "color": "#3df5ff"
+    }
+   ],
+   "camara": "sube",
+   "texto": [
+    "ANTENA",
+    "DE RADIO"
+   ],
+   "acento": 1,
+   "sfx": "ping",
+   "sfx_dur": 0.4
+  },
+  {
+   "en": "Las transmisiones militares",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a4a3a",
+     "piso": "#1d251d",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "radio",
+     "x": 540,
+     "y": 1450,
+     "s": 1.3
+    },
+    {
+     "d": "persona_real",
+     "x": 850,
+     "y": 1550,
+     "s": 1.2,
+     "ropa": "uniforme",
+     "sombrero": "casco_ww"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "DEMASIADO ÚTIL",
+    "PARA DESTRUIRLA"
+   ],
+   "acento": 0,
+   "amb": "estatica",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "En la Primera",
+   "tipo": "titulo",
+   "lineas": [
+    "INTERCEPTÓ",
+    "MENSAJES"
+   ],
+   "acento": 1,
+   "icono": "📡"
+  },
+  {
+   "en": "Hoy es uno",
+   "tipo": "contador",
+   "hasta": 6,
+   "unidad": "MILLONES",
+   "sub": "DE VISITANTES AL AÑO",
+   "icono": "🗼"
+  },
+  {
+   "en": "¿La has visitado",
+   "tipo": "final",
+   "lineas": [
+    "¿LA HAS",
+    "VISITADO?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1350
+    },
+    {
+     "d": "ciudad",
+     "era": "antigua",
+     "y": 1380
+    },
+    {
+     "d": "torre_eiffel",
+     "x": 540,
+     "y": 1420,
+     "s": 1.1
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,450 @@
+{
+ "tema": "ciencia",
+ "estilo": "neon",
+ "claves": [
+  "siete",
+  "uña",
+  "camioneta.",
+  "Guinness"
+ ],
+ "tomas": [
+  {
+   "en": "A este hombre",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#3a4a3a",
+      "#2a3a2a",
+      "#1a261a"
+     ]
+    },
+    {
+     "d": "arboles",
+     "y": 1320,
+     "n": 6,
+     "color": "#1e3a1a"
+    },
+    {
+     "d": "suelo",
+     "y": 1320,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.9,
+     "ropa": "uniforme",
+     "sombrero": "fedora"
+    },
+    {
+     "d": "rayo",
+     "x": 540,
+     "y": 1000,
+     "en": 0.5
+    },
+    {
+     "d": "lluvia"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "7 RAYOS",
+    "Y VIVIÓ"
+   ],
+   "acento": 0,
+   "amb": "lluvia",
+   "sfx": "boom",
+   "sfx_en": 0.5
+  },
+  {
+   "en": "Roy Sullivan era",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#5a7a5a",
+      "#3a5a3a",
+      "#2a4a2a"
+     ]
+    },
+    {
+     "d": "arboles",
+     "y": 1320,
+     "n": 6
+    },
+    {
+     "d": "suelo",
+     "y": 1320,
+     "colores": [
+      "#5a7a3a",
+      "#2a3a1a"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.8,
+     "ropa": "uniforme",
+     "sombrero": "fedora"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ROY SULLIVAN",
+    "GUARDAPARQUES"
+   ],
+   "amb": "insectos",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "en las montañas",
+   "tipo": "mapa",
+   "centro": [
+    38.5,
+    -78.4
+   ],
+   "zoom": 8,
+   "zoom_desde": 2,
+   "centro_desde": [
+    39,
+    -95
+   ],
+   "resaltar": [
+    "United States of America"
+   ],
+   "pines": [
+    {
+     "lat": 38.5,
+     "lon": -78.4,
+     "texto": "VIRGINIA"
+    }
+   ]
+  },
+  {
+   "en": "Entre mil novecientos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#3a4a3a",
+      "#2a3a2a",
+      "#1a261a"
+     ]
+    },
+    {
+     "d": "arboles",
+     "y": 1320,
+     "n": 6,
+     "color": "#1e3a1a"
+    },
+    {
+     "d": "suelo",
+     "y": 1320,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "calendario",
+     "x": 540,
+     "y": 1150,
+     "s": 1.2,
+     "anios": [
+      "1942",
+      "1969",
+      "1970",
+      "1972",
+      "1977"
+     ]
+    },
+    {
+     "d": "rayo",
+     "x": 200,
+     "y": 1400,
+     "en": 1.0
+    },
+    {
+     "d": "rayo",
+     "x": 880,
+     "y": 1300,
+     "en": 2.0
+    }
+   ],
+   "camara": "fijo",
+   "texto": "7 VECES",
+   "amb": "lluvia"
+  },
+  {
+   "en": "Le quemaron el",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#2a2a3a",
+     "piso": "#121218",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 2.0,
+     "ropa": "uniforme",
+     "peinado": "calvo"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "PELO Y CEJAS",
+    "QUEMADOS"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "le arrancaron una",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#3a4a3a",
+      "#2a3a2a",
+      "#1a261a"
+     ]
+    },
+    {
+     "d": "arboles",
+     "y": 1320,
+     "n": 6,
+     "color": "#1e3a1a"
+    },
+    {
+     "d": "suelo",
+     "y": 1320,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "camion",
+     "x": 540,
+     "y": 1600,
+     "s": 0.9,
+     "color": "#2e5a2a"
+    },
+    {
+     "d": "rayo",
+     "x": 540,
+     "y": 1350,
+     "en": 0.4
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "¡LO LANZÓ DE SU",
+    "CAMIONETA!"
+   ],
+   "acento": 1,
+   "sacudir": true,
+   "sfx": "boom",
+   "sfx_en": 0.4
+  },
+  {
+   "en": "Llegó a tener",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#3a4a3a",
+      "#2a3a2a",
+      "#1a261a"
+     ]
+    },
+    {
+     "d": "arboles",
+     "y": 1320,
+     "n": 6,
+     "color": "#1e3a1a"
+    },
+    {
+     "d": "suelo",
+     "y": 1320,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "persona_real",
+     "x": 300,
+     "y": 1720,
+     "s": 1.4,
+     "ropa": "uniforme",
+     "sombrero": "fedora"
+    },
+    {
+     "d": "persona_real",
+     "x": 700,
+     "y": 1720,
+     "s": 1.1,
+     "ropa": "camisa",
+     "mov": "camina",
+     "avance": 150
+    },
+    {
+     "d": "persona_real",
+     "x": 880,
+     "y": 1720,
+     "s": 1.1,
+     "ropa": "vestido",
+     "mov": "camina",
+     "avance": 150
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "TODOS SE",
+    "ALEJABAN"
+   ],
+   "acento": 1,
+   "amb": "lluvia"
+  },
+  {
+   "en": "Tiene el récord",
+   "tipo": "titulo",
+   "lineas": [
+    "RÉCORD",
+    "GUINNESS"
+   ],
+   "acento": 1,
+   "icono": "⚡"
+  },
+  {
+   "en": "Dos de sus",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#3a3226",
+     "piso": "#1a140f",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "vitrina",
+     "x": 540,
+     "y": 1600,
+     "s": 1.1
+    },
+    {
+     "d": "texto_svg",
+     "x": 540,
+     "y": 1400,
+     "texto": "🎩",
+     "tam": 10,
+     "color": "#000"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SOMBREROS QUEMADOS",
+    "EN MUSEOS"
+   ],
+   "acento": 0
+  },
+  {
+   "en": "¿Tú saldrías con",
+   "tipo": "final",
+   "lineas": [
+    "¿SALDRÍAS CON",
+    "TORMENTA?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "tormenta",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#3a4a3a",
+      "#2a3a2a",
+      "#1a261a"
+     ]
+    },
+    {
+     "d": "arboles",
+     "y": 1320,
+     "n": 6,
+     "color": "#1e3a1a"
+    },
+    {
+     "d": "suelo",
+     "y": 1320,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "rayo",
+     "x": 540,
+     "y": 1200,
+     "en": 1.0
+    }
+   ]
+  }
+ ]
+}

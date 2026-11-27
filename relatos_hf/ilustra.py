@@ -102,7 +102,10 @@ def cielo(p, u, t):
     if hora == "espacio":
         out.append(f'<defs>{rad([(0, "#6c3bd1", .35), (1, "#6c3bd1", 0)], u + "n1")}{rad([(0, "#1fb3c9", .25), (1, "#1fb3c9", 0)], u + "n2")}</defs>'
                    f'<ellipse cx="300" cy="500" rx="520" ry="300" fill="url(#{u}n1)"/><ellipse cx="820" cy="1100" rx="460" ry="380" fill="url(#{u}n2)"/>')
-    astro = p.get("astro")
+    astro = p.get("astro", {"noche": "luna", "dia": "sol", "atardecer": "sol", "amanecer": "sol"}.get(hora))
+    if p.get("astro_x") is None and astro and "astro" not in p:
+        p = {**p, "astro_x": 820 if astro == "luna" else 790, "astro_y": 360 if hora != "atardecer" else hz - 240,
+             "astro_r": 55 if astro == "luna" else 65}
     if astro:
         ax, ay, ar = p.get("astro_x", 800), p.get("astro_y", 380), p.get("astro_r", 70)
         if astro == "luna":
@@ -184,11 +187,82 @@ def montanas(p, u, t):
     return "".join(out)
 
 
+def _tipo_suelo(c1):
+    h = c1.lstrip("#")
+    r, g_, b = int(h[:2], 16), int(h[2:4], 16), int(h[4:], 16)
+    if g_ > r + 15 and g_ > b:
+        return "pasto"
+    if min(r, g_, b) > 190:
+        return "nieve"
+    if r > 170 and g_ > 120 and b < 130:
+        return "arena"
+    if abs(r - g_) < 14 and abs(g_ - b) < 14:
+        return "adoquin"
+    return "tierra"
+
+
 @dib("suelo")
 def suelo(p, u, t):
+    """Suelo con detalle en perspectiva (más chico y denso cerca del horizonte). tipo: tierra, pasto, adoquin,
+    arena, nieve, baldosa, madera, asfalto (si no se indica se deduce del color)."""
     y = p.get("y", 1300)
     c1, c2 = p.get("colores", ["#3d2b1f", "#1a120c"])
-    return f'<defs>{lin(c1, c2, u + "s")}</defs><rect x="-300" y="{y}" width="1680" height="{2000 - y}" fill="url(#{u}s)"/>'
+    tipo = p.get("tipo") or _tipo_suelo(c1)
+    rng = random.Random(int(y) + len(tipo))
+    out = [f'<defs>{lin(c1, c2, u + "s")}</defs><rect x="-300" y="{y}" width="1680" height="{2000 - y}" fill="url(#{u}s)"/>']
+    alto = 2000 - y
+
+    def prof(f):  # 0 = horizonte, 1 = primer plano
+        return y + alto * (f ** 1.7)
+
+    if tipo in ("adoquin", "baldosa", "madera"):
+        filas = 16 if tipo == "adoquin" else 11
+        for k in range(1, filas):
+            yy = prof(k / filas)
+            out.append(f'<line x1="-300" x2="1380" y1="{yy:.0f}" y2="{yy:.0f}" stroke="#000" stroke-opacity=".22" stroke-width="{1 + 3 * k / filas:.1f}"/>')
+            if tipo != "madera":
+                paso = 30 + 110 * (k / filas)
+                off = (k % 2) * paso / 2
+                x = -300 + off
+                y0 = prof((k - 1) / filas)
+                while x < 1380:
+                    out.append(f'<line x1="{x + (x - 540) * .0:.0f}" x2="{x + (x - 540) * .25:.0f}" y1="{y0:.0f}" y2="{yy:.0f}" stroke="#000" stroke-opacity=".18" stroke-width="{1 + 2 * k / filas:.1f}"/>')
+                    x += paso
+        if tipo == "madera":
+            for k in range(-8, 10):
+                out.append(f'<line x1="{540 + k * 40}" y1="{y}" x2="{540 + k * 170}" y2="2000" stroke="#000" stroke-opacity=".2" stroke-width="3"/>')
+            for k in range(40):
+                fx, fy = rng.uniform(0, 1080), prof(rng.uniform(.1, 1))
+                out.append(f'<path d="M{fx:.0f},{fy:.0f} q30,-4 60,0" stroke="#000" stroke-opacity=".12" stroke-width="2" fill="none"/>')
+        out.append(f'<rect x="-300" y="{y}" width="1680" height="{alto}" fill="url(#{u}s)" opacity=".0"/>')
+    else:
+        n = {"tierra": 90, "pasto": 140, "arena": 70, "nieve": 60, "asfalto": 40}.get(tipo, 80)
+        for k in range(n):
+            f = rng.uniform(0.02, 1)
+            yy, xx = prof(f), rng.uniform(-100, 1180)
+            esc = .3 + 1.4 * f
+            if tipo == "pasto":
+                col = rng.choice(["#3f7a32", "#2f5e26", "#5a9a44", "#26481e"])
+                out.append(f'<path d="M{xx:.0f},{yy:.0f} l{-4 * esc:.1f},{-18 * esc:.1f} M{xx:.0f},{yy:.0f} l{2 * esc:.1f},{-22 * esc:.1f} M{xx:.0f},{yy:.0f} l{7 * esc:.1f},{-16 * esc:.1f}" '
+                           f'stroke="{col}" stroke-width="{1.5 + 1.5 * f:.1f}" stroke-linecap="round"/>')
+                if rng.random() < .08:
+                    out.append(f'<circle cx="{xx:.0f}" cy="{yy - 14 * esc:.0f}" r="{3 * esc:.1f}" fill="{rng.choice(["#ffd21f", "#ffffff", "#e8649a"])}"/>')
+            elif tipo == "tierra":
+                if rng.random() < .65:
+                    out.append(f'<ellipse cx="{xx:.0f}" cy="{yy:.0f}" rx="{rng.uniform(3, 9) * esc:.1f}" ry="{rng.uniform(2, 5) * esc:.1f}" fill="#000" opacity="{rng.uniform(.12, .25):.2f}"/>'
+                               f'<ellipse cx="{xx - 1:.0f}" cy="{yy - 1.5 * esc:.0f}" rx="{rng.uniform(3, 8) * esc:.1f}" ry="{rng.uniform(2, 4) * esc:.1f}" fill="#fff" opacity=".09"/>')
+                else:
+                    out.append(f'<path d="M{xx:.0f},{yy:.0f} l{20 * esc:.1f},{3 * esc:.1f} l{14 * esc:.1f},{-4 * esc:.1f} l{18 * esc:.1f},{5 * esc:.1f}" stroke="#000" stroke-opacity=".2" stroke-width="{1 + f:.1f}" fill="none"/>')
+            elif tipo == "arena":
+                out.append(f'<path d="M{xx:.0f},{yy:.0f} q{30 * esc:.0f},{-6 * esc:.1f} {60 * esc:.0f},0" stroke="#fff" stroke-opacity=".18" stroke-width="{1 + 1.5 * f:.1f}" fill="none"/>'
+                           f'<path d="M{xx:.0f},{yy + 3 * esc:.0f} q{30 * esc:.0f},{-6 * esc:.1f} {60 * esc:.0f},0" stroke="#000" stroke-opacity=".12" stroke-width="{1 + f:.1f}" fill="none"/>')
+            elif tipo == "nieve":
+                out.append(f'<ellipse cx="{xx:.0f}" cy="{yy:.0f}" rx="{rng.uniform(10, 30) * esc:.0f}" ry="{rng.uniform(2, 5) * esc:.1f}" fill="#9fb0cc" opacity=".25"/>'
+                           f'<circle cx="{xx + 8:.0f}" cy="{yy - 3:.0f}" r="{1.2 + f:.1f}" fill="#fff"/>')
+            else:  # asfalto
+                out.append(f'<path d="M{xx:.0f},{yy:.0f} l{25 * esc:.0f},{6 * esc:.1f} l{10 * esc:.0f},{-8 * esc:.1f}" stroke="#000" stroke-opacity=".3" stroke-width="{1 + f:.1f}" fill="none"/>')
+    out.append(f'<rect x="-300" y="{y}" width="1680" height="40" fill="#000" opacity=".12"/>')
+    return "".join(out)
 
 
 @dib("niebla")

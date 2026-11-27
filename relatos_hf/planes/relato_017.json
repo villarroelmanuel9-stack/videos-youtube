@@ -1,0 +1,371 @@
+{
+ "tema": "guerra",
+ "estilo": "calido",
+ "claves": [
+  "mismo.",
+  "licor,",
+  "turcos!».",
+  "vacío."
+ ],
+ "tomas": [
+  {
+   "en": "Cuenta la historia",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "carpa",
+     "x": 300,
+     "y": 1450,
+     "s": 0.8
+    },
+    {
+     "d": "carpa",
+     "x": 760,
+     "y": 1420,
+     "s": 0.7
+    },
+    {
+     "d": "fuego",
+     "x": 540,
+     "y": 1600,
+     "s": 0.4,
+     "ancho": 120
+    }
+   ],
+   "camara": "push",
+   "dato": "1788",
+   "amb": "fuego",
+   "amb_vol": 0.6
+  },
+  {
+   "en": "perdió una batalla…",
+   "tipo": "titulo",
+   "lineas": [
+    "PERDIÓ CONTRA",
+    "SÍ MISMO"
+   ],
+   "acento": 1,
+   "icono": "🤦"
+  },
+  {
+   "en": "Estaban en guerra",
+   "tipo": "mapa",
+   "centro": [
+    45.42,
+    22.22
+   ],
+   "zoom": 10,
+   "zoom_desde": 2,
+   "centro_desde": [
+    45,
+    20
+   ],
+   "resaltar": [
+    "Romania"
+   ],
+   "pines": [
+    {
+     "lat": 45.42,
+     "lon": 22.22,
+     "texto": "KARÁNSEBES"
+    }
+   ]
+  },
+  {
+   "en": "unos soldados de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "barril",
+     "x": 700,
+     "y": 1650,
+     "s": 1.0
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1700,
+     "s": 1.4,
+     "ropa": "uniforme",
+     "sombrero": "bombin"
+    },
+    {
+     "d": "persona_real",
+     "x": 860,
+     "y": 1700,
+     "s": 1.3,
+     "ropa": "obrero",
+     "bigote": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CAMPESINOS CON",
+    "LICOR"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Otros soldados llegaron",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "persona_real",
+     "x": 200,
+     "y": 1700,
+     "s": 1.2,
+     "ropa": "uniforme",
+     "sombrero": "bombin"
+    },
+    {
+     "d": "persona_real",
+     "x": 420,
+     "y": 1700,
+     "s": 1.2,
+     "ropa": "uniforme",
+     "sombrero": "bombin"
+    },
+    {
+     "d": "persona_real",
+     "x": 640,
+     "y": 1700,
+     "s": 1.2,
+     "ropa": "uniforme",
+     "sombrero": "bombin"
+    },
+    {
+     "d": "persona_real",
+     "x": 860,
+     "y": 1700,
+     "s": 1.2,
+     "ropa": "uniforme",
+     "sombrero": "bombin"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": "PIDIERON SU PARTE",
+   "amb": "multitud",
+   "amb_vol": 0.6
+  },
+  {
+   "en": "Hubo una discusión,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "explosion",
+     "x": 540,
+     "y": 1300,
+     "s": 0.4,
+     "en": 0.3
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1720,
+     "s": 1.7,
+     "ropa": "uniforme",
+     "sombrero": "bombin",
+     "mira": "izq"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": "«¡VIENEN LOS TURCOS!»",
+   "sacudir": true,
+   "sfx": "boom"
+  },
+  {
+   "en": "En la oscuridad,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#2a3a1e",
+      "#0a0e06"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "ejercito",
+     "x": 300,
+     "y": 1500,
+     "s": 0.7,
+     "avance": 200
+    },
+    {
+     "d": "ejercito",
+     "x": 800,
+     "y": 1520,
+     "s": 0.7,
+     "avance": -200
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "SE ATACARON",
+    "ENTRE ELLOS"
+   ],
+   "acento": 1,
+   "amb": "multitud",
+   "amb_vol": 1.2
+  },
+  {
+   "en": "Según el relato,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#5a6a3a",
+      "#2a3a1a"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "carpa",
+     "x": 540,
+     "y": 1500,
+     "s": 1.0
+    },
+    {
+     "d": "barril",
+     "x": 800,
+     "y": 1600,
+     "s": 0.7
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "EL CAMPAMENTO",
+    "VACÍO"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "¿Crees que pasó",
+   "tipo": "final",
+   "lineas": [
+    "¿CREES QUE",
+    "PASÓ ASÍ?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#3a4a2a",
+      "#141a0e"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "carpa",
+     "x": 540,
+     "y": 1450,
+     "s": 0.8
+    }
+   ]
+  }
+ ]
+}

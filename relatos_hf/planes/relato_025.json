@@ -1,0 +1,345 @@
+{
+ "tema": "ciencia",
+ "estilo": "clasico",
+ "claves": [
+  "ciencia",
+  "colores",
+  "manzana",
+  "milagroso»."
+ ],
+ "tomas": [
+  {
+   "en": "Durante una pandemia,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6b5a46",
+     "piso": "#3a2a1e",
+     "vista": "dia",
+     "ventana_x": 650,
+     "luz_x": 300,
+     "luz_y": 600
+    },
+    {
+     "d": "velas",
+     "x": 300,
+     "y": 1400,
+     "s": 0.8,
+     "n": 2
+    },
+    {
+     "d": "persona_real",
+     "x": 300,
+     "y": 1580,
+     "s": 1.6,
+     "ropa": "tunica_roja",
+     "peinado": "largo",
+     "pelo": "#6a5a4a"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CAMBIÓ LA",
+    "CIENCIA"
+   ],
+   "acento": 1,
+   "amb": "ninguno"
+  },
+  {
+   "en": "En mil seiscientos",
+   "tipo": "fecha",
+   "dia": "1665",
+   "mes": "AÑO",
+   "anio": "PESTE"
+  },
+  {
+   "en": "y cerró la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "castillo",
+     "x": 540,
+     "y": 1400,
+     "s": 0.9
+    },
+    {
+     "d": "suelo",
+     "y": 1400,
+     "colores": [
+      "#6a6a5a",
+      "#2a2a22"
+     ],
+     "tipo": "adoquin"
+    }
+   ],
+   "camara": "pull",
+   "dato": [
+    "CAMBRIDGE",
+    "CERRADA"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "Isaac Newton, de",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#8aa87a",
+      "#6a8a5a",
+      "#4a6a3e"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#6a9a4a",
+      "#2e5a22"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "casa",
+     "tipo": "granja",
+     "x": 540,
+     "y": 1420,
+     "s": 0.9,
+     "luces": false
+    },
+    {
+     "d": "persona_real",
+     "x": 780,
+     "y": 1720,
+     "s": 1.3,
+     "ropa": "tunica_roja",
+     "peinado": "largo",
+     "pelo": "#6a5a4a"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ISAAC NEWTON",
+    "22 AÑOS"
+   ],
+   "amb": "insectos",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "En casi dos",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6b5a46",
+     "piso": "#3a2a1e",
+     "luz_x": 540,
+     "luz_y": 700
+    },
+    {
+     "d": "libro",
+     "x": 540,
+     "y": 1450,
+     "s": 1.4
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "LAS BASES DEL",
+    "CÁLCULO"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "descubrió con un",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#1d1d24",
+     "piso": "#0d0d12",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "prisma",
+     "x": 540,
+     "y": 1100,
+     "s": 1.2
+    }
+   ],
+   "camara": "fijo",
+   "texto": [
+    "LA LUZ TIENE",
+    "TODOS LOS COLORES"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "y empezó a",
+   "tipo": "titulo",
+   "lineas": [
+    "LA",
+    "GRAVEDAD"
+   ],
+   "acento": 1,
+   "icono": "🍎"
+  },
+  {
+   "en": "Él mismo contó",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#8aa87a",
+      "#6a8a5a",
+      "#4a6a3e"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#6a9a4a",
+      "#2e5a22"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "manzano",
+     "x": 600,
+     "y": 1500,
+     "s": 1.2,
+     "cae_en": 0.6
+    },
+    {
+     "d": "persona_real",
+     "x": 250,
+     "y": 1700,
+     "s": 1.3,
+     "ropa": "tunica_roja",
+     "peinado": "largo",
+     "pelo": "#6a5a4a",
+     "mira": "der"
+    }
+   ],
+   "camara": "push",
+   "texto": "UNA MANZANA",
+   "amb": "insectos",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "El árbol todavía",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#8aa87a",
+      "#6a8a5a",
+      "#4a6a3e"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#6a9a4a",
+      "#2e5a22"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "manzano",
+     "x": 540,
+     "y": 1500,
+     "s": 1.3
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "EL ÁRBOL",
+    "AÚN EXISTE"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "Lo llaman su",
+   "tipo": "titulo",
+   "lineas": [
+    "«AÑO",
+    "MILAGROSO»"
+   ],
+   "acento": 1,
+   "icono": "✨"
+  },
+  {
+   "en": "¿Y tú qué",
+   "tipo": "final",
+   "lineas": [
+    "¿QUÉ HICISTE EN",
+    "TU CUARENTENA?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1320,
+     "colores": [
+      "#8aa87a",
+      "#6a8a5a",
+      "#4a6a3e"
+     ]
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#6a9a4a",
+      "#2e5a22"
+     ],
+     "tipo": "pasto"
+    },
+    {
+     "d": "manzano",
+     "x": 540,
+     "y": 1500,
+     "s": 1.1
+    }
+   ],
+   "comentario": "Ver series 😅"
+  }
+ ]
+}

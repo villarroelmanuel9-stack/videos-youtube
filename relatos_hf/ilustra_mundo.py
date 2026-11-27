@@ -170,27 +170,79 @@ def pasillo(p, u, t):
 
 @dib("interior")
 def interior(p, u, t):
-    """Habitación: pared, piso, zócalo, ventana con vista (noche/dia/tormenta) y luz cálida."""
+    """Habitación con detalle: piso de tablas en perspectiva con vetas, pared con papel tapiz o enlucido,
+    zócalo con moldura, cuadros colgados, sombra del techo, ventana con marco y vista (noche/dia/tormenta/nieve),
+    haz de luz de la ventana sobre el piso y luz cálida de lámpara."""
     pared, piso = p.get("pared", "#5a4a3c"), p.get("piso", "#3a2a1e")
     y = p.get("piso_y", 1250)
     vista = p.get("vista")
-    s = [f'<defs>{lin(pared, "#1a140f", u + "p")}{lin(piso, "#120c08", u + "s")}{rad([(0, "#ffcf7a", .35), (1, "#ffcf7a", 0)], u + "l")}</defs>',
-         f'<rect x="-200" y="-200" width="1480" height="{y + 200}" fill="url(#{u}p)"/>',
-         f'<rect x="-200" y="{y}" width="1480" height="{1920 - y + 200}" fill="url(#{u}s)"/>',
-         f'<rect x="-200" y="{y - 30}" width="1480" height="30" fill="#2a1d14"/>']
-    if p.get("papel"):
-        s.append("".join(f'<line x1="{x}" x2="{x}" y1="0" y2="{y - 30}" stroke="#000" stroke-opacity=".08" stroke-width="22"/>' for x in range(0, 1100, 90)))
-    for k in range(9):
-        s.append(f'<line x1="{-200 + k * 190}" x2="{-400 + k * 260}" y1="{y}" y2="1920" stroke="#000" stroke-opacity=".18" stroke-width="4"/>')
+    rng = random.Random(len(pared) * 13 + int(y))
+    s = [f'<defs>{lin(pared, "#1a140f", u + "p")}{lin(piso, "#120c08", u + "s")}{rad([(0, "#ffcf7a", .35), (1, "#ffcf7a", 0)], u + "l")}'
+         f'<linearGradient id="{u}te" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient></defs>',
+         f'<rect x="-200" y="-200" width="1480" height="{y + 200}" fill="url(#{u}p)"/>']
+    estilo = p.get("pared_estilo", "papel" if p.get("papel") else rng.choice(["papel", "liso", "rombos", "boiserie"]))
+    if estilo == "papel":
+        s.append("".join(f'<line x1="{x}" x2="{x}" y1="0" y2="{y - 160}" stroke="#000" stroke-opacity=".08" stroke-width="20"/>' for x in range(0, 1100, 90)))
+        s.append("".join(f'<circle cx="{x + 45}" cy="{yy}" r="5" fill="#fff" opacity=".07"/>' for x in range(0, 1100, 90) for yy in range(40, y - 160, 70)))
+    elif estilo == "rombos":
+        s.append("".join(f'<path d="M{x},{yy} l30,40 l-30,40 l-30,-40 Z" fill="none" stroke="#000" stroke-opacity=".08" stroke-width="2"/>'
+                         for x in range(0, 1140, 60) for yy in range(0, y - 160, 80)))
+    elif estilo == "liso":
+        for k in range(30):
+            s.append(f'<ellipse cx="{rng.uniform(0, 1080):.0f}" cy="{rng.uniform(0, y - 200):.0f}" rx="{rng.uniform(30, 90):.0f}" ry="{rng.uniform(10, 30):.0f}" fill="#000" opacity=".04"/>')
+    # boiserie / friso bajo
+    s.append(f'<rect x="-200" y="{y - 160}" width="1480" height="130" fill="#000" opacity=".16"/>'
+             + "".join(f'<rect x="{x}" y="{y - 140}" width="150" height="92" rx="4" fill="none" stroke="#fff" stroke-opacity=".08" stroke-width="3"/>' for x in range(-150, 1180, 190))
+             + f'<rect x="-200" y="{y - 166}" width="1480" height="10" fill="#fff" opacity=".08"/>')
+    # sombra del techo
+    s.append(f'<rect x="-200" y="-200" width="1480" height="420" fill="url(#{u}te)"/>')
+    # cuadros colgados (si no hay ventana en ese lado)
+    vx = p.get("ventana_x", 700)
+    for k in range(p.get("cuadros", 2)):
+        cx = rng.choice([90, 160, 820, 900]) if vista is None else (120 if vx > 500 else 820)
+        cx += k * 170 if vista is None else 0
+        if vista is not None and k:
+            break
+        cy = rng.uniform(380, 560)
+        w, h = rng.uniform(140, 190), rng.uniform(170, 220)
+        s.append(f'<line x1="{cx + w / 2:.0f}" y1="{cy - 60:.0f}" x2="{cx + 10:.0f}" y2="{cy:.0f}" stroke="#222" stroke-width="2"/><line x1="{cx + w / 2:.0f}" y1="{cy - 60:.0f}" x2="{cx + w - 10:.0f}" y2="{cy:.0f}" stroke="#222" stroke-width="2"/>'
+                 f'<rect x="{cx:.0f}" y="{cy:.0f}" width="{w:.0f}" height="{h:.0f}" fill="#8a6a2a" stroke="{TINTA}" stroke-width="4"/>'
+                 f'<rect x="{cx + 14:.0f}" y="{cy + 14:.0f}" width="{w - 28:.0f}" height="{h - 28:.0f}" fill="{rng.choice(["#6a8aa8", "#a8845a", "#5a7a5a", "#8a5a6a"])}"/>'
+                 f'<path d="M{cx + 14:.0f},{cy + h - 40:.0f} q{w * .3:.0f},-40 {w * .5:.0f},-10 t{w * .3:.0f},-20 L{cx + w - 14:.0f},{cy + h - 14:.0f} L{cx + 14:.0f},{cy + h - 14:.0f} Z" fill="#000" opacity=".25"/>'
+                 f'<rect x="{cx:.0f}" y="{cy + h:.0f}" width="{w:.0f}" height="10" fill="#000" opacity=".25"/>')
+    # piso de tablas en perspectiva con vetas
+    s.append(f'<rect x="-200" y="{y}" width="1480" height="{1920 - y + 200}" fill="url(#{u}s)"/>')
+    for k in range(-6, 14):
+        s.append(f'<line x1="{540 + k * 90}" x2="{540 + k * 260}" y1="{y}" y2="2000" stroke="#000" stroke-opacity=".22" stroke-width="3"/>')
+    for k in range(1, 9):
+        yy = y + (2000 - y) * (k / 9) ** 1.6
+        s.append(f'<line x1="-200" x2="1280" y1="{yy:.0f}" y2="{yy:.0f}" stroke="#000" stroke-opacity=".08" stroke-width="2" stroke-dasharray="{120 + k * 30} {200 + k * 40}"/>')
+    for k in range(30):
+        f = rng.uniform(.05, 1)
+        yy = y + (2000 - y) * f ** 1.6
+        xx = rng.uniform(-100, 1180)
+        s.append(f'<path d="M{xx:.0f},{yy:.0f} q{40 * f:.0f},{-3 * f:.1f} {80 * f:.0f},0" stroke="#fff" stroke-opacity=".07" stroke-width="{1 + f:.1f}" fill="none"/>')
+    s.append(f'<rect x="-200" y="{y - 30}" width="1480" height="30" fill="#2a1d14"/><rect x="-200" y="{y - 30}" width="1480" height="5" fill="#fff" opacity=".1"/>')
     if vista:
-        vx, vy = p.get("ventana_x", 700), p.get("ventana_y", 420)
+        vy = p.get("ventana_y", 420)
         cielo = {"noche": ("#08101f", "#1d3260"), "dia": ("#7cc4f5", "#d8f0ff"), "tormenta": ("#1a2230", "#3a4556"),
                  "nieve": ("#2a3550", "#8a9bb8")}[vista]
-        s.append(f'<defs>{lin(*cielo, u + "v")}</defs><rect x="{vx}" y="{vy}" width="300" height="380" fill="url(#{u}v)" {O}/>'
-                 f'<line x1="{vx + 150}" x2="{vx + 150}" y1="{vy}" y2="{vy + 380}" stroke="{TINTA}" stroke-width="12"/>'
-                 f'<line x1="{vx}" x2="{vx + 300}" y1="{vy + 190}" y2="{vy + 190}" stroke="{TINTA}" stroke-width="12"/>')
+        s.append(f'<defs>{lin(*cielo, u + "v")}</defs>'
+                 f'<rect x="{vx - 24}" y="{vy - 24}" width="348" height="428" fill="#3a2a1e" {O}/>'
+                 f'<rect x="{vx}" y="{vy}" width="300" height="380" fill="url(#{u}v)" {O}/>')
         if vista == "noche":
-            s.append(f'<circle cx="{vx + 220}" cy="{vy + 90}" r="34" fill="#fff6d8"/>')
+            s.append(f'<circle cx="{vx + 220}" cy="{vy + 90}" r="34" fill="#fff6d8"/>' + "".join(
+                f'<circle cx="{vx + rng.uniform(10, 290):.0f}" cy="{vy + rng.uniform(10, 370):.0f}" r="1.6" fill="#fff"/>' for _ in range(14)))
+        elif vista == "dia":
+            s.append(f'<ellipse cx="{vx + 90}" cy="{vy + 110}" rx="70" ry="20" fill="#fff" opacity=".9"/><ellipse cx="{vx + 210}" cy="{vy + 200}" rx="60" ry="16" fill="#fff" opacity=".8"/>'
+                     f'<rect x="{vx}" y="{vy + 280}" width="300" height="100" fill="#6a9a5a" opacity=".7"/>')
+        elif vista == "nieve":
+            s.append("".join(f'<circle cx="{vx + rng.uniform(5, 295):.0f}" cy="{vy + rng.uniform(5, 375):.0f}" r="3" fill="#fff" opacity=".8"/>' for _ in range(30)))
+        s.append(f'<line x1="{vx + 150}" x2="{vx + 150}" y1="{vy}" y2="{vy + 380}" stroke="{TINTA}" stroke-width="12"/>'
+                 f'<line x1="{vx}" x2="{vx + 300}" y1="{vy + 190}" y2="{vy + 190}" stroke="{TINTA}" stroke-width="12"/>'
+                 f'<rect x="{vx - 34}" y="{vy + 380}" width="368" height="20" fill="#4a3424" {O}/>')
+        if vista in ("dia", "nieve"):
+            s.append(f'<polygon points="{vx},{vy + 380} {vx + 300},{vy + 380} {vx + 420},{y + 260} {vx - 160},{y + 260}" fill="#fff3c4" opacity=".12" style="mix-blend-mode:screen"/>')
         if vista == "tormenta":
             s.append(f'<rect id="{u}rl" x="{vx}" y="{vy}" width="300" height="380" fill="#e6eeff" opacity="0"/>')
             t.js.append(f'tl.to("#{u}rl", {{opacity: 0.8, duration: 0.05, yoyo: true, repeat: 3}}, {t.at(p.get("rayo_en", 1.0))});')
@@ -229,6 +281,14 @@ def desierto(p, u, t):
     s = (f'<defs>{lin("#e6b980", "#b9824a", u + "a")}{lin("#d29a5e", "#8a5a2f", u + "b")}</defs>'
          f'<path d="M-200,{y} Q200,{y - 70} 560,{y - 10} T1300,{y - 30} V2000 H-200 Z" fill="url(#{u}a)"/>'
          f'<path d="M-200,{y + 220} Q300,{y + 140} 700,{y + 210} T1400,{y + 180} V2000 H-200 Z" fill="url(#{u}b)"/>')
+    rng = random.Random(y)
+    for k in range(60):
+        f = rng.uniform(.05, 1)
+        yy, xx = y + (2000 - y) * f ** 1.6, rng.uniform(-100, 1180)
+        s += (f'<path d="M{xx:.0f},{yy:.0f} q{35 * f:.0f},{-7 * f:.1f} {70 * f:.0f},0" stroke="#fff" stroke-opacity=".2" stroke-width="{1 + 1.5 * f:.1f}" fill="none"/>'
+              f'<path d="M{xx:.0f},{yy + 4 * f:.0f} q{35 * f:.0f},{-7 * f:.1f} {70 * f:.0f},0" stroke="#7a4a20" stroke-opacity=".18" stroke-width="{1 + f:.1f}" fill="none"/>')
+        if rng.random() < .15:
+            s += f'<ellipse cx="{xx:.0f}" cy="{yy:.0f}" rx="{10 * f + 3:.0f}" ry="{6 * f + 2:.0f}" fill="#8a6a4a" stroke="#4a3220" stroke-width="1.5"/>'
     return s
 
 
@@ -389,6 +449,8 @@ def perro(p, u, t):
         c1, c2, c3 = "#e3a865", "#b97a3c", "#f8f1e4"
     elif raza == "crema":  # Hachiko era un akita blanco cremoso
         c1, c2, c3 = "#f3e6cc", "#d2bb92", "#fffaf0"
+    elif raza == "husky":
+        c1, c2, c3 = "#8a929e", "#4a525e", "#f4f4f0"
     else:
         c1, c2, c3 = "#f2ede4", "#cfc5b5", "#ffffff"
     d = (f'<defs>{lin(c1, c2, u + "p", 0)}{lin(c2, "#8a5a2a" if raza == "akita" else "#b8ad9c", u + "s", 0)}'

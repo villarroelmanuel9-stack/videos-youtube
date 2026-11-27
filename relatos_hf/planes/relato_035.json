@@ -1,0 +1,412 @@
+{
+ "tema": "cultura",
+ "estilo": "neon",
+ "claves": [
+  "imposible.",
+  "Kora-llé,",
+  "vacío.",
+  "esmeralda,"
+ ],
+ "tomas": [
+  {
+   "en": "En la cordillera",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1100
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1400,
+     "nieve": true,
+     "colores": [
+      "#8a9ab8",
+      "#6a7a98",
+      "#4a5a78"
+     ]
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1400
+    },
+    {
+     "d": "suelo",
+     "y": 1650,
+     "colores": [
+      "#8a8a7a",
+      "#4a4a3e"
+     ],
+     "tipo": "tierra"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UN AMOR",
+    "IMPOSIBLE"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "hay una laguna",
+   "tipo": "mapa",
+   "centro": [
+    -32.83,
+    -70.12
+   ],
+   "zoom": 25,
+   "zoom_desde": 2.5,
+   "centro_desde": [
+    -33,
+    -70
+   ],
+   "resaltar": [
+    "Chile"
+   ],
+   "pines": [
+    {
+     "lat": -32.83,
+     "lon": -70.12,
+     "texto": "LAGUNA DEL INCA"
+    }
+   ]
+  },
+  {
+   "en": "Cuentan que el",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1350,
+     "nieve": true
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#8a7a5a",
+      "#3a3020"
+     ]
+    },
+    {
+     "d": "persona_real",
+     "x": 330,
+     "y": 1740,
+     "s": 1.6,
+     "ropa": "tunica_roja",
+     "piel": "morena",
+     "peinado": "largo",
+     "pelo": "#111"
+    },
+    {
+     "d": "persona_real",
+     "x": 760,
+     "y": 1740,
+     "s": 1.5,
+     "ropa": "tunica",
+     "piel": "morena",
+     "peinado": "largo",
+     "pelo": "#111"
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "ILLI YUPANQUI",
+    "Y KORA-LLÉ"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "Decidieron casarse en",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1100
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1400,
+     "nieve": true,
+     "colores": [
+      "#8a9ab8",
+      "#6a7a98",
+      "#4a5a78"
+     ]
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1400
+    },
+    {
+     "d": "suelo",
+     "y": 1650,
+     "colores": [
+      "#8a8a7a",
+      "#4a4a3e"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "persona_real",
+     "x": 420,
+     "y": 1820,
+     "s": 1.0,
+     "ropa": "tunica_roja",
+     "piel": "morena",
+     "peinado": "largo",
+     "pelo": "#111"
+    },
+    {
+     "d": "persona_real",
+     "x": 620,
+     "y": 1820,
+     "s": 1.0,
+     "ropa": "tunica",
+     "piel": "morena",
+     "peinado": "largo",
+     "pelo": "#111"
+    }
+   ],
+   "camara": "pull",
+   "texto": [
+    "BODA EN LA",
+    "CUMBRE"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Al terminar la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 900
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1900,
+     "nieve": true,
+     "colores": [
+      "#7a8aa8",
+      "#5a6a88",
+      "#3a4a68"
+     ]
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1250,
+     "s": 1.0,
+     "ropa": "tunica",
+     "piel": "morena",
+     "peinado": "largo",
+     "pelo": "#111"
+    }
+   ],
+   "camara": "baja",
+   "texto": [
+    "UN CAMINO",
+    "AL BORDE"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 1.2
+  },
+  {
+   "en": "Ella resbaló y",
+   "tipo": "titulo",
+   "lineas": [
+    "RESBALÓ",
+    "AL VACÍO"
+   ],
+   "acento": 1,
+   "entrada": "flash",
+   "sfx": "boom"
+  },
+  {
+   "en": "El príncipe, destrozado,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "niebla",
+     "horizonte": 1300
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1350,
+     "nieve": true
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#6a6a5a",
+      "#2a2a22"
+     ]
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.9,
+     "ropa": "tunica_roja",
+     "piel": "morena",
+     "peinado": "largo",
+     "pelo": "#111"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "NO QUISO",
+    "ENTERRARLA"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "La vistió con",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1100
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1400,
+     "nieve": true,
+     "colores": [
+      "#8a9ab8",
+      "#6a7a98",
+      "#4a5a78"
+     ]
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1400
+    },
+    {
+     "d": "suelo",
+     "y": 1650,
+     "colores": [
+      "#8a8a7a",
+      "#4a4a3e"
+     ],
+     "tipo": "tierra"
+    },
+    {
+     "d": "particulas",
+     "tipo": "chispas",
+     "n": 30
+    }
+   ],
+   "camara": "baja",
+   "texto": [
+    "LA SEPULTÓ EN",
+    "EL AGUA"
+   ],
+   "acento": 1,
+   "amb": "olas",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "Desde ese día,",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1100
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1400,
+     "nieve": true,
+     "colores": [
+      "#8a9ab8",
+      "#6a7a98",
+      "#4a5a78"
+     ]
+    },
+    {
+     "d": "mar_hd",
+     "hora": "dia",
+     "horizonte": 1400,
+     "reflejo_x": 540
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 1600,
+     "r": 600,
+     "color": "#2fd59a",
+     "op": 0.45
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "COLOR",
+    "ESMERALDA"
+   ],
+   "acento": 1,
+   "amb": "olas",
+   "amb_vol": 0.5
+  },
+  {
+   "en": "¿Has visitado la",
+   "tipo": "final",
+   "lineas": [
+    "¿HAS VISITADO",
+    "LA LAGUNA?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1100
+    },
+    {
+     "d": "montanas",
+     "horizonte": 1400,
+     "nieve": true,
+     "colores": [
+      "#8a9ab8",
+      "#6a7a98",
+      "#4a5a78"
+     ]
+    },
+    {
+     "d": "mar",
+     "hora": "dia",
+     "horizonte": 1400
+    },
+    {
+     "d": "suelo",
+     "y": 1650,
+     "colores": [
+      "#8a8a7a",
+      "#4a4a3e"
+     ],
+     "tipo": "tierra"
+    }
+   ]
+  }
+ ]
+}

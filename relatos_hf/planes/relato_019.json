@@ -1,0 +1,368 @@
+{
+ "tema": "guerra",
+ "estilo": "periodico",
+ "claves": [
+  "dos",
+  "Nagasaki.",
+  "segunda.",
+  "nunca"
+ ],
+ "tomas": [
+  {
+   "en": "Este hombre sobrevivió",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "pueblo_jp",
+     "y": 1300
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#9a8a70",
+      "#4a3e30"
+     ]
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.9,
+     "ropa": "traje",
+     "piel": "asiatica",
+     "pelo": "#111",
+     "lentes": true
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "SOBREVIVIÓ A",
+    "LAS DOS BOMBAS"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "El seis de",
+   "tipo": "fecha",
+   "dia": "6",
+   "mes": "AGOSTO",
+   "anio": "1945",
+   "hora": "8:15"
+  },
+  {
+   "en": "Tsutomu Yamaguchi estaba",
+   "tipo": "mapa",
+   "centro": [
+    34.39,
+    132.45
+   ],
+   "zoom": 10,
+   "zoom_desde": 2,
+   "centro_desde": [
+    35,
+    136
+   ],
+   "resaltar": [
+    "Japan"
+   ],
+   "pines": [
+    {
+     "lat": 34.39,
+     "lon": 132.45,
+     "texto": "HIROSHIMA"
+    }
+   ]
+  },
+  {
+   "en": "Caminaba hacia la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1250
+    },
+    {
+     "d": "pueblo_jp",
+     "y": 1300
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#9a8a70",
+      "#4a3e30"
+     ]
+    },
+    {
+     "d": "persona_real",
+     "x": 300,
+     "y": 1720,
+     "s": 1.4,
+     "ropa": "traje",
+     "piel": "asiatica",
+     "pelo": "#111",
+     "lentes": true,
+     "mov": "camina",
+     "avance": 120
+    }
+   ],
+   "camara": "pan_der",
+   "dato": [
+    "TSUTOMU",
+    "YAMAGUCHI"
+   ],
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "cuando cayó la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "pueblo_jp",
+     "y": 1300
+    },
+    {
+     "d": "hongo",
+     "x": 700,
+     "y": 1300,
+     "s": 1.2
+    },
+    {
+     "d": "explosion",
+     "x": 700,
+     "y": 1100,
+     "s": 1.6,
+     "en": 0.05
+    }
+   ],
+   "camara": "pull",
+   "texto": "A 3 KM",
+   "sacudir": true,
+   "sfx": "boom",
+   "sfx_dur": 2.0
+  },
+  {
+   "en": "Quedó con quemaduras",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#dfe8e6",
+     "piso": "#9aa8a6",
+     "luz": false,
+     "cuadros": 0
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1650,
+     "s": 1.8,
+     "ropa": "camisa",
+     "piel": "asiatica",
+     "pelo": "#111"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "QUEMADURAS Y",
+    "OÍDOS DAÑADOS"
+   ],
+   "acento": 1
+  },
+  {
+   "en": "Al día siguiente",
+   "tipo": "mapa",
+   "centro": [
+    32.75,
+    129.87
+   ],
+   "zoom": 10,
+   "zoom_desde": 6,
+   "centro_desde": [
+    34.39,
+    132.45
+   ],
+   "resaltar": [
+    "Japan"
+   ],
+   "ruta": [
+    [
+     34.39,
+     132.45
+    ],
+    [
+     32.75,
+     129.87
+    ]
+   ],
+   "pines": [
+    {
+     "lat": 34.39,
+     "lon": 132.45,
+     "texto": "HIROSHIMA"
+    },
+    {
+     "lat": 32.75,
+     "lon": 129.87,
+     "texto": "NAGASAKI"
+    }
+   ],
+   "paso_pines": 1.0
+  },
+  {
+   "en": "Le estaba contando",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "interior",
+     "pared": "#6a5a4a",
+     "piso": "#3a2a1e",
+     "vista": "dia",
+     "ventana_x": 650
+    },
+    {
+     "d": "persona_real",
+     "x": 300,
+     "y": 1550,
+     "s": 1.4,
+     "ropa": "traje",
+     "piel": "asiatica",
+     "pelo": "#111"
+    },
+    {
+     "d": "persona_real",
+     "x": 720,
+     "y": 1550,
+     "s": 1.4,
+     "ropa": "traje_gris",
+     "piel": "asiatica",
+     "pelo": "#555",
+     "peinado": "calvo"
+    }
+   ],
+   "camara": "push",
+   "texto": "LE CONTABA A SU JEFE"
+  },
+  {
+   "en": "cuando cayó la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "dia",
+     "horizonte": 1300
+    },
+    {
+     "d": "pueblo_jp",
+     "y": 1300,
+     "semilla": 2
+    },
+    {
+     "d": "hongo",
+     "x": 400,
+     "y": 1300,
+     "s": 1.2
+    },
+    {
+     "d": "explosion",
+     "x": 400,
+     "y": 1100,
+     "s": 1.6,
+     "en": 0.05
+    }
+   ],
+   "camara": "pull",
+   "texto": "LA SEGUNDA",
+   "sacudir": true,
+   "sfx": "boom",
+   "sfx_dur": 2.0
+  },
+  {
+   "en": "Volvió a sobrevivir.",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1300
+    },
+    {
+     "d": "pueblo_jp",
+     "y": 1300,
+     "hora": "atardecer"
+    },
+    {
+     "d": "suelo",
+     "y": 1300,
+     "colores": [
+      "#9a8a70",
+      "#4a3e30"
+     ]
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1760,
+     "s": 1.9,
+     "ropa": "traje",
+     "piel": "asiatica",
+     "pelo": "#d9d9d9",
+     "lentes": true
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "VIVIÓ HASTA",
+    "LOS 93"
+   ],
+   "amb": "viento",
+   "amb_vol": 0.4
+  },
+  {
+   "en": "y dedicó su",
+   "tipo": "titulo",
+   "lineas": [
+    "QUE NUNCA MÁS",
+    "SE USEN"
+   ],
+   "acento": 1,
+   "icono": "🕊️"
+  },
+  {
+   "en": "¿Conocías su historia?",
+   "tipo": "final",
+   "lineas": [
+    "¿CONOCÍAS SU",
+    "HISTORIA?"
+   ],
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "atardecer",
+     "horizonte": 1300
+    },
+    {
+     "d": "pueblo_jp",
+     "y": 1300,
+     "hora": "atardecer"
+    }
+   ],
+   "comentario": "Increíble y triste 🕊️"
+  }
+ ]
+}

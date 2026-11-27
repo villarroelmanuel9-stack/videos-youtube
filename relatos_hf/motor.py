@@ -625,6 +625,7 @@ def toma_escena(t: "Toma"):
     import ilustra_mundo  # noqa: F401
     import ilustra_obj  # noqa: F401
     import ilustra_hd  # noqa: F401
+    import ilustra_extra  # noqa: F401
     p = t.p
     capas = p["capas"]
     dx, dy, zm = CAMARAS[p.get("camara", "push")]

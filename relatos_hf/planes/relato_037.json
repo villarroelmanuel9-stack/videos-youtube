@@ -1,0 +1,379 @@
+{
+ "tema": "terror",
+ "estilo": "terror",
+ "claves": [
+  "hijos!».",
+  "blanco,",
+  "cerca.",
+  "mexicas:"
+ ],
+ "tomas": [
+  {
+   "en": "«¡Ay, mis hijos!».",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1250
+    },
+    {
+     "d": "arboles",
+     "y": 1260,
+     "n": 6,
+     "color": "#14200f"
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "niebla",
+     "y": 1300,
+     "op": 0.5
+    }
+   ],
+   "camara": "push",
+   "texto": "«¡AY, MIS HIJOS!»",
+   "amb": "viento",
+   "sfx": "gruñido",
+   "sfx_dur": 0.1
+  },
+  {
+   "en": "Dicen que ese",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1250
+    },
+    {
+     "d": "arboles",
+     "y": 1260,
+     "n": 6,
+     "color": "#14200f"
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "niebla",
+     "y": 1300,
+     "op": 0.5
+    },
+    {
+     "d": "silbido",
+     "x1": 300,
+     "y1": 1000,
+     "x2": 900,
+     "color": "#cfe0ff"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "CERCA DE",
+    "LOS RÍOS"
+   ],
+   "acento": 1,
+   "amb": "rio"
+  },
+  {
+   "en": "La Llorona es",
+   "tipo": "titulo",
+   "lineas": [
+    "LA",
+    "LLORONA"
+   ],
+   "acento": 1,
+   "icono": "👻"
+  },
+  {
+   "en": "Cuenta la historia",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1250
+    },
+    {
+     "d": "arboles",
+     "y": 1260,
+     "n": 6,
+     "color": "#14200f"
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "niebla",
+     "y": 1300,
+     "op": 0.5
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1500,
+     "s": 1.5,
+     "ropa": "vestido",
+     "peinado": "largo",
+     "pelo": "#111",
+     "piel": "clara",
+     "mira": "izq"
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "UNA MUJER",
+    "DESESPERADA"
+   ],
+   "acento": 1,
+   "amb": "rio"
+  },
+  {
+   "en": "perdió a sus",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1250
+    },
+    {
+     "d": "arboles",
+     "y": 1260,
+     "n": 6,
+     "color": "#14200f"
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "niebla",
+     "y": 1300,
+     "op": 0.5
+    },
+    {
+     "d": "muneca",
+     "x": 540,
+     "y": 1330,
+     "s": 0.4
+    }
+   ],
+   "camara": "baja",
+   "texto": [
+    "PERDIÓ A SUS",
+    "HIJOS EN EL AGUA"
+   ],
+   "acento": 1,
+   "amb": "rio"
+  },
+  {
+   "en": "Desde entonces, su",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1250
+    },
+    {
+     "d": "arboles",
+     "y": 1260,
+     "n": 6,
+     "color": "#14200f"
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "niebla",
+     "y": 1350,
+     "op": 0.7
+    },
+    {
+     "d": "persona_real",
+     "x": 540,
+     "y": 1520,
+     "s": 1.5,
+     "ropa": "camisa",
+     "peinado": "largo",
+     "pelo": "#111",
+     "mov": "desvanece",
+     "desvanece_en": 2.5
+    },
+    {
+     "d": "luz",
+     "x": 540,
+     "y": 1300,
+     "r": 400,
+     "color": "#dfe8ff",
+     "op": 0.35
+    }
+   ],
+   "camara": "push",
+   "texto": [
+    "VESTIDA",
+    "DE BLANCO"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "Dicen que si",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1250
+    },
+    {
+     "d": "arboles",
+     "y": 1260,
+     "n": 6,
+     "color": "#14200f"
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "niebla",
+     "y": 1300,
+     "op": 0.5
+    },
+    {
+     "d": "ojos",
+     "x": 540,
+     "y": 1150,
+     "s": 1.0,
+     "en": 0.8,
+     "color": "#dfe8ff"
+    }
+   ],
+   "camara": "push_fuerte",
+   "texto": [
+    "SI SE ESCUCHA LEJOS…",
+    "ESTÁ CERCA"
+   ],
+   "acento": 1,
+   "amb": "viento",
+   "sfx": "boom",
+   "sfx_en": 1.5
+  },
+  {
+   "en": "Algunos relacionan su",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350
+    },
+    {
+     "d": "templo_azteca",
+     "x": 540,
+     "y": 1420,
+     "s": 0.9
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#5a4a3a",
+      "#1a140e"
+     ]
+    }
+   ],
+   "camara": "push",
+   "dato": [
+    "PRESAGIOS",
+    "MEXICAS"
+   ],
+   "amb": "viento"
+  },
+  {
+   "en": "antes de la",
+   "tipo": "escena",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1350
+    },
+    {
+     "d": "templo_azteca",
+     "x": 540,
+     "y": 1420,
+     "s": 0.9
+    },
+    {
+     "d": "suelo",
+     "y": 1350,
+     "colores": [
+      "#5a4a3a",
+      "#1a140e"
+     ]
+    },
+    {
+     "d": "silbido",
+     "x1": 200,
+     "y1": 900,
+     "x2": 900,
+     "color": "#dfe8ff"
+    }
+   ],
+   "camara": "pan_der",
+   "texto": [
+    "UNA MUJER LLORABA",
+    "DE NOCHE"
+   ],
+   "acento": 1,
+   "amb": "viento"
+  },
+  {
+   "en": "¿En tu país",
+   "tipo": "final",
+   "lineas": [
+    "¿EN TU PAÍS",
+    "LA CUENTAN?"
+   ],
+   "final": "si_no",
+   "capas": [
+    {
+     "d": "cielo",
+     "hora": "noche",
+     "horizonte": 1250
+    },
+    {
+     "d": "arboles",
+     "y": 1260,
+     "n": 6,
+     "color": "#14200f"
+    },
+    {
+     "d": "mar",
+     "hora": "noche",
+     "horizonte": 1300
+    },
+    {
+     "d": "niebla",
+     "y": 1300,
+     "op": 0.5
+    }
+   ]
+  }
+ ]
+}
