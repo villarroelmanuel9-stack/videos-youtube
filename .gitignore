@@ -7,3 +7,4 @@ misterios nuevos/*.txt
 
 # carpetas temporales del render de HyperFrames
 historias nuevas/work-*/
+historias nuevas/.*hf-transaction*/

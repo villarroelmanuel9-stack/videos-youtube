@@ -540,7 +540,7 @@ def overlay_dato(t: "Toma", dato, lado: str, dt: float = 0.35):
     lineas = [dato] if isinstance(dato, str) else list(dato)
     x = 70 if lado == "izq" else None
     pos = f"left:{x}px;" if x is not None else "right:70px;"
-    filas = "".join(f'<div class="dl{k}">{esc(l)}</div>' for k, l in enumerate(lineas))
+    filas = "".join(f'<div class="dl{k if len(lineas) > 1 else 1}">{esc(l)}</div>' for k, l in enumerate(lineas))
     rot = {"ficha": -3, "post": 4, "sello": -7, "neon": 0, "etiqueta": 0}[e] * (1 if lado == "izq" else -1)
     t.html.append(f'<div id="{t.id}d" class="dato dato-{e}" style="{pos}top:330px;transform:rotate({rot}deg)">{filas}</div>')
     if e == "sello":
