@@ -481,14 +481,41 @@ def casco(p, u, t):
 
 @dib("espartano")
 def espartano(p, u, t):
-    """Hoplita: casco corintio con penacho, escudo redondo con lambda y lanza."""
-    s = (f'<defs>{lin("#d6a64a", "#8a6420", u + "b", 0)}{lin("#b3261e", "#6a1410", u + "c", 0)}</defs>'
-         f'<line x1="150" y1="20" x2="210" y2="-760" stroke="#5a3a1e" stroke-width="16"/><path d="M200,-760 L230,-840 L240,-760 Z" fill="#9aa0a6" {O3}/>'
-         f'<path d="M-70,-420 L70,-420 L90,-150 L60,0 L-60,0 L-90,-150 Z" fill="url(#{u}c)" {O}/>'
-         f'<path d="M-90,-560 Q-95,-700 0,-710 Q95,-700 90,-560 L80,-470 L30,-470 L20,-560 L-20,-560 L-30,-470 L-80,-470 Z" fill="url(#{u}b)" {O}/>'
-         f'<path d="M-100,-690 Q0,-830 100,-690 Q0,-760 -100,-690 Z" fill="#b3261e" {O3}/>'
-         f'<circle cx="-110" cy="-300" r="170" fill="url(#{u}b)" {O}/><path d="M-170,-210 L-110,-390 L-50,-210" stroke="#6a1410" stroke-width="22" fill="none"/>')
+    """Hoplita espartano: grebas de bronce, túnica roja, capa, brazos con escudo redondo (lambda) y lanza,
+    casco corintio con penacho y ojos visibles por la abertura."""
+    piel, piel_s = "#d9a06e", "#b07a4c"
+    d = (f'<defs>{lin("#e8b85a", "#8a6420", u + "b", 0)}{lin("#c0392b", "#6a1410", u + "c", 0)}{lin(piel, piel_s, u + "p", 0)}'
+         f'{rad([(0, "#f2cc70", 1), (.7, "#c89434", 1), (1, "#7a5418", 1)], u + "e", "40%", "35%", "70%")}</defs>')
+    capa = f'<path d="M-60,-430 Q-150,-250 -120,-40 L60,-40 Q20,-250 40,-430 Z" fill="#7a1813" stroke="{TINTA}" stroke-width="4"/>'
+    lanza = (f'<line x1="150" y1="30" x2="215" y2="-780" stroke="{TINTA}" stroke-width="20" stroke-linecap="round"/>'
+             f'<line x1="150" y1="30" x2="215" y2="-780" stroke="#7a5230" stroke-width="12" stroke-linecap="round"/>'
+             f'<path d="M205,-770 L232,-868 L246,-772 Z" fill="#cfd5dc" stroke="{TINTA}" stroke-width="4"/>')
+    piernas = (f'<path d="M-44,-160 L-48,-8 L-14,-8 L-10,-160 Z M10,-160 L14,-8 L48,-8 L44,-160 Z" fill="url(#{u}p)" stroke="{TINTA}" stroke-width="4"/>'
+               f'<path d="M-50,-120 L-46,-24 L-12,-24 L-10,-120 Q-30,-132 -50,-120 Z M10,-120 L12,-24 L46,-24 L50,-120 Q30,-132 10,-120 Z" fill="url(#{u}b)" stroke="{TINTA}" stroke-width="3.5"/>'
+               f'<path d="M-54,-10 L-8,-10 L-8,4 L-58,4 Z M8,-10 L54,-10 L58,4 L8,4 Z" fill="#5a3a22" stroke="{TINTA}" stroke-width="3"/>')
+    torso = (f'<path d="M-64,-440 Q0,-466 64,-440 L70,-250 L84,-150 L-84,-150 L-70,-250 Z" fill="url(#{u}c)" stroke="{TINTA}" stroke-width="5" stroke-linejoin="round"/>'
+             + "".join(f'<rect x="{-80 + k * 20}" y="-176" width="16" height="44" rx="4" fill="url(#{u}b)" stroke="{TINTA}" stroke-width="2.5"/>' for k in range(9))
+             + f'<path d="M-58,-430 Q0,-410 58,-430 L54,-330 Q0,-300 -54,-330 Z" fill="url(#{u}b)" stroke="{TINTA}" stroke-width="4"/>'
+             f'<path d="M-30,-400 Q0,-380 30,-400" stroke="#7a5418" stroke-width="4" fill="none"/>')
+    brazo_der = (f'<path d="M62,-420 Q125,-360 165,-300" stroke="{TINTA}" stroke-width="36" stroke-linecap="round" fill="none"/>'
+                 f'<path d="M62,-420 Q125,-360 165,-300" stroke="{piel}" stroke-width="27" stroke-linecap="round" fill="none"/>'
+                 f'<circle cx="176" cy="-292" r="20" fill="url(#{u}p)" stroke="{TINTA}" stroke-width="3.5"/>')
+    casco = (f'<path d="M-62,-470 Q-70,-610 0,-622 Q70,-610 62,-470 L52,-452 L20,-452 L16,-520 L-16,-520 L-20,-452 L-52,-452 Z" fill="url(#{u}b)" stroke="{TINTA}" stroke-width="5" stroke-linejoin="round"/>'
+             f'<path d="M-16,-520 L16,-520 L14,-470 L-14,-470 Z" fill="#2a1a10"/>'
+             f'<ellipse cx="-8" cy="-532" rx="7" ry="5" fill="#fff"/><ellipse cx="22" cy="-532" rx="7" ry="5" fill="#fff"/>'
+             f'<circle cx="-6" cy="-532" r="3.5" fill="{TINTA}"/><circle cx="24" cy="-532" r="3.5" fill="{TINTA}"/>'
+             f'<path d="M-30,-556 L-8,-548 M48,-556 L26,-548" stroke="#2a1a10" stroke-width="6" stroke-linecap="round"/>'
+             f'<path d="M-36,-600 Q-20,-616 0,-618" stroke="#fff" stroke-opacity=".35" stroke-width="6" fill="none"/>'
+             f'<g id="{u}pen"><path d="M-80,-600 Q0,-760 90,-610 Q60,-640 0,-650 Q-50,-640 -80,-600 Z" fill="#b3261e" stroke="{TINTA}" stroke-width="4"/>'
+             + "".join(f'<path d="M{-60 + k * 18},-{620 + (k % 2) * 10} Q{-50 + k * 18},-{700 - abs(k - 4) * 8} {-40 + k * 18},-{622}" stroke="#7a1813" stroke-width="3" fill="none"/>' for k in range(8))
+             + "</g>")
+    escudo = (f'<g id="{u}esc"><circle cx="-120" cy="-300" r="176" fill="url(#{u}e)" stroke="{TINTA}" stroke-width="7"/>'
+              f'<circle cx="-120" cy="-300" r="150" fill="none" stroke="#7a5418" stroke-width="6"/>'
+              f'<path d="M-188,-200 L-120,-392 L-52,-200" stroke="#7a1813" stroke-width="26" fill="none" stroke-linejoin="round"/>'
+              f'<path d="M-230,-400 Q-180,-460 -110,-466" stroke="#fff" stroke-opacity=".4" stroke-width="10" fill="none"/></g>')
+    s = d + capa + lanza + piernas + torso + brazo_der + casco + escudo
     vaiven(t, f"#{u}", "y: -6", periodo=1.4)
+    vaiven(t, f"#{u}pen", "rotation: 3, transformOrigin: '50% 100%'", periodo=1.1)
     return g(p, s, u)
 
 

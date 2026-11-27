@@ -359,42 +359,92 @@ ROPA = {
 
 @dib("persona")
 def persona(p, u, t):
+    """Personaje con volumen: cara con ojos, cejas, nariz y mejillas; manos, zapatos, ropa con sombreado y borde de luz.
+    ropa (ver ROPA), falda, pelo, pelo_largo, calvo, bigote, barba, sombrero (gorra, copa, fedora, cofia, casco_ww),
+    expresion (normal, serio, sorpresa, triste, enojado), mov (camina, saluda, respira, desvanece)."""
     ropa = ROPA.get(p.get("ropa", "traje"), ROPA["traje"])
-    piel = p.get("piel", "#e2b48c")
+    piel = p.get("piel", "#e8b98f")
+    piel_s = "#c98f66"
     pelo = p.get("pelo", "#3a2a1e")
     som = p.get("sombrero")
-    defs = f'<defs>{lin(ropa[0], ropa[1], u + "r", 0)}</defs>'
+    expr = p.get("expresion", "normal")
     falda = p.get("falda", False)
-    cuerpo = (f'<path d="M-46,-250 Q0,-275 46,-250 L60,-120 L50,0 L14,0 L8,-110 L-8,-110 L-14,0 L-50,0 L-60,-120 Z" fill="url(#{u}r)" stroke="{TINTA}" stroke-width="5" stroke-linejoin="round"/>'
-              if not falda else
-              f'<path d="M-44,-250 Q0,-275 44,-250 L56,-150 L90,0 L-90,0 L-56,-150 Z" fill="url(#{u}r)" stroke="{TINTA}" stroke-width="5" stroke-linejoin="round"/>')
-    brazos = (f'<path id="{u}bi" d="M-46,-245 Q-80,-180 -70,-110" stroke="{ropa[1]}" stroke-width="26" stroke-linecap="round" fill="none"/>'
-              f'<path id="{u}bd" d="M46,-245 Q80,-180 70,-110" stroke="{ropa[1]}" stroke-width="26" stroke-linecap="round" fill="none"/>')
-    cabeza = (f'<rect x="-14" y="-292" width="28" height="30" fill="{piel}"/>'
-              f'<ellipse cx="0" cy="-325" rx="40" ry="46" fill="{piel}" stroke="{TINTA}" stroke-width="5"/>'
-              f'<path d="M-40,-330 Q-38,-378 0,-376 Q38,-378 40,-330 Q30,-352 0,-354 Q-30,-352 -40,-330 Z" fill="{pelo}"/>'
-              f'<circle cx="-14" cy="-322" r="4.5" fill="{TINTA}"/><circle cx="14" cy="-322" r="4.5" fill="{TINTA}"/>'
-              f'<path d="M-10,-298 Q0,-292 10,-298" stroke="{TINTA}" stroke-width="3" fill="none"/>')
+    pantalon = p.get("pantalon", "#2a2f3d" if not falda else piel)
+    d = (f'<defs>{lin(ropa[0], ropa[1], u + "r", 0)}{lin(piel, piel_s, u + "p", 0)}'
+         f'{rad([(0, "#ff9a9a", .55), (1, "#ff9a9a", 0)], u + "mj")}</defs>')
+    sombra = '<ellipse cx="0" cy="2" rx="95" ry="16" fill="#000" opacity=".28"/>'
+    # piernas y zapatos
+    if falda:
+        piernas = (f'<path d="M-30,-60 L-34,-10 L-18,-10 L-14,-60 Z M14,-60 L18,-10 L34,-10 L30,-60 Z" fill="{piel}" stroke="{TINTA}" stroke-width="4"/>'
+                   f'<path d="M-46,-12 Q-46,4 -12,4 L-12,-14 Z M12,-14 L12,4 Q46,4 46,-12 Z" fill="#2a1d14" stroke="{TINTA}" stroke-width="4"/>')
+        cuerpo = (f'<path d="M-50,-262 Q0,-284 50,-262 L58,-170 L96,-58 Q0,-40 -96,-58 L-58,-170 Z" fill="url(#{u}r)" stroke="{TINTA}" stroke-width="5" stroke-linejoin="round"/>'
+                  f'<path d="M-56,-180 Q0,-168 56,-180" stroke="{ropa[1]}" stroke-width="10" fill="none"/>'
+                  f'<path d="M-44,-250 Q-50,-160 -84,-70" stroke="#fff" stroke-opacity=".22" stroke-width="7" fill="none"/>')
+    else:
+        piernas = (f'<path d="M-40,-140 L-38,-14 L-8,-14 L-4,-120 L4,-120 L8,-14 L38,-14 L40,-140 Z" fill="{pantalon}" stroke="{TINTA}" stroke-width="5" stroke-linejoin="round"/>'
+                   f'<path d="M-46,-16 Q-48,4 -6,4 L-6,-18 Z M6,-18 L6,4 Q48,4 46,-16 Z" fill="#1d1510" stroke="{TINTA}" stroke-width="4"/>')
+        cuerpo = (f'<path d="M-52,-262 Q0,-286 52,-262 L60,-176 L54,-128 L-54,-128 L-60,-176 Z" fill="url(#{u}r)" stroke="{TINTA}" stroke-width="5" stroke-linejoin="round"/>'
+                  f'<path d="M-18,-268 L0,-226 L18,-268" fill="#f4f1ea" stroke="{TINTA}" stroke-width="3"/>'
+                  + (f'<path d="M-4,-232 L4,-232 L8,-176 L0,-164 L-8,-176 Z" fill="{p.get("corbata", "#8a1d1d")}" stroke="{TINTA}" stroke-width="2.5"/>'
+                     if p.get("ropa", "traje") in ("traje", "gris") else "")
+                  + f'<path d="M-18,-268 L-30,-200 L-6,-186" fill="none" stroke="{ropa[1]}" stroke-width="5"/><path d="M18,-268 L30,-200 L6,-186" fill="none" stroke="{ropa[1]}" stroke-width="5"/>'
+                  f'<circle cx="0" cy="-160" r="4" fill="{TINTA}"/><circle cx="0" cy="-140" r="4" fill="{TINTA}"/>'
+                  f'<path d="M-46,-252 Q-56,-200 -54,-136" stroke="#fff" stroke-opacity=".22" stroke-width="7" fill="none"/>')
+    # brazos con manos
+    brazos = (f'<g id="{u}bi"><path d="M-50,-256 Q-86,-200 -78,-128" stroke="{TINTA}" stroke-width="32" stroke-linecap="round" fill="none"/>'
+              f'<path d="M-50,-256 Q-86,-200 -78,-128" stroke="{ropa[1]}" stroke-width="24" stroke-linecap="round" fill="none"/>'
+              f'<circle cx="-78" cy="-118" r="15" fill="url(#{u}p)" stroke="{TINTA}" stroke-width="3.5"/></g>'
+              f'<g id="{u}bd"><path d="M50,-256 Q86,-200 78,-128" stroke="{TINTA}" stroke-width="32" stroke-linecap="round" fill="none"/>'
+              f'<path d="M50,-256 Q86,-200 78,-128" stroke="{ropa[0]}" stroke-width="24" stroke-linecap="round" fill="none"/>'
+              f'<circle cx="78" cy="-118" r="15" fill="url(#{u}p)" stroke="{TINTA}" stroke-width="3.5"/></g>')
+    # cabeza
+    cejas = {"normal": ("M-30,-352 Q-18,-360 -6,-352", "M6,-352 Q18,-360 30,-352"),
+             "serio": ("M-30,-350 L-6,-350", "M6,-350 L30,-350"),
+             "sorpresa": ("M-30,-360 Q-18,-372 -6,-360", "M6,-360 Q18,-372 30,-360"),
+             "triste": ("M-30,-348 Q-18,-358 -6,-358", "M6,-358 Q18,-358 30,-348"),
+             "enojado": ("M-30,-358 L-6,-348", "M6,-348 L30,-358")}[expr]
+    boca = {"normal": "M-12,-302 Q0,-294 12,-302", "serio": "M-11,-300 L11,-300", "sorpresa": None,
+            "triste": "M-12,-296 Q0,-304 12,-296", "enojado": "M-12,-298 Q0,-304 12,-298"}[expr]
+    cab = [f'<rect x="-13" y="-290" width="26" height="30" fill="{piel_s}"/>']
     if p.get("pelo_largo"):
-        cabeza = f'<path d="M-44,-330 Q-50,-250 -30,-240 L30,-240 Q50,-250 44,-330 Z" fill="{pelo}"/>' + cabeza
+        cab.append(f'<path d="M-46,-344 Q-54,-250 -34,-236 L34,-236 Q54,-250 46,-344 Z" fill="{pelo}" stroke="{TINTA}" stroke-width="4"/>')
+    cab += [f'<ellipse cx="-42" cy="-328" rx="8" ry="13" fill="{piel_s}" stroke="{TINTA}" stroke-width="3.5"/>',
+            f'<ellipse cx="42" cy="-328" rx="8" ry="13" fill="{piel_s}" stroke="{TINTA}" stroke-width="3.5"/>',
+            f'<ellipse cx="0" cy="-330" rx="42" ry="48" fill="url(#{u}p)" stroke="{TINTA}" stroke-width="5"/>']
+    if not p.get("calvo"):
+        cab.append(f'<path d="M-43,-334 Q-44,-386 0,-384 Q44,-386 43,-334 Q36,-362 8,-362 Q-2,-350 -18,-360 Q-36,-362 -43,-334 Z" fill="{pelo}" stroke="{TINTA}" stroke-width="3.5"/>')
+    cab += [f'<path d="{cejas[0]}" stroke="{pelo if pelo != "#ececec" else "#888"}" stroke-width="5" stroke-linecap="round" fill="none"/>',
+            f'<path d="{cejas[1]}" stroke="{pelo if pelo != "#ececec" else "#888"}" stroke-width="5" stroke-linecap="round" fill="none"/>',
+            f'<ellipse cx="-17" cy="-334" rx="8" ry="9" fill="#fff"/><ellipse cx="17" cy="-334" rx="8" ry="9" fill="#fff"/>',
+            f'<circle cx="-16" cy="-333" r="5" fill="{TINTA}"/><circle cx="18" cy="-333" r="5" fill="{TINTA}"/>',
+            f'<circle cx="-14" cy="-335" r="1.6" fill="#fff"/><circle cx="20" cy="-335" r="1.6" fill="#fff"/>',
+            f'<path d="M0,-326 Q-7,-312 2,-310" stroke="{piel_s}" stroke-width="4" fill="none" stroke-linecap="round"/>',
+            f'<circle cx="-26" cy="-312" r="10" fill="url(#{u}mj)"/><circle cx="26" cy="-312" r="10" fill="url(#{u}mj)"/>']
+    cab.append(f'<path d="{boca}" stroke="{TINTA}" stroke-width="3.5" fill="none" stroke-linecap="round"/>' if boca else
+               f'<ellipse cx="0" cy="-300" rx="7" ry="9" fill="#5a1d1d"/>')
+    if p.get("bigote"):
+        cab.append(f'<path d="M-20,-306 Q-10,-316 0,-308 Q10,-316 20,-306 Q10,-300 0,-304 Q-10,-300 -20,-306 Z" fill="{pelo}"/>')
+    if p.get("barba"):
+        cab.append(f'<path d="M-40,-322 Q-38,-272 0,-268 Q38,-272 40,-322 Q30,-292 0,-292 Q-30,-292 -40,-322 Z" fill="{pelo}" opacity=".95"/>')
     if som == "gorra":
-        cabeza += f'<path d="M-42,-350 Q0,-392 42,-350 Z" fill="{p.get("color_sombrero", "#2a3142")}" stroke="{TINTA}" stroke-width="4"/><rect x="-6" y="-354" width="62" height="10" rx="5" fill="{TINTA}"/>'
+        cab.append(f'<path d="M-44,-350 Q0,-398 44,-350 Z" fill="{p.get("color_sombrero", "#2a3142")}" stroke="{TINTA}" stroke-width="4"/><rect x="-6" y="-356" width="64" height="11" rx="5" fill="{TINTA}"/>')
     elif som == "copa":
-        cabeza += f'<rect x="-34" y="-430" width="68" height="64" fill="{TINTA}"/><rect x="-56" y="-372" width="112" height="12" rx="6" fill="{TINTA}"/>'
+        cab.append(f'<rect x="-34" y="-436" width="68" height="70" rx="4" fill="#15161c" stroke="#3a3d4a" stroke-width="3"/><rect x="-34" y="-386" width="68" height="10" fill="#6b2d3f"/><rect x="-58" y="-372" width="116" height="12" rx="6" fill="#15161c"/>')
     elif som == "fedora":
-        cabeza += f'<path d="M-38,-360 Q0,-410 38,-360 Z" fill="#3b3326"/><rect x="-62" y="-364" width="124" height="12" rx="6" fill="#3b3326"/>'
+        cab.append(f'<path d="M-38,-362 Q-30,-410 0,-408 Q30,-410 38,-362 Z" fill="#4a3d2c" stroke="{TINTA}" stroke-width="3"/><rect x="-38" y="-374" width="76" height="9" fill="#2a2218"/><rect x="-64" y="-366" width="128" height="12" rx="6" fill="#4a3d2c" stroke="{TINTA}" stroke-width="3"/>')
     elif som == "cofia":
-        cabeza += f'<path d="M-36,-364 L36,-364 L28,-386 L-28,-386 Z" fill="#ffffff" stroke="{TINTA}" stroke-width="3"/><rect x="-6" y="-384" width="12" height="16" fill="#c41e1e"/>'
+        cab.append(f'<path d="M-36,-366 L36,-366 L28,-390 L-28,-390 Z" fill="#ffffff" stroke="{TINTA}" stroke-width="3"/><rect x="-6" y="-388" width="12" height="16" fill="#c41e1e"/>')
     elif som == "casco_ww":
-        cabeza += f'<path d="M-50,-338 Q0,-410 50,-338 Z" fill="#4b5a35" stroke="{TINTA}" stroke-width="4"/>'
-    s = defs + brazos + cuerpo + cabeza
+        cab.append(f'<path d="M-52,-338 Q0,-414 52,-338 Z" fill="#4b5a35" stroke="{TINTA}" stroke-width="4"/>')
+    s = d + sombra + piernas + brazos + cuerpo + "".join(cab)
     mov = p.get("mov")
     if mov == "camina":
         deriva(t, f"#{u}", f"x: '+={p.get('avance', 160)}'")
         vaiven(t, f"#{u}in", "y: -8", periodo=0.5)
+        vaiven(t, f"#{u}bi", "rotation: 14, transformOrigin: '50% 0%'", periodo=1.0)
+        vaiven(t, f"#{u}bd", "rotation: -14, transformOrigin: '50% 0%'", periodo=1.0)
     elif mov == "saluda":
-        t.js.append(f'gsap.set("#{u}bd", {{attr: {{d: "M46,-245 Q90,-300 70,-380"}}}});')
-        vaiven(t, f"#{u}bd", "rotation: -12, transformOrigin: '0% 100%'", periodo=0.6)
+        vaiven(t, f"#{u}bd", "rotation: -70, transformOrigin: '0% 0%'", periodo=0.6)
     elif mov == "respira":
         vaiven(t, f"#{u}in", "scaleY: 1.015, transformOrigin: '50% 100%'", periodo=2.4)
     elif mov == "desvanece":

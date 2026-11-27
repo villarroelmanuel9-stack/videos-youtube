@@ -11,6 +11,9 @@ O3 = f'stroke="{TINTA}" stroke-width="3.5" stroke-linejoin="round"'
 
 
 def ventanas(x0, y0, cols, filas, w, h, dx, dy, rng, prob=.65, on="#ffd77a", off="#1c2233"):
+    """Ventanas iluminadas al azar (de noche) o vidrios celestes (prob<0 = de día)."""
+    if prob < 0:
+        on, off, prob = "#cfe6f5", "#8fb0c9", .5
     return "".join(f'<rect x="{x0 + c * dx}" y="{y0 + f * dy}" width="{w}" height="{h}" rx="2" fill="{on if rng.random() < prob else off}"/>'
                    for c in range(cols) for f in range(filas))
 
@@ -23,16 +26,22 @@ def ciudad(p, u, t):
     y = p.get("y", 1250)
     rng = random.Random(p.get("semilla", 3))
     capas = []
-    for k, (col, alto) in enumerate([(p.get("color_lejos", "#1d2540"), 1.0), (p.get("color", "#121829"), 0.7)]):
+    de_dia = p.get("hora") in ("dia", "amanecer", "atardecer") and "color" not in p
+    paleta_dia = ["#d9a07a", "#c9b28a", "#b98a6a", "#e0c9a6", "#a8b4c4", "#c4a07a", "#9ab0a8"]
+    tonos = [(("#8d9bb5" if era == "moderna" else "#b9a48a"), 1.0), (("#a9b4c9" if era == "moderna" else "#d2b48f"), 0.7)] if de_dia else \
+        [(p.get("color_lejos", "#1d2540"), 1.0), (p.get("color", "#121829"), 0.7)]
+    for k, (col, alto) in enumerate(tonos):
         x = -120 + k * 40
         edif = []
         while x < 1200:
             w = rng.uniform(70, 150) if era == "moderna" else rng.uniform(80, 130)
             h = (rng.uniform(220, 620) if era == "moderna" else rng.uniform(150, 260)) * alto
+            if de_dia and era != "moderna":
+                col = rng.choice(paleta_dia)
             if era == "moderna":
-                edif.append(f'<rect x="{x:.0f}" y="{y - h:.0f}" width="{w:.0f}" height="{h:.0f}" fill="{col}"/>')
+                edif.append(f'<rect x="{x:.0f}" y="{y - h:.0f}" width="{w:.0f}" height="{h:.0f}" fill="{col}"' + (f' stroke="{TINTA}" stroke-width="3"' if de_dia else "") + '/>')
                 edif.append(ventanas(x + 10, y - h + 14, int((w - 14) // 22), int((h - 20) // 30), 10, 14, 22, 30, rng,
-                                     .45 if k else .25))
+                                     -1 if de_dia else (.45 if k else .25)))
             elif era == "sovietica":
                 edif.append(f'<rect x="{x:.0f}" y="{y - h:.0f}" width="{w:.0f}" height="{h:.0f}" fill="{col}"/>'
                             f'<polygon points="{x + w * .3:.0f},{y - h:.0f} {x + w * .5:.0f},{y - h - 70:.0f} {x + w * .7:.0f},{y - h:.0f}" fill="{col}"/>')
@@ -40,13 +49,15 @@ def ciudad(p, u, t):
             else:
                 techo = rng.uniform(50, 110)
                 colc = col if era == "antigua" else ("#c98b5b" if k else "#a86d45")
+                if de_dia:
+                    colc = rng.choice(paleta_dia)
                 edif.append(f'<path d="M{x:.0f},{y} V{y - h:.0f} L{x + w / 2:.0f},{y - h - techo:.0f} L{x + w:.0f},{y - h:.0f} V{y} Z" fill="{colc}" {O3}/>')
                 if era == "antigua":
                     for v in range(int(h // 50)):
                         edif.append(f'<line x1="{x:.0f}" x2="{x + w:.0f}" y1="{y - 40 - v * 50:.0f}" y2="{y - 40 - v * 50:.0f}" stroke="#2a1a10" stroke-width="5"/>')
                     edif.append(f'<line x1="{x + w * .25:.0f}" x2="{x + w * .25:.0f}" y1="{y - h:.0f}" y2="{y}" stroke="#2a1a10" stroke-width="5"/>'
                                 f'<line x1="{x + w * .75:.0f}" x2="{x + w * .75:.0f}" y1="{y - h:.0f}" y2="{y}" stroke="#2a1a10" stroke-width="5"/>')
-                edif.append(ventanas(x + w * .3, y - h * .7, 2, 2, 18, 22, w * .25, h * .35, rng, .55))
+                edif.append(ventanas(x + w * .3, y - h * .7, 2, 2, 18, 22, w * .25, h * .35, rng, -1 if de_dia else .55))
             x += w + (rng.uniform(0, 20) if era == "moderna" else -6)
         capas.append(f'<g id="{u}c{k}">{"".join(edif)}</g>')
     return "".join(capas)
@@ -371,22 +382,47 @@ def camion(p, u, t):
 # ============================================================================ animales
 @dib("perro")
 def perro(p, u, t):
-    """Perro sentado de perfil: akita (crema y blanco, cola enroscada) o mestizo pequeño (Laika)."""
+    """Perro sentado de perfil mirando a la derecha. raza: akita (canela con pecho blanco, cola enroscada) o laika
+    (blanca con manchas canela). collar=True agrega collar rojo."""
     raza = p.get("raza", "akita")
-    c1, c2 = ("#e8c08a", "#f7efe2") if raza == "akita" else ("#f2efe8", "#c9a27a")
-    s = (f'<defs>{lin(c1, "#b98b52" if raza == "akita" else "#d8d2c6", u + "p", 0)}</defs>'
-         f'<path id="{u}cola" d="M-120,-170 Q-200,-260 -130,-300 Q-80,-300 -100,-240" fill="none" stroke="{c1}" stroke-width="34" stroke-linecap="round"/>'
-         f'<path d="M-150,0 Q-170,-140 -90,-210 Q-10,-250 40,-210 L70,-120 L70,0 Z" fill="url(#{u}p)" {O}/>'
-         f'<path d="M40,-210 Q50,-300 90,-330 L110,-330 Q160,-300 170,-250 Q190,-240 200,-225 Q190,-205 160,-205 L100,-200 Z" fill="url(#{u}p)" {O}/>'
-         f'<path d="M95,-322 L80,-392 L125,-338 Z" fill="{c1}" {O3}/><path d="M130,-330 L140,-398 L160,-325 Z" fill="{c1}" {O3}/>'
-         f'<path d="M120,-240 Q160,-215 200,-225 Q180,-200 130,-205 Z" fill="{c2}"/>'
-         f'<circle cx="142" cy="-272" r="8" fill="{TINTA}"/><circle cx="199" cy="-226" r="9" fill="{TINTA}"/>'
-         f'<rect x="20" y="-90" width="34" height="90" rx="14" fill="{c2}" {O3}/><rect x="-40" y="-60" width="34" height="60" rx="14" fill="{c2}" {O3}/>'
-         f'<path d="M40,-200 Q70,-150 60,-110" stroke="{c2}" stroke-width="30" fill="none" stroke-linecap="round"/>')
-    if raza == "laika":
-        s += f'<path d="M80,-330 L90,-300 L140,-300 Z" fill="#c9a27a"/>'
+    if raza == "akita":
+        c1, c2, c3 = "#e3a865", "#b97a3c", "#f8f1e4"
+    else:
+        c1, c2, c3 = "#f2ede4", "#cfc5b5", "#ffffff"
+    d = (f'<defs>{lin(c1, c2, u + "p", 0)}{lin(c2, "#8a5a2a" if raza == "akita" else "#b8ad9c", u + "s", 0)}'
+         f'{lin(c3, "#e3d9c8", u + "b", 0)}</defs>')
+    cola = (f'<g id="{u}cola"><path d="M-110,-205 Q-205,-250 -170,-325 Q-120,-370 -92,-300 Q-84,-262 -120,-262" fill="none" stroke="{TINTA}" stroke-width="42" stroke-linecap="round"/>'
+            f'<path d="M-110,-205 Q-205,-250 -170,-325 Q-120,-370 -92,-300 Q-84,-262 -120,-262" fill="none" stroke="{c1}" stroke-width="32" stroke-linecap="round"/>'
+            f'<path d="M-150,-300 Q-130,-338 -106,-308" fill="none" stroke="{c3}" stroke-width="12" stroke-linecap="round"/></g>')
+    cuerpo = (f'<path d="M-150,-4 Q-178,-150 -92,-218 Q-10,-262 64,-240 Q104,-222 104,-168 L100,-10 Q96,4 70,4 L-130,4 Q-148,4 -150,-4 Z" '
+              f'fill="url(#{u}p)" stroke="{TINTA}" stroke-width="5" stroke-linejoin="round"/>'
+              f'<ellipse cx="-74" cy="-92" rx="82" ry="92" fill="url(#{u}s)" stroke="{TINTA}" stroke-width="4"/>'
+              f'<ellipse cx="-22" cy="-8" rx="56" ry="15" fill="{c3}" stroke="{TINTA}" stroke-width="4"/>'
+              f'<path d="M62,-238 Q118,-214 104,-138 Q86,-118 64,-138 Z" fill="url(#{u}b)" stroke="{TINTA}" stroke-width="3.5"/>'
+              f'<path d="M70,-150 L66,-8 Q68,4 92,4 Q106,4 104,-8 L104,-150 Z" fill="{c2}" stroke="{TINTA}" stroke-width="4"/>'
+              f'<path d="M34,-160 L32,-8 Q34,4 58,4 Q74,4 72,-8 L72,-160 Z" fill="url(#{u}p)" stroke="{TINTA}" stroke-width="4"/>'
+              f'<path d="M34,-26 L72,-26" stroke="{c3}" stroke-width="16"/>'
+              f'<path d="M-132,-170 Q-150,-110 -140,-40" stroke="#fff" stroke-opacity=".25" stroke-width="8" fill="none"/>')
+    if raza != "akita":
+        cuerpo += (f'<ellipse cx="-60" cy="-150" rx="48" ry="34" fill="#c9a27a" opacity=".85"/>'
+                   f'<ellipse cx="-110" cy="-60" rx="30" ry="22" fill="#c9a27a" opacity=".8"/>')
+    cabeza = (f'<g id="{u}cab"><path d="M68,-246 Q56,-332 122,-352 Q172,-356 192,-308 Q228,-298 244,-278 Q240,-256 204,-252 L154,-244 Q104,-222 68,-246 Z" '
+              f'fill="url(#{u}p)" stroke="{TINTA}" stroke-width="5" stroke-linejoin="round"/>'
+              f'<path d="M150,-292 Q200,-296 242,-278 Q236,-258 204,-254 L160,-250 Q138,-266 150,-292 Z" fill="url(#{u}b)"/>'
+              f'<path d="M92,-338 L78,-410 L132,-354 Z" fill="{c1}" stroke="{TINTA}" stroke-width="4" stroke-linejoin="round"/>'
+              f'<path d="M96,-346 L88,-388 L118,-354 Z" fill="#e8a6a0"/>'
+              f'<path d="M128,-352 L148,-416 L170,-342 Z" fill="{c2}" stroke="{TINTA}" stroke-width="4" stroke-linejoin="round"/>'
+              f'<ellipse cx="164" cy="-312" rx="8" ry="9" fill="{TINTA}"/><circle cx="167" cy="-315" r="2.6" fill="#fff"/>'
+              f'<path d="M150,-326 Q164,-334 178,-326" stroke="{TINTA}" stroke-width="3" fill="none" stroke-linecap="round"/>'
+              f'<ellipse cx="240" cy="-278" rx="11" ry="9" fill="{TINTA}"/>'
+              f'<path d="M204,-256 Q216,-248 230,-256" stroke="{TINTA}" stroke-width="3" fill="none" stroke-linecap="round"/>'
+              f'<path d="M84,-300 Q110,-280 150,-282" stroke="#fff" stroke-opacity=".25" stroke-width="6" fill="none"/></g>')
+    collar = (f'<path d="M66,-236 Q100,-212 128,-232" stroke="#b3261e" stroke-width="14" fill="none" stroke-linecap="round"/>'
+              f'<circle cx="104" cy="-216" r="9" fill="#e8b830" stroke="{TINTA}" stroke-width="2"/>') if p.get("collar") else ""
+    s = d + cola + cuerpo + collar + cabeza
     if p.get("cola", True):
-        vaiven(t, f"#{u}cola", "rotation: 8, transformOrigin: '100% 100%'", periodo=0.7)
+        vaiven(t, f"#{u}cola", "rotation: 7, transformOrigin: '90% 90%'", periodo=0.7)
+    vaiven(t, f"#{u}cab", "rotation: -3, transformOrigin: '20% 90%'", periodo=2.6)
     vaiven(t, f"#{u}", "scaleY: 1.012, transformOrigin: '50% 100%'", periodo=2.0)
     return g(p, s, u)
 
@@ -395,7 +431,8 @@ def perro(p, u, t):
 def estatua_perro(p, u, t):
     s = (f'<defs>{lin("#7a8a6a", "#3e4a36", u + "b", 0)}{lin("#9aa0a6", "#5c6268", u + "pd")}</defs>'
          f'<rect x="-220" y="-260" width="440" height="260" fill="url(#{u}pd)" {O}/><rect x="-250" y="-290" width="500" height="40" fill="#8a9096" {O3}/>')
-    perro_svg = perro({"x": 0, "y": -290, "s": 1.05, "cola": False}, u + "pp", t).replace("#e8c08a", "#7a8a6a").replace("#f7efe2", "#93a283").replace("#b98b52", "#3e4a36")
+    perro_svg = (perro({"x": 0, "y": -290, "s": 1.05, "cola": False}, u + "pp", t).replace("#e3a865", "#7f9070").replace("#b97a3c", "#5a6a4c")
+                 .replace("#f8f1e4", "#9aab8a").replace("#8a5a2a", "#3e4a36").replace("#e3d9c8", "#7f9070").replace("#e8a6a0", "#5a6a4c"))
     return g(p, s + perro_svg, u)
 
 

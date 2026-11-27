@@ -581,6 +581,12 @@ def overlay_texto(t: "Toma", lineas, dt=0.15, top=420, acento=None):
              dt + 0.12 * k)
 
 
+SOMBRAS = {"perro": 170, "casa": 290, "espartano": 160, "estatua_perro": 260, "muneco": 140, "momia": 120, "mesa": 330,
+           "silla": 130, "cama": 320, "arcade": 220, "camion": 380, "excavadora": 360, "observatorio": 230, "tripode": 360,
+           "astronauta": 120, "estatua_libertad": 210, "catedral": 360, "castillo": 380, "templo_azteca": 440,
+           "torre_eiffel": 220, "trono": 180, "vitrina": 280, "caja": 220, "cartucho": 140, "botella": 100, "frasco": 130,
+           "tomate": 150, "radio": 210, "telefono": 190, "computadora": 300, "microfono": 130, "tren": 470, "cohete": 140,
+           "calavera": 150, "ataud": 360, "bloques": 380, "espejos": 240, "taza": 140, "cacao": 260, "nuez": 170}
 CAMARAS = {"push": (0, 0, 0.14), "pull": (0, 0, -0.12), "pan_der": (-150, 0, 0.05), "pan_izq": (150, 0, 0.05),
            "sube": (0, 170, 0.04), "baja": (0, -170, 0.04), "fijo": (0, 0, 0.03), "push_fuerte": (0, 0, 0.28)}
 
@@ -593,13 +599,32 @@ def toma_escena(t: "Toma"):
     capas = p["capas"]
     dx, dy, zm = CAMARAS[p.get("camara", "push")]
     partes, zs = [], []
+    hora = next((c.get("hora") for c in capas if c["d"] == "cielo"), None)
+    hz = next((c.get("horizonte", 1150) for c in capas if c["d"] == "cielo"), None)
+    bruma_en = 2 if capas and capas[0]["d"] == "cielo" and len(capas) > 3 else None
     for k, c in enumerate(capas):
         u = f"{t.id}k{k}"
+        if hora and "hora" not in c:
+            c = {**c, "hora": hora}
         z = c.get("z", round(0.1 + 0.9 * k / max(1, len(capas) - 1), 2))
-        partes.append(f'<g id="{t.id}z{k}">{ilustra.DIBUJOS[c["d"]](c, u, t)}</g>')
+        extra = ""
+        if c["d"] in SOMBRAS and c.get("sombra", True):
+            rx = SOMBRAS[c["d"]] * c.get("s", 1.0)
+            extra = f'<ellipse cx="{c.get("x", 540)}" cy="{c.get("y", 1200) + 4}" rx="{rx:.0f}" ry="{rx * .13:.0f}" fill="#000" opacity=".32"/>'
+        partes.append(f'<g id="{t.id}z{k}">{extra}{ilustra.DIBUJOS[c["d"]](c, u, t)}</g>')
         zs.append(z)
+        if bruma_en is not None and k == bruma_en - 1:
+            col = {"noche": "#3a5a9a", "dia": "#e8f4ff", "atardecer": "#ffb38a", "amanecer": "#ffd9b8", "niebla": "#d8dee4",
+                   "tormenta": "#4a5466", "espacio": "#1a2a5a"}.get(hora, "#9aa8c4")
+            partes.append(f'<g id="{t.id}zb"><defs><linearGradient id="{t.id}bru" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{col}" stop-opacity="0"/>'
+                          f'<stop offset=".5" stop-color="{col}" stop-opacity=".38"/><stop offset="1" stop-color="{col}" stop-opacity="0"/></linearGradient></defs>'
+                          f'<rect x="-200" y="{hz - 320}" width="1480" height="520" fill="url(#{t.id}bru)"/></g>')
+            zs.append(round(z + 0.05, 2))
     t.html.append(f'<svg id="{t.id}sv" class="full" viewBox="0 0 1080 1920" style="top:0;height:1920px">{"".join(partes)}</svg>')
-    capas_js = ",".join(f'[document.getElementById("{t.id}z{k}"), {z}]' for k, z in enumerate(zs))
+    ids = [f"{t.id}z{k}" for k in range(len(capas))]
+    if bruma_en is not None:
+        ids.insert(bruma_en, f"{t.id}zb")
+    capas_js = ",".join(f'[document.getElementById("{i}"), {z}]' for i, z in zip(ids, zs))
     escala = f"1 + {zm} * z * c.v" if zm >= 0 else f"1 + {-zm} * z * (1 - c.v)"
     t.js.append(f'(() => {{ const c = {{v: 0}}; const L = [{capas_js}]; const pon = () => {{ for (const [el, z] of L) '
                 f'el.setAttribute("transform", `translate(${{540 + {dx} * z * c.v}} ${{960 + {dy} * z * c.v}}) '
@@ -832,11 +857,14 @@ html, body {{ width:1080px; height:1920px; overflow:hidden; background:{f2}; }}
 .boton_sn.si {{ background:#22b35e; }} .boton_sn.no {{ background:{ROJO}; }}
 .sello_fin {{ position:absolute; left:0; right:0; margin:0 auto; width:fit-content; font-size:120px; color:{ROJO};
   border:14px double {ROJO}; border-radius:20px; padding:0 40px; background:rgba(255,255,255,.92); }}
-#handle {{ position:absolute; left:0; right:0; top:1365px; text-align:center; color:rgba(255,255,255,.6); font-size:34px;
+#handle {{ position:absolute; left:0; right:0; top:1468px; text-align:center; color:rgba(255,255,255,.6); font-size:34px;
   letter-spacing:3px; }}
 #flash {{ position:absolute; inset:0; background:#fff; opacity:0; }}
+#grano {{ position:absolute; inset:-60px; background:url("assets/grano.png"); opacity:.07; mix-blend-mode:overlay; }}
+#grado {{ position:absolute; inset:0; background:radial-gradient(80% 50% at 25% 15%, rgba(255,214,150,.16), transparent 70%),
+  linear-gradient(180deg, rgba(20,30,60,.0) 55%, rgba(10,12,30,.28) 100%); mix-blend-mode:soft-light; }}
 #vineta {{ position:absolute; inset:0; background:radial-gradient(95% 65% at 50% 45%, transparent 55%, rgba(0,0,0,.8)); }}
-.cap {{ position:absolute; left:110px; right:160px; top:1150px; display:flex; justify-content:center; }}
+.cap {{ position:absolute; left:110px; right:160px; top:1330px; display:flex; justify-content:center; }}
 .capin {{ text-align:center; font-size:92px; line-height:1.05; color:#fff; {txt_borde(92, 9)} text-shadow:0 8px 0 rgba(0,0,0,.55); }}
 .w {{ display:inline-block; margin:0 .2em; padding:0 .1em; border-radius:12px; background-color:rgba(0,0,0,0); }}'''
 
@@ -895,7 +923,7 @@ def componer(n: int, plan: dict, palabras, tiempos, parrafo_de, total, dir_: Pat
 <div id="camHost" class="clip" data-start="0" data-duration="{total}" data-track-index="1"><div id="cam">
 {chr(10).join(html_tomas)}
 </div></div>
-<div id="fx" class="clip" data-start="0" data-duration="{total}" data-track-index="2"><div id="flash"></div><div id="vineta"></div></div>
+<div id="fx" class="clip" data-start="0" data-duration="{total}" data-track-index="2"><div id="grado"></div><div id="flash"></div><div id="vineta"></div><div id="grano"></div></div>
 <div id="hud" class="clip" data-start="0" data-duration="{total}" data-track-index="3"><div id="barra"></div><div id="chip" class="chip-{estilo["chip"]}">{esc(etiqueta)}</div><div id="handle">@1MRELATO</div></div>
 <div id="capsHost" data-track-kind="captions">
 {caps}
@@ -906,6 +934,7 @@ def componer(n: int, plan: dict, palabras, tiempos, parrafo_de, total, dir_: Pat
 const tl = gsap.timeline({{ paused: true }});
 {chr(10).join(f_js)}
 tl.fromTo("#barra", {{scaleX: 0}}, {{scaleX: 1, duration: {total}, ease: "none"}}, 0);
+tl.fromTo("#grano", {{x: 0, y: 0}}, {{x: 37, y: -23, duration: 0.0667, repeat: {int(total / 0.0667)}, ease: "steps(1)", yoyo: true}}, 0);
 tl.fromTo("#chip", {{y: -60, opacity: 0}}, {{y: 0, opacity: 1, duration: 0.3, ease: "back.out(2)"}}, 0);
 tl.to("#chip", {{y: -40, opacity: 0, duration: 0.3, ease: "power2.in"}}, {min(3.2, inicios[1] - 0.3) if len(inicios) > 1 else 3.2:.3f});
 {chr(10).join(js)}
@@ -930,6 +959,11 @@ def escribir_wav(ruta: Path, x: np.ndarray):
 
 def preparar_proyecto(dir_: Path):
     (dir_ / "assets" / "fonts").mkdir(parents=True, exist_ok=True)
+    grano = dir_ / "assets" / "grano.png"
+    if not grano.exists():
+        from PIL import Image
+        rng = np.random.default_rng(1)
+        Image.fromarray((128 + rng.normal(0, 60, (512, 512))).clip(0, 255).astype(np.uint8), "L").save(grano)
     shutil.copy(RAIZ / "fuentes" / "Anton-Regular.woff", dir_ / "assets" / "fonts" / "Anton-Regular.woff")
     emoji = Path("/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf")
     if emoji.exists() and not (dir_ / "assets" / "fonts" / "NotoColorEmoji.ttf").exists():
