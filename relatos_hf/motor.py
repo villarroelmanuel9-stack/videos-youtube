@@ -587,6 +587,22 @@ SOMBRAS = {"perro": 170, "casa": 290, "espartano": 160, "estatua_perro": 260, "m
            "torre_eiffel": 220, "trono": 180, "vitrina": 280, "caja": 220, "cartucho": 140, "botella": 100, "frasco": 130,
            "tomate": 150, "radio": 210, "telefono": 190, "computadora": 300, "microfono": 130, "tren": 470, "cohete": 140,
            "calavera": 150, "ataud": 360, "bloques": 380, "espejos": 240, "taza": 140, "cacao": 260, "nuez": 170}
+HD = True  # usa las ilustraciones pulidas (ilustra_hd) cuando existen para ese elemento y esa hora
+
+
+def version_hd(c: dict) -> dict:
+    if not HD or c.get("hd") is False:
+        return c
+    d, hora = c["d"], c.get("hora")
+    if d == "cielo" and hora in ("noche", "atardecer", "dia"):
+        return {**c, "d": "cielo_hd"}
+    if d == "mar" and hora in ("noche", "atardecer", "dia"):
+        return {**c, "d": "mar_hd"}
+    if d in ("iceberg", "transatlantico", "niebla"):
+        return {**c, "d": d + "_hd"}
+    return c
+
+
 CAMARAS = {"push": (0, 0, 0.14), "pull": (0, 0, -0.12), "pan_der": (-150, 0, 0.05), "pan_izq": (150, 0, 0.05),
            "sube": (0, 170, 0.04), "baja": (0, -170, 0.04), "fijo": (0, 0, 0.03), "push_fuerte": (0, 0, 0.28)}
 
@@ -595,6 +611,7 @@ def toma_escena(t: "Toma"):
     import ilustra
     import ilustra_mundo  # noqa: F401
     import ilustra_obj  # noqa: F401
+    import ilustra_hd  # noqa: F401
     p = t.p
     capas = p["capas"]
     dx, dy, zm = CAMARAS[p.get("camara", "push")]
@@ -611,6 +628,7 @@ def toma_escena(t: "Toma"):
         if c["d"] in SOMBRAS and c.get("sombra", True):
             rx = SOMBRAS[c["d"]] * c.get("s", 1.0)
             extra = f'<ellipse cx="{c.get("x", 540)}" cy="{c.get("y", 1200) + 4}" rx="{rx:.0f}" ry="{rx * .13:.0f}" fill="#000" opacity=".32"/>'
+        c = version_hd(c)
         partes.append(f'<g id="{t.id}z{k}">{extra}{ilustra.DIBUJOS[c["d"]](c, u, t)}</g>')
         zs.append(z)
         if bruma_en is not None and k == bruma_en - 1:

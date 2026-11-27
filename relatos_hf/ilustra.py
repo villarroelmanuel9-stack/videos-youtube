@@ -305,8 +305,8 @@ def transatlantico(p, u, t):
                             for k in range(12))
     for k in range(12):
         anim(t, f"#{u}h{k}", "{x: 0, y: 0, scale: 0.5, opacity: 0.9}",
-             f"{{x: {-190 - k * 14}, y: {-90 - (k // 4) * 70}, scale: 2.2, opacity: 0, duration: {max(1.2, t.dur * 0.9):.2f}, ease: 'power1.out'}}",
-             (k // 4) * 0.35)
+             f"{{x: {-190 - k * 14}, y: {-90 - (k // 4) * 70}, scale: 2.2, opacity: 0, duration: 2.4, repeat: {int(t.dur / 2.4) + 1}, ease: 'power1.out'}}",
+             (k % 6) * 0.4)
     if luces:
         humo = f'<defs>{rad([(0, "#ffd77a", .35), (1, "#ffd77a", 0)], u + "gl")}</defs><ellipse cx="0" cy="-20" rx="700" ry="120" fill="url(#{u}gl)" style="mix-blend-mode:screen"/>' + humo
     inner = humo + "".join(cuerpo)
