@@ -79,6 +79,9 @@ def ajustar(draw, txt, ancho, tam_max, tam_min=90):
 def miniatura(n: int):
     guiones = GT.cargar()
     g = guiones[n]
+    if (RAIZ / "Miniaturas" / f"{GT.nombre_video(n, g['nombre'])}.jpg").exists():
+        print("ya hay miniatura (hecha por el usuario):", n)
+        return
     etiqueta, _ = GT.categoria(n)
     titular = (g["canva"] or g["nombre"]).strip("«»\"").upper()
     img = cuadro_limpio(n)
