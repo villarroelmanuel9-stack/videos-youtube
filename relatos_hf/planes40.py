@@ -230,7 +230,7 @@ P[15] = dict(tema="guerra", estilo="calido", claves=["solos.", "siete", "Efialte
     E("contra el enorme", GRECIA + [D("ejercito", x=540, y=1500, s=1.1, filas=5, color="#2a1d3a")], "pan_izq", texto=["EJÉRCITO", "PERSA"], acento=1, amb="multitud"),
     N("Pero junto a", 7000, "GRIEGOS", "PELEABAN JUNTO A ELLOS", icono="⚔️"),
     E("Resistieron dos días", GRECIA + [D("calendario", x=540, y=1400, s=1.2, anios=["DÍA 1", "DÍA 2"])], "fijo", texto="RESISTIERON", amb="viento"),
-    E("Al tercer día,", [C("noche", horizonte=1300), D("montanas", horizonte=1320), D("persona", x=540, y=1600, s=1.4, ropa="gris", pelo="#1b1b1b", mov="saluda")],
+    E("Al tercer día,", [C("noche", horizonte=1300), D("montanas", horizonte=1320), D("persona_real", x=540, y=1640, s=1.7, ropa="tunica", piel="media", pelo="#1b1b1b", barba=True, mov="saluda")],
       "push", dato=["EL TRAIDOR", "EFIALTES"], amb="viento"),
     E("un sendero escondido", [C("noche", horizonte=1100), D("montanas", horizonte=1700, colores=["#3b4a6b", "#2a3552", "#1a2238"]), D("huellas", x=300, y=1750, s=1.6, n=12, dx=40, dy=90)],
       "sube", texto=["SENDERO", "ESCONDIDO"], acento=1, amb="viento"),

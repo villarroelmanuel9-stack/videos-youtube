@@ -385,12 +385,14 @@
      "horizonte": 1320
     },
     {
-     "d": "persona",
+     "d": "persona_real",
      "x": 540,
-     "y": 1600,
-     "s": 1.4,
-     "ropa": "gris",
+     "y": 1640,
+     "s": 1.7,
+     "ropa": "tunica",
+     "piel": "media",
      "pelo": "#1b1b1b",
+     "barba": true,
      "mov": "saluda"
     }
    ],

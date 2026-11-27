@@ -272,7 +272,8 @@ PIELES = {"clara": ("#f0c9a4", "#c99876"), "media": ("#d9a77c", "#a8754e"), "mor
 TELAS = {"traje": ("#2b3140", "#151924"), "traje_gris": ("#5c6270", "#353a45"), "traje_cafe": ("#5a4636", "#33271d"),
          "uniforme": ("#4a5a3a", "#2c3622"), "bata": ("#f2f2ee", "#c4c6c8"), "kimono": ("#3a4a6a", "#1f2a40"),
          "kimono_rojo": ("#8a2a3a", "#55151f"), "abrigo": ("#3a2e24", "#1f1812"), "vestido": ("#6b2d3f", "#3e1824"),
-         "obrero": ("#5a4a36", "#352b1e"), "camisa": ("#e8e4da", "#b8b2a4")}
+         "obrero": ("#5a4a36", "#352b1e"), "camisa": ("#e8e4da", "#b8b2a4"), "tunica": ("#e9dfc4", "#b9a988"),
+         "tunica_roja": ("#a8342a", "#6a1a14")}
 
 
 @dib("persona_real")
@@ -286,7 +287,7 @@ def persona_real(p, u, t):
     pi, ps = PIELES.get(p.get("piel", "clara"), PIELES["clara"])
     pelo = p.get("pelo", "#2a1d14")
     peinado = p.get("peinado", "corto")
-    larga = ropa in ("kimono", "kimono_rojo", "vestido")
+    larga = ropa in ("kimono", "kimono_rojo", "vestido", "tunica", "tunica_roja")
     O = f'stroke="{TIN}" stroke-width="3" stroke-linejoin="round"'
     d = (f'<defs>{lin(c1, c2, u + "t", 0)}{lin(pi, ps, u + "p", 0)}{lin("#2a2f3d", "#141822", u + "pa", 0)}'
          f'<linearGradient id="{u}sh" x1="0" y1="0" x2="1" y2="0"><stop offset=".45" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient></defs>')
@@ -303,6 +304,9 @@ def persona_real(p, u, t):
         partes.append(f'<path d="M-50,-362 Q0,-378 50,-362 L56,-230 L44,-14 L-44,-14 L-56,-230 Z" fill="url(#{u}t)" {O}/>'
                       f'<path d="M-50,-362 L0,-300 L50,-362" fill="none" stroke="{TIN}" stroke-width="3"/>'
                       f'<path d="M0,-300 L-6,-14" stroke="{TIN}" stroke-width="2.5" opacity=".7"/>')
+        if ropa.startswith("tunica"):
+            partes.append(f'<path d="M-54,-250 Q0,-238 54,-250" stroke="#7a5a2a" stroke-width="8" fill="none"/>'
+                          f'<path d="M-50,-362 L-62,-300 Q-40,-330 -20,-300 Z" fill="{c2}" opacity=".8"/>')
         if ropa.startswith("kimono"):
             partes.append(f'<rect x="-54" y="-262" width="108" height="34" fill="#c9a24a" {O}/><path d="M-20,-262 L20,-262 L14,-228 L-14,-228 Z" fill="#8a6a2a"/>')
         partes.append(f'<path d="M10,-360 L52,-362 L56,-230 L44,-14 L8,-14 Z" fill="url(#{u}sh)"/>')
@@ -337,6 +341,9 @@ def persona_real(p, u, t):
                   f'<path d="M-7,-388 Q0,-385 7,-388" stroke="#8a4a3a" stroke-width="2.4" fill="none" stroke-linecap="round"/>')
     if p.get("bigote"):
         partes.append(f'<path d="M-11,-392 Q-5,-397 0,-393 Q5,-397 11,-392 Q5,-389 0,-391 Q-5,-389 -11,-392 Z" fill="{pelo}"/>')
+    if p.get("barba"):
+        partes.append(f'<path d="M-22,-404 Q-24,-374 0,-370 Q24,-374 22,-404 Q16,-388 0,-388 Q-16,-388 -22,-404 Z" fill="{pelo}" {O}/>'
+                      f'<path d="M-9,-392 Q0,-388 9,-392" stroke="#8a4a3a" stroke-width="2" fill="none"/>')
     if p.get("lentes"):
         partes.append(f'<circle cx="-9" cy="-412" r="7" fill="none" stroke="#222" stroke-width="2"/><circle cx="9" cy="-412" r="7" fill="none" stroke="#222" stroke-width="2"/>'
                       f'<line x1="-2" x2="2" y1="-412" y2="-412" stroke="#222" stroke-width="2"/>')
