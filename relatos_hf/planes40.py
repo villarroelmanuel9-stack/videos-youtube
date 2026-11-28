@@ -1818,7 +1818,7 @@ P[71] = dict(tema="misterio", estilo="calido", claves=["momificar.", "impuesto:"
       + [D("persona_real", x=x, y=1800, s=1.0, ropa=r) for x, r in [(200, "traje"), (900, "vestido")]], "pull", texto=["PAGABAN POR", "VERLAS"], acento=1, amb="multitud", amb_vol=.3),
     E("Algunas conservan la", [D("interior", pared="#1d1a14", piso="#0d0a06", luz=False, cuadros=0), D("vitrina", x=540, y=1700, s=1.3), D("momia_gto", x=540, y=1640, s=.7)], "push",
       texto=["ROPA, PELO…", "Y SORPRESA"], acento=1),
-    N("Hoy el Museo", 1000, "VISITANTES", "MILES AL AÑO", icono="🏛️"),
+    T("Hoy el Museo", ["MILES DE VISITANTES", "CADA AÑO"], acento=0, icono="🏛️"),
     FIN("¿Lo visitarías? Comenta", ["¿LO", "VISITARÍAS?"], final="si_no", capas=GTO + [D("catedral", x=540, y=1380, s=.6)]),
 ])
 
@@ -1899,7 +1899,7 @@ P[77] = dict(tema="misterio", estilo="neon", claves=["rojos,", "persiguió", "Mo
       D("persona_real", x=300, y=1720, s=1.4, ropa="camisa"), D("persona_real", x=470, y=1730, s=1.3, ropa="vestido", peinado="largo")], "push", texto=["FUERON A LA", "POLICÍA"], acento=1),
     E("que una criatura", [C("noche", horizonte=1300), D("arboles", y=1320, n=6, color="#0d140a"), D("suelo", y=1320, colores=["#2a2a2e", "#0d0d10"], tipo="asfalto"),
       D("auto_60", x=300, y=1700, s=1.0, mov="avanza", avance=300), D("mothman", x=200, y=1300, s=.7)], "pan_der", texto=["¡LOS", "PERSIGUIÓ!"], acento=1, sfx="boom", sfx_dur=.6, amb="viento"),
-    N("Durante un año", 100, "AVISTAMIENTOS", "DECENAS DE", icono="👁️"),
+    T("Durante un año", ["DECENAS DE", "AVISTAMIENTOS"], acento=1, icono="👁️"),
     E("Los diarios la", [D("interior", pared="#3a3226", piso="#1a140f", luz_x=540, luz_y=700), D("periodico", x=540, y=1550, s=1.1, titular="MOTHMAN")], "push", texto="«MOTHMAN»", sfx="papel", sfx_dur=.6),
     E("En diciembre de", [C("noche", horizonte=1100), D("puente", y=1250, colapso=True, en=1.2)], "fijo", texto=["¡EL PUENTE", "COLAPSÓ!"], acento=1, sacudir=True, sfx="crujido", sfx_dur=2.0),
     N("y murieron cuarenta", 46, "PERSONAS", "MURIERON", icono="🕯️"),

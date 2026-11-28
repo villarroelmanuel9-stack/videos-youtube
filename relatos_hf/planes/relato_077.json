@@ -183,10 +183,12 @@
   },
   {
    "en": "Durante un año",
-   "tipo": "contador",
-   "hasta": 100,
-   "unidad": "AVISTAMIENTOS",
-   "sub": "DECENAS DE",
+   "tipo": "titulo",
+   "lineas": [
+    "DECENAS DE",
+    "AVISTAMIENTOS"
+   ],
+   "acento": 1,
    "icono": "👁️"
   },
   {

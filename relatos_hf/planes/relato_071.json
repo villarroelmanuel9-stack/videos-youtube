@@ -292,10 +292,12 @@
   },
   {
    "en": "Hoy el Museo",
-   "tipo": "contador",
-   "hasta": 1000,
-   "unidad": "VISITANTES",
-   "sub": "MILES AL AÑO",
+   "tipo": "titulo",
+   "lineas": [
+    "MILES DE VISITANTES",
+    "CADA AÑO"
+   ],
+   "acento": 0,
    "icono": "🏛️"
   },
   {
